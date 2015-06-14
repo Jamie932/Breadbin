@@ -1,7 +1,6 @@
 $(document).ready(function() {    
     $('#postForm').submit(function(event) {
         var formData = {
-            'userid' : $_SESSION['user']['id'],
             'text' : $('.postText').val()
         };
 

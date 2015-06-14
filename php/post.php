@@ -8,10 +8,6 @@
     if (empty($_POST['text'])) { 
         $errors['text'] = 'A username is required.';
 	}
-
-    if (empty($_POST['userid'])) {
-        $errors['userid'] = 'Unable to find UserID.';
-    }
 	
 	if (!empty($errors)) {
         $data['success'] = false;
@@ -19,7 +15,7 @@
 		
     } else {
 	    $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'text', :text)"; 
-		$query_params = array(':userid' => $_POST['userid'], ':text' => $_POST['text']); 
+		$query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text']); 
 	
         try{ 
             $stmt = $db->prepare($query); 
