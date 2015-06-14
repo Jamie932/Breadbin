@@ -1,8 +1,8 @@
 <?php
     require("common.php"); 
 	
-	function diff ($secondDate){
-		$firstDateTimeStamp = $this->format("U");
+	function diff ($firstDate, $secondDate){
+		$firstDateTimeStamp = $firstDate->format("U");
 		$secondDateTimeStamp = $secondDate->format("U");
 		$rv = ($secondDateTimeStamp - $firstDateTimeStamp);
 		$di = new DateInterval($rv);
@@ -12,7 +12,7 @@
 	function time_elapsed_string($datetime, $full = false) {
 		$now = new DateTime;
 		$ago = new DateTime($datetime);
-		$diff = $now->diff($ago);
+		$diff = diff($now, $ago);
 
 		$diff->w = floor($diff->d / 7);
 		$diff->d -= $diff->w * 7;
