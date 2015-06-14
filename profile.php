@@ -1,10 +1,5 @@
-<?php
-    require("php/common.php");
-    if(empty($_SESSION['user'])) 
-    {
-        header("Location: index.php");
-        die("Redirecting to index.php"); 
-    }
+<?php 
+    include 'php/init.php';
 ?>
 <html>
 <head>
@@ -37,3 +32,29 @@
             
         </div>
     </div>
+        
+    <form action="" method"post" style="margin-top: 200px;">
+        <ul>
+            <li>
+                First name: 
+                <input type="text" name="first_name">
+            </li>
+            <li>
+                Last name: 
+                <input type="text" name="last_name">
+            </li>
+            <li>
+                Email: 
+                <input type="text" name="email">
+            </li>
+            <li>
+                Colour: 
+                <input type="text" name="colour">
+            </li>
+            <li> 
+                <input type="submit" value="Save">
+            </li>
+        </ul>
+    </form>
+    </body>
+</html>

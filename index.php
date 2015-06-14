@@ -1,10 +1,5 @@
-<?php
-   /* require("php/common.php");
-    if(!empty($_SESSION['user'])) 
-    {
-        header("Location: main.php");
-        die("Redirecting to main.php"); 
-    }*/
+<?php 
+    include 'php/init.php';
 ?>
 <html>
 <head>
