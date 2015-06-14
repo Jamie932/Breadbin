@@ -34,6 +34,7 @@
     </div>
         
 		<?php 
+			require("common.php"); 
 			$userID = intval($_GET['id']);
 			$query = "SELECT * FROM users WHERE id = :id"; 
 			$query_params = array(':id' => $userID); 
