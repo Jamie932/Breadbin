@@ -1,8 +1,7 @@
 $(document).ready(function() {    
     $('#postForm').submit(function(event) {
-        alert($('#uploadText').val());
         var formData = {
-            'text' : $('#uploadText').val()
+            'text' : $('.postText').val()
         };
 
         $.ajax({

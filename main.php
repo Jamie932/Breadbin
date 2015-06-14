@@ -72,5 +72,6 @@
             }
         });
     </script>
+	<script src="js/formPost.js"></script>
 </body>
 </html>
