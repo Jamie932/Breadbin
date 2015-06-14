@@ -30,8 +30,7 @@
         <div class="right">
             <ul class="nav">
                 
-            <li class="nav">
-                <a class="navLinks" href="settings.php" >Profile</a>
+            <li>
             </li>
 
             </ul>

@@ -382,6 +382,7 @@ ul.leftSettingsList {
     margin-top: 25px;
     margin-bottom: 25px;
     max-height: 640px;
+    margin-right: 25px;
 }
 
 #rightProfile .userPostedImg {
