@@ -43,9 +43,9 @@
                 $row = $stmt->fetch();
 
                 if($row){ 
-                        echo 'User ID: ' . $row['id'] . '<br>';
-                        echo 'Username: ' . $row['username'] . '<br>';
-                        echo 'Email: ' . $row['email'];
+                    echo 'User ID: ' . $row['id'] . '<br>';
+                    echo 'Username: ' . $row['username'] . '<br>';
+                    echo 'Email: ' . $row['email'];
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
