@@ -33,15 +33,15 @@
         </div>
     </div>
         
-    <form action="" method"post" style="margin-top: 200px;">
+    <form action="php/ProfileUpdate.php" method"post" style="margin-top: 200px;">
         <ul>
             <li>
                 First name: 
-                <input type="text" name="first_name">
+                <input type="text" name="firstname">
             </li>
             <li>
                 Last name: 
-                <input type="text" name="last_name">
+                <input type="text" name="lastname">
             </li>
             <li>
                 Email: 
