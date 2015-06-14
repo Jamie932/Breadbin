@@ -20,19 +20,12 @@
         <div class="left">
             <a href="main.html" class="navLinks">Bread Bin</a>
         </div>
-        <div class="right">
-            <ul>
-                <li><a href="" class="navLinks">You</a></li>
-                <li><a href="" class="navLinks">Toasted</a></li>
-                <li><a href="" class="navLinks">Bill</a></li>
+        <div class="right"
                 
-            <li><div class="rightnav out"> <!-- Display when logged out.-->
-                <a class="navLinks" href="login.html" >Login</a>
-            </div></li>
-        
-            <li><div class="rightnav in"> <!-- Display when logged in.-->
-                <a href="profile.html"><img class="minipic" height="32"src="profile.png" alt="ProfilePic"></a></li>
-            </div>
+            <li>
+                <a class="navLinks" href="profile.php" >Profile</a>
+            </li>
+
             </ul>
             
         </div>
@@ -58,18 +51,22 @@
             </div>
         </div>  
         <div id="placehold">
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
-            jkfsgjslkfgjskldfjglskfdgjkjflkgjsldfkgj
+            <h5>Recommended toasters</h5>
+            <div class="userRecom">
+               <a href="" class="usernameRecom"><img src="cat.jpg" height="50px" width="50px">
+                    Username
+                </a>
+            </div>
+            <div class="userRecom">
+                 <a href="" class="usernameRecom"><img src="cat.jpg" height="50px" width="50px">
+                    Username
+                </a>
+            </div>
+             <div class="userRecom">
+                 <a href="" class="usernameRecom"><img src="cat.jpg" height="50px" width="50px">
+                    Username
+                </a>
+            </div>
         </div>
     </div>
     

@@ -63,7 +63,7 @@ p.report {
 #navbar .right {
     float: right; 
     display: inline;
-    margin-right: 18%;
+    margin-right: 20%;
     padding-top: 5px;
 }
 
@@ -232,4 +232,26 @@ a.contentUsername {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+#placehold .userRecom {
+    width: 100%;
+    height: 60px;
+    border-bottom-style: solid;
+    border-bottom-color: #616161;
+    border-bottom-width: 1px;
+    margin-top: 10px;
+}
+
+h5 {
+    margin-top: 0;   
+    margin-bottom: 0;   
+    border-bottom-style: solid;
+    border-bottom-color: #616161;
+    border-bottom-width: 2px;
+}
+
+a.usernameRecom {
+    text-decoration: none;   
+    color: #666766;
 }
