@@ -6,7 +6,7 @@
 	$data = array();
 	
     if (empty($_POST['text'])) { 
-        $errors['text'] = 'A username is required.';
+        $errors['text'] = 'Text is required.';
 	}
 	
 	if (!empty($errors)) {

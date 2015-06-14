@@ -13,10 +13,9 @@ $(document).ready(function() {
         })
 		
 		.done(function(data) {
-			console.log(data); 
-			resetForm();
+			console.log(data);
 		
-			if ( !data.success) {
+			if (!data.success) {
                 alert("not working");
 			} else {
 				window.location.replace("main.php");
