@@ -4,12 +4,29 @@
 <html>
 <head>
     <title>Bread Bin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+<<<<<<< HEAD
+=======
+    <script src="js/checkLogin.js"></script>
+    <script src="js/brickwall.js"></script>
+    <script type="text/javascript">
+			$(function() {
+				$('ul img').each(function(i, element) {
+					var focusY = Math.floor((Math.random()*4)+1);
+					var focusX = Math.floor((Math.random()*4)+1);
+					$(element).attr({'focus-y': focusY, 'focus-x': focusX});
+				});
+				$('ul').brickwall();
+			});
+    </script>
+>>>>>>> origin/master
 </head>
 <body class="profile">
+    
     <div id="navbar">
         <div class="left">
             <a href="main.php" class="navLinks">Bread Bin</a>
@@ -49,41 +66,31 @@
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
             ?>
-        </div>
-       
+        </div>  
     </div>
-    
-    
+
         <div id="rightProfile">
             <div class="profilePosts">
-                <div class="userPostedImg">
-                    <img src="img/cat.jpg" height="640px" width="640px"> 
-                </div>
-                <div class="userPostedLike">
-                    <P>Toast</P>
-                    <P>Burn</P>
-                    <P class="report">Report</P>
-                </div>
-            </div>
-            <div class="profilePosts">
-                <div class="userPostedImg">
-                    <img src="img/cat.jpg" height="640px" width="640px"> 
-                </div>
-                <div class="userPostedLike">
-                    <P>Toast</P>
-                    <P>Burn</P>
-                    <P class="report">Report</P>
-                </div>
-            </div>
-            <div class="profilePosts">
-                <div class="userPostedImg">
-                    <img src="img/cat.jpg" height="640px" width="640px"> 
-                </div>
-                <div class="userPostedLike">
-                    <P>Toast</P>
-                    <P>Burn</P>
-                    <P class="report">Report</P>
-                </div>
+                <ul>
+                    <li>
+                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                    </li>
+                    <li>
+                        <a href="" title=""><img src="img/cat.jpg" width="250" height="340" focus-y="3" focus-x="3"></a>
+                    </li>
+                    <li>
+                        <a href="" title=""><img src="img/cat.jpg" width="310" height="170" focus-y="3" focus-x="3"></a>
+                    </li>
+                    <li>
+                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                    </li>
+                    <li>
+                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                    </li>
+                    <li>
+                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                    </li>
+                </ul>
             </div>
         </div>
 
