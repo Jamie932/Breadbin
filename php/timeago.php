@@ -293,3 +293,5 @@ class TimeAgo {
   private function _translate($label, $time = '') {
     return sprintf(self::$timeAgoStrings[$label], $time);
   }
+
+}
