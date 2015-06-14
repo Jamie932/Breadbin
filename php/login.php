@@ -44,19 +44,9 @@
             unset($row['salt']); 
             unset($row['password']); 
             $_SESSION['user'] = $row;  
-            $uniquehash = md5(uniqid(rand(), true));
-                
-            $query = "INSERT INTO uniquelogs (userid, hash) VALUES (:id, :hash)"; 
-            $query_params = array(':id' => $_POST['id'], ':hash' => $uniquehash); 
-
-            try{ 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }             
 			
-            //setcookie('token', $uniquehash, time()+60*60*24*30, '/', '');
 			$data['success'] = true;
+			$data['message'] = 'Success!';
         } 
         else{ 
             print("Login Failed."); 
