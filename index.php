@@ -1,7 +1,7 @@
 <?php 
     if (isset($_COOKIE["token"])) {
         $query = "SELECT userid FROM uniquelogs WHERE hash = :hash"; 
-        $query_params = array(':hash' => $_COOKIE["token"]; 
+        $query_params = array(':hash' => $_COOKIE["token"]); 
 
         try{ 
             $stmt = $db->prepare($query); 
