@@ -29,6 +29,11 @@
        
     <div id="leftProfile">
         <div class="userInfo">
+            <div class="sideHeader">
+                <div class="profilePic">
+                    <center><img src="img/cat.jpg"/></center>
+                </div>
+            </div>
         <?php 
                 require("php/common.php"); 
                 $userID = intval($_GET['id']);
@@ -43,14 +48,17 @@
                 $row = $stmt->fetch();
 
                 if($row){ 
-                    echo 'User ID: ' . $row['id'] . '<br>';
-                    echo 'Username: ' . $row['username'] . '<br>';
-                    echo 'Email: ' . $row['email'];
+                    echo "<div id=\"userInfo\">"
+                        echo 'User ID: ' . $row['id'] . '<br>';
+                        echo 'Username: ' . $row['username'] . '<br>';
+                        echo 'Email: ' . $row['email'];
+                    echo "</div>"
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
             ?>
         </div>
+       
     </div>
     
     <div class="rightProfile">
