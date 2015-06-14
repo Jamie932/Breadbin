@@ -291,8 +291,9 @@ h5 {
     margin:100px  auto;
     width:1000px;
     height:700px;
+    overflow: hidden;
     
-    border-width: 1px;
+    border-width:1px;
     border-style: solid;
     border-color: #616161;
     -moz-border-radius: 10px 10px;
