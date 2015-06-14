@@ -6,7 +6,7 @@
 	<div class="right">
 		<ul class="nav">		
 			<li class="nav">
-				<a class="navLinks" href="settings.php" >Profile</a>
+				<a class="navLinks" href="profile.php" >Profile</a>
 			</li>
 		</ul>
 	</div>

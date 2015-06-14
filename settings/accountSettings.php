@@ -2,25 +2,27 @@
 <html>
 <head>
     <title>Bread Bin</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/checkLogin.js"></script>
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/checkLogin.js"></script>
 </head>
     
 <body>
-    <?php require('php/template/navbar.php');?>
+    <?php require('../php/template/navbar.php');?>
     
     <div id="settingsBox" style="height:500px;">
         <div class="leftSettings">
             <ul class="settingsList">
                 <li class="settingsListFirst">
-                    Account Settings
+                    Account Details
                 </li>
+            <a href="privacySettings.php" class="settingsLinks">
                 <li class="settingsList">
                     Privacy
                 </li>
+            </a>
                 <li class="settingsList">
                     Privacy
                 </li>
@@ -42,10 +44,10 @@
         <div class="rightSettings">
             <div class="settingsField">
                 <div class="settingsHeader">
-                    <h3 class="settings">Account Settings</h3>
+                    <h3 class="settings">Account Details</h3>
                     <p class="settingsDetail">Update your account details</p>
                 </div>
-                <form action="" method="post" clas="accountSettings">
+                <form action="" method="post" class="accountSettings">
                     <label>First name: </label>
                         <input type="text" name="firstname" class="settings">
                         <br>
