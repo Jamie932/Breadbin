@@ -287,7 +287,7 @@ class TimeAgo {
   private static function _loadTranslations($language) {
     // no time strings loaded? load them and store it all in static variables
     if (self::$timeAgoStrings == NULL || self::$language != $language) {
-      include(__DIR__ . '/translations/' . $language . '.php');
+      include('translations/' . $language . '.php');
 
       // storing the time strings in the current object
       self::$timeAgoStrings = $timeAgoStrings;
