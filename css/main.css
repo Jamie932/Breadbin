@@ -94,7 +94,7 @@ p.report {
 #contentPost .contentPostImage {
     width: 640px;
     height: 640px;
-    background-image: url(img/cat.jpg);
+    background-image: url(/img/cat.jpg);
     background-size:cover;
     border-width:1px;
     border-color:#F2F2F2;
