@@ -16,45 +16,43 @@
             <a href="main.php" class="navLinks">Bread Bin</a>
         </div>
         <div class="right">
-            <ul>
-                <li><a href="" class="navLinks">You</a></li>
-                <li><a href="" class="navLinks">Toasted</a></li>
-                <li><a href="" class="navLinks">Bill</a></li>
+            <ul class="nav">
                 
-            <li><div class="rightnav out"> <!-- Display when logged out.-->
-                <a class="navLinks" href="login.html" >Login</a>
-            </div></li>
-        
-            <li><div class="rightnav in"> <!-- Display when logged in.-->
-                <a href="profile.html"><img class="minipic" height="32"src="img/profile.png" alt="ProfilePic"></a></li>
-            </div>
+            <li class="nav">
+                <a class="navLinks" href="settings.php" >Profile</a>
+            </li>
+
             </ul>
             
         </div>
     </div>
+    
+    <div id="settingsBox">
+        <div class="leftSettings">
+            <div class="listStyle">
+                <ul class="leftSettingsList">
+                    <li>Test</li>
+                    <li>Test</li>
+                    <li>Test</li>
+                </ul>
+            </div>
+        </div>
         
-    <form action="php/ProfileUpdate.php" method="post" style="margin-top: 200px;">
-        <ul>
-            <li>
+        <div class="rightSettings">
+            <form action="php/ProfileUpdate.php" method="post">
                 First name: 
-                <input type="text" name="firstname">
-            </li>
-            <li>
+                    <input type="text" name="firstname">
                 Last name: 
-                <input type="text" name="lastname">
-            </li>
-            <li>
+                    <input type="text" name="lastname">
                 Email: 
-                <input type="text" name="email">
-            </li>
-            <li>
+                    <input type="text" name="email">
                 Colour: 
-                <input type="text" name="colour">
-            </li>
-            <li> 
-                <input type="submit" value="Save">
-            </li>
-        </ul>
-    </form>
-    </body>
+                    <input type="text" name="colour">
+                    <input type="submit" value="Save">
+
+            </form>
+        </div>
+    </div>
+    
+</body>
 </html>
