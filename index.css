@@ -1,0 +1,142 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-image: url(testback.jpg);
+}
+
+.error {
+	border:1px solid red;
+}
+
+small {
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+    color:red;
+    float:right;
+    width:150px;
+    padding-top:5px;
+    text-align:left;
+}
+
+.clearFix {
+    clear:both;   
+}
+
+.dockBottom {
+    position:relative;
+    width:100%;
+    text-align:center;
+    bottom:-15px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+hr {
+    margin-bottom:30px;
+}
+
+#mid {
+    background-color: #F9FAF9;
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -moz-border-radius: 5px 5px;
+    border-radius: 5px 5px;
+    -moz-box-shadow: 0 0 3px #616161;
+    -webkit-box-shadow: 0 0 3px #616161;
+    box-shadow: 0 0 3px #616161;
+    z-index: 1;
+}
+
+#mid .start {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+a {
+    text-decoration: none;   
+    color: #616161;
+}
+
+#top {
+    width: 100%;
+    height: 43%;
+    background-color: #FFB540;
+    margin-top: 0;
+    -moz-box-shadow: 0 0 3px #616161;
+    -webkit-box-shadow: 0 0 3px #616161;
+    box-shadow: 0 0 3px #616161;
+    z-index: 1;
+}
+
+#mid .login, #mid .register {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#mid .register {
+    display: none;
+}
+
+form {
+    text-align:center;
+}
+/*
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+}
+*/
+input {
+    height: 30px;
+    width: 250px;
+    padding:5px; 
+    border: 1px solid #616161; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom:15px;
+    
+    
+   -webkit-transition: all .5s ease;
+   -moz-transition: all .5s ease;
+   transition: all .5s ease;
+}
+ 
+input:focus{
+    outline: none;
+    box-shadow: 0px 0px 5px #ccc;
+    border:1px solid #ccc;
+}
+
+a {
+    cursor:    pointer;
+}
+
+input#submit{
+  background:none;
+  border:none;
+  font-size: 20px;
+  color: #616161;
+}
+
+input#submit:hover {
+    color: #000;   
+    cursor: pointer;
+}
+
+#username-group {
+    text-align: center;   
+}
