@@ -49,7 +49,7 @@
 				echo 'User ID: ' . $row['id'] . '<br>';
 				echo 'Username: ' . $row['username'] . '<br>';
 				echo 'Email: ' . $row['email'];
-			else {
+			} else {
 				echo 'Error woooo';
 			}
 		?>
