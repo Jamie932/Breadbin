@@ -18,9 +18,7 @@
         $errors['lastname'] = '1-20 characters required.';
 	} 
 	
-    if (empty($_POST['email'])) {
-        $errors['email'] = 'An email is required.';
-	} else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+   if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'The specified email is not valid.';
 	} else {
        $query = "SELECT 1 FROM users WHERE email = :email";
