@@ -36,7 +36,7 @@ class TimeAgo {
     // if the $timezone is null, we take 'Europe/London' as the default
     // this was done, because the parent construct tossed an exception
     if($timezone == NULL) {
-      $timezone = 'Europe/Copenhagen';
+      $timezone = 'Europe/London';
     }
 
     // loads the translation files
