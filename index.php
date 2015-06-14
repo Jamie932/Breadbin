@@ -1,4 +1,4 @@
-<?php
+<?php/*
 session_start();
 
    require("php/common.php");
@@ -7,7 +7,7 @@ session_start();
     {
         header("Location: main.php");
         die("Redirecting to main.php"); 
-    } 
+    } */
 ?>
 <html>
 <head>
