@@ -1,42 +1,6 @@
 <?php
     require("common.php"); 
-	
-	function diff ($firstDate, $secondDate){
-		$firstDateTimeStamp = $firstDate->format("U");
-		$secondDateTimeStamp = $secondDate->format("U");
-		$rv = ($secondDateTimeStamp - $firstDateTimeStamp);
-		$di = new DateInterval($rv);
-		return $di;
-	}	
-	
-	function time_elapsed_string($datetime, $full = false) {
-		$now = new DateTime;
-		$ago = new DateTime($datetime);
-		$diff = diff($now, $ago);
-
-		$diff->w = floor($diff->d / 7);
-		$diff->d -= $diff->w * 7;
-
-		$string = array(
-			'y' => 'year',
-			'm' => 'month',
-			'w' => 'week',
-			'd' => 'day',
-			'h' => 'hour',
-			'i' => 'minute',
-			's' => 'second',
-		);
-		foreach ($string as $k => &$v) {
-			if ($diff->$k) {
-				$v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-			} else {
-				unset($string[$k]);
-			}
-		}
-
-		if (!$full) $string = array_slice($string, 0, 1);
-		return $string ? implode(', ', $string) . ' ago' : 'just now';
-	}	
+	require("timeago.php");
 	
 	$query = "SELECT * FROM posts ORDER BY date DESC"; 
 
@@ -66,7 +30,7 @@
             echo '<div class="contentPostInfo">';
                 echo '<div id="contentInfoText">';
                     echo '<div class="left">' . $username . '</div>';
-                    echo '<div class="right">' . time_elapsed_string($row['date']) . '</div>';
+                    echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
                 echo '</div>';
             echo '</div>';
         echo '</div>';
