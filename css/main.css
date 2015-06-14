@@ -334,8 +334,8 @@ ul.leftSettingsList {
     display: inline;
     width: 30%;
     height: 100%;
-    background-color: #7f7f7f;
     position: fixed;
+    background-color: #bfbfbf;
 }
 
 #leftProfile .userInfo {
@@ -376,14 +376,11 @@ ul.leftSettingsList {
     margin-top: 48px; 
     width: 70%;
     float: right;
-    text-align: center;
 }
 
 #rightProfile .profilePosts {
     margin-top: 25px;
     margin-bottom: 25px;
-    margin-left: 23%;
-    width: 700px;
     max-height: 640px;
 }
 
