@@ -1,5 +1,6 @@
 $(document).ready(function() {    
     $('#postForm').submit(function(event) {
+        alert($('.postText').val());
         var formData = {
             'text' : $('.postText').val()
         };
