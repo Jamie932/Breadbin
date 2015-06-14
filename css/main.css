@@ -334,12 +334,13 @@ ul.leftSettingsList {
     display: inline;
     width: 30%;
     height: 100%;
-    margin: 0;
     background-color: #7f7f7f;
+    position: fixed;
 }
 
 #leftProfile .userInfo {
-    padding-top: 100px;
+    margin-top: 200px;
+    text-align: center;
 }
 
 .profilePic {
@@ -361,16 +362,36 @@ ul.leftSettingsList {
     border-width: 1px;
 }
 
-img {
-    height: 100%;
-    width: 100%;
-}
-
-#userInfo {
+#userInfo2 {
     margin-left: 10px;
     width: 10px;
     height: 100px;
     border-style: solid;
     border-color: #616161;
     border-width: 1px;
+}
+
+#rightProfile {
+    height: auto;
+    margin-top: 48px; 
+    width: 70%;
+    float: right;
+    text-align: center;
+}
+
+#rightProfile .profilePosts {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 23%;
+    width: 700px;
+    max-height: 640px;
+}
+
+#rightProfile .userPostedImg {
+    display: inline;
+}
+
+#rightProfile .userPostedLike {
+    text-align:left;
+    float:right;
 }
