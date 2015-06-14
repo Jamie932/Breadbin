@@ -10,7 +10,7 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/checkLogin.js"></script>
 </head>
-<body>
+<body class="profile">
     <div id="navbar">
         <div class="left">
             <a href="main.php" class="navLinks">Bread Bin</a>
@@ -27,28 +27,34 @@
         </div>
     </div>
        
-	<div id="center">
-		<?php 
-			require("php/common.php"); 
-			$userID = intval($_GET['id']);
-			$query = "SELECT * FROM users WHERE id = :id"; 
-			$query_params = array(':id' => $userID); 
+    <div id="leftProfile">
+        <div class="userInfo">
+        <?php 
+                require("php/common.php"); 
+                $userID = intval($_GET['id']);
+                $query = "SELECT * FROM users WHERE id = :id"; 
+                $query_params = array(':id' => $userID); 
 
-			try{ 
-				$stmt = $db->prepare($query); 
-				$result = $stmt->execute($query_params); 
-			} 
-			catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-			$row = $stmt->fetch();
+                try{ 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+                $row = $stmt->fetch();
+
+                if($row){ 
+                    echo 'User ID: ' . $row['id'] . '<br>';
+                    echo 'Username: ' . $row['username'] . '<br>';
+                    echo 'Email: ' . $row['email'];
+                } else {
+                    echo "<div id=\"errormsg\"> User not found </div>";
+                }
+            ?>
+        </div>
+    </div>
+    
+    <div class="rightProfile">
 		
-			if($row){ 
-				echo 'User ID: ' . $row['id'] . '<br>';
-				echo 'Username: ' . $row['username'] . '<br>';
-				echo 'Email: ' . $row['email'];
-			} else {
-				echo "<div id=\"errormsg\"> User not found </div>";
-			}
-		?>
 	</div>
 
 	</body>

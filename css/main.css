@@ -1,6 +1,13 @@
 body {
     background-color: #F9FAF9;
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+body.profile {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 
 ul.nav {
@@ -319,4 +326,18 @@ ul.leftSettingsList {
 /* Profile formatting (profile.php) */
 #errormsg {
     color: red;   
+}
+
+
+#leftProfile {
+    float: left;
+    display: inline;
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    background-color: #7f7f7f;
+}
+
+#leftProfile .userInfo {
+    margin-top: 50%;   
 }
