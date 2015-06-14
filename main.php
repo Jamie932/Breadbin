@@ -41,8 +41,6 @@
     
     <div id="break"></div>
     
-    <div id="left"></div>
-    
 <div id="center">
     <div id="sidebar">
         <div class="upload">
@@ -146,6 +144,5 @@
         
     </div>
 </div>
-    <div id="right"></div>
 </body>
 </html>
