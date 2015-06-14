@@ -41,9 +41,10 @@
 		
     } else { //If not then add the user wooo
 
-        $query="UPDATE users SET firstname = '$_POST['firstname']', lastname = '$_POST['lastname']', email = '$_POST['email']', colour = '$_POST['colour']' WHERE id = '$_SESSION['user']';";
-        $query=mysql_query($sql1);
+        $query="UPDATE users SET firstname='$_POST['firstname']', lastname='$_POST['lastname']', email='$_POST['email']', colour='$_POST['colour']' WHERE id='$_SESSION['user']';";
+        $result1=mysql_query($query);
         ); 
+        
         if($result1){
             header("location:main.php");
         }
