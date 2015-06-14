@@ -43,27 +43,27 @@
                 </form>
             </div>
             <div class="uploadRest">
-                <a><img src="cat.jpg" height="40px" width="40px"></a>
-                <a><img src="cat.jpg" height="40px" width="40px"></a>
-                <a><img src="cat.jpg" height="40px" width="40px"></a>
-                <a><img src="cat.jpg" height="40px" width="40px"></a>
-                <img src="cat.jpg" height="40px" width="60px" style="margin-left: 43px;">
+                <a><img src="img/cat.jpg" height="40px" width="40px"></a>
+                <a><img src="img/cat.jpg" height="40px" width="40px"></a>
+                <a><img src="img/cat.jpg" height="40px" width="40px"></a>
+                <a><img src="img/cat.jpg" height="40px" width="40px"></a>
+                <img src="img/cat.jpg" height="40px" width="60px" style="margin-left: 43px;">
             </div>
         </div>  
         <div id="placehold">
             <h5>Recommended toasters</h5>
             <div class="userRecom">
-               <a href="" class="usernameRecom"><img src="cat.jpg" height="50px" width="50px">
+               <a href="" class="usernameRecom"><img src="img/cat.jpg" height="50px" width="50px">
                     Username
                 </a>
             </div>
             <div class="userRecom">
-                 <a href="" class="usernameRecom"><img src="cat.jpg" height="50px" width="50px">
+                 <a href="" class="usernameRecom"><img src="img/cat.jpg" height="50px" width="50px">
                     Username
                 </a>
             </div>
              <div class="userRecom">
-                 <a href="" class="usernameRecom"><img src="cat.jpg" height="50px" width="50px">
+                 <a href="" class="usernameRecom"><img src="img/cat.jpg" height="50px" width="50px">
                     Username
                 </a>
             </div>
