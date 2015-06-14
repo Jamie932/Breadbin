@@ -80,74 +80,7 @@
     </div>
     
     <div id="content">
-        <div id="contentPost">
-            <div class="contentPostImage">
-            </div>
-            <div class="contentPostInfo">
-                <div id="contentInfoText">
-                    <div class="left">
-                        UsernameGoesHere
-                    </div>
-                    <div class="right">
-                        2mins
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="contentLike">
-            <P>Toast</P>
-            <P>Burn</P>
-            <P class="report">Report</P>
-        </div>
-        
-        <br>
-        
-        <div id="contentPost">
-            <div class="contentPostText">
-                . 
-            </div>
-            <div class="contentPostInfo">
-                <div id="contentInfoText">
-                    <div class="left">
-                        UsernameGoesHere
-                    </div>
-                    <div class="right">
-                        4hrs
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="contentLike">
-            <P>Toast</P>
-            <P>Burn</P>
-            <P class="report">Report</P>
-        </div>
-        
-        <br>
-        
-         <div id="contentPost">
-            <div class="contentPostImage">
-            </div>
-            <div class="contentPostInfo">
-                <div id="contentInfoText">
-                    <div class="left">
-                        UsernameGoesHere
-                    </div>
-                    <div class="right">
-                        4hrs
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="contentLike">
-            <P>Toast</P>
-            <P>Burn</P>
-            <P class="report">Report</P>
-        </div>
-        
-        <br>
-        
+		<?php require('php/fetchPosts.php');?>
     </div>
 </div>
 </body>
