@@ -33,7 +33,7 @@
                 echo '<div class="contentPostInfo">';
                     echo '<div id="contentInfoText">';
                         echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
-                        echo '<div class="right">' . timeAgoInWords(date('m-d g:Ga', strtotime($row['date'])-21600)) . '</div>';
+                        echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
