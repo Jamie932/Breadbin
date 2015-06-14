@@ -15,7 +15,7 @@
                 echo '<div id="contentInfoText">';
                     echo '<div class="left">UsernameGoesHere</div>';
                     echo '<div class="right">' . $row['date'] . '</div>';
-                echo '</div>;'
+                echo '</div>';
             echo '</div>';
         echo '</div>';
 		
