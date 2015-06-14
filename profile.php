@@ -32,7 +32,8 @@
             
         </div>
     </div>
-        
+       
+	<div id="center">
 		<?php 
 			require("php/common.php"); 
 			$userID = intval($_GET['id']);
@@ -51,8 +52,10 @@
 				echo 'Username: ' . $row['username'] . '<br>';
 				echo 'Email: ' . $row['email'];
 			} else {
-				echo 'Error woooo';
+				echo 'User not found!';
 			}
 		?>
-    </body>
+	</div>
+
+	</body>
 </html>
