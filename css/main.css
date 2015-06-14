@@ -87,7 +87,7 @@ p.report {
 #contentPost {
     float:left;
     width: 640px;
-    max-height: 640px;
+    max-height: 800px;
     margin-bottom: 45px;
 }
 
@@ -262,7 +262,15 @@ h5 {
     border-bottom-width: 2px;
 }
 
-a.usernameRecom {
+.usernameRecom {
     text-decoration: none;   
     color: #666766;
+    display: inline-block;
+    left: inline;
+    margin-top: -15px;
+    margin-bottom: -27px;
+}
+
+.usericoRecom {
+       display: inline;
 }
