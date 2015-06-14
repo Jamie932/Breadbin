@@ -18,12 +18,12 @@
 <body>
     <div id="navbar">
         <div class="left">
-            <a href="settings.php" class="navLinks">Bread Bin</a>
+            <a href="main.php" class="navLinks">Bread Bin</a>
         </div>
         <div class="right"
                 
             <li>
-                <a class="navLinks" href="profile.php" >Profile</a>
+                <a class="navLinks" href="settings.php" >Profile</a>
             </li>
 
             </ul>
