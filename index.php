@@ -63,7 +63,7 @@
 					</div>
 					<div class="clearFix"></div>
 					
-					<input type="submit" class="btn btn-info" value="OI OI MATEY TEST" id="submit"/>
+					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>
 					
 					<div class="dockBottom">
 						<p style="font-size: 10px; margin-bottom: -18px; margin-top: 18px;">No account?<p>
