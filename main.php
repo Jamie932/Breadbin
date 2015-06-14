@@ -66,7 +66,6 @@
     
     <script>
         $('.postText').on('keyup', function(e) {
-            alert("hi");
             if (e.which == 13 && ! e.shiftKey) {
                 $(this.form).submit()
                 return false;
