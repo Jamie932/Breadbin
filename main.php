@@ -9,6 +9,14 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/checkLogin.js"></script>
+    <script>
+        $("textarea").keypress(function(event) {
+            if (event.which == 13) {
+                event.preventDefault();
+                $("form").submit();
+            }
+        });
+    </script>
 </head>
 <body>
    <?php require('php/template/navbar.php');?>
@@ -23,8 +31,8 @@
         <div id="sidebar">
             <div class="upload">
                 <div class="textarea">
-                    <form action="" id="upload">
-                        <textarea name="TextUpload" id="uploadText" maxlength="150" placeholder="Have your say..."></textarea>
+                    <form action="php/post.php" method="POST" id="postForm">
+                        <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Have your say..."></textarea>
                     </form>
                 </div>
                 <div class="uploadRest">
