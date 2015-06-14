@@ -20,7 +20,8 @@
         <div class="left">
             <a href="main.php" class="navLinks">Bread Bin</a>
         </div>
-        <div class="right"
+        <div class="right">
+            <ul class="nav">
                 
             <li>
                 <a class="navLinks" href="settings.php" >Profile</a>

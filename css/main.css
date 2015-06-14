@@ -3,7 +3,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-ul {
+ul.nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ ul {
     display: inline;
 }
 
-li {
+li.nav {
     padding-left: 35px;
     float:left;
 }
@@ -273,4 +273,39 @@ h5 {
 
 .usericoRecom {
        display: inline;
+}
+
+#settingsBox {
+    border-style: solid;
+    border-color: #616161;
+    border-width: 1px;
+    margin:100px  auto;
+    width:1000px;
+    height:700px;
+    position: relative;
+}
+
+.leftSettings {
+    border-right-style: solid;
+    border-right-color: #616161;
+    border-right-width: 1px;
+    float: left;
+    display: inline;
+    width: 120px;  
+    height: 100%;
+    background-color: #fff;
+}
+
+ul.leftSettingsList {
+    list-style-type: none;
+    overflow: hidden;
+    display: inline
+}
+
+.rightSettings {
+    display: inline;
+    float: right;
+    background-color: #fff;
+    width: 879px;
+    height: 100%;
 }
