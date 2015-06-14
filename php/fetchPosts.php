@@ -27,15 +27,26 @@
 			$username = $userrow['username'];
 		}
 		
-		echo '<div id="contentPost">';
-		echo '<div class="contentPostImage"></div>';
-            echo '<div class="contentPostInfo">';
+        if ($row['type'] == "image") {     
+            echo '<div id="contentPost">';
+            echo '<div class="contentPostImage"></div>';
+                echo '<div class="contentPostInfo">';
+                    echo '<div id="contentInfoText">';
+                        echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
+                        echo '<div class="right">' . timeAgoInWords(date('m-d g:Ga', strtotime($row['date'])-21600)) . '</div>';
+                    echo '</div>';
+                echo '</div>';
+            echo '</div>';
+            
+        } else if ($row['type'] == "text") {
+            echo '<div id="contentPost">';
+                echo '<div class="contentPostText">' . $row['text'] . '</div>';
                 echo '<div id="contentInfoText">';
                     echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
                     echo '<div class="right">' . timeAgoInWords(date('m-d g:Ga', strtotime($row['date'])-21600)) . '</div>';
                 echo '</div>';
             echo '</div>';
-        echo '</div>';
+        }
 		
 		echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
 	}
