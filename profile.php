@@ -31,7 +31,7 @@
             </div></li>
         
             <li><div class="rightnav in"> <!-- Display when logged in.-->
-                <a href="profile.html"><img class="minipic" height="32"src="profile.png" alt="ProfilePic"></a></li>
+                <a href="profile.html"><img class="minipic" height="32"src="img/profile.png" alt="ProfilePic"></a></li>
             </div>
             </ul>
             
