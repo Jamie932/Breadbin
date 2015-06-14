@@ -13,6 +13,7 @@
         if($row){ 
                header( 'Location: main.php' );
         }
+    }
 ?>
 
 <?php/*
