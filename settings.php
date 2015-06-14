@@ -40,18 +40,28 @@
         </div>
         
         <div class="rightSettings">
-            <form action="php/ProfileUpdate.php" method="post">
-                First name: 
-                    <input type="text" name="firstname">
-                Last name: 
-                    <input type="text" name="lastname">
-                Email: 
-                    <input type="text" name="email">
-                Colour: 
-                    <input type="text" name="colour">
-                    <input type="submit" value="Save">
-
-            </form>
+            <div class="settingsField">
+                <h3 class="settings">Account Settings</h3>
+                <form action="php/ProfileUpdate.php" method="post">
+                    <label>First name: </label>
+                        <input type="text" name="firstname" class="settings">
+                        <br>
+                        <br>
+                    <label>Last name: </label>
+                        <input type="text" name="lastname" class="settings">
+                        <br>
+                        <br>
+                    <label>Email: </label>
+                        <input type="text" name="email" class="settings">
+                        <br>
+                        <br>
+                   <label> Colour: </label>
+                        <input type="text" name="colour" class="settings">
+                        <br>
+                        <br>
+                        <input type="submit" value="Save">
+                </form>
+            </div>
         </div>
     </div>
 </body>
