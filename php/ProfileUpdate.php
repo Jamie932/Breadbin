@@ -18,7 +18,8 @@
         $errors['lastname'] = '1-20 characters required.';
 	} 
 	
-   if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    if (!empty($_POST['email'])) {
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'The specified email is not valid.';
 	} else {
        $query = "SELECT 1 FROM users WHERE email = :email";
@@ -32,6 +33,7 @@
         $row = $stmt->fetch(); 
 		if($row){ $errors['email'] = 'This email address is already registered.'; }
 	}
+    }
 	
     if (!empty($errors)) { // Were any errors found? If so do not continue and feed back the errors to HTML.
         $data['success'] = false;
