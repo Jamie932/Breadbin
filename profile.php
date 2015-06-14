@@ -43,7 +43,7 @@
                 $row = $stmt->fetch();
 
                 if($row){ 
-                    echo "<div id=\"userInfo2\">"
+                    echo "<div id=\"userInfo2\">";
                         echo 'User ID: ' . $row['id'] . '<br>';
                         echo 'Username: ' . $row['username'] . '<br>';
                         echo 'Email: ' . $row['email'];
