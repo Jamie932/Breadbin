@@ -87,7 +87,7 @@ p.report {
 #content {
     float: left;
     font-color: #000;
-    height: auto;
+    height: 100%;
     display: inline;
 }
 
