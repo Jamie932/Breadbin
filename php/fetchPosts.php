@@ -1,6 +1,14 @@
 <?php
     require("common.php"); 
 	
+	function diff ($secondDate){
+		$firstDateTimeStamp = $this->format("U");
+		$secondDateTimeStamp = $secondDate->format("U");
+		$rv = ($secondDateTimeStamp - $firstDateTimeStamp);
+		$di = new DateInterval($rv);
+		return $di;
+	}	
+	
 	function time_elapsed_string($datetime, $full = false) {
 		$now = new DateTime;
 		$ago = new DateTime($datetime);
