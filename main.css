@@ -196,13 +196,24 @@ a.contentUsername {
     padding-left: 5px;
     padding-top: 5px;
     font-family: inherit;
+    border:1px solid #616161;
+    
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
+    background-color: #F3F3F3;
 }
 
 #uploadText:focus {
     height:120px;
+}
+
+#uploadText::-moz-focus-inner {
+    border: 0;
+    padding: 0;
 }
 
 #sidebar .uploadRest { 
