@@ -16,6 +16,10 @@
     <div id="break"></div>
     
     <div id="center">
+        <div id="content">
+            <?php require('php/fetchPosts.php');?>
+        </div>
+        
         <div id="sidebar">
             <div class="upload">
                 <div class="textarea">
@@ -58,10 +62,6 @@
                        </div>
                 </div>
             </div>
-        </div>
-
-        <div id="content">
-            <?php require('php/fetchPosts.php');?>
         </div>
     </div>
 </body>

@@ -94,7 +94,7 @@ p.report {
 #contentPost {
     float:left;
     width: 640px;
-    max-height: 800px;
+    max-height: 640px;
     margin-bottom: 45px;
 }
 
@@ -289,13 +289,20 @@ h5 {
 
 /* User settings (settings.php) */
 #settingsBox {
-    border-style: solid;
-    border-color: #616161;
-    border-width: 1px;
     margin:100px  auto;
     width:1000px;
     height:700px;
-    position: relative;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #616161;
+    -moz-border-radius: 10px 10px;
+    border-radius: 10px 10px;
+    -moz-box-shadow: 0 0 1px #616161;
+    -webkit-box-shadow: 0 0 1px #616161;
+    box-shadow: 0 0 1px #616161;
+    
+    background-color: #F3F3F3;
 }
 
 .leftSettings {
