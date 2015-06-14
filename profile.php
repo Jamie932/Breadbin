@@ -33,7 +33,7 @@
         </div>
     </div>
         
-    <form action="php/ProfileUpdate.php" method"post" style="margin-top: 200px;">
+    <form action="php/ProfileUpdate.php" method="post" style="margin-top: 200px;">
         <ul>
             <li>
                 First name: 
