@@ -40,7 +40,7 @@
         $data['errors']  = $errors;
 		
     } else { //If not then add the user wooo
-        $query = "INSERT INTO users (firstname, lastname, email, colour) VALUES (:firstname, :lastname, :email, :colour);";
+        $query = "UPDATE users (firstname, lastname, email, colour) VALUES (:firstname, :lastname, :email, :colour);";
         $query_params = array( 
             ':firstname' => $_POST['firstname'], 
             ':lastname' => $_POST['lastname'],
