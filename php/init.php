@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-   require("php/common.php");
+   require("common.php");
 
     if(empty($_SESSION['user'])) 
     {

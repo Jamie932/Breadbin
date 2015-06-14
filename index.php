@@ -5,8 +5,8 @@ session_start();
 
     if(!empty($_SESSION['user'])) 
     {
-        header("Location: index.php");
-        die("Redirecting to index.php"); 
+        header("Location: main.php");
+        die("Redirecting to main.php"); 
     } 
 ?>
 <html>
