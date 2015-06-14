@@ -209,10 +209,8 @@ a.contentUsername {
     padding-top: 5px;
     font-family: inherit;
     border:1px solid #616161;
-    
     -moz-border-radius: 3px 3px;
     border-radius: 3px 3px;
-    
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
@@ -280,6 +278,7 @@ h5 {
     display: inline-block;
     left: inline;
     margin-top: -40px;
+    margin-left: 10px;
 }
 
 .usericoRecom {
