@@ -17,11 +17,11 @@
             $result = $stmt->execute($query_params); 
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-		$row = $stmt->fetch();
+		$userrow = $stmt->fetch();
 		$username = 'Unknown';
 				
-		if($row){ 
-			$username = $row['username'];
+		if($userrow){ 
+			$username = $userrow['username'];
 		}
 		
 		echo '<div id="contentPost">';
