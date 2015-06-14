@@ -19,19 +19,8 @@ function timeAgoInWords($timestring, $timezone = NULL, $language = 'en') {
  * @since 0.2.0 (2010/05/05)
  * @site http://github.com/jimmiw/php-time-ago
  */
-
-class TimeAgo {
-  // defines the number of seconds per "unit"
-  private $secondsPerMinute = 60;
-  private $secondsPerHour = 3600;
-  private $secondsPerDay = 86400;
-  private $secondsPerMonth = 2592000;
-  private $secondsPerYear = 31104000;
-  private $timezone;
-
-  // translations variables
-  private static $language;
-  private static $timeAgoStrings = array(
+ 
+ $timeAgoStrings = array(
 	  'aboutOneDay' => "1 day ago",
 	  'aboutOneHour' => "about 1 hour ago",
 	  'aboutOneMonth' => "about 1 month ago",
@@ -44,6 +33,18 @@ class TimeAgo {
 	  'oneMinute' => "1 minute ago",
 	  'years' => "over %s years ago"
 	);
+
+class TimeAgo {
+  // defines the number of seconds per "unit"
+  private $secondsPerMinute = 60;
+  private $secondsPerHour = 3600;
+  private $secondsPerDay = 86400;
+  private $secondsPerMonth = 2592000;
+  private $secondsPerYear = 31104000;
+  private $timezone;
+
+  // translations variables
+  private static $language;
   
   public function __construct($timezone = NULL, $language = 'en') {
     // if the $timezone is null, we take 'Europe/London' as the default
@@ -289,7 +290,7 @@ class TimeAgo {
    * @return string the translated label text including the time.
    */
   private function _translate($label, $time = '') {
-    return sprintf(self::$timeAgoStrings[$label], $time);
+    return sprintf($timeAgoStrings[$label], $time);
   }
 
 }
