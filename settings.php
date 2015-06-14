@@ -13,7 +13,7 @@
 <body>
     <div id="navbar">
         <div class="left">
-            <a href="main.html" class="navLinks">Bread Bin</a>
+            <a href="main.php" class="navLinks">Bread Bin</a>
         </div>
         <div class="right">
             <ul>

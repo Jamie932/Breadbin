@@ -18,7 +18,7 @@
 <body>
     <div id="navbar">
         <div class="left">
-            <a href="main.php" class="navLinks">Bread Bin</a>
+            <a href="settings.php" class="navLinks">Bread Bin</a>
         </div>
         <div class="right"
                 
