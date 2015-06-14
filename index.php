@@ -1,3 +1,21 @@
+<?php 
+    if (isset($_COOKIE["token"])) {
+        $query = "SELECT userid FROM uniquelogs WHERE hash = :hash"; 
+        $query_params = array(':hash' => $_COOKIE["token"]); 
+
+        try{ 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        $row = $stmt->fetch();
+
+        if($row){ 
+               header( 'Location: main.php' );
+        }
+    }
+?>
+
 <?php/*
 session_start();
 

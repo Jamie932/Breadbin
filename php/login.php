@@ -55,7 +55,7 @@
             } 
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }             
 			
-            setcookie('token', $uniquehash, time()+60*60*24*30, '/', '');
+            //setcookie('token', $uniquehash, time()+60*60*24*30, '/', '');
 			$data['success'] = true;
         } 
         else{ 
