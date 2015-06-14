@@ -10,10 +10,10 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/checkLogin.js"></script>
     <script>
-        $("textarea").keypress(function(event) {
-            if (event.which == 13) {
-                event.preventDefault();
-                $("form").submit();
+        $('.postText').on('keyup', function(e) {
+            if (e.which == 13 && ! e.shiftKey) {
+                $(this.form).submit()
+                return false;
             }
         });
     </script>
