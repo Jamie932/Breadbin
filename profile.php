@@ -9,9 +9,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-<<<<<<< HEAD
-=======
-    <script src="js/checkLogin.js"></script>
     <script src="js/brickwall.js"></script>
     <script type="text/javascript">
 			$(function() {
@@ -23,7 +20,6 @@
 				$('ul').brickwall();
 			});
     </script>
->>>>>>> origin/master
 </head>
 <body class="profile">
     
