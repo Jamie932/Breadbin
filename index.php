@@ -34,8 +34,6 @@ session_start();
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/top.js"></script>
     <script>
         $(document).ready(function(){
            $(".registerBtn").click(function(){
