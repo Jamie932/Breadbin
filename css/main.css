@@ -315,3 +315,8 @@ ul.leftSettingsList {
     width: 879px;
     height: 100%;
 }
+
+/* Profile formatting (profile.php) */
+#errormsg {
+    color: red;   
+}
