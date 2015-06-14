@@ -19,21 +19,6 @@ function timeAgoInWords($timestring, $timezone = NULL, $language = 'en') {
  * @since 0.2.0 (2010/05/05)
  * @site http://github.com/jimmiw/php-time-ago
  */
- 
- $timeAgoStrings = array(
-	  'aboutOneDay' => "1 day ago",
-	  'aboutOneHour' => "about 1 hour ago",
-	  'aboutOneMonth' => "about 1 month ago",
-	  'aboutOneYear' => "about 1 year ago",
-	  'days' => "%s days ago",
-	  'hours' => "%s hours ago",
-	  'lessThanAMinute' => "less than a minute ago",
-	  'lessThanOneHour' => "%s minutes ago",
-	  'months' => "%s months ago",
-	  'oneMinute' => "1 minute ago",
-	  'years' => "over %s years ago"
-	);
-
 class TimeAgo {
   // defines the number of seconds per "unit"
   private $secondsPerMinute = 60;
@@ -45,14 +30,17 @@ class TimeAgo {
 
   // translations variables
   private static $language;
+  private static $timeAgoStrings = NULL;
   
   public function __construct($timezone = NULL, $language = 'en') {
     // if the $timezone is null, we take 'Europe/London' as the default
     // this was done, because the parent construct tossed an exception
     if($timezone == NULL) {
-      $timezone = 'Europe/London';
+      $timezone = 'Europe/Copenhagen';
     }
-	
+
+    // loads the translation files
+    self::_loadTranslations($language);
     // storing the current timezone
     $this->timezone = $timezone;
   }
@@ -290,7 +278,27 @@ class TimeAgo {
    * @return string the translated label text including the time.
    */
   private function _translate($label, $time = '') {
-    return sprintf($timeAgoStrings[$label], $time);
+    return sprintf(self::$timeAgoStrings[$label], $time);
   }
 
+  /**
+   * Loads the translations into the system.
+   */
+  private static function _loadTranslations($language) {
+    // no time strings loaded? load them and store it all in static variables
+    if (self::$timeAgoStrings == NULL || self::$language != $language) {
+      include(__DIR__ . '/translations/' . $language . '.php');
+
+      // storing the time strings in the current object
+      self::$timeAgoStrings = $timeAgoStrings;
+
+      // loads the language files
+      if (self::$timeAgoStrings == NULL) {
+        error_log('Could not load language file for language ' . $language .'. Please ensure that the file exists in ' . __DIR__ . 'translations/' . $language . '.php');
+      }
+    }
+
+    // storing the language
+    self::$language = $language;
+  }
 }
