@@ -1,6 +1,4 @@
-<?php 
-    include 'php/init.php';
-?>
+<?php include 'php/init.php'; ?>
 <html>
 <head>
     <title>Bread Bin</title>
@@ -21,22 +19,9 @@
 			});
     </script>
 </head>
-<body class="profile">
     
-    <div id="navbar">
-        <div class="left">
-            <a href="main.php" class="navLinks">Bread Bin</a>
-        </div>
-        <div class="right">
-            <ul class="nav">
-                
-            <li>
-            </li>
-
-            </ul>
-            
-        </div>
-    </div>
+<body class="profile">
+    <?php require('php/template/navbar.php');?>
        
     <div id="leftProfile">
         <div class="userInfo">
@@ -64,30 +49,29 @@
         </div>  
     </div>
 
-        <div id="rightProfile">
-            <div class="profilePosts">
-                <ul>
-                    <li>
-                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                    </li>
-                    <li>
-                        <a href="" title=""><img src="img/cat.jpg" width="250" height="340" focus-y="3" focus-x="3"></a>
-                    </li>
-                    <li>
-                        <a href="" title=""><img src="img/cat.jpg" width="310" height="170" focus-y="3" focus-x="3"></a>
-                    </li>
-                    <li>
-                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                    </li>
-                    <li>
-                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                    </li>
-                    <li>
-                        <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                    </li>
-                </ul>
-            </div>
+    <div id="rightProfile">
+        <div class="profilePosts">
+            <ul>
+                <li>
+                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                </li>
+                <li>
+                    <a href="" title=""><img src="img/cat.jpg" width="250" height="340" focus-y="3" focus-x="3"></a>
+                </li>
+                <li>
+                    <a href="" title=""><img src="img/cat.jpg" width="310" height="170" focus-y="3" focus-x="3"></a>
+                </li>
+                <li>
+                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                </li>
+                <li>
+                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                </li>
+                <li>
+                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
+                </li>
+            </ul>
         </div>
-
-	</body>
+    </div>
+</body>
 </html>

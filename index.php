@@ -28,8 +28,7 @@ session_start();
            });
 		});
        });
-    </script>
-    <script>
+        
         $(document).ready(function(){
            $(".loginBtn").click(function(){
                $(".register").fadeOut('normal', function(){

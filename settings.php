@@ -1,6 +1,4 @@
-<?php 
-    include 'php/init.php';
-?>
+<?php include 'php/init.php'; ?>
 <html>
 <head>
     <title>Bread Bin</title>
@@ -10,22 +8,9 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/checkLogin.js"></script>
 </head>
+    
 <body>
-    <div id="navbar">
-        <div class="left">
-            <a href="main.php" class="navLinks">Bread Bin</a>
-        </div>
-        <div class="right">
-            <ul class="nav">
-                
-            <li class="nav">
-                <a class="navLinks" href="settings.php" >Profile</a>
-            </li>
-
-            </ul>
-            
-        </div>
-    </div>
+    <?php require('php/template/navbar.php');?>
     
     <div id="settingsBox">
         <div class="leftSettings">
@@ -53,6 +38,5 @@
             </form>
         </div>
     </div>
-    
 </body>
 </html>
