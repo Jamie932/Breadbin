@@ -9,7 +9,9 @@
 		$result = $stmt->execute(); 
 	} 
 	catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+	$posts = $stm->fetchAll();
+	
+	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
 	
