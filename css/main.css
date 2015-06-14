@@ -310,22 +310,85 @@ h5 {
     border-right-width: 1px;
     float: left;
     display: inline;
-    width: 120px;  
+    width: 140px;  
     height: 100%;
     background-color: #fff;
+    padding-top: 50px;
 }
 
-ul.leftSettingsList {
+.settingsChoice {
+    padding-left: 7px;
+    padding-top: 13px;
+    
+    border-top-color: #616161;
+    
+    border-top-style: solid;
+  
+    border-top-width: 1px;
+
+    font-size: 15px;
+}
+
+ul.settingsList {
     list-style-type: none;
-    overflow: hidden;
-    display: inline
+    padding: 0;
+    margin: 0;
+}
+
+li.settingsList {
+    height: 40px;
+    padding-left: 7px;
+    padding-top: 13px;
+    
+    border-top-color: #616161;
+    border-top-style: solid;
+    border-top-width: 1px;
+
+    font-size: 15px;
+}
+
+li.settingsList, li.settingsListFirst {
+    height: 40px;
+    padding-left: 7px;
+    padding-top: 13px;
+    
+    border-top-color: #616161;
+    border-top-style: solid;
+    border-top-width: 1px;
+
+    font-size: 15px;
+}
+
+li.settingsListFirst {
+    background-color:  #E7E7E7;
+    color: #6D6D6D;
+}
+
+li.settingslistLast {
+    height: 40px;
+    padding-left: 7px;
+    padding-top: 13px;
+    
+    border-top-color: #616161;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: #616161;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+
+    font-size: 15px;
+}
+
+li.settingsList:hover, li.settingslistLast:hover {
+    background-color: #E7E7E7;  
+    color: #6D6D6D;
 }
 
 .rightSettings {
     display: inline;
     float: right;
     background-color: #fff;
-    width: 879px;
+    width: 859px;
     height: 100%;
 }
 

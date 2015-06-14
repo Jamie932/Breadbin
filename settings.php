@@ -14,13 +14,29 @@
     
     <div id="settingsBox">
         <div class="leftSettings">
-            <div class="listStyle">
-                <ul class="leftSettingsList">
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                </ul>
-            </div>
+            <ul class="settingsList">
+                <li class="settingsListFirst">
+                    Account Settings
+                </li>
+                <li class="settingsList">
+                    Privacy
+                </li>
+                <li class="settingsList">
+                    Privacy
+                </li>
+                <li class="settingsList">
+                    Privacy
+                </li>
+                <li class="settingsList">
+                    Privacy
+                </li>
+                <li class="settingsList">
+                    Privacy
+                </li>
+                <li class="settingsListLast">
+                    Privacy
+                </li>
+            </ul>
         </div>
         
         <div class="rightSettings">
