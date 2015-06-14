@@ -41,7 +41,7 @@
 		
     } else { //If not then add the user wooo
 
-        $query = "UPDATE users SET firstname = $_POST['firstname'], lastname = $_POST['lastname'], email = $_POST['email'], colour = $_POST['colour'] WHERE id = $_SESSION['user'];" ;
+        $query = "UPDATE users SET firstname = $_POST['firstname'], lastname = $_POST['lastname'], email = $_POST['email'], colour = $_POST['colour'] WHERE id = $_SESSION['user'];";
         ); 
         try {  
             $stmt = $db->prepare($query); 
