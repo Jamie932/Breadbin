@@ -12,7 +12,7 @@
 <body>
     <?php require('php/template/navbar.php');?>
     
-    <div id="settingsBox">
+    <div id="settingsBox" style="height:500px;">
         <div class="leftSettings">
             <ul class="settingsList">
                 <li class="settingsListFirst">
@@ -41,8 +41,11 @@
         
         <div class="rightSettings">
             <div class="settingsField">
-                <h3 class="settings">Account Settings</h3>
-                <form action="php/ProfileUpdate.php" method="post">
+                <div class="settingsHeader">
+                    <h3 class="settings">Account Settings</h3>
+                    <p class="settingsDetail">Update your account details</p>
+                </div>
+                <form action="" method="post" clas="accountSettings">
                     <label>First name: </label>
                         <input type="text" name="firstname" class="settings">
                         <br>
@@ -56,10 +59,17 @@
                         <br>
                         <br>
                    <label> Colour: </label>
-                        <input type="text" name="colour" class="settings">
+                        <select class="settings">
+                            <option value="1" style="background:#8AE68A">Green</option>
+                            <option value="2" style="background:#6699FF">Blue</option>
+                            <option value="3" style="background:#FFB540">Orange</option>
+                            <option value="4" style="background:#FF66CC">Pink</option>
+                        </select>
                         <br>
                         <br>
-                        <input type="submit" value="Save">
+                    <label> </label>
+                        
+                        <input type="submit" value="Save" class="saveSettings">
                 </form>
             </div>
         </div>
