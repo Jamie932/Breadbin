@@ -373,16 +373,16 @@ ul.leftSettingsList {
 
 #rightProfile {
     height: auto;
-    margin-top: 48px; 
+    margin-top: 52px;
+    margin-bottom: 20px;
+    margin-right: 20px;
     width: 70%;
     float: right;
 }
 
 #rightProfile .profilePosts {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     max-height: 640px;
-    margin-right: 25px;
 }
 
 #rightProfile .userPostedImg {
