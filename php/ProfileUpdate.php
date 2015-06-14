@@ -40,12 +40,8 @@
         $data['errors']  = $errors;
 		
     } else { //If not then add the user wooo
-        $query = "UPDATE users (firstname, lastname, email, colour) VALUES (:firstname, :lastname, :email, :colour);";
-        $query_params = array( 
-            ':firstname' => $_POST['firstname'], 
-            ':lastname' => $_POST['lastname'],
-            ':email' => $_POST['email'], 
-            ':colour' => $_POST['colour'] 
+
+        $query = "UPDATE users SET firstname = $_POST['firstname'], lastname = $_POST['lastname'], email = $_POST['email'], colour = $_POST['colour'] WHERE id = $_SESSION['user'];" ;
         ); 
         try {  
             $stmt = $db->prepare($query); 
