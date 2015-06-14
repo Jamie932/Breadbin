@@ -37,6 +37,7 @@
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
+            echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
             
         } else if ($row['type'] == "text") {
             echo '<div id="contentPost">';
@@ -46,8 +47,7 @@
                     echo '<div class="right">' . timeAgoInWords(date('m-d g:Ga', strtotime($row['date'])-21600)) . '</div>';
                 echo '</div>';
             echo '</div>';
+            echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
         }
-		
-		echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
 	}
 ?>
