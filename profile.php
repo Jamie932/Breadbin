@@ -74,7 +74,6 @@
                     echo '<div class="thumbnail">';
                     echo ' <a href="" title=""><img src="img/cat.jpg" width="600" height="170" focus-y="3" focus-x="3">';
                         echo '<div class="textOverlay">' . $row['text'] . '</div>';
-                    echo '</div>';
                     echo '</a>';
                     echo '</div>';
                     echo '</li>';
