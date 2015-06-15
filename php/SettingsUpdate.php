@@ -6,12 +6,10 @@
     $data = array();
 
     $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
-    $query = "UPDATE user_settings SET colour = :colour WHERE id = :id";
         $query_params = array( 
             ':firstname' => $_POST['firstname'], 
             ':lastname' => $_POST['lastname'], 
-            ':email' => $_POST['email'],
-            ':colour' => $_POST['colour'],
+            ':email' => $_POST['email']
             ':id' => $_SESSION['user']['id']
         ); 
         try {  
