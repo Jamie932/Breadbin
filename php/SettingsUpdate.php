@@ -3,7 +3,9 @@
     header("Content-Type: application/json", true);
     require("../php/common.php");
 
-$query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
+    $data = array();
+
+    $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
         $query_params = array( 
             ':firstname' => $_POST['firstname'], 
             ':lastname' => $_POST['lastname'], 
@@ -21,7 +23,4 @@ $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email =
     }
 
     echo json_encode($data);
-?>
-
-
 ?>
