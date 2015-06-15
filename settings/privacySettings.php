@@ -1,4 +1,4 @@
-<?php include '../php/init.php'; ?>
+<?php include '$_SERVER[DOCUMENT_ROOT]/public/php/init.php'; ?>
 <html>
 <head>
     <title>Bread Bin</title>
