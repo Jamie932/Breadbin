@@ -25,9 +25,11 @@ $(document).ready(function() {
 			resetForm();
 		
 			if ( !data.success) {
-				if (data.incorrect || !data.validation) {
+				if (data.incorrect) {
 					alert("well shit this is wrong yo");
-				} else {
+                } else if (!data.validation) {
+					alert("You're not validated sorry.");
+                } else {
 					if (data.errors.username) {
 						$('.logUserName').addClass('error');
 						$('<small>' + data.errors.username + '</small>').hide().appendTo("#logUserName-group").fadeIn(700);
