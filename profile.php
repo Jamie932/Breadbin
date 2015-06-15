@@ -69,7 +69,7 @@
                 $row = $stmt->fetch();
 
                 if($row){ 
-                    echo '<div class="contentPostText">' . $row['text'] . '</div>';
+                    echo '$row['text']';
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
