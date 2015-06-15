@@ -41,27 +41,30 @@
         } 
  
         if($login_ok){ 
-			$hash = md5(uniqid(rand(), true));
-            setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/' ); 
-            
-            unset($row['salt']); 
-            unset($row['password']); 
-            
-            $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
-            $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
-            
-            try{ 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-            
-			$data['success'] = true;
-            
+            if($row['active'] == 1) {
+                $hash = md5(uniqid(rand(), true));
+                setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/' ); 
+
+                unset($row['salt']); 
+                unset($row['password']); 
+
+                $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
+                $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
+
+                try{ 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+
+                $data['success'] = true;
+                
+            } else {
+                $data['success'] = false;
+                $data['validated'] = false;
+            }
+
         } else { 
-            print("Login Failed."); 
-            $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8'); 			
-			
 			$data['success'] = false;
 			$data['incorrect'] = true;
         }

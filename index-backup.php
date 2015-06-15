@@ -122,26 +122,6 @@
 				</div>	
 			</div>
 		</div>
-    
-		<div class="verify">
-			<div id="header">
-				<h2>Thank you!</h2>
-			</div>
-			
-			<hr></hr>
-			
-			<div style="font-size:0.9em;">
-                <p>To finish your registeration, please check validate your email.</p> 
-                <p>Once you've clicked on the link in the email, you will be able to access your account.</p>
-			</div>
-    
-			<div class="dockBottom">
-				<ul>
-					<li>Terms of Service</li>
-					<li>Privacy Policy</li>
-				</ul>
-			</div>
-		</div>
 	</div>
 	
 	<script src="js/formRegister.js"></script>

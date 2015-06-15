@@ -50,7 +50,18 @@ $(document).ready(function() {
 				}
 
 			} else {
-				window.location.reload();
+				//window.location.reload();
+                
+                $(".register").fadeOut('normal', function(){
+                $(".verify").fadeIn('normal');        
+                    
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/sendEmail.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                })
 			}
 		});
 		
