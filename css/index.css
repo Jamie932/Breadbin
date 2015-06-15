@@ -130,7 +130,7 @@ a {
 	padding-top:15px;
 }
 
-#mid .register {
+#mid .register, #mid .verify {
     display: none;
 }
 
