@@ -63,9 +63,9 @@ $(document).ready(function() {
                 $(".register").fadeOut('normal', function(){
                     $(".verify").fadeIn('normal');        
 			     });
-            };
-            
-            event.preventDefault();
+            }
         });
+            
+        event.preventDefault();
     });
 });
