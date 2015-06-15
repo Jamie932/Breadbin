@@ -58,7 +58,7 @@
 
     <div id="rightProfile">
         <div class="profilePosts">
-            <script src="js/formPost.js"></script>
+            <script src="php/userPosts.php"></script>
         </div>
     </div>
 </body>
