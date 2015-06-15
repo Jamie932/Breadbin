@@ -41,7 +41,7 @@
         } 
  
         if($login_ok){ 
-            if($row['active'] == 1) {
+            if(intval($row['active']) == 1) {
                 $hash = md5(uniqid(rand(), true));
                 setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/' ); 
 
