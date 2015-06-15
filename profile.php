@@ -10,12 +10,12 @@
     <script src="js/brickwall.js"></script>
     <script type="text/javascript">
 			$(function() {
-				$('ul img').each(function(i, element) {
+				$('ul.post img').each(function(i, element) {
 					var focusY = Math.floor((Math.random()*4)+1);
 					var focusX = Math.floor((Math.random()*4)+1);
 					$(element).attr({'focus-y': focusY, 'focus-x': focusX});
 				});
-				$('ul').brickwall();
+				$('ul.post').brickwall();
 			});
     </script>
 </head>
@@ -55,7 +55,7 @@
 
     <div id="rightProfile">
         <div class="profilePosts">
-            <ul>
+            <ul class="post">
             <?php 
                 require("php/common.php"); 
                 $userID = intval($_GET['id']);
