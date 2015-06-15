@@ -52,19 +52,20 @@ $(document).ready(function() {
 			} else {
 				//window.location.reload();
                 
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/sendEmail.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                });
+                
                 $(".register").fadeOut('normal', function(){
                     $(".verify").fadeIn('normal');        
-                    $.ajax({
-                        type        : 'POST',
-                        url         : 'php/sendEmail.php',
-                        data        : formData,
-                        dataType    : 'json',
-                    encode      : true
-                    }); 
 			     });
             }
             
-        event.preventDefault();
+            event.preventDefault();
+        });
     });
-
 });
