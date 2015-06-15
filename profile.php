@@ -69,7 +69,7 @@
                 $row = $stmt->fetch();
 
                 if($row){ 
-                    echo '$row['text']';
+                    echo $row['text'];
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
