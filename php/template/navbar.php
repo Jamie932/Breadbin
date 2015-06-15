@@ -1,20 +1,13 @@
 <script>
     function logout() {
-        if (isset($_COOKIE['hashkey'])) {
-            $hash = $_COOKIE['hashkey'];
-            
-            alert($hash);
-            $query = "DELETE FROM uniquelogs WHERE hash = :hash";
-            $query_params = array(':hash' => $hash); 
-
-            try{
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            }
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-            
-            unset($hash);
-            window.location.href = "index.php";
+        if (document.cookie.indexOf("hashkey") >= 0) {
+            $.ajax({
+               type: "POST",
+               url: '/php/logout.php',
+               success:function() {
+                   window.location.href = "index.php";
+               }
+            });
         }
     }
 </script>
