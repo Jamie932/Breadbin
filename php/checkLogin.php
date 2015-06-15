@@ -1,5 +1,5 @@
 <?php 
-    require_once('FirePHPCore/fb.php');
+    require_once('../FirePHPCore/fb.php');
     ob_start();
 
 function hasHash() {
