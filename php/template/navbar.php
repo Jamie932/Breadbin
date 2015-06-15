@@ -6,7 +6,9 @@
 	<div class="right">
 		<ul class="nav">		
 			<li class="nav">
-				<a class="navLinks" href="settings/accountSettings.php" >Profile</a>
+                <?php
+				    echo '<a class="navLinks" href="profile.php?id="' . $_SESSION['user']['id'] . '>Profile</a>';
+                ?>
 			</li>
 		</ul>
 	</div>
