@@ -1,4 +1,7 @@
-<?php include 'php/init.php'; ?>
+<?php 
+    include('php/init.php'); 
+    require("php/checkLogin.php");
+?>
 <html>
 <head>
     <title>Bread Bin</title>
