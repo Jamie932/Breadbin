@@ -1,7 +1,4 @@
 <?php 
-    require_once('../FirePHPCore/fb.php');
-    ob_start();
-
 	header("Content-Type: application/json", true);
     require("common.php"); 
 	
@@ -44,15 +41,14 @@
         } 
  
         if($login_ok){ 
+			$hash = md5(uniqid(rand(), true));
+            setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/' ); 
+            
             unset($row['salt']); 
             unset($row['password']); 
             $_SESSION['user'] = $row;  //Remove this later!
-			$hash = md5(uniqid(rand(), true));
                 
 			$data['success'] = true;
-            setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30) ); 
-            
-            fb('The set hashkey: '.$hash);
             
             $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
             $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
