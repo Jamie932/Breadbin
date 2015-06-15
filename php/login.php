@@ -19,7 +19,7 @@
         $data['errors']  = $errors;
 		
     } else {
-	    $query = "SELECT id, username, password, salt, email FROM users WHERE username = :username"; 
+	    $query = "SELECT * FROM users WHERE username = :username"; 
 		$query_params = array(':username' => $_POST['username']); 
 	
         try{ 
