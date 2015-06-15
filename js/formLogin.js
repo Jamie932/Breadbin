@@ -25,7 +25,7 @@ $(document).ready(function() {
 			resetForm();
 		
 			if ( !data.success) {
-				if (data.incorrect) {
+				if (data.incorrect || !data.validation) {
 					alert("well shit this is wrong yo");
 				} else {
 					if (data.errors.username) {
