@@ -1,8 +1,8 @@
 <script>
     function logout() {
         if (isset($_COOKIE['hashkey'])) {
-            $query = "DELETE FROM uniquelogs WHERE hash = :thehash"; 
-            $query_params = array(':thehash' => $_COOKIE['hashkey']);
+            $query = "DELETE FROM uniquelogs WHERE hash = :hash";
+            $query_params = array(':hash' => ($_COOKIE['hashkey'])); 
 
             try{ 
                 $stmt = $db->prepare($query); 
