@@ -2,10 +2,9 @@
 	header("Content-Type: application/json", true);
     require("common.php");
 	
-	$data = array();
     $hash = md5(uniqid(rand(), true));
 
-    $query = "SELECT 1 FROM users WHERE username = :username";
+    $query = "SELECT * FROM users WHERE username = :username";
     $query_params = array(':username' => $_POST['username']); 
     try { 
         $stmt = $db->prepare($query); 
@@ -43,8 +42,6 @@
 
     ';
 
-    $headers = 'From:noreply@yourmums.science' . "\r\n"; // Set from headers
+    $headers = 'From:jamie932@gmail.com' . "\r\n"; // Set from headers
     mail($to, $subject, $message, $headers); // Send our email
-
-    echo json_encode($data);
 ?>
