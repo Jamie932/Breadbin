@@ -35,7 +35,7 @@ function hasHash() {
             } 
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }         
 
-            if ($_SERVER['REQUEST_URI'] == "/index.php") {
+            if ($_SERVER['SCRIPT_NAME'] == "/index.php") {
                 header("Location: main.php");
             }
 
@@ -44,7 +44,7 @@ function hasHash() {
         }
 
     } else {
-        if ($_SERVER['REQUEST_URI'] != "/index.php") {
+        if ($_SERVER['SCRIPT_NAME'] != "/index.php") {
             header("Location: index.php");
         }
     }
