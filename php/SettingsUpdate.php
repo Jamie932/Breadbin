@@ -9,7 +9,7 @@
         $query_params = array( 
             ':firstname' => $_POST['firstname'], 
             ':lastname' => $_POST['lastname'], 
-            ':email' => $_POST['email'] 
+            ':email' => $_POST['email'],
             ':id' => $_SESSION['user']['id']
         ); 
         try {  
