@@ -1,4 +1,4 @@
-<?php include '/php/init.php'; ?>
+<?php include '../php/init.php'; ?>
 <html>
 <head>
     <title>Bread Bin</title>
