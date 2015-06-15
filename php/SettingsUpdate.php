@@ -40,7 +40,6 @@
     }
 	
     if (!empty($_POST['email'])) {
-        
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'The specified email is not valid.';
         } else if {
