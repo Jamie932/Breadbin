@@ -50,21 +50,21 @@
             setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30) ); 
             
             $query = "INSERT INTO uniquelogs(id, hash) VALUES(:userid, :hash)"; 
-            $query_params = array(':userid' => $_POST['id'], ':hash' => $hash); 
+            $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
             
             try{ 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
             } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }             
-        } 
-        else{ 
+            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+            
+        } else { 
             print("Login Failed."); 
             $submitted_username = htmlentities($_POST['username'], ENT_QUOTES, 'UTF-8'); 			
 			
 			$data['success'] = false;
 			$data['incorrect'] = true;
-        } 
+        }
 	
     }
 
