@@ -38,7 +38,7 @@
     ------------------------
 
     Please click this link to activate your account:
-    http://www.yourmums.science/verifyEmail.php?email='.$row['email'].'&hash='.$hash.'
+    http://www.yourmums.science/php/verifyEmail.php?email='.$row['email'].'&hash='.$hash.'
 
     ';
 

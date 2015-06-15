@@ -14,8 +14,8 @@
         $row = $stmt->fetch(); 
 
         if ($row) {
-            $userid = $row['userid']
-
+            $userid = $row['userid'];
+            
             $query = "SELECT * FROM users WHERE id = :id";
             $query_params = array(':id' => $userid); 
             try { 
