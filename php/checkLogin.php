@@ -8,6 +8,7 @@ function hasHash() {
 }
 
     if (hasHash()) {
+        fb('Yes this user has the hashkey.');
         $hash = $_COOKIE['hashkey'];
 
         $query = "SELECT userid, hash FROM uniquelogs WHERE hash = :hash"; 
@@ -44,6 +45,7 @@ function hasHash() {
         }
 
     } else {
+        fb('No this user does not have the hashkey.');
         if ($_SERVER['SCRIPT_NAME'] != "/index.php") {
             header("Location: index.php");
         }

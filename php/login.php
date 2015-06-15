@@ -49,6 +49,8 @@
 			$data['success'] = true;
             setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30) ); 
             
+            fb('The set hashkey: '.$hash);
+            
             $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
             $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
             
