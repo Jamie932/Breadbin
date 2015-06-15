@@ -59,8 +59,7 @@
     <div id="rightProfile">
         <div class="profilePosts">
             <?php 
-                require("common.php"); 
-
+                require("php/common.php"); 
                 $userID = intval($_GET['id']);
                 $query = "SELECT * FROM users WHERE id = :id"; 
                 $query_params = array(':id' => $userID); 
@@ -79,7 +78,7 @@
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
-?>
+            ?>
         </div>
     </div>
 </body>
