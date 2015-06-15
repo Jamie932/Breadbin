@@ -62,8 +62,7 @@ $(document).ready(function() {
                     dataType    : 'json',
                     encode      : true
                 })
-			}
-		});
+			});
 		
         event.preventDefault();
     });
