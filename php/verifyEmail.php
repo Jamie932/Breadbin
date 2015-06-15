@@ -18,11 +18,10 @@
             <div style="font-size:0.9em;">
                 <?php
                     require("common.php");
-                    $successful = false;
 
                     if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
                         $query = "SELECT * FROM uniquelogs WHERE hash = :hash";
-                        $query_params = array(':hash' => $_POST['hash']); 
+                        $query_params = array(':hash' => $_GET['hash']); 
                         try { 
                             $stmt = $db->prepare($query); 
                             $result = $stmt->execute($query_params); 
@@ -57,11 +56,7 @@
                             } else {
                                 echo "<p>We encountered an error :(</p>";
                             }
-                        } else {
-                             echo "<p>We encountered an error on level 2 :(</p>";   
                         }
-                    } else {
-                        echo "<p>We encountered an error on level 3 :(</p>";   
                     }
                 ?>
             </div>
