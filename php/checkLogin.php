@@ -55,7 +55,9 @@
             }
 
         } else {
-            header("Location: index.php");
+            if ($_SERVER['SCRIPT_NAME'] != "/index.php") {
+                header("Location: index.php");
+            }
         }
 
     } else {
