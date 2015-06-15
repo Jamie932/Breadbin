@@ -1,19 +1,16 @@
 <script>
     function logout() {
         if (isset($_COOKIE['hashkey'])) {
-            $hash = $_COOKIE['hashkey'];
-            
-            $query = "DELETE FROM uniquelogs WHERE hash = :hash"; 
-            $query_params = array(':hash' => $hash);
+            $query = "DELETE FROM uniquelogs WHERE hash = :thehash"; 
+            $query_params = array(':thehash' => $_COOKIE['hashkey']);
 
             try{ 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
             } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }   
+            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
             
-            
-            unset($hash);
+            unset($_COOKIE['hashkey']);
             window.location.href = "index.php";
         }
     }
