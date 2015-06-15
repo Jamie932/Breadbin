@@ -10,7 +10,7 @@
 </head>
     
 <body>
-    <?php require('../php/template/navbar.php');?>
+    <?php require('../php/template/settingsNavbar.php');?>
     
     <div id="settingsBox" style="height:500px;">
         <div class="leftSettings">
