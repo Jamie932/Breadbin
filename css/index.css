@@ -48,8 +48,9 @@ small {
 .dockBottom {
     position:absolute;
 	bottom:15;
+    left:0;
+    right:0;
     text-align:center;
-	width:100%;
 	margin-left:-15px;
 	font-size:0.75em;
 }
