@@ -21,6 +21,7 @@ session_start();
            $(".registerBtn").click(function(){
                $(".login").fadeOut('normal', function(){
                 $(".register").fadeIn('normal');
+				$("#mid").addClass('tall');
 				
 				$('.logUserName').removeClass('error');
 				$('.logUserPass').removeClass('error');
@@ -33,6 +34,7 @@ session_start();
            $(".loginBtn").click(function(){
                $(".register").fadeOut('normal', function(){
                 $(".login").fadeIn('normal');
+				$("#mid").removeClass('tall');
 				
 				$('.regUserName').removeClass('error');
 				$('.regUserEmail').removeClass('error');
@@ -46,9 +48,14 @@ session_start();
 </head>
 <body>
     <div id="mid">
-        
-        <div class="login">
-            <h2>Login</h2>
+		<div class="login">
+			<div id="header">
+				<h2>Login</h2>
+				<div class="dockHeader">
+					No account? <a class="registerBtn">Register</a>
+				</div>	
+			</div>
+			
 			<hr></hr>
 			
 			<div class="loginForm">
@@ -63,18 +70,25 @@ session_start();
 					</div>
 					<div class="clearFix"></div>
 					
-					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>
-					
-					<div class="dockBottom">
-						<p style="font-size: 10px; margin-bottom: -18px; margin-top: 18px;">No account?<p>
-						<a class="registerBtn">Register</a>
-					</div>
+					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
 			</div>
-        </div>
-        
-        <div class="register">
-            <h2>Register</h2>
+			<div class="dockBottom">
+				<ul>
+					<li>Terms of Service</li>
+					<li>Privacy Policy</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="register">
+			<div id="header">
+				<h2>Register</h2>
+				<div class="dockHeader">
+					Already have an account? <a class="loginBtn">Login</a>
+				</div>	
+			</div>
+			
 			<hr></hr>
 			
 			<div class="registerForm">
@@ -96,20 +110,22 @@ session_start();
 					
 					<div id="regUserConfirm-group">
 						<input type="password" name="reg_confirmPassword" placeholder="Confirm Password" class="regUserConfirm"/>
-					</div><br>
+					</div>
 					<div class="clearFix"></div>
 					
 	
-					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>
-					
-					<div class="dockBottom">
-						<p style="font-size: 10px; margin-bottom: -18px; margin-top: 18px;">Already have an account?<p>
-						<a class="loginBtn">Login</a>
-					</div> 
+					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
+				
+				<div class="dockBottom">
+					<ul>
+						<li>Terms of Service</li>
+						<li>Privacy Policy</li>
+					</ul>
+				</div>	
 			</div>
-        </div>
-    </div>
+		</div>
+	</div>
 	
 	<script src="js/formRegister.js"></script>
 	<script src="js/formLogin.js"></script>

@@ -25,16 +25,49 @@ small {
     clear:both;   
 }
 
-.dockBottom {
+.dockMiddle {
     position:relative;
-    width:100%;
+	bottom:-15px;
     text-align:center;
-    bottom:-15px;
+	width:100%;
+}
+
+.dockBottom {
+    position:absolute;
+	bottom:15;
+    text-align:center;
+	width:100%;
+	margin-left:-15px;
+	font-size:0.75em;
+}
+
+#header {
+    position:relative;
+}
+
+.dockHeader {
+    position:absolute;
+	bottom:0;
+	right:0;
+	text-align:right;
+	font-weight: normal;
+	font-size: 0.75em;
+}
+
+.dockBottom li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+}
+
+.dockBottom ul {
+	padding-left:0px;
 }
 
 h2 {
     font-size: 1.8em;
     margin-bottom: 15px;
+	margin-top:0px;
 }
 
 hr {
@@ -42,21 +75,27 @@ hr {
 }
 
 #mid {
+	position:relative;
     background-color: #F9FAF9;
     width: 450px;
-    height: 450px;
-    position: absolute;
-    top: 0; 
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 350px;
     margin: auto;
+	margin-top:5%;
+	margin-bottom:5%;
     -moz-border-radius: 5px 5px;
     border-radius: 5px 5px;
     -moz-box-shadow: 0 0 3px #616161;
     -webkit-box-shadow: 0 0 3px #616161;
     box-shadow: 0 0 3px #616161;
     z-index: 1;
+	
+   -webkit-transition: all .5s ease;
+   -moz-transition: all .5s ease;
+   transition: all .5s ease;
+}
+
+.tall {
+	height: 450px !important;
 }
 
 #mid .start {
@@ -83,6 +122,7 @@ a {
 #mid .login, #mid .register {
     padding-left: 15px;
     padding-right: 15px;
+	padding-top:15px;
 }
 
 #mid .register {
