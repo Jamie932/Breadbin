@@ -58,7 +58,7 @@
             <?php 
                 require("php/common.php"); 
                 $userID = intval($_GET['id']);
-                $query = "SELECT * FROM posts WHERE userid = :userid ORDER BY date DESC";  
+                $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                 $query_params = array(':id' => $userID); 
 
                 try{ 
@@ -71,7 +71,6 @@
                 foreach ($posts as $row) {
                     echo $row['text'];
                 }
-
             ?>
         </div>
     </div>
