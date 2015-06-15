@@ -1,16 +1,19 @@
 <script>
     function logout() {
         if (isset($_COOKIE['hashkey'])) {
+            $hash = $_COOKIE['hashkey'];
+            
+            alert($hash);
             $query = "DELETE FROM uniquelogs WHERE hash = :hash";
-            $query_params = array(':hash' => ($_COOKIE['hashkey'])); 
+            $query_params = array(':hash' => $hash); 
 
-            try{ 
+            try{
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
-            } 
+            }
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
             
-            unset($_COOKIE['hashkey']);
+            unset($hash);
             window.location.href = "index.php";
         }
     }
@@ -29,7 +32,7 @@
                 ?>
 			</li>
             
-            <li class="nav"><a href="#" onClick="logout(); return false;">Logout</a></li>
+            <li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>
 		</ul>
 	</div>
 </div>
