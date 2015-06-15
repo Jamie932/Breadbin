@@ -263,7 +263,7 @@ a.contentUsername {
 }
 
 .userRecom:last-of-type {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 h5 {
