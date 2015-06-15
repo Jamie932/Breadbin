@@ -28,7 +28,7 @@
             <div class="upload">
                 <div class="textarea">
                     <form action="php/post.php" method="POST" id="postForm">
-                        <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Have your say..."></textarea>
+                        <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Write a slice..."></textarea>
                     </form>
                 </div>
                 <div class="uploadRest">
