@@ -1,38 +1,27 @@
 <?php
 
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$email = $_POST['email'];
-$id = $_SESSION['user']['id'];
+    header("Content-Type: application/json", true);
+    require("../php/common.php");
 
-$A = count($item_name);
-
-include ("common.php");
-
-try {
-
-    $set_details = "UPDATE users
-                    SET firstname = :firstname,
-                    lastname = :lastname
-                    email = :email
-                    WHERE id = :id";
-
-
-    $STH = $conn->prepare($set_details);
-
-    $i = 0;
-    while($i < $A) {
-        $STH->bindParam(':firstname', $firstname[$i]);
-        $STH->bindParam(':lastname', $lastname[$i]);
-        $STH->bindParam(':email', $email[$i]);
-        $STH->execute();
-        $i++;
+$query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
+        $query_params = array( 
+            ':firstname' => $_POST['firstname'], 
+            ':lastname' => $_POST['lastname'], 
+            ':email' => $_POST['email'] 
+            ':id' => $_SESSION['user']['id']
+        ); 
+        try {  
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+	
+        $data['success'] = true;
+        $data['message'] = 'Success!';
     }
-}
-catch(PDOException $e) {  
-    echo "I'm sorry, but there was an error updating the database.";  
-    file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
-}
+
+    echo json_encode($data);
+?>
 
 
 ?>
