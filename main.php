@@ -1,5 +1,6 @@
 <?php 
-    include 'php/init.php';
+    include('php/init.php');
+    require("php/checkLogin.php");
 ?>
 <html>
 <head>

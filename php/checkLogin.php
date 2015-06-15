@@ -1,11 +1,12 @@
 <?php 
+    session_start();
 
-function hasHash() {
-    if(isset($_COOKIE['hashkey'])) {
-        return true;
+    function hasHash() {
+        if(isset($_COOKIE['hashkey'])) {
+            return true;
+        }
+        return false;
     }
-    return false;
-}
 
     if (hasHash()) {
         $hash = $_COOKIE['hashkey'];
@@ -35,7 +36,21 @@ function hasHash() {
             } 
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }         
 
-            if ($_SERVER['REQUEST_URI'] == "/index.php") {
+            if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+                $query = "SELECT id, username, email FROM users WHERE id = :userid"; 
+                $query_params = array(':userid' => $row['userid']); 
+
+                try{ 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+                $row = $stmt->fetch();
+
+                $_SESSION['user'] = $row;
+            } 
+            
+            if ($_SERVER['SCRIPT_NAME'] == "/index.php") {
                 header("Location: main.php");
             }
 
@@ -44,7 +59,7 @@ function hasHash() {
         }
 
     } else {
-        if ($_SERVER['REQUEST_URI'] != "/index.php") {
+        if ($_SERVER['SCRIPT_NAME'] != "/index.php") {
             header("Location: index.php");
         }
     }

@@ -41,13 +41,11 @@
         } 
  
         if($login_ok){ 
+			$hash = md5(uniqid(rand(), true));
+            setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/' ); 
+            
             unset($row['salt']); 
             unset($row['password']); 
-            $_SESSION['user'] = $row;  //Remove this later!
-			$hash = md5(uniqid(rand(), true));
-                
-			$data['success'] = true;
-            setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30) ); 
             
             $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
             $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
@@ -57,6 +55,8 @@
                 $result = $stmt->execute($query_params); 
             } 
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+            
+			$data['success'] = true;
             
         } else { 
             print("Login Failed."); 

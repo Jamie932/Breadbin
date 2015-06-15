@@ -25,7 +25,16 @@
 				
 		if($userrow){ 
 			$username = $userrow['username'];
-		}
+        } else {
+            $query = "DELETE FROM posts WHERE userid = :userid"; 
+            $query_params = array(':userid' => $row['userid']); 
+
+            try{ 
+                $stmt = $db->prepare($query); 
+                $result = $stmt->execute($query_params); 
+            } 
+            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        }
 		
         if ($row['type'] == "image") {     
             echo '<div id="contentPost">';
