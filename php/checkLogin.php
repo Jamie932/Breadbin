@@ -44,7 +44,9 @@ function hasHash() {
         }
 
     } else {
-        header("Location: index.php");
+        if ($_SERVER['REQUEST_URI'] != "/index.php") {
+            header("Location: index.php");
+        }
     }
 
 ?> 
