@@ -61,7 +61,7 @@
                         <br>
                         <br>
                    <label> Colour: </label>
-                        <select class="settings">
+                        <select name="colour" class="settings">
                             <option value="1" style="background:#8AE68A">Green</option>
                             <option value="2" style="background:#6699FF">Blue</option>
                             <option value="3" style="background:#FFB540">Orange</option>
