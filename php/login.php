@@ -1,4 +1,7 @@
 <?php 
+    require_once('FirePHPCore/fb.php');
+    ob_start();
+
 	header("Content-Type: application/json", true);
     require("common.php"); 
 	
