@@ -1,23 +1,22 @@
 <?php 
-        require("php/common.php"); 
+        require("common.php"); 
 
-        foreach ($posts as $row) {
-            $query = "SELECT * FROM posts WHERE id = :id"; 
-            $query_params = array(':id' => $row['userid']); 
+                $userID = intval($_GET['id']);
+                $query = "SELECT * FROM users WHERE id = :id"; 
+                $query_params = array(':id' => $userID); 
 
-            try{ 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-            $userrow = $stmt->fetch();
-            $username = 'Unknown';
+                try{ 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+                $row = $stmt->fetch();
 
-        if ($row['type'] == "text") {
-            echo '<div class="contentPostText">' . $row['text'] . '</div>';
-        }
-	}
-        } else {
-            echo "<div id=\"errormsg\"> User not found </div>";
-        }
+                if($row){ 
+                    echo 'User ID: ' . $row['id'] . '<br>';
+                    echo 'Username: ' . $row['username'] . '<br>';
+                    echo 'Email: ' . $row['email'];
+                } else {
+                    echo "<div id=\"errormsg\"> User not found </div>";
+                }
 ?>
