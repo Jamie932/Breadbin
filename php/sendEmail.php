@@ -14,6 +14,7 @@
 
     $row = $stmt->fetch(); 
     $userid = $row['id'];
+    $username = $row['username'];
 
     $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
     $query_params = array(':userid' => $userid, ':hash' => $hash); 
@@ -24,8 +25,7 @@
     } 
     catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
 
-
-    $to      = $row['email'];
+    $to      = $_POST['email'];
     $subject = 'Breadbin | Email Verification'; 
     $message = '
 
@@ -34,14 +34,14 @@
 
     ------------------------
     Username: '.$username.'
-    Password: something here
+    Password: '.$_POST['password'].'
     ------------------------
 
     Please click this link to activate your account:
-    http://www.yourmums.science/verify.php?email='.$row['email'].'&hash='.$hash.'
+    http://www.yourmums.science/verifyEmail.php?email='.$row['email'].'&hash='.$hash.'
 
     ';
 
-    $headers = 'From:jamie932@gmail.com' . "\r\n"; // Set from headers
+    $headers = 'From:noreply@breadbin.com' . "\r\n"; // Set from headers
     mail($to, $subject, $message, $headers); // Send our email
 ?>
