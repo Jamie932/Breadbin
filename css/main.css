@@ -195,9 +195,6 @@ a.contentUsername {
     padding-left: 10px;
     padding-top: 10px;
     height: auto;
-    border-bottom-color: #616161;
-    border-bottom-width:1px;
-    border-bottom-style: solid;
 }
 
 /* Sidebar textarea (main.css) */
@@ -263,6 +260,10 @@ a.contentUsername {
     border-bottom-color: #616161;
     border-bottom-width: 1px;
     margin-top: 10px;
+}
+
+.userRecom:last-of-type {
+    border-bottom: none;
 }
 
 h5 {
