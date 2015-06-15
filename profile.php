@@ -36,7 +36,6 @@
                 require("php/common.php"); 
                 $userID = intval($_GET['id']);
                 $query = "SELECT * FROM users WHERE id = :id"; 
-                $query = "SELECT * FROM posts WHERE id = :id"; 
                 $query_params = array(':id' => $userID); 
 
                 try{ 
@@ -50,7 +49,6 @@
                     echo 'User ID: ' . $row['id'] . '<br>';
                     echo 'Username: ' . $row['username'] . '<br>';
                     echo 'Email: ' . $row['email'];
-                    echo 'Email: ' . $row['text'];
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
