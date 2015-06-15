@@ -55,26 +55,7 @@
 
     <div id="rightProfile">
         <div class="profilePosts">
-            <ul>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="1500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="250" height="340" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="310" height="170" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-            </ul>
+            <script src="js/formPost.js"></script>
         </div>
     </div>
 </body>
