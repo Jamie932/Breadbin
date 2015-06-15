@@ -11,6 +11,23 @@
     $data = array();
     $errors = array();
 
+    if (!empty($_POST['email'])) {
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'The specified email is not valid.';
+	} else {
+       $query = "SELECT 1 FROM users WHERE email = :email";
+       $query_params = array(':email' => $_POST['email']); 
+        try { 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());} 
+		
+        $row = $stmt->fetch(); 
+		if($row){ $errors['email'] = 'This email address is already registered.'; }
+	   }
+    }
+
         $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
         
         $query_params = array( 
