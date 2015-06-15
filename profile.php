@@ -60,8 +60,9 @@
         <div class="profilePosts">
             <?php 
                 require("php/common.php"); 
+
                 $userID = intval($_GET['id']);
-                $query = "SELECT * FROM users WHERE id = :id"; 
+                $query = "SELECT * FROM posts ORDER BY date DESC";  
                 $query_params = array(':id' => $userID); 
 
                 try{ 
@@ -72,9 +73,7 @@
                 $row = $stmt->fetch();
 
                 if($row){ 
-                    echo 'User ID: ' . $row['id'] . '<br>';
-                    echo 'Username: ' . $row['username'] . '<br>';
-                    echo 'Email: ' . $row['email'];
+                    echo '<div class="contentPostText">' . $row['text'] . '</div>';
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
