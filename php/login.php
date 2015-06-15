@@ -46,9 +46,6 @@
             
             unset($row['salt']); 
             unset($row['password']); 
-            $_SESSION['user'] = $row;  //Remove this later!
-                
-			$data['success'] = true;
             
             $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
             $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
@@ -58,6 +55,8 @@
                 $result = $stmt->execute($query_params); 
             } 
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+            
+			$data['success'] = true;
             
         } else { 
             print("Login Failed."); 
