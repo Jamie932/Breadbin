@@ -55,26 +55,25 @@
 
     <div id="rightProfile">
         <div class="profilePosts">
-            <ul>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="1500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="250" height="340" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="310" height="170" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-                <li>
-                    <a href="" title=""><img src="img/cat.jpg" width="500" height="390" focus-y="3" focus-x="3"></a>
-                </li>
-            </ul>
+            <?php 
+                require("php/common.php"); 
+                $userID = intval($_GET['id']);
+                $query = "SELECT * FROM posts ORDER BY date DESC";  
+                $query_params = array(':id' => $userID); 
+
+                try{ 
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params); 
+                } 
+                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+                $row = $stmt->fetch();
+
+                if($row){ 
+                    echo '<div class="contentPostText">' . $row['text'] . '</div>';
+                } else {
+                    echo "<div id=\"errormsg\"> User not found </div>";
+                }
+            ?>
         </div>
     </div>
 </body>
