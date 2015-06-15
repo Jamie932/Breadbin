@@ -7,7 +7,7 @@
 		<ul class="nav">		
 			<li class="nav">
                 <?php
-				    echo '<a class="navLinks" href="profile.php?id="' . $_SESSION['user']['id'] . '>Profile</a>';
+				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">Profile</a>';
                 ?>
 			</li>
 		</ul>
