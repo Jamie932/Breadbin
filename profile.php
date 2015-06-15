@@ -68,11 +68,10 @@
                 catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
                     $posts = $stmt->fetchAll();
  
-                    foreach ($posts as $row) {
+                foreach ($posts as $row) {
                     echo $row['text'];
-                } else {
-                    echo "<div id=\"errormsg\"> User not found </div>";
                 }
+
             ?>
         </div>
     </div>
