@@ -4,7 +4,7 @@
             $.ajax({
                type: "POST",
                url: '/php/logout.php',
-               done:function(data) {
+               success:function(data) {
                    alert("done");
                    window.location.href = "index.php";
                }
