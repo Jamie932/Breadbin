@@ -10,6 +10,13 @@
 
     $data = array();
     $errors = array();
+    $str = '      ';
+
+    if (!empty($_POST['firstname'])) {
+        if(ctype_space($str)) {
+            $errors['firstname'] = 'This firstname bad.';  
+        }
+    }
 
     if (!empty($_POST['email'])) {
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -24,13 +31,14 @@
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());} 
 		
         $row = $stmt->fetch(); 
-		if($row){ $errors['email'] = 'This email address is already registered.'; }
+            if($row){ $errors['email'] = 'This email address is already registered.'; }
 	   }
     }
 
     if (!empty($errors)) { // Were any errors found? If so do not continue and feed back the errors to HTML.
         $data['success'] = false;
-        echo 'soz luv';
+        $data['errors']  = $errors;
+        
     } else {
     
         $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
