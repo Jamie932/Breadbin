@@ -72,12 +72,12 @@
                 foreach ($posts as $row) {
                     echo '<li>';
                     echo '<div class="thumbnail">';
-                    echo ' <a href="" title=""><img src="img/cat.jpg" width="600" height="170" focus-y="3" focus-x="3">'
+                    echo ' <a href="" title=""><img src="img/cat.jpg" width="600" height="170" focus-y="3" focus-x="3">';
                         echo '<div class="contentPostText">' . $row['text'] . '</div>';
                     echo '</div>';
-                    echo '</a>'
-                    echo '</div>'
-                    echo '</li>'
+                    echo '</a>';
+                    echo '</div>';
+                    echo '</li>';
                 }
             ?>
             </ul>
