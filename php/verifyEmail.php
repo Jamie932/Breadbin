@@ -43,7 +43,7 @@
                             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
 
                             $row = $stmt->fetch(); 
-
+    
                             if ($row) {
                                 $query = "UPDATE users SET active=1 WHERE id = :id";
                                 $query_params = array(':id' => $userid); 
@@ -57,7 +57,11 @@
                             } else {
                                 echo "<p>We encountered an error :(</p>";
                             }
+                        } else {
+                             echo "<p>We encountered an error on level 2 :(</p>";   
                         }
+                    } else {
+                        echo "<p>We encountered an error on level 3 :(</p>";   
                     }
                 ?>
             </div>
