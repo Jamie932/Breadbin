@@ -2,7 +2,6 @@
 	header("Content-Type: application/json", true);
     require("common.php"); 
 
-	$data = array();
     $hash = $_COOKIE['hashkey'];
 
     $query = "DELETE FROM uniquelogs WHERE hash = :hash";
@@ -15,7 +14,4 @@
     catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
 
     unset($hash);
-    $data['success'] = true;
-	
-    echo json_encode($data);
 ?> 

@@ -1,13 +1,13 @@
 <script>
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
-            alert("Hi");
             $.ajax({
                type: "POST",
-               url: '/php/logout.php',
-               success:function() {
-                   window.location.href = "index.php";
-               }
+               url: '/php/logout.php'
+            });
+            
+            .done(function(data) {
+                window.location.href = "index.php";
             });
         }
     }
