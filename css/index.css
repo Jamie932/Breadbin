@@ -32,15 +32,6 @@ small {
 	width:100%;
 }
 
-.dockBottom {
-    position:absolute;
-	bottom:15;
-    text-align:center;
-	width:100%;
-	margin-left:-15px;
-	font-size:0.75em;
-}
-
 #header {
     position:relative;
 }
@@ -54,10 +45,23 @@ small {
 	font-size: 0.75em;
 }
 
+.dockBottom {
+    position:absolute;
+	bottom:15;
+    text-align:center;
+	width:100%;
+	margin-left:-15px;
+	font-size:0.75em;
+}
+
 .dockBottom li {
 	display: inline;
 	list-style-type: none;
 	padding-right: 20px;
+}
+
+.dockBottom li:last-of-type {
+    padding-right:0px;   
 }
 
 .dockBottom ul {
