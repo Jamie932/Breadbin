@@ -28,6 +28,10 @@
 	   }
     }
 
+    if (!empty($errors)) { // Were any errors found? If so do not continue and feed back the errors to HTML.
+        $data['success'] = false;
+        echo 'soz luv';
+    
         $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
         
         $query_params = array( 
