@@ -30,7 +30,7 @@
                 ?>
 			</li>
             
-            <li class="nav"><a onClick="logout(); return false;">Logout</a></li>
+            <li class="nav"><a href="#" onClick="logout(); return false;">Logout</a></li>
 		</ul>
 	</div>
 </div>
