@@ -31,6 +31,7 @@
     if (!empty($errors)) { // Were any errors found? If so do not continue and feed back the errors to HTML.
         $data['success'] = false;
         echo 'soz luv';
+    } else {
     
         $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
         
@@ -48,6 +49,7 @@
         
         $data['success'] = true;
         $data['message'] = 'Success!';
+    }
 
     echo json_encode($data);
 ?>
