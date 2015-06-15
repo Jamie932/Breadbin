@@ -49,7 +49,7 @@ $(document).ready(function() {
 					$('<small>' + data.errors.email + '</small>').hide().appendTo("#regUserEmail-group").fadeIn(700);
 				}
 
-			} else {
+			} else { 
 				//window.location.reload();
                 
                 $.ajax({
