@@ -1,6 +1,7 @@
 <script>
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
+            alert("Hi");
             $.ajax({
                type: "POST",
                url: '/php/logout.php',
