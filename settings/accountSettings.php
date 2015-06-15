@@ -47,7 +47,7 @@
                     <h3 class="settings">Account Details</h3>
                     <p class="settingsDetail">Update your account details</p>
                 </div>
-                <form action="" method="post" class="accountSettings">
+                <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
                         <input type="text" name="firstname" class="settings">
                         <br>
