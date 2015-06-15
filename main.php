@@ -10,6 +10,10 @@
     <script src="js/jquery.cookie.js"></script>
 </head>
 <body>
+    <noscript>
+      <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
+    </noscript>    
+    
    <?php require('php/template/navbar.php');?>
     
     <div id="break"></div>

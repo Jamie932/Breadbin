@@ -47,6 +47,10 @@ session_start();
     </script>
 </head>
 <body>
+    <noscript>
+      <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
+    </noscript>        
+    
     <div id="mid">
 		<div class="login">
 			<div id="header">
