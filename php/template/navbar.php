@@ -5,7 +5,8 @@
                type: "POST",
                url: '/php/logout.php',
                success:function(data) {
-                   window.location.href = document.location.origin + "/index.php";
+                   alert(document.location.origin + "/index.php");
+                   window.location.href = document.location.origin;
                }
             });
         }
