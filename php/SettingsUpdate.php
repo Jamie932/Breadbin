@@ -59,18 +59,11 @@
             ':email' => $_POST['email'],
             ':id' => $_SESSION['user']['id']
         ); 
-        try {  
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
         
-        $query = "UPDATE user_settings SET 
-            colour = :colour
-            WHERE user_id = :id";
-        
+        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPILICATE KEY UPDATE colour = VALUES (:colour)";
+
         $query_params = array( 
-            ':firstname' => $_POST['firstname'], 
+            ':colour' => $_POST['colour'], 
             ':id' => $_SESSION['user']['id']
         ); 
         try {  
