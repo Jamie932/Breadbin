@@ -1,14 +1,8 @@
-html, body {
-    min-height: 100% !important;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-}
-
 body {
     background-color: #F6F6F6;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
+    margin-top:-48px;
 }
 
 body.profile {
@@ -504,7 +498,6 @@ p.settingsExplain {
     background-color: #bfbfbf;
     position:relative;
     height: 100%;
-    margin-top:47px;
 }
 
 #leftProfile .userInfo {
