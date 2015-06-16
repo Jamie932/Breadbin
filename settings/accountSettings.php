@@ -70,11 +70,7 @@
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" value="<?php if (isset($usersname)) {
-                    echo $firstname;
-                } else {
-                    echo "<div id=\"errormsg\"> User not found </div>";
-                } ?>">
+                        <input type="text" name="firstname" class="settings" value="<?php echo $firstname ?>">
                         <br>
                         <br>
                     <label>Last name: </label>
