@@ -124,7 +124,7 @@ a {
     z-index: 1;
 }
 
-#mid .login, #mid .register {
+#mid .login, #mid .register, mid .verify {
     padding-left: 15px;
     padding-right: 15px;
 	padding-top:15px;
