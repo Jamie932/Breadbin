@@ -27,9 +27,7 @@ $(document).ready(function() {
                 }
 			} else {
                 $('#error').css({"height":"0px"}); 
-                $('#error').fadeOut(500, function() {
-                    $('#error').empty();
-                });
+                $('#error').empty();
 
                 errorExists = false;
 				window.location.replace("main.php");
