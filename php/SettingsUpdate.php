@@ -68,6 +68,20 @@
         
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
         
+        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPILICATE KEY UPDATE colour = :colour";
+
+        $query_params = array( 
+            ':colour' => $_POST['colour'], 
+            ':id' => $_SESSION['user']['id']
+        ); 
+        
+        try {  
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        
+        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        
         $data['success'] = true;
         $data['message'] = 'Success!';
     }
