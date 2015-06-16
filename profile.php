@@ -14,13 +14,13 @@
 
     if($row){ 
         $userid = $row['id'];
-        $username = $row['username'];
+        $usersname = $row['username'];
         $email = $row['email'];
     }
 ?>
 <html>
 <head>
-    <title>Breadbin - User: <?php print (isset($username) ? $username : 'Unknown') ?></title>
+    <title>Breadbin - User: <?php print (isset($usersname) ? $usersname : 'Unknown') ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -49,10 +49,10 @@
     <div id="leftProfile">
         <div class="userInfo">
             <?php 
-                if ($username) {
-                    echo 'User ID: ' . $row['id'] . '<br>';
-                    echo 'Username: ' . $row['username'] . '<br>';
-                    echo 'Email: ' . $row['email'];
+                if (isset($usersname)) {
+                    echo 'User ID: ' . $userid . '<br>';
+                    echo 'Username: ' . $usersname . '<br>';
+                    echo 'Email: ' . $email;
                 } else {
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
