@@ -180,12 +180,9 @@ a.contentUsername {
     height: auto;
     border-width:1px;
     border-style: solid;
-    border-color: #616161;
+    border-color: #DDD;
     -moz-border-radius: 5px 5px;
     border-radius: 5px 5px;
-    -moz-box-shadow: 0 0 1px #616161;
-    -webkit-box-shadow: 0 0 1px #616161;
-    box-shadow: 0 0 1px #616161;
     background-color: #fff;
 }
 
