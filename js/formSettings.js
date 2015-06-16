@@ -9,7 +9,7 @@ $(document).ready(function() {
 
         $.ajax({
             type        : 'POST',
-            url         : '../php/settingsUpdate.php',
+            url         : '../php/SettingsUpdate.php',
             data        : formData,
             dataType    : 'json',
             encode      : true

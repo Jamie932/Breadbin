@@ -48,7 +48,7 @@
         
     } else {
     
-        /*$query = "UPDATE users SET 
+        $query = "UPDATE users SET 
             firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
             lastname = COALESCE(NULLIF(:lastname, ''),lastname), 
             email = COALESCE(NULLIF(:email, ''),email)
@@ -59,14 +59,8 @@
             ':lastname' => $_POST['lastname'], 
             ':email' => $_POST['email'],
             ':id' => $_SESSION['user']['id']
-        );*/ 
+        );
         
-        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPILICATE KEY UPDATE colour = :colour";
-
-        $query_params = array( 
-            ':colour' => $_POST['colour'], 
-            ':id' => $_SESSION['user']['id']
-        ); 
         try {  
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
