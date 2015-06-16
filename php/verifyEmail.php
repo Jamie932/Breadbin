@@ -52,7 +52,7 @@
                                 } 
                                 catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }  
 
-                                echo "<p>You've successfully validated your email.</p>";
+                                echo "<p>You've successfully validated your email.</p><p>Please click <a class='loginBtn'>here</a> to login.";
                             } else {
                                 echo "<p>We encountered an error :(</p>";
                             }
