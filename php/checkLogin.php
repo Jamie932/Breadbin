@@ -36,7 +36,7 @@
             } 
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }         
 
-            if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+            if(!isset($_SESSION['user']) || empty($_SESSION['user']) || ($_SESSION['user']['id'] != $row['userid'])) {
                 $query = "SELECT id, username, email FROM users WHERE id = :userid"; 
                 $query_params = array(':userid' => $row['userid']); 
 
