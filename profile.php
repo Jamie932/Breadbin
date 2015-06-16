@@ -104,6 +104,7 @@
                 }
             ?>
         </div>
+    </div>
     
     <div id="rightProfile">
         <div class="profilePosts">
