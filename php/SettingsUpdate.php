@@ -1,6 +1,7 @@
 <?php
     header("Content-Type: application/json", true);
     require("../php/common.php");
+    
 
     function checkLength($s, $min, $max) {
 		if (strlen($s) > $max) { return 2; }
