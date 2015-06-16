@@ -57,7 +57,7 @@
                                 echo "<p>Your email could not be validated - please tell an administrator.</p>";
                             }
                         } else {
-                            echo "<p>The URL is either invalid or you have already activated your account.</p>";   
+                            echo "<p>This URL is either invalid or you have already activated your account.</p>";   
                         }
                     } else {
                          echo "<p>Invalid URL - please use the link within your email.</p>";
