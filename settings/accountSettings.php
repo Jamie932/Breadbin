@@ -15,9 +15,9 @@
 
     if($row){ 
         $userid = $row['id'];
-        $usersname = $row['username'];
         $email = $row['email'];
         $firstname = $row['firstname'];
+        $firstname = $row['lastname'];
     }
 ?>
 <html>
@@ -74,11 +74,11 @@
                         <br>
                         <br>
                     <label>Last name: </label>
-                        <input type="text" name="lastname" class="settings">
+                        <input type="text" name="lastname" class="settings" value="<?php echo $lastname ?>">
                         <br>
                         <br>
                     <label>Email: </label>
-                        <input type="text" name="email" class="settings">
+                        <input type="text" name="email" class="settings" value="<?php echo $email ?>">
                         <br>
                         <br>
                    <label> Colour: </label>
