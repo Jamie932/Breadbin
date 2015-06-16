@@ -29,12 +29,16 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/brickwall.js"></script>
     <script>
+        $(document).ready(function(){
         $( "#followBut" ).click(function() {
     
         $.ajax({
             type        : 'POST',
             url         : 'php/follow.php'
-        })})
+        
+        })
+        })
+        });
     </script>
     <script type="text/javascript">
 			$(function() {
