@@ -133,6 +133,8 @@
 			<div style="font-size:0.9em;">
                 <p>To finish your registeration, please check validate your email.</p> 
                 <p>Once you've clicked on the link in the email, you will be able to access your account.</p>
+                <br>
+                <p>Can't find the email? Please try to ... </p>
 			</div>
     
 			<div class="dockBottom">
