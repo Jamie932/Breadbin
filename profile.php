@@ -20,7 +20,7 @@
 ?>
 <html>
 <head>
-    <title>Breadbin - User <?php print $username ?></title>
+    <title>Breadbin - User: <?php print $username ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
