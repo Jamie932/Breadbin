@@ -1,7 +1,7 @@
 <?php
-    include('php/init.php');
-    require("php/checkLogin.php");
-    require("php/common.php");
+    include('../php/init.php');
+    require("../php/checkLogin.php");
+    require("../php/common.php");
 
     $query = "SELECT * FROM users WHERE id = :id"; 
     $query_params = array(':id' => intval($_GET['id'])); 
