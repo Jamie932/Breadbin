@@ -72,7 +72,7 @@
                 foreach ($posts as $row) {
                     echo '<li>';
                     echo '<div class="thumbnail">';
-                    echo '<a href="" title="">';?>
+                    echo '<a class="profilePosts" href="" title="">';?>
                      <script>
                         function random_imglink(){
                             var myimages=new Array()
