@@ -71,12 +71,6 @@
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
 			</div>
-			<div class="dockBottom">
-				<ul>
-					<li>Terms of Service</li>
-					<li>Privacy Policy</li>
-				</ul>
-			</div>
 		</div>
 		
 		<div class="register">
@@ -114,13 +108,6 @@
 	
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
-				
-				<div class="dockBottom">
-					<ul>
-						<li>Terms of Service</li>
-						<li>Privacy Policy</li>
-					</ul>
-				</div>	
 			</div>
 		</div>
     
@@ -137,14 +124,14 @@
                 <br>
                 <p>Can't find the email? Please try to ... </p>
 			</div>
-    
-			<div class="dockBottom">
-				<ul>
-					<li>Terms of Service</li>
-					<li>Privacy Policy</li>
-				</ul>
-			</div>
 		</div>
+    
+        <div class="dockBottom">
+            <ul>
+                <li>Terms of Service</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
 	</div>
 	
 	<script src="js/formRegister.js"></script>
