@@ -20,7 +20,7 @@
 
     if (!empty($_POST['lastname'])) {
         if(ctype_space($_POST['lastname'])) {
-            $errors['lastname'] = 'lastname can\'t have spaces.';  
+            $errors['lastname'] = 'Lastname can\'t have spaces.';  
         }
     }
 
@@ -47,7 +47,7 @@
         
     } else {
     
-        $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
+        $query = "UPDATE users SET firstname = IF(trim(:firstname)="", firstname, :firstname), lastname = IF(trim(:lastname)="", lastname, :lastname), email = IF(trim(:email)="", email, :email) WHERE id = :id";
         
         $query_params = array( 
             ':firstname' => $_POST['firstname'], 
