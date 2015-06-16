@@ -18,8 +18,7 @@ $(document).ready(function() {
 			if (!data.success) {
                 $('#error').css({"height":"30px"});
                 
-                var html = "<b>Error:</b> " + data.errors.text;
-                alert(html);
+                var html = "<b>Error:</b> ".concat(data.errors.text);
                 
                 $(html).hide().appendTo('#error').fadeIn(1000);
 			} else {
