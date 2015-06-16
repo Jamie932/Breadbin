@@ -1,9 +1,10 @@
-$(document).ready(function() {    
+$(document).ready(function() {   
+    var errorExists = false; 
+    
     $('#postForm').submit(function(event) {
         var formData = {
             'text' : $('.postText').val()
         };
-        var errorExists = false;
 
         $.ajax({
             type        : 'POST',
