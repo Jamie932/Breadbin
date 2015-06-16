@@ -37,10 +37,7 @@
             catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());};
             $row = $stmt->fetch(); 
             
-            if($row){ 
-                var_dump($row['email']);
-                var_dump($_SESSION['user']['email']);
-                
+            if($row){                
                 if ($row['email'] != $_SESSION['user']['email']) {
                     $errors['email'] = 'This email address has already been registered';   
                 } else {
@@ -91,7 +88,7 @@
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
         
         
-        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPILICATE KEY UPDATE colour = :colour";
+        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPLICATE KEY UPDATE colour=:colour";
 
         $query_params = array( 
             ':colour' => $_POST['colour'], 
