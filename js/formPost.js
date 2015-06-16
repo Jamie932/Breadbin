@@ -24,11 +24,14 @@ $(document).ready(function() {
         
                     errorExists = true;
                     
-                } else {
-                     $('#error').css({"height":"0px"}); 
-                    errorExists = false;
                 }
 			} else {
+                $('#error').css({"height":"0px"}); 
+                $('#error').fadeOut(500, function() {
+                    $('#error').empty();
+                });
+
+                errorExists = false;
 				window.location.replace("main.php");
 			}
 		});
