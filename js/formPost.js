@@ -3,6 +3,7 @@ $(document).ready(function() {
         var formData = {
             'text' : $('.postText').val()
         };
+        var errorExists = false;
 
         $.ajax({
             type        : 'POST',
@@ -16,10 +17,16 @@ $(document).ready(function() {
 			console.log(data);
 		
 			if (!data.success) {
-                $('#error').css({"height":"30px"});
-                
-                
-                $('<div class="error"><b>Error:</b> ' + data.errors.text+ '</div>').hide().appendTo($('#error')).fadeIn(1000);
+                if (!errorExists) {
+                    $('#error').css({"height":"30px"});
+                    $('<div class="error"><b>Error:</b> ' + data.errors.text+ '</div>').hide().appendTo($('#error')).fadeIn(1000);
+        
+                    errorExists = true;
+                    
+                } else {
+                     $('#error').css({"height":"0px"}); 
+                    errorExists = false;
+                }
 			} else {
 				window.location.replace("main.php");
 			}
