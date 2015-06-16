@@ -60,7 +60,7 @@
             ':id' => $_SESSION['user']['id']
         );*/ 
         
-        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPILICATE KEY UPDATE colour = VALUES (:colour)";
+        $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPILICATE KEY UPDATE colour = :colour";
 
         $query_params = array( 
             ':colour' => $_POST['colour'], 
