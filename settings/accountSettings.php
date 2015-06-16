@@ -17,7 +17,7 @@
         $userid = $row['id'];
         $email = $row['email'];
         $firstname = $row['firstname'];
-        $firstname = $row['lastname'];
+        $lastname = $row['lastname'];
     }
 ?>
 <html>
@@ -77,7 +77,7 @@
                         <br>
                         <br>
                     <label>Email: </label>
-                        <input type="text" name="email" class="settings" id="setEmail" alue="<?php echo $email ?>">
+                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email ?>">
                         <br>
                         <br>
                    <label> Colour: </label>
@@ -96,5 +96,6 @@
             </div>
         </div>
     </div>
+    <script src="../js/formSettings.js"></script>
 </body>
 </html>
