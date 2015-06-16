@@ -17,7 +17,7 @@ $(document).ready(function() {
 		
 			if (!data.success) {
                 $('#error').css({"height":"30px"});
-                $('#error').innerHtml = '<b>Error:</b> ' + data.errors.text;
+                $("#error").append("<b>Error:</b> " + data.errors.text);
 			} else {
 				window.location.replace("main.php");
 			}
