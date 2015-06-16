@@ -28,7 +28,7 @@
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'The specified email is not valid.';
 	   } else {
-            $query = "SELECT 1 FROM users WHERE email = :email";
+            $query = "SELECT * FROM users WHERE email = :email";
             $query_params = array(':email' => $_POST['email']); 
             try { 
                 $stmt = $db->prepare($query); 
