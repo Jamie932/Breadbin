@@ -29,7 +29,8 @@
     <script src="js/jquery.cookie.js"></script>
     <script src="js/brickwall.js"></script>
     <script>
-        function getUrlParameter(sParam)
+        $(document).ready(function(){
+    function getUrlParameter(sParam)
 {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -42,8 +43,11 @@
         }
     }
 }   
-        $(document).ready(function(){     
-            
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+                 
         $( "#followBut" ).click(function() {
     
         var formData = {
