@@ -62,20 +62,26 @@
                 firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
                 lastname = COALESCE(NULLIF(:lastname, ''),lastname)
                 WHERE id = :id";
+            
+            $query_params = array( 
+                ':firstname' => $_POST['firstname'], 
+                ':lastname' => $_POST['lastname'],
+                ':id' => $_SESSION['user']['id']
+            );            
         } else {            
             $query = "UPDATE users SET 
                 firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
                 lastname = COALESCE(NULLIF(:lastname, ''),lastname), 
                 email = COALESCE(NULLIF(:email, ''),email)
                 WHERE id = :id";
+            
+            $query_params = array( 
+                ':firstname' => $_POST['firstname'], 
+                ':lastname' => $_POST['lastname'], 
+                ':email' => $_POST['email'],
+                ':id' => $_SESSION['user']['id']
+            );            
         }
-        
-        $query_params = array( 
-            ':firstname' => $_POST['firstname'], 
-            ':lastname' => $_POST['lastname'], 
-            ':email' => $_POST['email'],
-            ':id' => $_SESSION['user']['id']
-        );
         
         try {  
             $stmt = $db->prepare($query); 
