@@ -70,7 +70,7 @@
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" value=value="<?php echo $firstname; ?>">>
+                        <input type="text" name="firstname" class="settings" value="<?php echo $firstname; ?>">
                         <br>
                         <br>
                     <label>Last name: </label>
