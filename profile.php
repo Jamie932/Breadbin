@@ -103,6 +103,7 @@
                     echo '<div id="errormsg">User not found</div>';
                 }
             ?>
+        </div>
     
     <div id="rightProfile">
         <div class="profilePosts">
