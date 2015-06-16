@@ -11,7 +11,7 @@
 	$posts = $stmt->fetchAll();
     
     $query = "INSERT INTO following (user_no, follower_id)  VALUES (:userid, :follower)"; 
-		$query_params = array(':userid' => $_SESSION['user']['id'], ':follower' => intval($_GET['id']); 
+		$query_params = array(':userid' => $_SESSION['user']['id'], ':follower' => intval($_GET['id'])); 
 	
         try{ 
             $stmt = $db->prepare($query); 
