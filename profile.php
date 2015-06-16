@@ -72,23 +72,23 @@
                 foreach ($posts as $row) {
                     echo '<li>';
                     echo '<div class="thumbnail">';
-                    echo '<a href="" title="">';
-                    echo '<script language="JavaScript">';
-                    echo '<!--';
-                    echo 'function random_imglink(){';
-                    echo 'var myimages=new Array()';
-                    echo 'myimages[1]="img/greenFill.jpg"';
-                    echo 'myimages[2]="img/blueFill.jpg"';
-                    echo 'myimages[3]="img/orangeFill.jpg"';
-                    echo 'myimages[4]="img/pinkFill.jpg"';
-                    echo 'var ry=Math.floor(Math.random()*myimages.length)';
-                    echo 'if (ry==0)';
-                    echo 'ry=1';
-                    echo 'document.write(\'<img src="\'+myimages[ry]+'" border=0 width="600" height="150" focus-y="3" focus-x="3">')';
-                    echo '}';
-                    echo 'random_imglink()';
-                    echo '//-->';
-                    echo '</script>';
+                    echo '<a href="" title="">';?>
+                     <script>
+                        function random_imglink(){
+                            var myimages=new Array()
+                            myimages[1]="img/greenFill.jpg"
+                            myimages[2]="img/blueFill.jpg"
+                            myimages[3]="img/orangeFill.jpg"
+                            myimages[4]="img/pinkFill.jpg"
+
+                            var ry=Math.floor(Math.random()*myimages.length)
+                            if (ry==0)
+                            ry=1
+                            document.write('<img src="'+myimages[ry]+'" border=0 width="600" height="150" focus-y="3" focus-x="3">')
+                        }
+                        random_imglink()
+                    </script>
+                <?php } ?>
                     echo '<div class="textOverlay">' . $row['text'] . '</div>';
                     echo '</a>';
                     echo '</div>';
