@@ -13,8 +13,14 @@
     $str = '      ';
 
     if (!empty($_POST['firstname'])) {
-        if(ctype_space($str)) {
-            $errors['firstname'] = 'This firstname bad.';  
+        if(ctype_space($_POST['firstname'])) {
+            $errors['firstname'] = 'Firstname can\'t have spaces.';  
+        }
+    }
+
+    if (!empty($_POST['lastname'])) {
+        if(ctype_space($_POST['lastname'])) {
+            $errors['lastname'] = 'lastname can\'t have spaces.';  
         }
     }
 
