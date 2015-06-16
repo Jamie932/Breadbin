@@ -1,10 +1,26 @@
 <?php 
     include('php/init.php');
     require("php/checkLogin.php");
+    require("php/common.php"); 
+    $query = "SELECT * FROM users WHERE id = :id"; 
+    $query_params = array(':id' => intval($_GET['id']);); 
+
+    try{ 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
+    } 
+    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+    $row = $stmt->fetch();
+
+    if($row){ 
+        $userid = $row['id'];
+        $username = $row['username'];
+        $email = $row['email'];
+    }
 ?>
 <html>
 <head>
-    <title>Bread Bin</title>
+    <title>Breadbin - User <?php print $username ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -32,20 +48,8 @@
        
     <div id="leftProfile">
         <div class="userInfo">
-        <?php 
-                require("php/common.php"); 
-                $userID = intval($_GET['id']);
-                $query = "SELECT * FROM users WHERE id = :id"; 
-                $query_params = array(':id' => $userID); 
-
-                try{ 
-                    $stmt = $db->prepare($query); 
-                    $result = $stmt->execute($query_params); 
-                } 
-                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-                $row = $stmt->fetch();
-
-                if($row){ 
+            <?php 
+                if ($username) {
                     echo 'User ID: ' . $row['id'] . '<br>';
                     echo 'Username: ' . $row['username'] . '<br>';
                     echo 'Email: ' . $row['email'];

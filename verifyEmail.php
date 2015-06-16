@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Bread Bin</title>
+    <title>Breadbin - Email Verification</title>
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -10,7 +10,7 @@
     <div id="mid">
         <div class="verify" style="display:block;">
             <div id="header">
-                <h2>Email Validation</h2>
+                <h2>Email Verification</h2>
             </div>
 
             <hr></hr>
