@@ -29,15 +29,16 @@
                 <div class="textarea">
                     <form action="php/post.php" method="POST" id="postForm">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Write a slice..."></textarea>
-                    </form>
+                    
                 </div>
                 <div class="uploadRest">
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
-                    <img src="img/cat.jpg" height="40px" width="60px" style="margin-left: 43px;">
+                    <input type="submit" value="Submit" height="40px" width="60px" >
                 </div>
+                    </form>
             </div>  
             <div id="placehold">
                 <h5>Recommended toasters</h5>
