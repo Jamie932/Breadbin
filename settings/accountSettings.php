@@ -27,7 +27,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="../js/jquery-1.11.2.min.js"></script>
     <script src="../js/jquery.cookie.js"></script>
-    <script src="../js/checkLogin.js"></script>
 </head>
     
 <body>
@@ -97,6 +96,5 @@
             </div>
         </div>
     </div>
-<script src="../js/formSettings.js"></script>
 </body>
 </html>
