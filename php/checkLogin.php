@@ -25,7 +25,7 @@
             unset($_COOKIE['hashkey']);
 
             $newHash = md5(uniqid(rand(), true));
-            setcookie( "hashkey", $newHash, (time()+ 60 * 60 * 24 * 30) ); 
+            setcookie( "hashkey", $newHash, (time()+ 60 * 60 * 24 * 30), '/', '.yourmums.science' ); 
 
             $query = "UPDATE uniquelogs SET hash = :hash WHERE userid = :userid"; 
             $query_params = array(':hash' => $newHash, ':userid' => $row['userid']); 

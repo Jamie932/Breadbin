@@ -12,5 +12,5 @@
     catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
 
     unset($_COOKIE['hashkey']);
-    setcookie('hashkey', '', time() - 3600, '/');
+    setcookie('hashkey', '', time() - 3600, '/', '.yourmums.science');
 ?> 

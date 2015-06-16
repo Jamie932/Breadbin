@@ -43,7 +43,7 @@
         if($login_ok){ 
             if(intval($row['active']) == 1) {
                 $hash = md5(uniqid(rand(), true));
-                setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/' ); 
+                setcookie( "hashkey", $hash, (time()+ 60 * 60 * 24 * 30), '/', '.yourmums.science' ); 
 
                 unset($row['salt']); 
                 unset($row['password']); 
