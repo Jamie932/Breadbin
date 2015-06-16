@@ -10,7 +10,7 @@
     <div id="mid">
         <div class="verify" style="display:block;">
             <div id="header">
-                <h2>Email Validation!</h2>
+                <h2>Email Validation</h2>
             </div>
 
             <hr></hr>
@@ -54,9 +54,11 @@
 
                                 echo "<p>You've successfully validated your email.</p><p>Please click <a class='loginBtn'>here</a> to login.";
                             } else {
-                                echo "<p>We encountered an error :(</p>";
+                                echo "<p>Your email could not be validated - please tell an administrator.</p>";
                             }
                         }
+                    } else {
+                         echo "<p>Invalid URL - please use the link within your email.</p>";
                     }
                 ?>
             </div>
