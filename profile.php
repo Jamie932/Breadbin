@@ -77,20 +77,33 @@
     <?php require('php/template/navbar.php');?>
        
     <div id="leftProfile">
-        <div class="userInfo">
+		<div id="userAvatar">
+        </div>
+	
+        <div class="userInfo">            
             <?php 
                 if (isset($usersname)) {
-                    echo 'User ID: ' . $userid . '<br>';
-                    echo 'Username: ' . $usersname . '<br>';
-                    echo 'Email: ' . $email;
+                    echo '<div class="nameRow">' . $usersname . '</div>';
+                    echo '<div class="locationRow">United Kingdom</div>';
+                    echo '<div class="bioRow">NVno7ns5Vcw7AvltnzZrwVHk88iM1iBfe8J6UJGIT7CroyOsBBnionfeaBP3WJWYKigIxYwSAQNif9JODRsHjYwoGezoljjcsiBCkxzqzBG80XfuUweYx3nJfGtpjU6clZJ9nDSQay1N</div>';
+                    echo '<div class="followerRow">';
+                        echo '<div class="followerLeft">';
+                            echo '<div class="followerTitle">Followers</div>';
+                            echo '<div class="followerContent">12</div>';
+                        echo '</div>';
+                    echo '</div>';
+                    
+                    echo '<div class="bottomRow">';
+                        echo '<button id="followBut">Follow</button>';
+                        echo '<button id="followBut">Message</button>';
+                        echo '<button id="followBut">Report</button>;';
+                    echo '</div>';	
+                    
                 } else {
-                    echo "<div id=\"errormsg\"> User not found </div>";
+                    echo '<div id="errormsg">User not found</div>';
                 }
             ?>
-        </div>
-        <button id="followBut">Follow</button>
-    </div>
-
+    
     <div id="rightProfile">
         <div class="profilePosts">
             <ul class="post">

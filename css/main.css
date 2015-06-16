@@ -1,3 +1,10 @@
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
 body {
     background-color: #F6F6F6;
     font-family: 'Open Sans', sans-serif;
@@ -255,6 +262,18 @@ a.contentUsername {
     right: 0;
 }
 
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;   
+}
+
+.clearFix {
+    clear: both;   
+}
+
 #placehold {
     padding-left: 10px;
     padding-right: 10px;
@@ -481,14 +500,14 @@ p.settingsExplain {
 #leftProfile {
     float: left;
     display: inline;
-    width: 30%;
-    height: 100%;
-    position: fixed;
+    width: 280px;
     background-color: #bfbfbf;
+    position:relative;
+    min-height: 100%;
 }
 
 #leftProfile .userInfo {
-    margin-top: 200px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -524,8 +543,7 @@ p.settingsExplain {
     height: auto;
     margin-top: 52px;
     margin-bottom: 20px;
-    width: 70%;
-    float: right;
+    float: left;
 }
 
 #rightProfile .profilePosts {
@@ -575,4 +593,78 @@ a.profilePosts {
 
 #submitPost:active {
     background-color: #DFDFDF;   
+}
+
+#userAvatar {
+	width: 200px;
+	height: 200px;
+	border-radius: 361px;
+	-webkit-border-radius: 361px;
+	-moz-border-radius: 150px;
+	background: url(../img/profile2.png) no-repeat;
+    background-size: 200px 200px;
+     border:1px solid #616161;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:30px;
+}
+
+.nameRow {
+    font-size:2em; 
+    font-weight:bold;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.locationRow {
+    margin-top:5px;
+    margin-bottom:20px;
+    font-size:1em;  
+    color:#2f2f2f;
+}
+
+.bioRow {
+    margin-bottom:30px;
+    font-size:0.9em;
+    padding-left:25px;
+    padding-right:25px;
+    color:#2f2f2f;
+    word-break: break-all;
+}
+
+.followerRow {
+    margin-left: auto;
+    margin-right:auto;
+    width: 100%;
+    height:50px;
+    margin-bottom: 80px;
+}
+
+.followerLeft {
+    position:absolute;
+    left:25;
+}
+
+.followerTitle {
+    color:#242424;
+    font-size:1em;
+}
+
+.followerContent {
+    color:#2f2f2f;
+    font-size:0.9em;
+}
+
+.followerRight {
+    position:absolute;
+    right:25;
+}
+
+.bottomRow {
+    position:absolute;
+    bottom:25;
+    padding-left:25px;
+    padding-right:25px;
+    margin-top:15px;
 }
