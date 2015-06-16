@@ -1,7 +1,7 @@
-<?php
+<?php 
     include('../php/init.php');
     require("../php/checkLogin.php");
-    require("../php/common.php");
+    require("../php/common.php"); 
 
     $query = "SELECT * FROM users WHERE id = :id"; 
     $query_params = array(':id' => intval($_GET['id'])); 
@@ -14,10 +14,10 @@
     $row = $stmt->fetch();
 
     if($row){ 
-        $userid = $row['id'];   
+        $userid = $row['id'];
+        $usersname = $row['username'];
         $email = $row['email'];
         $firstname = $row['firstname'];
-        $lastname = $row['lastname'];
     }
 ?>
 <html>
@@ -70,7 +70,8 @@
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" value="">
+                        <input type="text" name="firstname" class="settings" value="<?php echo $firstname; ?>">
+                        <br>
                         <br>
                     <label>Last name: </label>
                         <input type="text" name="lastname" class="settings">
