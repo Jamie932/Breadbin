@@ -47,7 +47,11 @@
         
     } else {
     
-        $query = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email WHERE id = :id";
+        $query = "UPDATE users SET 
+            firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
+            lastname = COALESCE(NULLIF(:lastname, ''),lastname), 
+            email = COALESCE(NULLIF(:email, ''),email)
+            WHERE id = :id";
         
         $query_params = array( 
             ':firstname' => $_POST['firstname'], 
