@@ -504,6 +504,8 @@ p.settingsExplain {
     background-color: #bfbfbf;
     position:relative;
     min-height: 100%;
+    margin-top:42px;
+    margin-bottom:-42px;
 }
 
 #leftProfile .userInfo {
