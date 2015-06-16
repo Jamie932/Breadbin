@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/brickwall.js"></script>
