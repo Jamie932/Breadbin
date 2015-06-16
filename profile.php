@@ -91,12 +91,16 @@
                             echo '<div class="followerTitle">Followers</div>';
                             echo '<div class="followerContent">12</div>';
                         echo '</div>';
+                        echo '<div class="followerRight">';
+                            echo '<div class="followerTitle">Followed</div>';
+                            echo '<div class="followerContent">14</div>';
+                        echo '</div>';
                     echo '</div>';
                     
                     echo '<div class="bottomRow">';
                         echo '<button id="followBut">Follow</button>';
                         echo '<button id="followBut">Message</button>';
-                        echo '<button id="followBut">Report</button>;';
+                        echo '<button id="followBut">Report</button>';
                     echo '</div>';	
                     
                 } else {
