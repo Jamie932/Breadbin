@@ -550,3 +550,18 @@ p.settingsExplain {
 a.profilePosts {
     color: #000;   
 }
+
+#submitPost {
+    height: 40px;
+    width: 80px;
+    float: right;
+    margin-right: 10px;
+    border:1px solid #616161;
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    background-color: #D3D3D3;
+}
+
+#submitPost:active {
+    background-color: #DFDFDF;   
+}

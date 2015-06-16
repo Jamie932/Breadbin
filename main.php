@@ -36,7 +36,7 @@
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
-                    <input type="submit" value="Submit" height="40px" width="60px" >
+                    <input type="submit" value="Submit" id="submitPost">
                 </div>
                     </form>
             </div>  
@@ -69,15 +69,7 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        $('.postText').on('keyup', function(e) {
-            if (e.which == 13 && ! e.shiftKey) {
-                $(this.form).submit()
-                return false;
-            }
-        });
-    </script>
+
 	<script src="js/formPost.js"></script>
 </body>
 </html>
