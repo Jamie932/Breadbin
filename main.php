@@ -40,7 +40,9 @@
                     <input type="submit" value="Submit" id="submitPost">
                 </div>
                     </form>
-            </div>  
+            </div> 
+            <div id="error">
+            </div>
             <div id="placehold">
                 <h5>Recommended toasters</h5>
                 <div class="userRecom">
