@@ -28,6 +28,14 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/brickwall.js"></script>
+    <script>
+        $( "#followBut" ).click(function() {
+    
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/follow.php'
+        })})
+    </script>
     <script type="text/javascript">
 			$(function() {
 				$('ul.post img').each(function(i, element) {
@@ -58,7 +66,8 @@
                     echo "<div id=\"errormsg\"> User not found </div>";
                 }
             ?>
-        </div>  
+        </div>
+        <button id="followBut">Follow</button>
     </div>
 
     <div id="rightProfile">
