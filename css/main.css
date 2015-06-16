@@ -195,12 +195,15 @@ a.contentUsername {
 #error {
     height:0px;
     padding-left:15px;
-    font-size:0.8em;
-    color: red;
     
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
+}
+
+.error {
+    color: red;
+    font-size:0.8em;
 }
 
 /* Sidebar textarea (main.css) */
