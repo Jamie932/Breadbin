@@ -1,5 +1,5 @@
 <?php
-    require("php/common.php");
+    require("common.php");
     
     $query = "SELECT * FROM following";
 
