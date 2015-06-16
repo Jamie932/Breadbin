@@ -38,6 +38,9 @@
             $row = $stmt->fetch(); 
             
             if($row){ 
+                var_dump($row['email']);
+                var_dump($_SESSION['user']['email']);
+                
                 if ($row['email'] != $_SESSION['user']['email']) {
                     $errors['email'] = 'This email address has already been registered';   
                 } else {
