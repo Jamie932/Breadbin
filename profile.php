@@ -84,7 +84,7 @@
                     echo 'var ry=Math.floor(Math.random()*myimages.length)';
                     echo 'if (ry==0)';
                     echo 'ry=1';
-                    echo 'document.write('<img src="'+myimages[ry]+'" border=0 width="600" height="150" focus-y="3" focus-x="3">')';
+                    echo 'document.write(\'<img src="\'+myimages[ry]+'" border=0 width="600" height="150" focus-y="3" focus-x="3">')';
                     echo '}';
                     echo 'random_imglink()';
                     echo '//-->';
