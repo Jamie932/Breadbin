@@ -9,7 +9,9 @@
 	} 
 	catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
 	$posts = $stmt->fetchAll();
-    
+
+    var_dump ($_POST['url']);
+
     $query = "INSERT INTO following (user_no, follower_id)  VALUES (:userid, :follower)"; 
 		$query_params = array(':userid' => $_POST['url']), ':follower' =>  $_SESSION['user']['id']); 
 	
@@ -18,7 +20,6 @@
             $result = $stmt->execute($query_params); 
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-                              
-        echo '';
+
                               
 ?> 
