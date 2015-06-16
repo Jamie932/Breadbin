@@ -65,6 +65,21 @@
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
         
+        $query = "UPDATE user_settings SET 
+            colour = :colour
+            WHERE user_id = :id";
+        
+        $query_params = array( 
+            ':firstname' => $_POST['firstname'], 
+            ':id' => $_SESSION['user']['id']
+        ); 
+        try {  
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        
+        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        
         $data['success'] = true;
         $data['message'] = 'Success!';
     }
