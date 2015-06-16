@@ -546,3 +546,7 @@ p.settingsExplain {
 .thumbnail{
     position:relative;   
 }
+
+a.profilePosts {
+    color: #000;   
+}
