@@ -88,7 +88,7 @@
                         }
                         random_imglink()
                     </script>
-                <?php }
+                <?php
                     echo '<div class="textOverlay">' . $row['text'] . '</div>';
                     echo '</a>';
                     echo '</div>';
