@@ -70,14 +70,13 @@
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" value="<?php 
+                        <input type="text" name="firstname" class="settings" value="">
+                        <br>
+                    <?php 
                 if (isset($usersname)) {
                     echo $firstname;
-                } else {
-                    echo "User not found";
                 }
-            ?>">
-                        <br>
+            ?>
                         <br>
                     <label>Last name: </label>
                         <input type="text" name="lastname" class="settings">
