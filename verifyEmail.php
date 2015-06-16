@@ -1,10 +1,10 @@
 <html>
 <head>
     <title>Bread Bin</title>
-    <link href="/css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/jquery.cookie.js"></script>
+    <script src="js/jquery.cookie.js"></script>
 </head>
 <body>
     <div id="mid">
@@ -17,7 +17,7 @@
 
             <div style="font-size:0.9em;">
                 <?php
-                    require("common.php");
+                    require("php/common.php");
 
                     if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
                         $query = "SELECT * FROM uniquelogs WHERE hash = :hash";
