@@ -31,7 +31,7 @@
 </head>
     
 <body>
-    <?php require('../php/template/navbar.php');?>
+    <?php require('../php/template/settingsNavbar.php');?>
     
     <div id="settingsBox" style="height:500px;">
         <div class="leftSettings">
@@ -71,12 +71,6 @@
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
                         <input type="text" name="firstname" class="settings" value="">
-                        <br>
-                    <?php 
-                if (isset($usersname)) {
-                    echo $firstname;
-                }
-            ?>
                         <br>
                     <label>Last name: </label>
                         <input type="text" name="lastname" class="settings">
