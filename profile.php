@@ -30,34 +30,31 @@
     <script src="js/brickwall.js"></script>
     <script>
         $(document).ready(function(){
-            function getUrlParameter(sParam)
-{
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {   
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
-}        
+            function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1);
+                var sURLVariables = sPageURL.split('&');
+                
+                for (var i = 0; i < sURLVariables.length; i++) {   
+                    var sParameterName = sURLVariables[i].split('=');
+                    if (sParameterName[0] == sParam) {
+                        return sParameterName[1];
+                    }
+                }
+            }        
             
-        $( "#followBut" ).click(function() {
-    
-        var formData = {
-            'url' : getUrlParameter('id');
-        };
-            
-        $.ajax({
-            type        : 'POST',
-            url         : 'php/follow.php',
-            data        : formData,
-            dataType    : 'json',
-            encode      : true
-        })
-        })
+            $( "#followBut" ).click(function() {
+                var formData = {
+                    'url' : getUrlParameter('id')
+                };
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/follow.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                })
+            })
         });
     </script>
     <script type="text/javascript">
