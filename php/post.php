@@ -7,7 +7,9 @@
 	
     if (empty($_POST['text'])) { 
         $errors['text'] = 'Text is required.';
-	}
+    } else if (ctype_space($_POST['text'])) {
+        $errors['text'] = 'Just spaces aren\'t allowed.';
+    }
 	
 	if (!empty($errors)) {
         $data['success'] = false;
