@@ -1,4 +1,25 @@
-<?php include '../php/init.php'; ?>
+<?php
+    include('php/init.php');
+    require("php/checkLogin.php");
+    require("php/common.php");
+
+    $query = "SELECT * FROM users WHERE id = :id"; 
+    $query_params = array(':id' => intval($_GET['id'])); 
+
+    try{ 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
+    } 
+    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+    $row = $stmt->fetch();
+
+    if($row){ 
+        $userid = $row['id'];   
+        $email = $row['email'];
+        $firstname = $row['firstname'];
+        $lastname = $row['lastname'];
+    }
+?>
 <html>
 <head>
     <title>Bread Bin</title>
@@ -49,7 +70,7 @@
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings">
+                        <input type="text" name="firstname" class="settings" value=value="<?php echo $firstname; ?>">>
                         <br>
                         <br>
                     <label>Last name: </label>
