@@ -30,7 +30,7 @@
     <script src="js/brickwall.js"></script>
     <script>
         $(document).ready(function(){
-    function getUrlParameter(sParam)
+            function getUrlParameter(sParam)
 {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -42,12 +42,8 @@
             return sParameterName[1];
         }
     }
-}   
-        }
-    </script>
-    <script>
-        $(document).ready(function(){
-                 
+}        
+            
         $( "#followBut" ).click(function() {
     
         var formData = {
