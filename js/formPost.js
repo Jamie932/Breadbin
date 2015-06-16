@@ -19,7 +19,7 @@ $(document).ready(function() {
                 $('#error').css({"height":"30px"});
                 
                 
-                $('#error').append($('<b>Error:</b> ' + data.errors.text)).hide().fadeIn(1000);
+                $('<b>Error:</b> ' + data.errors.text).hide().appendTo($('#error')).fadeIn(1000);
 			} else {
 				window.location.replace("main.php");
 			}
