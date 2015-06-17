@@ -59,12 +59,12 @@
 			<div class="loginForm">
 				<form id="logForm" action="php/login.php" method="POST"> 
 					<div id="logUserName-group">
-						<input type="text" name="log_username" placeholder="Username" class="logUserName"/>  
+						<input type="text" name="log_username" placeholder="Username" class="logUserName" required/>  
 					</div>
 					<div class="clearFix"></div>
 					
 					<div id="logUserPass-group">
-						<input type="password" name="log_password" placeholder="Password" class="logUserPass"/> 
+						<input type="password" name="log_password" placeholder="Password" class="logUserPass" required/> 
 					</div>
 					<div class="clearFix"></div>
 					
@@ -84,24 +84,24 @@
 			<hr></hr>
 			
 			<div class="registerForm">
-				<form id="regForm" action="php/register.php" method="POST"> 
+				<form id="regForm" action="php/register.php" method="POST" autocomplete="off"> 
 					<div id="regUserName-group">
-						<input type="text" name="reg_username" placeholder="Username" class="regUserName"/>  
+						<input type="text" name="reg_username" placeholder="Username" class="regUserName" required/>  
 					</div>
 					<div class="clearFix"></div>
 					
 					<div id="regUserEmail-group">
-						<input type="text" name="reg_email" placeholder="Email" class="regUserEmail"/> 
+						<input type="email" name="reg_email" placeholder="Email" class="regUserEmail" required/> 
 					</div>
 					<div class="clearFix"></div>
 					
 					<div id="regUserPass-group">
-						<input type="password" name="reg_password" placeholder="Password" class="regUserPass"/> 
+						<input type="password" name="reg_password" placeholder="Password" class="regUserPass" required/> 
 					</div>
 					<div class="clearFix"></div>
 					
 					<div id="regUserConfirm-group">
-						<input type="password" name="reg_confirmPassword" placeholder="Confirm Password" class="regUserConfirm"/>
+						<input type="password" name="reg_confirmPassword" placeholder="Confirm Password" class="regUserConfirm" required/>
 					</div>
 					<div class="clearFix"></div>
 					
