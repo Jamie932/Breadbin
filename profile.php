@@ -36,7 +36,6 @@
         $result = $db->prepare($query); 
         $result->execute(); 
         $number_of_rows = $result->fetchColumn(); 
-        
     }
 ?>
 <html>
