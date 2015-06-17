@@ -33,7 +33,7 @@
         $query = "SELECT count(*) FROM following WHERE id = :id"; 
         $query_params = array(':id' => intval($_GET['id'])); 
         
-        $result = $con->prepare($sql); 
+        $result = $con->prepare($query); 
         $result->execute(); 
         $number_of_rows = $result->fetchColumn(); 
         
