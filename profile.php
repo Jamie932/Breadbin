@@ -101,6 +101,10 @@
                     dataType    : 'json',
                     encode      : true
                 })
+                
+                
+                $('.following').html(parseInt($('.following').text()) - 1);
+                $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');                
             })
             
         });
