@@ -36,7 +36,6 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -64,12 +63,6 @@
                     encode      : true
                 })
             })
-            
-            $('.grid').masonry({
-                columnWidth: '.grid-sizer',
-                itemSelector: '.grid-item',
-                percentPosition: true
-            });
             
         });
         
@@ -126,7 +119,6 @@
         
         <div id="rightProfile">
             <div class="grid">
-                <div class="grid-sizer"></div>
             <?php
                     $count = 0;
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
@@ -140,10 +132,20 @@
                     $posts = $stmt->fetchAll();
  
                     foreach ($posts as $row) {
-                        if ($count % 2 == 0) { //even
-                            echo '<div class="grid-item">' . $row['text'] . '</div>';
+                        if ($backwards) {
+                            if ($count % 2 == 0) { //even
+                                echo '<div class="grid-item grid-item-large">' . $row['text'] . '</div>';
+                            } else {
+                                echo '<div class="grid-item">' . $row['text'] . '</div>';
+                                $backwards = false;
+                            }
                         } else {
-                            echo '<div class="grid-item grid-item-large">' . $row['text'] . '</div>';
+                            if ($count % 2 == 0) { //even
+                                echo '<div class="grid-item">' . $row['text'] . '</div>';
+                            } else {
+                                echo '<div class="grid-item grid-item-large">' . $row['text'] . '</div>';
+                                $backwards = true;
+                            }
                         }
                         
                         $count++;

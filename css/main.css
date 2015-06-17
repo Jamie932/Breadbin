@@ -678,9 +678,6 @@ a.profilePosts {
     text-align:center;
 }
 
-.grid-sizer {
-    width: 50%; 
-}
 .grid-item { 
     width: 25%; 
     background: #ef709e;
