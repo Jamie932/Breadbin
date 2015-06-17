@@ -93,6 +93,7 @@ p {
     padding-right:25px;
     color:#2f2f2f;
     word-wrap: break-word;
+    min-height:85px;
 }
 
 .followerRow {
@@ -151,8 +152,8 @@ p {
 }
 
 .size320 {
-	width: 220px;
-	height: 200px;
+	width: 320px;
+	height: 220px;
     display: inline-table;
     vertical-align: middle;
 }

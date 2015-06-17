@@ -20,6 +20,10 @@
             $userid = $row['id'];
             $usersname = $row['username'];
             $email = $row['email'];
+            
+            if ($row['bio']) {
+                $bio = $row['bio'];
+            }
         }
     }
 ?>
@@ -84,8 +88,12 @@
                     if (isset($usersname)) {
                         echo '<div class="nameRow">' . $usersname . '</div>';
                         echo '<div class="locationRow">United Kingdom</div>';
-                        echo '<div class="bioRow">NVno7ns5Vcw7AvltnzZrwVHk88iM1iBfe8J6UJGIT7CroyOsBBnionfeaBP3WJWYKigIxYwSAQNif9JODRsHjYwoGezoljjcsiBCkxzqzBG80XfuUweYx3nJfGtpjU6clZJ9nDSQay1N</div>';
-                        echo '<div class="followerRow">';
+                        if (isset($bio)) {
+                            echo '<div class="bioRow">' . $bio . '</div>';
+                        } else {
+                            echo '<div class="bioRow"></div>';
+                        }
+                         echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
                                 echo '<div class="followerTitle">Followers</div>';
                                 echo '<div class="followerContent">12</div>';
