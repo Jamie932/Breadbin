@@ -66,7 +66,7 @@
             })
             
             $('.grid').masonry({
-                columnWidth: 1,
+                columnWidth: 200,
                 gutter: 10,
                 itemSelector: '.grid-item',
                 percentPosition: true
@@ -127,7 +127,8 @@
         
         <div id="rightProfile">
             <div class="grid">
-                <?php 
+            <?php
+                    $count = 0;
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                     $query_params = array(':id' => $userid); 
 
@@ -139,7 +140,13 @@
                     $posts = $stmt->fetchAll();
  
                     foreach ($posts as $row) {
-                        echo '<div class="grid-item">' . $row['text'] . '</div>';
+                        if ($number % 2 == 0) { //even
+                            echo '<div class="grid-item">' . $row['text'] . '</div>';
+                        } else {
+                            echo '<div class="grid-item-large">' . $row['text'] . '</div>';
+                        }
+                        
+                        $count++;
                     }
                 ?>
             </div>
