@@ -67,6 +67,7 @@
             
             $('.grid').masonry({
                 columnWidth: 1;
+                gutter: 10;
                 itemSelector: '.grid-item',
                 percentPosition: true
             });
@@ -138,7 +139,7 @@
                     $posts = $stmt->fetchAll();
  
                     foreach ($posts as $row) {
-                        echo '<div class="grid-item"><p style="display:inline-block;">' . $row['text'] . '</p></div>';
+                        echo '<div class="grid-item">' . $row['text'] . '</div>';
                     }
                 ?>
             </div>

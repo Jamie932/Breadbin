@@ -550,7 +550,7 @@ p.settingsExplain {
 
 #rightProfile {
     height: auto;
-    margin-top: 60px;
+    margin-top: 80px;
     margin-bottom: 20px;
     float: right;
     width:95%;
@@ -687,6 +687,7 @@ a.profilePosts {
     padding-left:20px;
     padding-right:20px;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 #profileContainer {
