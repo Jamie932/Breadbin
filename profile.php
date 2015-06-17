@@ -55,24 +55,22 @@
                     encode      : true
                 })
             })
-        });
-    </script>
-    <script type="text/javascript">
-			$(function() {
-				$('ul.post img').each(function(i, element) {
-					var focusY = Math.floor((Math.random()*4)+1);
-					var focusX = Math.floor((Math.random()*4)+1);
-					$(element).attr({'focus-y': focusY, 'focus-x': focusX});
-				});
-				$('ul.post').brickwall();
-                
-				$(window).resize(sizeContent);
+            
+            $('ul.post img').each(function(i, element) {
+                var focusY = Math.floor((Math.random()*4)+1);
+                var focusX = Math.floor((Math.random()*4)+1);
+                $(element).attr({'focus-y': focusY, 'focus-x': focusX});
+            });
+            $('ul.post').brickwall();
 
-				function sizeContent() {
-					var newHeight = $("html").height() - $("#navbar").height() + "px";
-					$("#leftProfile").css("height", newHeight);
-				}
-			});
+            $(window).resize(sizeContent);
+
+            function sizeContent() {
+                var newHeight = $("html").height() - $("#navbar").height() + "px";
+                $("#leftProfile").css("height", newHeight);
+            }   
+        });
+        
     </script>
 </head>
     
