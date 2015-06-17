@@ -141,7 +141,7 @@
                                     echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div>';
                             } else {
-                                echo '<div class="grid-item" style="float: right;">';
+                                echo '<div class="grid-item" style="float: left; margin-left:20px">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
                                     echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div><div class="clearFix"></div>';
@@ -154,7 +154,7 @@
                                     echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div>';
                             } else {
-                                echo '<div class="grid-item grid-item-large" style="float: right;">';
+                                echo '<div class="grid-item grid-item-large" style="float: left; margin-left:20px">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
                                     echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div><div class="clearFix"></div>';
