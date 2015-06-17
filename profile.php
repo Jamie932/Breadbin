@@ -29,6 +29,10 @@
                 $country = $row['country'];
             }
         }
+        
+        $nRows = $pdo->query('SELECT count(*) FROM following WHERE id = :id')->fetchColumn(); 
+         $query_params = array(':id' => intval($_GET['id'])); 
+        
     }
 ?>
 <html>
@@ -72,7 +76,6 @@
             })
             
         });
-        
     </script>
 </head>
     
@@ -96,7 +99,7 @@
                         echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
                                 echo '<div class="followerTitle">Followers</div>';
-                                echo '<div class="followerContent">12</div>';
+                                echo '<div class="followerContent">'. $nRows . '</div>';
                             echo '</div>';
                             echo '<div class="followerRight">';
                                 echo '<div class="followerTitle">Followed</div>';
