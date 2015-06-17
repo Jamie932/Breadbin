@@ -37,7 +37,7 @@
 				$('small').remove();
            });
        });
-    });
+    }); 
     </script>
 </head>
 <body>
@@ -130,6 +130,7 @@
             <ul>
                 <li>Terms of Service</li>
                 <li>Privacy Policy</li>
+                <li><a class="aboutBut">About</a></li>
             </ul>
         </div>
 	</div>

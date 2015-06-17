@@ -103,6 +103,11 @@ hr {
 	height: 450px !important;
 }
 
+.longTall {
+    height: 500px !important;
+    width: 700px !important;
+}
+
 #mid .start {
     padding-left: 15px;
     padding-right: 15px;
@@ -124,13 +129,13 @@ a {
     z-index: 1;
 }
 
-#mid .login, #mid .register, #mid .verify {
+#mid .login, #mid .register, #mid .about, #mid .verify {
     padding-left: 15px;
     padding-right: 15px;
 	padding-top:15px;
 }
 
-#mid .register, #mid .verify {
+#mid .register, #mid .about, #mid .verify {
     display: none;
 }
 
@@ -184,4 +189,107 @@ input#submit:hover {
 
 #username-group {
     text-align: center;   
+}
+
+/* About.php */
+#aboutHeader {
+    height: 500px;
+    width: 100%;
+    background-color: #6699FF;
+    padding-top: 20px;
+}
+
+.leftHeader {
+    float: left;
+    margin-left: 70px;
+    width: 18%;
+}
+
+.centerHeader {
+    float: left;
+    width: 53%;
+    word-wrap: break-word;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.rightHeader {
+    float: right;   
+    margin-right: 70px;
+    margin-top: 17px;
+    width: 50px;
+    display: inline;
+}
+
+.logo {
+    display: inline;   
+    float: left;
+    margin-right: 20px;
+}
+
+.titleHeader {
+    display: inline;
+    top: 10px;
+}
+
+h3 {
+    color: white;
+    font-family: inherit;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.navlinksHeader {
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+ul.headerNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+li.linkItem {
+    margin-bottom: 5px;   
+}
+
+a.loginHeaderLink {
+    color: #fff;
+    font-size: 20px;
+    float: right;
+}
+
+h1 {
+    font-size:100px;
+    color: #fff;
+    margin: 0;
+    padding: 0; 
+    margin-bottom: -10px;
+}
+
+p.headerTag {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+button.headerLoginBut {
+    border:1px solid #E6A33A;
+    -moz-border-radius: 7px 7px;
+    border-radius: 7px 7px;
+    background-color: #FFB540;
+    width: 320px;
+    height: 80px;
+    font-size: 16px;
+}
+
+p.headerTagRegister {
+    font-size: 13px;
+    margin: 0;
 }
