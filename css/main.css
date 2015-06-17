@@ -506,6 +506,7 @@ p.settingsExplain {
     height: 100%;
     margin-top: 48px;
     border-right: 1px solid rgb(97, 97, 97);
+    margin-left:-280px;
 }
 
 .outerRelative {
@@ -549,11 +550,11 @@ p.settingsExplain {
 
 #rightProfile {
     height: auto;
-    margin-top: 52px;
+    margin-top: 60px;
     margin-bottom: 20px;
     float: right;
-    width:100%;
-    margin-left:-280px;
+    width:95%;
+    padding-right:2%;
 }
 
 #rightProfile .profilePosts {
