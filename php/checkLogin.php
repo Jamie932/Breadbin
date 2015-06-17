@@ -1,12 +1,5 @@
 <?php 
-    function hasHash() {
-        if(isset($_COOKIE['hashkey'])) {
-            return true;
-        }
-        return false;
-    }
-
-    if (hasHash()) {
+    if(isset($_COOKIE['hashkey'])) {
         $hash = $_COOKIE['hashkey'];
 
         $query = "SELECT userid, hash FROM uniquelogs WHERE hash = :hash"; 
