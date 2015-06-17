@@ -1,5 +1,6 @@
 <?php 
-    require("php/common.php"); 
+    require("../php/common.php"); 
+    require("../php/checkLogin.php");
 ?>
 <html>
 <head>
