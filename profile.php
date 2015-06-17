@@ -85,6 +85,20 @@
                 })
             })
             
+           /* $( "#unFollowBut" ).click(function() {
+                var formData = {
+                    'url' : getUrlParameter('id')
+                };
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/follow.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                })
+            })*/
+            
         });
     </script>
 </head>
@@ -135,9 +149,9 @@
                                 $row = $stmt->fetch();
                         
                                 if ($row['user_no'] = intval($_GET['id'])) {
-                                       echo '<button id="followBut">Follow</button>';
+                                    echo '<button id="unFollowBut">Unfollow</button>';
                                 } else {
-                                        echo '<button id="followBut">Unfollow</button>';   
+                                    echo '<button id="followBut">Follow</button>';   
                                 }                                
                             ?>
                             <button id="messageBut">Message</button>
