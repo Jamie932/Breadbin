@@ -71,7 +71,7 @@
                 }
             }        
             
-            $( "#followBut" ).click(function() {
+            $(document).on('click','#followBut', function() { 
                 var formData = {
                     'url' : getUrlParameter('id')
                 };
@@ -89,7 +89,7 @@
                 
             })
             
-            $( "#unFollowBut" ).click(function() {
+            $(document).on('click','#unFollowBut', function() {
                 var formData = {
                     'url' : getUrlParameter('id')
                 };
