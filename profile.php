@@ -35,7 +35,14 @@
         
         $result = $db->prepare($query); 
         $result->execute($query_params); 
-        $number_of_rows = $result->fetchColumn(); 
+        $noOfFollowers = $result->fetchColumn(); 
+        
+        $query = "SELECT count(*) FROM following WHERE follower_id = :id"; 
+        $query_params = array(':id' => $_SESSION['user']['id']); 
+        
+        $result = $db->prepare($query); 
+        $result->execute($query_params); 
+        $noOfFollowing = $result->fetchColumn(); 
     }
 ?>
 <html>
@@ -102,11 +109,11 @@
                         echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
                                 echo '<div class="followerTitle">Followers</div>';
-                                echo '<div class="followerContent">'. $number_of_rows . '</div>';
+                                echo '<div class="followerContent">'. $noOfFollowers . '</div>';
                             echo '</div>';
                             echo '<div class="followerRight">';
                                 echo '<div class="followerTitle">Followed</div>';
-                                echo '<div class="followerContent">14</div>';
+                                echo '<div class="followerContent">' .$noOfFollowing '</div>';
                             echo '</div>';
                         echo '</div>';
                     } else {
