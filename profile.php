@@ -167,7 +167,7 @@
 					return cellWidth;
 				},
 				cellH: function(container) {
-					var cellHeight = 320;
+					var cellHeight = 220;
 					if (container.hasClass('size320')) {
 						cellHeight = container.height()/2;
 					}
