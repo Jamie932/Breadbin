@@ -129,7 +129,7 @@
             ':password' => $password, 
             ':salt' => $salt, 
             ':email' => $_POST['email'],
-            ':country' => ip_info('Visitor', "Country");
+            ':country' => ip_info('Visitor', 'Country')
         ); 
         
         $stmt = $db->prepare($query); 
