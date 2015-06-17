@@ -65,6 +65,13 @@
 					$(element).attr({'focus-y': focusY, 'focus-x': focusX});
 				});
 				$('ul.post').brickwall();
+                
+				$(window).resize(sizeContent);
+
+				function sizeContent() {
+					var newHeight = $(window).height() - $("#navbar").height() + "px";
+					$("#leftProfile").css("height", newHeight);
+				}
 			});
     </script>
 </head>
