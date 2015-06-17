@@ -34,7 +34,7 @@
         $query_params = array(':id' => intval($_GET['id'])); 
         
         $result = $db->prepare($query); 
-        $result->execute(); 
+        $result->execute($query_params); 
         $number_of_rows = $result->fetchColumn(); 
     }
 ?>
