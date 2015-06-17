@@ -124,8 +124,7 @@
         </div>
         
         <div id="rightProfile">
-            <div class="grid"> 
-                <div class="grid-sizer"></div>
+            <div class="grid">
                 <?php 
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                     $query_params = array(':id' => $userid); 
