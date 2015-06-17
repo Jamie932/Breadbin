@@ -113,7 +113,7 @@
                     </div>
         <?php } else { ?>
                     <div class="bottomRow">
-                        <button id="settingsBut"><a href="settings/accountSettings.php">Settings</a></button>
+                        <a href="settings/accountSettings.php"><button id="settingsBut">Settings</button></a>
                     </div>
         <?php }} ?>
     </div>
