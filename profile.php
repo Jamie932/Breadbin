@@ -30,14 +30,12 @@
             }
         }
         
-        $sql = "SELECT count(*) FROM `following` WHERE id = :id"; 
+        query = "SELECT count(*) FROM `following` WHERE id = :id"; 
         $query_params = array(':id' => intval($_GET['id'])); 
         
         $result = $con->prepare($sql); 
         $result->execute(); 
-        $fcount = $result->fetchColumn(); 
-        
-        
+        $number_of_rows = $result->fetchColumn(); 
         
     }
 ?>
@@ -105,7 +103,7 @@
                         echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
                                 echo '<div class="followerTitle">Followers</div>';
-                                echo '<div class="followerContent">'. $fcount . '</div>';
+                                echo '<div class="followerContent">'. $number_of_rows . '</div>';
                             echo '</div>';
                             echo '<div class="followerRight">';
                                 echo '<div class="followerTitle">Followed</div>';
