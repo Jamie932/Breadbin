@@ -152,7 +152,7 @@ p {
 
 .size320 {
 	width: 220px;
-	height: 320px;
+	height: 200px;
     display: inline-table;
     vertical-align: middle;
 }
@@ -163,7 +163,7 @@ p {
 }
 
 p.textPost {
-    word-break: break-all;
+    word-wrap: break-word;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
