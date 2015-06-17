@@ -5,11 +5,8 @@
     $query = "DELETE FROM uniquelogs WHERE hash = :hash";
     $query_params = array(':hash' => $hash); 
 
-    try{
-        $stmt = $db->prepare($query); 
-        $result = $stmt->execute($query_params); 
-    }
-    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params); 
 
     unset($_COOKIE['hashkey']);
     setcookie('hashkey', '', time() - 3600, '/', '.yourmums.science');

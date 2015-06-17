@@ -14,37 +14,28 @@
         $query = "SELECT userid, hash FROM uniquelogs WHERE hash = :hash"; 
         $query_params = array(':hash' => $hash); 
 
-        try{ 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
         $row = $stmt->fetch();
 
         if ($row) {
             unset($_COOKIE['hashkey']);
-
+            
             $newHash = md5(uniqid(rand(), true));
             setcookie( "hashkey", $newHash, (time()+ 60 * 60 * 24 * 30), '/', '.yourmums.science' ); 
 
             $query = "UPDATE uniquelogs SET hash = :hash WHERE userid = :userid"; 
             $query_params = array(':hash' => $newHash, ':userid' => $row['userid']); 
 
-            try{ 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }         
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params);     
 
             if(!isset($_SESSION['user']) || empty($_SESSION['user']) || ($_SESSION['user']['id'] != $row['userid'])) {
                 $query = "SELECT id, username, email FROM users WHERE id = :userid"; 
                 $query_params = array(':userid' => $row['userid']); 
 
-                try{ 
-                    $stmt = $db->prepare($query); 
-                    $result = $stmt->execute($query_params); 
-                } 
-                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+                $stmt = $db->prepare($query); 
+                $result = $stmt->execute($query_params); 
                 $row = $stmt->fetch();
 
                 $_SESSION['user'] = $row;

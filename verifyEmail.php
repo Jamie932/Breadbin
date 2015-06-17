@@ -23,12 +23,9 @@
                     if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
                         $query = "SELECT * FROM uniquelogs WHERE hash = :hash";
                         $query_params = array(':hash' => $_GET['hash']); 
-                        try { 
-                            $stmt = $db->prepare($query); 
-                            $result = $stmt->execute($query_params); 
-                        } 
-                        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-
+                        
+                        $stmt = $db->prepare($query); 
+                        $result = $stmt->execute($query_params); 
                         $row = $stmt->fetch(); 
 
                         if ($row) {
@@ -36,22 +33,17 @@
 
                             $query = "SELECT * FROM users WHERE id = :id";
                             $query_params = array(':id' => $userid); 
-                            try { 
-                                $stmt = $db->prepare($query); 
-                                $result = $stmt->execute($query_params); 
-                            } 
-                            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-
+                            
+                            $stmt = $db->prepare($query); 
+                            $result = $stmt->execute($query_params); 
                             $row = $stmt->fetch(); 
     
                             if ($row) {
                                 $query = "UPDATE users SET active=1 WHERE id = :id";
                                 $query_params = array(':id' => $userid); 
-                                try { 
-                                    $stmt = $db->prepare($query); 
-                                    $result = $stmt->execute($query_params); 
-                                } 
-                                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }  
+                                    
+                                $stmt = $db->prepare($query); 
+                                $result = $stmt->execute($query_params);  
 
                                 echo "<p>You've successfully validated your email.</p><p>Please click <a class='loginBtn'>here</a> to login.";
                             } else {

@@ -6,24 +6,19 @@
 
     $query = "SELECT * FROM users WHERE username = :username";
     $query_params = array(':username' => $_POST['username']); 
-    try { 
-        $stmt = $db->prepare($query); 
-        $result = $stmt->execute($query_params); 
-    } 
-    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params); 
     $row = $stmt->fetch(); 
+
     $userid = $row['id'];
     $username = $row['username'];
 
     $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
     $query_params = array(':userid' => $userid, ':hash' => $hash); 
 
-    try{ 
-        $stmt = $db->prepare($query); 
-        $result = $stmt->execute($query_params); 
-    } 
-    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params); 
 
     $to      = $_POST['email'];
     $subject = 'Breadbin | Email Verification'; 

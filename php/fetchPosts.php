@@ -3,23 +3,17 @@
 	require("timeago.php");
 	
 	$query = "SELECT * FROM posts ORDER BY date DESC"; 
-
-	try{ 
-		$stmt = $db->prepare($query); 
-		$result = $stmt->execute(); 
-	} 
-	catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
 	
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
-	
-        try{ 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
+        
 		$userrow = $stmt->fetch();
 		$username = 'Unknown';
 				
@@ -29,11 +23,8 @@
             $query = "DELETE FROM posts WHERE userid = :userid"; 
             $query_params = array(':userid' => $row['userid']); 
 
-            try{ 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
         }
 		
         if ($row['type'] == "image") {     

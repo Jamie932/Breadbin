@@ -30,11 +30,9 @@
 	   } else {
             $query = "SELECT * FROM users WHERE email = :email";
             $query_params = array(':email' => $_POST['email']); 
-            try { 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());};
+            
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params);
             $row = $stmt->fetch(); 
             
             if($row){                
@@ -80,27 +78,17 @@
             );            
         }
         
-        try {  
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
         
         $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPLICATE KEY UPDATE colour=:colour";
-
         $query_params = array( 
             ':colour' => $_POST['colour'], 
             ':id' => $_SESSION['user']['id']
         ); 
         
-        try {  
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
         
         $data['success'] = true;
         $data['message'] = 'Success!';

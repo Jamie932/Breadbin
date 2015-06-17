@@ -22,13 +22,11 @@
 	    $query = "SELECT * FROM users WHERE username = :username"; 
 		$query_params = array(':username' => $_POST['username']); 
 	
-        try{ 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        $login_ok = false; 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
         $row = $stmt->fetch();
+        
+        $login_ok = false; 
 		
         if($row){ 
             $check_password = hash('sha256', $_POST['password'] . $row['salt']); 
@@ -51,11 +49,8 @@
                 $query = "INSERT INTO uniquelogs(userid, hash) VALUES(:userid, :hash) ON DUPLICATE KEY UPDATE hash = :hash;"; 
                 $query_params = array(':userid' => $row['id'], ':hash' => $hash); 
 
-                try{ 
-                    $stmt = $db->prepare($query); 
-                    $result = $stmt->execute($query_params); 
-                } 
-                catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+                $stmt = $db->prepare($query); 
+                $result = $stmt->execute($query_params); 
 
                 $data['success'] = true;
                 

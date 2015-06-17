@@ -19,13 +19,11 @@
 	} else {
 		$query = "SELECT 1 FROM users WHERE username = :username";
         $query_params = array(':username' => $_POST['username']); 
-		try { 
-			$stmt = $db->prepare($query); 
-			$result = $stmt->execute($query_params); 
-		} 
-		catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-		
+        
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
 		$row = $stmt->fetch(); 
+        
 		if($row){ $errors['username'] = 'This username is already in use.'; }
 	}
 	
@@ -43,13 +41,11 @@
 	} else {
        $query = "SELECT 1 FROM users WHERE email = :email";
        $query_params = array(':email' => $_POST['email']); 
-        try { 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());} 
-		
+        
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
         $row = $stmt->fetch(); 
+        
 		if($row){ $errors['email'] = 'This email address is already registered.'; }
 	}
 	
@@ -69,11 +65,9 @@
             ':salt' => $salt, 
             ':email' => $_POST['email'] 
         ); 
-        try {  
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
+        
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params);
 	
         $data['success'] = true;
         $data['message'] = 'Success!';
