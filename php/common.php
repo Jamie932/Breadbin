@@ -14,5 +14,5 @@
     header('Content-Type: text/html; charset=utf-8'); 
     session_start(); 
 
-    require("php/checkLogin.php");
+    require("checkLogin.php");
 ?>
