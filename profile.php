@@ -86,7 +86,7 @@
                 
                 var content = parseInt($('.followerContent').html());
                 
-                if ($(".#followBut").hasClass("unfollowed")) {
+                if ($("#followBut").hasClass("unfollowed")) {
                     $('.followerContent').html(content - 1);
                     alert("yep");
                 } else {
@@ -96,19 +96,19 @@
                 
             })
             
-           /* $( "#unFollowBut" ).click(function() {
+            $( "#unFollowBut" ).click(function() {
                 var formData = {
                     'url' : getUrlParameter('id')
                 };
 
                 $.ajax({
                     type        : 'POST',
-                    url         : 'php/follow.php',
+                    url         : 'php/unfollow.php',
                     data        : formData,
                     dataType    : 'json',
                     encode      : true
                 })
-            })*/
+            })
             
         });
     </script>
