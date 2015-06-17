@@ -86,10 +86,12 @@
                 
                 var content = parseInt($('.followerContent').html());
                 
-                if ($(".followerContent").hasClass("unfollowed")) {
+                if ($(".#followBut").hasClass("unfollowed")) {
                     $('.followerContent').html(content - 1);
+                    alert("yep");
                 } else {
                     $('.followerContent').html(content + 1);
+                    alert("nop");
                 }
                 
             })
@@ -158,9 +160,9 @@
                                 $row = $stmt->fetch();
                         
                                 if ($row['user_no'] != intval($_GET['id'])) {
-                                       echo '<button id="followBut unfollowed">Follow</button>';
+                                       echo '<button id="followBut" class="unfollowed">Follow</button>';
                                 } else {
-                                        echo '<button id="followBut followed">Unfollow</button>';   
+                                        echo '<button id="followBut" class="followed">Unfollow</button>';   
                                 }                                
                             ?>
                             <button id="messageBut">Message</button>
