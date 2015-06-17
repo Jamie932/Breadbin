@@ -121,12 +121,25 @@
                     }
                 ?>
             </div>
-
+            
             <?php 
                 if (isset($usersname)) {
                     if (($userid != $_SESSION['user']['id'])) { ?>
                         <div class="bottomRow">
-                            <button id="followBut">Follow</button>
+                            <?php
+                                $query = "SELECT count(*) FROM following WHERE follower_id = :id"; 
+                                $query_params = array(':id' => $_SESSION['user']['id']);
+                                
+                                $stmt = $db->prepare($query); 
+                                $result = $stmt->execute($query_params); 
+                                $row = $stmt->fetch();
+                        
+                                if ($_SESSION['user']['id'] = $row['user_no']) {
+                                       echo 'button id="followBut">Follow</button>';
+                                } else {
+                                        echo 'button id="followBut">Following</button>';   
+                                }                                
+                            ?>
                             <button id="messageBut">Message</button>
                             <button id="reportBut">Report</button>
                         </div>
