@@ -11,6 +11,34 @@ body {
     margin: 0;
 }
 
+body.profile {
+    background-color: rgb(242, 242, 242);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline;
+}
+
+li.nav {
+    padding-left: 35px;
+    float:left;
+}
+
+a.navLinks {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.navLinks:hover {
+    color: #616161;
+}
+
 p {
     margin-bottom: -10px;
     font-size: 18px;
@@ -21,6 +49,40 @@ p.report {
     padding-top: 8px;
 }
 
+/* Navbar css */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: #FFB540;
+    background-image: none;
+    height: 42px;
+    padding-top: 5px;
+    font-size:18px;
+    color: #fff;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+}
+
+#navbar .left { 
+    display: inline;
+    margin-left: 5%;
+    font-size: 26px;
+}
+
+#navbar .right {
+    float: right; 
+    display: inline;
+    margin-right: 5%;
+    padding-top: 5px;
+}
+
+#break {
+    margin-top: 70px;
+}
+
+/* Formatting posts (main.php) */
 #center {
     margin:50px  auto;
     width:1100px;
