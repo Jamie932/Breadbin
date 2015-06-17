@@ -38,6 +38,8 @@ p {
     margin-top: 48px;
     border-right: 1px solid rgb(97, 97, 97);
     margin-left:-280px;
+    
+    font-family: 'Montserrat', sans-serif;
 }
 
 #leftProfile .userInfo {
