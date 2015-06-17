@@ -24,6 +24,10 @@
             if ($row['bio']) {
                 $bio = $row['bio'];
             }
+            
+            if ($row['country']) {
+                $country = $row['country'];
+            }
         }
     }
 ?>
@@ -87,13 +91,9 @@
                 <?php 
                     if (isset($usersname)) {
                         echo '<div class="nameRow">' . $usersname . '</div>';
-                        echo '<div class="locationRow">United Kingdom</div>';
-                        if (isset($bio)) {
-                            echo '<div class="bioRow">' . $bio . '</div>';
-                        } else {
-                            echo '<div class="bioRow"></div>';
-                        }
-                         echo '<div class="followerRow">';
+                        echo '<div class="locationRow">' . isset($country) ? $country : 'Earth' . '</div>';
+                        echo '<div class="bioRow">' . isset($bio) ? $bio : '' . '</div>';
+                        echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
                                 echo '<div class="followerTitle">Followers</div>';
                                 echo '<div class="followerContent">12</div>';
