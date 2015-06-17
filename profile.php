@@ -113,7 +113,7 @@
                             echo '</div>';
                             echo '<div class="followerRight">';
                                 echo '<div class="followerTitle">Followed</div>';
-                                echo '<div class="followerContent">' .$noOfFollowing '</div>';
+                                echo '<div class="followerContent">' .$noOfFollowing . '</div>';
                             echo '</div>';
                         echo '</div>';
                     } else {
