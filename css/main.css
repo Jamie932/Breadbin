@@ -12,7 +12,7 @@ body {
 }
 
 body.profile {
-    background-color: #fff;
+    background-color: rgb(242, 242, 242);
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
@@ -501,11 +501,11 @@ p.settingsExplain {
     float: left;
     display: inline;
     width: 280px;
-    background-color: #E1E1E1;
+    background-color: #fff;
     position: fixed;
     height: 100%;
     margin-top: 48px;
-    
+    border-right: 1px solid rgb(97, 97, 97);
 }
 
 .outerRelative {
