@@ -84,15 +84,7 @@
                     encode      : true
                 })
                 
-                var content = parseInt($('.followerContent').html());
-                
-                if ($("#followBut").hasClass("unfollowed")) {
-                    $('.followerContent').html(content - 1);
-                    alert("yep");
-                } else {
-                    $('.followerContent').html(content + 1);
-                    alert("nop");
-                }
+                $('.followerContent').html(parseInt($('.followerContent').html()) + 1);
                 
             })
             
@@ -160,9 +152,9 @@
                                 $row = $stmt->fetch();
                         
                                 if ($row['user_no'] != intval($_GET['id'])) {
-                                       echo '<button id="followBut" class="unfollowed">Follow</button>';
+                                       echo '<button id="followBut">Follow</button>';
                                 } else {
-                                        echo '<button id="followBut" class="followed">Unfollow</button>';   
+                                        echo '<button id="unFollowBut">Unfollow</button>';   
                                 }                                
                             ?>
                             <button id="messageBut">Message</button>
