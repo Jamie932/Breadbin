@@ -688,12 +688,11 @@ a.profilePosts {
 }
 
 .grid-item-large {
-    width: 75%; 
+    width: 65%; 
     background: #ef709e;
     padding-left:20px;
     padding-right:20px;
     margin-bottom: 10px;
-    display: inline-block;
 }
 
 #profileContainer {

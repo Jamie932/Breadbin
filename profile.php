@@ -134,16 +134,16 @@
                     foreach ($posts as $row) {
                         if ($backwards) {
                             if ($count % 2 == 0) { //even
-                                echo '<div class="grid-item grid-item-large">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item grid-item-large" style="float: left;">' . $row['text'] . '</div>';
                             } else {
-                                echo '<div class="grid-item">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item" style="float: right;">' . $row['text'] . '</div>';
                                 $backwards = false;
                             }
                         } else {
                             if ($count % 2 == 0) { //even
-                                echo '<div class="grid-item">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item" style="float: left;">' . $row['text'] . '</div>';
                             } else {
-                                echo '<div class="grid-item grid-item-large">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item grid-item-large" style="float: right;">' . $row['text'] . '</div>';
                                 $backwards = true;
                             }
                         }
