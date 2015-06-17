@@ -502,13 +502,14 @@ p.settingsExplain {
     display: inline;
     width: 280px;
     background-color: #bfbfbf;
-    position:relative;
-    height: 100%
+    position: fixed;
+    height: 100%;
+    margin-top: 48px;
     
 }
 
 #leftProfile .userInfo {
-    margin-top: 68px;
+    margin-top: 20px;
     text-align: center;
 }
 
