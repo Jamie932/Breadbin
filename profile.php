@@ -38,7 +38,7 @@
         $noOfFollowers = $result->fetchColumn(); 
         
         $query = "SELECT count(*) FROM following WHERE follower_id = :id"; 
-        $query_params = array(':id' => $_SESSION['user']['id']); 
+        $query_params = array(':id' => intval($_GET['id'])); 
         
         $result = $db->prepare($query); 
         $result->execute($query_params); 
