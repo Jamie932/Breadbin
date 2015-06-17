@@ -1,7 +1,5 @@
 <?php 
-    include('../php/init.php');
-    require("../php/checkLogin.php");
-    require("../php/common.php"); 
+    require("php/common.php");
 
     $query = "SELECT * FROM users WHERE id = :id"; 
     $query_params = array(':id' => $_SESSION['user']['id']); 

@@ -1,10 +1,9 @@
 <?php
     require("php/common.php");
-    require("php/checkLogin.php");
 ?>
 <html>
 <head>
-<title>Bread Bin</title>
+    <title>Bread Bin</title>
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />

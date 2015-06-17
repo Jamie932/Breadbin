@@ -1,7 +1,5 @@
 <?php 
-    include('php/init.php');
-    require("php/checkLogin.php");
-    require("php/common.php"); 
+    require("php/common.php");
     
     if (empty($_GET)) {
         if ($_SESSION['user']['id']) {
