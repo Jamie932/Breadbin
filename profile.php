@@ -127,8 +127,9 @@
  
                     foreach ($posts as $row) {   
                         echo '<div class="brick size320">';
-                                echo 'echo \'<p class="textPost">' . $row['text'] . '</p>';
-                            } 
+                        echo '<p class="textPost">' . $row['text'] . '</p>';
+                        echo '</div>';
+                    } 
                 ?>
             </div>
         </div>
