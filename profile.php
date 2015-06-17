@@ -89,11 +89,11 @@
                         echo '</div>';
                     echo '</div>';
                     
-                    echo '<div class="bottomRow">';
+                    echo '<div class="outerRelative"><div class="bottomRow">';
                         echo '<button id="followBut">Follow</button>';
                         echo '<button id="followBut">Message</button>';
                         echo '<button id="followBut">Report</button>';
-                    echo '</div>';	
+                    echo '</div></div>';	
                     
                 } else {
                     echo '<div id="errormsg">User not found</div>';

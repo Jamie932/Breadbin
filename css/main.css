@@ -508,6 +508,12 @@ p.settingsExplain {
     
 }
 
+.outerRelative {
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
 #leftProfile .userInfo {
     margin-top: 20px;
     text-align: center;
