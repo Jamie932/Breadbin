@@ -132,18 +132,38 @@
                     $posts = $stmt->fetchAll();
  
                     foreach ($posts as $row) {
+                        $time = strtotime($row['date']);
+                        $day = date('d', $time);
+                        $month = date('m', $time);
+                        $hour date('h', $time);
+                        $minutes date('i', $time);
+                        
+                        $date = $day . ' ' . $month . ' at ' . $hour . ':' . $minutes;
+                            
                         if ($backwards) {
                             if ($count % 2 == 0) { //even
-                                echo '<div class="grid-item grid-item-large" style="float: left;">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item grid-item-large" style="float: left;">';
+                                    echo '<span class="floatLeft">' . $row['text'] . '</span>';
+                                    echo '<span class="floatRight">' . $date . '</span>';
+                                echo '</div>';
                             } else {
-                                echo '<div class="grid-item" style="float: right;">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item" style="float: right;">';
+                                    echo '<span class="floatLeft">' . $row['text'] . '</span>';
+                                    echo '<span class="floatRight">' . $date . '</span>';
+                                echo '</div>';
                                 $backwards = false;
                             }
                         } else {
                             if ($count % 2 == 0) { //even
-                                echo '<div class="grid-item" style="float: left;">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item" style="float: left;">';
+                                    echo '<span class="floatLeft">' . $row['text'] . '</span>';
+                                    echo '<span class="floatRight">' . $date . '</span>';
+                                echo '</div>';
                             } else {
-                                echo '<div class="grid-item grid-item-large" style="float: right;">' . $row['text'] . '</div>';
+                                echo '<div class="grid-item grid-item-large" style="float: right;">';
+                                    echo '<span class="floatLeft">' . $row['text'] . '</span>';
+                                    echo '<span class="floatRight">' . $date . '</span>';
+                                echo '</div>';
                                 $backwards = true;
                             }
                         }
