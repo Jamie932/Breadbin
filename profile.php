@@ -120,6 +120,7 @@
         <div id="rightProfile">
             <div class="grid">
             <?php
+	               require("php/timeago.php");
                     $count = 0;
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                     $query_params = array(':id' => $userid); 
@@ -131,26 +132,17 @@
                     catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
                     $posts = $stmt->fetchAll();
  
-                    foreach ($posts as $row) {
-                        $time = strtotime($row['date']);
-                        $day = date('d', $time);
-                        $month = date('m', $time);
-                        $textmonth = date('F', mktime(0, 0, 0, $month, 10)); 
-                        $hour = date('h', $time);
-                        $minutes = date('i', $time);
-                        
-                        $date = $day . ' ' . $textmonth . ' at ' . $hour . ':' . $minutes;
-                            
+                    foreach ($posts as $row) {                            
                         if ($backwards) {
                             if ($count % 2 == 0) { //even
                                 echo '<div class="grid-item grid-item-large" style="float: left;">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
-                                    echo '<span class="floatRight">' . $date . '</span>';
+                                    echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div>';
                             } else {
                                 echo '<div class="grid-item" style="float: right;">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
-                                    echo '<span class="floatRight">' . $date . '</span>';
+                                    echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div>';
                                 $backwards = false;
                             }
@@ -158,12 +150,12 @@
                             if ($count % 2 == 0) { //even
                                 echo '<div class="grid-item" style="float: left;">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
-                                    echo '<span class="floatRight">' . $date . '</span>';
+                                    echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div>';
                             } else {
                                 echo '<div class="grid-item grid-item-large" style="float: right;">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
-                                    echo '<span class="floatRight">' . $date . '</span>';
+                                    echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
                                 echo '</div>';
                                 $backwards = true;
                             }
