@@ -127,14 +127,14 @@
                     if (($userid != $_SESSION['user']['id'])) { ?>
                         <div class="bottomRow">
                             <?php
-                                $query = "SELECT count(*) FROM following WHERE follower_id = :id"; 
+                                $query = "SELECT * FROM following WHERE follower_id = :id"; 
                                 $query_params = array(':id' => $_SESSION['user']['id']);
                                 
                                 $stmt = $db->prepare($query); 
                                 $result = $stmt->execute($query_params); 
                                 $row = $stmt->fetch();
                         
-                                if ($_SESSION['user']['id'] = $row['user_no']) {
+                                if ($row['user_no'] = intval($_GET['id'])) {
                                        echo '<button id="followBut">Follow</button>';
                                 } else {
                                         echo '<button id="followBut">Unfollow</button>';   
