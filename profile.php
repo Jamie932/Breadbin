@@ -139,10 +139,10 @@
                     $posts = $stmt->fetchAll();
  
                     foreach ($posts as $row) {
-                        if ($number % 2 == 0) { //even
+                        if ($count % 2 == 0) { //even
                             echo '<div class="grid-item">' . $row['text'] . '</div>';
                         } else {
-                            echo '<div class="grid-item-large">' . $row['text'] . '</div>';
+                            echo '<div class="grid-item grid-item-large">' . $row['text'] . '</div>';
                         }
                         
                         $count++;
