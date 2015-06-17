@@ -94,11 +94,13 @@
             ?>
         </div>
         
-        <div class="bottomRow">
-            <button id="followBut">Follow</button>
-            <button id="followBut">Message</button>
-            <button id="followBut">Report</button>
-        </div>
+        <?php if ($userid != $_SESSION['user']['id']) { ?>
+            <div class="bottomRow">
+                <button id="followBut">Follow</button>
+                <button id="followBut">Message</button>
+                <button id="followBut">Report</button>
+            </div>
+        <?php } ?>
     </div>
 </body>
 </html>
