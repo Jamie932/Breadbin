@@ -37,6 +37,6 @@
 
     ';
 
-    $headers = 'From:noreply@breadbin.com' . "\r\n"; // Set from headers
+    $headers = 'From: noreply@breadbin.com' . "\r\n" . 'Reply-To: noreply@breadbin.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
     mail($to, $subject, $message, $headers); // Send our email
 ?>
