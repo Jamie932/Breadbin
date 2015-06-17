@@ -1,6 +1,4 @@
 <?php 
-    session_start();
-
     function hasHash() {
         if(isset($_COOKIE['hashkey'])) {
             return true;
