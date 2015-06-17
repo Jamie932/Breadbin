@@ -144,7 +144,7 @@
                                 echo '<div class="grid-item" style="float: right;">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
                                     echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
-                                echo '</div>';
+                                echo '</div><div class="clearFix"></div>';
                                 $backwards = false;
                             }
                         } else {
@@ -157,7 +157,7 @@
                                 echo '<div class="grid-item grid-item-large" style="float: right;">';
                                     echo '<span class="floatLeft">' . $row['text'] . '</span>';
                                     echo '<span class="floatRight">' . timeAgoInWords($row['date']) . '</span>';
-                                echo '</div>';
+                                echo '</div><div class="clearFix"></div>';
                                 $backwards = true;
                             }
                         }
