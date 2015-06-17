@@ -123,6 +123,11 @@ p.report {
     transition: all .5s ease;
 }
 
+.error {
+    color: red;
+    font-size:0.8em;
+}
+
 /* Sidebar textarea (main.css) */
 #uploadText {
     resize: none;
