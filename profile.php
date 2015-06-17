@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="js/brickwall.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -64,6 +64,12 @@
                     encode      : true
                 })
             })
+            
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true
+            });
             
         });
         
@@ -119,8 +125,12 @@
         </div>
         
         <div id="rightProfile">
-            hello
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                <div class="grid-item">hello</div>
+            </div>
         </div>
+        <div class="clearFix"></div>
     </div>
 </body>
 </html>
