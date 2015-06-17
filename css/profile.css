@@ -164,12 +164,11 @@ p {
 }
 
 p.textPost {
-    word-wrap: break-word;
+    word-break: break-all;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     font-size: 1em;
     padding-left: 10px;
     padding-right: 10px;
-    width: 100%;
 }
