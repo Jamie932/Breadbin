@@ -680,19 +680,17 @@ a.profilePosts {
 
 .grid-item { 
     width: 25%; 
-    background: #ef709e;
+    background: #FFBAD3;
     padding-left:20px;
     padding-right:20px;
     margin-bottom: 10px;
     display: inline-block;
+    padding-top: 15px;
+    padding-bottom:15px;
 }
 
 .grid-item-large {
     width: 65%; 
-    background: #ef709e;
-    padding-left:20px;
-    padding-right:20px;
-    margin-bottom: 10px;
 }
 
 #profileContainer {
