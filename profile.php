@@ -84,7 +84,7 @@
                     encode      : true
                 })
                 
-                $('.followerContent').html(parseInt($('.followerContent').html()) + 1);
+                $('.followers').html(parseInt($('.followers').text()) + 1);
                 
             })
             
@@ -126,11 +126,11 @@
                         echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
                                 echo '<div class="followerTitle">Followers</div>';
-                                echo '<div class="followerContent">'. $noOfFollowers . '</div>';
+                                echo '<div class="followerContent followers">'. $noOfFollowers . '</div>';
                             echo '</div>';
                             echo '<div class="followerRight">';
                                 echo '<div class="followerTitle">Followed</div>';
-                                echo '<div class="followerContent">' .$noOfFollowing . '</div>';
+                                echo '<div class="followerContent following">' .$noOfFollowing . '</div>';
                             echo '</div>';
                         echo '</div>';
                     } else {
