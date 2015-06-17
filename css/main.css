@@ -680,7 +680,7 @@ a.profilePosts {
 
 .grid-item { 
     width: 25%; 
-    background: #FFBAD3;
+    background-color: #ef709e;
     padding-left:20px;
     padding-right:20px;
     margin-bottom: 10px;
@@ -691,6 +691,7 @@ a.profilePosts {
 
 .grid-item-large {
     width: 65%; 
+    bacground-color: #FFBAD3;
 }
 
 #profileContainer {
