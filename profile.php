@@ -88,17 +88,16 @@
                             echo '<div class="followerContent">14</div>';
                         echo '</div>';
                     echo '</div>';
-                    
-                    echo '<div class="outerRelative"><div class="bottomRow">';
-                        echo '<button id="followBut">Follow</button>';
-                        echo '<button id="followBut">Message</button>';
-                        echo '<button id="followBut">Report</button>';
-                    echo '</div></div>';	
-                    
                 } else {
                     echo '<div id="errormsg">User not found</div>';
                 }
             ?>
+        </div>
+        
+        <div class="bottomRow">
+            <button id="followBut">Follow</button>
+            <button id="followBut">Message</button>
+            <button id="followBut">Report</button>
         </div>
     </div>
 </body>
