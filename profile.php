@@ -135,8 +135,8 @@
                         $time = strtotime($row['date']);
                         $day = date('d', $time);
                         $month = date('m', $time);
-                        $hour date('h', $time);
-                        $minutes date('i', $time);
+                        $hour = date('h', $time);
+                        $minutes = date('i', $time);
                         
                         $date = $day . ' ' . $month . ' at ' . $hour . ':' . $minutes;
                             
