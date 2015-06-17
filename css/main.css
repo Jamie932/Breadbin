@@ -503,7 +503,9 @@ p.settingsExplain {
     width: 280px;
     background-color: #bfbfbf;
     position:relative;
-    min-height: 100%;
+    height: -moz-calc(100% - 48px);
+    height: -webkit-calc(100% - 48px);
+    height: calc(100% - 48px);
     margin-top: 48px;
     
 }
