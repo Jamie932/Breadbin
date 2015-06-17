@@ -30,11 +30,11 @@
             }
         }
         
-        $query = "SELECT count(*) FROM following WHERE user_id = :id"; 
+        $query = "SELECT count(*) FROM following WHERE user_no = :id"; 
         $query_params = array(':id' => intval($_GET['id'])); 
         
         $result = $db->prepare($query); 
-        $result->execute($query_params); 
+        $result->execute(); 
         $number_of_rows = $result->fetchColumn(); 
     }
 ?>
