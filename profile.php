@@ -83,6 +83,15 @@
                     dataType    : 'json',
                     encode      : true
                 })
+                
+                var content = parseInt($('.followerContent').html());
+                
+                if ($(".followerContent").hasClass("unfollowed")) {
+                    $('.followerContent').html(content - 1);
+                } else {
+                    $('.followerContent').html(content + 1);
+                }
+                
             })
             
         });
@@ -134,10 +143,10 @@
                                 $result = $stmt->execute($query_params); 
                                 $row = $stmt->fetch();
                         
-                                if ($row['user_no'] = intval($_GET['id'])) {
-                                       echo '<button id="followBut">Follow</button>';
+                                if ($row['user_no'] == intval($_GET['id'])) {
+                                       echo '<button id="followBut unfollowed">Follow</button>';
                                 } else {
-                                        echo '<button id="followBut">Unfollow</button>';   
+                                        echo '<button id="followBut followed">Unfollow</button>';   
                                 }                                
                             ?>
                             <button id="messageBut">Message</button>
