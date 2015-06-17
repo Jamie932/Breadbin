@@ -2,20 +2,29 @@
     include('php/init.php');
     require("php/checkLogin.php");
     require("php/common.php"); 
-    $query = "SELECT * FROM users WHERE id = :id"; 
-    $query_params = array(':id' => intval($_GET['id'])); 
+    
+    if (empty($_GET)) {
+        if ($_SESSION['user']['id']) {
+            header('Location: profile.php?id=' .$_SESSION['user']['id'] );
+            die();
+        }
+    } else {
 
-    try{ 
-        $stmt = $db->prepare($query); 
-        $result = $stmt->execute($query_params); 
-    } 
-    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
-    $row = $stmt->fetch();
+        $query = "SELECT * FROM users WHERE id = :id"; 
+        $query_params = array(':id' => intval($_GET['id'])); 
 
-    if($row){ 
-        $userid = $row['id'];
-        $usersname = $row['username'];
-        $email = $row['email'];
+        try{ 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+        $row = $stmt->fetch();
+
+        if($row){ 
+            $userid = $row['id'];
+            $usersname = $row['username'];
+            $email = $row['email'];
+        }
     }
 ?>
 <html>
@@ -99,12 +108,12 @@
                 if (($userid != $_SESSION['user']['id'])) { ?>
                     <div class="bottomRow">
                         <button id="followBut">Follow</button>
-                        <button id="followBut">Message</button>
-                        <button id="followBut">Report</button>
+                        <button id="messageBut">Message</button>
+                        <button id="reportBut">Report</button>
                     </div>
         <?php } else { ?>
                     <div class="bottomRow">
-                        <button id="followBut">Settings</button>
+                        <button id="settingsBut">Settings</button>
                     </div>
         <?php }} ?>
     </div>
