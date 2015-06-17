@@ -69,7 +69,7 @@
 				$(window).resize(sizeContent);
 
 				function sizeContent() {
-					var newHeight = $(window).height() - $("#navbar").height() + "px";
+					var newHeight = $("html").height() - $("#navbar").height() + "px";
 					$("#leftProfile").css("height", newHeight);
 				}
 			});
