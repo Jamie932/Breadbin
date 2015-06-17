@@ -66,8 +66,7 @@
             })
             
             $('.grid').masonry({
-                columnWidth: 200,
-                gutter: 10,
+                columnWidth: '.grid-sizer',
                 itemSelector: '.grid-item',
                 percentPosition: true
             });
