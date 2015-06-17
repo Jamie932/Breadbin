@@ -135,9 +135,9 @@
                                 $row = $stmt->fetch();
                         
                                 if ($_SESSION['user']['id'] = $row['user_no']) {
-                                       echo 'button id="followBut">Follow</button>';
+                                       echo '<button id="followBut">Follow</button>';
                                 } else {
-                                        echo 'button id="followBut">Following</button>';   
+                                        echo '<button id="followBut">Unfollow</button>';   
                                 }                                
                             ?>
                             <button id="messageBut">Message</button>
