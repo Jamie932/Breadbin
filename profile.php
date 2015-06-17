@@ -125,9 +125,23 @@
         </div>
         
         <div id="rightProfile">
-            <div class="grid">
+            <div class="grid">  
                 <div class="grid-sizer"></div>
-                <div class="grid-item">hello</div>
+                <?php 
+                    $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
+                    $query_params = array(':id' => $userid); 
+
+                    try{ 
+                        $stmt = $db->prepare($query); 
+                        $result = $stmt->execute($query_params); 
+                    } 
+                    catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
+                    $posts = $stmt->fetchAll();
+ 
+                    foreach ($posts as $row) {
+                        echo '<div class="grid-item">' . $row['text'] . '</div>';
+                    }
+                ?>
             </div>
         </div>
         <div class="clearFix"></div>
