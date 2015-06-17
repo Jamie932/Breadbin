@@ -89,7 +89,7 @@ p.report {
     padding-top: 10px;
     padding-bottom: 10px;
     min-height:80px;
-    word-wrap: normal;
+    word-wrap: break-word;
 }
 
 /* Sidebar (main.css) */
