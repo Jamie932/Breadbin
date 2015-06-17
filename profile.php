@@ -103,7 +103,7 @@
                 })
                 
                 
-                $('.following').html(parseInt($('.following').text()) - 1);
+                $('.followers').html(parseInt($('.followers').text()) - 1);
                 $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');                
             })
             
