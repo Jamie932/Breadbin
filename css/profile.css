@@ -38,8 +38,6 @@ p {
     margin-top: 48px;
     border-right: 1px solid rgb(97, 97, 97);
     margin-left:-280px;
-    
-    font-family: 'Lato', sans-serif;
 }
 
 #leftProfile .userInfo {
@@ -76,6 +74,7 @@ p {
     font-weight:bold;
     margin-left: auto;
     margin-right:auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .locationRow {
