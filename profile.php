@@ -30,7 +30,7 @@
             }
         }
         
-        query = "SELECT count(*) FROM `following` WHERE id = :id"; 
+        query = "SELECT count(*) FROM following WHERE id = :id"; 
         $query_params = array(':id' => intval($_GET['id'])); 
         
         $result = $con->prepare($sql); 
