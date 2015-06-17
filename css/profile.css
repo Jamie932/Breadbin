@@ -149,3 +149,25 @@ p {
 #profileContainer {
     padding-left: 280px;   
 }
+
+.size320 {
+	width: 220px;
+	height: 320px;
+    display: inline-table;
+    vertical-align: middle;
+}
+
+.layout {
+	margin: 2em 15px;
+	color: #333;
+}
+
+p.textPost {
+    word-break: break-all;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
