@@ -85,6 +85,7 @@
                 })
                 
                 $('.followers').html(parseInt($('.followers').text()) + 1);
+                $('#followBut').replaceWith('<button id="unFollowBut">Unfollow</button>');
                 
             })
             
