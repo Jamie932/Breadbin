@@ -94,6 +94,20 @@
                 
             })
             
+           /* $( "#unFollowBut" ).click(function() {
+                var formData = {
+                    'url' : getUrlParameter('id')
+                };
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/follow.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                })
+            })*/
+            
         });
     </script>
 </head>
