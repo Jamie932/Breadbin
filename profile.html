@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Breadbin - User:</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/brickwall.js"></script>
+    <script>
+        $(document).ready(function(){
+        $( "#followBut" ).click(function() {
+    
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/follow.php'
+        
+        })
+        })
+        });
+    </script>
+    <script type="text/javascript">
+			$(function() {
+				$('ul.post img').each(function(i, element) {
+					var focusY = Math.floor((Math.random()*4)+1);
+					var focusX = Math.floor((Math.random()*4)+1);
+					$(element).attr({'focus-y': focusY, 'focus-x': focusX});
+				});
+				$('ul.post').brickwall();
+			});
+    </script>
+</head>
+    
+<body class="profile">
+    <noscript>
+      <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
+    </noscript>   
+       
+    <div id="leftProfile">
+		<div id="userAvatar">
+		</div>
+	
+        <div class="userInfo">
+			<div id="topInfo">
+				<div class="nameRow">Jamie</div>
+				<div class="locationRow">United Kingdom</div>
+				<div class="bioRow">NVno7ns5Vcw7AvltnzZrwVHk88iM1iBfe8J6UJGIT7CroyOsBBnionfeaBP3WJWYKigIxYwSAQNif9JODRsHjYwoGezoljjcsiBCkxzqzBG80XfuUweYx3nJfGtpjU6clZJ9nDSQay1N</div>
+				<div class="followerRow">
+					<div class="followerLeft"><div class="followerTitle">Followers</div><div class="followerContent">12</div></div>
+					<div class="followerRight"><div class="followerTitle">Following</div><div class="followerContent">14</div></div>
+				</div>	
+			</div>
+			
+			<div id="bottomInfo">
+				<div class="bottomRow">
+					<button id="followBut">Follow</button>
+					<button id="followBut">Message</button>
+					<button id="followBut">Report</button>
+				</div>	
+			</div>
+        </div>
+		
+
+    </div>
+
+    <div id="rightProfile">
+        <div class="profilePosts">
+            <ul class="post">
+   
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

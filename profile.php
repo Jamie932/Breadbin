@@ -76,46 +76,51 @@
     </noscript>    
         
     <?php require('php/template/navbar.php');?>
-       
-    <div id="leftProfile">
-		<div id="userAvatar">
-        </div>
-	
-        <div class="userInfo">            
+    <div id="profileContainer">
+        <div id="leftProfile">
+            <div id="userAvatar">
+            </div>
+
+            <div class="userInfo">            
+                <?php 
+                    if (isset($usersname)) {
+                        echo '<div class="nameRow">' . $usersname . '</div>';
+                        echo '<div class="locationRow">United Kingdom</div>';
+                        echo '<div class="bioRow">NVno7ns5Vcw7AvltnzZrwVHk88iM1iBfe8J6UJGIT7CroyOsBBnionfeaBP3WJWYKigIxYwSAQNif9JODRsHjYwoGezoljjcsiBCkxzqzBG80XfuUweYx3nJfGtpjU6clZJ9nDSQay1N</div>';
+                        echo '<div class="followerRow">';
+                            echo '<div class="followerLeft">';
+                                echo '<div class="followerTitle">Followers</div>';
+                                echo '<div class="followerContent">12</div>';
+                            echo '</div>';
+                            echo '<div class="followerRight">';
+                                echo '<div class="followerTitle">Followed</div>';
+                                echo '<div class="followerContent">14</div>';
+                            echo '</div>';
+                        echo '</div>';
+                    } else {
+                        echo '<div id="errormsg">User not found</div>';
+                    }
+                ?>
+            </div>
+
             <?php 
                 if (isset($usersname)) {
-                    echo '<div class="nameRow">' . $usersname . '</div>';
-                    echo '<div class="locationRow">United Kingdom</div>';
-                    echo '<div class="bioRow">NVno7ns5Vcw7AvltnzZrwVHk88iM1iBfe8J6UJGIT7CroyOsBBnionfeaBP3WJWYKigIxYwSAQNif9JODRsHjYwoGezoljjcsiBCkxzqzBG80XfuUweYx3nJfGtpjU6clZJ9nDSQay1N</div>';
-                    echo '<div class="followerRow">';
-                        echo '<div class="followerLeft">';
-                            echo '<div class="followerTitle">Followers</div>';
-                            echo '<div class="followerContent">12</div>';
-                        echo '</div>';
-                        echo '<div class="followerRight">';
-                            echo '<div class="followerTitle">Followed</div>';
-                            echo '<div class="followerContent">14</div>';
-                        echo '</div>';
-                    echo '</div>';
-                } else {
-                    echo '<div id="errormsg">User not found</div>';
-                }
-            ?>
+                    if (($userid != $_SESSION['user']['id'])) { ?>
+                        <div class="bottomRow">
+                            <button id="followBut">Follow</button>
+                            <button id="messageBut">Message</button>
+                            <button id="reportBut">Report</button>
+                        </div>
+            <?php } else { ?>
+                        <div class="bottomRow">
+                            <a href="settings/accountSettings.php"><button id="settingsBut">Settings</button></a>
+                        </div>
+            <?php }} ?>
         </div>
         
-        <?php 
-            if (isset($usersname)) {
-                if (($userid != $_SESSION['user']['id'])) { ?>
-                    <div class="bottomRow">
-                        <button id="followBut">Follow</button>
-                        <button id="messageBut">Message</button>
-                        <button id="reportBut">Report</button>
-                    </div>
-        <?php } else { ?>
-                    <div class="bottomRow">
-                        <a href="settings/accountSettings.php"><button id="settingsBut">Settings</button></a>
-                    </div>
-        <?php }} ?>
+        <div id="rightProfile">
+            hello
+        </div>
     </div>
 </body>
 </html>
