@@ -135,10 +135,11 @@
                         $time = strtotime($row['date']);
                         $day = date('d', $time);
                         $month = date('m', $time);
+                        $textmonth = date('F', mktime(0, 0, 0, $month, 10)); 
                         $hour = date('h', $time);
                         $minutes = date('i', $time);
                         
-                        $date = $day . ' ' . $month . ' at ' . $hour . ':' . $minutes;
+                        $date = $day . ' ' . $textmonth . ' at ' . $hour . ':' . $minutes;
                             
                         if ($backwards) {
                             if ($count % 2 == 0) { //even
