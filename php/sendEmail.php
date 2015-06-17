@@ -37,11 +37,6 @@
 
     ';
 
-    $headers = "MIME-Version: 1.0\r\n"
-          ."Content-Type: text/html; charset=utf-8\r\n"
-          ."Content-Transfer-Encoding: 8bit\r\n"
-          ."From: =?UTF-8?B?". base64_encode("Breadbin") ."?= <noreply@breadbin.com>\r\n"
-          ."Reply-To: noreply@breadbin.com\r\n"
-          ."X-Mailer: PHP/". phpversion();
-    mail($to, $subject, $message, $headers);
+    $headers = 'From: noreply@breadbin.com' . "\r\n" . 'Reply-To: noreply@breadbin.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+    mail($to, $subject, $message, $headers); // Send our email
 ?>
