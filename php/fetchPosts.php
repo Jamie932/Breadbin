@@ -57,7 +57,9 @@
             echo '</div>';
             
             if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
+                echo '<div id="contentLike" class="post-' . $row['id'] . '">
+                    <p class="delete">Delete</p>
+                    </div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
                 <p class="toast">Toast (' . $row['likes'] . ')</p>

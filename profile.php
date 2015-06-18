@@ -300,8 +300,8 @@
                         <input type="password" name="newPassword" class="settings" id="newPassword">
                         <br>
                         <br>
-                    <label>Email: </label>
-                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email ?>">
+                    <label>Verify password: </label>
+                        <input type="password" name="newPassword2" class="settings" id="newPassword2">
                         <br>
                         <br>
                         
