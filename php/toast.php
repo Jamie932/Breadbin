@@ -7,19 +7,47 @@
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $matches = $stmt->rowCount();
-
-    if($matches==0){
-        $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
-        $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
-        $stmt = $db->prepare($query);
-        $result = $stmt->execute($query_params);
+    
+    $query = "SELECT * FROM burns WHERE p_id = :postID AND u_id= :userId"; 
+    $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
         
-        $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
-        $query_params = array(':postId' => $_POST['post']); 
-        $stmt = $db->prepare($query);
-        $result = $stmt->execute($query_params);
+    $stmt = $db->prepare($query);
+    $result = $stmt->execute($query_params); 
+    $ifBurnt = $stmt->rowCount();
+    
+    if($ifBurnt==0) {
+        if($matches==0){
+            $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
+            $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params);
+
+            $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
+            $query_params = array(':postId' => $_POST['post']); 
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params);
+        } else {
+            echo 'Soz luv. You already toasted this fucker.';
+        }
     } else {
-        $message = "Soz luv. You already toasted this fucker.";
-        echo '<script type="text/javascript">alert("' . $message . '")</script>';
+        if($matches==0){
+            $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
+            $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params);
+
+            $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
+            $query_params = array(':postId' => $_POST['post']); 
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params);
+            
+            $query = "DELETE FROM burns WHERE u_ui = :userId AND p_ui = :postId"; 
+            $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params);  
+            
+        } else {
+            echo 'Soz luv. You already toasted this fucker. REMOVED BURN';
+        }
     }
 ?> 
