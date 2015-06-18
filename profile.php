@@ -178,7 +178,7 @@
                         </div>
             <?php } else { ?>
                         <div class="bottomRow">
-                            <a href="settings/accountSettings.php"><button id="settingsBut">Settings</button></a>
+                            <button id="settingsBut">Settings</button>
                         </div>
             <?php }} ?>
         </div>
