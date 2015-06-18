@@ -103,7 +103,7 @@
                                 'gender'        => $userdata['gender'],
                                 'location'      => $userdata['location'],
                                 'hometown'      => $userdata['hometown'],
-                          );
+                          ); 
                           print_r( $data );
                     }
                 ?>
