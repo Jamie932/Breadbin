@@ -13,12 +13,6 @@
     <script src="js/jquery.cookie.js"></script>
     <script>
         $(document).ready(function(){
-            $('#uploadText').blur(function (event) {
-                if ($('#submitPost').is(":hover")) {
-                     setTimeout(function () { $("#uploadText").focus(); }, 20);   
-                }
-            });
-            
             $(document).on('click','.delete', function() {
                 var confirmed = confirm("Are you sure you want to delete this post?");
       
