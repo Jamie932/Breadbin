@@ -28,7 +28,7 @@
         }
 		
         if ($row['type'] == "image") {     
-            echo '<div id="contentPost class="post-' . $row['id'] . '">';
+            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
             echo '<div class="contentPostImage"></div>';
                 echo '<div class="contentPostInfo">';
                     echo '<div id="contentInfoText">';
@@ -45,7 +45,7 @@
             }
             
         } else if ($row['type'] == "text") {
-            echo '<div id="contentPost class="post-' . $row['id'] . '">';
+            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
                 echo '<div id="contentInfoText">';
                     echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
