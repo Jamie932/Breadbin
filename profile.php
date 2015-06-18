@@ -170,7 +170,7 @@
                     if (($userid != $_SESSION['user']['id'])) { ?>
                         <div class="bottomRow">
                             <?php
-                                $query = "SELECT * FROM following WHERE follower_id = :id AND user_id = :userid"; 
+                                $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid"; 
                                 $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
                                 
                                 $stmt = $db->prepare($query); 
