@@ -207,18 +207,19 @@ p.settingsDetail {
     border-right-style: solid;
     border-right-color: #616161;
     border-right-width: 1px;
-    width: 140px;  
-    height: 100%;
+    width: 140px;
     background-color: #fff;
     display: inline;
     float: left;
+    margin-top: 85px;
+    margin-left: -140px;
+    transition: transform 1s ease-in;
 }
 
 ul.settingsList {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-top: 85px;
 }
 
 li.settingsList {
