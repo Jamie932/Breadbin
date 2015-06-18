@@ -1,7 +1,7 @@
 <?php 
     require("php/common.php");
 
-    $query = "SELECT * FROM users WHERE id NOT IN (SELECT user_no FROM followers WHERE follower_id=id) ORDER BY RAND() LIMIT 3"; 
+        $query = "SELECT * FROM users WHERE id NOT IN (SELECT user_no FROM following WHERE follower_id=id) ORDER BY RAND() LIMIT 3"; 
         $stmt = $db->prepare($query); 
         $result = $stmt->execute(); 
         $randUser = $stmt->fetchAll();
