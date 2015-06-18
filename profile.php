@@ -71,8 +71,6 @@
                 }
             }        
             
-           // var sending = false;
-            
             $(document).on('click','#followBut', function() { 
                 var formData = {
                     'url' : getUrlParameter('id')
@@ -107,25 +105,21 @@
                 $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');
             })
             
-            $(document).ready(function(){
-                $(".settingsBut").click(function(){
-                   $(".settingsBut").fadeOut('normal')
-                   $("#rightProfile").fadeOut('normal', function(){
-                        $("#settingsBox").fadeIn('normal');
-                        $(".backBut").fadeIn('normal');
-                        $(".leftSettings").animate({ 'marginLeft': '0px' }, 350);
-                    });
+            $(".settingsBut").click(function(){
+               $(".settingsBut").fadeOut('normal')
+               $("#rightProfile").fadeOut('normal', function(){
+                    $("#settingsBox").fadeIn('normal');
+                    $(".backBut").fadeIn('normal');
+                    $(".leftSettings").animate({ 'marginLeft': '0px' }, 350);
                 });
             });
             
-            $(document).ready(function(){
-                $(".backBut").click(function(){
-                   $(".backBut").fadeOut('normal');
-                   $(".leftSettings").animate({ 'marginLeft': '-140px' }, 350);
-                   $("#settingsBox").fadeOut('normal', function(){
-                        $("#rightProfile").fadeIn('normal');
-                        $(".settingsBut").fadeIn('normal');
-                    });
+            $(".backBut").click(function(){
+               $(".backBut").fadeOut('normal');
+               $(".leftSettings").animate({ 'marginLeft': '-140px' }, 350);
+               $("#settingsBox").fadeOut('normal', function(){
+                    $("#rightProfile").fadeIn('normal');
+                    $(".settingsBut").fadeIn('normal');
                 });
             });
             

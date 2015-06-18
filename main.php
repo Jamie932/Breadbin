@@ -11,6 +11,31 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).on('click','.delete', function() {             
+                var confirmed = confirm("Are you sure you want to delete this post?");
+      
+                if (confirmed) {
+                    $postid = $('.delete').parent().attr('class').split('-')[1];
+
+                    var formData = {
+                        'post' : $postid
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/deletePost.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+
+                    alert("completed!");
+                }
+            })
+        }
+    </script>
 </head>
 <body>
     <noscript>
