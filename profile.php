@@ -71,40 +71,58 @@
                 }
             }        
             
+            var sending = false;
+            
             $(document).on('click','#followBut', function() { 
-                var formData = {
-                    'url' : getUrlParameter('id')
-                };
+                if (!sending) {
+                    sending = true;
+                    
+                    var formData = {
+                        'url' : getUrlParameter('id')
+                    };
 
-                $.ajax({
-                    type        : 'POST',
-                    url         : 'php/follow.php',
-                    data        : formData,
-                    dataType    : 'json',
-                    encode      : true
-                })
-                
-                $('.followers').html(parseInt($('.followers').text()) + 1);
-                $('#followBut').replaceWith('<button id="unFollowBut">Unfollow</button>');
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/follow.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+
+                    .done(function() {
+                        sending = false;
+                    });                
+
+                    $('.followers').html(parseInt($('.followers').text()) + 1);
+                    $('#followBut').replaceWith('<button id="unFollowBut">Unfollow</button>');
+                }
                 
             })
             
             $(document).on('click','#unFollowBut', function() {
-                var formData = {
-                    'url' : getUrlParameter('id')
-                };
+                if (!sending) {
+                    sending = true;
+                    
+                    var formData = {
+                        'url' : getUrlParameter('id')
+                    };
 
-                $.ajax({
-                    type        : 'POST',
-                    url         : 'php/unfollow.php',
-                    data        : formData,
-                    dataType    : 'json',
-                    encode      : true
-                })
-                
-                
-                $('.followers').html(parseInt($('.followers').text()) - 1);
-                $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');                
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/unfollow.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+
+                    .done(function() {
+                        sending = false;
+                    });
+
+
+                    $('.followers').html(parseInt($('.followers').text()) - 1);
+                    $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');    
+                }
             })
             
         });
