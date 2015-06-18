@@ -41,12 +41,12 @@
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
             
-            $query = "DELETE FROM burns WHERE u_ui = :userId AND p_ui = :postId"; 
+            $query = "DELETE FROM burns WHERE u_id = :userId AND p_id = :postId"; 
             $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
             
-            $query = "UPDATE posts SET burns=burns-1 WHERE id=:postId";
+            $query = "UPDATE posts SET burns = burns-1 WHERE id = :postId";
             $query_params = array(':postId' => $_POST['post']); 
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
