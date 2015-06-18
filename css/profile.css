@@ -175,7 +175,7 @@ p.textPost {
 
 /* Settings Styles */
 #rightSettings {
-    height: auto;
+    height: 100%;
     width:auto;
     display: none;
 }
@@ -212,7 +212,7 @@ p.settingsDetail {
     background-color: #fff;
     display: inline;
     float: left;
-    margin-top: 50px;
+    margin-top: 48px;
 }
 
 .settingsChoice {
