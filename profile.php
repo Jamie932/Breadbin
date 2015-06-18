@@ -243,7 +243,7 @@
                     <li class="settingsList">
                         Privacy
                     </li>
-                    <a class="passwordReset">
+                    <div class="passwordReset">
                     <li class="settingsList">
                         Password reset
                     </li>
