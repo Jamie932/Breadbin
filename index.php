@@ -108,9 +108,9 @@
 
                       <h3>Your User Object (/me)</h3>
                       <pre><?php print_r($user_profile); ?></pre>
-                    <?php else: ?>
-                      <strong><em>You are not Connected.</em></strong>
-                    <?php endif
+                    <?php else: 
+                            echo'<strong><em><a href="' . $loginUrl . '">You are not Connected.</a></em></strong>';
+                        endif
                     ?>
                 
 			</div>
