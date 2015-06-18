@@ -206,7 +206,7 @@
         
         <div id="clearFix"></div>
         
-        <div id="rightSettings" style="height:500px;">
+        <div id="rightSettings">
             <div class="leftSettings">
                 <ul class="settingsList">
                     <li class="settingsListFirst">
