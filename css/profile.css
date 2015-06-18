@@ -212,10 +212,10 @@ p.settingsDetail {
     background-color: #fff;
     display: inline;
     float: left;
-    margin-top: 48px;
 }
 
 .settingsChoice {
+    margin-top: 133px;
     padding-left: 7px;
     padding-top: 13px;
     border-top-color: #616161;
