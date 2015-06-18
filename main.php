@@ -14,7 +14,9 @@
     <script>
         $(document).ready(function(){
             $('#uploadText').blur(function (event) {
-                setTimeout(function () { $("#uploadText").focus(); }, 20);
+                if ($('#submitPost').is(":hover")) {
+                     setTimeout(function () { $("#uploadText").focus(); }, 20);   
+                }
             });
             
             $(document).on('click','.delete', function() {
