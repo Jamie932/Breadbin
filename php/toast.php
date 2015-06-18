@@ -1,10 +1,10 @@
 <?php
     require("common.php");
                   
-    $query = "SELECT * FROM likes WHERE pid = :postID AND uid= :userId"; 
+    $query = "SELECT * FROM likes WHERE pid = :postId AND uid= :userId"; 
     $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
         
-    $stmt = $db->prepare($query); 
+    $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $row = $stmt->rowCount();
 
