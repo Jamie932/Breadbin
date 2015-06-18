@@ -177,7 +177,6 @@ p.textPost {
 #rightSettings {
     height: 100%;
     width:auto;
-    display: none;
 }
 
 p.settingsDetail {
@@ -191,6 +190,7 @@ p.settingsDetail {
     top: 0; left: 300; bottom: 0; right: 0;
     width:700px;
     overflow: hidden;
+    display: none;
     
     border-width:1px;
     border-style: solid;
@@ -215,7 +215,6 @@ p.settingsDetail {
     margin-left: -140px;
     z-index:-20px;
     transition: transform 1s ease-in;
-    display: block;
 }
 
 ul.settingsList {
