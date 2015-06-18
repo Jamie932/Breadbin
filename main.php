@@ -23,7 +23,7 @@
     
     <div id="center">
         <div id="content">
-            <?php require('php/recommendToaster.php');?>
+            <?php require('php/fetchPosts.php');?>
         </div>
         
         <div id="sidebar">
@@ -46,7 +46,7 @@
             </div>
             <div id="placehold">
                 <h5>Recommended toasters</h5>
-                    <?php require('php/fetchPosts.php');?>
+                    <?php require('php/recommendToaster.php');?>
             </div>
         </div>
     </div>
