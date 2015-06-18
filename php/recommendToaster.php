@@ -4,14 +4,12 @@
     $query = "SELECT * FROM users ORDER BY RAND() LIMIT 3"; 
         $stmt = $db->prepare($query); 
         $result = $stmt->execute(); 
-        $row = $stmt->fetchAll();
-
-        if($row){ 
+        $randUser = $stmt->fetchAll();
+        
+        foreach ($randUser as $row) {
             $user = $row['id'];
             $usersname = $row['username'];
-        }
-        
-        foreach ($row) {
+            
             echo '<div class="userRecom">';
                 echo '<div class="usericoRecom">';
                     echo '<img src="img/cat.jpg" height="50px" width="50px">';
