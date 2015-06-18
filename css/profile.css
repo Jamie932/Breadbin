@@ -173,6 +173,10 @@ p.textPost {
     padding-right: 10px;
 }
 
+.backBut {
+    display:none;   
+}
+
 /* Settings Styles */
 #rightSettings {
     height: 100%;
