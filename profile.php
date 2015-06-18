@@ -111,7 +111,7 @@
                 $(".settingsBut").click(function(){
                    $("#rightProfile").fadeOut('normal', function(){
                         $("#settingsBox").fadeIn('normal');
-                        $(".leftSettings").animate({ 'marginLeft': '0px' }, 500);
+                        $(".leftSettings").animate({ 'marginLeft': '0px' }, 350);
                     });
                 });
             });
