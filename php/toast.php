@@ -8,7 +8,7 @@
     $result = $stmt->execute($query_params); 
     $matches = $stmt->rowCount();
     
-    $query = "SELECT * FROM burns WHERE p_id = :postID AND u_id= :userId"; 
+    $query = "SELECT * FROM burns WHERE p_id = :postId AND u_id= :userId"; 
     $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
         
     $stmt = $db->prepare($query);
