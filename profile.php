@@ -172,7 +172,7 @@
                         <div class="bottomRow">
                             <?php
                                 $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :usid"; 
-                                $query_params = array(':id' => $_SESSION['user']['id'], ':usid' = intval($_GET['id']));
+                                $query_params = array(':id' => $_SESSION['user']['id'], ':usid' => intval($_GET['id']));
                                 
                                 $stmt = $db->prepare($query); 
                                 $result = $stmt->execute($query_params); 
