@@ -130,12 +130,12 @@
                         echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
                         echo '<div class="followerRow">';
                             echo '<div class="followerLeft">';
-                                echo '<div class="followerTitle">Followers</div>';
-                                echo '<div class="followerContent followers">'. $noOfFollowers . '</div>';
+                                echo '<div class="followerTitle">Following</div>';
+                                echo '<div class="followerContent following">' .$noOfFollowing . '</div>';
                             echo '</div>';
                             echo '<div class="followerRight">';
-                                echo '<div class="followerTitle">Followed</div>';
-                                echo '<div class="followerContent following">' .$noOfFollowing . '</div>';
+                                echo '<div class="followerTitle">Followers</div>';
+                                echo '<div class="followerContent followers">'. $noOfFollowers . '</div>';
                             echo '</div>';
                         echo '</div>';
                     } else {
