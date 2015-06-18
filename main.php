@@ -35,7 +35,30 @@
                     })
                 }
             })
+            
+            $(document).on('click','.toast', function() {
+                
+      
+                var postid = $(this).parent().attr('class').split('-')[1];
+
+                    var formData = {
+                        'post' : postid
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/toast.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true,
+                        success:function(data) {  
+
+                        }
+                    })
+                }
+            })
         })
+            
     </script>
 </head>
 <body>
