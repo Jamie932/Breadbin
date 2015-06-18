@@ -13,14 +13,14 @@
     <script src="js/jquery.cookie.js"></script>
     <script>
         $(document).ready(function(){
-            $('.delete').click(function() {      
+            $(document).on('click','.delete', function() {
                 var confirmed = confirm("Are you sure you want to delete this post?");
       
                 if (confirmed) {
-                    $postid = $(this).parent().attr('class').split('-')[1];
+                    var postid = $(this).parent().attr('class').split('-')[1];
 
                     var formData = {
-                        'post' : $postid
+                        'post' : postid
                     };
 
                     $.ajax({
@@ -28,11 +28,12 @@
                         url         : 'php/deletePost.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true                                  
+                        encode      : true,
+                        success:function(data) {                    
+                            $("#contentPost .post-" + postid).fadeOut('normal');
+                            $(this).fadeOut('normal');
+                        }                                
                     })
-                    
-                    $(this).fadeOut('normal');
-                    $("#contentPost .post-" . $postid).fadeOut('normal');
                 }
             })
         })
