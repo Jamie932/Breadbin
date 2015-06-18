@@ -124,6 +124,7 @@
             });
             
             $(".passwordReset").click(function(){         
+                alert('hello');
                 $(".settingsBox").addClass('passwordSettingsField', function(){
             $(".settingsBox").removeClass('accountSettingsField');
                     });
@@ -240,11 +241,11 @@
                     <li class="settingsList">
                         Privacy
                     </li>
-                    <div class="passwordReset">
+                    <a class="passwordReset">
                     <li class="settingsList">
                         Password reset
                     </li>
-                    </div>
+                    </a>
                     <li class="settingsListLast">
                         Delete account
                     </li>
