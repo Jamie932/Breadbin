@@ -1,4 +1,6 @@
 <?php 
+    require("php/common.php");
+
     $query = $db->query("SELECT * FROM users ORDER BY RAND() LIMIT 1");
 
     $stmt = $db->prepare($query); 
