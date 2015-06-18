@@ -7,12 +7,7 @@
         $result = $stmt->execute($query_params); 
         $randUser = $stmt->fetchAll();
         
-        if (!$randUser) {
-            echo '<div class="userRecom">';
-                echo 'You already follow everyone :( <br> New users will appear when they sign up.';   
-            echo '<div>';   
-        } else {
-            foreach ($randUser as $row) {
+        foreach ($randUser as $row) {
                 $user = $row['id'];
                 $usersname = $row['username'];
 
