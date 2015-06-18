@@ -6,7 +6,7 @@
         
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
-    $row = $stmt->rowCount();
+    $matches = $stmt->rowCount();
 
     if($matches==0){
         $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
@@ -18,5 +18,7 @@
         $query_params = array(':postId' => $_POST['post']); 
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params);
+    } else {
+        echo "<script type='text/javascript'>alert('You've already toasted');</script>";
     }
 ?> 
