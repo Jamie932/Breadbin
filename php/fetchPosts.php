@@ -28,7 +28,7 @@
         }
 		
         if ($row['type'] == "image") {     
-            echo '<div id="contentPost">';
+            echo '<div id="contentPost class="post-' . $row['id'] . '">';
             echo '<div class="contentPostImage"></div>';
                 echo '<div class="contentPostInfo">';
                     echo '<div id="contentInfoText">';

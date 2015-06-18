@@ -28,10 +28,12 @@
                         url         : 'php/deletePost.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true
+                        encode      : true,
+                       success:function(data) {                    
+                           $("#contentPost").find('.post-' . $postid).fadeOut('normal');
+                            $(this).fadeOut('normal');
+                       }
                     })
-
-                    alert("completed!");
                 }
             })
         })
