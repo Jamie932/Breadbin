@@ -4,6 +4,12 @@
     $query = "SELECT username FROM users ORDER BY RAND() LIMIT 1"; 
         $stmt = $db->prepare($query); 
         $result = $stmt->execute(); 
+        $row = $stmt->fetch();
+
+        if($row){ 
+            $userid = $row['id'];
+            $usersname = $row['username'];
+        }
 
         echo '<div class="userRecom">';
             echo '<div class="usericoRecom">';
