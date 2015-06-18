@@ -52,7 +52,6 @@
                         encode      : true
                     })
                     
-                    $('.toast').replaceWith('<p class="toast">Untoast (' . $row['likes'] . ')</p>');
                 })
             
             $(document).on('click','.burn', function() {
