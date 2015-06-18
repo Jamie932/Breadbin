@@ -111,7 +111,6 @@
                 $(".settingsBut").click(function(){
                    $(".settingsBut").fadeOut('normal')
                    $("#rightProfile").fadeOut('normal', function(){
-                        $("#rightSettings").fadeIn('normal');
                         $("#settingsBox").fadeIn('normal');
                         $(".backBut").fadeIn('normal');
                         $(".leftSettings").animate({ 'marginLeft': '0px' }, 350);
@@ -121,8 +120,9 @@
             
             $(document).ready(function(){
                 $(".backBut").click(function(){
-                   $(".backBut").fadeOut('normal')
-                   $("#rightSettings").fadeOut('normal', function(){
+                   $(".backBut").fadeOut('normal');
+                   $("#settingsBox").fadeOut('normal');
+                   $(".leftSettings").fadeOut('normal', function(){
                         $("#rightProfile").fadeIn('normal');
                         $(".settingsBut").fadeIn('normal');
                     });
