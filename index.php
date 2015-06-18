@@ -87,29 +87,31 @@
                         ));
                     $user = $facebook->getUser();
 
-                    if( $userId == 0 ) {
-                        $url = $facebook->getLoginUrl( array( 'scope' => 'email, user_status' ) );
-                        echo '<a href="' . $url . '">';
-                        echo '<input class="btn btn-info" value="FB Login" id="submit"/>';
-                        echo '</a>';
-                    } else {
-                        echo 'YES WOOO';
-                          $userdata = $facebook->api( '/me' );
-                          $data = array(
-                                'first_name'    => $userdata['first_name'],
-                                'last_name'     => $userdata['last_name'],
-                                'username'      => $userdata['username'],
-                                'email'         => $userdata['email'],
-                                'languages'     => $userdata['languages'],
-                                'locale'        => $userdata['locale'],
-                                'timezone'      => $userdata['timezone'],
-                                'gender'        => $userdata['gender'],
-                                'location'      => $userdata['location'],
-                                'hometown'      => $userdata['hometown'],
-                          ); 
-                          echo print_r( $data );
+                    if ($user) {
+                      try {
+                        $user_profile = $facebook->api('/me');
+                      } catch (FacebookApiException $e) {
+                        error_log($e);
+                        $user = null;
+                      }
                     }
-                ?>
+
+                    if ($user) {
+                        $logoutUrl = $facebook->getLogoutUrl();
+                    } else {
+                        $loginUrl = $facebook->getLoginUrl();
+                    }
+
+                    if ($user): ?>
+                      <h3>You</h3>
+                      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
+
+                      <h3>Your User Object (/me)</h3>
+                      <pre><?php print_r($user_profile); ?></pre>
+                    <?php else: ?>
+                      <strong><em>You are not Connected.</em></strong>
+                    <?php endif
+                    ?>
                 
 			</div>
 		</div>
