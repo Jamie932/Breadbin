@@ -89,7 +89,7 @@
 
                     if( $userId == 0 ) {
                           $url = $facebook->getLoginUrl( array( 'scope' => 'email, user_status' ) );
-                          echo '<a href="' . $url . '><input class="btn btn-info" value="FB Login" id="submit"/></a>';
+                          echo '<a href="' . $url . '"><input class="btn btn-info" value="FB Login" id="submit"/></a>';
                     } else {
                           $userdata = $facebook->api( '/me' );
                           $data = array(
