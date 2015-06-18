@@ -18,7 +18,9 @@
                 echo '</div>';
                 echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
             echo '</div>';
-        } else if (!$row['id']) {
-            echo 'silly fuck no more'
+        } 
+        
+        if (!$row['id']) {
+            echo 'silly fuck no more';
         }
 ?>
