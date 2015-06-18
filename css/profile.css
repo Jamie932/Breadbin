@@ -214,7 +214,7 @@ p.settingsDetail {
     margin-top: 85px;
     margin-left: -140px;
     z-index:-20px;
-    transition: transform 1s ease-in;
+    transition: transform 0.2s ease-in;
 }
 
 ul.settingsList {

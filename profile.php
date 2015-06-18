@@ -110,8 +110,8 @@
             $(document).ready(function(){
                 $(".settingsBut").click(function(){
                    $("#rightProfile").fadeOut('normal', function(){
-                        $("#rightSettings").fadeIn('normal');
-                        $(".leftSettings").animate({ 'marginLeft': '0px' }, 1000);
+                        $("#settingsBox").fadeIn('normal');
+                        $(".leftSettings").animate({ 'marginLeft': '0px' }, 200);
                     });
                 });
             });
