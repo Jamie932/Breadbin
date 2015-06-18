@@ -6,14 +6,14 @@
         $result = $stmt->execute($query_params); 
         $row = $stmt->fetch();
 
-        if ($row['colour'] == 1) {
+        if ($row['colour'] = 1) {
             $colour == '#8AE68A';
-        } else if ($row['colour'] == 2) {
-            $colour == '#6699FF';
-        } else if ($row['colour'] == 3) {
-            $colour == '#FFB540';
-        } else if ($row['colour'] == 4) {
-            $colour == '#FF66CC';
+        } else if ($row['colour'] = 2) {
+            $colour = '#6699FF';
+        } else if ($row['colour'] = 3) {
+            $colour = '#FFB540';
+        } else if ($row['colour'] = 4) {
+            $colour = '#FF66CC';
         }
             
 ?>
