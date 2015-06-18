@@ -215,6 +215,7 @@ p.settingsDetail {
     margin-left: -140px;
     z-index:-20px;
     transition: transform 1s ease-in;
+    display: block;
 }
 
 ul.settingsList {
