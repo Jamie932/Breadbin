@@ -71,45 +71,40 @@
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
                 <?php
-                    session_start();
-                    require_once('php/autoload.php');
+                    $app_id = "417359585110835";
+                    $app_secret	= "69eb79572e961a240acae9f4c20317dd";
+                    $site_url = "http://yourmums.science";
 
-                    use Facebook\FacebookSession;
-                    use Facebook\FacebookRedirectLoginHelper;
-                    use Facebook\FacebookRequest;
-                    use Facebook\FacebookResponse;
-                    use Facebook\FacebookSDKException;
-                    use Facebook\FacebookRequestException;
-                    use Facebook\FacebookAuthorizationException;
-                    use Facebook\GraphObject;
-                    use Facebook\Entities\AccessToken;
-                    use Facebook\HttpClients\FacebookCurlHttpClient;
-                    use Facebook\HttpClients\FacebookHttpable;
-
-                    FacebookSession::setDefaultApplication( '417359585110835','69eb79572e961a240acae9f4c20317dd' );
-                    $helper = new FacebookRedirectLoginHelper('http://yourmums.science' );
-
-                    try {
-                      $session = $helper->getSessionFromRedirect();
-                    } catch( FacebookRequestException $ex ) {
-                      // When Facebook returns an error
-                    } catch( Exception $ex ) {
-                      // When validation fails or other local issues
+                    try{
+                        include_once "src/facebook.php";
+                    }catch(Exception $e){
+                        error_log($e);
                     }
 
-                    // see if we have a session
-                    if ( isset( $session ) ) {
-                      // graph api request for user data
-                      $request = new FacebookRequest( $session, 'GET', '/me' );
-                      $response = $request->execute();
-                      // get response
-                      $graphObject = $response->getGraphObject();
+                    $facebook = new Facebook(array(
+                        'appId'		=> $app_id,
+                        'secret'	=> $app_secret,
+                        ));
+                    $user = $facebook->getUser();
 
-                      // print data
-                      echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
+                    if( $userId == 0 ) {
+                          $url = $facebook->getLoginUrl( array( 'scope' => 'email, user_status' ) );
+                          echo '<a href="' . $url . '><input class="btn btn-info" value="FB Login" id="submit"/></a>';
                     } else {
-                      // show login url
-                      echo '<a href="' . $helper->getLoginUrl() . '">Login</a>';
+                          $userdata = $facebook->api( '/me' );
+                          $data = array(
+                                'first_name'    => $userdata['first_name'],
+                                'last_name'     => $userdata['last_name'],
+                                'username'      => $userdata['username'],
+                                'email'         => $userdata['email'],
+                                'languages'     => $userdata['languages'],
+                                'locale'        => $userdata['locale'],
+                                'timezone'      => $userdata['timezone'],
+                                'gender'        => $userdata['gender'],
+                                'location'      => $userdata['location'],
+                                'hometown'      => $userdata['hometown'],
+                          );
+                          print_r( $data );
                     }
                 ?>
                 
