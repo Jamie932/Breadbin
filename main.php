@@ -17,7 +17,7 @@
                 var confirmed = confirm("Are you sure you want to delete this post?");
       
                 if (confirmed) {
-                    $postid = $('.delete').parent().attr('class').split('-')[1];
+                    $postid = $(this).parent().attr('class').split('-')[1];
 
                     var formData = {
                         'post' : $postid
@@ -34,7 +34,7 @@
                     alert("completed!");
                 }
             })
-        }
+        })
     </script>
 </head>
 <body>
