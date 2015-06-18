@@ -52,7 +52,6 @@
                         encode      : true
                     })
                     
-             $('.toast').html(parseInt($('.toast').text()) + 1);
                     $('.toast').replaceWith('<p class="toast">Untoast (' . $row['likes'] . ')</p>');
                 })
             
