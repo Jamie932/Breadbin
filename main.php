@@ -30,7 +30,7 @@
                         dataType    : 'json',
                         encode      : true,
                        success:function(data) {                    
-                           $("#contentPost").find('.post-' . $postid).fadeOut('normal');
+                           $("#contentPost .post-" . $postid).fadeOut('normal');
                             $(this).fadeOut('normal');
                        }
                     })
