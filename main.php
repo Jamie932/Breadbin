@@ -13,7 +13,7 @@
     <script src="js/jquery.cookie.js"></script>
     <script>
         $(document).ready(function(){
-            $(document).on('click','.delete', function() {
+            $(".delete").click(function(){
                 var confirmed = confirm("Are you sure you want to delete this post?");
       
                 if (confirmed) {
@@ -29,10 +29,13 @@
                         data        : formData,
                         dataType    : 'json',
                         encode      : true,
-                        success:function(data) {                    
-                            $("#contentPost .post-" + postid).fadeOut('normal');
+                        success:function(data) {  
+                            alert("hi");
+                            
+                            var thediv = "#contentPost .post-" + postid;
+                            $(thediv).fadeOut('normal');
                             $(this).fadeOut('normal');
-                        }                                
+                        }
                     })
                 }
             })
