@@ -25,13 +25,13 @@
         $row = $stmt->fetch();
 
         if($row){ 
-            if ($row['colour'] = 1) {
+            if ($row['colour'] == 1) {
                 $colour = '#8AE68A';
-            } else if ($row['colour'] = 2) {
+            } else if ($row['colour'] == 2) {
                 $colour = '#6699FF';
-            } else if ($row['colour'] = 3) {
+            } else if ($row['colour'] == 3) {
                 $colour = '#FFB540';
-            } else if ($row['colour'] = 4) {
+            } else if ($row['colour'] == 4) {
                 $colour = '#FF66CC';
             }
         }
