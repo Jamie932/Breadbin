@@ -176,6 +176,9 @@
                                 $stmt = $db->prepare($query); 
                                 $result = $stmt->execute($query_params); 
                                 $row = $stmt->fetch();
+                                    
+                                var_dump($row['user_no']);
+                                var_dump(intval($_GET['id']));
                         
                                 if ($row['user_no'] != intval($_GET['id'])) {
                                        echo '<button id="followBut">Follow</button>';
