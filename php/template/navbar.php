@@ -1,3 +1,23 @@
+<?php
+        $query = "SELECT * FROM user_settings WHERE id = :id"; 
+        $query_params = array(':id' => $_SESSION['user']['id']); 
+        
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
+        $row = $stmt->fetch();
+
+        if ($row['colour'] == 1) {
+            $colour == '#8AE68A';
+        } else if ($row['colour'] == 2) {
+            $colour == '#6699FF';
+        } else if ($row['colour'] == 3) {
+            $colour == '#FFB540';
+        } else if ($row['colour'] == 4) {
+            $colour == '#FF66CC';
+        }
+            
+?>
+
 <script>
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
@@ -16,7 +36,7 @@
     }
 </script>
 
-<div id="navbar">
+<div id="navbar" style="background-color:<?php echo $colour; ?>" >
 	<div class="left">
 		<a href="main.php" class="navLinks">Bread Bin</a>
 	</div>
