@@ -1,15 +1,22 @@
 <?php 
     require("php/common.php");
 
-    $query = $db->query("SELECT * FROM users ORDER BY RAND() LIMIT 1");
+    $sth = $pdo->prepare("SELECT * FROM users");
+    $sth->execute();
+    $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
+    $rowcount = $rows[0]['total_count'];
+    
+    $pdo->prepare("SELECT * FROM tablename WHERE id = :rows");
+        $query_params = array(':rows' => $rowcount); 
 
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute($query_params); 
-    $row = $stmt->fetch();
+        $result = $db->prepare($query); 
+        $result->execute($query_params); 
+        $noOfFollowers = $result->fetchColumn(); 
 
-        if($row){ 
-            $username = $row['username'];
-        }
+    if($result){ 
+        $username = $row['username'];
+        
+    }
 
         echo '<div class="userRecom">';
             echo '<div class="usericoRecom">';
