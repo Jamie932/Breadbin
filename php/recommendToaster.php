@@ -2,11 +2,11 @@
     require("php/common.php");
 
     $query = "SELECT count(*) FROM users ORDER BY RAND() LIMIT 1"; 
-        $result = $db->prepare($query); 
-        $result->execute();
-        $usersCount = $result->fetchColumn(); 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute(); 
+        $row = $stmt->fetch();
 
-        if($usersCount){ 
+        if($row){ 
             $username = $row['username'];
         }
 
