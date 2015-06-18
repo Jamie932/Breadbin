@@ -170,16 +170,13 @@
                     if (($userid != $_SESSION['user']['id'])) { ?>
                         <div class="bottomRow">
                             <?php
-                                $query = "SELECT * FROM following WHERE follower_id = :id"; 
-                                $query_params = array(':id' => $_SESSION['user']['id']);
+                                $query = "SELECT * FROM following WHERE follower_id = :id AND user_id = :userid"; 
+                                $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
                                 
                                 $stmt = $db->prepare($query); 
                                 $result = $stmt->execute($query_params); 
                                 $row = $stmt->fetch();
                                     
-                                var_dump($row['user_no']);
-                                var_dump(intval($_GET['id']));
-                        
                                 if ($row['user_no'] != intval($_GET['id'])) {
                                        echo '<button id="followBut">Follow</button>';
                                 } else {
