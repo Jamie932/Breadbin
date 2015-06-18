@@ -177,6 +177,7 @@ p.textPost {
 #rightSettings {
     height: auto;
     width:auto;
+    display: none;
 }
 
 p.settingsDetail {
