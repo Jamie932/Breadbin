@@ -177,7 +177,7 @@
                                 $result = $stmt->execute($query_params); 
                                 $row = $stmt->fetch();
                         
-                                if ($row['user_no'] != intval($_GET['id'])) {
+                                if ($row['user_no'] <> intval($_GET['id'])) {
                                        echo '<button id="followBut">Follow</button>';
                                 } else {
                                         echo '<button id="unFollowBut">Unfollow</button>';   
