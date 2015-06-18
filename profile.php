@@ -123,10 +123,9 @@
                 });
             });
             
-            $(".passwordReset").click(function(){         
-                alert('hello');
-                $(".settingsBox").addClass('passwordSettingsField', function(){
-            $(".settingsBox").removeClass('accountSettingsField');
+            $(".passwordReset").click(function(){
+                $(".settingsBox").removeClass('accountSettingsField', function(){
+                $(".settingsBox").addClass('passwordSettingsField');
                     });
                 });
         });
