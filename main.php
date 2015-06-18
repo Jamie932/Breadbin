@@ -52,6 +52,23 @@
                         encode      : true
                     })
                 })
+            
+            $(document).on('click','.burn', function() {
+                
+                var postid = $(this).parent().attr('class').split('-')[1];
+
+                    var formData = {
+                        'post' : postid
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/burn.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+                })
         })
             
     </script>

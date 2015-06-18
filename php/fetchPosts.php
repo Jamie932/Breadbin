@@ -41,7 +41,7 @@
             if ($_SESSION['user']['id'] == $row['userid']) {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
             } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p>Toast</p><p>Burn</p><p class="report">Report</p></div><br>';
+                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="toast">Toast</p><p class="burn">Burn</p><p class="report">Report</p></div><br>';
             }
             
         } else if ($row['type'] == "text") {
@@ -58,7 +58,7 @@
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
                 <p class="toast">Toast</p>
-                <p>Burn</p>
+                <p class="burn">Burn</p>
                 <p class="report">Report</p></div><br>';
             }
         }
