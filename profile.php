@@ -117,6 +117,16 @@
                     });
                 });
             });
+            
+            $(document).ready(function(){
+                $(".backBut").click(function(){
+                   $(".backBut").fadeOut('normal')
+                   $("#rightSettings").fadeOut('normal', function(){
+                        $("#rightProfile").fadeIn('normal');
+                        $(".settingsBut").fadeIn('normal');
+                    });
+                });
+            });
         });
     </script>
 </head>
