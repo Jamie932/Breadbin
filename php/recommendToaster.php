@@ -7,20 +7,19 @@
         $result = $stmt->execute($query_params); 
         $randUser = $stmt->fetchAll();
         
-        
-        foreach ($randUser as $row) {
-            $user = $row['id'];
-            $usersname = $row['username'];
-        
-            echo '<div class="userRecom">';
-                echo '<div class="usericoRecom">';
-                    echo '<img src="img/cat.jpg" height="50px" width="50px">';
+        if ($row['id']) {
+            foreach ($randUser as $row) {
+                $user = $row['id'];
+                $usersname = $row['username'];
+
+                echo '<div class="userRecom">';
+                    echo '<div class="usericoRecom">';
+                        echo '<img src="img/cat.jpg" height="50px" width="50px">';
+                    echo '</div>';
+                    echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
                 echo '</div>';
-                echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
-            echo '</div>';
-        } 
-        
-        if (!$row['id']) {
-            echo 'silly fuck no more';
+            } 
+        } else {
+            echo 'lool';   
         }
 ?>
