@@ -86,12 +86,11 @@
                         url         : 'php/follow.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true
+                        encode      : true,
+                        success: function() {
+                            sending = false;
+                        }
                     })
-
-                    .done(function() {
-                        sending = false;
-                    });                
 
                     $('.followers').html(parseInt($('.followers').text()) + 1);
                     $('#followBut').replaceWith('<button id="unFollowBut">Unfollow</button>');
@@ -112,13 +111,11 @@
                         url         : 'php/unfollow.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true
+                        encode      : true,
+                        success: function() {
+                            sending = false;
+                        }
                     })
-
-                    .done(function() {
-                        sending = false;
-                    });
-
 
                     $('.followers').html(parseInt($('.followers').text()) - 1);
                     $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');    
