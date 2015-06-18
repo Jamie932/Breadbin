@@ -44,7 +44,12 @@
             $query = "DELETE FROM burns WHERE u_ui = :userId AND p_ui = :postId"; 
             $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params);  
+            $result = $stmt->execute($query_params);
+            
+            $query = "UPDATE posts SET burns=burns-1 WHERE id=:postId";
+            $query_params = array(':postId' => $_POST['post']); 
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params);
             
         } else {
             echo 'Soz luv. You already toasted this fucker. REMOVED BURN';
