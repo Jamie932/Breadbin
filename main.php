@@ -13,7 +13,7 @@
     <script src="js/jquery.cookie.js"></script>
     <script>
         $(document).ready(function(){
-            $('.delete').click(            
+            $('.delete').click(function() {      
                 var confirmed = confirm("Are you sure you want to delete this post?");
       
                 if (confirmed) {
