@@ -37,7 +37,6 @@
         }
 
         echo '<div id="navbar" style="background-color:' .$colour .'" >'
-            
 ?>
 
 	<div class="left">
