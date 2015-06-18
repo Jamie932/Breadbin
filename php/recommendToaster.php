@@ -8,7 +8,7 @@
         $randUser = $stmt->fetchAll();
         
         if (!$randUser) {
-            echo '<div class="followEveryone">';
+            echo '<div class="userRecom">';
                 echo 'You already follow everyone :( <br> New users will appear when they sign up.';   
             echo '<div>';   
         } else {
