@@ -128,6 +128,15 @@
                     });
                 });
             });
+            
+            $(document).ready(function(){
+                $(".passwordReset").click(function(){
+                   $(".accountRightSettings").fadeOut('normal', function(){
+                                        
+                    $(".passwordRightSettings").fadeIn('normal');
+                    });
+                });
+            });
         });
     </script>
 </head>
@@ -240,17 +249,19 @@
                     <li class="settingsList">
                         Privacy
                     </li>
+                    <a href="" class="passwordReset">
                     <li class="settingsList">
-                        Privacy
+                        Password reset
                     </li>
+                    </a>
                     <li class="settingsListLast">
-                        Privacy
+                        Delete account
                     </li>
                 </ul>
             </div>
             
     <div id="settingsBox" style="height:500px;">
-        <div class="rightSettings">
+        <div class="accountRightSettings">
             <div class="settingsField">
                 <div class="settingsHeader">
                     <h3 class="settings">Account Details</h3>
@@ -279,6 +290,30 @@
                         <br>
                         <br>
                     <label> </label>
+                        
+                        <input type="submit" value="Save" class="saveSettings">
+                </form>
+            </div>
+        </div>
+        <div class="passwordRightSettings">
+            <div class="settingsField">
+                <div class="settingsHeader">
+                    <h3 class="settings">Reset your password</h3>
+                    <p class="settingsDetail"></p>
+                </div>
+                <form action="../php/passwordUpdate.php" method="post" class="accountSettings">
+                    <label>Current Password: </label>
+                        <input type="password" name="currentPassword" class="settings" id="currentPassword">
+                        <br>
+                        <br>
+                    <label>New password: </label>
+                        <input type="password" name="newPassword" class="settings" id="newPassword">
+                        <br>
+                        <br>
+                    <label>Email: </label>
+                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email ?>">
+                        <br>
+                        <br>
                         
                         <input type="submit" value="Save" class="saveSettings">
                 </form>
