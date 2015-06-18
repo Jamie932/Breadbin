@@ -56,7 +56,6 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <link rel="stylesheet" href="css/settings.css">
     <script type="text/javascript" src="js/freewall.js"></script>
     <script>
         $(document).ready(function(){
@@ -111,7 +110,7 @@
             $(document).ready(function(){
                 $(".settingsBut").click(function(){
                    $("#rightProfile").fadeOut('normal', function(){
-                    $("#settingsBox").fadeIn('normal');
+                    $("#rightSettings").fadeIn('normal');
                     });
                 });
             });
@@ -176,9 +175,15 @@
             <?php } else { ?>
                         <div class="bottomRow">
                             <button class="settingsBut">Settings</button>
+                            <button class="backBut">Back</button>
                         </div>
             <?php }} ?>
         </div>
+        
+        
+        
+        
+        
         
         <div id="rightProfile">
             <div class="free-wall">
@@ -199,35 +204,38 @@
             </div>
         </div>
         
-        <div id="settingsBox" style="height:500px;">
-        <div class="leftSettings">
-            <ul class="settingsList">
-                <li class="settingsListFirst">
-                    Account Details
-                </li>
-            <a href="privacySettings.php" class="settingsLinks">
-                <li class="settingsList">
-                    Privacy
-                </li>
-            </a>
-                <li class="settingsList">
-                    Privacy
-                </li>
-                <li class="settingsList">
-                    Privacy
-                </li>
-                <li class="settingsList">
-                    Privacy
-                </li>
-                <li class="settingsList">
-                    Privacy
-                </li>
-                <li class="settingsListLast">
-                    Privacy
-                </li>
-            </ul>
-        </div>
+        <div id="clearFix"></div>
         
+        <div id="rightSettings" style="height:500px;">
+            <div class="leftSettings">
+                <ul class="settingsList">
+                    <li class="settingsListFirst">
+                        Account Details
+                    </li>
+                <a href="privacySettings.php" class="settingsLinks">
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                </a>
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    <li class="settingsListLast">
+                        Privacy
+                    </li>
+                </ul>
+            </div>
+            
+    <div id="settingsBox" style="height:500px;">
         <div class="rightSettings">
             <div class="settingsField">
                 <div class="settingsHeader">
@@ -264,6 +272,13 @@
         </div>
     </div>
     <script src="../js/formSettings.js"></script>
+        
+        
+        
+        
+        
+        
+        
         
         <div class="clearFix"></div>
     </div>
