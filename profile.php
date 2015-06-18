@@ -128,7 +128,6 @@
             $(".settingsBox").removeClass('accountSettingsField');
                     });
                 });
-            });
         });
     </script>
 </head>
