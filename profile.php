@@ -121,8 +121,8 @@
             $(document).ready(function(){
                 $(".backBut").click(function(){
                    $(".backBut").fadeOut('normal');
-                   $("#settingsBox").fadeOut('normal');
-                   $(".leftSettings").fadeOut('normal', function(){
+                   $(".leftSettings").animate({ 'marginLeft': '0px' }, 0);
+                   $("#settingsBox").fadeOut('normal', function(){
                         $("#rightProfile").fadeIn('normal');
                         $(".settingsBut").fadeIn('normal');
                     });
