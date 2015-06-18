@@ -17,6 +17,5 @@
                         echo '</div>';
                         echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
                     echo '</div>';
-                } 
-        }
+        } 
 ?>
