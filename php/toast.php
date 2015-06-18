@@ -20,6 +20,6 @@
         $result = $stmt->execute($query_params);
     } else {
         $message = "Soz luv. You already toasted this fucker.";
-echo "<script type='text/javascript'>alert('$message');</script>";
+        echo '<script type="text/javascript">alert("' . $message . '")</script>';
     }
 ?> 
