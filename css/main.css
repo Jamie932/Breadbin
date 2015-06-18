@@ -201,3 +201,9 @@ h5 {
 .usericoRecom {
        display: inline;
 }
+
+#submitPost {
+    vertical-align:top;
+    float:right;
+    margin-right:15px;
+}

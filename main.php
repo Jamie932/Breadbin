@@ -31,19 +31,22 @@
                 <div class="textarea">
                     <form action="php/post.php" method="POST" id="postForm">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Write a slice..."></textarea>
-                    
                 </div>
+                    
                 <div class="uploadRest">
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px"></a>
                     <input type="submit" value="Submit" id="submitPost">
+                    <div class="clearFix"></div>
                 </div>
                     </form>
             </div> 
+            
             <div id="error">
             </div>
+            
             <div id="placehold">
                 <h5>Recommended toasters</h5>
                     <?php require('php/recommendToaster.php');?>
