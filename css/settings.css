@@ -17,9 +17,12 @@ p {
 }
 
 #settingsBox {
-    margin: 110px auto 0 auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 300; bottom: 0; right: 0;
     width:700px;
     overflow: hidden;
+    display:none;
     
     border-width:1px;
     border-style: solid;
