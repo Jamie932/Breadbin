@@ -23,7 +23,7 @@
     
     <div id="center">
         <div id="content">
-            <?php require('php/fetchPosts.php');?>
+            <?php require('php/recommendToaster.php');?>
         </div>
         
         <div id="sidebar">
