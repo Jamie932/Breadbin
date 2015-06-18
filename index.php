@@ -76,7 +76,7 @@
                     $site_url = "http://yourmums.science";
 
                     try{
-                        require("php/facebook/facebook.php");
+                        include_once "php/Facebook/facebook.php";
                     }catch(Exception $e){
                         error_log($e);
                     }
