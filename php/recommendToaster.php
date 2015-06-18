@@ -15,6 +15,6 @@
             echo '<div class="usericoRecom">';
                 echo '<img src="img/cat.jpg" height="50px" width="50px">';
             echo '</div>';
-            echo '<div class="usernameRecom">' .$result . '</div>';
+            echo '<div class="usernameRecom">' .$usersname . '</div>';
         echo '</div>';
 ?>
