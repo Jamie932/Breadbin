@@ -37,7 +37,12 @@
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
-            echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
+            
+            if ($_SESSION['user']['id'] == $row['userid']) {
+                echo '<div id="contentLike"><p class="delete">Delete</p><br>';
+            } else {
+                echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
+            }
             
         } else if ($row['type'] == "text") {
             echo '<div id="contentPost">';
@@ -47,7 +52,12 @@
                     echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
                 echo '</div>';
             echo '</div>';
-            echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
+            
+            if ($_SESSION['user']['id'] == $row['userid']) {
+                echo '<div id="contentLike"><p class="delete">Delete</p><br>';
+            } else {
+                echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
+            }
         }
 	}
 ?>
