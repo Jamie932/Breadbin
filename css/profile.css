@@ -187,7 +187,7 @@ p.settingsDetail {
 #settingsBox {
     margin: auto;
     position: absolute;
-    left: 300; bottom: 0; right: 0;
+    top: 85px; left: 300; right: 0;
     width:560px;
     overflow: hidden;
     display: none;
