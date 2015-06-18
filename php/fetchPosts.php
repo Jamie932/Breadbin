@@ -39,7 +39,7 @@
             echo '</div>';
             
             if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike"><p class="delete">Delete</p><br>';
+                echo '<div id="contentLike"><p class="delete">Delete</p></div><br>';
             } else {
                 echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
             }
@@ -54,7 +54,7 @@
             echo '</div>';
             
             if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike"><p class="delete">Delete</p><br>';
+                echo '<div id="contentLike"><p class="delete">Delete</p></div><br>';
             } else {
                 echo '<div id="contentLike"><P>Toast</P><P>Burn</P><P class="report">Report</P></div><br>';
             }
