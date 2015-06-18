@@ -30,11 +30,9 @@
                         dataType    : 'json',
                         encode      : true,
                         success:function(data) {  
-                            alert("hi");
-                            
                             var thediv = "#contentPost .post-" + postid;
                             $(thediv).fadeOut('normal');
-                            $(this).fadeOut('normal');
+                            //$(this).fadeOut('normal');
                         }
                     })
                 }
