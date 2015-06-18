@@ -70,6 +70,49 @@
 					
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
+                <?php
+                    session_start();
+                    require_once('autoload.php');
+
+                    use Facebook\FacebookSession;
+                    use Facebook\FacebookRedirectLoginHelper;
+                    use Facebook\FacebookRequest;
+                    use Facebook\FacebookResponse;
+                    use Facebook\FacebookSDKException;
+                    use Facebook\FacebookRequestException;
+                    use Facebook\FacebookAuthorizationException;
+                    use Facebook\GraphObject;
+                    use Facebook\Entities\AccessToken;
+                    use Facebook\HttpClients\FacebookCurlHttpClient;
+                    use Facebook\HttpClients\FacebookHttpable;
+
+                    FacebookSession::setDefaultApplication( '417359585110835','69eb79572e961a240acae9f4c20317dd' );
+                    $helper = new FacebookRedirectLoginHelper('http://yourmums.science' );
+
+                    try {
+                      $session = $helper->getSessionFromRedirect();
+                    } catch( FacebookRequestException $ex ) {
+                      // When Facebook returns an error
+                    } catch( Exception $ex ) {
+                      // When validation fails or other local issues
+                    }
+
+                    // see if we have a session
+                    if ( isset( $session ) ) {
+                      // graph api request for user data
+                      $request = new FacebookRequest( $session, 'GET', '/me' );
+                      $response = $request->execute();
+                      // get response
+                      $graphObject = $response->getGraphObject();
+
+                      // print data
+                      echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
+                    } else {
+                      // show login url
+                      echo '<a href="' . $helper->getLoginUrl() . '">Login</a>';
+                    }
+                ?>
+                
 			</div>
 		</div>
 		
