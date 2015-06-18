@@ -72,7 +72,7 @@
 				</form>
                 <?php
                     session_start();
-                    require_once('autoload.php');
+                    require_once('php/autoload.php');
 
                     use Facebook\FacebookSession;
                     use Facebook\FacebookRedirectLoginHelper;
