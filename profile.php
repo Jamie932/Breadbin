@@ -108,17 +108,14 @@
                 $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');
             })
             
+            $(document).ready(function(){
+                $(".settingsBut").click(function(){
+                   $("#rightProfile").fadeOut('normal', function(){
+                    $("#settingsBox").fadeIn('normal');
+                    });
+                });
+            });
         });
-    </script>
-    <script>
-        $(document).ready(function(){
-           $(".settingsBut").click(function(){
-               $("#rightProfile").fadeOut('normal', function(){
-                $("#settingsBox").fadeIn('normal');
-				
-           });
-		});
-       });
     </script>
 </head>
     
@@ -178,7 +175,7 @@
                         </div>
             <?php } else { ?>
                         <div class="bottomRow">
-                            <button id="settingsBut">Settings</button>
+                            <button class="settingsBut">Settings</button>
                         </div>
             <?php }} ?>
         </div>
