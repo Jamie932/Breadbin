@@ -19,6 +19,7 @@
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params);
     } else {
-        echo "<script type='text/javascript'>alert('You've already toasted');</script>";
+        $message = "Soz luv. You already toasted this fucker.";
+echo "<script type='text/javascript'>alert('$message');</script>";
     }
 ?> 
