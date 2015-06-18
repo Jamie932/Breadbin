@@ -70,49 +70,6 @@
 					
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
 				</form>
-                <?php
-                    $app_id = "417359585110835";
-                    $app_secret	= "69eb79572e961a240acae9f4c20317dd";
-                    $site_url = "http://yourmums.science";
-
-                    try{
-                        include_once "php/Facebook/facebook.php";
-                    }catch(Exception $e){
-                        error_log($e);
-                    }
-
-                    $facebook = new Facebook(array(
-                        'appId'		=> $app_id,
-                        'secret'	=> $app_secret,
-                        ));
-                    $user = $facebook->getUser();
-
-                    if ($user) {
-                      try {
-                        $user_profile = $facebook->api('/me');
-                      } catch (FacebookApiException $e) {
-                        error_log($e);
-                        $user = null;
-                      }
-                    }
-
-                    if ($user) {
-                        $logoutUrl = $facebook->getLogoutUrl();
-                    } else {
-                        $loginUrl = $facebook->getLoginUrl();
-                    }
-
-                    if ($user): ?>
-                      <h3>You</h3>
-                      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
-
-                      <h3>Your User Object (/me)</h3>
-                      <pre><?php print_r($user_profile); ?></pre>
-                    <?php else: 
-                            echo'<strong><em><a href="' . $loginUrl . '">You are not Connected.</a></em></strong>';
-                        endif
-                    ?>
-                
 			</div>
 		</div>
 		
