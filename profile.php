@@ -121,7 +121,7 @@
             $(document).ready(function(){
                 $(".backBut").click(function(){
                    $(".backBut").fadeOut('normal');
-                   $(".leftSettings").animate({ 'marginLeft': '0px' }, 0);
+                   $(".leftSettings").fadeOut('normal');
                    $("#settingsBox").fadeOut('normal', function(){
                         $("#rightProfile").fadeIn('normal');
                         $(".settingsBut").fadeIn('normal');
