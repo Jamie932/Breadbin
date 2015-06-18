@@ -38,7 +38,6 @@
             
             $(document).on('click','.toast', function() {
                 
-      
                 var postid = $(this).parent().attr('class').split('-')[1];
 
                     var formData = {
@@ -50,13 +49,9 @@
                         url         : 'php/toast.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true,
-                        success:function(data) {  
-
-                        }
+                        encode      : true
                     })
-                }
-            })
+                })
         })
             
     </script>
