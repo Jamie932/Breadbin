@@ -27,7 +27,7 @@
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
         } else {
-            echo 'Burn no like'   
+            echo 'Burn no like';
         }
     } else {
         if($matches==0){
@@ -46,12 +46,12 @@
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
             
-            $query = "UPDATE posts SET likes = likes-1 WHERE id = :postId";
+            $query = "UPDATE posts SET likes = likes-1 WHERE id = :postId"; 
             $query_params = array(':postId' => $_POST['post']); 
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
         } else {
-            echo 'Burn but liked'   
+            echo 'Burn but liked';  
         }
     } 
 ?> 
