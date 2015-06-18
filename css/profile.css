@@ -283,7 +283,7 @@ li.settingsList:hover, li.settingslistLast:hover {
     color: #6D6D6D;
 }
 
-.accountRightSettings {
+.rightSettings {
     display: inline;
     float: right;
     background-color: #fff;
@@ -291,19 +291,16 @@ li.settingsList:hover, li.settingslistLast:hover {
     height: 100%;
 }
 
-.passwordRightSettings {
-    display: inline;
-    float: right;
-    background-color: #fff;
-    width: 559px;
-    height: 100%;
-    display:none;
-}
 
-
-.settingsField {
+.accountSettingsField {
     margin-top: 30px;
     margin-left: 30px;   
+}
+
+.passwordSettingsField {
+    margin-top: 30px;
+    margin-left: 30px;  
+    display:none;
 }
 
 h3.settings {

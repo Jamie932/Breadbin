@@ -125,9 +125,9 @@
             
             $(document).ready(function(){
                 $(".passwordReset").click(function(){
-                   $(".accountRightSettings").fadeOut('normal', function(){
+                   $(".settingsBox").addClass('passwordSettingsField', function(){
                                         
-                    $(".passwordRightSettings").fadeIn('normal');
+                    $(".settingsBox").removeClass('accountSettingsField');
                     });
                 });
             });
@@ -255,8 +255,8 @@
             </div>
             
     <div id="settingsBox" style="height:500px;">
-        <div class="accountRightSettings">
-            <div class="settingsField">
+        <div class="rightSettings">
+            <div class="accountSettingsField">
                 <div class="settingsHeader">
                     <h3 class="settings">Account Details</h3>
                     <p class="settingsDetail">Update your account details</p>
@@ -288,9 +288,8 @@
                         <input type="submit" value="Save" class="saveSettings">
                 </form>
             </div>
-        </div>
-        <div class="passwordRightSettings">
-            <div class="settingsField">
+            
+            <div class="passwordSettingsField">
                 <div class="settingsHeader">
                     <h3 class="settings">Reset your password</h3>
                     <p class="settingsDetail"></p>
@@ -313,6 +312,7 @@
                 </form>
             </div>
         </div>
+
     </div>
     <script src="../js/formSettings.js"></script>
         
