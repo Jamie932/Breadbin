@@ -46,30 +46,7 @@
             </div>
             <div id="placehold">
                 <h5>Recommended toasters</h5>
-                <div class="userRecom">
-                    <div class="usericoRecom">
-                        <img src="img/cat.jpg" height="50px" width="50px">
-                    </div>
-                       <div class="usernameRecom">
-                            UsernameUsernameUser
-                       </div>
-                </div>
-                <div class="userRecom">
-                    <div class="usericoRecom">
-                        <img src="img/cat.jpg" height="50px" width="50px">
-                    </div>
-                       <div class="usernameRecom">
-                            UsernameUsernameUser
-                       </div>
-                </div>
-                <div class="userRecom">
-                    <div class="usericoRecom">
-                        <img src="img/cat.jpg" height="50px" width="50px">
-                    </div>
-                       <div class="usernameRecom">
-                            UsernameUsernameUser
-                       </div>
-                </div>
+                    <?php require('php/fetchPosts.php');?>
             </div>
         </div>
     </div>
