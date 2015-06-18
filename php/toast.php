@@ -1,14 +1,22 @@
 <?php
     require("common.php");
-
-    $sql=$db->prepare("SELECT * FROM likes WHERE pid = :postID and uid= :userId");
-    $sql->execute(array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']));
-    $matches=$sql->rowCount();
                   
+    $query = "SELECT * FROM likes WHERE pid = :postID AND uid= :userId"; 
+    $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
+        
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params); 
+    $row = $stmt->rowCount();
+
     if($matches==0){
-        $sql=$db->prepare("INSERT INTO likes (pid, user) VALUES(:postId, :userId)");
-        $sql->execute(array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']));
-        $sql=$db->prepare("UPDATE posts SET likes=likes+1 WHERE id=:postId");
-        $sql->execute(array(':postId' => $_POST['post']));         
+        $query = "INSERT INTO likes (pid, user) VALUES(:postId, :userId)";
+        $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']));
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+        
+        $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
+        $query_params = array(':postId' => $_POST['post'])); 
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
     }
 ?> 
