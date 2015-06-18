@@ -124,8 +124,8 @@
             });
             
             $(".passwordReset").click(function(){
-                $(".settingsBox").removeClass('accountSettingsField', function(){
-                $(".settingsBox").addClass('passwordSettingsField');
+                $(".accountSettingsField").fadeOut('normal', function(){
+                    $(".passwordSettingsField").fadeIn('normal');
                     });
                 });
         });
