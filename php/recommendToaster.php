@@ -3,8 +3,8 @@
 
     $query = "SELECT count(*) FROM users"; 
         $result = $db->prepare($query); 
+        $result->execute();
         $usersCount = $result->fetchColumn(); 
-
 
         echo '<div class="userRecom">';
             echo '<div class="usericoRecom">';
