@@ -10,12 +10,12 @@
 
     if($matches==0){
         $query = "INSERT INTO likes (pid, user) VALUES(:postId, :userId)";
-        $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']));
+        $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params);
         
         $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
-        $query_params = array(':postId' => $_POST['post'])); 
+        $query_params = array(':postId' => $_POST['post']); 
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params);
     }
