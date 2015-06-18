@@ -210,9 +210,9 @@ p.settingsDetail {
     width: 140px;  
     height: 100%;
     background-color: #fff;
-    margin-left: 280px;
     display: inline;
     float: left;
+    margin-top: 50px;
 }
 
 .settingsChoice {
