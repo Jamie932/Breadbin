@@ -8,8 +8,9 @@
         $randUser = $stmt->fetchAll();
         
         if (!$randUser) {
-            echo '<div class="userRecom">';
-            echo 'lool';   
+            echo '<div class="followEveryone">';
+                echo 'You already follow everyone. <br> New users will appear when they sign up.';   
+            echo '<div>';   
         } else {
             foreach ($randUser as $row) {
                 $user = $row['id'];
