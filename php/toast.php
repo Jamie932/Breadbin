@@ -9,7 +9,7 @@
     $row = $stmt->rowCount();
 
     if($matches==0){
-        $query = "INSERT INTO likes (pid, user) VALUES(:postId, :userId)";
+        $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
         $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params);
