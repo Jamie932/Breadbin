@@ -42,7 +42,7 @@
                 echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                <p class="toast">Toast (' . $row['likes'] . ')</p>
+                <p class="toast">Toast (' . $row['toasts'] . ')</p>
                 <p class="burn">Burn (' . $row['burns'] . ')</p>
                 <p class="report">Report</p></div><br>';
             }
@@ -62,7 +62,7 @@
                     </div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                <p class="toast">Toast (' . $row['likes'] . ')</p>
+                <p class="toast">Toast (' . $row['toasts'] . ')</p>
                 <p class="burn">Burn (' . $row['burns'] . ')</p>
                 <p class="report">Report</p></div><br>';
             }

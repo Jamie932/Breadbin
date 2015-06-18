@@ -1,14 +1,14 @@
 <?php
     require("common.php");
                   
-    $query = "SELECT * FROM likes WHERE pid = :postId AND uid= :userId"; 
+    $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
     $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
         
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $matches = $stmt->rowCount();
     
-    $query = "SELECT * FROM burns WHERE p_id = :postId AND u_id= :userId"; 
+    $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
     $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
         
     $stmt = $db->prepare($query);
@@ -17,12 +17,12 @@
     
     if($ifBurnt==0) {
         if($matches==0){
-            $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
+            $query = "INSERT INTO post_toasts (pid, uid) VALUES(:postId, :userId)";
             $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
 
-            $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
+            $query = "UPDATE posts SET toasts=toasts+1 WHERE id=:postId";
             $query_params = array(':postId' => $_POST['post']); 
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
@@ -31,17 +31,17 @@
         }
     } else {
         if($matches==0){
-            $query = "INSERT INTO likes (pid, uid) VALUES(:postId, :userId)";
+            $query = "INSERT INTO post_toasts (pid, uid) VALUES(:postId, :userId)";
             $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
 
-            $query = "UPDATE posts SET likes=likes+1 WHERE id=:postId";
+            $query = "UPDATE posts SET toasts=toasts+1 WHERE id=:postId";
             $query_params = array(':postId' => $_POST['post']); 
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params);
             
-            $query = "DELETE FROM burns WHERE u_id = :userId AND p_id = :postId"; 
+            $query = "DELETE FROM post_burns WHERE u_id = :userId AND p_id = :postId"; 
             $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
