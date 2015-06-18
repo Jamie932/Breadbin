@@ -7,7 +7,7 @@
         $result = $stmt->execute($query_params); 
         $randUser = $stmt->fetchAll();
         
-        if (!$row['id']) {
+        if (!$randUser) {
             echo '<div class="userRecom">';
             echo 'lool';   
         } else {
