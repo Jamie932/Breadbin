@@ -90,9 +90,10 @@
                     if( $userId == 0 ) {
                         $url = $facebook->getLoginUrl( array( 'scope' => 'email, user_status' ) );
                         echo '<a href="' . $url . '">';
-                        echo '<fb:login-button></fb:login-button>';
+                        echo '<input class="btn btn-info" value="FB Login" id="submit"/>';
                         echo '</a>';
                     } else {
+                        echo 'YES WOOO';
                           $userdata = $facebook->api( '/me' );
                           $data = array(
                                 'first_name'    => $userdata['first_name'],
@@ -106,7 +107,7 @@
                                 'location'      => $userdata['location'],
                                 'hometown'      => $userdata['hometown'],
                           ); 
-                          print_r( $data );
+                          echo print_r( $data );
                     }
                 ?>
                 
