@@ -62,7 +62,7 @@
                     </div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                <p class="toast">Toast (<p class="toast content"' . $row['likes'] . '</p>)</p>
+                <p class="toast">Toast (' . $row['likes'] . ')</p>
                 <p class="burn">Burn (' . $row['burns'] . ')</p>
                 <p class="report">Report</p></div><br>';
             }
