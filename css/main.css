@@ -216,6 +216,14 @@ h5 {
     transition: all .4s ease-in-out;
 }
 
+.burn, .unburn {
+    margin-top: 10px !important;
+}
+
+.toast, .untoast {
+    margin-top: 15px !important;
+}
+
 .untoast, .unburn {
     color:darkgray;  
     -moz-transition: all .4s ease-in-out;
