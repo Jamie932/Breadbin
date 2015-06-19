@@ -37,74 +37,80 @@
             })
             
             $(document).on('click','.toast', function() {
-                
-                var postid = $(this).parent().attr('class').split('-')[1];
+                var postid = $(this).parent().attr('class').split('-')[1]; 
+                var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
 
-                    var formData = {
-                        'post' : postid
-                    };
+                var formData = {
+                    'post' : postid
+                };
 
-                    $.ajax({
-                        type        : 'POST',
-                        url         : 'php/toast.php',
-                        data        : formData,
-                        dataType    : 'json',
-                        encode      : true
-                    }) 
-                    
-                    var div = $(this).closest('#contentLike').children('.totalToasts');
-                
-                    div.html(parseInt(div.text()) + 1);
-                    $(this).replaceWith('<p class="untoast">Untoast</p>');
-                
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/toast.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                }) 
+
+                .done(function(data) {
+                     console.log(data); 
+
+                    if (!data.success) {
+                        // Already burnt the post - error.
+                        alert("not successful soz");
+
+                    } else {
+                        if (data.removedBurn && data.addedToast) {
+                            // Previously burnt
+                            totalToasts.html(parseInt(totalToasts.text()) + 2);
+                        } else if (data.removedBurn || data.addedToast) {
+                            totalToasts.html(parseInt(totalToasts.text()) + 1);
+                        } else {
+                            alert("problem detected woop woop");
+                        }
+
+                        $(this).replaceWith('<p class="untoast">Untoast</p>');
+                    }
                 })
+            })
             
             $(document).on('click','.burn', function() {
-                
                 var postid = $(this).parent().attr('class').split('-')[1];
-
-                    var formData = {
-                        'post' : postid
-                    };
-
-                    $.ajax({
-                        type        : 'POST',
-                        url         : 'php/burn.php',
-                        data        : formData,
-                        dataType    : 'json',
-                        encode      : true
-                    })
-                    
-                <?php
-                    $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-                    $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
-
-                    $stmt = $db->prepare($query);
-                    $result = $stmt->execute($query_params); 
-                    $ifToasted = $stmt->rowCount();
-
-                    if ($ifToasted <> 0) { ?>
-                    
-                        var div = $(this).closest('#contentLike').children('.totalToasts');
-
-                        div.html(parseInt(div.text()) - 2);
-
-                        $(this).replaceWith('<p class="unburn">Unburn</p>');
-                        $('.toast').replaceWith('<p class="toast">Toast</p>'); 
-                    
-                    <?php
-                    } else { ?>
+                var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 
-                        var div = $(this).closest('#contentLike').children('.totalToasts');
-                
-                        div.html(parseInt(div.text()) - 1);
-                
-                        $(this).replaceWith('<p class="unburn">Unburn</p>');
-                
-                    <?php 
-                    }
-                    ?>
+                var formData = {
+                    'post' : postid
+                };
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/burn.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
                 })
+                
+                .done(function(data) {
+			         console.log(data); 
+                    
+                    if (!data.success) {
+                        // Already burnt the post - error.
+                        alert("not successful soz");
+                        
+                    } else {
+                        if (data.removedToast && data.addedBurn) {
+                            // Previously toasted
+                            totalToasts.html(parseInt(totalToasts.text()) - 2);
+                        } else if (data.removedToast || data.addedBurn) {
+                            totalToasts.html(parseInt(totalToasts.text()) - 1);
+                        } else {
+                            alert("problem detected woop woop");
+                        }
+                        
+                        $(this).replaceWith('<p class="unburn">Unburn</p>');
+                    }
+                })
+            })
             
             $("#uploadText").keypress(function(event) {
                 if(event.which == '13') {
