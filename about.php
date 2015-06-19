@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Bread Bin</title>
-    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/about.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
@@ -25,7 +25,7 @@
                         Overview
                     </li>
                     <li class="linkItem">
-                        Features
+                        <a name="features">Features</a>
                     </li>
                     <li class="linkItem">
                         Slices
@@ -48,8 +48,17 @@
             <a class="loginHeaderLink" href="">Login</a>
         </div>
     </div>
-    <div id="">
-        
+    <a href="#features"></a>
+    <div id="features">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 </body>
 </html
