@@ -40,7 +40,8 @@
                 var postid = $(this).parent().attr('class').split('-')[1]; 
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 
-                alert($(this));
+                alert(postid);
+                alert(totalToasts);
                 
                 var formData = {
                     'post' : postid
