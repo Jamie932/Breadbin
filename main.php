@@ -75,11 +75,27 @@
                         encode      : true
                     })
                     
+                <?php
+                    $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+                    $query_params = array(':postId' => $postIdpls, ':userId' => $_SESSION['user']['id']);
+
+                    $stmt = $db->prepare($query);
+                    $result = $stmt->execute($query_params); 
+                    $ifToasted = $stmt->rowCount();
+
+                    if ($ifToasted <> 0) {
+                ?>
+                    
                     var div = $(this).closest('#contentLike').children('.totalToasts');
                 
-                    div.html(parseInt(div.text()) - 1);
-                    $(this).replaceWith('<p class="unburn">Unburn</p>');
+                    div.html(parseInt(div.text()) - 2);
                 
+                    $(this).replaceWith('<p class="unburn">Unburn</p>');
+                    $('.toast').replaceWith('<p class="toast">Toast</p>');
+                    
+                    <?php
+                        }
+                    ?>
                 })
             
             $("#uploadText").keypress(function(event) {
