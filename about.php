@@ -12,6 +12,7 @@
 </head>
 <body>
     <div id="aboutHeader">
+        <a href="#Overview"></a>
         <div class="leftHeader">
             <div class="logo">
                 <img src="img/favicon.png">
@@ -22,7 +23,7 @@
             <div class="navlinksHeader">
                 <ul class="headerNav">
                     <li class="linkItem">
-                        Overview
+                        <a name="Overview">Overview</a>
                     </li>
                     <li class="linkItem">
                         <a name="features">Features</a>
@@ -48,8 +49,14 @@
             <a class="loginHeaderLink" href="">Login</a>
         </div>
     </div>
-    <a href="#features"></a>
     <div id="features">
+    <a href="#features"></a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
