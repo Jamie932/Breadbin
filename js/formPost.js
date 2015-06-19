@@ -3,8 +3,7 @@ $(document).ready(function() {
     
     $('#postForm').submit(function(event) {
         var formData = {
-            'text' : $('.postText').val(),
-            'image' : $('.imagePost')
+            'text' : $('.postText').val()
         };
 
         $.ajax({
