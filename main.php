@@ -54,15 +54,14 @@
                 }) 
 
                 .done(function(data) {
-                     console.log(data); 
-                    alert(data);
+                     console.log(data);
                     
                     if (!data.success) {
-                        // Already burnt the post - error.
+                        // Already toasted the post - error.
                         alert("not successful soz");
                     } else {
                         if (data.removedBurn && data.addedToast) {
-                            // Previously burnt
+                            // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) + 2);
                         } else if (data.removedBurn || data.addedToast) {
                             totalToasts.html(parseInt(totalToasts.text()) + 1);
