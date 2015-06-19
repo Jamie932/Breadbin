@@ -60,7 +60,6 @@
                         // Already toasted the post - error.
                         alert("not successful soz");
                     } else {
-                        alert(totalToasts.html());
                         if (data.removedBurn && data.addedToast) {
                             // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) + 2);
@@ -78,6 +77,7 @@
             $(document).on('click','.burn', function() {
                 var postid = $(this).parent().attr('class').split('-')[1];
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
+                var burnButton = $(this).closest('#contentLike').children('.burn');
                 
                 var formData = {
                     'post' : postid
@@ -108,7 +108,7 @@
                             alert("problem detected woop woop");
                         }
                         
-                        $(this).replaceWith('<p class="unburn">Unburn</p>');
+                        burnButton.replaceWith('<p class="unburn">Unburn</p>');
                     }
                 })
             })
