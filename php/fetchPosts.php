@@ -50,13 +50,14 @@
                 echo '<p>' .$totalToasts. '</div><br>'; 
             }
             
-        } else if ($row['type'] == "text") {
-            echo '<script type=\"text/javascript\">';
-                echo '$(document).on(\'click\',\'.toast\', function() {';
-            echo '$(\'.totalToasts\').html(parseInt($(\'.totalToasts\').text()) + 1);
-$(\'.toast\').replaceWith(<p class="untoast">Untoast</p>);';
-            echo '})';
- `           echo '</script>';
+        } else if ($row['type'] == "text") { ?>
+            <script type="text/javascript\">'
+            $(document).on('click','.toast', function() {                       $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
+        $('.toast').replaceWith(<p class="untoast">Untoast</p>);
+            })
+            
+ `          </script>
+        <?php
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
                 echo '<div id="contentInfoText">';
