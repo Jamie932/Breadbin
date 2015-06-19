@@ -69,7 +69,7 @@
                             alert("problem detected woop woop");
                         }
 
-                        $(this).replaceWith('<p class="untoast">Untoast</p>');
+                        //$(this).replaceWith('<p class="untoast">Untoast</p>');
                     };
                 })
             })
