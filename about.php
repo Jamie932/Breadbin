@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="aboutHeader">
-        <a href="#Overview"></a>
+        <a name="Overview"></a>
         <div class="leftHeader">
             <div class="logo">
                 <img src="img/favicon.png">
@@ -23,10 +23,10 @@
             <div class="navlinksHeader">
                 <ul class="headerNav">
                     <li class="linkItem">
-                        <a name="Overview">Overview</a>
+                        <a href="#Overview">Overview</a>
                     </li>
                     <li class="linkItem">
-                        <a name="features">Features</a>
+                        <a href="features">Features</a>
                     </li>
                     <li class="linkItem">
                         Slices
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div id="features">
-    <a href="#features"></a>
+    <a name="features"></a>
         <br>
         <br>
         <br>
