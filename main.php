@@ -74,6 +74,12 @@
                         dataType    : 'json',
                         encode      : true
                     })
+                    
+                    var div = $(this).closest('#contentLike').children('.totalToasts');
+                
+                    div.html(parseInt(div.text()) - 1);
+                    $(this).replaceWith('<p class="unburn">Unburn</p>');
+                
                 })
             
             $("#uploadText").keypress(function(event) {
