@@ -126,10 +126,6 @@
                     return false;
                 }
             });
-            
-             $('input[type=file]').change(function(e){
-                $('#uploadname').html($(this).val());
-            });
         })
         
         function getFile(){
@@ -154,7 +150,7 @@
         
         <div id="sidebar">
             <div class="upload">
-                <form action="php/post.php" method="POST" id="postForm">
+                <form action="php/post.php" method="POST" id="postForm" enctype="multipart/form-data">
                     <div class="textarea">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Write a slice..."></textarea>
                     </div>
