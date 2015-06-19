@@ -50,10 +50,7 @@
                         data        : formData,
                         dataType    : 'json',
                         encode      : true
-                    })
-                
-                    $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
-        $('.toast').replaceWith(<p class="untoast">Untoast</p>); 
+                    }) 
                     
                 })
             
