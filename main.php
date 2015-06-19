@@ -61,8 +61,7 @@
                         // Already toasted the post - error.
                         alert("not successful soz");
                     } else {
-                        if (data.removedBurn && data.addedToast) {
-                            // Previously toasted
+                        if (data.removedBurn && data.addedToast) { // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) + 2);
                             
                             burnButton.css('color', 'black'); 
@@ -105,10 +104,11 @@
                         alert("not successful soz");
                         
                     } else {
-                        if (data.removedToast && data.addedBurn) {
-                            // Previously toasted
+                        if (data.removedToast && data.addedBurn) { // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) - 2);
-                            toastButton.replaceWith('<p class="toast">Toast</p>');
+                            
+                            toastButton.css('color', 'black'); 
+                            toastButton.toggleClass('untoast toast');
                         } else if (data.removedToast || data.addedBurn) {
                             totalToasts.html(parseInt(totalToasts.text()) - 1);
                         } else {
