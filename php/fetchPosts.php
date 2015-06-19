@@ -86,7 +86,7 @@
                 } else { 
                     echo '<p class="untoast">Untoast</p>';
                 }
-                if ($ifBurned==0) {
+                if ($ifBurnt==0) {
                     echo '<p class="burn">Burn</p>';
                 } else {
                     echo '<p class="unburn">Unburn</p>';
