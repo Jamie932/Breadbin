@@ -127,6 +127,10 @@
                 }
             });
         })
+        
+        function getFile(){
+            $('#upfile').click();
+        }
             
     </script>
 </head>
@@ -146,20 +150,21 @@
         
         <div id="sidebar">
             <div class="upload">
-                <div class="textarea">
-                    <form action="php/post.php" method="POST" id="postForm">
+                <form action="php/post.php" method="POST" id="postForm">
+                    <div class="textarea">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Write a slice..."></textarea>
-                </div>
+                    </div>
                     
-                <div class="uploadRest">
-                    <a><img src="img/camera.png" class="postImage" id="uploadImage" height="30px" width="30px" style="vertical-align:top; margin-left:5px;"></a>
-                    
-                    <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
-                    <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
-                    <input type="submit" value="Submit" id="submitPost">
-                    <div class="clearFix"></div>
-                </div>
-                    </form>
+                    <div class="uploadRest">
+                        <a href="#" onclick="getFile();"><img src="img/camera.png" class="postImage" id="uploadImage" height="30px" width="30px" style="vertical-align:top; margin-left:5px;"></a>
+                        <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upload" accept="image/*"/></div>
+                        
+                        <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
+                        <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
+                        <input type="submit" value="Submit" id="submitPost">
+                        <div class="clearFix"></div>
+                    </div>
+                </form>
             </div> 
             
             <div id="error">
