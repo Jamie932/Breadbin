@@ -77,7 +77,7 @@
                     
                 <?php
                     $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-                    $query_params = array(':postId' => ?> var postid = $(this).parent().attr('class').split('-')[1] <?php, ':userId' => $_SESSION['user']['id']);
+                    $query_params = array(':postId' => ?> var postid <?php, ':userId' => $_SESSION['user']['id']);
 
                     $stmt = $db->prepare($query);
                     $result = $stmt->execute($query_params); 
@@ -85,12 +85,12 @@
 
                     if ($ifToasted <> 0) { ?>
                     
-                    var div = $(this).closest('#contentLike').children('.totalToasts');
-                
-                    div.html(parseInt(div.text()) - 2);
-                
-                    $(this).replaceWith('<p class="unburn">Unburn</p>');
-                    $('.toast').replaceWith('<p class="toast">Toast</p>');
+                        var div = $(this).closest('#contentLike').children('.totalToasts');
+
+                        div.html(parseInt(div.text()) - 2);
+
+                        $(this).replaceWith('<p class="unburn">Unburn</p>');
+                        $('.toast').replaceWith('<p class="toast">Toast</p>'); 
                     
                     <?php
                     } else { ?>
