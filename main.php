@@ -126,16 +126,15 @@
                     return false;
                 }
             });
+            
+            $('input[type=file]').change(function(e){
+                $('#uploadname').html($(this).val());
+            });
         })
         
         function getFile(){
             $('#upfile').click();
         }
-            
-        $('input[type=file]').change(function(e){
-            $('#uploadname').html($(this).val());
-        });
-        
     </script>
 </head>
 <body>
