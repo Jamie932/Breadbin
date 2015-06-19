@@ -137,10 +137,10 @@
                 </div>
                     
                 <div class="uploadRest">
-                    <a><img src="img/cat.jpg" height="40px" width="40px"></a>
-                    <a><img src="img/cat.jpg" height="40px" width="40px"></a>
-                    <a><img src="img/cat.jpg" height="40px" width="40px"></a>
-                    <a><img src="img/cat.jpg" height="40px" width="40px"></a>
+                    <a><img src="img/camera.png" height="40px" width="40px"></a>
+                    <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
+                    <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
+                    <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
                     <input type="submit" value="Submit" id="submitPost">
                     <div class="clearFix"></div>
                 </div>
