@@ -2,19 +2,33 @@ $(document).ready(function() {
     var errorExists = false;
 
     $('#postForm').submit(function(event) {
-        var formData = {
-            'text' : $('.postText').val()
-        };
+        var formData = new FormData();    
+        var has_selected_file = $('input[type=file]').filter(function(){return $.trim(this.value) != ''}).length  > 0;
+        
+        if (has_selected_file) {
+            formData.append( 'file', $('input[type=file]').files[0] );
+        }
+        formData.append('text', $('.postText').val());
 
         $.ajax({
             type        : 'POST',
             url         : 'php/post.php',
+            processData : false,
+            contentType : false,
+            cache       : false,
             data        : formData,
-            dataType    : 'json',
-            encode      : true
+            success     : function (msg) {
+                alert(msg);
+				window.location.replace("main.php");
+            },
+            error       : function(data){
+                console.log("error");
+                console.log(data);
+            }
+            
         })
 		
-		.done(function(data) {
+		/*.done(function(data) {
 			console.log(data);
 		
 			if (!data.success) {
@@ -32,7 +46,7 @@ $(document).ready(function() {
                 errorExists = false;
 				window.location.replace("main.php");
 			}
-		});
+		});*/
 		
         event.preventDefault();
     });
