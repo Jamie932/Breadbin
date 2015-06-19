@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="aboutHeader">
-        <a name="Overview"></a>
+        <a name="Overview">
         <div class="leftHeader">
             <div class="logo">
                 <img src="img/favicon.png">
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div id="features">
-    <a name="features"></a>
+    <a name="features">
         <br>
         <br>
         <br>
