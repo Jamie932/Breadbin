@@ -77,7 +77,7 @@
                     
                 <?php
                     $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-                    $query_params = array(':postId' => , ':userId' => $_SESSION['user']['id']);
+                    $query_params = array(':postId' => ?> var postid <?php, ':userId' => $_SESSION['user']['id']);
 
                     $stmt = $db->prepare($query);
                     $result = $stmt->execute($query_params); 
