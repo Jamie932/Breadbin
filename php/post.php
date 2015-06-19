@@ -22,7 +22,7 @@
         } else {
             die('error uploading File!');
         }
-    else {
+    } else {
         if (empty($_POST['text'])) { 
             $errors['text'] = 'Text is required.';
         } else if (ctype_space($_POST['text'])) {
