@@ -231,3 +231,10 @@ h5 {
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+
+#uploadname {
+    float: left;
+    margin-left:5px;
+    margin-top:5px;
+    font-size:0.8em;
+}
