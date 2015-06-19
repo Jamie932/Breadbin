@@ -7,12 +7,21 @@
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
 
+    $postId = $row['id'];
+
     $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
-    $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
+    $query_params = array(':postId' => $postId, ':userId' => $_SESSION['user']['id']); 
         
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $ifBurnt = $stmt->rowCount();
+
+    $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+    $query_params = array(':postId' => $postId, ':userId' =>   $_SESSION['user']['id']);
+
+    $stmt = $db->prepare($query);
+    $result = $stmt->execute($query_params); 
+    $ifToasted = $stmt->rowCount();
 	
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
@@ -72,13 +81,6 @@
                     </div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                
-                $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-                $query_params = array(':postId' =>         $_POST['post'], ':userId' =>   $_SESSION['user']['id']);
-
-                $stmt = $db->prepare($query);
-                $result = $stmt->execute($query_params); 
-                $ifToasted = $stmt->rowCount();
                 
                 if ($ifToasted==0) {
                 echo '<p class="toast">Toast</p>';
