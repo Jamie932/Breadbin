@@ -71,7 +71,7 @@
                             alert("problem detected woop woop");
                         }
                         
-                        toastButton.switchClass('toast', 'untoast', 500);
+                        toastButton.toggleClass('toast untoast');
                     };
                 })
             })
@@ -112,7 +112,7 @@
                             alert("problem detected woop woop");
                         }
                         
-                        burnButton.replaceWith('<p class="unburn">Unburn</p>');
+                        burnButton.toggleClass('burn unburn');
                     }
                 })
             })
