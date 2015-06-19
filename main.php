@@ -112,6 +112,7 @@
                             alert("problem detected woop woop");
                         }
                         
+                        burnButton.css('color', 'darkgray'); 
                         burnButton.toggleClass('burn unburn');
                     }
                 })

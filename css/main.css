@@ -204,7 +204,7 @@ h5 {
     margin-right:15px;
 }
 
-.delete:hover, .toast:hover, .burn:hover, .report:hover {
+.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover {
     cursor:pointer;
 }
 
@@ -217,5 +217,9 @@ h5 {
 }
 
 .untoast, .unburn {
-    color:darkgray;   
+    color:darkgray;  
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
 }
