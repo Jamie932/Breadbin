@@ -52,8 +52,8 @@
                         encode      : true
                     }) 
                     
-                     $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
-        $('.toast').replaceWith('<p class="untoast">Untoast</p>');
+                    $(this).closest('#contentLike').children('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
+                    $(this).replaceWith('<p class="untoast">Untoast</p>');
                 
                 })
             
