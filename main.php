@@ -40,6 +40,7 @@
                 var postid = $(this).parent().attr('class').split('-')[1]; 
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 var toastButton = $(this).closest('#contentLike').children('.toast');
+                var burnButton = $(this).closest('#contentLike').children('.burn');
                 
                 var formData = {
                     'post' : postid
@@ -63,6 +64,7 @@
                         if (data.removedBurn && data.addedToast) {
                             // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) + 2);
+                            burnButton.replaceWith('<p class="burn">Burn</p>');
                         } else if (data.removedBurn || data.addedToast) {
                             totalToasts.html(parseInt(totalToasts.text()) + 1);
                         } else {
@@ -78,6 +80,7 @@
                 var postid = $(this).parent().attr('class').split('-')[1];
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 var burnButton = $(this).closest('#contentLike').children('.burn');
+                var toastButton = $(this).closest('#contentLike').children('.toast');
                 
                 var formData = {
                     'post' : postid
@@ -102,6 +105,7 @@
                         if (data.removedToast && data.addedBurn) {
                             // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) - 2);
+                            toastButton.replaceWith('<p class="toast">Toast</p>');
                         } else if (data.removedToast || data.addedBurn) {
                             totalToasts.html(parseInt(totalToasts.text()) - 1);
                         } else {
