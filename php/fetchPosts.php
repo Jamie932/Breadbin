@@ -53,7 +53,8 @@
         } else if ($row['type'] == "text") { ?>
             <script type="text/javascript">
             $(document).on('click','.toast', function() {                       $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
-        $('.toast').replaceWith(<p class="untoast">Untoast</p>);
+        $('.toast').replaceWith('<p class="untoast">Untoast</p>'); 
+                                
             })
  `          </script>
         <?php

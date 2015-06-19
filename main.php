@@ -52,6 +52,7 @@
                         encode      : true
                     }) 
                     
+                    
                 })
             
             $(document).on('click','.burn', function() {
