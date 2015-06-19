@@ -51,11 +51,10 @@
             }
             
         } else if ($row['type'] == "text") { ?>
-            <script type="text/javascript\">'
+            <script type="text/javascript">
             $(document).on('click','.toast', function() {                       $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
         $('.toast').replaceWith(<p class="untoast">Untoast</p>);
             })
-            
  `          </script>
         <?php
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
