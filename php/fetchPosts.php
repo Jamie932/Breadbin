@@ -7,13 +7,6 @@
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
 
-    $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-    $query_params = array(':postId' =>         $_POST['post'], ':userId' =>   $_SESSION['user']['id']);
-        
-    $stmt = $db->prepare($query);
-    $result = $stmt->execute($query_params); 
-    $ifToasted = $stmt->rowCount();
-
     $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
     $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']); 
         
@@ -79,15 +72,23 @@
                     </div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
+                
+                $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+                $query_params = array(':postId' =>         $_POST['post'], ':userId' =>   $_SESSION['user']['id']);
+
+                $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params); 
+                $ifToasted = $stmt->rowCount();
+                
                 if ($ifToasted==0) {
                 echo '<p class="toast">Toast</p>';
                 } else { 
                 echo '<p class="untoast">Untoast</p>';
                 }
                 if ($ifBurned==0) {
-                echo '<p class="burn">Burn</p>';
+                    echo '<p class="burn">Burn</p>';
                 } else {
-                echo '<p class="unburn">Unburn</p>';
+                    echo '<p class="unburn">Unburn</p>';
                 }
                 echo '<p class="report">Report</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
