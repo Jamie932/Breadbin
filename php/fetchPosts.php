@@ -66,8 +66,8 @@
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
                 <p class="toast">Toast</p>
                 <p class="burn">Burn</p>
-                <p class="report">Report</p></div><br>';
-                echo $totalToasts;
+                <p class="report">Report</p>';
+                echo '<p class="report">' .$totalToasts. '</div><br>';
             }
         }
 	}
