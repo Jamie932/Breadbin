@@ -59,14 +59,7 @@
                 echo '</div>';
             echo '</div>';
             
-            if ($_SESSION['user']['id'] == $row['userid']) { ?>
-                <script type="text/javascript">
-            $(document).on('click','.toast', function() {  
- $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
-        $('.toast').replaceWith('<p class="untoast">Untoast</p>');  
-            })
- `      </script>
-<?php
+            if ($_SESSION['user']['id'] == $row['userid']) { 
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
                     <p class="delete">Delete</p>
                     </div><br>';
