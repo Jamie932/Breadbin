@@ -16,6 +16,8 @@
         
 		$userrow = $stmt->fetch();
 		$username = 'Unknown';
+        
+        $totalToasts = $row['toasts'] - $row['burns'];
 				
 		if($userrow){ 
 			$username = $userrow['username'];
@@ -62,9 +64,10 @@
                     </div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                <p class="toast">Toast (' . $row['toasts'] . ')</p>
-                <p class="burn">Burn (' . $row['burns'] . ')</p>
+                <p class="toast">Toast</p>
+                <p class="burn">Burn</p>
                 <p class="report">Report</p></div><br>';
+                echo $totalToasts;
             }
         }
 	}
