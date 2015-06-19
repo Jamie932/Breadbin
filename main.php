@@ -40,7 +40,7 @@
                 var postid = $(this).parent().attr('class').split('-')[1]; 
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 var toastButton = $(this).closest('#contentLike').children('.toast');
-                var burnButton = $(this).closest('#contentLike').children('.burn');
+                var burnButton = $(this).closest('#contentLike').children('.unburn');
                 
                 var formData = {
                     'post' : postid
@@ -80,7 +80,7 @@
                 var postid = $(this).parent().attr('class').split('-')[1];
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 var burnButton = $(this).closest('#contentLike').children('.burn');
-                var toastButton = $(this).closest('#contentLike').children('.toast');
+                var toastButton = $(this).closest('#contentLike').children('.untoast');
                 
                 var formData = {
                     'post' : postid
