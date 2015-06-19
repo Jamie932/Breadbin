@@ -149,8 +149,11 @@
                 </div>
                     
                 <div class="uploadRest">
-                    <a><img src="img/camera.png" height="25px" width="25px" style="vertical-align:top; margin-left:5px;"></a>
-                    <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
+                    <a><img src="img/camera.png" class="postImage" id="uploadImage" height="30px" width="30px" style="vertical-align:top; margin-left:5px;"></a>
+                    <form action="php/imagePostTEST.php" method="POST">
+                    <input type="file" name="imagePost">
+                        <input type="submit">
+                    </form>
                     <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
                     <a><img src="img/cat.jpg" height="40px" width="40px" style="visibility:hidden;"></a>
                     <input type="submit" value="Submit" id="submitPost">
