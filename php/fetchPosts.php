@@ -7,17 +7,16 @@
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
 
-    $postId = $row['id'];
 
     $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
-    $query_params = array(':postId' => $postId, ':userId' => $_SESSION['user']['id']); 
+    $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
         
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $ifBurnt = $stmt->rowCount();
 
     $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-    $query_params = array(':postId' => $postId, ':userId' =>   $_SESSION['user']['id']);
+    $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
 
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
@@ -83,9 +82,9 @@
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                 
                 if ($ifToasted==0) {
-                echo '<p class="toast">Toast</p>';
+                    echo '<p class="toast">Toast</p>';
                 } else { 
-                echo '<p class="untoast">Untoast</p>';
+                    echo '<p class="untoast">Untoast</p>';
                 }
                 if ($ifBurned==0) {
                     echo '<p class="burn">Burn</p>';
