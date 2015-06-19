@@ -209,6 +209,7 @@ h5 {
 }
 
 .toast, .burn {
+    color:black;
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
@@ -216,5 +217,5 @@ h5 {
 }
 
 .untoast, .unburn {
-    color:gray;   
+    color:darkgray;   
 }
