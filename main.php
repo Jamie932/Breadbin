@@ -64,7 +64,9 @@
                         if (data.removedBurn && data.addedToast) {
                             // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) + 2);
-                            burnButton.replaceWith('<p class="burn">Burn</p>');
+                            
+                            burnButton.css('color', 'black'); 
+                            burnButton.toggleClass('unburn burn');
                         } else if (data.removedBurn || data.addedToast) {
                             totalToasts.html(parseInt(totalToasts.text()) + 1);
                         } else {
