@@ -54,7 +54,8 @@
 
                 .done(function(data) {
                      console.log(data); 
-
+                    alert(data);
+                    
                     if (!data.success) {
                         // Already burnt the post - error.
                         alert("not successful soz");
@@ -69,7 +70,7 @@
                         }
 
                         $(this).replaceWith('<p class="untoast">Untoast</p>');
-                    }
+                    };
                 })
             })
             
