@@ -1,19 +1,5 @@
 $(document).ready(function() {   
-    var errorExists = false; 
-    
-    $('input[type=file]').change(function(e){
-         var file = this.files[0];
-
-         if (file.name.length < 1) {
-             //Error
-         } else if (file.size > 100000) {
-            //Error   
-         } else if (file.type != 'image/png' && file.type != 'image/jpg' && !file.type != 'image/gif' && file.type != 'image/jpeg') {
-            //Error   
-         } else {
-            $('#uploadname').html($(this).val());
-         }
-    });
+    var errorExists = false;
 
     $('#postForm').submit(function(event) {
         var formData = {
