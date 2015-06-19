@@ -1,4 +1,4 @@
-<?php
+ifM<?php
     require("common.php");
                   
     $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
@@ -24,7 +24,7 @@
 
             $query = "UPDATE posts SET burns=burns+1 WHERE id = :postId";
             $query_params = array(':postId' => $_POST['post']); 
-            $stmt = $db->prepare($query);
+            $stmt = $db->prepare($query);ifM
             $result = $stmt->execute($query_params);
         } else {
             echo 'Burn no like';

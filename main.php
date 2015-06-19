@@ -76,7 +76,7 @@
                     })
                     
                 <?php
-                    $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+                    $query = "SELECT * FROM post_burns WHERE pid = :postId AND uid= :userId"; 
                     $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);
 
                     $stmt = $db->prepare($query);
