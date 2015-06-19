@@ -77,14 +77,13 @@
                     
                 <?php
                     $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-                    $query_params = array(':postId' => ?> var postid = $(this).parent().attr('class').split('-')[1]; <?php, ':userId' => $_SESSION['user']['id']);
+                    $query_params = array(':postId' => ?> var postid = $(this).parent().attr('class').split('-')[1] <?php, ':userId' => $_SESSION['user']['id']);
 
                     $stmt = $db->prepare($query);
                     $result = $stmt->execute($query_params); 
                     $ifToasted = $stmt->rowCount();
 
-                    if ($ifToasted <> 0) {
-                ?>
+                    if ($ifToasted <> 0) { ?>
                     
                     var div = $(this).closest('#contentLike').children('.totalToasts');
                 
