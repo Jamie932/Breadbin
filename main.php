@@ -52,7 +52,9 @@
                         encode      : true
                     }) 
                     
-                    $(this).closest('#contentLike').children('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
+                    var div = $(this).closest('#contentLike').children('.totalToasts');
+                
+                    div.html(parseInt(div.text()) + 1);
                     $(this).replaceWith('<p class="untoast">Untoast</p>');
                 
                 })
