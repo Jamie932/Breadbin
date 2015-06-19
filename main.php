@@ -58,7 +58,6 @@
                     if (!data.success) {
                         // Already burnt the post - error.
                         alert("not successful soz");
-
                     } else {
                         if (data.removedBurn && data.addedToast) {
                             // Previously burnt
