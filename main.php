@@ -52,6 +52,9 @@
                         encode      : true
                     })
                     
+                    $('.totalToasts').html(parseInt($('.totalToasts').text()) + 1);
+                $('.toast').replaceWith('<p class="toast">Untoast</p>');
+                
                 })
             
             $(document).on('click','.burn', function() {

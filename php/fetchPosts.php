@@ -44,9 +44,10 @@
                 echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                <p class="toast">Toast (' . $row['toasts'] . ')</p>
-                <p class="burn">Burn (' . $row['burns'] . ')</p>
-                <p class="report">Report</p></div><br>';
+                <p class="toast">Toast</p>
+                <p class="burn">Burn</p>
+                <p class="report">Report</p>';
+                echo '<p>' .$totalToasts. '</div><br>'; 
             }
             
         } else if ($row['type'] == "text") {
@@ -67,7 +68,7 @@
                 <p class="toast">Toast</p>
                 <p class="burn">Burn</p>
                 <p class="report">Report</p>';
-                echo '<p>' .$totalToasts. '</div><br>'; 
+                echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
             }
         }
 	}
