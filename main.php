@@ -41,7 +41,7 @@
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
                 
                 alert(postid);
-                alert(totalToasts);
+                alert(totalToasts.value());
                 
                 var formData = {
                     'post' : postid
