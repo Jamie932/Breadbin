@@ -110,8 +110,8 @@
             </div>
             
             <div id="placehold">
-                <h5>Recommended toasters</h5>
-                    <?php require('php/recommendToaster.php'); ?>
+                Recommended toasters<hr></hr>
+                <?php require('php/recommendToaster.php'); ?>
             </div>
         </div>
     </div>
