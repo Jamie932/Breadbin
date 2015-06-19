@@ -67,7 +67,7 @@
                 <p class="toast">Toast</p>
                 <p class="burn">Burn</p>
                 <p class="report">Report</p>';
-                echo '<p class="report">' .$totalToasts. '</div><br>';
+                echo '<p>' .$totalToasts. '</div><br>'; 
             }
         }
 	}
