@@ -51,10 +51,12 @@
             }
             
         } else if ($row['type'] == "text") {
-            echo ' $(document).on(\'click\',\'.toast\', function() {';
+            echo '<script type=\"text/javascript\">';
+            echo '$(document).on(\'click\',\'.toast\', function() {';
             echo    '$(\'.totalToasts\').html(parseInt($(\'.totalToasts\').text()) + 1);';
             echo '$(\'.toast\').replaceWith(\'<p class="untoast">Untoast</p>)'; 
             echo '}';
+            echo '</script>';
             
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
