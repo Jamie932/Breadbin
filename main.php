@@ -94,7 +94,16 @@
                     $('.toast').replaceWith('<p class="toast">Toast</p>');
                     
                     <?php
-                        }
+                    } else { ?>
+                
+                        var div = $(this).closest('#contentLike').children('.totalToasts');
+                
+                        div.html(parseInt(div.text()) - 1);
+                
+                        $(this).replaceWith('<p class="unburn">Unburn</p>');
+                
+                    <?php 
+                    }
                     ?>
                 })
             
