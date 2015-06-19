@@ -53,8 +53,8 @@
         } else if ($row['type'] == "text") {
             echo '<script type=\"text/javascript\">';
                 echo '$(document).on(\'click\',\'.toast\', function() {';
-                echo   '$(\'.totalToasts\').html(parseInt($(\'.totalToasts\').text()) + 1);';
-            echo '$(\'.toast\').replaceWith(\'<p class="untoast">Untoast</p>)'; 
+            echo '$(\'.totalToasts\').html(parseInt($(\'.totalToasts\').text()) + 1);
+$(\'.toast\').replaceWith(<p class="untoast">Untoast</p>);';
             echo '})';
  `           echo '</script>';
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
