@@ -70,8 +70,9 @@
                         } else {
                             alert("problem detected woop woop");
                         }
-
-                        toastButton.replaceWith('<p class="untoast">Untoast</p>');
+                        
+                        toastButton.toggleClass('toast untoast');
+                        toastButton.animate({color: 'gray'});
                     };
                 })
             })
