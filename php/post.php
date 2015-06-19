@@ -36,6 +36,8 @@
         $data['success'] = true;
         $data['message'] = 'Success!';
     }
+    } else if(empty($_POST['text'], $_POST['imagePost'])) {
+        echo 'looool sucka';
     }
                           
     echo json_encode($data);
