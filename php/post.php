@@ -15,6 +15,8 @@
 			
         $data['success'] = true;
         $data['message'] = 'Success!';
+        } else {
+            $errors['text'] = 'Error found';   
         }
     } else if (empty($_POST['imagePost'])) { 
                           
