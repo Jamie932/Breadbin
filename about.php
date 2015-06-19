@@ -26,7 +26,7 @@
                         <a href="#Overview">Overview</a>
                     </li>
                     <li class="linkItem">
-                        <a href="features">Features</a>
+                        <a href="#features">Features</a>
                     </li>
                     <li class="linkItem">
                         Slices
