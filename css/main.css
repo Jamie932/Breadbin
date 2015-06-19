@@ -208,3 +208,13 @@ h5 {
     cursor:pointer;
 }
 
+.toast, .burn {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.untoast, .unburn {
+    color:gray;   
+}
