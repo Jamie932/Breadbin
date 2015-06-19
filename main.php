@@ -55,7 +55,7 @@
                     var div = $(this).closest('#contentLike').children('.totalToasts');
                 
                     div.html(parseInt(div.text()) + 1);
-                    $(this).animate({color: "#808080" });
+                    $(this).replaceWith('<p class="untoast">Untoast</p>');
                 
                 })
             
