@@ -4,11 +4,13 @@
 	
 	$errors = array();
 	$data = array();
-                          
-    if (ctype_space($_POST['ext'])) {
+	
+    if (empty($_POST['text'])) { 
+        $errors['text'] = 'Text is required.';
+    } else if (ctype_space($_POST['text'])) {
         $errors['text'] = 'Just spaces aren\'t allowed.';
     }
-
+	
 	if (!empty($errors)) {
         $data['success'] = false;
         $data['errors']  = $errors;
@@ -23,9 +25,6 @@
         $data['success'] = true;
         $data['message'] = 'Success!';
     }
-    } else if(empty($_POST['text'], $_POST['imagePost'])) {
-        echo 'looool sucka';
-    }
-                          
+
     echo json_encode($data);
 ?> 
