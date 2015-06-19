@@ -71,7 +71,7 @@
                             alert("problem detected woop woop");
                         }
                         
-                        toastButton.css('color', 'black'); 
+                        toastButton.css('color', 'darkgray'); 
                         toastButton.toggleClass('toast untoast');
                     };
                 })
