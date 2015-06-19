@@ -39,6 +39,7 @@
             $(document).on('click','.toast', function() {
                 var postid = $(this).parent().attr('class').split('-')[1]; 
                 var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
+                var toastButton = $(this).closest('#contentLike').children('.untoast');
                 
                 var formData = {
                     'post' : postid
@@ -69,7 +70,7 @@
                             alert("problem detected woop woop");
                         }
 
-                        //$(this).replaceWith('<p class="untoast">Untoast</p>');
+                        toastButton.replaceWith('<p class="untoast">Untoast</p>');
                     };
                 })
             })
