@@ -137,6 +137,8 @@
             <div class="free-wall">
                 <div class="brick size320">
                     <img class="imgPost" src="img/a.jpg">
+                </div>
+                <div class="brick size320">
                     <img class="imgPost" src="img/t.gif">
                 </div>
             </div>

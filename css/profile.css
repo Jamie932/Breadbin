@@ -156,6 +156,7 @@ p {
 	height: 220px;
     display: inline-table;
     vertical-align: middle;
+    text-align: center;
 }
 
 .layout {
@@ -374,6 +375,6 @@ p.settingsExplain {
 }
 
 .imgPost {
-    height: auto;
-    width: 100%;
+    height: inherit;
+    width: auto;
 }
