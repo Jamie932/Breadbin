@@ -153,7 +153,7 @@ p {
 
 .size320 {
 	width: 320px;
-	height: auto;
+	height: 220px;
     display: inline-table;
     vertical-align: middle;
     text-align: center;
@@ -173,7 +173,6 @@ p.textPost {
     font-size: 1em;
     padding-left: 10px;
     padding-right: 10px;
-    height: 210px;
 }
 
 .textPost a {
@@ -382,7 +381,7 @@ p.settingsExplain {
 }
 
 .imgPost, .imgPostText {
-    height: auto; 
+    height: 100%; 
     width: 100%;
     margin: 0;
     padding: 0;
@@ -417,4 +416,4 @@ p.settingsExplain {
     -ms-filter: blur(5px);
     filter: blur(5px);
     outline: none;
-}
+} 
