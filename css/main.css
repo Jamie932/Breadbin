@@ -88,6 +88,11 @@ p.report {
     padding-bottom:0px;
 }
 
+#contentPost a {
+    color:blue;
+    text-decoration:none;
+}
+
 /* Liking the post */
 #contentLike {
     margin-top: -15px;
