@@ -1,53 +1,48 @@
 <?php 
     require("common.php"); 
 	
-    if(isset($_FILES["file"]) && isset($_POST['text'])) { //If post has text AND an image...
+    if(isset($_FILES["file"])) { //If post has an image...
         $updirectory = '../img/uploads/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
         $extension = substr($filename, strrpos($filename, '.'));
         $rand = rand(0, 9999999999); 
         $newfile = $rand.$extension;
         
+        if ($extension == "png") {
+            $image = imagecreatefrompng($updirectory.$newfile);
+            $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
+            imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
+            imagealphablending($bg, TRUE);
+            imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
+            imagedestroy($image);
+            $quality = 50; // 0 = worst / smaller file, 100 = better / bigger file 
+            imagejpeg($bg, $updirectory . $rand . ".jpg", $quality);
+            imagedestroy($bg);
+            $converted = true;
+        }
+
         if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
             mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
         }
         
-        if(move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile )) {
-            $query = "INSERT INTO posts (userid, type, text, image)  VALUES (:userid, 'imagetext', :text, :image)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':image' => $updirectory.$newfile); 
+        if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory . $rand . ".jpg" ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {
+            if (isset($_POST['text'])) {    
+                $query = "INSERT INTO posts (userid, type, text, image)  VALUES (:userid, 'imagetext', :text, :image)"; 
+                $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':image' => $updirectory.$newfile); 
 
+            } else {
+                $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :filename)"; 
+                $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $updirectory.$newfile); 
+            }
+            
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
-            
-            die('Success: File Uploaded.');
-            
+             die('Success: File Uploaded.');
+
         } else {
             die("Error: Couldn't upload the file.");
         }
         
-    } else if (isset($_FILES["file"])) {  //If post has only an image...
-        $updirectory = '../img/uploads/' . $_SESSION['user']['id'] . '/';
-        $filename = strtolower($_FILES['file']['name']);
-        $extension = substr($filename, strrpos($filename, '.'));
-        $rand = rand(0, 9999999999); 
-        $newfile = $rand.$extension;
-        
-        if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
-            mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
-        }
-        
-        if(move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile )) {
-            $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :filename)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $updirectory.$newfile); 
-
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params);
-            
-            die('Success: File Uploaded.');
-            
-        } else {
-            die("Error: Couldn't upload the file.");
-        }
     } else if (isset($_POST['text'])) { //If post has only text...
         if (empty($_POST['text'])) { 
             die('Error: Text is empty.');
