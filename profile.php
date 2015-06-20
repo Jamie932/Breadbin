@@ -203,8 +203,28 @@
                     $stmt = $db->prepare($query); 
                     $result = $stmt->execute($query_params); 
                     $posts = $stmt->fetchAll();
- 
+
                     foreach ($posts as $row) {   
+                         if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+                            if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+                                $users = $matches[1];
+
+                                foreach ($users as $user) {
+                                    $query = "SELECT id, username FROM users WHERE username = :username"; 
+                                    $query_params = array(':username' => $user); 
+
+                                    $stmt = $db->prepare($query); 
+                                    $result = $stmt->execute($query_params);
+                                    $userFound = $stmt->fetch(); 
+
+                                    if ($userFound) {
+                                        $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $user . '</a>', $row['text']);
+                                    }
+
+                                }
+                            }
+                        }                        
+                        
                         echo '<div class="brick size320">';
                         if ($row['type'] == "image") {
                             echo '<img class="imgPost" src="' . $row['image'] . '">';  
