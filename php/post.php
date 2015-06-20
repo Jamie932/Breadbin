@@ -5,7 +5,7 @@
 	$data = array();
 	
     if(isset($_FILES["file"]) && $_FILES["file"]["error"]== UPLOAD_ERR_OK) {
-        $updirectory = '../img/uploads/';
+        $updirectory = '../img/uploads/' . $_SESSION['user']['username'] . '/';
         $filename = strtolower($_FILES['file']['name']);
         $extension = substr($filename, strrpos($filename, '.'));
         $rand = rand(0, 9999999999); 
@@ -19,11 +19,9 @@
             $result = $stmt->execute($query_params);
             
             die('Success! File Uploaded.');
-            echo 'wooooo.';
             
         } else {
-            echo 'Well shit.';
-            die('error uploading File!');
+            die('Error uploading file!');
         }
     } else {
         if (empty($_POST['text'])) { 
