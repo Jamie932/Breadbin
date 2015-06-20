@@ -13,8 +13,8 @@
         }
         
         if(move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile )) {
-            $query = "INSERT INTO posts (userid, type, text, imgurl)  VALUES (:userid, 'imagetext', :text, :imgurl)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':imgurl' => $updirectory.$newfile); 
+            $query = "INSERT INTO posts (userid, type, text, image)  VALUES (:userid, 'imagetext', :text, :image)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':image' => $updirectory.$newfile); 
 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
