@@ -225,7 +225,7 @@
                             }
                         }                        
                         
-                        echo '<div class="brick size320">';
+                     echo '<div class="brick size320">';
                         
                         if ($row['type'] == "image") {
                             echo '<img class="imgPost" src="' . $row['image'] . '">';  

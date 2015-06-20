@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BlocksIt.js Demonstration #2 - Pinterest Dynamic Grid Layout with CSS3 Transitions</title>
+<link rel='stylesheet' href='style.css' media='screen' />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../blocksit.min.js"></script>
+<script>
+$(document).ready(function() {
+	
+	//blocksit define
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 3,
+			offsetX: 5,
+			offsetY: 5
+		});
+	});
+	
+	//window resize
+	var currentWidth = 1100;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1100) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1100;
+			col = 5;
+		}
+		
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 8,
+				offsetY: 8
+			});
+		}
+	});
+});
+</script>
+</head>
+<div id="container">
+	<div class="grid">
+		<div class="imgholder">
+			<img src="a.jpg" />
+		</div>
+	</div>
+    <div class="grid">
+		<div class="imgholder">
+			<img src="t.gif" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="a.jpg" />
+		</div>
+	</div>
+    <div class="grid">
+		<div class="imgholder">
+			<img src="t.gif" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="a.jpg" />
+		</div>
+	</div>
+    <div class="grid">
+		<div class="imgholder">
+			<img src="t.gif" />
+		</div>
+	</div>
+	<div class="grid">
+		<div class="imgholder">
+			<img src="a.jpg" />
+		</div>
+	</div>
+    <div class="grid">
+		<div class="imgholder">
+			<img src="t.gif" />
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
