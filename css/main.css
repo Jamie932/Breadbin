@@ -71,7 +71,8 @@ p.report {
 }
 
 .contentPostJustImage {
-    width: 640px;
+    width: 620px;
+    height: auto;
     padding: 10px; 
     background-color: white;
     border-width: 1px;
