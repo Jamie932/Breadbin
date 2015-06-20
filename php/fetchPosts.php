@@ -66,7 +66,7 @@
             if ($_SESSION['user']['id'] == $row['userid']) {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
             } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">
+                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                 if ($ifToasted == 0) {
                     echo '<p class="toast">Toast</p>';
                 } else {
@@ -77,7 +77,7 @@
                 } else {
                     echo '<p class="unburn">Burn</p>';
                 }
-                <p class="report">Report</p>';
+                echo '<p class="report">Report</p>';
                 echo '<p>' .$totalToasts. '</div><br>'; 
             }            
         } else if ($row['type'] == "image") {
