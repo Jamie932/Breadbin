@@ -5,7 +5,7 @@
 	$data = array();
 	
     if(isset($_FILES["file"]) && $_FILES["file"]["error"]== UPLOAD_ERR_OK) {
-        $updirectory = 'img/uploads/';
+        $updirectory = '../img/uploads/';
         $filename = strtolower($_FILES['file']['name']);
         $extension = substr($filename, strrpos($filename, '.'));
         $rand = rand(0, 9999999999); 
