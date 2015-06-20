@@ -175,6 +175,11 @@ p.textPost {
     padding-right: 10px;
 }
 
+.textPost a {
+    color: blue;
+    text-decoration: none;
+}
+
 .backBut {
     display:none;   
 }
