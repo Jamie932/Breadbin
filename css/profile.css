@@ -372,3 +372,8 @@ p.settingsExplain {
 #errormsg {
     color: red;   
 }
+
+.imgPost {
+    height: 100%;
+    width: 100%;
+}
