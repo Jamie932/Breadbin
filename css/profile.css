@@ -370,10 +370,10 @@ p.settingsExplain {
 }
 
 #errormsg {
-    color: red;   
+    color: red;    
 }
 
 .imgPost {
-    height: 100%;
+    height: auto;
     width: 100%;
 }
