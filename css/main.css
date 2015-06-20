@@ -70,6 +70,16 @@ p.report {
     text-align:center;
 }
 
+.contentPostJustImage {
+    width: 600px;
+    margin: 10px; 
+    background-color: white;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+    text-align:center;
+}
+
 .contentPostImage img {
     max-width:100%;
     height: auto;  
