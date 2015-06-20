@@ -249,4 +249,5 @@ h5 {
     width:160px;
     overflow:hidden;
     text-overflow:ellipsis;
+    white-space: nowrap;
 }
