@@ -236,7 +236,7 @@
                             echo '<div id="banner">';
                              echo '<img class="imgPost" src="' . $row['image'] . '">'; 
                             echo '<div id="bannerText">';
-                            echo $row['text']
+                            echo $row['text']; 
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
