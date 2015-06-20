@@ -45,7 +45,7 @@
         }
         
 		if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-            $imgName = $row['image'].replace(/^(?:\.\.\/)+/, "");
+            $imgName = ltrim($row['image'], "/.");
             
             if (!file_exists($imgName)) {
                 $query = "DELETE FROM posts WHERE id = :id"; 
