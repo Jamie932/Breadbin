@@ -5,14 +5,14 @@
 	$errors = array();
 	$data = array();
 	
-    if(isset($_FILES["upfile"])) {
+    if(isset($_FILES["file"])) {
         try {
             
-        if (!isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error'])) {
+        if (!isset($_FILES['file']['error']) || is_array($_FILES['file']['error'])) {
             throw new RuntimeException('Invalid parameters.');
         }
 
-        switch ($_FILES['upfile']['error']) {
+        switch ($_FILES['file']['error']) {
             case UPLOAD_ERR_OK:
                 break;
             case UPLOAD_ERR_NO_FILE:
@@ -24,13 +24,13 @@
                 throw new RuntimeException('Unknown errors.');
         }
 
-        if ($_FILES['upfile']['size'] > 1000000) {
+        if ($_FILES['file']['size'] > 1000000) {
             throw new RuntimeException('Exceeded filesize limit.');
         }
 
         $finfo = new finfo(FILEINFO_MIME_TYPE);
         if (false === $ext = array_search(
-            $finfo->file($_FILES['upfile']['tmp_name']),
+            $finfo->file($_FILES['file']['tmp_name']),
             array(
                 'jpg' => 'image/jpeg',
                 'png' => 'image/png',
@@ -44,20 +44,21 @@
         // You should name it uniquely.
         // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
         // On this example, obtain safe unique name from its binary data.
-        if (!move_uploaded_file($_FILES['upfile']['tmp_name'], sprintf('./uploads/%s.%s', sha1_file($_FILES['upfile']['tmp_name']), $ext))) {
+        if (!move_uploaded_file($_FILES['file']['tmp_name'], sprintf('./uploads/%s.%s', sha1_file($_FILES['file']['tmp_name']), $ext))) {
             throw new RuntimeException('Failed to move uploaded file.');
         }
 
         echo 'File is uploaded successfully.';
             
         $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :imgurl)"; 
-        $query_params = array(':userid' => $_SESSION['user']['id'], ':imgurl' => sprintf('./uploads/%s.%s', sha1_file($_FILES['upfile']['tmp_name']), $ext)); 
+        $query_params = array(':userid' => $_SESSION['user']['id'], ':imgurl' => sprintf('./uploads/%s.%s', sha1_file($_FILES['file']['tmp_name']), $ext)); 
 
         } catch (RuntimeException $e) {
             echo $e->getMessage();
         }
 
     } else {
+        echo 'hi';
         if (empty($_POST['text'])) { 
             $errors['text'] = 'Text is required.';
         } else if (ctype_space($_POST['text'])) {
