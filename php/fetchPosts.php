@@ -84,10 +84,18 @@
             if ($_SESSION['user']['id'] == $row['userid']) {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
             } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                <p class="toast">Toast</p>
-                <p class="burn">Burn</p>
-                <p class="report">Report</p>';
+                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
+                if ($ifToasted = 0) {
+                    echo '<p class="toast">Toast</p>';
+                } else {
+                    echo '<p class="untoast">Toast</p>';
+                } 
+                if ($ifBurnt = 0) {
+                    echo '<p class="burn">Burn</p>';
+                } else {
+                    echo '<p class="unburn">Burn</p>';
+                }
+                echo '<p class="report">Report</p>';
                 echo '<p>' .$totalToasts. '</div><br>'; 
             }
             
@@ -107,8 +115,16 @@
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                 
-                echo '<p class="toast">Toast</p>';
-                echo '<p class="burn">Burn</p>';
+                if ($ifToasted = 0) {
+                    echo '<p class="toast">Toast</p>';
+                } else {
+                    echo '<p class="untoast">Toast</p>';
+                } 
+                if ($ifBurnt = 0) {
+                    echo '<p class="burn">Burn</p>';
+                } else {
+                    echo '<p class="unburn">Burn</p>';
+                }
                 echo '<p class="report">Report</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
             }
