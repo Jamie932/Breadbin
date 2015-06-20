@@ -9,8 +9,8 @@ $(document).ready(function() {
             var file = $('input[type=file]')[0].files[0];
             
             if (file['size'] > 2097152) {
-                formData.append( 'file', $('input[type=file]')[0].files[0] );
-            else {
+                formData.append( 'file', file );
+            } else {
                 $('#error').css({"height":"30px"});
                 $('<div class="error"><b>Error:</b> The max file size is 2MB.</div>').hide().appendTo($('#error')).fadeIn(1000);
                 return;
