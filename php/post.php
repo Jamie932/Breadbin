@@ -19,8 +19,10 @@
             $result = $stmt->execute($query_params);
             
             die('Success! File Uploaded.');
+            echo 'wooooo.';
             
         } else {
+            echo 'Well shit.';
             die('error uploading File!');
         }
     } else {
