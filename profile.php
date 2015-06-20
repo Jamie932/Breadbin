@@ -228,10 +228,19 @@
                         echo '<div class="brick size320">';
                         if ($row['type'] == "image") {
                             echo '<img class="imgPost" src="' . $row['image'] . '">';  
+                            echo '</div>';
                         } else if ($row['type'] == "text") {
                             echo '<p class="textPost">' . $row['text'] . '</p>';
+                            echo '</div>';
+                        } else if ($row['type'] == 'imagetext') {
+                            echo '<div id="banner">';
+                             echo '<img class="imgPost" src="' . $row['image'] . '">'; 
+                            echo '<div id="bannerText">';
+                            echo $row['text']
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
                         }
-                        echo '</div>';
                     }  
                 ?>
             </div>
@@ -331,13 +340,6 @@
 
     </div>
     <script src="../js/formSettings.js"></script>
-        
-        
-        
-        
-        
-        
-        
         
         <div class="clearFix"></div>
     </div>
