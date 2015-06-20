@@ -64,6 +64,26 @@
             }
         }
         
+        if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+            if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+                $users = $matches[1];
+                
+                foreach ($users as $user) {
+                    $query = "SELECT id, username FROM users WHERE username = :username"; 
+                    $query_params = array(':username' => $user); 
+
+                    $stmt = $db->prepare($query); 
+                    $result = $stmt->execute($query_params);
+                    $userFound = $stmt->fetch(); 
+                    
+                    if ($userFound) {
+                        $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $userFound['username'] . '</a>', $row['text']);
+                    }
+                    
+                }
+            }
+        }
+        
         if ($row['type'] == "imagetext") {
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
             echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
