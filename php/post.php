@@ -11,7 +11,7 @@
         $Random_Number      = rand(0, 9999999999); 
         $NewFileName        = $Random_Number.$File_Ext;
         
-        if(move_uploaded_file($_FILES['FileInput']['tmp_name'], $UploadDirectory.$NewFileName )) {
+        if(move_uploaded_file($_FILES['upfile'], $UploadDirectory.$NewFileName )) {
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'image', :filename)"; 
             $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $UploadDirectory.$NewFileName); 
 
