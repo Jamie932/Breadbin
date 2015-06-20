@@ -5,11 +5,15 @@
 	$data = array();
 	
     if(isset($_FILES["file"]) && $_FILES["file"]["error"]== UPLOAD_ERR_OK) {
-        $updirectory = '../img/uploads/' . $_SESSION['user']['username'] . '/';
+        $updirectory = '../img/uploads/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
         $extension = substr($filename, strrpos($filename, '.'));
         $rand = rand(0, 9999999999); 
         $newfile = $rand.$extension;
+        
+        if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
+            mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
+        }
         
         if(move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile )) {
             $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :filename)"; 
