@@ -62,7 +62,7 @@ p.report {
 
 /* Image Formatting */
 #contentPost .contentPostImage {
-    width: 600px;
+    width: 640px;
     background-color: white;
     border-width: 1px;
     border-color: #DDD;
@@ -71,7 +71,7 @@ p.report {
 }
 
 .contentPostJustImage {
-    width: 600px;
+    width: 640px;
     padding: 10px; 
     background-color: white;
     border-width: 1px;
