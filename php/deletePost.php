@@ -25,8 +25,11 @@
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
                 if (file_exists($row['image'])) {
                     unlink($row['image']);
+                    $data['success'] = false;
+                    die('shit');
                 } else {
                     $data['success'] = false;
+                    die('shit2');
                 }
             }
             
