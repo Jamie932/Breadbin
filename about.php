@@ -50,22 +50,12 @@
         </div>
     </div>
     <div id="features">
-    <a name="features">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <a name="features">
+        <div class="featuresLeft"></div>
+        <div class="featuresCenter">
+        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
+        </div>
+        <div class="featuresRight"></div>
     </div>
 </body>
 </html

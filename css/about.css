@@ -237,3 +237,30 @@ p.headerTagRegister {
     font-size: 13px;
     margin: 0;
 }
+
+/* features */
+#features {
+    height: 500px;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 20px;
+}
+
+.featuresLeft {
+    float: left;
+    width: 20%;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.featuresCenter {
+    width: 60%;   
+    display: inline;
+}
+
+.featuresRight {
+    float: right;
+    width: 20%;
+    height: 500px;
+    border: 1px solid black;
+}
