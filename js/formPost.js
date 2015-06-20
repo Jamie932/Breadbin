@@ -6,7 +6,15 @@ $(document).ready(function() {
         var has_selected_file = $('input[type=file]').filter(function(){return $.trim(this.value) != ''}).length  > 0;
         
         if (has_selected_file) {
-            formData.append( 'file', $('input[type=file]')[0].files[0] );
+            var file = $('input[type=file]')[0].files[0];
+            
+            if (file['size'] > 2097152) {
+                formData.append( 'file', $('input[type=file]')[0].files[0] );
+            else {
+                $('#error').css({"height":"30px"});
+                $('<div class="error"><b>Error:</b> The max file size is 2MB.</div>').hide().appendTo($('#error')).fadeIn(1000);
+                return;
+            }
         }
         
         if ($.trim($('.postText').val())) {
