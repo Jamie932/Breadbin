@@ -18,6 +18,7 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,
             success     : function (msg) {
+                alert(msg);
 				//window.location.replace("main.php");
             },
             error       : function(data){
