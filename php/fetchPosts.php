@@ -78,8 +78,8 @@
                     echo '<p class="unburn">Burn</p>';
                 }
                 echo '<p class="report">Report</p>';
-                echo '<p>' .$totalToasts. '</div><br>'; 
-            }            
+                echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
+            }             
         } else if ($row['type'] == "image") {
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
             echo '<div class="contentPostJustImage"><img src="' . $row['image'] . '"></div>';
@@ -104,7 +104,7 @@
                     echo '<p class="unburn">Burn</p>';
                 }
                 echo '<p class="report">Report</p>';
-                echo '<p>' .$totalToasts. '</div><br>'; 
+                echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
             }
             
         } else if ($row['type'] == "text") { 
