@@ -57,7 +57,7 @@
             
             list($width, $height) = getimagesize($imgName);
             
-            if ($width > 640) {
+            if ($width > 600) {
                 $class = 'imgNoPadding';
             } else {
                 $class = 'imgPadding';
