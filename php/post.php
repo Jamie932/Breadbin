@@ -49,6 +49,9 @@
         }
 
         echo 'File is uploaded successfully.';
+            
+        $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :imgurl)"; 
+        $query_params = array(':userid' => $_SESSION['user']['id'], ':imgurl' => sprintf('./uploads/%s.%s', sha1_file($_FILES['upfile']['tmp_name']), $ext)); 
 
         } catch (RuntimeException $e) {
             echo $e->getMessage();
