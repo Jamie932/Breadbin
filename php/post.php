@@ -5,21 +5,21 @@
 	$data = array();
 	
     if(isset($_FILES["upfile"]) && $_FILES["upfile"]["error"]== UPLOAD_ERR_OK) {
-        $UploadDirectory    = '/img/uploads/';
-        $File_Name          = strtolower($_FILES['upfile']['name']);
         $File_Ext           = substr($File_Name, strrpos($File_Name, '.'));
         $Random_Number      = rand(0, 9999999999); 
         $NewFileName        = $Random_Number.$File_Ext;
         
-        if(move_uploaded_file($_FILES['upfile'], $UploadDirectory.$NewFileName )) {
+        if(move_uploaded_file($_FILES['upfile']['tmp_name'], "img/uploads/" . $NewFileName)) {
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'image', :filename)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $UploadDirectory.$NewFileName); 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => "img/uploads/" . $NewFileName); 
 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
             
             die('Success! File Uploaded.');
+            
         } else {
+            var_dump($UploadDirectory);
             die('error uploading File!');
         }
     } else {
