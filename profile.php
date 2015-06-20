@@ -362,7 +362,7 @@
 		});
 	});
 
-	$(function() {
+	$(function() { 
         var wall = new freewall(this);
         wall.reset({
             selector: '.brick',
