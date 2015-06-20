@@ -229,20 +229,19 @@
                         
                         if ($row['type'] == "image") {
                             echo '<img class="imgPost" src="' . $row['image'] . '">';  
-                            
+                            echo '</div>';
                         } else if ($row['type'] == "text") {
-                            echo '<p class="textPost">' . $row['text'] . '</p>';
-                            
-                        } else if ($row['type'] == 'imagetext') {
+                                echo '<p class="textPost">' . $row['text'] . '</p>';
+                             echo '</div>';
+                        } /*else if ($row['type'] == 'imagetext') {
                             echo '<div id="banner">';
                              echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
                                 echo '<div id="bannerText">';
                                     echo $row['text']; 
                                 echo '</div>';
                             echo '</div>';
-                        
-                        }
-                        echo '</div>';
+                            echo '</div>';
+                        }*/
                     }  
                 ?>
             </div>
