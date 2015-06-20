@@ -77,7 +77,7 @@
                     $userFound = $stmt->fetch(); 
                     
                     if ($userFound) {
-                        $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $userFound['username'] . '</a>', $row['text']);
+                        $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $user . '</a>', $row['text']);
                     }
                     
                 }
