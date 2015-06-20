@@ -18,7 +18,7 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,
             success     : function (msg) {
-				window.location.replace("main.php");
+				//window.location.replace("main.php");
             },
             error       : function(data){
                 console.log("error");
