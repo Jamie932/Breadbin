@@ -107,16 +107,8 @@
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                 
-                if ($ifToasted==0) {
-                    echo '<p class="toast">Toast</p>';
-                } else { 
-                    echo '<p class="untoast">Toast</p>';
-                }
-                if ($ifBurnt==0) {
-                    echo '<p class="burn">Burn</p>';
-                } else {
-                    echo '<p class="unburn">Burn</p>';
-                }
+                echo '<p class="toast">Toast</p>';
+                echo '<p class="burn">Burn</p>';
                 echo '<p class="report">Report</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
             }
