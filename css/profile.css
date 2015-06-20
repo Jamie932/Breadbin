@@ -29,9 +29,14 @@ p {
 }
 
 #profileButtons {
-    position:absolute;
+    position:fixed;
     bottom:15px;
-    left:15px;
+    left:0px;
+    width:280px;
+}
+
+.bottomRow {
+    text-align:center;
 }
 
 #leftProfile {
@@ -127,13 +132,6 @@ p {
 .followerRight {
     position:absolute;
     right:25;
-}
-
-.bottomRow {
-    padding-left:25px;
-    padding-right:25px;
-    margin-top:25px;
-    text-align:center;
 }
 
 .grid-item { 
