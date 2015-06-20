@@ -60,6 +60,8 @@ p.report {
 #contentPost .contentPostImage {
     width: 620px;
     padding: 10px;
+    padding-top:20px;
+    padding-bottom:20px;
     background-color: white;
     border-width: 1px;
     border-color: #DDD;
