@@ -381,7 +381,7 @@
                     }
                     return cellHeight;
                 },
-                fixSize: 0,
+                fixSize: 1,
                 gutterY: 20,
                 gutterX: 20,
                 onResize: function() {
