@@ -11,12 +11,17 @@ $(document).ready(function() {
             if (file['size'] < 2097152) {
                 formData.append( 'file', file );
             } else {
-                $('#error').css({"height":"30px"});
-                $('<div class="error"><b>Error:</b> The max file size is 2MB.</div>').hide().appendTo($('#error')).fadeIn(1000);
-                return false;
+                if (!errorExists) {
+                    $('#error').css({"height":"30px"});
+                    $('<div class="error"><b>Error:</b> The max file size is 2MB.</div>').hide().appendTo($('#error')).fadeIn(1000);
+                    errorExists = true;
+                    return false;
+                }
             }
         }
         
+        errorExists = false;    
+            
         if ($.trim($('.postText').val())) {
             formData.append('text', $('.postText').val());
         }
