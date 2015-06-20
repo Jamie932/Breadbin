@@ -19,20 +19,21 @@
             imagejpeg($bg, $updirectory . $rand . ".jpg", $quality);
             imagedestroy($bg);
             $converted = true;
+            $convertedfile = $updirectory . $rand . ".jpg";
         }
 
         if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
             mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
         }
         
-        if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory . $rand . ".jpg" ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {
+        if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $convertedfile ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {
             if (isset($_POST['text'])) {    
                 $query = "INSERT INTO posts (userid, type, text, image)  VALUES (:userid, 'imagetext', :text, :image)"; 
-                $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':image' => $updirectory.$newfile); 
+                $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':image' => $converted ? $convertedfile : $updirectory.$newfile); 
 
             } else {
                 $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :filename)"; 
-                $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $updirectory.$newfile); 
+                $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $converted ? $convertedfile : $updirectory.$newfile); 
             }
             
             $stmt = $db->prepare($query); 
