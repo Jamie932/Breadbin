@@ -5,7 +5,7 @@
 	$errors = array();
 	$data = array();
 	
-    if(isset($_FILES["upfile"]) && $_FILES["upfile"]["error"]== UPLOAD_ERR_OK) {
+    if(isset($_FILES["upfile"])) {
         try {
             
         if (!isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error'])) {

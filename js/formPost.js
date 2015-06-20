@@ -22,8 +22,7 @@ $(document).ready(function() {
 				//window.location.replace("main.php");
             },
             error       : function(data){
-                console.log("error");
-                console.log(data);
+                alert(data);
             }
             
         })
