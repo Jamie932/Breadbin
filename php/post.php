@@ -21,7 +21,6 @@
             die('Success! File Uploaded.');
             
         } else {
-            var_dump($UploadDirectory);
             die('error uploading File!');
         }
     } else {
