@@ -45,6 +45,7 @@
         }
         
 		if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
+            var_dump($row['image']);
             if (!file_exists($row['image'])) {
                 $query = "DELETE FROM posts WHERE id = :id"; 
                 $query_params = array(':id' => $row['id']); 

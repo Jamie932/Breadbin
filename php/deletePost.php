@@ -5,7 +5,7 @@
 	$errors = array();
 	$data = array();
 	
-    if (empty($_POST['post'])) { 
+    if (empty($_POST['post'])) {
         $errors['post'] = 'A PostID is required!';
     }
 	
@@ -25,11 +25,9 @@
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
                 if (file_exists($row['image'])) {
                     unlink($row['image']);
-                    $data['success'] = false;
-                    die('shit');
                 } else {
                     $data['success'] = false;
-                    die('shit2');
+                    $data['bollocks'] = true;
                 }
             }
             
