@@ -70,19 +70,19 @@ p.report {
     text-align:center;
 }
 
-.contentPostJustImage {
-    width: 640px;
-    padding: 10px; 
-    background-color: white;
-    border-width: 1px;
-    border-color: #DDD;
-    border-style: solid;
-    text-align:center;
-}
-
 .contentPostImage img {
     max-width:100%;
     height: auto;  
+}
+
+.imgPadding {
+    padding:10px;
+}
+
+.imgNoPadding {
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom:0px;
 }
 
 /* Liking the post */
