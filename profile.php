@@ -347,37 +347,51 @@
         
 <script type="text/javascript">
 	$(function() {
-        var wall = new freewall('free-wall');
-        wall.reset({
-            selector: '.brick',
-            animate: true,
-            cellW: 300,
-            cellH: 'auto',
-            onResize: function() {
-                wall.fitWidth();
-            }
+        var colour = [
+            "rgb(138, 230, 138)",
+            "rgb(102, 153, 255)",
+            "rgb(255, 181, 64)",
+            "rgb(255, 102, 204)"
+        ];
+
+        $(".free-wall .size320").each(function() {
+            var backgroundColor = colour[colour.length * Math.random() << 0];
+            var bricks = $(this).find(".brick");
+            !bricks.length && (bricks = $(this));
+            bricks.css({
+                backgroundColor: backgroundColor
+            });
         });
 
-        wall.container.find('.brick img').load(function() {
+        $(".free-wall").each(function() {
+            var wall = new freewall(this);
+            wall.reset({
+                selector: '.size320',
+                cellW: function(container) {
+                    var cellWidth = 320;
+                    if (container.hasClass('size320')) {
+                        cellWidth = container.width()/2;
+                    }
+                    return cellWidth;
+                },
+                cellH: function(container) {
+                    var cellHeight = 220;
+                    if (container.hasClass('size320')) {
+                        cellHeight = container.height()/2;
+                    }
+                    return cellHeight;
+                },
+                fixSize: 0,
+                gutterY: 20,
+                gutterX: 20,
+                onResize: function() {
+                    wall.fitWidth();
+                }
+            })
             wall.fitWidth();
         });
+        $(window).trigger("resize");
     });
-    
-	var colour = [
-		"rgb(138, 230, 138)",
-		"rgb(102, 153, 255)",
-		"rgb(255, 181, 64)",
-		"rgb(255, 102, 204)"
-	];
-	
-	$(".free-wall .size320").each(function() {
-		var backgroundColor = colour[colour.length * Math.random() << 0];
-		var bricks = $(this).find(".brick");
-		!bricks.length && (bricks = $(this));
-		bricks.css({
-			backgroundColor: backgroundColor
-		});
-	});
 </script>
 </body>
 </html>
