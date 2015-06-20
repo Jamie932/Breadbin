@@ -17,12 +17,12 @@ $(document).ready(function() {
             contentType : false,
             cache       : false,
             data        : formData,
-            success     : function (msg) {
-                alert(msg);
+            success     : function (response) {
+                alert("Success: " + response);
 				//window.location.replace("main.php");
             },
-            error       : function(data){
-                alert(data);
+            error       : function(xhr, ajaxOptions, ThrownError){
+                alert("Error: " + ThrownError);
             }
             
         })
