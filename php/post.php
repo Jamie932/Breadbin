@@ -8,7 +8,7 @@
         $rand = rand(0, 9999999999); 
         $newfile = $rand.$extension;
         
-        if ($extension == "png") {
+        if ($extension == ".png") {
             $image = imagecreatefrompng($updirectory.$newfile);
             $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
             imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
