@@ -212,7 +212,7 @@
                     foreach ($posts as $row) {   
                         echo '<div class="brick size320">';
                             if ($row['type'] == "image") {
-                                echo '<p class="textPost"><img style=" src="' . $row['image'] . '"></p>';
+                                echo '<p class="textPost"><img style="height:100%; width:auto;" src="' . $row['image'] . '"></p>';
                             } else if ($row['type'] == "text")
                             echo '<p class="textPost">' . $row['text'] . '</p>';
                         echo '</div>';
