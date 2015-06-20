@@ -9,7 +9,7 @@ $(document).ready(function() {
             formData.append( 'file', $('input[type=file]')[0].files[0] );
         }
         
-        if (!$.trim($('.postText').val())) {
+        if ($.trim($('.postText').val())) {
             formData.append('text', $('.postText').val());
         }
 
