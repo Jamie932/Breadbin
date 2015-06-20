@@ -6,7 +6,7 @@ $(document).ready(function() {
         var has_selected_file = $('input[type=file]').filter(function(){return $.trim(this.value) != ''}).length  > 0;
         
         if (has_selected_file) {
-            formData.append( 'file', $('input[type=file]').files[0] );
+            formData.append( 'file', $('#upfile').files[0] );
         }
         formData.append('text', $('.postText').val());
 
