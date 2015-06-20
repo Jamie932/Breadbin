@@ -13,7 +13,7 @@ $(document).ready(function() {
             } else {
                 $('#error').css({"height":"30px"});
                 $('<div class="error"><b>Error:</b> The max file size is 2MB.</div>').hide().appendTo($('#error')).fadeIn(1000);
-                return;
+                return false;
             }
         }
         
