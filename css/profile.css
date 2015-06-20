@@ -28,6 +28,12 @@ p {
     clear: both;   
 }
 
+#profileButtons {
+    position:absolute;
+    bottom:15px;
+    left:15px;
+}
+
 #leftProfile {
     float: left;
     display: inline;
