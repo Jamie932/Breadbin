@@ -137,9 +137,13 @@
             <div class="free-wall">
                 <div class="brick size320">
                     <img class="imgPost" src="img/a.jpg">
+<<<<<<< HEAD
                 </div>
                 <div class="brick size320">
                     <img class="imgPost" src="img/t.gif">
+=======
+                    <img class="imgPost" src="img/t.jpg">
+>>>>>>> parent of 902228d... try auto
                 </div>
             </div>
         </div>
