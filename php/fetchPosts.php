@@ -20,21 +20,20 @@
 		$username = 'Unknown';
         
         $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
-        $query_params = array(':postId' => $postIdpls, ':userId' => $_SESSION['user']['id']); 
+        $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
         
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params); 
         $ifBurnt = $stmt->rowCount();
 
         $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
-        $query_params = array(':postId' => $postIdpls, ':userId' => $_SESSION['user']['id']);
-
+        $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params); 
         $ifToasted = $stmt->rowCount();
         
         $totalToasts = $row['toasts'] - $row['burns'];
-				
+				 
 		if($userrow){ 
 			$username = $userrow['username'];
         } else {
