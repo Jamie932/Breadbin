@@ -373,7 +373,7 @@ p.settingsExplain {
     color: red;   
 }
 
-.imagePost {
+img.imagePost {
     max-width:100%;
     height: auto; 
 }
