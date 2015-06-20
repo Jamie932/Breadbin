@@ -8,7 +8,10 @@ $(document).ready(function() {
         if (has_selected_file) {
             formData.append( 'file', $('input[type=file]')[0].files[0] );
         }
-        formData.append('text', $('.postText').val());
+        
+        if (!$.trim($('.postText').val())) {
+            formData.append('text', $('.postText').val());
+        }
 
         $.ajax({
             type        : 'POST',
