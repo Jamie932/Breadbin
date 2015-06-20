@@ -5,13 +5,15 @@
 	$data = array();
 	
     if(isset($_FILES["upfile"]) && $_FILES["upfile"]["error"]== UPLOAD_ERR_OK) {
-        $File_Ext           = substr($File_Name, strrpos($File_Name, '.'));
-        $Random_Number      = rand(0, 9999999999); 
-        $NewFileName        = $Random_Number.$File_Ext;
+        $updirectory = 'img/uploads/';
+        $filename = strtolower($_FILES['upfile']['name']);
+        $extension = substr($filename, strrpos($filename, '.'));
+        $rand = rand(0, 9999999999); 
+        $newfile = $rand.$extension;
         
-        if(move_uploaded_file($_FILES['upfile']['tmp_name'], "img/uploads/" . $NewFileName)) {
+        if(move_uploaded_file($_FILES['upfile']['tmp_name'], $updirectory.$newfile )) {
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'image', :filename)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => "img/uploads/" . $NewFileName); 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $updirectory.$newfile); 
 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
