@@ -85,12 +85,12 @@
                 echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p></div><br>';
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                if ($ifToasted = 0) {
+                if ($ifToasted == 0) {
                     echo '<p class="toast">Toast</p>';
                 } else {
                     echo '<p class="untoast">Toast</p>';
                 } 
-                if ($ifBurnt = 0) {
+                if ($ifBurnt == 0) {
                     echo '<p class="burn">Burn</p>';
                 } else {
                     echo '<p class="unburn">Burn</p>';
@@ -115,12 +115,12 @@
             } else {
                 echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                 
-                if ($ifToasted = 0) {
+                if ($ifToasted == 0) {
                     echo '<p class="toast">Toast</p>';
                 } else {
                     echo '<p class="untoast">Toast</p>';
                 } 
-                if ($ifBurnt = 0) {
+                if ($ifBurnt == 0) {
                     echo '<p class="burn">Burn</p>';
                 } else {
                     echo '<p class="unburn">Burn</p>';
