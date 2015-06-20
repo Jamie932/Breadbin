@@ -194,6 +194,11 @@
             <?php }} ?>
         </div>
         
+        
+        
+        
+        
+        
         <div id="rightProfile">
             <div class="free-wall">
             <?php
@@ -207,10 +212,12 @@
                     foreach ($posts as $row) {   
                         echo '<div class="brick size320">';
                             if ($row['type'] == "image") {
-                                echo '<div class="imagePost"><img src="' . $row['image'] . '"></div>';
-                            } else if ($row['type'] == "text")
-                            echo '<p class="textPost">' . $row['text'] . '</p>';
-                        echo '</div>';
+                                echo '<p class="textPost"><img src="' . $row['image'] . '"></p>';  
+                                echo '</div>';
+                            } else if ($row['type'] == "text") {
+                                echo '<p class="textPost">' . $row['text'] . '</p>';
+                                echo '</div>';
+                            }
                     }  
                 ?>
             </div>
