@@ -11,8 +11,11 @@
         $rand = rand(0, 9999999999); 
         $newfile = $rand.$extension;
         
+        var_dump($updirectory);
+        var_dump($newfile);
+        
         if(move_uploaded_file($_FILES['upfile']['tmp_name'], $updirectory.$newfile )) {
-            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'image', :filename)"; 
+            $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :filename)"; 
             $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $updirectory.$newfile); 
 
             $stmt = $db->prepare($query); 
