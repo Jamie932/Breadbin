@@ -234,7 +234,7 @@
                             echo '</div>';
                         } else if ($row['type'] == 'imagetext') {
                             echo '<div id="banner">';
-                             echo '<img class="imgPost" src="' . $row['image'] . '">'; 
+                             echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
                             echo '<div id="bannerText">';
                             echo $row['text']; 
                             echo '</div>';
