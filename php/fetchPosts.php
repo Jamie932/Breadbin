@@ -65,8 +65,8 @@
         }
         
         if ($row['type'] == "imagetext") {
-            echo '<div id="contentPost" class="' . $class . ' post-' . $row['id'] . '">';
-            echo '<div class="contentPostImage"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
+            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+            echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
                 echo '<div id="contentInfoText">';
                     echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
                     echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
@@ -91,8 +91,8 @@
                 echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
             }             
         } else if ($row['type'] == "image") {
-            echo '<div id="contentPost" class="' . $class . ' post-' . $row['id'] . '">';
-            echo '<div class="contentPostImage"><img src="' . $row['image'] . '"></div>';
+            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+            echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"></div>';
                  echo '<div id="contentInfoText">';
                     echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
                     echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
