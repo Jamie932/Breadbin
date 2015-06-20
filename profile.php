@@ -346,6 +346,23 @@
     </div>
         
 <script type="text/javascript">
+	$(function() {
+        var wall = new freewall('free-wall');
+        wall.reset({
+            selector: '.brick',
+            animate: true,
+            cellW: 300,
+            cellH: 'auto',
+            onResize: function() {
+                wall.fitWidth();
+            }
+        });
+
+        wall.container.find('.brick img').load(function() {
+            wall.fitWidth();
+        });
+    });
+    
 	var colour = [
 		"rgb(138, 230, 138)",
 		"rgb(102, 153, 255)",
@@ -361,23 +378,6 @@
 			backgroundColor: backgroundColor
 		});
 	});
-
-	$(function() { 
-        var wall = new freewall(this);
-        wall.reset({
-            selector: '.brick',
-            animate: true,
-            cellW: 300,
-            cellH: 'auto',
-            onResize: function() {
-                wall.fitWidth();
-            }
-        });
-
-        wall.container.find('.brick img').load(function() {
-            wall.fitWidth();
-        });
-    });
 </script>
 </body>
 </html>
