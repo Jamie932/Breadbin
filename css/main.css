@@ -58,11 +58,13 @@ p.report {
 
 /* Image Formatting */
 #contentPost .contentPostImage {
-    width: 640px;
-    height: 640px;
-    border-width:1px;
-    border-color:#DDD;
+    width: 620px;
+    padding: 10px;
+    background-color: white;
+    border-width: 1px;
+    border-color: #DDD;
     border-style: solid;
+    text-align:center;
 }
 
 /* Liking the post */
