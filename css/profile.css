@@ -374,5 +374,6 @@ p.settingsExplain {
 }
 
 .imagePost {
-
+    max-width:100%;
+    height: auto; 
 }
