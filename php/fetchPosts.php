@@ -6,6 +6,8 @@
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
+
+    $postIdpls = $row['id'];
 	
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
@@ -16,7 +18,6 @@
         
 		$userrow = $stmt->fetch();
 		$username = 'Unknown';
-        $postIdpls = $row['id'];
         
         $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
         $query_params = array(':postId' => $postIdpls, ':userId' => $_SESSION['user']['id']); 
