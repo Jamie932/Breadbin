@@ -8,7 +8,7 @@ $(document).ready(function() {
         if (has_selected_file) {
             var file = $('input[type=file]')[0].files[0];
             
-            if (file['size'] > 2097152) {
+            if (file['size'] < 2097152) {
                 formData.append( 'file', file );
             } else {
                 $('#error').css({"height":"30px"});
