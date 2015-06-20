@@ -137,7 +137,9 @@
             <div class="free-wall">
                 <div class="brick size320">
                     <div id="banner">
-                        <img class="imgPost" src="img/t.gif" />
+                        <img class="imgPostText" src="img/t.gif" />
+                        <br>
+                        <img class="imgPost" src="img/a.jpg" />
                         
                        <div id="bannerText">
                         User ID
