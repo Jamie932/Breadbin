@@ -43,7 +43,16 @@
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
         }
-		
+        
+		if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
+            if (!file_exists($row['image'])) {
+                $query = "DELETE FROM posts WHERE id = :id"; 
+                $query_params = array(':id' => $row['id']); 
+
+                $stmt = $db->prepare($query); 
+                $result = $stmt->execute($query_params); 
+            }
+        }
         
         if ($row['type'] == "imagetext") {
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';

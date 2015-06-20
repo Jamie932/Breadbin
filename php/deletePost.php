@@ -14,13 +14,30 @@
         $data['errors']  = $errors;
 		
     } else {
-        $query = "DELETE FROM posts WHERE id = :id"; 
+        $query = "SELECT * FROM posts WHERE id = :id"; 
         $query_params = array(':id' => $_POST['post']); 
 
         $stmt = $db->prepare($query); 
-        $result = $stmt->execute($query_params); 
-			
-        $data['success'] = true;
+        $result = $stmt->execute($query_params);   
+        $row = $stmt->fetch();
+        
+        if ($row) {
+            if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
+                if (file_exists($row['image'])) {
+                    unlink($row['image']);
+                } else {
+                    $data['success'] = false;
+                }
+            }
+            
+            $query = "DELETE FROM posts WHERE id = :id"; 
+            $query_params = array(':id' => $_POST['post']); 
+
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+
+            $data['success'] = true;
+        }
     }
 
     echo json_encode($data);
