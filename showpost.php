@@ -155,7 +155,7 @@ if (empty($_GET)) {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                     echo '<div class="contentPostText">' . $row['text'] . '</div>';
                     echo '<div id="contentInfoText">';
-                        echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
+                        echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $_SESSION['user']['username'] . '</a></div>';
                         echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
                     echo '</div>';
                 echo '</div>';
