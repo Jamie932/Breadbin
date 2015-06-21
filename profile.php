@@ -164,11 +164,39 @@
                     }
                 ?>
             </div>
+            
+            <?php 
+                if (isset($usersname)) {
+                    if (($userid != $_SESSION['user']['id'])) { ?>
+                        <div class="bottomRow">
+                            <?php
+                                $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid"; 
+                                $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
+                                
+                                $stmt = $db->prepare($query); 
+                                $result = $stmt->execute($query_params); 
+                                $row = $stmt->fetch();
+                                    
+                                if ($row['user_no'] != intval($_GET['id'])) {
+                                       echo '<button id="followBut">Follow</button>';
+                                } else {
+                                        echo '<button id="unFollowBut">Unfollow</button>';   
+                                }                                
+                            ?>
+                            <button id="messageBut">Message</button>
+                            <button id="reportBut">Report</button>
+                        </div>
+            <?php } else { ?>
+                        <div class="bottomRow">
+                            <button class="settingsBut">Settings</button>
+                            <button class="backBut">Back</button>
+                        </div>
+            <?php }} ?>
         </div>
         
         <div id="rightProfile">
            <div id="main">
-               <ul id="tiles">
+               
             <?php
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                     $query_params = array(':id' => $userid); 
@@ -198,22 +226,16 @@
                             }
                         }                        
                         
+                    echo '<ul id="tiles">';
                         if ($row['type'] == "image") {
-                            echo '<li><img src="' . $row['image'] . '" width="300" height="auto"></li>';
+                            echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                         } else if ($row['type'] == "text") {
                             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
                         } else if ($row['type'] == 'imagetext') {
-                            echo '<div id="banner">';
-                             echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
-                                echo '<div id="bannerText">';
-                                    echo $row['text']; 
-                                echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
                         }
+                    echo '</ul>';
                     }  
                 ?>
-               </ul>
             </div>
         </div>
         
@@ -308,40 +330,12 @@
                 </form>
             </div>
         </div>
-    </div>
-            
-    <div id="profileButtons">
-    <?php 
-        if (isset($usersname)) {
-            if (($userid != $_SESSION['user']['id'])) { ?>
-                <div class="bottomRow">
-                    <?php
-                        $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid"; 
-                        $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
 
-                        $stmt = $db->prepare($query); 
-                        $result = $stmt->execute($query_params); 
-                        $row = $stmt->fetch();
-
-                        if ($row['user_no'] != intval($_GET['id'])) {
-                               echo '<button id="followBut">Follow</button>';
-                        } else {
-                                echo '<button id="unFollowBut">Unfollow</button>';   
-                        }                                
-                    ?>
-                    <button id="messageBut">Message</button>
-                    <button id="reportBut">Report</button>
-                </div>
-    <?php } else { ?>
-                <div class="bottomRow">
-                    <button class="settingsBut">Settings</button>
-                    <button class="backBut">Back</button>
-                </div>
-    <?php }} ?>  
     </div>
-            
     <script src="../js/formSettings.js"></script>
-    <div class="clearFix"></div></div>
+        
+        <div class="clearFix"></div>
+    </div>
         
     <script src="js/jquery.wookmark.js"></script>
         
@@ -376,7 +370,6 @@ for (i = 0; i < boxes.length; i++) {
         itemWidth: 310 // Optional, the width of a grid item
       };
 
-<<<<<<< HEAD
       // Get a reference to your grid items.
       var handler = $('#tiles li');
 
@@ -392,36 +385,6 @@ for (i = 0; i < boxes.length; i++) {
         // Update the layout.
         handler.wookmark();
       });
-=======
-        $(".free-wall").each(function() {
-            var wall = new freewall(this);
-            wall.reset({
-                selector: '.size320',
-                cellW: function(container) {
-                    var cellWidth = 320;
-                    if (container.hasClass('size320')) {
-                        cellWidth = container.width()/2;
-                    }
-                    return cellWidth;
-                },
-                cellH: function(container) {
-                    var cellHeight = 220;
-                    if (container.hasClass('size320')) {
-                        cellHeight = container.height()/2;
-                    }
-                    return cellHeight;
-                },
-                fixSize: 0,
-                gutterY: 20,
-                gutterX: 20,
-                onResize: function() {
-                    wall.fitWidth();
-                }
-            })
-            wall.fitWidth();
-        });
-        $(window).trigger("resize");
->>>>>>> origin/master
     });
   </script>
         
