@@ -56,7 +56,6 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="js/freewall.js"></script>
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -197,7 +196,7 @@
                             }
                         }
                         
-            $imgName = ltrim($row['image'], "/.");
+            $imgName = ltrim($row['image']);
             list($width, $height) = getimagesize($imgName);
                         
             echo '<ul id="tiles">';     
