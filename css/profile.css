@@ -379,6 +379,7 @@ p.settingsExplain {
     cursor: pointer;
     text-align: center;
     overflow: hidden;
+    position: absolute;
     top: -9999px;
     bottom: -9999px;
     left: -9999px;
