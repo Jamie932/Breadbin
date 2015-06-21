@@ -234,17 +234,18 @@ foreach ($posts as $row) {
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
+            echo '<li>';
             echo '<div class="banner">';
             if ($height < 200) {
-                echo '<li><img class="blurImage" src="' . $row['image'] . '" height="' . $height . '"></li>';
+                echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
             } else if ($width > $height) {
-                echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="200px"></li>';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
             } else if ($height >= 201 && $height <= 299) {
-                echo '<li><img  class="blurImage"src="' . $row['image'] . '" width="300" height="250px;"></li>';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px;">';
             } else if ($height >= 300 && $height <= 399) {
-                echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="350px;"></li>';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px;">';
             } else {
-                echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="450px"></li>';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
             }
             echo '<div class="bannerText">';
             echo $row['text'];
