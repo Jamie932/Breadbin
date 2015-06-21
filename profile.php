@@ -246,14 +246,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
         
-    
-    
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
-    
-    
-     
-    
+        
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
@@ -287,16 +282,13 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 } else {
                     echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
                 }
-                echo '<div class="bannerText">';
+            echo '<div class="bannerText">';
                 echo $row['text'];
-                echo '</div>'; 
+            echo '</div>'; 
             echo '</div>';
             echo '</li>'; 
         }
-                    
-                    
-                    
-                    
+     
     echo '</ul>';
     }
 ?> 
