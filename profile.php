@@ -217,10 +217,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
         
         $aspectRatio = $width/$height;
         
-        if ($height <= 200) {
+        if ($width >= 300 && $height <= 220) {
+            echo '<li style="overflow:hidden;"><img src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+        } else if ($height <= 220) {
             echo '<li><img src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
         } else {
-        echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
+            echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
