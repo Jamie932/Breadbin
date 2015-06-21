@@ -225,12 +225,10 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px;"></li>';
         } else if ($height >= 300 && $height <= 399) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
-        } else if ($height >= 400 && $height <= 499) {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
-        } else if ($height >= 1000) {
-            echo '<li><img src="' . $row['image'] . '" width="300"> </li>';
+        }  else if ($height >= 1000) {
+            echo '<li><img src="' . $row['image'] . '" width="300"></li>';
         } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
+            echo '<li><img src="' . $row['image'] . '" width="300" height="400px"></li>';
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
