@@ -401,6 +401,19 @@ p.settingsExplain {
     transform: translateX(-50%) translateY(-50%);
 }
 
+.banner:hover .bannerText {
+    visibility:visible;
+}
+    
+.banner:hover .blurImage {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    outline: none;
+}
+
 /* grid styling pls */
 
 #tiles {

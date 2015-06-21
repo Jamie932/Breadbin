@@ -72,6 +72,37 @@ p.textPost {
         text-align: center;
         position:relative;   
     }
+    
+.banner{
+    height: 100%;
+    width: 100%;
+    position:relative;
+    background:none;
+    display: inline-table;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bannerText{
+    visibility: hidden;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.banner:hover .bannerText {
+    visibility:visible;
+}
+    
+.banner:hover .blurImage {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    outline: none;
+}
 </style>
 </head>
 <body>
@@ -82,18 +113,18 @@ p.textPost {
         <li><img src="a.jpg" width="300" height="320px"></li>
         <li><img src="t.gif" width="300" height="340px"></li>
         <li><div class="box"><p class="textPost">pls wurk</p></div></li>
+        <li>
+            <div class="banner">
+            <img class="blurImage" src="t.gif" width="300" height="340px">
+                <div class="bannerText">
+                    Quack
+                </div>
+            </div>
+        </li>
         <!-- End of grid blocks -->
       </ul>
     </div>
     </div>
-    
-    echo '<div id="banner">';
-                             echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
-                                echo '<div id="bannerText">';
-                                    echo $row['text']; 
-                                echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
     
     <script src="jquery-1.11.2.min.js"></script>
     
