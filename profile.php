@@ -195,10 +195,18 @@
 
                                 }
                             }
-                        }                        
+                        }
+                        
+            $imgName = ltrim($row['image'], "/.");
+            list($width, $height) = getimagesize($imgName);
+                        
             echo '<ul id="tiles">';     
                 if ($row['type'] == "image") {
-                            echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
+                    if ($width < 200) { 
+                            echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
+                    } else {
+                        echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
+                    }
                         } else if ($row['type'] == "text") {
                             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
                         } else if ($row['type'] == 'imagetext') {  
