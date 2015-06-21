@@ -152,10 +152,33 @@ if (empty($_GET)) {
 
                 $row = $stmt->fetch();
 
+                $query = "SELECT * FROM users WHERE id=:id";
+                $query_params = array(':id' => $row['userid']); 
+
+                $stmt = $db->prepare($query); 
+                $result = $stmt->execute($query_params); 
+
+                $userrow = $stmt->fetch();
+
+                $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
+                $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
+
+                $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params); 
+                $ifBurnt = $stmt->rowCount();
+
+                $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+                $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
+                $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params); 
+                $ifToasted = $stmt->rowCount();
+
+                $totalToasts = $row['toasts'] - $row['burns'];
+
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                     echo '<div class="contentPostText">' . $row['text'] . '</div>';
                     echo '<div id="contentInfoText">';
-                        echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $_SESSION['user']['username'] . '</a></div>';
+                        echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $userrow['username'] . '</a></div>';
                         echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
                     echo '</div>';
                 echo '</div>';

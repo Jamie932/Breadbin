@@ -22,13 +22,13 @@
             $convertedfile = $updirectory . $rand . ".jpg";
         }
         
-        list($width, $height) = getimagesize($imgName);
+        /*list($width, $height) = getimagesize($imgName);
         
         if (($width/$height > 0.5) && ($width/$height < 1.5) ) {
         } else {
             die('Error: Aspect ratio is too much.');
             return false;   
-        }
+        }*/
 
         if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
             mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
