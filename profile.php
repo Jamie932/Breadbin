@@ -216,6 +216,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         list($width, $height) = getimagesize($imgName);
         
         $aspectRatio = $width/$height;
+        
         ?>
                
         <script>
@@ -223,9 +224,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         </script>
                
         <?php
-        echo $aspectRatio;
-        
-        if ($aspectRatio >= 2 && $aspectRatio <= 2.5) {
+        if ($aspectRatio >= 1 && $aspectRatio <= 1.5) {
             echo '<li style="overflow:hidden;"><img src="' . $row['image'] . '" height="' . $height . '"></li>'; 
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
