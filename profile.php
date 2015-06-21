@@ -224,17 +224,26 @@
                                 }
                             }
                         }                        
-                        
-                    echo '<ul id="tiles">';
-                        if ($row['type'] == "image") {
+            echo '<ul id="tiles">';     
+                if ($row['type'] == "image") {
                             echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                         } else if ($row['type'] == "text") {
                             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
-                        } else if ($row['type'] == 'imagetext') {
+                        } else if ($row['type'] == 'imagetext') {  
+                            echo '<li>';
+                            echo '<div id="banner">';
+                                echo '<img src="' . $row['image'] . '" width="300" height="320px">'; 
+                                echo '<div id="bannerText">';
+                                    echo $row['text']; 
+                                echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</li>';
                         }
-                    echo '</ul>';
+                        echo '</ul>';
                     }  
                 ?>
+               </ul>
             </div>
         </div>
         

@@ -87,6 +87,14 @@ p.textPost {
     </div>
     </div>
     
+    echo '<div id="banner">';
+                             echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
+                                echo '<div id="bannerText">';
+                                    echo $row['text']; 
+                                echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+    
     <script src="jquery-1.11.2.min.js"></script>
     
     <script src="jquery.wookmark.js"></script>
