@@ -164,34 +164,6 @@
                     }
                 ?>
             </div>
-            
-            <?php 
-                if (isset($usersname)) {
-                    if (($userid != $_SESSION['user']['id'])) { ?>
-                        <div class="bottomRow">
-                            <?php
-                                $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid"; 
-                                $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
-                                
-                                $stmt = $db->prepare($query); 
-                                $result = $stmt->execute($query_params); 
-                                $row = $stmt->fetch();
-                                    
-                                if ($row['user_no'] != intval($_GET['id'])) {
-                                       echo '<button id="followBut">Follow</button>';
-                                } else {
-                                        echo '<button id="unFollowBut">Unfollow</button>';   
-                                }                                
-                            ?>
-                            <button id="messageBut">Message</button>
-                            <button id="reportBut">Report</button>
-                        </div>
-            <?php } else { ?>
-                        <div class="bottomRow">
-                            <button class="settingsBut">Settings</button>
-                            <button class="backBut">Back</button>
-                        </div>
-            <?php }} ?>
         </div>
         
         <div id="rightProfile">

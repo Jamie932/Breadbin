@@ -142,13 +142,6 @@ p {
     right:25;
 }
 
-.bottomRow {
-    padding-left:25px;
-    padding-right:25px;
-    margin-top:25px;
-    text-align:center;
-}
-
 .grid-item { 
     width: 25%; 
     background-color: #ef709e;
