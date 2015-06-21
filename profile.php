@@ -144,73 +144,73 @@ print(isset($usersname) ? $usersname : 'Unknown');
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
         
-    <?php
-require('php/template/navbar.php');
-?>
+    <?php require('php/template/navbar.php'); ?>
+        
     <div id="profileContainer">
         <div id="leftProfile">
-            <div id="userAvatar">
-            </div>
-
+            <div id="userAvatar"></div>
+            <div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png"></div>
+            
             <div class="userInfo">            
                 <?php
-if (isset($usersname)) {
-    echo '<div class="nameRow">' . $usersname . '</div>';
-    echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
-    echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
-    echo '<div class="followerRow">';
-    echo '<div class="followerLeft">';
-    echo '<div class="followerTitle">Following</div>';
-    echo '<div class="followerContent following">' . $noOfFollowing . '</div>';
-    echo '</div>';
-    echo '<div class="followerRight">';
-    echo '<div class="followerTitle">Followers</div>';
-    echo '<div class="followerContent followers">' . $noOfFollowers . '</div>';
-    echo '</div>';
-    echo '</div>';
-} else {
-    echo '<div id="errormsg">User not found</div>';
-}
-?>
+                if (isset($usersname)) {
+                    echo '<div class="nameRow">' . $usersname . '</div>';
+                    echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
+                    echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
+                    echo '<div class="followerRow">';
+                    echo '<div class="followerLeft">';
+                    echo '<div class="followerTitle">Following</div>';
+                    echo '<div class="followerContent following">' . $noOfFollowing . '</div>';
+                    echo '</div>';
+                    echo '<div class="followerRight">';
+                    echo '<div class="followerTitle">Followers</div>';
+                    echo '<div class="followerContent followers">' . $noOfFollowers . '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                } else {
+                    echo '<div id="errormsg">User not found</div>';
+                }
+                ?>
             </div>
         </div>
         
         <div id="rightProfile">
            <div id="main">
             <?php
-$query        = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
-$query_params = array(
-    ':id' => $userid
-);
-
-$stmt   = $db->prepare($query);
-$result = $stmt->execute($query_params);
-$posts  = $stmt->fetchAll();
-
-foreach ($posts as $row) {
-    if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
-        if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
-            $users = $matches[1];
-            
-            foreach ($users as $user) {
-                $query        = "SELECT id, username FROM users WHERE username = :username";
+                $query        = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
                 $query_params = array(
-                    ':username' => $user
+                    ':id' => $userid
                 );
-                
-                $stmt      = $db->prepare($query);
-                $result    = $stmt->execute($query_params);
-                $userFound = $stmt->fetch();
-                
-                if ($userFound) {
-                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $user . '</a>', $row['text']);
-                }
-                
-            }
-        }
-    }
+
+                $stmt   = $db->prepare($query);
+                $result = $stmt->execute($query_params);
+                $posts  = $stmt->fetchAll();
+
+                foreach ($posts as $row) {
+                    if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+                        if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+                            $users = $matches[1];
+
+                            foreach ($users as $user) {
+                                $query        = "SELECT id, username FROM users WHERE username = :username";
+                                $query_params = array(
+                                    ':username' => $user
+                                );
+
+                                $stmt      = $db->prepare($query);
+                                $result    = $stmt->execute($query_params);
+                                $userFound = $stmt->fetch();
+
+                                if ($userFound) {
+                                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $user . '</a>', $row['text']);
+                                }
+
+                            }
+                        }
+                    }
     
     
+<<<<<<< HEAD
     echo '<ul id="tiles">';
     if ($row['type'] == "image") {
         $imgName = ltrim($row['image'], "/.");
@@ -260,6 +260,58 @@ foreach ($posts as $row) {
     echo '</ul>';
 }
 ?> 
+=======
+                echo '<ul id="tiles">';
+                if ($row['type'] == "image") {
+                    $imgName = ltrim($row['image'], "/.");
+                    list($width, $height) = getimagesize($imgName);
+
+                    $newHeight = $height % 2;
+
+                    if ($height <= 200) {
+                        echo '<li><img src="' . $row['image'] . ' height="' . $height . '"></li>';
+                    } else if ($width > $height) {
+                        echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
+                    } else if ($height >= 201 && $height <= 299) {
+                        echo '<li><img src="' . $row['image'] . '" width="300" height="250px;"></li>';
+                    } else if ($height >= 300 && $height <= 399) {
+                        echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
+                    } else {
+                        echo '<li><img src="' . $row['image'] . '" width="300" height="400px"></li>';
+                    }
+                } else if ($row['type'] == "text") {
+                        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+                } else if ($row['type'] == 'imagetext') {
+                        $imgName = ltrim($row['image'], "/.");
+                        list($width, $height) = getimagesize($imgName);
+                        echo '<li>';
+                        echo '<div class="banner">';
+                        if ($height < 200) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($width > $height) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
+                        } else if ($height >= 201 && $height <= 299) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px;">';
+                        } else if ($height >= 300 && $height <= 399) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px;">';
+                        } else if ($height >= 400 && $height <= 499) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
+                        } else if ($height >= 1000) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '"> ';
+                        } else {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
+                        }
+                        echo '<div class="bannerText">';
+                        echo $row['text'];
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</li>'; 
+                    }
+                    
+                    echo '</ul>';
+                }
+        ?> 
+>>>>>>> origin/master
                </ul>
             </div>
         </div>
