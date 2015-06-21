@@ -368,6 +368,17 @@ p.settingsExplain {
     max-height: 400px;
     max-width: 300px;
 }
+
+#testTiles {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+
+}
+
 #tiles li {
     width: 300px;
     background-color: #ffffff;
@@ -383,12 +394,6 @@ p.settingsExplain {
 
 #tiles li img {
     display: block;
-    position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
-    margin: auto;
 }
 
 #tiles ali:nth-child(3n) {
