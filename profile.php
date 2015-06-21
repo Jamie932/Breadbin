@@ -206,15 +206,14 @@
                     } else {
                         echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                     }
-            } else if ($row['type'] == "text") {
-            
-                            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
-                        } else if ($row['type'] == 'imagetext') {  
-                            echo '<li>';
-                                echo '<div class="banner">';
-                    if ($height < 200) { 
-                        $imgName = ltrim($row['image'], "/.");
+        } else if ($row['type'] == "text") {
+                    echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
+        } else if ($row['type'] == 'imagetext') {  
+            $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
+                echo '<li>';
+                echo '<div class="banner">';
+            if ($height < 200) { 
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="180px">';
                     } else {
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
