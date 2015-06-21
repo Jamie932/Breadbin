@@ -219,6 +219,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
         
         if ($height <= 200) {
             echo '<li><img src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
+        } else {
+        echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
@@ -229,6 +231,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<div class="banner">';
             if ($height < 200) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="' . $height . '">';
+            } else {
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
             }
             echo '<div class="bannerText">';
             echo $row['text'];
