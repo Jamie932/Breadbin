@@ -211,7 +211,11 @@
                         } else if ($row['type'] == 'imagetext') {  
                             echo '<li>';
                                 echo '<div class="banner">';
+                    if ($height < 200) { 
+                                echo '<li><img src="' . $row['image'] . '" width="300" height="180px"></li>';
+                    } else {
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
+                    }
                                 echo '<div class="bannerText">';
                                 echo $row['text'];
                                 echo '</div>';
