@@ -202,7 +202,7 @@
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
                     if ($height < 200) { 
-                    echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
+                    echo '<li><img src="' . $row['image'] . '" width="300" height="180px"></li>';
                     } else {
                         echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                     }
