@@ -218,12 +218,16 @@ foreach ($posts as $row) {
         
         $newHeight = $height % 2;
         
-        if ($height < 200) {
+        if ($height <= 200) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
         } else if ($width > $height) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
+        } else if ($height >= 201 && $height <= 299) {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="250px;"></li>';
+        } else if ($height >= 300 && $height <= 399) {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
         } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
+            echo '<li><img src="' . $row['image'] . '" width="300" height="400px"></li>';
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
