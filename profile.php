@@ -204,7 +204,7 @@
                     if ($height < 200) { 
                     echo '<li><img src="' . $row['image'] . '" width="300" height="'. $height .'"></li>';
                     } else {
-                        echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
+                        echo '<li><img src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
                     }
         } else if ($row['type'] == "text") {
                     echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
