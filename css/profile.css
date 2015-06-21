@@ -406,11 +406,11 @@ p.settingsExplain {
 }
     
 .banner:hover .blurImage {
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-    -ms-filter: blur(4px);
-    filter: blur(4px);
+    -webkit-filter: blur(300px);
+    -moz-filter: blur(300px);
+    -o-filter: blur(300px);
+    -ms-filter: blur(300px);
+    filter: blur(300px);
     outline: none;
 }
 

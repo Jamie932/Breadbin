@@ -219,7 +219,7 @@ foreach ($posts as $row) {
         $newHeight = $height % 2;
         
         if ($height <= 200) {
-            echo '<li><img src="' . $row['image'] . '" height="' . $height . '"></li>';
+            echo '<li><img src="' . $row['image'] . ' height="' . $height . '"></li>';
         } else if ($width > $height) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
         } else if ($height >= 201 && $height <= 299) {
@@ -227,21 +227,24 @@ foreach ($posts as $row) {
         } else if ($height >= 300 && $height <= 399) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
         } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="500px"></li>';
+            echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
-            echo '<li>';
             echo '<div class="banner">';
             if ($height < 200) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
+                echo '<div class="banner"><li><img class="blurImage" src="' . $row['image'] . '" height="' . $height . '"></li></div>';
             } else if ($width > $height) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
+                echo '<div class="banner"><li><img class="blurImage" src="' . $row['image'] . '" width="300" height="200px"></li></div>';
+            } else if ($height >= 201 && $height <= 299) {
+                echo '<div class="banner"><li><img  class="blurImage"src="' . $row['image'] . '" width="300" height="250px;"></li></div>';
+            } else if ($height >= 300 && $height <= 399) {
+                echo '<div class="banner"><li><img class="blurImage" src="' . $row['image'] . '" width="300" height="350px;"></li></div>';
             } else {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
+                echo '<div class="banner"><li><img class="blurImage" src="' . $row['image'] . '" width="300" height="450px"></li></div>';
             }
             echo '<div class="bannerText">';
             echo $row['text'];
