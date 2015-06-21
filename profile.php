@@ -244,8 +244,12 @@ foreach ($posts as $row) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px;">';
             } else if ($height >= 300 && $height <= 399) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px;">';
-            } else {
+            } else if ($height >= 400 && $height <= 499) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
+            } else if ($height >= 1000) {
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300">';
+            } else {
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="500px">';
             }
             echo '<div class="bannerText">';
             echo $row['text'];
