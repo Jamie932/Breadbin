@@ -310,7 +310,7 @@
         </div>
     </div>
             
-    <div id="profileButtons">
+    <div id="bottomRow">
     <?php 
         if (isset($usersname)) {
             if (($userid != $_SESSION['user']['id'])) { ?>
@@ -324,18 +324,18 @@
                         $row = $stmt->fetch();
 
                         if ($row['user_no'] != intval($_GET['id'])) {
-                               echo '<button id="followBut">Follow</button>';
+                               echo '<button id="followBut" class="profileButton">Follow</button>';
                         } else {
-                                echo '<button id="unFollowBut">Unfollow</button>';   
+                                echo '<button id="unFollowBut" class="profileButton">Unfollow</button>';   
                         }                                
                     ?>
-                    <button id="messageBut">Message</button>
-                    <button id="reportBut">Report</button>
+                    <button id="messageBut" class="profileButton">Message</button>
+                    <button id="reportBut" class="profileButton">Report</button>
                 </div>
     <?php } else { ?>
                 <div class="bottomRow">
-                    <button class="settingsBut">Settings</button>
-                    <button class="backBut">Back</button>
+                    <button class="settingsBut" class="profileButton">Settings</button>
+                    <button class="backBut" class="profileButton">Back</button>
                 </div>
     <?php }} ?>  
     </div>
