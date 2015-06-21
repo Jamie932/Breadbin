@@ -369,14 +369,6 @@ p.settingsExplain {
     max-width: 300px;
 }
 
-.testTiles {
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: -500px;
-}
-
 #tiles li {
     width: 300px;
     background-color: #ffffff;
