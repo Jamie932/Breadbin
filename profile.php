@@ -224,7 +224,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
-    } else if ($row['type'] == "text") {
+    } 
+                    
+                    
+                    
+                    
+                    else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
