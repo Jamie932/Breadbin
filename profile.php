@@ -164,11 +164,39 @@
                     }
                 ?>
             </div>
+            
+            <?php 
+                if (isset($usersname)) {
+                    if (($userid != $_SESSION['user']['id'])) { ?>
+                        <div class="bottomRow">
+                            <?php
+                                $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid"; 
+                                $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
+                                
+                                $stmt = $db->prepare($query); 
+                                $result = $stmt->execute($query_params); 
+                                $row = $stmt->fetch();
+                                    
+                                if ($row['user_no'] != intval($_GET['id'])) {
+                                       echo '<button id="followBut">Follow</button>';
+                                } else {
+                                        echo '<button id="unFollowBut">Unfollow</button>';   
+                                }                                
+                            ?>
+                            <button id="messageBut">Message</button>
+                            <button id="reportBut">Report</button>
+                        </div>
+            <?php } else { ?>
+                        <div class="bottomRow">
+                            <button class="settingsBut">Settings</button>
+                            <button class="backBut">Back</button>
+                        </div>
+            <?php }} ?>
         </div>
         
         <div id="rightProfile">
            <div id="main">
-               <ul id="tiles">
+               
             <?php
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                     $query_params = array(':id' => $userid); 
@@ -198,22 +226,16 @@
                             }
                         }                        
                         
+                    echo '<ul id="tiles">';
                         if ($row['type'] == "image") {
-                            echo '<li><img src="' . $row['image'] . '" width="300" height="auto"></li>';
+                            echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                         } else if ($row['type'] == "text") {
                             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
                         } else if ($row['type'] == 'imagetext') {
-                            echo '<div id="banner">';
-                             echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
-                                echo '<div id="bannerText">';
-                                    echo $row['text']; 
-                                echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
                         }
+                    echo '</ul>';
                     }  
                 ?>
-               </ul>
             </div>
         </div>
         
@@ -310,7 +332,7 @@
         </div>
     </div>
             
-    <div id="bottomRow">
+    <div id="profileButtons">
     <?php 
         if (isset($usersname)) {
             if (($userid != $_SESSION['user']['id'])) { ?>
@@ -324,105 +346,73 @@
                         $row = $stmt->fetch();
 
                         if ($row['user_no'] != intval($_GET['id'])) {
-                               echo '<button id="followBut" class="profileButton">Follow</button>';
+                               echo '<button id="followBut" class="buttonstyle">Follow</button>';
                         } else {
-                                echo '<button id="unFollowBut" class="profileButton">Unfollow</button>';   
+                                echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';   
                         }                                
                     ?>
-                    <button id="messageBut" class="profileButton">Message</button>
-                    <button id="reportBut" class="profileButton">Report</button>
+                    <button id="messageBut" class="buttonstyle">Message</button>
+                    <button id="reportBut" class="buttonstyle">Report</button>
                 </div>
     <?php } else { ?>
                 <div class="bottomRow">
-                    <button class="settingsBut" class="profileButton">Settings</button>
-                    <button class="backBut" class="profileButton">Back</button>
+                    <button class="settingsBut" class="buttonstyle">Settings</button>
+                    <button class="backBut" class="buttonstyle">Back</button>
                 </div>
-    <?php }} ?>  
+    <?php }} ?> 
     </div>
+        
+    <div class="clearFix"></div></div>
             
     <script src="../js/formSettings.js"></script>
-    <div class="clearFix"></div></div>
-        
     <script src="js/jquery.wookmark.js"></script>
-        
-<script type="text/javascript">
-    var colors = [
-		"rgb(138, 230, 138)",
-		"rgb(102, 153, 255)",
-		"rgb(255, 181, 64)",
-		"rgb(255, 102, 204)"
-	];
-	
-	var boxes = document.querySelectorAll(".box");
+    <script type="text/javascript">
+        var colors = [
+            "rgb(138, 230, 138)",
+            "rgb(102, 153, 255)",
+            "rgb(255, 181, 64)",
+            "rgb(255, 102, 204)"
+        ];
 
-for (i = 0; i < boxes.length; i++) {
-  // Pick a random color from the array 'colors'.
-  boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-  boxes[i].style.width = '300';
-  boxes[i].style.height = '230';
-  boxes[i].style.display = 'inline-table';
-  boxes[i].style.margin = '0';
-  boxes[i].style.textAlign = 'center';
-  boxes[i].style.verticalAlign = 'middle';
-  boxes[i].style.position = 'relative';
-}
-        
-    $(document).ready(new function() {
-      // Prepare layout options.
-      var options = {
-        autoResize: true, // This will auto-update the layout when the browser window is resized.
-        container: $('#main'), // Optional, used for some extra CSS styling
-        offset: 5, // Optional, the distance between grid items
-        itemWidth: 310 // Optional, the width of a grid item
-      };
+        var boxes = document.querySelectorAll(".box");
 
-<<<<<<< HEAD
-      // Get a reference to your grid items.
-      var handler = $('#tiles li');
+        for (i = 0; i < boxes.length; i++) {
+          // Pick a random color from the array 'colors'.
+          boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          boxes[i].style.width = '300';
+          boxes[i].style.height = '230';
+          boxes[i].style.display = 'inline-table';
+          boxes[i].style.margin = '0';
+          boxes[i].style.textAlign = 'center';
+          boxes[i].style.verticalAlign = 'middle';
+          boxes[i].style.position = 'relative';
+        }
 
-      // Call the layout function.
-      handler.wookmark(options);
+        $(document).ready(new function() {
+          // Prepare layout options.
+          var options = {
+            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            container: $('#main'), // Optional, used for some extra CSS styling
+            offset: 5, // Optional, the distance between grid items
+            itemWidth: 310 // Optional, the width of a grid item
+          };
 
-      // Capture clicks on grid items.
-      handler.click(function(){
-        // Randomize the height of the clicked item.
-        var newHeight = $('img', this).height() + Math.round(Math.random()*300+30);
-        $(this).css('height', newHeight+'px');
+          // Get a reference to your grid items.
+          var handler = $('#tiles li');
 
-        // Update the layout.
-        handler.wookmark();
-      });
-=======
-        $(".free-wall").each(function() {
-            var wall = new freewall(this);
-            wall.reset({
-                selector: '.size320',
-                cellW: function(container) {
-                    var cellWidth = 320;
-                    if (container.hasClass('size320')) {
-                        cellWidth = container.width()/2;
-                    }
-                    return cellWidth;
-                },
-                cellH: function(container) {
-                    var cellHeight = 220;
-                    if (container.hasClass('size320')) {
-                        cellHeight = container.height()/2;
-                    }
-                    return cellHeight;
-                },
-                fixSize: 0,
-                gutterY: 20,
-                gutterX: 20,
-                onResize: function() {
-                    wall.fitWidth();
-                }
-            })
-            wall.fitWidth();
+          // Call the layout function.
+          handler.wookmark(options);
+
+          // Capture clicks on grid items.
+          handler.click(function(){
+            // Randomize the height of the clicked item.
+            var newHeight = $('img', this).height() + Math.round(Math.random()*300+30);
+            $(this).css('height', newHeight+'px');
+
+            // Update the layout.
+            handler.wookmark();
+          });
         });
-        $(window).trigger("resize");
->>>>>>> origin/master
-    });
   </script>
         
 </body>
