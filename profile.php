@@ -218,7 +218,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         $aspectRatio = $width/$height;
         
         if ($aspectRatio >= 2 && $aspectRatio <=2.5) {
-            echo '<li style="overflow:hidden;"><img src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+            echo '<li style="overflow:hidden;"><img src="' . $row['image'] . '" height="' . $height . '" width="auto"></li>'; 
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
