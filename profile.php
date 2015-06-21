@@ -227,7 +227,7 @@ foreach ($posts as $row) {
         } else if ($height >= 300 && $height <= 399) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
         } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
+            echo '<li><img src="' . $row['image'] . '" width="300" height="500px"></li>';
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
