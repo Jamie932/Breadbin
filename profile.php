@@ -203,9 +203,9 @@
                             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
                         } else if ($row['type'] == 'imagetext') {  
                             echo '<li>';
-                            echo '<div id="banner">';
+                            echo '<div class="banner">';
                                 echo '<img src="' . $row['image'] . '" width="300" height="320px">'; 
-                                echo '<div id="bannerText">';
+                                echo '<div class="bannerText">';
                                     echo $row['text']; 
                                 echo '</div>';
                             echo '</div>';

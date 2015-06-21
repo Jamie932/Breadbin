@@ -383,7 +383,7 @@ p.settingsExplain {
     color: red;   
 }
 
-#banner{
+.banner{
     height: 100%;
     width: 100%;
     position:relative;
@@ -393,7 +393,7 @@ p.settingsExplain {
     text-align: center;
 }
 
-#bannerText{
+.bannerText{
     visibility: hidden;
     position:absolute;
     top: 50%;
