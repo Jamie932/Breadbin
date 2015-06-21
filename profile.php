@@ -204,7 +204,7 @@
                         } else if ($row['type'] == 'imagetext') {  
                             echo '<li>';
                                 echo '<div class="banner">';
-                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">'
+                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
                                 echo '<div class="bannerText">';
                                 echo $row['text'];
                                 echo '</div>';
