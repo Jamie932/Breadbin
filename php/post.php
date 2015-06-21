@@ -24,8 +24,9 @@
         
         list($width, $height) = getimagesize($imgName);
         
-        if (($width/$height > 1) && ($width/$height < 2) ) {
+        if (($width/$height > 0.5) && ($width/$height < 1.5) ) {
         } else {
+            die('Error: Aspect ratio is too much.');
             return false;   
         }
 
