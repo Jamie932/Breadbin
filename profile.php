@@ -237,6 +237,14 @@ print(isset($usersname) ? $usersname : 'Unknown');
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="325px"></li>'; 
                     } else if ($height >=350 && $height < 400) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="375px"></li>'; 
+                    } else if ($height >=400 && $height < 500) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                    } else if ($height >=500 && $height < 600) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
+                    } else if ($height >=600 && $height < 1000) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
+                    } else if ($height >=1000) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
                     }
         } else if ($aspectRatio == 1) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
@@ -274,6 +282,14 @@ print(isset($usersname) ? $usersname : 'Unknown');
                         echo '<img class="blurImage" src="' . $row['image'] . '" height="325px">'; 
                     } else if ($height >=350 && $height < 400) {
                         echo '<img class="blurImage" src="' . $row['image'] . '" height="375px">'; 
+                    } else if ($height >=400 && $height < 500) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">'; 
+                    } else if ($height >=500 && $height < 600) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="400px">'; 
+                    } else if ($height >=600 && $height < 1000) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $testHeight . '">'; 
+                    } else if ($height >=1000) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="400px">'; 
                     }
                 } else if ($aspectRatio == 1) {
                     echo '<img class="blurImage" src="' . $row['image'] . '" height="'. $testHeight .'"">'; 
