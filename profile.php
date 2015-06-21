@@ -222,8 +222,7 @@
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="'. $height .'">';
             } else if($width > $height) {
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
-                    }
-             } else {
+            } else {
                     echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
             } 
                                 echo '<div class="bannerText">';
