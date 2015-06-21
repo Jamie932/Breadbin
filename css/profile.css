@@ -436,8 +436,9 @@ border: 1px solid #dedede;
 -webkit-border-radius: 2px;
 border-radius: 2px;
 display: none; /** Hide items initially to avoid a flicker effect **/
-cursor: pointer;
-overflow:hidden;
+  cursor: pointer;
+    overflow:hidden;
+    max-height: 400px;
 }
 
 #tiles li img { 
