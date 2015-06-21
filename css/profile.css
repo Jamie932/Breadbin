@@ -367,7 +367,6 @@ p.settingsExplain {
     margin: 0;
     max-height: 400px;
     max-width: 300px;
-    overflow: hidden;
 }
 
 #tiles li {
@@ -380,6 +379,7 @@ p.settingsExplain {
     display: none;
     cursor: pointer;
     text-align: center;
+    overflow: hidden;
 }
 
 #tiles li img {
