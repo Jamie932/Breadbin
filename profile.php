@@ -272,7 +272,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 } else if ($aspectRatio >= 2 && $aspectRatio < 2.5) {
                     echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
                 } else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'">'; 
+                    echo '<img class="blurImage" src="' . $row['image'] . '" height="'. $testHeight .'">'; 
                 } else if ($aspectRatio > 1 && $aspectRatio < 1.5) {
                     echo '<img class="blurImage" src="' . $row['image'] . '" height="'. $testHeight .'">'; 
                 } else if ($aspectRatio == 1) {
