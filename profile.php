@@ -253,6 +253,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
+        
+            $aspectRatio = $width/$height;
+            $testHeight = $height/=2;
             
             ?>
                
