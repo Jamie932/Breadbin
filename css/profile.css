@@ -337,6 +337,7 @@ p.settingsExplain {
     height: 100%;
     width: 100%;
     position: relative;
+    overflow: hidden;
     background: none;
     display: inline-table;
     vertical-align: middle;
@@ -367,6 +368,7 @@ p.settingsExplain {
     margin: 0;
     max-height: 400px;
     max-width: 300px;
+    overflow: hidden;
 }
 
 #tiles li {
@@ -379,7 +381,6 @@ p.settingsExplain {
     display: none;
     cursor: pointer;
     text-align: center;
-    overflow: hidden;
 }
 
 #tiles li img {
@@ -395,4 +396,15 @@ p.settingsExplain {
 #tiles ali:nth-child(5n) {
     height: 250px;
 }
-#main {}
+
+.testTiles {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;   
+}
+
+#main {
+}
