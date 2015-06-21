@@ -351,7 +351,7 @@ p.settingsExplain {
 .banner:hover .bannerText {
     visibility: visible;
 }
-.banner:hover #tiles li {
+.banner:hover .blurImage {
     -webkit-filter: blur(300px);
     -moz-filter: blur(300px);
     -o-filter: blur(300px);
