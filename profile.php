@@ -270,7 +270,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
             <?php
             echo '<li>';
             echo '<div class="banner">';
-            if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
+            if ($height <=200) {
+                echo '<img class="blurImage" src="' . $row['image'] . '" height="320px"></li>'; 
+            } else if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
             } else if ($aspectRatio >= 2 && $aspectRatio < 2.5) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
