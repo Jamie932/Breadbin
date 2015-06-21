@@ -208,7 +208,6 @@
                     echo '<li><img src="' . $row['image'] . '" width="300" height="'. $height .'"></li>';
             } echo {
                     echo '<li><img src="' . $row['image'] . '" width="300" height="'. $newHeight .'"></li>';
-            }
             } else if ($row['type'] == "text") {
                     echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
         } else if ($row['type'] == 'imagetext') {  
