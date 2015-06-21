@@ -1,53 +1,61 @@
-<?php 
-    require("php/common.php");
-    require("php/checkLogin.php");
-    
-    if (empty($_GET)) {
-        if ($_SESSION['user']['id']) {
-            header('Location: profile.php?id=' .$_SESSION['user']['id'] );
-            die();
-        }
-    } else {
+<?php
+require("php/common.php");
+require("php/checkLogin.php");
 
-        $query = "SELECT * FROM users WHERE id = :id"; 
-        $query_params = array(':id' => intval($_GET['id'])); 
-        
-        $stmt = $db->prepare($query); 
-        $result = $stmt->execute($query_params); 
-        $row = $stmt->fetch();
-
-        if($row){ 
-            $userid = $row['id'];
-            $usersname = $row['username'];
-            $email = $row['email'];
-            
-            if ($row['bio']) {
-                $bio = $row['bio'];
-            }
-            
-            if ($row['country']) {
-                $country = $row['country'];
-            }
-        }
-        
-        $query = "SELECT count(*) FROM following WHERE user_no = :id"; 
-        $query_params = array(':id' => intval($_GET['id'])); 
-        
-        $result = $db->prepare($query); 
-        $result->execute($query_params); 
-        $noOfFollowers = $result->fetchColumn(); 
-        
-        $query = "SELECT count(*) FROM following WHERE follower_id = :id"; 
-        $query_params = array(':id' => intval($_GET['id'])); 
-        
-        $result = $db->prepare($query); 
-        $result->execute($query_params); 
-        $noOfFollowing = $result->fetchColumn(); 
+if (empty($_GET)) {
+    if ($_SESSION['user']['id']) {
+        header('Location: profile.php?id=' . $_SESSION['user']['id']);
+        die();
     }
+} else {
+    
+    $query        = "SELECT * FROM users WHERE id = :id";
+    $query_params = array(
+        ':id' => intval($_GET['id'])
+    );
+    
+    $stmt   = $db->prepare($query);
+    $result = $stmt->execute($query_params);
+    $row    = $stmt->fetch();
+    
+    if ($row) {
+        $userid    = $row['id'];
+        $usersname = $row['username'];
+        $email     = $row['email'];
+        
+        if ($row['bio']) {
+            $bio = $row['bio'];
+        }
+        
+        if ($row['country']) {
+            $country = $row['country'];
+        }
+    }
+    
+    $query        = "SELECT count(*) FROM following WHERE user_no = :id";
+    $query_params = array(
+        ':id' => intval($_GET['id'])
+    );
+    
+    $result = $db->prepare($query);
+    $result->execute($query_params);
+    $noOfFollowers = $result->fetchColumn();
+    
+    $query        = "SELECT count(*) FROM following WHERE follower_id = :id";
+    $query_params = array(
+        ':id' => intval($_GET['id'])
+    );
+    
+    $result = $db->prepare($query);
+    $result->execute($query_params);
+    $noOfFollowing = $result->fetchColumn();
+}
 ?>
 <html>
 <head>
-    <title><?php print (isset($usersname) ? $usersname : 'Unknown') ?> | Breadbin</title>
+    <title><?php
+print(isset($usersname) ? $usersname : 'Unknown');
+?> | Breadbin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
@@ -136,104 +144,110 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
         
-    <?php require('php/template/navbar.php');?>
+    <?php
+require('php/template/navbar.php');
+?>
     <div id="profileContainer">
         <div id="leftProfile">
             <div id="userAvatar">
             </div>
 
             <div class="userInfo">            
-                <?php 
-                    if (isset($usersname)) {
-                        echo '<div class="nameRow">' . $usersname . '</div>';
-                        echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
-                        echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
-                        echo '<div class="followerRow">';
-                            echo '<div class="followerLeft">';
-                                echo '<div class="followerTitle">Following</div>';
-                                echo '<div class="followerContent following">' .$noOfFollowing . '</div>';
-                            echo '</div>';
-                            echo '<div class="followerRight">';
-                                echo '<div class="followerTitle">Followers</div>';
-                                echo '<div class="followerContent followers">'. $noOfFollowers . '</div>';
-                            echo '</div>';
-                        echo '</div>';
-                    } else {
-                        echo '<div id="errormsg">User not found</div>';
-                    }
-                ?>
+                <?php
+if (isset($usersname)) {
+    echo '<div class="nameRow">' . $usersname . '</div>';
+    echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
+    echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
+    echo '<div class="followerRow">';
+    echo '<div class="followerLeft">';
+    echo '<div class="followerTitle">Following</div>';
+    echo '<div class="followerContent following">' . $noOfFollowing . '</div>';
+    echo '</div>';
+    echo '<div class="followerRight">';
+    echo '<div class="followerTitle">Followers</div>';
+    echo '<div class="followerContent followers">' . $noOfFollowers . '</div>';
+    echo '</div>';
+    echo '</div>';
+} else {
+    echo '<div id="errormsg">User not found</div>';
+}
+?>
             </div>
         </div>
         
         <div id="rightProfile">
            <div id="main">
             <?php
-                    $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
-                    $query_params = array(':id' => $userid); 
+$query        = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
+$query_params = array(
+    ':id' => $userid
+);
 
-                    $stmt = $db->prepare($query); 
-                    $result = $stmt->execute($query_params); 
-                    $posts = $stmt->fetchAll();
+$stmt   = $db->prepare($query);
+$result = $stmt->execute($query_params);
+$posts  = $stmt->fetchAll();
 
-                    foreach ($posts as $row) {   
-                         if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
-                            if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
-                                $users = $matches[1];
-
-                                foreach ($users as $user) {
-                                    $query = "SELECT id, username FROM users WHERE username = :username"; 
-                                    $query_params = array(':username' => $user); 
-
-                                    $stmt = $db->prepare($query); 
-                                    $result = $stmt->execute($query_params);
-                                    $userFound = $stmt->fetch(); 
-
-                                    if ($userFound) {
-                                        $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $user . '</a>', $row['text']);
-                                    }
-
-                                }
-                            }
-                        }     
-                        
-                        
-        echo '<ul id="tiles">';     
-        if ($row['type'] == "image") {
-            $imgName = ltrim($row['image'], "/.");
-            list($width, $height) = getimagesize($imgName);
+foreach ($posts as $row) {
+    if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+        if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+            $users = $matches[1];
             
-            $newHeight = $height % 2;
-            
-            if ($height < 200) {
-                    echo '<li><img src="' . $row['image'] . '" width="300" height="'. $height .'"></li>';
-            } else if($width > $height) {
-                    echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
-            } else {
-                    echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
-            } 
-            } else if ($row['type'] == "text") {
-                    echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
-            } else if ($row['type'] == 'imagetext') {  
-            $imgName = ltrim($row['image'], "/.");
-            list($width, $height) = getimagesize($imgName);
-                echo '<li>';
-                echo '<div class="banner">';
-            if ($height < 200) { 
-                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="'. $height .'">';
-            } else if($width > $height) {
-                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
-            } else {
-                    echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
-            } 
-                                echo '<div class="bannerText">';
-                                echo $row['text'];
-                                echo '</div>';
-                                echo '</div>';
-                                echo '</li>';
-                        }
-                        echo '</ul>';
-                    }  
-                ?>
+            foreach ($users as $user) {
+                $query        = "SELECT id, username FROM users WHERE username = :username";
+                $query_params = array(
+                    ':username' => $user
+                );
+                
+                $stmt      = $db->prepare($query);
+                $result    = $stmt->execute($query_params);
+                $userFound = $stmt->fetch();
+                
+                if ($userFound) {
+                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $user . '</a>', $row['text']);
+                }
+                
+            }
+        }
+    }
+    
+    
+    echo '<ul id="tiles">';
+    if ($row['type'] == "image") {
+        $imgName = ltrim($row['image'], "/.");
+        list($width, $height) = getimagesize($imgName);
+        
+        $newHeight = $height % 2;
+        
+        if ($height < 200) {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
+        } else if ($width > $height) {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
+        } else {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
+        }
+    } else if ($row['type'] == "text") {
+        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+    } else if ($row['type'] == 'imagetext') {
+        $imgName = ltrim($row['image'], "/.");
+        list($width, $height) = getimagesize($imgName);
+        echo '<li>';
+        echo '<div class="banner">';
+        if ($height < 200) {
+            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '">';
+        } else if ($width > $height) {
+            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
+        } else {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
+        }
+        echo '<div class="bannerText">';
+        echo $row['text'];
+        echo '</div>';
+        echo '</div>';
+        echo '</li>';
+    }
+    echo '</ul>';
+}
+?>
                </ul>
             </div>
         </div>
@@ -280,15 +294,21 @@
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname ?>">
+                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php
+echo $firstname;
+?>">
                         <br>
                         <br>
                     <label>Last name: </label>
-                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname ?>">
+                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php
+echo $lastname;
+?>">
                         <br>
                         <br>
                     <label>Email: </label>
-                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email ?>">
+                        <input type="text" name="email" class="settings" id="setEmail" value="<?php
+echo $email;
+?>">
                         <br>
                         <br>
                    <label> Colour: </label>
@@ -332,33 +352,42 @@
     </div>
             
     <div id="profileButtons">
-    <?php 
-        if (isset($usersname)) {
-            if (($userid != $_SESSION['user']['id'])) { ?>
+    <?php
+if (isset($usersname)) {
+    if (($userid != $_SESSION['user']['id'])) {
+?>
                 <div class="bottomRow">
                     <?php
-                        $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid"; 
-                        $query_params = array(':id' => $_SESSION['user']['id'], ':userid' => $_GET['id']);
-
-                        $stmt = $db->prepare($query); 
-                        $result = $stmt->execute($query_params); 
-                        $row = $stmt->fetch();
-
-                        if ($row['user_no'] != intval($_GET['id'])) {
-                               echo '<button id="followBut" class="buttonstyle">Follow</button>';
-                        } else {
-                                echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';   
-                        }                                
-                    ?>
+        $query        = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
+        $query_params = array(
+            ':id' => $_SESSION['user']['id'],
+            ':userid' => $_GET['id']
+        );
+        
+        $stmt   = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+        $row    = $stmt->fetch();
+        
+        if ($row['user_no'] != intval($_GET['id'])) {
+            echo '<button id="followBut" class="buttonstyle">Follow</button>';
+        } else {
+            echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
+        }
+?>
                     <button id="messageBut" class="buttonstyle">Message</button>
                     <button id="reportBut" class="buttonstyle">Report</button>
                 </div>
-    <?php } else { ?>
+    <?php
+    } else {
+?>
                 <div class="bottomRow">
                     <button class="settingsBut buttonstyle">Settings</button>
                     <button class="backBut buttonstyle">Back</button>
                 </div>
-    <?php }} ?> 
+    <?php
+    }
+}
+?> 
     </div>
         
     <div class="clearFix"></div></div>
