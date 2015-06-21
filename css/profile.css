@@ -379,6 +379,11 @@ p.settingsExplain {
     cursor: pointer;
     text-align: center;
     overflow: hidden;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
 }
 
 #tiles li img {

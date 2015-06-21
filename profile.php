@@ -225,7 +225,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         </script>
                
         <?php
-        if ($height <=200) {
+        if ($height <= 200) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
         } else if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
@@ -236,7 +236,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         }/* else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
         }*/ else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
-            echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px;" width="320px"></li>'; 
+            echo '<li><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'" width="320px"></li>'; 
         } else if ($aspectRatio > 1 && $aspectRatio < 1.5) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
         } else if ($aspectRatio == 1) {
@@ -270,7 +270,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             <?php
             echo '<li>';
             echo '<div class="banner">';
-            if ($height <=200) {
+            if ($height <= 200) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
             } else if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
