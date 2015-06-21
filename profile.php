@@ -218,15 +218,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         $aspectRatio = $width/$height;
         
         if ($height <= 200) {
-            echo '<li><img src="' . $row['image'] . '" height="' . $height . '"></li>';
-        } else if ($width > $height) {
-            echo '<li><img src="' . $row['image'] . '" width="300px" height="200px"></li>';
-        } else if ($height >= 201 && $height <= 299) {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="250px"></li>';
-        } else if ($height >= 300 && $height <= 699 ) {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="350px"></li>';
-        } else if ($height >= 700) {
-            echo '<li><img src="' . $row['image'] . '" width="300"></li>';
+            echo '<li><img src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
@@ -236,15 +228,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li>';
             echo '<div class="banner">';
             if ($height < 200) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
-            } else if ($width > $height) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="200px">';
-            } else if ($height >= 201 && $height <= 299) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px">';
-            } else if ($height >= 300 && $height <= 699) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px">';
-            } else if ($height >= 700) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300">';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="' . $height . '">';
             }
             echo '<div class="bannerText">';
             echo $row['text'];
