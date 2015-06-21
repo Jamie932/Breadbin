@@ -201,12 +201,15 @@
         if ($row['type'] == "image") {
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
-                    if ($height < 200) { 
+            
+            $newHeight = $height % 2;
+            
+            if ($height < 200) {
                     echo '<li><img src="' . $row['image'] . '" width="300" height="'. $height .'"></li>';
-                    } else {
-                        echo '<li><img src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
-                    }
-        } else if ($row['type'] == "text") {
+            } echo {
+                    echo '<li><img src="' . $row['image'] . '" width="300" height="'. $newHeight .'"></li>';
+            }
+            } else if ($row['type'] == "text") {
                     echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
         } else if ($row['type'] == 'imagetext') {  
             $imgName = ltrim($row['image'], "/.");
