@@ -237,7 +237,7 @@ foreach ($posts as $row) {
             echo '<li>';
             echo '<div class="banner">';
             if ($height < 200) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '">';
+                echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
             } else if ($width > $height) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
             } else {
@@ -251,7 +251,7 @@ foreach ($posts as $row) {
         }
     echo '</ul>';
 }
-?>
+?> 
                </ul>
             </div>
         </div>
