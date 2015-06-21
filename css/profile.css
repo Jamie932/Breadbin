@@ -426,6 +426,7 @@ p.settingsExplain {
 list-style-type: none;
 position: relative; /** Needed to ensure items are laid out relative to this container **/
 margin: 0;
+    text-align: center;
 }
 
 #tiles li {
