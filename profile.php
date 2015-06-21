@@ -194,15 +194,7 @@
 
                                 }
                             }
-                        }
-                        
-        if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-            $imgName = ltrim($row['image'], "/.");
-            list($width, $height) = getimagesize($imgName);
-            
-            echo $width;
-            echo $height;
-        }                    
+                        }      
     
             echo '<ul id="tiles">';     
                 if ($row['type'] == "image") {
