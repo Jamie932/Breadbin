@@ -382,11 +382,6 @@ p.settingsExplain {
 
 #tiles li img {
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: [-50% of your image's width];
-    margin-top: [-50% of your image's height];
 }
 
 #tiles ali:nth-child(3n) {
