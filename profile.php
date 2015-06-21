@@ -221,8 +221,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li><img src="' . $row['image'] . '" height="' . $height . '"></li>';
         } else if ($width > $height) {
             echo '<li><img src="' . $row['image'] . '" height="200px"></li>';
-        } else if ($aspectRatio > 1.5) {
-            echo '<li><img src="' . $row['image'] . '" height="200px"></li>';
         } else if ($height >= 201 && $height <= 299) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px"></li>';
         } else if ($height >= 300 && $height <= 699 ) {
@@ -239,7 +237,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<div class="banner">';
             if ($height < 200) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
-            } else if ($aspectRatio > 1.5) {
+            } else if ($width > $height) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="200px">';
             } else if ($height >= 201 && $height <= 299) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px">';
