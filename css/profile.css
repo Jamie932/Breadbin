@@ -439,6 +439,7 @@ display: none; /** Hide items initially to avoid a flicker effect **/
   cursor: pointer;
     overflow:hidden;
     max-height: 400px;
+    text-align: center;
 }
 
 #tiles li img { 
