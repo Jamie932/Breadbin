@@ -224,7 +224,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         </script>
                
         <?php
-        if ($aspectRatio >= 1 && $aspectRatio <= 1.5) {
+        if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
             echo '<li style="overflow:hidden;"><img src="' . $row['image'] . '" height="' . $height . '"></li>'; 
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
