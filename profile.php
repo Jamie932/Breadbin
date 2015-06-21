@@ -253,7 +253,7 @@ foreach ($posts as $row) {
             }
             echo '<div class="bannerText">';
             echo $row['text'];
-            echo '</div>';
+            echo '</div>'; 
             echo '</div>';
             echo '</li>'; 
         }
