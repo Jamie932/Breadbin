@@ -227,15 +227,17 @@ foreach ($posts as $row) {
         }
     } else if ($row['type'] == "text") {
         echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+        
     } else if ($row['type'] == 'imagetext') {
         $imgName = ltrim($row['image'], "/.");
         list($width, $height) = getimagesize($imgName);
         echo '<li>';
         echo '<div class="banner">';
+        
         if ($height < 200) {
-            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '">';
+            echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
         } else if ($width > $height) {
-            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
+            echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="200px"></li>';
         } else {
             echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
         }
@@ -245,8 +247,8 @@ foreach ($posts as $row) {
         echo '</div>';
         echo '</li>';
     }
-    echo '</ul>';
-}
+        echo '</ul>';
+    }
 ?>
                </ul>
             </div>
