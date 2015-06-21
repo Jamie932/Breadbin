@@ -129,6 +129,7 @@ if (empty($_GET)) {
                     }
                 })
             })
+        })
     </script>
 </head>
     
