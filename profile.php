@@ -215,11 +215,13 @@ print(isset($usersname) ? $usersname : 'Unknown');
         $imgName = ltrim($row['image'], "/.");
         list($width, $height) = getimagesize($imgName);
         
-        $newHeight = $height % 2;
+        $aspectRatio = $width/$height;
         
         if ($height <= 200) {
             echo '<li><img src="' . $row['image'] . '" height="' . $height . '"></li>';
         } else if ($width > $height) {
+            echo '<li><img src="' . $row['image'] . '" height="200px"></li>';
+        } else if ($aspectRatio > 1.5) {
             echo '<li><img src="' . $row['image'] . '" height="200px"></li>';
         } else if ($height >= 201 && $height <= 299) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px"></li>';
