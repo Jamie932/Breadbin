@@ -196,7 +196,7 @@
                             }
                         }
                         
-            $imgName = ltrim($row['image']);
+            $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
                         
             echo '<ul id="tiles">';     
