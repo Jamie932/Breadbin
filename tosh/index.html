@@ -27,15 +27,6 @@ display: none; /** Hide items initially to avoid a flicker effect **/
 
 #tiles li img {
 display: block;
-    height: 100%;
-}
-
-/**
- * Grid item text
- */
-#tiles li p {
-color: #666;
-font-size: 12px;
 }
 
 /**
@@ -61,6 +52,22 @@ height: 250px;
     width: 95%;
     float: right;
 }
+p.textPost {
+    word-break: break-all;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .box {
+        display: inline-table;
+        vertical-align: middle;
+        text-align: center;
+        position:relative;   
+    }
 </style>
 </head>
 <body>
@@ -68,22 +75,9 @@ height: 250px;
     <div id="main">
      <ul id="tiles">
         <!-- These are our grid blocks -->
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
-        <li><img src="a.jpg" width="300" height="auto"></li>
-        <li><img src="t.gif" width="300" height="auto"></li>
+        <li><img src="a.jpg" width="300" height="320px"></li>
+        <li><img src="t.gif" width="300" height="340px"></li>
+        <li><div class="box"><p class="textPost">pls wurk</p></div></li>
         <!-- End of grid blocks -->
       </ul>
     </div>
@@ -94,6 +88,27 @@ height: 250px;
     <script src="jquery.wookmark.js"></script>
     
     <script type="text/javascript">
+    var colors = [
+		"rgb(138, 230, 138)",
+		"rgb(102, 153, 255)",
+		"rgb(255, 181, 64)",
+		"rgb(255, 102, 204)"
+	];
+	
+	var boxes = document.querySelectorAll(".box");
+
+for (i = 0; i < boxes.length; i++) {
+  // Pick a random color from the array 'colors'.
+  boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  boxes[i].style.width = '300';
+  boxes[i].style.height = '230';
+  boxes[i].style.display = 'inline-table';
+  boxes[i].style.margin = '0';
+  boxes[i].style.textAlign = 'center';
+  boxes[i].style.verticalAlign = 'middle';
+  boxes[i].style.position = 'relative';
+}
+        
     $(document).ready(new function() {
       // Prepare layout options.
       var options = {

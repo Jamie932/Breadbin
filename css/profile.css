@@ -151,15 +151,6 @@ p {
     padding-left: 280px;   
 }
 
-.size320 {
-	width: 320px;
-	height: 220px;
-    display: inline-table;
-    vertical-align: middle;
-    text-align: center;
-    position:relative;
-}
-
 .layout {
 	margin: 2em 15px;
 	color: #333;
@@ -380,13 +371,6 @@ p.settingsExplain {
     color: red;   
 }
 
-.imgPost, .imgPostText {
-    height: 100%; 
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 #banner{
     height: 100%;
     width: 100%;
@@ -417,3 +401,43 @@ p.settingsExplain {
     filter: blur(5px);
     outline: none;
 } 
+
+/* grid styling pls */
+
+#tiles {
+list-style-type: none;
+position: relative; /** Needed to ensure items are laid out relative to this container **/
+margin: 0;
+}
+
+#tiles li {
+width: 300px;
+background-color: #ffffff;
+border: 1px solid #dedede;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+display: none; /** Hide items initially to avoid a flicker effect **/
+  cursor: pointer;
+}
+
+#tiles li img {
+display: block;
+}
+
+#tiles ali:nth-child(3n) {
+height: 175px;
+}
+
+#tiles ali:nth-child(4n-3) {
+padding-bottom: 30px;
+}
+
+#tiles ali:nth-child(5n) {
+height: 250px;
+}      
+    
+#main {
+    padding: 30px 0 30px 0;
+}
+    

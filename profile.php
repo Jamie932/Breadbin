@@ -195,7 +195,8 @@
         </div>
         
         <div id="rightProfile">
-            <div class="free-wall">
+           <div id="main">
+               <ul id="tiles">
             <?php
                     $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";  
                     $query_params = array(':id' => $userid); 
@@ -225,14 +226,10 @@
                             }
                         }                        
                         
-                     echo '<div class="brick size320">';
-                        
                         if ($row['type'] == "image") {
-                            echo '<img class="imgPost" src="' . $row['image'] . '">';  
-                            echo '</div>';
+                            echo '<li><img src="' . $row['image'] . '" width="300" height="auto"></li>';
                         } else if ($row['type'] == "text") {
-                                echo '<p class="textPost">' . $row['text'] . '</p>';
-                             echo '</div>';
+                            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';          
                         } else if ($row['type'] == 'imagetext') {
                             echo '<div id="banner">';
                              echo '<img class="imgPostText" src="' . $row['image'] . '">'; 
@@ -244,6 +241,7 @@
                         }
                     }  
                 ?>
+               </ul>
             </div>
         </div>
         
@@ -345,53 +343,56 @@
         <div class="clearFix"></div>
     </div>
         
+    <script src="js/jquery.wookmark.js"></script>
+        
 <script type="text/javascript">
-	$(function() {
-        var colour = [
-            "rgb(138, 230, 138)",
-            "rgb(102, 153, 255)",
-            "rgb(255, 181, 64)",
-            "rgb(255, 102, 204)"
-        ];
+    var colors = [
+		"rgb(138, 230, 138)",
+		"rgb(102, 153, 255)",
+		"rgb(255, 181, 64)",
+		"rgb(255, 102, 204)"
+	];
+	
+	var boxes = document.querySelectorAll(".box");
 
-        $(".free-wall .size320").each(function() {
-            var backgroundColor = colour[colour.length * Math.random() << 0];
-            var bricks = $(this).find(".brick");
-            !bricks.length && (bricks = $(this));
-            bricks.css({
-                backgroundColor: backgroundColor
-            });
-        });
+for (i = 0; i < boxes.length; i++) {
+  // Pick a random color from the array 'colors'.
+  boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  boxes[i].style.width = '300';
+  boxes[i].style.height = '230';
+  boxes[i].style.display = 'inline-table';
+  boxes[i].style.margin = '0';
+  boxes[i].style.textAlign = 'center';
+  boxes[i].style.verticalAlign = 'middle';
+  boxes[i].style.position = 'relative';
+}
+        
+    $(document).ready(new function() {
+      // Prepare layout options.
+      var options = {
+        autoResize: true, // This will auto-update the layout when the browser window is resized.
+        container: $('#main'), // Optional, used for some extra CSS styling
+        offset: 5, // Optional, the distance between grid items
+        itemWidth: 310 // Optional, the width of a grid item
+      };
 
-        $(".free-wall").each(function() {
-            var wall = new freewall(this);
-            wall.reset({
-                selector: '.size320',
-                cellW: function(container) {
-                    var cellWidth = 320;
-                    if (container.hasClass('size320')) {
-                        cellWidth = container.width()/2;
-                    }
-                    return cellWidth;
-                },
-                cellH: function(container) {
-                    var cellHeight = 220;
-                    if (container.hasClass('size320')) {
-                        cellHeight = container.height()/2;
-                    }
-                    return cellHeight;
-                },
-                fixSize: 1,
-                gutterY: 20,
-                gutterX: 20,
-                onResize: function() {
-                    wall.fitWidth();
-                }
-            })
-            wall.fitWidth();
-        });
-        $(window).trigger("resize");
+      // Get a reference to your grid items.
+      var handler = $('#tiles li');
+
+      // Call the layout function.
+      handler.wookmark(options);
+
+      // Capture clicks on grid items.
+      handler.click(function(){
+        // Randomize the height of the clicked item.
+        var newHeight = $('img', this).height() + Math.round(Math.random()*300+30);
+        $(this).css('height', newHeight+'px');
+
+        // Update the layout.
+        handler.wookmark();
+      });
     });
-</script>
+  </script>
+        
 </body>
 </html>
