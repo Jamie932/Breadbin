@@ -1,7 +1,7 @@
 <?php
 require("php/common.php");
 require("php/checkLogin.php");
-require("timeago.php");
+require("php/timeago.php");
 
 if (empty($_GET)) {
     if ($_SESSION['user']['id']) {
