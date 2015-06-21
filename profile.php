@@ -202,7 +202,7 @@
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
                     if ($height < 200) { 
-                    echo '<li><img src="' . $row['image'] . '" width="300" height="'. $width .'"></li>';
+                    echo '<li><img src="' . $row['image'] . '" width="300" height="'. $height .'"></li>';
                     } else {
                         echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                     }
@@ -214,7 +214,7 @@
                 echo '<li>';
                 echo '<div class="banner">';
             if ($height < 200) { 
-                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="'. $width .'">';
+                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="'. $height .'">';
                     } else {
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
                     }
