@@ -194,14 +194,15 @@
 
                                 }
                             }
-                        }      
-    
-            echo '<ul id="tiles">';     
-                if ($row['type'] == "image") {
-            $imgName = ltrim($row['image'], "/.");
+                        }     
+                        
+        $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
-                    if ($width < 200) { 
-                            echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
+                        
+            echo '<ul id="tiles">';     
+        if ($row['type'] == "image") {
+                    if ($height < 200) { 
+                    echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
                     } else {
                         echo '<li><img src="' . $row['image'] . '" width="300" height="320px"></li>';
                     }
