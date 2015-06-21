@@ -149,7 +149,6 @@ if (empty($_GET)) {
 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
-
                 $row = $stmt->fetch();
 
                 $query = "SELECT * FROM users WHERE id=:id";
@@ -157,7 +156,6 @@ if (empty($_GET)) {
 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
-
                 $userrow = $stmt->fetch();
 
                 $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
@@ -175,13 +173,73 @@ if (empty($_GET)) {
 
                 $totalToasts = $row['toasts'] - $row['burns'];
 
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                    echo '<div class="contentPostText">' . $row['text'] . '</div>';
-                    echo '<div id="contentInfoText">';
-                        echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $userrow['username'] . '</a></div>';
-                        echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
+                if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
+                    $imgName = ltrim($row['image'], "/.");
+
+                    if (!file_exists($imgName)) {
+                        $query = "DELETE FROM posts WHERE id = :id"; 
+                        $query_params = array(':id' => $row['id']); 
+
+                        $stmt = $db->prepare($query); 
+                        $result = $stmt->execute($query_params); 
+                    }
+
+                    list($width, $height) = getimagesize($imgName);
+
+                    if ($width > 600) {
+                        $class = 'imgNoPadding';
+                    } else {
+                        $class = 'imgPadding';
+                    }
+                }
+
+                if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+                    if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+                        $users = $matches[1];
+
+                        foreach ($users as $user) {
+                            $query = "SELECT id, username FROM users WHERE username = :username"; 
+                            $query_params = array(':username' => $user); 
+
+                            $stmt = $db->prepare($query); 
+                            $result = $stmt->execute($query_params);
+                            $userFound = $stmt->fetch(); 
+
+                            if ($userFound) {
+                                $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $user . '</a>', $row['text']);
+                            }
+
+                        }
+                    }
+                }
+                
+                if ($row['type'] == "text") {
+                    echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                        echo '<div class="contentPostText">' . $row['text'] . '</div>';
+                        echo '<div id="contentInfoText">';
+                            echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $userrow['username'] . '</a></div>';
+                            echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
+                        echo '</div>';
                     echo '</div>';
-                echo '</div>';
+                    
+                } else if ($row['type'] == "image") {
+                   echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                    echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"></div>';
+                         echo '<div id="contentInfoText">';
+                            echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $userrow['username']  . '</a></div>';
+                            echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                    
+                } else if ($row['type'] == "imagetext") {
+                    echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                    echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
+                        echo '<div id="contentInfoText">';
+                            echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
+                            echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
 
                 if ($_SESSION['user']['id'] == $row['userid']) { 
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">
