@@ -335,8 +335,8 @@
                 </div>
     <?php } else { ?>
                 <div class="bottomRow">
-                    <button class="settingsBut" class="buttonstyle">Settings</button>
-                    <button class="backBut" class="buttonstyle">Back</button>
+                    <button class="settingsBut buttonstyle">Settings</button>
+                    <button class="backBut buttonstyle">Back</button>
                 </div>
     <?php }} ?> 
     </div>
