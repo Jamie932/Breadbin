@@ -206,6 +206,8 @@
             
             if ($height < 200) {
                     echo '<li><img src="' . $row['image'] . '" width="300" height="'. $height .'"></li>';
+            } else if($width > $height) {
+                    echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
             } else {
                     echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
             } 
