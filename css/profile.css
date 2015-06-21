@@ -444,6 +444,7 @@ display: none; /** Hide items initially to avoid a flicker effect **/
 
 #tiles li img { 
 display: block;
+    text-align: center;
 }
 
 #tiles ali:nth-child(3n) {
