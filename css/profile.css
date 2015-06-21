@@ -90,6 +90,10 @@ p {
     margin-top:30px;
 }
 
+#avatarOverlay {
+    margin-top: -150px;   
+}
+
 .nameRow {
     font-size:2em; 
     font-weight:bold;
