@@ -235,21 +235,33 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="220px;" width="320px"></li>'; 
         } else if ($aspectRatio > 1 && $aspectRatio < 1.5) {
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
-        }else if ($aspectRatio == 1) {
+        } else if ($aspectRatio == 1) {
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
+        } else if ($aspectRatio >= 0.5 && $aspectRatio < 1) {
+            echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'" width="300px"></li>'; 
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
-    } 
-                    
-                    
-                    
-                    
-                    else if ($row['type'] == "text") {
+    
+    
+    } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+    
+    
+    
+    
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
             list($width, $height) = getimagesize($imgName);
+            
+            ?>
+               
+            <script>
+                console.log(<? echo json_encode($aspectRatio); ?>);
+            </script>
+               
+            <?php
+        
             echo '<li>';
             echo '<div class="banner">';
             if ($height < 200) {
@@ -263,6 +275,10 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '</div>';
             echo '</li>'; 
         }
+                    
+                    
+                    
+                    
     echo '</ul>';
     }
 ?> 
