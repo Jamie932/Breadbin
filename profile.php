@@ -226,29 +226,27 @@ foreach ($posts as $row) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
         }
     } else if ($row['type'] == "text") {
-        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
-        
+            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
     } else if ($row['type'] == 'imagetext') {
-        $imgName = ltrim($row['image'], "/.");
-        list($width, $height) = getimagesize($imgName);
-        echo '<li>';
-        echo '<div class="banner">';
-        
-        if ($height < 200) {
-            echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
-        } else if ($width > $height) {
-            echo '<li><img class="blurImage" src="' . $row['image'] . '" width="300" height="200px"></li>';
-        } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
+            $imgName = ltrim($row['image'], "/.");
+            list($width, $height) = getimagesize($imgName);
+            echo '<li>';
+            echo '<div class="banner">';
+            if ($height < 200) {
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '">';
+            } else if ($width > $height) {
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
+            } else {
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
+            }
+            echo '<div class="bannerText">';
+            echo $row['text'];
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
         }
-        echo '<div class="bannerText">';
-        echo $row['text'];
-        echo '</div>';
-        echo '</div>';
-        echo '</li>';
-    }
-        echo '</ul>';
-    }
+    echo '</ul>';
+}
 ?>
                </ul>
             </div>
