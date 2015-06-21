@@ -235,10 +235,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
         } else if ($aspectRatio >= 2 && $aspectRatio < 2.5) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
-        }/* else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
-            echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
-        }*/ else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
-            echo '<li><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'" width="320px"></li>'; 
+        } else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
+            echo '<li><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
         } else if ($aspectRatio > 1 && $aspectRatio < 1.5) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
         } else if ($aspectRatio == 1) {
@@ -276,15 +274,13 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<div class="banner">';
             echo '<div class="testTiles">';
             if ($height <= 200) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="100px">'; 
+                echo '<img class="blurImage" src="' . $row['image'] . '" height="' .$height. '">'; 
             } else if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
             } else if ($aspectRatio >= 2 && $aspectRatio < 2.5) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="320px">'; 
-            }/* else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
-                echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
-            }*/ else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="220px;" width="320px">'; 
+            } else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
+                echo '<img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
             } else if ($aspectRatio > 1 && $aspectRatio < 1.5) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="'. $testHeight .'">'; 
             } else if ($aspectRatio == 1) {
