@@ -21,6 +21,13 @@
             $converted = true;
             $convertedfile = $updirectory . $rand . ".jpg";
         }
+        
+        list($width, $height) = getimagesize($imgName);
+        
+        if (($width/$height > 1) && ($width/$height < 2) ) {
+        } else {
+            return false;   
+        }
 
         if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
             mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
