@@ -31,6 +31,15 @@ if (empty($_GET)) {
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <style>
+        body {
+            height: auto;
+        }
+        
+        #content {
+            height: auto;   
+        }
+    </style>
     <script>
         $(document).ready(function(){
             $(document).on('click','.delete', function() {
