@@ -227,6 +227,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
         <?php
         if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
+        } else if ($aspectRatio >= 2.6 && $aspectRatio < 3) {
+            echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
         } else if ($aspectRatio >= 2 && $aspectRatio < 2.5) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
         }/* else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
@@ -240,7 +242,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         } else if ($aspectRatio >= 0.5 && $aspectRatio < 1) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'" width="300px"></li>'; 
         } else {
-            echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
+            echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
     
     
