@@ -370,13 +370,11 @@ p.settingsExplain {
 }
 
 .testTiles {
+    width: 100%;
     position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
-    margin: auto;
-
+    left: 50%;
+    top: 0;
+    margin-left: -500px;
 }
 
 #tiles li {
