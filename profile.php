@@ -244,9 +244,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             } else if ($height >= 300 && $height <= 699) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px">';
             } else if ($height >= 700) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300"> ';
-            } else {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="400px">';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300">';
             }
             echo '<div class="bannerText">';
             echo $row['text'];
