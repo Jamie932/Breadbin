@@ -215,12 +215,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
         $imgName = ltrim($row['image'], "/.");
         list($width, $height) = getimagesize($imgName);
         
-        $aspectRatio = $width/$height;
+        $newHeight = $height % 2;
         
         if ($height <= 200) {
-            echo '<li><img src="' . $row['image'] . '" height="' . $height . '"></li>';
+            echo '<li><img src="' . $row['image'] . ' height="' . $height . '"></li>';
         } else if ($width > $height) {
-            echo '<li><img src="' . $row['image'] . '" height="200px"></li>';
+            echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
         } else if ($height >= 201 && $height <= 299) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px"></li>';
         } else if ($height >= 300 && $height <= 699 ) {
@@ -238,7 +238,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             if ($height < 200) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
             } else if ($width > $height) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="200px">';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
             } else if ($height >= 201 && $height <= 299) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px">';
             } else if ($height >= 300 && $height <= 699) {
