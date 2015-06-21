@@ -224,7 +224,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
         } else if ($height >= 201 && $height <= 299) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px;"></li>';
         } else if ($height >= 300 && $height <= 399) {
-           else if ($height >= 300 && $height <= 399) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
         } else if ($height >= 400 && $height <= 499) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
@@ -262,7 +261,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '</li>'; 
         }
     echo '</ul>';
-}
+    }
 ?> 
                </ul>
             </div>
