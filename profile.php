@@ -247,7 +247,7 @@ foreach ($posts as $row) {
             } else if ($height >= 400 && $height <= 499) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
             } else if ($height >= 1000) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300">';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '"> ';
             } else {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
             }
