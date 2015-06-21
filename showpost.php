@@ -34,6 +34,7 @@ if (empty($_GET)) {
     <style>
         body {
             height: auto;
+            min-height: auto;
         }
         
         #content {
