@@ -91,7 +91,9 @@ p {
 }
 
 #avatarOverlay {
-    margin-top: -150px;   
+    float:right;
+    margin-top: -155px;
+    margin-right: 40px;
 }
 
 .nameRow {
