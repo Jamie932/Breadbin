@@ -224,9 +224,14 @@ print(isset($usersname) ? $usersname : 'Unknown');
         } else if ($height >= 201 && $height <= 299) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px;"></li>';
         } else if ($height >= 300 && $height <= 399) {
+           else if ($height >= 300 && $height <= 399) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
+        } else if ($height >= 400 && $height <= 499) {
+            echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
+        } else if ($height >= 1000) {
+            echo '<li><img src="' . $row['image'] . '" width="300"> </li>';
         } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="400px"></li>';
+            echo '<li><img src="' . $row['image'] . '" width="300" height="450px"></li>';
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
@@ -246,7 +251,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             } else if ($height >= 400 && $height <= 499) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
             } else if ($height >= 1000) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '"> ';
+                echo '<img class="blurImage" src="' . $row['image'] . '" width="300"> ';
             } else {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
             }
