@@ -225,7 +225,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
         </script>
                
         <?php
-        echo '<div class="testTiles">';
         
         if ($height <= 200) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="' .$height. '" width="300px"></li>'; 
@@ -247,14 +246,13 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
         
-        echo '</div>';
     
     
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
     
     
-    
+     
     
     } else if ($row['type'] == 'imagetext') {
             $imgName = ltrim($row['image'], "/.");
@@ -272,7 +270,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
             <?php
             echo '<li>';
             echo '<div class="banner">';
-                echo '<div class="testTiles">';
                 if ($height <= 200) {
                     echo '<img class="blurImage" src="' . $row['image'] . '" height="' .$height. '" width="300px">'; 
                 } else if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
@@ -292,7 +289,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 }
                 echo '<div class="bannerText">';
                 echo $row['text'];
-                echo '</div>'; 
                 echo '</div>'; 
             echo '</div>';
             echo '</li>'; 
