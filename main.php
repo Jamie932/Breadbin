@@ -173,7 +173,6 @@
             </div>
             
             <div id="placehold">
-                Recommended toasters<hr></hr>
                 <?php require('php/recommendToaster.php'); ?>
             </div>
         </div>
