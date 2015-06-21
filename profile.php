@@ -225,10 +225,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li><img src="' . $row['image'] . '" width="300" height="250px"></li>';
         } else if ($height >= 300 && $height <= 699 ) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="350px"></li>';
-        } else if ($height >= 800) {
+        } else if ($height >= 700) {
             echo '<li><img src="' . $row['image'] . '" width="300"></li>';
-        } else {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="400px"></li>';
         }
     } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
@@ -245,7 +243,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px">';
             } else if ($height >= 300 && $height <= 699) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px">';
-            } else if ($height >= 800) {
+            } else if ($height >= 700) {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300"> ';
             } else {
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="400px">';
