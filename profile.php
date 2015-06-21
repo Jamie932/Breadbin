@@ -228,7 +228,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         
         if ($height <= 200) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>';  
-        } } else if ($aspectRatio >= 0) {
+        } else if ($aspectRatio >= 0) {
                     if ($height >=0 && $height < 100) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
                     } else if ($height >=100 && $height < 200) {
