@@ -247,7 +247,7 @@ foreach ($posts as $row) {
             echo $row['text'];
             echo '</div>';
             echo '</div>';
-            echo '</li>';
+            echo '</li>'; 
         }
     echo '</ul>';
 }
