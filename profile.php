@@ -219,7 +219,7 @@ foreach ($posts as $row) {
         $newHeight = $height % 2;
         
         if ($height <= 200) {
-            echo '<li><img src="' . $row['image'] . '" width="300" height="' . $height . '"></li>';
+            echo '<li><img src="' . $row['image'] . '" height="' . $height . '"></li>';
         } else if ($width > $height) {
             echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
         } else if ($height >= 201 && $height <= 299) {
