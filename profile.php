@@ -210,7 +210,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     }
     
     
-<<<<<<< HEAD
     echo '<ul id="tiles">';
     if ($row['type'] == "image") {
         $imgName = ltrim($row['image'], "/.");
@@ -260,58 +259,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
     echo '</ul>';
 }
 ?> 
-=======
-                echo '<ul id="tiles">';
-                if ($row['type'] == "image") {
-                    $imgName = ltrim($row['image'], "/.");
-                    list($width, $height) = getimagesize($imgName);
-
-                    $newHeight = $height % 2;
-
-                    if ($height <= 200) {
-                        echo '<li><img src="' . $row['image'] . ' height="' . $height . '"></li>';
-                    } else if ($width > $height) {
-                        echo '<li><img src="' . $row['image'] . '" width="300" height="200px"></li>';
-                    } else if ($height >= 201 && $height <= 299) {
-                        echo '<li><img src="' . $row['image'] . '" width="300" height="250px;"></li>';
-                    } else if ($height >= 300 && $height <= 399) {
-                        echo '<li><img src="' . $row['image'] . '" width="300" height="350px;"></li>';
-                    } else {
-                        echo '<li><img src="' . $row['image'] . '" width="300" height="400px"></li>';
-                    }
-                } else if ($row['type'] == "text") {
-                        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
-                } else if ($row['type'] == 'imagetext') {
-                        $imgName = ltrim($row['image'], "/.");
-                        list($width, $height) = getimagesize($imgName);
-                        echo '<li>';
-                        echo '<div class="banner">';
-                        if ($height < 200) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
-                        } else if ($width > $height) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
-                        } else if ($height >= 201 && $height <= 299) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="250px;">';
-                        } else if ($height >= 300 && $height <= 399) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="350px;">';
-                        } else if ($height >= 400 && $height <= 499) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
-                        } else if ($height >= 1000) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="' . $height . '"> ';
-                        } else {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="450px">';
-                        }
-                        echo '<div class="bannerText">';
-                        echo $row['text'];
-                        echo '</div>';
-                        echo '</div>';
-                        echo '</li>'; 
-                    }
-                    
-                    echo '</ul>';
-                }
-        ?> 
->>>>>>> origin/master
                </ul>
             </div>
         </div>
