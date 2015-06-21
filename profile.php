@@ -264,7 +264,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
             </script>
                
             <?php
-        
             echo '<li>';
             echo '<div class="banner">';
             if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {

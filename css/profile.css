@@ -378,10 +378,12 @@ p.settingsExplain {
     display: none;
     cursor: pointer;
     text-align: center;
+    overflow: hidden;
 }
 
 #tiles li img {
     display: block;
+    position: absolute;
 }
 
 #tiles ali:nth-child(3n) {
