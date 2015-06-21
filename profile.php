@@ -233,8 +233,10 @@ print(isset($usersname) ? $usersname : 'Unknown');
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
         }*/ else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="220px;" width="320px"></li>'; 
-        } else if ($aspectRatio >= 1 && $aspectRatio < 1.5) {
+        } else if ($aspectRatio > 1 && $aspectRatio < 1.5) {
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $testHeight .'"></li>'; 
+        }else if ($aspectRatio == 1) {
+            echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
