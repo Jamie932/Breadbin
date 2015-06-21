@@ -156,6 +156,13 @@ if (empty($_GET)) {
     <div id="center">
         <div id="content">
             <?php
+                $query = "SELECT * FROM posts WHERE id=:id";
+                $query_params = array(':id' => $_GET['p']); 
+
+                $stmt = $db->prepare($query); 
+                $result = $stmt->execute($query_params); 
+                $row = $stmt->fetch();  
+
                 $query = "SELECT * FROM users WHERE id=:id";
                 $query_params = array(':id' => $row['userid']); 
 
