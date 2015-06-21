@@ -8,7 +8,7 @@ if (empty($_GET)) {
         header('Location: main.php');
         die();
     }
-    
+} else {
     $query = "SELECT * FROM posts WHERE id=:id";
     $query_params = array(':id' => $_GET['p']); 
 
@@ -20,8 +20,7 @@ if (empty($_GET)) {
         header('Location: main.php');
         die();
     }
-    
-} ?>
+}?>
 
 <html>
 <head>
