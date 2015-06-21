@@ -212,7 +212,7 @@
                             echo '<li>';
                                 echo '<div class="banner">';
                     if ($height < 200) { 
-                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="180px">'
+                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="180px">';
                     } else {
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
                     }
