@@ -220,9 +220,12 @@
                 echo '<div class="banner">';
             if ($height < 200) { 
                                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="'. $height .'">';
-                    } else {
-                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="340px">';
+            } else if($width > $height) {
+                                echo '<img class="blurImage" src="' . $row['image'] . '" width="300" height="200px">';
                     }
+             } else {
+                    echo '<li><img src="' . $row['image'] . '" width="300" height="340px"></li>';
+            } 
                                 echo '<div class="bannerText">';
                                 echo $row['text'];
                                 echo '</div>';
