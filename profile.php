@@ -216,7 +216,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         list($width, $height) = getimagesize($imgName);
         
         $aspectRatio = $width/$height;
-        $testHeight = $height/2;
+        $testHeight = $height/=2;
         
         ?>
                
