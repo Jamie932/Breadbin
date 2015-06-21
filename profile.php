@@ -226,6 +226,10 @@ print(isset($usersname) ? $usersname : 'Unknown');
         <?php
         if ($aspectRatio >= 2.5 && $aspectRatio <= 3) {
             echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
+        } else if ($aspectRatio >= 2 && $aspectRatio < 2.5) {
+            echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="320px"></li>'; 
+        } else if ($aspectRatio >= 1.5 && $aspectRatio < 2) {
+            echo '<li style="overflow:hidden;"><img class="tiles" src="' . $row['image'] . '" height="'. $height .'"></li>'; 
         } else {
             echo '<li><img src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
         }
