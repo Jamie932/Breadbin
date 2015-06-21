@@ -379,9 +379,16 @@ p.settingsExplain {
     cursor: pointer;
     text-align: center;
 }
+
 #tiles li img {
     display: block;
 }
+
+img.tiles {
+    display: block;
+    margin: 0 auto
+}
+
 #tiles ali:nth-child(3n) {
     height: 175px;
 }
