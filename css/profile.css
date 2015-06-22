@@ -366,7 +366,7 @@ p.settingsExplain {
     position: relative;
     margin: 0;
     max-height: 400px;
-    min-width: 300px;
+    max-width: 300px;
 }
 
 #tiles li {
@@ -383,6 +383,7 @@ p.settingsExplain {
 
 #tiles li img {
     display: block;
+    min-width: 300px;
 }
 
 #tiles ali:nth-child(3n) {
