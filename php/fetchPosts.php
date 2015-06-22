@@ -2,18 +2,27 @@
     require("common.php"); 
 	require("timeago.php");
 	
-    $query = "SELECT * FROM following WHERE follower_id = :id"; 
+    /*$query = "SELECT * FROM following WHERE follower_id = :id"; 
     $query_params = array(':id' => $_SESSION['user']['id']); 
-    $stmt = $db->prepare($query);
-    $result = $stmt->execute($query_params); 
-    $ifFollowing = $stmt->fetchAll();
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+	$posts = $stmt->fetchAll();
 
-    $followerID = $row['user_no'];
+    $followerID = $row['user_no'];*/
     
+    $query = "SELECT * FROM posts WHERE userid = :id userid ORDER BY date DESC"; 
+    $query_params = array(':id' => $followerID); 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+	$posts = $stmt->fetchAll();
+
+    $postIdpls = $row['id'];
+    $postUserID = $row['userid'];
+
     ?>
                
         <script>
-            console.log(<? echo json_encode($row['user_no']); ?>);
+            console.log(<? echo json_encode($postIdpls); ?>);
         </script>
                
     <?php
