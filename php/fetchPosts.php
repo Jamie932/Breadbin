@@ -9,8 +9,16 @@
     $ifFollowing = $stmt->fetchAll();
 
     $followerID = $row['user_no'];
+    
+    ?>
+               
+        <script>
+            console.log(<? echo json_encode($followerID); ?>);
+        </script>
+               
+    <?php
 
-    $query = "SELECT * FROM posts WHERE :id = userid ORDER BY date DESC"; 
+    /*$query = "SELECT * FROM posts WHERE userid = :id userid ORDER BY date DESC"; 
     $query_params = array(':id' => $followerID); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
@@ -179,5 +187,5 @@
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
             }
         }
-	}
+	}*/
 ?>
