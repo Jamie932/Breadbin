@@ -243,8 +243,10 @@ print(isset($usersname) ? $usersname : 'Unknown');
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
                     } else if ($height >=500 && $height < 600) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px" width="300px"></li>'; 
-                    } else if ($height >=600 && $height < 1000) {
-                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px" width="300px"></li>'; 
+                    } else if ($height >=700 && $height < 800) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '" width="300px"></li>'; 
+                    } else if ($height >=800 && $height < 1000) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '" width="300px"></li>'; 
                     } else if ($height >=1000) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px" width="300px"></li>'; 
                     } else {
