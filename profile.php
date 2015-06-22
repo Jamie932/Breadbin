@@ -232,13 +232,13 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     if ($height >=0 && $height < 99) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px" width="300px"></li>'; 
                     } else if ($height >=100 && $height < 200) {
-                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="250px" width="300px"></li>'; 
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
                     } else if ($height >=200 && $height < 300) {
-                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="250px" width="300px"></li>'; 
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
                     } else if ($height >=300 && $height < 350) {
-                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="325px" width="300px"></li>'; 
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
                     } else if ($height >=350 && $height < 400) {
-                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="375px" width="300px></li>'; 
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px></li>'; 
                     } else if ($height >=400 && $height < 500) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
                     } else if ($height >=500 && $height < 600) {
