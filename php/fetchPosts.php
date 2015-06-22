@@ -8,8 +8,10 @@
     $result = $stmt->execute($query_params); 
     $ifFollowing = $stmt->fetchAll();
 
+    $followerID = $row['user_no'];
+
     $query = "SELECT * FROM posts WHERE :id = userid ORDER BY date DESC"; 
-    $query_params = array(':id' => $row['user_no']); 
+    $query_params = array(':id' => $followerID); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
