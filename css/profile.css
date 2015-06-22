@@ -370,7 +370,7 @@ p.settingsExplain {
 }
 
 #tiles li {
-    width: 300px;
+    min-width: 300px;
     background-color: #ffffff;
     border: 1px solid #dedede;
     -moz-border-radius: 2px;
