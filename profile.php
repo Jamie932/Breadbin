@@ -228,24 +228,22 @@ print(isset($usersname) ? $usersname : 'Unknown');
                
         <?php
         
-        if ($height <= 200) {
-            echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>';  
-        } else if ($aspectRatio >= 0) {
-                    if ($height >=0 && $height < 100) {
+        if ($aspectRatio >= 0) {
+                    if ($height >=0 && $height < 99) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px" width="300px"></li>'; 
-                    } else if ($height >=100 && $height <= 199) {
+                    } else if ($height >=100 && $height < 200) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="250px" width="300px"></li>'; 
-                    } else if ($height >=200 && $height <= 299) {
+                    } else if ($height >=200 && $height < 300) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="250px" width="300px"></li>'; 
-                    } else if ($height >=300 && $height <= 349) {
+                    } else if ($height >=300 && $height < 350) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="325px" width="300px"></li>'; 
-                    } else if ($height >=350 && $height <= 399) {
+                    } else if ($height >=350 && $height < 400) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="375px" width="300px></li>'; 
-                    } else if ($height >=400 && $height <= 499) {
+                    } else if ($height >=400 && $height < 500) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '" width="300px"></li>'; 
-                    } else if ($height >=500 && $height <= 599) {
+                    } else if ($height >=500 && $height < 600) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px" width="300px"></li>'; 
-                    } else if ($height >=600 && $height <= 999) {
+                    } else if ($height >=600 && $height < 1000) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px" width="300px"></li>'; 
                     } else if ($height >=1000) {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px" width="300px"></li>'; 
