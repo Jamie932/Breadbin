@@ -6,9 +6,9 @@
     $query_params = array(':id' => $_SESSION['user']['id']); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
-	$follower = $stmt->fetchAll();
+	$posts = $stmt->fetchAll();
 
-    $followerID = $follower['user_no'];
+    $followerID = $row['user_no'];
     
     ?>
                
