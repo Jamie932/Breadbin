@@ -367,6 +367,7 @@ p.settingsExplain {
     margin: 0;
     max-height: 400px;
     max-width: 300px;
+    text-align: center;
 }
 
 #tiles li {
