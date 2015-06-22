@@ -6,10 +6,9 @@
     $query_params = array(':id' => $_SESSION['user']['id']); 
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
-    $userCount = $stmt->fetchAll();
-    $userFollowID = $row['user_no'];
+    $ifFollowing = $stmt->fetchAll();
 
-    $query = "SELECT * FROM posts WHERE :id = user_no ORDER BY date DESC"; 
+    $query = "SELECT * FROM posts WHERE :id = userid ORDER BY date DESC"; 
     $query_params = array(':id' => $row['user_no']); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
