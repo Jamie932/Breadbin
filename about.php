@@ -34,6 +34,9 @@
                     <li class="linkItem">
                         Toasters
                     </li>
+                    <li class="linkItem">
+                        Contact
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,12 +53,18 @@
         </div>
     </div>
     <div id="features">
-        <a name="features">
-        <div class="featuresLeft"></div>
-        <div class="featuresCenter">
-        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-        </div>
-        <div class="featuresRight"></div>
+        <a name="features"></a>
+        <div id="featuresLeft"></div>
+        <div id="featuresCenter">
+                <div class="centerContentf">
+                    <h2>Features</h2>
+                    <p class="featuresStart">Bread Bin is more than just a massive collection of unique content and a welcoming and kind community, it's a place you can share your pictures, thoughts and your day with friends, family and other members of the site.</p>
+                    <p class="featuresStart" style="margin-bottom: 2;">There are two main ways of showing your thoughts on a post -</p>
+                    <h4>Toast</h4>
+                        <p>If you like the content you see, then you can turn slices into delicious toast. Toasting is your way of showing appreciation for what members upload and will encourage them to upload more and more content that you, and many other members, will enjoy. Each toast you make will </p>
+                </div>
+            </div>
+        <div id="featuresRight"></div>
     </div>
 </body>
 </html

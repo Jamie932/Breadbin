@@ -22,6 +22,8 @@ if (empty($_GET)) {
         $userid    = $row['id'];
         $usersname = $row['username'];
         $email     = $row['email'];
+        $firstname     = $row['firstname'];
+        $lastname     = $row['lastname'];
         
         if ($row['bio']) {
             $bio = $row['bio'];
@@ -352,21 +354,15 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 </div>
                 <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
                     <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php
-echo $firstname;
-?>">
+                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                         <br>
                         <br>
                     <label>Last name: </label>
-                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php
-echo $lastname;
-?>">
+                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
                         <br>
                         <br>
                     <label>Email: </label>
-                        <input type="text" name="email" class="settings" id="setEmail" value="<?php
-echo $email;
-?>">
+                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
                         <br>
                         <br>
                    <label> Colour: </label>
