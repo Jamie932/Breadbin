@@ -366,11 +366,10 @@ p.settingsExplain {
     position: relative;
     margin: 0;
     max-height: 400px;
-    max-width: 300px;
+    min-width: 300px;
 }
 
 #tiles li {
-    min-width: 300px;
     background-color: #ffffff;
     border: 1px solid #dedede;
     -moz-border-radius: 2px;
