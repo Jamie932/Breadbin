@@ -333,6 +333,8 @@ p.settingsExplain {
 #errormsg {
     color: red;
 }
+
+/* grid styling pls */
 .banner {
     height: 100%;
     width: 100%;
@@ -360,7 +362,6 @@ p.settingsExplain {
     outline: none;
 }
 
-/* grid styling pls */
 #tiles {
     list-style-type: none;
     position: relative;
@@ -389,9 +390,11 @@ p.settingsExplain {
 #tiles ali:nth-child(3n) {
     height: 175px;
 }
+
 #tiles ali:nth-child(4n-3) {
     padding-bottom: 30px;
 }
+
 #tiles ali:nth-child(5n) {
     height: 250px;
 }

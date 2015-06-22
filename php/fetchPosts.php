@@ -2,13 +2,23 @@
     require("common.php"); 
 	require("timeago.php");
 	
-	$query = "SELECT * FROM posts ORDER BY date DESC"; 
+    $query = "SELECT * FROM following WHERE follower_id = :id"; 
+    $query_params = array(':id' => $_SESSION['user']['id']); 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params);   
+    $tosh = $stmt->fetch();
+
+    $userFollowID = $row['user_no'];
+
+    $query = "SELECT * FROM posts WHERE :id = user_no ORDER BY date DESC"; 
+    $query_params = array(':id' => $userFollowID); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
 
     $postIdpls = $row['id'];
-	
+    $postUserID = $row['userid'];
+
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
