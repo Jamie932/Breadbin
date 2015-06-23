@@ -141,8 +141,11 @@ print(isset($usersname) ? $usersname : 'Unknown');
             $("#avatarOverlay").click(function(){
                 if ($('.bioRow').attr("contentEditable") == "true") {
                     alert("Changes saved.");
+                    $('.bioRow').attr('contenteditable','false');
+                    $('.bioRow').removeClass('editableContent');
                 } else {
                     $('.bioRow').attr('contenteditable','true');
+                    $('.bioRow').addClass('editableContent');
                 }
             });      
         });

@@ -118,7 +118,6 @@ p {
 	padding-right: 25px;
 	color: #2f2f2f;
 	word-wrap: break-word;
-	min-height: 85px;
 }
 
 .followerRow {
@@ -450,4 +449,10 @@ p.settingsExplain {
 
 #tiles ali:nth-child(5n) {
 	height: 250px;
+}
+
+.editableContent {
+    border-top: 1px dashed #666;
+    border-bottom: 1px dashed #666;
+    background-color: #F2F2F2;
 }
