@@ -150,11 +150,15 @@ print(isset($usersname) ? $usersname : 'Unknown');
             });      
             
             $('.bioRow').keydown(function(e){ 
-                if (e.which != 8 && $('.bioRow').text().length > 140) {
-                    alert("limit reached soz");
+                if (e.which != 8 && !e.ctrlKey && $('.bioRow').text().length > 140) {
+                    alert("limit reached soz"); 
                     e.preventDefault();
                 }    
             });
+            
+            $('.bioRow').onpaste = function() {
+                return false;   
+            }
             
         });
     </script>
