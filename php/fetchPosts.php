@@ -8,6 +8,11 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 	
+    if (!$posts) {
+        echo '<div id="contentPost">';
+        echo '<div class="contentPostText">You don\'t follow anyone you silly bugga</div>';
+        echo '</div>';
+    } else {
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
@@ -168,4 +173,5 @@
             }
         }
 	}
+    }
 ?>
