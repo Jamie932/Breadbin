@@ -15,6 +15,10 @@ p {
     margin-bottom: -10px;
 }
 
+.clearFix {
+    clear:both;   
+}
+
 p.report {
     font-size: 10px;   
     padding-top: 8px;

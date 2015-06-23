@@ -29,6 +29,8 @@
                 echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';;
             echo '</div>';
             echo '<div class="clearfix"></div>';
+            
+            
         }
         
 	foreach ($posts as $row) {
