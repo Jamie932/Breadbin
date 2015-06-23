@@ -14,9 +14,9 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 	
-    if ($following == 0) {
+    if ($following == 0 && !$posts) {
         echo '<div id="contentPost">';
-        echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';
+            echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';
         echo '</div>';
     } else if (!$posts) {
         echo '<div id="contentPost">';
