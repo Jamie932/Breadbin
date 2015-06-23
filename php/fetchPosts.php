@@ -27,6 +27,8 @@
         if ($following == 0) {
             echo '<div id="contentPost">';
                 echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';
+                echo '<div id="contentInfoText">';
+                echo '</div>';
             echo '</div>';
         }
         
