@@ -31,6 +31,9 @@
             echo '<div class="clearfix"></div>';
             
             
+            echo '<div id="contentLike">';
+            echo '<p class="Hide">Hide</p>';
+            echo '</div><br>';  
         }
         
 	foreach ($posts as $row) {
