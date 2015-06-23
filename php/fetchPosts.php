@@ -22,7 +22,7 @@
         echo '<div id="contentPost">';
         echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring followers haven\'t posted anything.</center></div>';
         echo '</div>';
-    } else {
+    } else if ($row['userid'] = $_SESSION['user']['id'] && $posts) {
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
