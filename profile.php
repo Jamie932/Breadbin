@@ -148,6 +148,14 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $('.bioRow').addClass('editableContent');
                 }
             });      
+            
+            $('.bioRow').keydown(function(e){ 
+                if (e.which != 8 && $('.bioRow').text().length > 140) {
+                    alert("limit reached soz");
+                    e.preventDefault();
+                }    
+            });
+            
         });
     </script>
 </head>
