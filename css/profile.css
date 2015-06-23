@@ -470,4 +470,7 @@ p.settingsExplain {
     border-top: 1px dashed #666;
     border-bottom: 1px dashed #666;
     background-color: #F2F2F2;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
