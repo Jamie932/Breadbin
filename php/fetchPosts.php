@@ -6,7 +6,7 @@
     $query_params = array(':userId' => $_SESSION['user']['id']);    
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
-    $following = $stmt->rowCount();
+    $following = $stmt->fetchAll();
 
     $followerID = $row['user_no'];
     
@@ -14,6 +14,7 @@
                
         <script>
             console.log(<? echo json_encode($following); ?>);
+            console.log(<? echo json_encode($followerID); ?>);
         </script>
                
     <?php
