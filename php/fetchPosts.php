@@ -16,10 +16,8 @@
                
     <?php
 
-    /*
-
 	$query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC"; 
-    $query_params = array(':id' => $followerID); 
+    $query_params = array(':id' => $following); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
@@ -183,5 +181,5 @@
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
             }
         }
-	}*/
+	}
 ?>
