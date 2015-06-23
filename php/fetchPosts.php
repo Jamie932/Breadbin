@@ -16,11 +16,11 @@
 	
     if ($following == 0) {
         echo '<div id="contentPost">';
-        echo '<div class="contentPostText" style="margin-top: 50px;"><center>You don\'t follow anyone.</center></div>';
+        echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';
         echo '</div>';
     } else if (!$posts) {
         echo '<div id="contentPost">';
-        echo '<div class="contentPostText" style="margin-top: 50px;"><center>Your boring followers haven\'t posted anything.</center></div>';
+        echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring followers haven\'t posted anything.</center></div>';
         echo '</div>';
     } else {
 	foreach ($posts as $row) {
