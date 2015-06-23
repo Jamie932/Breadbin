@@ -4,9 +4,9 @@
 
     $query = "SELECT * FROM following WHERE follower_id = :id"; 
     $query_params = array(':id' => $_SESSION['user']['id']); 
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute(); 
-	$posts = $stmt->fetchAll();
+    $stmt = $db->prepare($query);
+    $result = $stmt->execute($query_params); 
+    $following = $stmt->fetchAll();
 
     $followerID = $row['user_no'];
     
