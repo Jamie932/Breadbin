@@ -2,15 +2,25 @@
     require("common.php"); 
 	require("timeago.php");
 
+    $query= "SELECT * FROM following WHERE follower_id = :userId"; 
+    $query_params = array(':userId' => $_SESSION['user']['id']);
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params); 
+	$following = $stmt->rowCount();
+
 	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) ORDER BY date DESC"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 	
-    if (!$posts) {
+    if ($following == 0) {
         echo '<div id="contentPost">';
-        echo '<div class="contentPostText">You don\'t follow anyone you silly bugga</div>';
+        echo '<div class="contentPostText"><center>You don\'t follow anyone.</center></div>';
+        echo '</div>';
+    } else if (!$posts) {
+        echo '<div id="contentPost">';
+        echo '<div class="contentPostText"><center>Your boring followers haven\'t posted anything.</center></div>';
         echo '</div>';
     } else {
 	foreach ($posts as $row) {
