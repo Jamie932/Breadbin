@@ -8,7 +8,7 @@
     $result = $stmt->execute($query_params); 
 	$following = $stmt->rowCount();
 
-	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) ORDER BY date DESC"; 
+	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) AND user_no = :userId ORDER BY date DESC"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
@@ -22,7 +22,7 @@
         echo '<div id="contentPost">';
         echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring followers haven\'t posted anything.</center></div>';
         echo '</div>';
-    } else if ($row['userid'] = $_SESSION['user']['id'] && $posts) {
+    } else {
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
