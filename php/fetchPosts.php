@@ -2,21 +2,16 @@
     require("common.php"); 
 	require("timeago.php");
 
-    $query = "SELECT * FROM following WHERE follower_id= :userId"; 
+    $query = "SELECT user_no FROM following WHERE follower_id= :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);    
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $following = $stmt->fetchAll();
-
-    if($following){ 
-        $followerID = $following['user_no'];
-    }
     
     ?>
                
         <script>
             console.log(<? echo json_encode($following); ?>);
-            console.log(<? echo json_encode($followerID); ?>);
         </script>
                
     <?php
@@ -28,13 +23,10 @@
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
-
-    $postIdpls = $row['id'];
 	
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
-        
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         
