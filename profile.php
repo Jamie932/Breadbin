@@ -149,16 +149,20 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 }
             });      
             
+            $('.bioRow').keypress(function(e) {
+                return e.which != 13;
+            });
+            
             $('.bioRow').keydown(function(e){ 
-                if (e.which != 8 && !e.ctrlKey && $('.bioRow').text().length > 140) {
+                if (e.which != 8 && $('.bioRow').text().length > 140) {
                     alert("limit reached soz"); 
                     e.preventDefault();
                 }    
             });
             
-            $('.bioRow').onpaste = function() {
-                return false;   
-            }
+            $('.bioRow').bind("cut copy paste",function(e) {
+              e.preventDefault();
+            });
             
         });
     </script>
