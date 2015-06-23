@@ -33,7 +33,7 @@ p.report {
 #content {
     float: left;
     font-color: #000;
-    height: 100%;
+    height: auto;
     display: inline;
 }
 
