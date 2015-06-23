@@ -23,7 +23,11 @@
         echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring followers haven\'t posted anything.</center></div>';
         echo '</div>';
     } else {
-        
+        if ($following == 0) {
+            echo '<div id="contentPost">';
+                echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';
+            echo '</div>';
+        }
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
 		$query_params = array(':id' => $row['userid']); 
@@ -97,13 +101,7 @@
                 }
             }
         }
-        
-        if ($following == 0) {
-        
-            echo '<div id="contentPost">';
-                echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';
-            echo '</div>';;
-        
+
         if ($row['type'] == "imagetext") {
             echo '<div id="contentPost" class="post-' . $row['id'] . '">';
             echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
@@ -188,93 +186,6 @@
                 echo '<p class="report">Report</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
             }
-        }
-        }else {
-            if ($row['type'] == "imagetext") {
-            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-            echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
-                echo '<div id="contentInfoText">';
-                    echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
-                    echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
-                echo '</div>';
-            echo '</div>';
-            
-            if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
-            } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                if ($ifToasted == 0) {
-                    echo '<p class="toast">Toast</p>';
-                } else {
-                    echo '<p class="untoast">Toast</p>';
-                } 
-                if ($ifBurnt == 0) {
-                    echo '<p class="burn">Burn</p>';
-                } else {
-                    echo '<p class="unburn">Burn</p>';
-                }
-                echo '<p class="report">Report</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
-            }             
-        } else if ($row['type'] == "image") {
-            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-            echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"></div>';
-                 echo '<div id="contentInfoText">';
-                    echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
-                    echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
-                echo '</div>';
-            echo '</div>';
-            
-            if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
-            } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                if ($ifToasted == 0) {
-                    echo '<p class="toast">Toast</p>';
-                } else {
-                    echo '<p class="untoast">Toast</p>';
-                } 
-                if ($ifBurnt == 0) {
-                    echo '<p class="burn">Burn</p>';
-                } else {
-                    echo '<p class="unburn">Burn</p>';
-                }
-                echo '<p class="report">Report</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
-            }
-            
-        } else if ($row['type'] == "text") { 
-            echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div class="contentPostText">' . $row['text'] . '</div>';
-                echo '<div id="contentInfoText">';
-                    echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
-                    echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
-                echo '</div>';
-            echo '</div>';
-            
-            if ($_SESSION['user']['id'] == $row['userid']) { 
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">
-                    <p class="delete">Delete</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
-            } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                
-                if ($ifToasted == 0) {
-                    echo '<p class="toast">Toast</p>';
-                } else {
-                    echo '<p class="untoast">Toast</p>';
-                } 
-                if ($ifBurnt == 0) {
-                    echo '<p class="burn">Burn</p>';
-                } else {
-                    echo '<p class="unburn">Burn</p>';
-                }
-                echo '<p class="report">Report</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
-            }
-        }
         }
 	}
     } 
