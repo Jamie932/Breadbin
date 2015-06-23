@@ -7,10 +7,18 @@
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
     $following = $stmt->fetchAll();
-  
+    
+    ?>
+               
+        <script>
+            console.log(<? echo json_encode($following); ?>);
+            console.log(<? echo json_encode($row['user_no']); ?>);
+        </script>
+               
+    <?php
 
 	$query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC"; 
-    $query_params = array(':id' => $row['user_no']); 
+    $query_params = array(':id' => $following); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
