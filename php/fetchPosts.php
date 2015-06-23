@@ -2,7 +2,7 @@
     require("common.php"); 
 	require("timeago.php");
 
-    /*$query = "SELECT * FROM following WHERE follower_id = :id"; 
+    $query = "SELECT * FROM following WHERE follower_id = :id"; 
     $query_params = array(':id' => $_SESSION['user']['id']); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
@@ -16,9 +16,12 @@
             console.log(<? echo json_encode($followerID); ?>);
         </script>
                
-    <?php*/
-	
-	$query = "SELECT * FROM posts ORDER BY date DESC"; 
+    <?php
+
+    /*
+
+	$query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC"; 
+    $query_params = array(':id' => $followerID); 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
 	$posts = $stmt->fetchAll();
@@ -185,5 +188,5 @@
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
             }
         }
-	}
+	}*/
 ?>
