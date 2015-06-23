@@ -135,8 +135,16 @@ print(isset($usersname) ? $usersname : 'Unknown');
             $(".passwordReset").click(function(){
                 $(".accountSettingsField").fadeOut('normal', function(){
                     $(".passwordSettingsField").fadeIn('normal');
-                    });
                 });
+            });
+   
+            $("#avatarOverlay").click(function(){
+                if ($('.bioRow').attr("contentEditable") == "true") {
+                    alert("Changes saved.");
+                } else {
+                    $('.bioRow').attr('contenteditable','true');
+                }
+            });      
         });
     </script>
 </head>
