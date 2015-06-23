@@ -8,7 +8,9 @@
     $result = $stmt->execute($query_params); 
     $following = $stmt->fetchAll();
 
-    $followerID = $following['user_no'];
+    if($following){ 
+        $followerID = $following['user_no'];
+    }
     
     ?>
                
