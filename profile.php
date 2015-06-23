@@ -94,7 +94,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 })
 
                 $('.followers').html(parseInt($('.followers').text()) + 1);
-                $('#followBut').replaceWith('<button id="unFollowBut">Unfollow</button>');   
+                $('#followBut').replaceWith('<button id="unFollowBut" class="buttonstyle">Unfollow</button>');   
             })
             
             $(document).on('click','#unFollowBut', function() {
@@ -111,7 +111,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 })
 
                 $('.followers').html(parseInt($('.followers').text()) - 1);
-                $('#unFollowBut').replaceWith('<button id="followBut">Follow</button>');
+                $('#unFollowBut').replaceWith('<button id="followBut" class="buttonstyle">Follow</button>');
             })
             
             $(".settingsBut").click(function(){

@@ -2,21 +2,6 @@
     require("common.php"); 
 	require("timeago.php");
 
-    /*$query = "SELECT user_no FROM following WHERE follower_id= :userId"; 
-    $query_params = array(':userId' => $_SESSION['user']['id']);    
-    $stmt = $db->prepare($query);
-    $result = $stmt->execute($query_params); 
-    $following = $stmt->fetchAll();
-    
-    ?>
-               
-        <script>
-            console.log(<? echo json_encode($following); ?>);
-            console.log(<? echo json_encode($following['user_no']); ?>);
-        </script>
-               
-    <?php*/
-
 	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) ORDER BY date DESC"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
