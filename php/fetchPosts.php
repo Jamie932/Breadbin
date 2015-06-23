@@ -32,7 +32,7 @@
             
             
             echo '<div id="contentLike">';
-            echo '<p class="report">Hide</p>';
+                echo '<p class="toast">Hide</p>';
             echo '</div><br>';  
         }
         
