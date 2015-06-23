@@ -8,12 +8,13 @@
     $result = $stmt->execute($query_params); 
     $following = $stmt->fetchAll();
 
-    $followerID = $row['user_no'];
+    $followerID = $following['user_no'];
     
     ?>
                
         <script>
-            console.log(<? echo json_encode($row['user_no']); ?>);
+            console.log(<? echo json_encode($following); ?>);
+            console.log(<? echo json_encode($followerID); ?>);
         </script>
                
     <?php
