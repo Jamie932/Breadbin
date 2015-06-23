@@ -179,14 +179,14 @@ print(isset($usersname) ? $usersname : 'Unknown');
         <div id="rightProfile">
            <div id="main">
             <?php
-                $query        = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
+                $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
                 $query_params = array(
                     ':id' => $userid
                 );
 
-                $stmt   = $db->prepare($query);
+                $stmt = $db->prepare($query);
                 $result = $stmt->execute($query_params);
-                $posts  = $stmt->fetchAll();
+                $posts = $stmt->fetchAll();
 
                 foreach ($posts as $row) {
                     if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
@@ -194,124 +194,124 @@ print(isset($usersname) ? $usersname : 'Unknown');
                             $users = $matches[1];
 
                             foreach ($users as $user) {
-                                $query        = "SELECT id, username FROM users WHERE username = :username";
+                                $query = "SELECT id, username FROM users WHERE username = :username";
                                 $query_params = array(
                                     ':username' => $user
                                 );
 
-                                $stmt      = $db->prepare($query);
-                                $result    = $stmt->execute($query_params);
+                                $stmt = $db->prepare($query);
+                                $result = $stmt->execute($query_params);
                                 $userFound = $stmt->fetch();
 
                                 if ($userFound) {
-                                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $user . '</a>', $row['text']);
+                                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $userFound['username'] . '</a>', $row['text']);
                                 }
 
                             }
                         }
                     }
-    
-    
-    echo '<ul id="tiles">';
-    if ($row['type'] == "image") {
-        $imgName = ltrim($row['image'], "/.");
-        list($width, $height) = getimagesize($imgName);
-        
-        $aspectRatio = $width/$height;
-        $testHeight = $height/=2;
-        
+
+                echo '<ul id="tiles">';
+
+                if ($row['type'] == "image") {
+                    $imgName = ltrim($row['image'], "/.");
+                    list($width, $height) = getimagesize($imgName);
+
+                    $aspectRatio = $width/$height;
+                    $testHeight = $height/=2;
+                ?>
+
+                <script>
+                    console.log(<? echo json_encode($aspectRatio); ?>);
+                </script>
+
+                <?php
+                    if ($aspectRatio >= 0) {
+                        if ($height >=0 && $height < 99) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
+                        } else if ($height >= 100 && $height < 200) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                        } else if ($height >= 200 && $height < 300) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                        } else if ($height >= 300 && $height < 350) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                        } else if ($height >= 350 && $height < 400) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></l>'; 
+                        } else if ($height >= 400 && $height < 500) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                        } else if ($height >= 500 && $height < 600) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
+                        } else if ($height >= 700 && $height < 800) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
+                        } else if ($height >= 800 && $height < 1000) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
+                        } else if ($height >= 1000) {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
+                        } else {
+                            echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
+                        }
+                    } else if ($aspectRatio == 1) {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
+                    } else {
+                        echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
+                    }
+
+                } else if ($row['type'] == "text") {
+                        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+
+                } else if ($row['type'] == 'imagetext') {
+                    $imgName = ltrim($row['image'], "/.");
+                    list($width, $height) = getimagesize($imgName);
+
+                    $aspectRatio = $width/$height;
+                    $testHeight = $height/=2;
+
+                ?>
+
+                <script>
+                    console.log(<? echo json_encode($aspectRatio); ?>);
+                </script>
+
+                <?php
+                    echo '<li>';
+                    echo '<div class="banner">';
+
+                    if ($height <= 200) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' .$height. '" width="300px">'; 
+                    } else if ($aspectRatio >= 0) {
+                        if ($height >=0 && $height < 100) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=100 && $height < 200) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=300 && $height < 350) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=350 && $height < 400) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=400 && $height < 500) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=500 && $height < 600) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=600 && $height < 1000) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        } else if ($height >=1000) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
+                        }
+                    } else if ($aspectRatio == 1) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="'. $testHeight .'"">'; 
+                    } else {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
+                    } 
+
+                    echo '<div class="bannerText">';
+                    echo $row['text'];
+                    echo '</div>'; 
+                    echo '</div>';
+                    echo '</li>'; 
+                }
+                echo '</ul>';
+            }
         ?>
                
-        <script>
-            console.log(<? echo json_encode($aspectRatio); ?>);
-        </script>
-               
-        <?php
-        
-        if ($aspectRatio >= 0) {
-            if ($height >=0 && $height < 99) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
-            } else if ($height >= 100 && $height < 200) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
-            } else if ($height >= 200 && $height < 300) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
-            } else if ($height >= 300 && $height < 350) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
-            } else if ($height >= 350 && $height < 400) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></l>'; 
-            } else if ($height >= 400 && $height < 500) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
-            } else if ($height >= 500 && $height < 600) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
-            } else if ($height >= 700 && $height < 800) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
-            } else if ($height >= 800 && $height < 1000) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
-            } else if ($height >= 1000) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
-            } else {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
-            }
-        } else if ($aspectRatio == 1) {
-            echo '<li><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
-        } else {
-            echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
-        }
-        
-    } else if ($row['type'] == "text") {
-            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
-        
-    } else if ($row['type'] == 'imagetext') {
-            $imgName = ltrim($row['image'], "/.");
-            list($width, $height) = getimagesize($imgName);
-        
-            $aspectRatio = $width/$height;
-            $testHeight = $height/=2;
-            
-            ?>
-               
-            <script>
-                console.log(<? echo json_encode($aspectRatio); ?>);
-            </script>
-               
-            <?php
-            echo '<li>';
-            echo '<div class="banner">';
-                if ($height <= 200) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' .$height. '" width="300px">'; 
-                } else if ($aspectRatio >= 0) {
-                    if ($height >=0 && $height < 100) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=100 && $height < 200) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=300 && $height < 350) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=350 && $height < 400) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=400 && $height < 500) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=500 && $height < 600) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=600 && $height < 1000) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    } else if ($height >=1000) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">'; 
-                    }
-                } else if ($aspectRatio == 1) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="'. $testHeight .'"">'; 
-                } else {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
-                } 
-            echo '<div class="bannerText">';
-                echo $row['text'];
-            echo '</div>'; 
-            echo '</div>';
-            echo '</li>'; 
-        }
-     
-    echo '</ul>';
-    }
-?> 
                </ul>
             </div>
         </div>
@@ -349,106 +349,109 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 </ul>
             </div>
             
-    <div id="settingsBox" style="height:500px;">
-        <div class="rightSettings">
-            <div class="accountSettingsField">
-                <div class="settingsHeader">
-                    <h3 class="settings">Account Details</h3>
-                    <p class="settingsDetail">Update your account details</p>
+            <div id="settingsBox" style="height:500px;">
+                <div class="rightSettings">
+                    <div class="accountSettingsField">
+                        <div class="settingsHeader">
+                            <h3 class="settings">Account Details</h3>
+                            <p class="settingsDetail">Update your account details</p>
+                        </div>
+                        <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
+                            <label>First name: </label>
+                                <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                <br>
+                                <br>
+                            <label>Last name: </label>
+                                <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
+                                <br>
+                                <br>
+                            <label>Email: </label>
+                                <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
+                                <br>
+                                <br>
+                           <label> Colour: </label>
+                                <select name="colour" class="settings" id="setColour">
+                                    <option value="1" style="background:#8AE68A">Green</option>
+                                    <option value="2" style="background:#6699FF">Blue</option>
+                                    <option value="3" style="background:#FFB540">Orange</option>
+                                    <option value="4" style="background:#FF66CC">Pink</option>
+                                </select>
+                                <br>
+                                <br>
+                            <label> </label>
+
+                                <input type="submit" value="Save" class="saveSettings">
+                        </form>
+                    </div>
+
+                    <div class="passwordSettingsField">
+                        <div class="settingsHeader">
+                            <h3 class="settings">Reset your password</h3>
+                            <p class="settingsDetail"></p>
+                        </div>
+                        <form action="../php/passwordUpdate.php" method="post" class="accountSettings">
+                            <label>Current Password: </label>
+                                <input type="password" name="currentPassword" class="settings" id="currentPassword">
+                                <br>
+                                <br>
+                            <label>New password: </label>
+                                <input type="password" name="newPassword" class="settings" id="newPassword">
+                                <br>
+                                <br>
+                            <label>Verify password: </label>
+                                <input type="password" name="newPassword2" class="settings" id="newPassword2">
+                                <br>
+                                <br>
+
+                                <input type="submit" value="Save" class="saveSettings">
+                        </form>
+                    </div>
                 </div>
-                <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
-                    <label>First name: </label>
-                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                        <br>
-                        <br>
-                    <label>Last name: </label>
-                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                        <br>
-                        <br>
-                    <label>Email: </label>
-                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                        <br>
-                        <br>
-                   <label> Colour: </label>
-                        <select name="colour" class="settings" id="setColour">
-                            <option value="1" style="background:#8AE68A">Green</option>
-                            <option value="2" style="background:#6699FF">Blue</option>
-                            <option value="3" style="background:#FFB540">Orange</option>
-                            <option value="4" style="background:#FF66CC">Pink</option>
-                        </select>
-                        <br>
-                        <br>
-                    <label> </label>
-                        
-                        <input type="submit" value="Save" class="saveSettings">
-                </form>
             </div>
             
-            <div class="passwordSettingsField">
-                <div class="settingsHeader">
-                    <h3 class="settings">Reset your password</h3>
-                    <p class="settingsDetail"></p>
-                </div>
-                <form action="../php/passwordUpdate.php" method="post" class="accountSettings">
-                    <label>Current Password: </label>
-                        <input type="password" name="currentPassword" class="settings" id="currentPassword">
-                        <br>
-                        <br>
-                    <label>New password: </label>
-                        <input type="password" name="newPassword" class="settings" id="newPassword">
-                        <br>
-                        <br>
-                    <label>Verify password: </label>
-                        <input type="password" name="newPassword2" class="settings" id="newPassword2">
-                        <br>
-                        <br>
-                        
-                        <input type="submit" value="Save" class="saveSettings">
-                </form>
-            </div>
-        </div>
-    </div>
-            
-    <div id="profileButtons">
-    <?php
-if (isset($usersname)) {
-    if (($userid != $_SESSION['user']['id'])) {
-?>
+            <div id="profileButtons">
+                <?php
+                    if (isset($usersname)) {
+                        if (($userid != $_SESSION['user']['id'])) {
+                ?>
                 <div class="bottomRow">
                     <?php
-        $query        = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
-        $query_params = array(
-            ':id' => $_SESSION['user']['id'],
-            ':userid' => $_GET['id']
-        );
+                        $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
+                        $query_params = array(
+                            ':id' => $_SESSION['user']['id'],
+                            ':userid' => $_GET['id']
+                        );
         
-        $stmt   = $db->prepare($query);
-        $result = $stmt->execute($query_params);
-        $row    = $stmt->fetch();
-        
-        if ($row['user_no'] != intval($_GET['id'])) {
-            echo '<button id="followBut" class="buttonstyle">Follow</button>';
-        } else {
-            echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
-        }
-?>
+                        $stmt   = $db->prepare($query);
+                        $result = $stmt->execute($query_params);
+                        $row    = $stmt->fetch();
+
+                        if ($row['user_no'] != intval($_GET['id'])) {
+                            echo '<button id="followBut" class="buttonstyle">Follow</button>';
+                        } else {
+                            echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
+                        }
+                    ?>
                     <button id="messageBut" class="buttonstyle">Message</button>
                     <button id="reportBut" class="buttonstyle">Report</button>
                 </div>
-    <?php
-    } else {
-?>
+   
+                <?php
+                    } else {
+                ?>
                 <div class="bottomRow">
                     <button class="settingsBut buttonstyle">Settings</button>
                     <button class="backBut buttonstyle">Back</button>
                 </div>
-    <?php
-    }
-}
-?> 
-    </div>
-        
-    <div class="clearFix"></div></div>
+                
+                <?php
+                    }
+                }
+                ?> 
+            </div>
+            
+            <div class="clearFix"></div>
+        </div>
             
     <script src="../js/formSettings.js"></script>
     <script src="js/jquery.wookmark.js"></script>
@@ -499,7 +502,6 @@ if (isset($usersname)) {
             handler.wookmark();
           });
         });
-  </script>
-        
+    </script>
 </body>
 </html>
