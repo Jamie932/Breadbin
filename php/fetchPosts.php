@@ -18,9 +18,9 @@
 
 	$query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC"; 
     $query_params = array(':id' => $following); 
-    $stmt = $db->prepare($query);
+    $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
-    $posts = $stmt->fetchAll();
+	$posts = $stmt->fetchAll();
 	
 	foreach ($posts as $row) {
 		$query = "SELECT * FROM users WHERE id = :id"; 
