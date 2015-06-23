@@ -28,8 +28,6 @@
             echo '<div id="contentPost">';
                 echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow anyone.</center></div>';;
             echo '</div>';
-            echo '<div class="clearfix"></div>';
-            
             
             echo '<div id="contentLike">';
                 echo '<p class="toast">Hide</p>';
