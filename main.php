@@ -122,8 +122,8 @@
             })
             
             $(".hide").click(function(){
-                $("#contentLikeFollow").hide();
-                $("#contentPostFollow").hide();
+                $("#contentLikeFollow").hide(500);
+                $("#contentPostFollow").hide(500);
             });
             
             $("#uploadText").keypress(function(event) {
