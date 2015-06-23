@@ -250,7 +250,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             } else if ($height >= 1000) {
                 echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
             } else {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="250px"></li>'; 
+                echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
             }
         } else if ($aspectRatio == 1) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
