@@ -14,7 +14,7 @@
                
         <script>
             console.log(<? echo json_encode($following); ?>);
-            console.log(<? echo json_encode($followerID); ?>);
+            console.log(<? echo json_encode($row['user_no']); ?>);
         </script>
                
     <?php
