@@ -121,6 +121,11 @@
                 })
             })
             
+            $(".hide").click(function(){
+                $("#contentLikeFollow").hide();
+                $("#contentPostFollow").hide();
+            });
+            
             $("#uploadText").keypress(function(event) {
                 if(event.which == '13') {
                     return false;

@@ -37,7 +37,7 @@ p.report {
     display: inline;
 }
 
-#contentPost {
+#contentPost, #contentPostFollow {
     float:left;
     width: 640px;
     margin-bottom: 45px;
@@ -96,7 +96,7 @@ p.report {
 }
 
 /* Liking the post */
-#contentLike {
+#contentLike, #contentLikeFollow {
     margin-top: -15px;
     margin-left: 10px;
     float: left;   
@@ -104,7 +104,7 @@ p.report {
 }
 
 /* Text Formatting */
-#contentPost .contentPostText {
+.contentPostText {
     background-color: #fff;
     width: 620px;
     height: auto;
@@ -232,17 +232,21 @@ h5 {
     margin-right:15px;
 }
 
-.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover {
+.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover {
     cursor:pointer;
 }
 
-.toast, .burn {
+.toast, .burn, .hide {
     padding-bottom: 5px;
     color:black;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out; 
     transition: all .2s ease-in-out;
+}
+
+.hide {
+    visibility: visible;   
 }
 
 .burn, .unburn {
