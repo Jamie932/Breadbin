@@ -8,7 +8,7 @@
     $result = $stmt->execute($query_params); 
 	$following = $stmt->rowCount();
 
-	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) AND user_no = :userId ORDER BY date DESC"; 
+	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) AND userid = :userId ORDER BY date DESC"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
