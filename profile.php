@@ -143,9 +143,11 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     alert("Changes saved.");
                     $('.bioRow').attr('contenteditable','false');
                     $('.bioRow').removeClass('editableContent');
+                    $('#blackOverlay').fadeOut('normal');
                 } else {
                     $('.bioRow').attr('contenteditable','true');
                     $('.bioRow').addClass('editableContent');
+                    $('#blackOverlay').fadeIn('normal');
                 }
             });      
             
@@ -169,6 +171,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
 </head>
     
 <body class="profile">
+    <div id="blackOverlay"></div>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
