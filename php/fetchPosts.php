@@ -2,18 +2,18 @@
     require("common.php"); 
 	require("timeago.php");
 
-    $query = "SELECT * FROM following WHERE follower_id = :id"; 
-    $query_params = array(':id' => $_SESSION['user']['id']); 
+    $query = "SELECT * FROM following WHERE follower_id= :userId"; 
+    $query_params = array(':userId' => $_SESSION['user']['id']);    
     $stmt = $db->prepare($query);
     $result = $stmt->execute($query_params); 
-    $following = $stmt->fetchAll();
+    $following = $stmt->rowCount();
 
     $followerID = $row['user_no'];
     
     ?>
                
         <script>
-            console.log(<? echo json_encode($row['user_no']); ?>);
+            console.log(<? echo json_encode($following); ?>);
         </script>
                
     <?php
