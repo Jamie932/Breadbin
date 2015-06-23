@@ -230,27 +230,27 @@ print(isset($usersname) ? $usersname : 'Unknown');
         
         if ($aspectRatio >= 0) {
             if ($height >=0 && $height < 99) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
             } else if ($height >= 100 && $height < 200) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
             } else if ($height >= 200 && $height < 300) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
             } else if ($height >= 300 && $height < 350) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
             } else if ($height >= 350 && $height < 400) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></l>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></l>'; 
             } else if ($height >= 400 && $height < 500) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $height . '"></li>'; 
             } else if ($height >= 500 && $height < 600) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
             } else if ($height >= 700 && $height < 800) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
             } else if ($height >= 800 && $height < 1000) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '"></li>'; 
             } else if ($height >= 1000) {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="400px"></li>'; 
             } else {
-                echo '<li><img class="tiles" src="' . $row['image'] . '" height="250px"></li>'; 
+                echo '<li style="text-align:center;"><img class="tiles" src="' . $row['image'] . '" height="250px"></li>'; 
             }
         } else if ($aspectRatio == 1) {
             echo '<li><img class="tiles" src="' . $row['image'] . '" height="300px" width="300px"></li>'; 
