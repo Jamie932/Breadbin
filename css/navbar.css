@@ -8,6 +8,10 @@ ul.nav {
 
 #navbar ul ul {
     display: none;   
+    margin-top: 5px;
+    padding-left: 5px;
+    list-style-type: none;
+    height:40px;
 }
 
 #navbar ul li:hover > ul {
@@ -61,7 +65,7 @@ a.navLinks:hover {
 	display: inline;
 	margin-right: 5%;
 	padding-top: 5px;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 #break {
