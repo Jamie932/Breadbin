@@ -15,10 +15,6 @@ ul.nav {
     bacground-color: #FFB540;
 }
 
-.arrow-up:hover > ul {
-		display: block;
-}
-
 li.nav {
 	padding-left: 35px;
 	float: left;
