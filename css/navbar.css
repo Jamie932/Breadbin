@@ -47,6 +47,7 @@ a.navLinks:hover {
 	display: inline;
 	margin-right: 5%;
 	padding-top: 5px;
+	font-size: 0.9em;
 }
 
 #break {
@@ -60,7 +61,7 @@ a.navLinks:hover {
 	border-right: 5px solid transparent;
 	border-top: 5px solid #FFF;
     
-    margin-top: 11px;
+    margin-top: 10px;
     margin-left: 8px;
     float:right;
 }
