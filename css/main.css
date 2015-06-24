@@ -226,7 +226,7 @@ h5 {
 #submitPost {
 	vertical-align: top;
 	float: right;
-	margin-right: 15px;
+	margin-right: 12px;
 }
 
 .delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover {
@@ -246,8 +246,7 @@ h5 {
 	border: 1px solid #616161;
 	-moz-border-radius: 3px 3px;
 	border-radius: 3px 3px;
-	height: 30px;
-	width: 75px;
+	height: 25px;
     
 	cursor: pointer;
 }
