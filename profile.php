@@ -144,10 +144,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $('.bioRow').attr('contenteditable','false');
                     $('.bioRow').removeClass('editableContent');
                     $('#blackOverlay').fadeOut('normal');
+                    $('#blackInnerOverlay').fadeOut('normal');
                 } else {
                     $('.bioRow').attr('contenteditable','true');
                     $('.bioRow').addClass('editableContent');
                     $('#blackOverlay').fadeIn('normal');
+                    $('#blackInnerOverlay').fadeIn('normal');
                 }
             });      
             
@@ -180,6 +182,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
         
     <div id="profileContainer">
         <div id="leftProfile">
+            <div id="blackInnerOverlay"></div>
             <div id="userAvatar"></div>
             <div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>
             

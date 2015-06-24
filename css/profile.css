@@ -24,6 +24,16 @@ body {
     display:none;
 }
 
+#blackInnerOverlay {
+    opacity:    0.5; 
+    background: #000; 
+    z-index:    15;
+    top:        0; 
+    left:       0; 
+    position:   fixed;
+    display:none; 
+}
+
 p {
 	margin-bottom: -10px;
 	font-size: 18px;
@@ -71,6 +81,7 @@ p {
 	border-right: 1px solid rgb(97, 97, 97);
 	margin-left: -280px;
 	font-family: 'Roboto', sans-serif;
+    z-index:11;
 }
 
 #leftProfile .userInfo {
@@ -477,5 +488,4 @@ p.settingsExplain {
     box-sizing:border-box;
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
-    z-index: 15;
 }
