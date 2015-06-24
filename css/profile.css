@@ -460,7 +460,6 @@ p.settingsExplain {
 	min-width: 300px;
     left: 50%;
     margin-left: -200px;
-    position:absolute;
 }
 
 #tiles ali:nth-child(3n) {
