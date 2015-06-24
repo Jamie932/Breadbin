@@ -443,7 +443,6 @@ p.settingsExplain {
 
 #tiles li {
     max-width: 300px;
-    text-align:center;
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
@@ -455,6 +454,7 @@ p.settingsExplain {
 	min-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    text-align:center;
 }
 
 #tiles ali:nth-child(3n) {
