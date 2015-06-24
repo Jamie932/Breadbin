@@ -526,14 +526,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
           handler.wookmark(options);
 
           // Capture clicks on grid items.
-          handler.click(function(){
-            // Randomize the height of the clicked item.
-            var newHeight = $('img', this).height() + Math.round(Math.random()*300+30);
-            $(this).css('height', newHeight+'px');
-
-            // Update the layout.
-            handler.wookmark();
-          });
+         
         });
     </script>
 </body>
