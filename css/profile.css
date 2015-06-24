@@ -106,6 +106,7 @@ p {
 	float: right;
 	margin-top: -155px;
 	margin-right: 40px;
+    z-index: 15;
 }
 
 .nameRow {
