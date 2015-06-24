@@ -49,6 +49,8 @@
                 <?php
 				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                     echo '<div class="arrow-up"></div>';
+                    
+                    echo '<ul><li><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li></ul>';
                 ?>
 			</li>
             
