@@ -242,6 +242,16 @@ h5 {
 	transition: all .2s ease-in-out;
 }
 
+.buttonstyle {
+	border: 1px solid #616161;
+	-moz-border-radius: 3px 3px;
+	border-radius: 3px 3px;
+	height: 30px;
+	width: 75px;
+    
+	cursor: pointer;
+}
+
 .hide {
 	visibility: visible;
 }

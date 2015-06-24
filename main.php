@@ -169,7 +169,7 @@
                         <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*"/></div>
                         <div id="uploadname" style="float:left;"></div>
                         
-                        <input type="submit" value="Submit" id="submitPost">
+                        <input type="submit" value="Submit" id="submitPost" class="buttonstyle">
                         <div class="clearFix"></div>
                     </div>
                 </form>

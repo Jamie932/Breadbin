@@ -55,6 +55,8 @@ p {
 	border-radius: 3px 3px;
 	height: 30px;
 	width: 75px;
+    
+	cursor: pointer;
 }
 
 .bottomRow {
