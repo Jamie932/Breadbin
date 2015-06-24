@@ -178,9 +178,7 @@
             <div id="error">
             </div>
             
-            <div id="placehold">
-                <?php require('php/recommendToaster.php'); ?>
-            </div>
+            <?php require('php/recommendToaster.php'); ?>
         </div>
     </div>
 

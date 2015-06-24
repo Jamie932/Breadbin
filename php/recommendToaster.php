@@ -8,6 +8,7 @@
         $randUser = $stmt->fetchAll();
         
         if ($randUser) {
+            echo '<div id="placehold">';
             echo 'Recommended toasters<hr></hr>';
             
             foreach ($randUser as $row) {
@@ -20,6 +21,8 @@
                     echo '</div>';
                     echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
                 echo '</div>';
-            } 
+            }
+            echo '</div>';
+            
         }
 ?>
