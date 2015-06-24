@@ -49,7 +49,7 @@ class TimeAgo {
     // sets the default timezone
     date_default_timezone_set($this->timezone);
     // finds the past in datetime
-    $past = strtotime($past);
+    $past = strtotime($past - 18000);
     // finds the current datetime
     $now = strtotime($now);
     
