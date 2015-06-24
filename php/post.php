@@ -25,14 +25,6 @@
         date_default_timezone_set("Europe/London");
         $date = date('Y-m-d H:i:s');
         
-        ?>
-        
-        <script>
-                    console.log(<? echo json_encode($date); ?>);
-        </script>
-        
-        <?php
-        
         /*list($width, $height) = getimagesize($imgName);
         
         if (($width/$height > 0.5) && ($width/$height < 1.5) ) {
@@ -69,8 +61,8 @@
         } else if (ctype_space($_POST['text'])) {
             die('Error: Text cannot be only spaces.');
         } else {
-            $query = "INSERT INTO posts (userid, type, text, date)  VALUES (:userid, 'text', :text, :date)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':date' => $date); 
+            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'text', :text)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text']); 
 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
