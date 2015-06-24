@@ -141,7 +141,19 @@ print(isset($usersname) ? $usersname : 'Unknown');
    
             $("#avatarOverlay").click(function(){
                 if ($('.bioRow').attr("contentEditable") == "true") {
-                    alert("Changes saved.");
+                    var formData = {
+                        'content' : $('.bioRow').text()
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/updateBio.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+
+                    
                     $('.bioRow').attr('contenteditable','false');
                     $('.bioRow').removeClass('editableContent');
                     $('#blackOverlay').fadeOut('normal');
