@@ -66,6 +66,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.color.js"></script>
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -144,12 +145,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $('.bioRow').attr('contenteditable','false');
                     $('.bioRow').removeClass('editableContent');
                     $('#blackOverlay').fadeOut('normal');
-                    $('#blackInnerOverlay').fadeOut('normal');
+                    $('#leftProfile').animate({backgroundColor:'#FFF'}, 300);
                 } else {
                     $('.bioRow').attr('contenteditable','true');
                     $('.bioRow').addClass('editableContent');
                     $('#blackOverlay').fadeIn('normal');
-                    $('#blackInnerOverlay').fadeIn('normal');
+                    $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 300);
                 }
             });      
             
