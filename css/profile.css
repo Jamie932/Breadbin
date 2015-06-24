@@ -440,9 +440,7 @@ p.settingsExplain {
 	max-height: 400px;
 	max-width: 300px;
     
-    display:table-cell; 
-    vertical-align:middle; 
-    text-align:center
+    overflow: hidden;
 }
 
 #tiles li {
@@ -451,15 +449,14 @@ p.settingsExplain {
 	display: none;
 	cursor: pointer;
     
-	overflow: hidden;
+	display: inline-block;
     position: relative;
-    margin: 0 auto;
+    right: -50%;
 }
 
 #tiles li img {
-	min-width: 300px;
-    left: 50%;
-    margin-left: -200px;
+	position: relative;
+    left: -50%;
 }
 
 #tiles ali:nth-child(3n) {
