@@ -449,11 +449,10 @@ p.settingsExplain {
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #tiles li img {
+    display: block;
 	min-width: 300px;
     margin-left: auto;
     margin-right: auto;
