@@ -14,16 +14,6 @@
             }
         }
     }
-    
-    $(function() {
-        $(".arrow-up").click(function(){
-            if ($('#navbar ul ul').is(":visible")) {
-                $('#navbar ul ul').fadeOut("fast");
-            } else {
-                $('#navbar ul ul').fadeIn("fast");
-            }
-        });  
-    })
 </script>
 
 <?php
@@ -58,12 +48,12 @@
 			<li class="nav">
                 <?php
 				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
-                    echo '<div class="arrow-up"></div>';
-                    
-                    echo '<ul><li><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li></ul>';
                 ?>
 			</li>
-            
+            <li class="nav">
+                <div class="arrow-up"></div>
+                <ul><li><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li></ul>
+            </li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
 	</div>

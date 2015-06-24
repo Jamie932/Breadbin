@@ -16,6 +16,10 @@ ul.nav {
     background-color: #FFB540;
 }
 
+#navbar ul li:hover > ul {
+		display: block;
+}
+
 li.nav {
 	padding-left: 35px;
 	float: left;
