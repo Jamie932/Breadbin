@@ -10,8 +10,9 @@ ul.nav {
     display: none;   
     margin-top: 5px;
     padding-left: 5px;
+    padding-top: 10px;
     list-style-type: none;
-    height:40px;
+    height: 40px;
     background-color: #FFB540;
 }
 

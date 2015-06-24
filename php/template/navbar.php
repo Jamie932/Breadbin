@@ -18,9 +18,9 @@
     $(function() {
         $(".arrow-up").click(function(){
             if ($('#navbar ul ul').is(":visible")) {
-                $('#navbar ul ul').fadeOut("normal");
+                $('#navbar ul ul').fadeOut("fast");
             } else {
-                $('#navbar ul ul').fadeIn("normal");
+                $('#navbar ul ul').fadeIn("fast");
             }
         });  
     })
