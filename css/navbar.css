@@ -51,3 +51,12 @@ a.navLinks:hover {
 #break {
 	margin-top: 70px;
 }
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	
+	border-top: 5px solid black;
+}
