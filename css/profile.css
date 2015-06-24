@@ -452,8 +452,9 @@ p.settingsExplain {
 }
 
 #tiles li img {
-	display: block;
 	min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #tiles ali:nth-child(3n) {
