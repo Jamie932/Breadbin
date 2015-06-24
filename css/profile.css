@@ -71,7 +71,6 @@ p {
 	border-right: 1px solid rgb(97, 97, 97);
 	margin-left: -280px;
 	font-family: 'Roboto', sans-serif;
-    z-index: 15;
 }
 
 #leftProfile .userInfo {
@@ -473,8 +472,9 @@ p.settingsExplain {
 .editableContent {
     border-top: 1px dashed #666;
     border-bottom: 1px dashed #666;
-    background-color: #F2F2F2;
+    background-color: #fff;
     box-sizing:border-box;
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
+    z-index: 15;
 }
