@@ -155,22 +155,24 @@ print(isset($usersname) ? $usersname : 'Unknown');
             });   
             
             $(document).on('click','.saveBut', function() {
-                var confirmed = confirm("Would you like to save these changes?");
-      
-                if (confirmed) {
-                    var formData = {
-                        'content' : $('.bioRow').text()
-                    };
+                if (lastBio != $('.bioRow').text()) {
+                    var confirmed = confirm("Would you like to save these changes?");
 
-                    $.ajax({
-                        type        : 'POST',
-                        url         : 'php/updateBio.php',
-                        data        : formData,
-                        dataType    : 'json',
-                        encode      : true
-                    })
-                } else {
-                    $('.bioRow').text(lastBio);   
+                    if (confirmed) {
+                        var formData = {
+                            'content' : $('.bioRow').text()
+                        };
+
+                        $.ajax({
+                            type        : 'POST',
+                            url         : 'php/updateBio.php',
+                            data        : formData,
+                            dataType    : 'json',
+                            encode      : true
+                        })
+                    } else {
+                        $('.bioRow').text(lastBio);   
+                    }
                 }
                 
                 $('.bioRow').attr('contenteditable','false');
