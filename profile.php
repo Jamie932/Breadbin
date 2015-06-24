@@ -140,7 +140,20 @@ print(isset($usersname) ? $usersname : 'Unknown');
             });
    
             $("#avatarOverlay").click(function(){
-                if ($('.bioRow').attr("contentEditable") == "true") {
+                if ($('.bioRow').attr("contentEditable") != "true") {
+                    $('.bioRow').attr('contenteditable','true');
+                    $('.bioRow').addClass('editableContent');
+                    $('#blackOverlay').fadeIn('normal');
+                    $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
+                    $('.settingsBut').html('Save');
+                    $('.settingsBut').addClass('.saveBut').removeClass('.settingsBut');
+                }
+            });   
+            
+            $(".saveBut").click(function(){
+                var confirmed = confirm("Would you like to save these changes?");
+      
+                if (confirmed) {
                     var formData = {
                         'content' : $('.bioRow').text()
                     };
@@ -152,19 +165,15 @@ print(isset($usersname) ? $usersname : 'Unknown');
                         dataType    : 'json',
                         encode      : true
                     })
-
-                    
-                    $('.bioRow').attr('contenteditable','false');
-                    $('.bioRow').removeClass('editableContent');
-                    $('#blackOverlay').fadeOut('normal');
-                    $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
-                } else {
-                    $('.bioRow').attr('contenteditable','true');
-                    $('.bioRow').addClass('editableContent');
-                    $('#blackOverlay').fadeIn('normal');
-                    $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
-                }
-            });      
+                } 
+                
+                $('.bioRow').attr('contenteditable','false');
+                $('.bioRow').removeClass('editableContent');
+                $('#blackOverlay').fadeOut('normal');
+                $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
+                $('.saveBut').html('Settings');
+                $('.saveBut').addClass('.settingsBut').removeClass('.saveBut');
+            });
             
             $('.bioRow').keypress(function(e) {
                 return e.which != 13;
