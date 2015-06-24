@@ -115,7 +115,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 $('#unFollowBut').replaceWith('<button id="followBut" class="buttonstyle">Follow</button>');
             })
             
-            $(".settingsBut").click(function(){
+            $(document).on('click','.settingsBut', function() {
                $(".settingsBut").fadeOut('normal')
                $("#rightProfile").fadeOut('normal', function(){
                     $("#settingsBox").fadeIn('normal');
@@ -150,7 +150,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 }
             });   
             
-            $(".saveBut").click(function(){
+            $(document).on('click','.saveBut', function() {
                 var confirmed = confirm("Would you like to save these changes?");
       
                 if (confirmed) {
