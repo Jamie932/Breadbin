@@ -61,8 +61,8 @@
         } else if (ctype_space($_POST['text'])) {
             die('Error: Text cannot be only spaces.');
         } else {
-            $query = "INSERT INTO posts (userid, type, text, date)  VALUES (:userid, 'text', :text, $date)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text']); 
+            $query = "INSERT INTO posts (userid, type, text, date)  VALUES (:userid, 'text', :text, :date)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':date' => $date); 
 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
