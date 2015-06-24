@@ -145,12 +145,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $('.bioRow').attr('contenteditable','false');
                     $('.bioRow').removeClass('editableContent');
                     $('#blackOverlay').fadeOut('normal');
-                    $('#leftProfile').animate({backgroundColor:'#FFF'}, 300);
+                    $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
                 } else {
                     $('.bioRow').attr('contenteditable','true');
                     $('.bioRow').addClass('editableContent');
                     $('#blackOverlay').fadeIn('normal');
-                    $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 300);
+                    $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
                 }
             });      
             
