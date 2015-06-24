@@ -439,15 +439,10 @@ p.settingsExplain {
 	margin: 0;
 	max-height: 400px;
 	max-width: 300px;
-    
-    display:table-cell; 
-    vertical-align:middle; 
-    text-align:center
 }
 
 #tiles li {
-	width: 300px;
-    text-align: center;
+    text-align:center;
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
