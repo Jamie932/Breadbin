@@ -25,6 +25,14 @@
         date_default_timezone_set("Europe/London");
         $date = date('Y-m-d H:i:s');
         
+        ?>
+        
+        <script>
+                    console.log(<? echo json_encode($date); ?>);
+        </script>
+        
+        <?php
+        
         /*list($width, $height) = getimagesize($imgName);
         
         if (($width/$height > 0.5) && ($width/$height < 1.5) ) {
