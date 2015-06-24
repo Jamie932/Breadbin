@@ -450,10 +450,9 @@ p.settingsExplain {
 }
 
 #tiles li img {
-	display: block;
 	min-width: 300px;
     text-align:center;
-    float: left;
+    display: inline-block;
 } 
 
 #tiles ali:nth-child(3n) {
