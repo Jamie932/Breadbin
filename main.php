@@ -170,10 +170,10 @@
                         <div id="uploadname" style="float:left;"></div>
                         
                         <input type="submit" value="Submit" id="submitPost" class="buttonstyle">
-                        <div class="clearFix"></div>
                     </div>
                 </form>
             </div> 
+            <div class="clearFix"></div>
             
             <div id="error">
             </div>
