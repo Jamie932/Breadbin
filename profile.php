@@ -138,7 +138,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $(".passwordSettingsField").fadeIn('normal');
                 });
             });
-   
+            
+            var lastBio = "";
+            
             $("#avatarOverlay").click(function(){
                 if ($('.bioRow').attr("contentEditable") != "true") {
                     $('.bioRow').attr('contenteditable','true');
@@ -147,6 +149,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
                     $('.settingsBut').html('Save');
                     $('.settingsBut').addClass('saveBut').removeClass('settingsBut');
+                    
+                    lastBio = $('.bioRow').text();
                 }
             });   
             
@@ -165,7 +169,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
                         dataType    : 'json',
                         encode      : true
                     })
-                } 
+                } else {
+                    $('.bioRow').text(lastBio);   
+                }
                 
                 $('.bioRow').attr('contenteditable','false');
                 $('.bioRow').removeClass('editableContent');
