@@ -48,12 +48,9 @@
 			<li class="nav">
                 <?php
 				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
+                    echo '<div class="arrow-up"></div>';
                 ?>
 			</li>
-            <li class="nav">
-                <div class="arrow-up"></div>
-                <ul><li><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li></ul>
-            </li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
 	</div>
