@@ -15,7 +15,7 @@ ul.nav {
     bacground-color: #FFB540;
 }
 
-#navbar ul div:hover > ul {
+.arrow-up:hover > ul {
 		display: block;
 }
 
