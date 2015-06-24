@@ -439,6 +439,8 @@ p.settingsExplain {
 	margin: 0;
 	max-height: 400px;
 	max-width: 300px;
+    
+	overflow: hidden;
 }
 
 #tiles li {
@@ -446,15 +448,15 @@ p.settingsExplain {
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
-	overflow: hidden;
+    display: inline-block;
+    position: relative;
+    right: -50%;
 }
 
 #tiles li img {
-	display: block;
 	min-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align:center;
+    position: relative;
+    left: -50%;
 }
 
 #tiles ali:nth-child(3n) {
