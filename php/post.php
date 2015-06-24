@@ -22,6 +22,9 @@
             $convertedfile = $updirectory . $rand . ".jpg";
         }
         
+        date_default_timezone_set("Europe/London");
+        $date = date('Y-m-d H:i:s');
+        
         /*list($width, $height) = getimagesize($imgName);
         
         if (($width/$height > 0.5) && ($width/$height < 1.5) ) {
@@ -58,7 +61,7 @@
         } else if (ctype_space($_POST['text'])) {
             die('Error: Text cannot be only spaces.');
         } else {
-            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'text', :text)"; 
+            $query = "INSERT INTO posts (userid, type, text, date)  VALUES (:userid, 'text', :text, $date)"; 
             $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text']); 
 
             $stmt = $db->prepare($query); 
