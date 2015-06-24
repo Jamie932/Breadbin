@@ -46,6 +46,7 @@ p {
 	bottom: 15px;
 	left: 0px;
 	width: 280px;
+    z-index: 11;
 }
 
 .buttonstyle {
