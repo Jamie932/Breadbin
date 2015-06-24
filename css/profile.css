@@ -442,6 +442,7 @@ p.settingsExplain {
 }
 
 #tiles li {
+    max-width: 300px;
     text-align:center;
 	background-color: #ffffff;
 	display: none;
