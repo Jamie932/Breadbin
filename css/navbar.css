@@ -57,6 +57,8 @@ a.navLinks:hover {
 	height: 0; 
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
-	
 	border-top: 5px solid black;
+    
+    margin-top: 12px;
+    margin-left: 10px;
 }
