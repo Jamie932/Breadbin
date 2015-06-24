@@ -133,6 +133,10 @@ p {
     padding-bottom:5px;
 	color: #2f2f2f;
 	word-wrap: break-word;
+
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
 
 .followerRow {
