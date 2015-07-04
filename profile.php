@@ -571,8 +571,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
         });
     </script>
     
-    <form id="avatarForm" action="php/changeAvatar.php" method="POST" enctype="multipart/form-data">
-        <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="this.form.submit()"/></div>
+    <form id="avatarForm" method="POST" enctype="multipart/form-data">
+        <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
     </form>
         
     <script src="js/formChangeAvatar.js"></script>
