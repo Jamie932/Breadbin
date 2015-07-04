@@ -17,8 +17,8 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                alert(response);
-                $imgName = ltrim(response, "/.");
+                $imgName = response.replace(/^(?:\.\.\/)+/, "");
+                
                 $('#userAvatar').css('background', 'url(' + $imgName + '?r=' + new Date().getTime() + ') no-repeat !important');
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
