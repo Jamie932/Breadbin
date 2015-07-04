@@ -1,5 +1,5 @@
 $(document).ready(function() { 
-    $('#avatarForm').submit(function(event) {
+    $('form').submit(function(event) {
         alert("Hello");
         var formData = new FormData();    
         var has_selected_file = $('input[type=file]').filter(function(){return $.trim(this.value) != ''}).length  > 0;
