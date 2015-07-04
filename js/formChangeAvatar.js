@@ -17,7 +17,7 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                $('#userAvatar').css('background: url(' + response +') no-repeat !important;"></div>
+                $('#userAvatar').css('background', 'url(' + response +') no-repeat !important');
             },
             error       : function(xhr, ajaxOptions, ThrownError){
                 alert("Error: " + ThrownError);
