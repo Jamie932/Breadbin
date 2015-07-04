@@ -21,7 +21,6 @@
         
         if($UploadResult) {   
             echo $updirectory . $newfile;
-            die('Success: Avatar uploaded.');
         } else {
             die("Error: Couldn't upload the avatar.");
         }
