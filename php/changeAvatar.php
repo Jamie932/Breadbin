@@ -1,6 +1,7 @@
 <?php 
     require("common.php"); 
-	
+	require("ImageResize.class.php");
+
     if(isset($_FILES["file"])) {
         $updirectory = '../img/avatars/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
@@ -15,30 +16,13 @@
             }
         }
         
-        if ($extension == ".png") {
-            $image = imagecreatefrompng($updirectory.$newfile);
-            $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
-            imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
-            imagealphablending($bg, TRUE);
-            imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
-            imagedestroy($image);
-            $quality = 50; // 0 = worst / smaller file, 100 = better / bigger file 
-            imagejpeg($bg, $updirectory . $rand . ".jpg", $quality);
-            imagedestroy($bg);
-            $converted = true;
-            $convertedfile = $updirectory . $rand . ".jpg";
-        }
+        $UploadAvatar  = new ImageResize('file');
+        $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 75);
         
-        if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $convertedfile ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {   
-            $query = "UPDATE users SET avatar=:avatar WHERE id=:id"; 
-            $query_params = array(':id' => $_SESSION['user']['id'], ':avatar' => $converted ? $convertedfile : $updirectory.$newfile); 
-            
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params);
-             die('Success: File Uploaded.');
-
+        if($UploadResult) {   
+             die('Success: Avatar uploaded.');
         } else {
-            die("Error: Couldn't upload the file.");
+            die("Error: Couldn't upload the avatar.");
         }
         
     } else {
