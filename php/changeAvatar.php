@@ -17,7 +17,7 @@
         }
         
         $UploadAvatar  = new ImageResize('file');
-        $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 75);
+        $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 100);
         
         if($UploadResult) {   
              die('Success: Avatar uploaded.');
