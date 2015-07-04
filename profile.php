@@ -140,6 +140,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             });
             
             var lastBio = "";
+            var editing = false;
             
             $("#avatarOverlay").click(function(){
                 if ($('.bioRow').attr("contentEditable") != "true") {
@@ -151,6 +152,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                     $('.settingsBut').addClass('saveBut').removeClass('settingsBut');
                     
                     lastBio = $('.bioRow').text();
+                    editing  = true;
                 }
             });   
             
@@ -181,6 +183,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
                 $('.saveBut').html('Settings');
                 $('.saveBut').addClass('settingsBut').removeClass('saveBut');
+                editing = false;
             });
             
             $('.bioRow').keypress(function(e) {
@@ -197,7 +200,12 @@ print(isset($usersname) ? $usersname : 'Unknown');
             $('.bioRow').bind("cut copy paste",function(e) {
               e.preventDefault();
             });
-            
+           
+            $(document).on('click','#userAvatar', function() {
+                if (editing) {
+                    $('#upfile').click();
+                }
+            }
         });
     </script>
 </head>
@@ -562,5 +570,11 @@ print(isset($usersname) ? $usersname : 'Unknown');
          
         });
     </script>
+    
+    <form id="avatarForm" method="post">
+        <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="this.form.submit()"/></div>
+    </form>
+        
+    <script src="js/formChangeAvatar.js"></script>
 </body>
 </html>
