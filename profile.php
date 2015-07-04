@@ -205,7 +205,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 if (editing) {
                     $('#upfile').click();
                 }
-            }
+            });
         });
     </script>
 </head>
