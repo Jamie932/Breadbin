@@ -21,17 +21,9 @@
             $converted = true;
             $convertedfile = $updirectory . $rand . ".jpg";
         }
-        
-        list($width, $height) = getimagesize($imgName);
-        
-        if (($width/$height > 0.5) && ($width/$height < 1.5) ) {
-        } else {
-            die('Error: Aspect ratio is too much.');
-            return false;   
-        }
 
-        if (!file_exists('../img/uploads/' . $_SESSION['user']['id'])) {
-            mkdir('../img/uploads/' . $_SESSION['user']['id'], 0777, true);
+        if (!file_exists('../img/avatars/' . $_SESSION['user']['id'])) {
+            mkdir('../img/avatars/' . $_SESSION['user']['id'], 0777, true);
         }
         
         if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $convertedfile ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {
@@ -52,21 +44,7 @@
             die("Error: Couldn't upload the file.");
         }
         
-    } else if (isset($_POST['text'])) { //If post has only text...
-        if (empty($_POST['text'])) { 
-            die('Error: Text is empty.');
-        } else if (ctype_space($_POST['text'])) {
-            die('Error: Text cannot be only spaces.');
-        } else {
-            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'text', :text)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text']); 
-
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params);
-
-            die('Success: File Uploaded.');
-        }
     } else {
-        die('Error: Found nothing to post.');   
+        die('Error: Nothing found to upload.');   
     }
 ?> 
