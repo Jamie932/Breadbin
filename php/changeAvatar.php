@@ -5,8 +5,15 @@
         $updirectory = '../img/avatars/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
         $extension = substr($filename, strrpos($filename, '.'));
-        $rand = rand(0, 9999999999); 
-        $newfile = $rand.$extension;
+        $newfile = "avatar".$extension;
+        
+        if (!file_exists('../img/avatars/' . $_SESSION['user']['id'])) {
+            mkdir('../img/avatars/' . $_SESSION['user']['id'], 0777, true);
+        } else {
+            if(file_exists($extension == ".png" ? $updirectory . "avatar.jpg" : $updirectory . $newfile)) { 
+                unlink($updirectory . $newfile) 
+            };
+        }
         
         if ($extension == ".png") {
             $image = imagecreatefrompng($updirectory.$newfile);
@@ -21,20 +28,10 @@
             $converted = true;
             $convertedfile = $updirectory . $rand . ".jpg";
         }
-
-        if (!file_exists('../img/avatars/' . $_SESSION['user']['id'])) {
-            mkdir('../img/avatars/' . $_SESSION['user']['id'], 0777, true);
-        }
         
-        if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $convertedfile ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {
-            if (isset($_POST['text'])) {    
-                $query = "INSERT INTO posts (userid, type, text, image)  VALUES (:userid, 'imagetext', :text, :image)"; 
-                $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text'], ':image' => $converted ? $convertedfile : $updirectory.$newfile); 
-
-            } else {
-                $query = "INSERT INTO posts (userid, type, image)  VALUES (:userid, 'image', :filename)"; 
-                $query_params = array(':userid' => $_SESSION['user']['id'], ':filename' => $converted ? $convertedfile : $updirectory.$newfile); 
-            }
+        if($converted && move_uploaded_file($_FILES['file']['tmp_name'], $convertedfile ) || (!$converted && move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile ))) {   
+            $query = "UPDATE users SET avatar=:avatar WHERE id=:id"; 
+            $query_params = array(':id' => $_SESSION['user']['id'], ':avatar' => $converted ? $convertedfile : $updirectory.$newfile); 
             
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
