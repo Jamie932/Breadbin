@@ -17,8 +17,8 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                $('#userAvatar').css('background', 'url(' + response + '?r='+ new Date().getTime()') no-repeat !important');
-            },
+                $('#userAvatar').css('background', 'url(' + response + '?r=' + new Date().getTime() + ') no-repeat !important');
+            }, 
             error       : function(xhr, ajaxOptions, ThrownError){
                 alert("Error: " + ThrownError);
             }

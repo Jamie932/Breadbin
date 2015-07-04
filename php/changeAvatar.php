@@ -5,7 +5,7 @@
     if(isset($_FILES["file"])) {
         $updirectory = '../img/avatars/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
-        $extension = substr($filename, strrpos($filename, '.'));
+        $extension = ".jpg";
         $newfile = "avatar".$extension;
         
         if (!file_exists('../img/avatars/' . $_SESSION['user']['id'])) {
