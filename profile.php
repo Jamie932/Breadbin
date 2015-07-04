@@ -221,7 +221,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <div id="profileContainer">
         <div id="leftProfile">
             <?php
-                if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
+                if (!file_exists('img/avatars/' . $_GET['id'] . '/avatar.jpg')) {
                     echo '<div id="userAvatar"></div>';
                 } else {
                     echo '<div id="userAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
