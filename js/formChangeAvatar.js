@@ -17,7 +17,7 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                window.location.replace("profile.php");
+                $('#userAvatar').css('background: url(' + response +') no-repeat !important;"></div>
             },
             error       : function(xhr, ajaxOptions, ThrownError){
                 alert("Error: " + ThrownError);

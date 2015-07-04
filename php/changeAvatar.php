@@ -20,7 +20,8 @@
         $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 100);
         
         if($UploadResult) {   
-             die('Success: Avatar uploaded.');
+            echo $updirectory . $newfile;
+            die('Success: Avatar uploaded.');
         } else {
             die("Error: Couldn't upload the avatar.");
         }
