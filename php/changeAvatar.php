@@ -20,7 +20,7 @@
         $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 100);
         
         if($UploadResult) {   
-            echo $updirectory . $newfile;
+            echo 'img/avatars/' . $_SESSION['user']['id'] . '/' . $newfile;
         } else {
             die("Error: Couldn't upload the avatar.");
         }

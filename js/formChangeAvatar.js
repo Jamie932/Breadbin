@@ -17,8 +17,7 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                imgName = response.replace(/^(?:\.\.\/)+/, "");
-                avatarBackground = "url('" + imgName + "?r=" + new Date().getTime() + "') no-repeat !important";
+                avatarBackground = "url('" + response + "?r=" + new Date().getTime() + "') no-repeat !important";
                 alert(avatarBackground);
                 
                 $('#userAvatar').css('background', avatarBackground);
