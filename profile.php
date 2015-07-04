@@ -220,8 +220,14 @@ print(isset($usersname) ? $usersname : 'Unknown');
         
     <div id="profileContainer">
         <div id="leftProfile">
-            <div id="userAvatar"></div>
             <?php
+                if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
+                    echo '<div id="userAvatar"></div>';
+                } else {
+                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
+                }
+
+
                 if ($_GET['id'] == $_SESSION['user']['id']) {
                     echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
                 }
