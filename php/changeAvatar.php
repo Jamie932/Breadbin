@@ -10,9 +10,9 @@
         if (!file_exists('../img/avatars/' . $_SESSION['user']['id'])) {
             mkdir('../img/avatars/' . $_SESSION['user']['id'], 0777, true);
         } else {
-            if(file_exists($extension == ".png" ? $updirectory . "avatar.jpg" : $updirectory . $newfile)) { 
-                unlink($updirectory . $newfile) 
-            };
+            if(file_exists($updirectory . $newfile)) { 
+                unlink($updirectory . $newfile);
+            }
         }
         
         if ($extension == ".png") {
