@@ -436,7 +436,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                             <h3 class="settings">Account Details</h3>
                             <p class="settingsDetail">Update your account details</p>
                         </div>
-                        <form action="../php/SettingsUpdate.php" method="post" class="accountSettings">
+                        <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
                             <label>First name: </label>
                                 <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                                 <br>
@@ -469,7 +469,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                             <h3 class="settings">Reset your password</h3>
                             <p class="settingsDetail"></p>
                         </div>
-                        <form action="../php/passwordUpdate.php" method="post" class="accountSettings">
+                        <form action="php/passwordUpdate.php" method="post" class="accountSettings">
                             <label>Current Password: </label>
                                 <input type="password" name="currentPassword" class="settings" id="currentPassword">
                                 <br>
@@ -533,7 +533,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             <div class="clearFix"></div>
         </div>
             
-    <script src="../js/formSettings.js"></script>
+    <script src="js/formSettings.js"></script>
     <script src="js/jquery.wookmark.js"></script>
     <script type="text/javascript">
         var colors = [

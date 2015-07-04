@@ -18,7 +18,8 @@ function submitAvatar() {
             data        : formData,
             success     : function (response) {
                 alert(response);
-                $('#userAvatar').css('background', 'url(' + response + '?r=' + new Date().getTime() + ') no-repeat !important');
+                $imgName = ltrim(response, "/.");
+                $('#userAvatar').css('background', 'url(' + $imgName + '?r=' + new Date().getTime() + ') no-repeat !important');
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
                 alert("Error: " + ThrownError);
