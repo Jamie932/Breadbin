@@ -55,11 +55,12 @@ if (empty($_GET)) {
 ?>
 <html>
 <head>
-    <title><?php print(isset($usersname) ? $usersname : 'Unknown');?> | Breadbin</title>
+    <title><?php
+print(isset($usersname) ? $usersname : 'Unknown');
+?> | Breadbin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
-    <link href="js/croppic/croppic.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -199,7 +200,13 @@ if (empty($_GET)) {
             $('.bioRow').bind("cut copy paste",function(e) {
               e.preventDefault();
             });
-        });        
+           
+            $(document).on('click','#userAvatar', function() {
+                if (editing) {
+                    $('#upfile').click();
+                }
+            });
+        });
     </script>
 </head>
     
@@ -575,25 +582,5 @@ if (empty($_GET)) {
     </form>
         
     <script src="js/formChangeAvatar.js"></script>
-    <script src="js/croppic/croppic.min.js"></script>
-    <script>
-        var croppicHeaderOptions = {
-            uploadUrl:'php/changeAvatar.php',
-            cropUrl:'php/cropAvatar.php',
-            modal:false,
-            processInline:true,
-            doubleZoomControls: false,
-            rotateControls: false,
-            onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
-            onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
-            onImgDrag: function(){ console.log('onImgDrag') },
-            onImgZoom: function(){ console.log('onImgZoom') },
-            onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
-            onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
-            onError:function(errormessage){ console.log('onError:'+errormessage) }
-        }
-
-        var croppic = new Croppic('userAvatar', croppicHeaderOptions);    
-    </script>
 </body>
 </html>

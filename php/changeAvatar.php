@@ -1,5 +1,6 @@
 <?php 
     require("common.php"); 
+	require("ImageResize.class.php");
 
     if(isset($_FILES["file"])) {
         $updirectory = '../img/avatars/' . $_SESSION['user']['id'] . '/';
@@ -15,28 +16,16 @@
             }
         }
         
-        if(move_uploaded_file($_FILES['file']['tmp_name'], $updirectory.$newfile )) {
-            list($width, $height) = getimagesize( $updirectory.$newfile );
-            $response = array(
-                "status" => 'success',
-                "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/' . $newfile,
-                "width" => $width,
-                "height" => $height
-		      );
-            
+        $UploadAvatar  = new ImageResize('file');
+        $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 100);
+        
+        if($UploadResult) {   
+            echo 'img/avatars/' . $_SESSION['user']['id'] . '/' . $newfile;
         } else {
-           $response = array(
-                "status" => 'error',
-                "message" => 'Couldnt upload the avatar! Please report this error.',
-            );
+            die("Error: Couldn't upload the avatar.");
         }
         
-    } else {           
-        $response = array(
-            "status" => 'error',
-            "message" => 'No file found.',
-        );  
+    } else {
+        die('Error: Nothing found to upload.');   
     }
-
-    print json_encode($response);
 ?> 
