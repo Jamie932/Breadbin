@@ -82,6 +82,9 @@
 				z-index: 10000;
 			}
 			
+            .croppedImg {
+                border-radius:50%;   
+            }
 			
 			/*
 			*		PRELOADER 

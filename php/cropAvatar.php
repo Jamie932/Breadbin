@@ -57,18 +57,14 @@ if(!is_writable(dirname($output_filename))){
     );	
 }else{
 
-    // resize the original image to size of editor
     $resizedImage = imagecreatetruecolor($imgW, $imgH);
 	imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
-	// crop image into selected area
 	$final_image = imagecreatetruecolor($cropW, $cropH);
-	imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
-	// finally output png image
-	//imagepng($final_image, $output_filename.$type, $png_quality);
+    
 	imagejpeg($final_image, $output_filename.'.jpg', $jpeg_quality);
 	$response = Array(
 	    "status" => 'success',
-	    "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg'
+	    "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg?r=' . rand()
     );
 }
 print json_encode($response);
