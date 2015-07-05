@@ -19,7 +19,8 @@ $cropH = $_POST['cropH'];
 $angle = $_POST['rotation'];
 
 $jpeg_quality = 100;
-$output_filename = dirname($imgUrl). "/avatar2";
+
+$output_filename = '../img/avatars/' . $_SESSION['user']['id'] . '/avatar2'
 
 $what = getimagesize($imgUrl);
 
@@ -43,8 +44,6 @@ switch(strtolower($what['mime']))
         break;
     default: die('image type not supported');
 }
-
-
 
 
 //Check write Access to Directory
