@@ -9,8 +9,8 @@ function submitAvatar() {
             formData.append( 'file', file );
         }
 
-        $('#progressBar').animate({ height: 5px }, 600);
-        $('#profileContainer').animate({ margin-top : 5px }, 600);
+        $('#progressBar').animate({ height: 5 }, 600);
+        $('#profileContainer').animate({ margin-top : 5 }, 600);
         
         $.ajax({
             xhr: function() {
