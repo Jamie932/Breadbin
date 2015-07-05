@@ -12,6 +12,19 @@ body {
 	margin: 0;
 }
 
+#progressBar {
+    height:0px;
+    width:100%;
+    z-index: 100;
+    top:42;
+    position: fixed;
+    background-color: #fff;
+}
+
+#innerProgress {
+    background-color: limegreen;
+}
+
 #blackOverlay {
     opacity: 0.5; 
     background: #000; 
