@@ -1,7 +1,6 @@
 <?php
-/*
-*	!!! THIS IS JUST AN EXAMPLE !!!, PLEASE USE ImageMagick or some other quality image processing libraries
-*/
+session_start();
+
 $imgUrl = $_POST['imgUrl'];
 // original sizes
 $imgInitW = $_POST['imgInitW'];
@@ -20,7 +19,7 @@ $angle = $_POST['rotation'];
 
 $jpeg_quality = 100;
 
-$output_filename = '../img/avatars/' . $_SESSION['user']['id'] . '/avatar2';
+$output_filename = '../img/avatars/' . $_SESSION['user']['id'] . '/avatar';
 
 $what = getimagesize($imgUrl);
 
@@ -45,6 +44,9 @@ switch(strtolower($what['mime']))
     default: die('image type not supported');
 }
 
+if(file_exists($output_filename . '.jpeg')) { 
+    unlink($output_filename . '.jpeg');
+}
 
 //Check write Access to Directory
 
@@ -66,7 +68,7 @@ if(!is_writable(dirname($output_filename))){
 	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
 	$response = Array(
 	    "status" => 'success',
-	    "url" => $output_filename.$type
+	    "url" => $output_filename . '.jpeg'
     );
 }
 print json_encode($response);
