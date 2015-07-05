@@ -146,6 +146,8 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 if ($('.bioRow').attr("contentEditable") != "true") {
                     $('.bioRow').attr('contenteditable','true');
                     $('.bioRow').addClass('editableContent');
+                    $('#userAvatar').addClass('editableContent');
+                    
                     $('#blackOverlay').fadeIn('normal');
                     $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
                     $('.settingsBut').html('Save');
@@ -179,6 +181,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 
                 $('.bioRow').attr('contenteditable','false');
                 $('.bioRow').removeClass('editableContent');
+                $('#userAvatar').removeClass('editableContent');
                 $('#blackOverlay').fadeOut('normal');
                 $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
                 $('.saveBut').html('Settings');
