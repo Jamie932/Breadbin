@@ -55,9 +55,7 @@ if (empty($_GET)) {
 ?>
 <html>
 <head>
-    <title><?php
-print(isset($usersname) ? $usersname : 'Unknown');
-?> | Breadbin</title>
+    <title><?php print(isset($usersname) ? $usersname : 'Unknown');?> | Breadbin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
@@ -67,7 +65,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/jquery.color.js"></script>
-    <script src="js/croppic/croppic.min.js"
+    <script src="js/croppic/croppic.min.js"></script>
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
