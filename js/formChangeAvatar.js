@@ -10,14 +10,23 @@ function submitAvatar() {
         }
 
         $.ajax({
+            xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        $('#innerProgress').width(percentage + '%');
+                    }
+               }, false);
+                
+               return xhr;
+            },
             type        : 'POST',
             url         : 'php/changeAvatar.php',
             processData : false,
             contentType : false,
             cache       : false,
             data        : formData,
-            beforeSubmit: function() { $('#innerProgress').width('0%'); $('#progressBar').height('15px'); },
-            uploadProgress: function(event, position, total, percentage) { $('#innerProgress').width(percentage + '%')},
             success     : function (response) {
                 //$('#userAvatar').css('background', "url('" + response + "?r=" + new Date().getTime() + "') no-repeat");
                 window.location.replace("profile.php");
