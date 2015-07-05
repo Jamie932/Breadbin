@@ -67,6 +67,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/jquery.color.js"></script>
+    <script src="js/croppic/croppic.min.js"
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -207,6 +208,26 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 }
             });
         });
+        
+		var croppicHeaderOptions = {
+				uploadUrl:'php/changeAvatar.php',
+				cropUrl:'php/cropAvatar.php',
+				customUploadButtonId:'userAvatar',
+				modal:false,
+				processInline:true,
+                doubleZoomControls: false,
+                rotateControls: false,
+				loaderHtml:'beep boop loading',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){ console.log('onAfterImgCrop') },
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}	
+		var croppic = new Croppic('userAvatar', croppicHeaderOptions);
+        
     </script>
 </head>
     
