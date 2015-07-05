@@ -14,7 +14,7 @@ function submitAvatar() {
         $.ajax({
             xhr: function() {
                 var xhr = new window.XMLHttpRequest();
-                xhr.addEventListener("progress", function(evt) {
+                xhr.upload.addEventListener("progress", function(evt) {
                     if (evt.lengthComputable) {
                         var percentComplete = evt.loaded / evt.total;
                         $('#innerProgress').width(percentComplete + '%');
