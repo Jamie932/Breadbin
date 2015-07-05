@@ -190,7 +190,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             });
             
             $(window).bind("beforeunload", function(event) {
-               if (editing) return "You have unsaved changes"; 
+               if (editing && (lastBio != $('.bioRow').text())) return "You have unsaved changes"; 
             });
             
             $('.bioRow').keypress(function(e) {
