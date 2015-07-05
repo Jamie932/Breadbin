@@ -55,8 +55,9 @@ if(!is_writable(dirname($output_filename))){
 }else{
     $resizedImage = imagecreatetruecolor($imgW, $imgH);
     imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
+    $finished = imagecreatetruecolor($cropW, $cropH);
     
-    imagejpeg($resizedImage, $output_filename.'.jpg', 80);
+    imagejpeg($finished, $output_filename.'.jpg', 80);
     
 	$response = Array(
 	    "status" => 'success',
