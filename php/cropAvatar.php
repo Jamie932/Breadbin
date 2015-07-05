@@ -26,18 +26,15 @@ $what = getimagesize($imgUrl);
 switch(strtolower($what['mime']))
 {
     case 'image/png':
-        $img_r = imagecreatefrompng($imgUrl);
 		$source_image = imagecreatefrompng($imgUrl);
 		$type = '.png';
         break;
     case 'image/jpeg':
-        $img_r = imagecreatefromjpeg($imgUrl);
 		$source_image = imagecreatefromjpeg($imgUrl);
 		error_log("jpg");
 		$type = '.jpeg';
         break;
     case 'image/gif':
-        $img_r = imagecreatefromgif($imgUrl);
 		$source_image = imagecreatefromgif($imgUrl);
 		$type = '.gif';
         break;
@@ -56,12 +53,11 @@ if(!is_writable(dirname($output_filename))){
 	    "message" => 'Can`t write cropped File'
     );	
 }else{
-
     $resizedImage = imagecreatetruecolor($imgW, $imgH);
-	imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
-	$final_image = imagecreatetruecolor($cropW, $cropH);
+    imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
     
-	imagejpeg($final_image, $output_filename.'.jpg', $jpeg_quality);
+    imagejpeg($resizedImage, $output_filename.'.jpg', 80);
+    
 	$response = Array(
 	    "status" => 'success',
 	    "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg?r=' . rand()
