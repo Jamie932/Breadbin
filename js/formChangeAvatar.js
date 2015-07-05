@@ -17,7 +17,7 @@ function submitAvatar() {
                 xhr.addEventListener("progress", function(evt) {
                     if (evt.lengthComputable) {
                         var percentComplete = evt.loaded / evt.total;
-                        $('#innerProgress').width(percentage + '%');
+                        $('#innerProgress').width(percentComplete + '%');
                     }
                }, false);
                 
