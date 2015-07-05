@@ -44,8 +44,8 @@ switch(strtolower($what['mime']))
     default: die('image type not supported');
 }
 
-if(file_exists($output_filename . '.jpeg')) { 
-    unlink($output_filename . '.jpeg');
+if(file_exists($output_filename . '.jpg')) { 
+    unlink($output_filename . '.jpg');
 }
 
 //Check write Access to Directory
@@ -65,10 +65,10 @@ if(!is_writable(dirname($output_filename))){
 	imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
 	// finally output png image
 	//imagepng($final_image, $output_filename.$type, $png_quality);
-	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
+	imagejpeg($final_image, $output_filename.'.jpg', $jpeg_quality);
 	$response = Array(
 	    "status" => 'success',
-	    "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpeg'
+	    "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg'
     );
 }
 print json_encode($response);
