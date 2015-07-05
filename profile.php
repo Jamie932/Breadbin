@@ -189,6 +189,10 @@ print(isset($usersname) ? $usersname : 'Unknown');
                 editing = false;
             });
             
+            $(window).bind("beforeunload", function(event) {
+               if (editing) return "You have unsaved changes"; 
+            });
+            
             $('.bioRow').keypress(function(e) {
                 return e.which != 13;
             });
