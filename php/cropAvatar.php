@@ -20,7 +20,7 @@ $angle = $_POST['rotation'];
 
 $jpeg_quality = 100;
 
-$output_filename = '../img/avatars/' . $_SESSION['user']['id'] . '/avatar2'
+$output_filename = '../img/avatars/' . $_SESSION['user']['id'] . '/avatar2';
 
 $what = getimagesize($imgUrl);
 
