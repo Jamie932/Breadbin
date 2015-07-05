@@ -9,6 +9,8 @@ function submitAvatar() {
             formData.append( 'file', file );
         }
 
+        $('#progressBar').height('15px');
+        
         $.ajax({
             xhr: function() {
                 var xhr = new window.XMLHttpRequest();
