@@ -579,7 +579,6 @@ if (empty($_GET)) {
         var croppicHeaderOptions = {
             uploadUrl:'php/changeAvatar.php',
             cropUrl:'php/cropAvatar.php',
-            customUploadButtonId:'userAvatar',
             modal:false,
             processInline:true,
             doubleZoomControls: false,
