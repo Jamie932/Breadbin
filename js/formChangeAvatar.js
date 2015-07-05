@@ -10,6 +10,7 @@ function submitAvatar() {
         }
 
         $('#progressBar').height('15px');
+        $('#profileContainer').css("margin-top", "15px");
         
         $.ajax({
             xhr: function() {
@@ -17,7 +18,7 @@ function submitAvatar() {
                 xhr.upload.addEventListener("progress", function(evt) {
                     if (evt.lengthComputable) {
                         var percentComplete = evt.loaded / evt.total;
-                        $('#innerProgress').width(percentComplete + '%');
+                        $('#innerProgress').width(Math.round(percentComplete * 100) + '%');
                     }
                }, false);
                 
