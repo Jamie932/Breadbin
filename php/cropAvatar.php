@@ -68,7 +68,7 @@ if(!is_writable(dirname($output_filename))){
 	imagejpeg($final_image, $output_filename.$type, $jpeg_quality);
 	$response = Array(
 	    "status" => 'success',
-	    "url" => $output_filename . '.jpeg'
+	    "url" => 'img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpeg'
     );
 }
 print json_encode($response);
