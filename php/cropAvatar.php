@@ -58,18 +58,6 @@ if(!is_writable(dirname($output_filename))){
     // resize the original image to size of editor
     $resizedImage = imagecreatetruecolor($imgW, $imgH);
 	imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
-    // rotate the rezized image
-    $rotated_image = imagerotate($resizedImage, -$angle, 0);
-    // find new width & height of rotated image
-    $rotated_width = imagesx($rotated_image);
-    $rotated_height = imagesy($rotated_image);
-    // diff between rotated & original sizes
-    $dx = $rotated_width - $imgW;
-    $dy = $rotated_height - $imgH;
-    // crop rotated image to fit into original rezized rectangle
-	$cropped_rotated_image = imagecreatetruecolor($imgW, $imgH);
-	imagecolortransparent($cropped_rotated_image, imagecolorallocate($cropped_rotated_image, 0, 0, 0));
-	imagecopyresampled($cropped_rotated_image, $rotated_image, 0, 0, $dx / 2, $dy / 2, $imgW, $imgH, $imgW, $imgH);
 	// crop image into selected area
 	$final_image = imagecreatetruecolor($cropW, $cropH);
 	imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
