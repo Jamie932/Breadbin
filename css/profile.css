@@ -22,6 +22,8 @@ body {
 }
 
 #innerProgress {
+    height: inherit;
+    width:0px;
     background-color: limegreen;
 }
 
