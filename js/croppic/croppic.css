@@ -3,6 +3,7 @@
 			.cropImgWrapper{
 				cursor: -webkit-grab;
 				cursor: grab;
+                border-radius:50%;
 			}
 			.cropImgWrapper:active{
 				cursor: -webkit-grabbing;
@@ -41,7 +42,7 @@
 				float:left;
 				margin:0;
 				cursor:pointer;
-				background-image:url('imgcropperIcons.png');	
+				background-image:url('cropperIcons.png');	
 				width:30px;
 				height:30px;
 				text-align:center;

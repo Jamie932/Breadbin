@@ -584,7 +584,6 @@ if (empty($_GET)) {
             processInline:true,
             doubleZoomControls: false,
             rotateControls: false,
-            loaderHtml:'beep boop loading',
             onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
             onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
             onImgDrag: function(){ console.log('onImgDrag') },
