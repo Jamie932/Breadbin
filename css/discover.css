@@ -66,6 +66,8 @@ body {
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #tiles li img {
