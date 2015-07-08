@@ -6,7 +6,7 @@
 <head>
     <title>Breadbin - Home</title>
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="css/discover.css" rel="stylesheet" type="text/css">
+    <link href="css/profile.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -34,27 +34,7 @@
                 $posts = $stmt->fetchAll();
 
                 foreach ($posts as $row) {
-                    if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
-                        if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
-                            $users = $matches[1];
-
-                            foreach ($users as $user) {
-                                $query = "SELECT id, username FROM users WHERE username = :username";
-                                $query_params = array(
-                                    ':username' => $user
-                                );
-
-                                $stmt = $db->prepare($query);
-                                $result = $stmt->execute($query_params);
-                                $userFound = $stmt->fetch();
-
-                                if ($userFound) {
-                                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $userFound['username'] . '</a>', $row['text']);
-                                }
-
-                            }
-                        }
-                    }
+                    if (($row['type'] == 'text') || ($row['type'] == 'imagetext'))
 
                 echo '<ul id="tiles">';
 
@@ -160,7 +140,7 @@
                </ul>
             </div>
         <script src="js/jquery.wookmark.js"></script>
-    <script type="text/javascript">
+        <script type="text/javascript">
         var colors = [
             "rgb(138, 230, 138)",
             "rgb(102, 153, 255)",
