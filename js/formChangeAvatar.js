@@ -14,9 +14,9 @@ function submitAvatar() {
         
         var circle = new ProgressBar.Circle('#avatarOutline', {
             color: '#FFB540',
-            strokeWidth: 3,
+            strokeWidth: 0,
             fill: "rgba(0, 0, 0, 0.5)",
-            trailWidth: 1,
+            trailWidth: 2,
             duration: 1500,
             text: {
                 value: '0'
@@ -50,7 +50,7 @@ function submitAvatar() {
                 window.location.replace("profile.php");
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
-                alert("Error: " + ThrownError);
+                console.log("Error in the upload.");
             }
 
         })
