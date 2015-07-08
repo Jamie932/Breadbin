@@ -22,7 +22,7 @@
         $row = $stmt->fetch();
         
         if ($row) {
-            if ($row['userid'] != $_SESSION['user']['id'] {
+            if ($row['userid'] != $_SESSION['user']['id']) {
                 $data['success'] = false;
                 return false;
             }
