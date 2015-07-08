@@ -38,6 +38,14 @@
             $newColour = '';
         }
 
+        ?>
+
+                <script>
+                    console.log(<? echo json_encode($newColour); ?>);
+                </script>
+
+        <?php
+
         echo '<div id="categories" style="background-color:' . $newColour .'">'
     ?>
     
