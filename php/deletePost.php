@@ -22,6 +22,11 @@
         $row = $stmt->fetch();
         
         if ($row) {
+            if ($row['userid'] != $_SESSION['user']['id'] {
+                $data['success'] = false;
+                return false;
+            }
+            
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
                 if (file_exists($row['image'])) {
                     unlink($row['image']);
