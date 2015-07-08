@@ -67,6 +67,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/jquery.color.js"></script>
+    <script src="js/progressbar.min.js"></script>
     <script>
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -589,5 +590,19 @@ print(isset($usersname) ? $usersname : 'Unknown');
     </form>
         
     <script src="js/formChangeAvatar.js"></script>
+    <script>
+        var circle = new ProgressBar.Circle('#userAvatar', {
+            color: '#FCB03C',
+            strokeWidth: 3,
+            trailWidth: 1,
+            duration: 1500,
+            text: {
+                value: '0'
+            },
+            step: function(state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0));
+            }
+        });    
+    </script>
 </body>
 </html>

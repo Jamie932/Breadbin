@@ -9,8 +9,8 @@ function submitAvatar() {
             formData.append( 'file', file );
         }
 
-        $('#progressBar').height('5px');
-        $('#profileContainer').css("margin-top", "5px");
+        //$('#progressBar').height('5px');
+        //$('#profileContainer').css("margin-top", "5px");
         
         $.ajax({
             xhr: function() {
@@ -18,7 +18,7 @@ function submitAvatar() {
                 xhr.upload.addEventListener("progress", function(evt) {
                     if (evt.lengthComputable) {
                         var percentComplete = evt.loaded / evt.total;
-                        $('#innerProgress').width(Math.round(percentComplete * 100) + '%');
+                          circle.animate(percentComplete);
                     }
                }, false);
                 
