@@ -17,7 +17,7 @@ body {
     margin-bottom: 15px;
     height: 31px;
     padding-top: 11px;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(89, 89, 89);
 }
 
 ul.cats {
@@ -25,7 +25,7 @@ ul.cats {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-    color: #fff; 
+    color: rgb(243, 243, 243); 
     list-style-type: none;
 }
 
