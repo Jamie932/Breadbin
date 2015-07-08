@@ -74,6 +74,19 @@ a.navLinks:hover {
 	margin-top: 70px;
 }
 
+#navAvatar {
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	background: url(../img/profile2.png) no-repeat;
+	background-size: 25px 25px;
+	border: 1px solid #616161;
+	display: block;
+    box-sizing: border-box;
+}
+
 .arrow-up {
 	width: 0; 
 	height: 0; 
