@@ -83,7 +83,7 @@ a.navLinks:hover {
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
 	background: url(../img/profile2.png) no-repeat;
-	background-size: contain;
+	background-size: contain !important;
     box-sizing: border-box;
 }
 
