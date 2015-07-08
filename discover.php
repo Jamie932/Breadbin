@@ -23,13 +23,9 @@
     <div id="content">
     <div id="main">
             <?php
-                $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
-                $query_params = array(
-                    ':id' => 2
-                );
+                $query = "SELECT * FROM posts  ORDER BY date DESC";
 
                 $stmt = $db->prepare($query);
-                $result = $stmt->execute($query_params);
                 $posts = $stmt->fetchAll();
 
                 foreach ($posts as $row) {
