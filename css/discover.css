@@ -1,17 +1,23 @@
+html,
+body {
+	min-height: 100% !important;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
 body {
     background-color: #161616;
     font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
 
-img {
-   width: 300px;
-   height: 400px;
-   position: absolute;
-   left: 50%;
-   top: 50%; 
-   margin-left: -150px;
-   margin-top: -200px;
+#content {
+    width: 100%;
+    margin-top: 80px;
+	margin-bottom: 20px;
+    height: auto;
+    text-align: center;
 }
 
 /* grid styling pls */
@@ -55,6 +61,7 @@ img {
 
 #tiles li {
     max-width: 300px;
+    max-height: 400px;
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
@@ -62,6 +69,8 @@ img {
 }
 
 #tiles li img {
+    min-height: 300px;
+    max-height: 400px;
 	min-width: 300px;
     text-align:center;
     display: inline-block;
@@ -77,4 +86,14 @@ img {
 
 #tiles ali:nth-child(5n) {
 	height: 250px;
+}
+
+p.textPost {
+	word-break: break-all;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 1em;
+	padding-left: 10px;
+	padding-right: 10px;
 }

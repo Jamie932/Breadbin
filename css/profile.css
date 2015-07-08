@@ -439,7 +439,7 @@ p.settingsExplain {
 
 .banner:hover .bannerText {
 	visibility: visible;
-}
+}`
 
 .banner:hover .blurImage {
 	-webkit-filter: blur(300px);

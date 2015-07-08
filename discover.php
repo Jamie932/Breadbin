@@ -18,44 +18,17 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-    <?php /*require('php/template/navbar.php');*/?>
+    <?php require('php/template/navbar.php'); ?>
     
-    <div id="break"></div>
-    
+    <div id="content">
     <div id="main">
             <?php
-                $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
-                $query_params = array(
-                    ':id' => 2
-                );
+                $query = "SELECT * FROM posts ORDER BY date DESC";
 
-                $stmt = $db->prepare($query);
-                $result = $stmt->execute($query_params);
-                $posts = $stmt->fetchAll();
+                $sth = $db->query($query);
+                $posts = $sth->fetchAll();
 
                 foreach ($posts as $row) {
-                    if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
-                        if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
-                            $users = $matches[1];
-
-                            foreach ($users as $user) {
-                                $query = "SELECT id, username FROM users WHERE username = :username";
-                                $query_params = array(
-                                    ':username' => $user
-                                );
-
-                                $stmt = $db->prepare($query);
-                                $result = $stmt->execute($query_params);
-                                $userFound = $stmt->fetch();
-
-                                if ($userFound) {
-                                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $userFound['username'] . '</a>', $row['text']);
-                                }
-
-                            }
-                        }
-                    }
-
                 echo '<ul id="tiles">';
 
                 if ($row['type'] == "image") {
@@ -159,6 +132,49 @@
                
                </ul>
             </div>
-        
+        </div>
+    
+        <script src="js/jquery.wookmark.js"></script>
+        <script type="text/javascript">
+        var colors = [
+            "rgb(138, 230, 138)",
+            "rgb(102, 153, 255)",
+            "rgb(255, 181, 64)",
+            "rgb(255, 102, 204)"
+        ];
+
+        var boxes = document.querySelectorAll(".box");
+
+        for (i = 0; i < boxes.length; i++) {
+          // Pick a random color from the array 'colors'.
+          boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          boxes[i].style.width = '300';
+          boxes[i].style.height = '230';
+          boxes[i].style.display = 'inline-table';
+          boxes[i].style.margin = '0';
+          boxes[i].style.textAlign = 'center';
+          boxes[i].style.verticalAlign = 'middle';
+          boxes[i].style.position = 'relative';
+        }
+
+        $(document).ready(new function() {
+          // Prepare layout options.
+          var options = {
+            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            container: $('#main'), // Optional, used for some extra CSS styling
+            offset: 5, // Optional, the distance between grid items
+            itemWidth: 310 // Optional, the width of a grid item
+          };
+
+          // Get a reference to your grid items.
+          var handler = $('#tiles li');
+
+          // Call the layout function.
+          handler.wookmark(options);
+
+          // Capture clicks on grid items.
+         
+        });
+    </script>
 </body>
 </html>
