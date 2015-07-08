@@ -24,12 +24,13 @@
     
     <div id="main">
             <?php
-                $query = "SELECT * FROM posts WHERE userid = 2 ORDER BY date DESC";
+                $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
                 $query_params = array(
-                    ':id' => $userid
+                    ':id' => 2
                 );
 
                 $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params);
                 $posts = $stmt->fetchAll();
 
                 foreach ($posts as $row) {
