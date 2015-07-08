@@ -74,7 +74,7 @@ if (empty($_GET)) {
                    $('#errorBar').html("ERROR: " + errorMessage);
                } else {
                    $('#errorBar').animate({height: "35px"}, 500);
-                   $('#profileContainer').animate({margin-top: "35px"}, 500);
+                   $('#profileContainer').animate({marginTop: "35px"}, 500);
                    $('#errorBar').html("ERROR: " + errorMessage);
                }
         }
