@@ -29,7 +29,7 @@
                 $result = $stmt->execute($query_params); 
                 $posts = $stmt->fetchAll();
                 
-             if (!$randUser) {
+             if (!$posts) {
                  echo '<center>You follow everyone tough luck.</center>';
              } else {
                 foreach ($posts as $row) {
