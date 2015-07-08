@@ -4,16 +4,6 @@ body {
 	margin: 0;
 }
 
-img {
-   width: 300px;
-   height: 400px;
-   position: absolute;
-   left: 50%;
-   top: 50%; 
-   margin-left: -150px;
-   margin-top: -200px;
-}
-
 /* grid styling pls */
 .banner {
 	height: 100%;
