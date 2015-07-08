@@ -23,13 +23,13 @@
     <div id="content">
     <div id="main">
             <?php
-                $query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY date DESC";
+                $query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
                 $query_params = array(':id' => $_SESSION['user']['id']); 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
                 $posts = $stmt->fetchAll();
                 
-             if (!$randUser) {
+             if (!$posts) {
                  echo '<center>You follow everyone tough luck.</center>';
              } else {
                 foreach ($posts as $row) {
