@@ -209,10 +209,18 @@ print(isset($usersname) ? $usersname : 'Unknown');
               e.preventDefault();
             });
            
+            var uploadingFile = false;
+            
             $(document).on('click','#userAvatar', function() {
                 if (editing) {
-                    $('#upfile').click();
+                    if (!uploadingFile) {
+                        $('#upfile').click();
+                    }
                 }
+            });
+            
+            $("#upfile").change(function (){
+                uploadingFile = true;
             });
         });
     </script>

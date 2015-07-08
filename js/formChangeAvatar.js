@@ -21,6 +21,10 @@ function submitAvatar() {
                 value: '0'
             },
             step: function(state, bar) {
+                if (bar.value() == 1) {
+                    circle.destroy();
+                }
+                
                 bar.setText((bar.value() * 100).toFixed(0));
             }
         });           
@@ -44,10 +48,10 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                circle.destroy();
                 var url = response.trim() + '?r=' + new Date().getTime();
                 
                 $('#userAvatar').css('background-image', 'url(' + url + ')');
+                uploadingFile = false;
                 //window.location.replace("profile.php");
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
