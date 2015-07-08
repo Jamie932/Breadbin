@@ -20,6 +20,7 @@
     
     <?php require('php/template/navbar.php'); ?>
     
+    <div id="content">
     <div id="main">
             <?php
                 $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
@@ -135,6 +136,8 @@
                
                </ul>
             </div>
+        </div>
+    
         <script src="js/jquery.wookmark.js"></script>
         <script type="text/javascript">
         var colors = [
