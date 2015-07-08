@@ -30,7 +30,7 @@
                 $posts = $stmt->fetchAll();
                 
              if (!$randUser) {
-                 echo '<center>You follow everyone toush luck.</center>';
+                 echo '<center>You follow everyone tough luck.</center>';
              } else {
                 foreach ($posts as $row) {
                 echo '<ul id="tiles">';
