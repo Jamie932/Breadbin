@@ -57,28 +57,24 @@ body {
 	margin: 0;
 	max-height: 400px;
 	max-width: 300px;
-    margin: 0;
-    padding: 0;
 }
 
 #tiles li {
+    min-height: 300px;
     max-width: 300px;
     max-height: 400px;
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
 
 #tiles li img {
+    min-height: 300px;
     max-height: 400px;
 	min-width: 300px;
     text-align:center;
     display: inline-block;
-    margin: 0;
-    padding: 0;
 } 
 
 #tiles ali:nth-child(3n) {
