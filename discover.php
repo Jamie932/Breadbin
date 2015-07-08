@@ -21,10 +21,10 @@
     <?php require('php/template/navbar.php'); ?>
     
     <?php
-         $query = "SELECT colour FROM user_settings WHERE user_id = :userId"; 
+        $query = "SELECT colour FROM user_settings WHERE user_id = :userId"; 
         $query_params = array(':userId' => $_SESSION['user']['id']); 
         
-        $stmt = $db->prepare($query);
+        $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         $colour = $stmt->fetch();
 
@@ -38,7 +38,7 @@
             $newColour = '';
         }
 
-        echo '<div id="categories" style="background-color:' . $newColour .'>'
+        echo '<div id="categories" style="background-color:' . $newColour .'">'
     ?>
     
     
