@@ -16,8 +16,8 @@ body {
 	margin-bottom: 20px;
     height: auto;
     text-align: center;
-    padding-left: 3%;
-    padding-right: 3%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* grid styling pls */
