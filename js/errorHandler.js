@@ -1,6 +1,6 @@
 function createError(errorMessage) { //Improve this later by pushing content down automatically!
     $('#errorBar').animate({height: "35px"}, 500);
-    $('#errorBar').html("ERROR: " + errorMessage.toLowerCase());
+    $('#errorBar').html("ERROR: " + errorMessage);
 
     if ($('#profileContainer').length) {
         $('#profileContainer').animate({marginTop: "35px"}, 500);
