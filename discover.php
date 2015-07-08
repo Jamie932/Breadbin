@@ -20,7 +20,28 @@
     
     <?php require('php/template/navbar.php'); ?>
     
-    <div id="categories">
+    <?php
+         $query = "SELECT colour FROM user_settings WHERE user_id = :userId"; 
+        $query_params = array(':userId' => $_SESSION['user']['id']); 
+        
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params); 
+        $colour = $stmt->fetch();
+
+        if ($colour == 1) {
+            $newColour =
+        } else if ($colour == 2){
+            $newColour = 
+        } else if ($colour == 3){
+            $newColour = '#FFC46C';
+        } else if ($colour == 3){
+            $newColour = 
+        }
+
+        echo '<div id="categories" style="background-color:' . $newColour .'>'
+    ?>
+    
+    
         <ul class="cats">		
 			<li class="cats">
                 <a href="#">Staff Recommendation</a>
