@@ -46,6 +46,7 @@
 	<div class="right">
 		<ul class="nav">		
 			<li class="nav">
+                <a>Discover</a>
                 <?php
 				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                     echo '<div class="arrow-up"></div>';
