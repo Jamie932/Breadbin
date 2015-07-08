@@ -50,11 +50,11 @@
             </li>
             <li class="nav">
                 <?php
-                    if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
+                   /* if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
                         echo '<div id="navAvatar"></div>';
                     } else {
                         echo '<div id="navAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
-                    }
+                    }*/
 
 				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                     echo '<div class="arrow-up"></div>';
