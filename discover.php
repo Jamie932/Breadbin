@@ -18,7 +18,7 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-    <?php /*require('php/template/navbar.php');*/?>
+    <?php require('php/template/navbar.php'); ?>
     
     <div id="main">
             <?php
