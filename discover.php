@@ -30,7 +30,8 @@
 
         if($row){ 
             if ($row['colour'] == 1) {
-                $newColour = '';
+                $newColour = '#9EE37F';
+                $fontColour = '#000';
             } else if ($row['colour'] == 2){
                 $newColour = '';
             } else if ($row['colour'] == 3){
@@ -49,10 +50,9 @@
         <?php
 
         echo '<div id="categories" style="background-color:' . $newColour .'">'
+            echo '<ul class="cats" style="color:'. $fontColour .'">';
     ?>
     
-    
-        <ul class="cats">		
 			<li class="cats">
                 <a href="#">Staff Recommendation</a>
             </li>
