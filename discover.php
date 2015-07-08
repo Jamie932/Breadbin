@@ -26,22 +26,24 @@
         
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
-        $colour = $stmt->fetch();
+        $row = $stmt->fetch();
 
-        if ($colour == 1) {
-            $newColour = '';
-        } else if ($colour == 2){
-            $newColour = '';
-        } else if ($colour == 3){
-            $newColour = '#FFC46C';
-        } else if ($colour == 3){
-            $newColour = '';
+        if($row){ 
+            if ($row['colour'] == 1) {
+                $newColour = '';
+            } else if ($row['colour'] == 2){
+                $newColour = '';
+            } else if ($row['colour'] == 3){
+                $newColour = '#FFC46C';
+            } else if ($row['colour'] == 3){
+                $newColour = '';
+            }
         }
-
+        
         ?>
 
                 <script>
-                    console.log(<? echo json_encode($colour); ?>); 
+                    console.log(<? echo json_encode($newColour); ?>); 
                 </script>
 
         <?php
