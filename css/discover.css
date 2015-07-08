@@ -33,6 +33,7 @@ li.cats {
     display: inline;   
     text-decoration: none;
     padding-lefT: 10px;
+    font-size: 12px;
 }
 
 a{
