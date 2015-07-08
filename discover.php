@@ -23,10 +23,16 @@
     <div id="categories">
         <ul class="cats">		
 			<li class="cats">
-                <a href="#">Discover</a>
+                <a href="#">Staff Recommendation</a>
             </li>
             <li class="cats">
-                <a href="#">Discover</a>
+                <a href="#">Top Posts</a>
+            </li>
+            <li class="cats">
+                <a href="#">Just <b>Pictures</b></a>
+            </li>
+            <li class="cats">
+                <a href="#">Just <b>Recipies</b></a>
             </li>
 		</ul>
     </div>
