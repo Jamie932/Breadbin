@@ -64,20 +64,10 @@ if (empty($_GET)) {
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <script src="js/errorHandler.js"></script>
     <script src="js/jquery.color.js"></script>
     <script>
         var uploadingFile = false;
-        var showingError = false;
-        
-        function createError(errorMessage) {
-               if (showingError) {
-                   $('#errorBar').html("ERROR: " + errorMessage);
-               } else {
-                   $('#errorBar').animate({height: "35px"}, 500);
-                   $('#profileContainer').animate({marginTop: "35px"}, 500);
-                   $('#errorBar').html("ERROR: " + errorMessage);
-               }
-        }
         
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -210,7 +200,7 @@ if (empty($_GET)) {
             
             $('.bioRow').keydown(function(e){ 
                 if (e.which != 8 && $('.bioRow').text().length > 140) {
-                    alert("limit reached soz"); 
+                    createError("You have reached the 140 character limit."); 
                     e.preventDefault();
                 }    
             });

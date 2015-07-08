@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <script src="js/errorHandler.js"></script>
     <script>
         $(document).ready(function(){
             $(document).on('click','.delete', function() {
@@ -60,7 +61,7 @@
                     
                     if (!data.success) {
                         // Already toasted the post - error.
-                        alert("not successful soz");
+                        createError("This post has already been toasted by you."); 
                     } else {
                         if (data.removedBurn && data.addedToast) { // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) + 2);
@@ -70,7 +71,7 @@
                         } else if (data.removedBurn || data.addedToast) {
                             totalToasts.html(parseInt(totalToasts.text()) + 1);
                         } else {
-                            alert("problem detected woop woop");
+                            createError("Incorrect toast data returned. Please inform an adminstrator."); 
                         }
                         
                         toastButton.css('color', 'darkgray'); 
@@ -102,8 +103,7 @@
                     
                     if (!data.success) {
                         // Already burnt the post - error.
-                        alert("not successful soz");
-                        
+                         createError("This post has already been burnt by you."); 
                     } else {
                         if (data.removedToast && data.addedBurn) { // Previously toasted
                             totalToasts.html(parseInt(totalToasts.text()) - 2);
@@ -113,7 +113,7 @@
                         } else if (data.removedToast || data.addedBurn) {
                             totalToasts.html(parseInt(totalToasts.text()) - 1);
                         } else {
-                            alert("problem detected woop woop");
+                            createError("Incorrect burn data returned. Please inform an adminstrator."); 
                         }
                         
                         burnButton.css('color', 'darkgray'); 
