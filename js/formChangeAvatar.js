@@ -47,9 +47,8 @@ function submitAvatar() {
                 circle.destroy()
                 var url = response + '?r=' + new Date().getTime();
                 
-                $('#userAvatar').css('background-image', 'url(' + encodeURIComponent(url) + ')');
+                $('#userAvatar').css('background-image', 'url(' + encodeURIComponent(url).replace(/ /g,'') + ')');
                 console.log(url);
-                
                 //window.location.replace("profile.php");
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
