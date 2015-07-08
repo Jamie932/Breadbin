@@ -6,7 +6,7 @@
 <head>
     <title>Breadbin - Home</title>
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="css/profile.css" rel="stylesheet" type="text/css">
+    <link href="css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -19,8 +19,6 @@
     </noscript>    
     
     <?php /*require('php/template/navbar.php');*/?>
-    
-    <div id="break"></div>
     
     <div id="main">
             <?php
