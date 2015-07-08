@@ -29,13 +29,13 @@
         $colour = $stmt->fetch();
 
         if ($colour == 1) {
-            $newColour =
+            $newColour = '';
         } else if ($colour == 2){
-            $newColour = 
+            $newColour = '';
         } else if ($colour == 3){
             $newColour = '#FFC46C';
         } else if ($colour == 3){
-            $newColour = 
+            $newColour = '';
         }
 
         echo '<div id="categories" style="background-color:' . $newColour .'>'
