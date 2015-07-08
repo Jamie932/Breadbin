@@ -79,6 +79,7 @@ a.navLinks:hover {
 	height: 25px;
     float: left;
     margin-right: 10px;
+    margin-top: -1px;
 	border-radius: 25px;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
