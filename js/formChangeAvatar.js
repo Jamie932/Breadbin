@@ -46,8 +46,8 @@ function submitAvatar() {
             data        : formData,
             success     : function (response) {
                 circle.destroy()
-                //$('#userAvatar').css('background', "url('" + response + "?r=" + new Date().getTime() + "') no-repeat");
-                window.location.replace("profile.php");
+                $('#userAvatar').css('background', "url('" + response + "?r=" + new Date().getTime() + "') no-repeat");
+                //window.location.replace("profile.php");
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
                 console.log("Error in the upload.");
