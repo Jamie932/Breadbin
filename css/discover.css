@@ -13,3 +13,68 @@ img {
    margin-left: -150px;
    margin-top: -200px;
 }
+
+/* grid styling pls */
+.banner {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: none;
+	display: inline-table;
+	vertical-align: middle;
+}
+
+.bannerText {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.banner:hover .bannerText {
+	visibility: visible;
+}
+
+.banner:hover .blurImage {
+	-webkit-filter: blur(300px);
+	-moz-filter: blur(300px);
+	-o-filter: blur(300px);
+	-ms-filter: blur(300px);
+	filter: blur(300px);
+	outline: none;
+}
+
+#tiles {
+	list-style-type: none;
+	position: relative;
+	margin: 0;
+	max-height: 400px;
+	max-width: 300px;
+}
+
+#tiles li {
+    max-width: 300px;
+	background-color: #ffffff;
+	display: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+#tiles li img {
+	min-width: 300px;
+    text-align:center;
+    display: inline-block;
+} 
+
+#tiles ali:nth-child(3n) {
+	height: 175px;
+}
+
+#tiles ali:nth-child(4n-3) {
+	padding-bottom: 30px;
+}
+
+#tiles ali:nth-child(5n) {
+	height: 250px;
+}
