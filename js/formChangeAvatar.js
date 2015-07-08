@@ -16,7 +16,6 @@ function submitAvatar() {
             color: '#FFB540',
             strokeWidth: 2,
             fill: "rgba(0, 0, 0, 0.5)",
-            trailWidth: 0,
             duration: 1500,
             text: {
                 value: '0'
@@ -46,7 +45,7 @@ function submitAvatar() {
             data        : formData,
             success     : function (response) {
                 circle.destroy()
-                $('#userAvatar').css('background', "url('" + response + "?r=" + new Date().getTime() + "') no-repeat");
+                $('#userAvatar').css('background-image', 'url("' + response + '?r=' + new Date().getTime() + '")');
                 //window.location.replace("profile.php");
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
