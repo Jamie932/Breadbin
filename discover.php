@@ -30,7 +30,7 @@
 
         if($row){ 
             if ($row['colour'] == 1) {
-                $newColour = '#9EE37F';
+                $newColour = '#AFE4AF;';
                 $fontColour = '#000';
             } else if ($row['colour'] == 2){
                 $newColour = '';
@@ -60,10 +60,10 @@
                 <a href="#">Top Posts</a>
             </li>
             <li class="cats">
-                <a href="#">Just <b>Pictures</b></a>
+                <a href="#">Just Pictures</a>
             </li>
             <li class="cats">
-                <a href="#">Just <b>Recipies</b></a>
+                <a href="#">Just Recipies</a>
             </li>
 		</ul>
     </div>
