@@ -72,6 +72,8 @@ body {
 	min-width: 300px;
     text-align:center;
     display: inline-block;
+    margin: 0;
+    padding: 0;
 } 
 
 #tiles ali:nth-child(3n) {
