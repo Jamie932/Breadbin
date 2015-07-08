@@ -46,7 +46,7 @@
 	<div class="right">
 		<ul class="nav">		
 			<li class="nav">
-                <a>Discover</a>
+                <a href="discover.php">Discover</a>
             </li>
             <li class="nav">
                 <?php
