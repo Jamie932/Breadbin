@@ -13,7 +13,7 @@ body {
 #categories {
     border-bottom: 1px solid rgb(97, 97, 97); 
     text-align: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 ul.cats {
@@ -23,6 +23,7 @@ ul.cats {
 	overflow: hidden;
 	display: inline;
     color: rgb(97, 97, 97); 
+    list-style-type: none;
 }
 
 /* Posts */
