@@ -33,11 +33,11 @@
                 $newColour = '#AFE4AF;';
                 $fontColour = '#000';
             } else if ($row['colour'] == 2){
-                $newColour = '';
+                $newColour = '#81ABFF';
             } else if ($row['colour'] == 3){
                 $newColour = '#FFC46C';
-            } else if ($row['colour'] == 3){
-                $newColour = '';
+            } else if ($row['colour'] == 4){
+                $newColour = '#FF93DB';
             }
         }
         
