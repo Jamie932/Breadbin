@@ -10,9 +10,25 @@ body {
 	margin: 0;
 }
 
+#categories {
+    border-bottom: 1px solid rgb(97, 97, 97); 
+    text-align: center;
+    margin-top: 80px;
+}
+
+ul.cats {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: inline;
+    color: rgb(97, 97, 97); 
+}
+
+/* Posts */
 #content {
     width: 100%;
-    margin-top: 80px;
+    margin-top: 0px;
 	margin-bottom: 20px;
     height: auto;
     text-align: center;
@@ -20,7 +36,6 @@ body {
     margin-right: 10px;
 }
 
-/* grid styling pls */
 .banner {
 	height: 100%;
 	width: 100%;

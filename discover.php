@@ -20,6 +20,17 @@
     
     <?php require('php/template/navbar.php'); ?>
     
+    <div id="categories">
+        <ul class="cats">		
+			<li class="cats">
+                <a href="#">Discover</a>
+            </li>
+            <li class="cats">
+                <a href="#">Discover</a>
+            </li>
+		</ul>
+    </div>
+        
     <div id="content">
     <div id="main">
             <?php
