@@ -63,6 +63,7 @@ body {
 
 #tiles li {
     max-width: 300px;
+    max-height: 400px;
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
