@@ -49,7 +49,7 @@
 
         <?php
 
-        echo '<div id="categories" style="background-color:' . $newColour .'">'
+        echo '<div id="categories" style="background-color:' . $newColour .'">';
             echo '<ul class="cats" style="color:'. $fontColour .'">';
     ?>
     
