@@ -41,7 +41,7 @@
         ?>
 
                 <script>
-                    console.log(<? echo json_encode($newColour); ?>);
+                    console.log(<? echo json_encode($colour); ?>); 
                 </script>
 
         <?php
