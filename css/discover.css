@@ -9,7 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
-
+/* categories */
 #categories {
     border-bottom: 1px solid rgb(97, 97, 97); 
     text-align: center;
@@ -21,11 +21,19 @@ ul.cats {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	display: inline;
     color: rgb(97, 97, 97); 
     list-style-type: none;
 }
 
+li.cats {
+    display: inline;   
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
 /* Posts */
 #content {
     width: 100%;
