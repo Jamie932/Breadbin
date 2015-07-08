@@ -23,10 +23,10 @@
     <div id="content">
     <div id="main">
             <?php
-                $query = "SELECT * FROM posts  ORDER BY date DESC";
+                $query = "SELECT * FROM posts ORDER BY date DESC";
 
-                $stmt = $db->prepare($query);
-                $posts = $stmt->fetchAll();
+                $sth = $db->query($query);
+                $posts = $sth->fetchAll();
 
                 foreach ($posts as $row) {
                 echo '<ul id="tiles">';
