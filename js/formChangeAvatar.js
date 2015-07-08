@@ -44,11 +44,10 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                circle.destroy()
+                circle.destroy();
                 var url = response.trim() + '?r=' + new Date().getTime();
                 
                 $('#userAvatar').css('background-image', 'url(' + url + ')');
-                console.log(url);
                 //window.location.replace("profile.php");
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
