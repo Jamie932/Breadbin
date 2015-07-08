@@ -12,9 +12,11 @@ function submitAvatar() {
         //$('#progressBar').height('5px');
         //$('#profileContainer').css("margin-top", "5px");
         
-        var circle = new ProgressBar.Circle('#userAvatar', {
+        var circle = new ProgressBar.Circle('#avatarOutline', {
             color: '#FFB540',
+            strokeWidth: 3,
             fill: "rgba(0, 0, 0, 0.5)",
+            trailWidth: 1,
             duration: 1500,
             text: {
                 value: '0'

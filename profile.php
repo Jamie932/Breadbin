@@ -230,9 +230,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
         <div id="leftProfile">
             <?php
                 if (!file_exists('img/avatars/' . $_GET['id'] . '/avatar.jpg')) {
-                    echo '<div id="userAvatar"></div>';
+                    echo '<div id="avatarOutline"><div id="userAvatar"></div></div>';
                 } else {
-                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_GET['id'] . '/avatar.jpg) no-repeat;"></div>';
+                    echo '<div id="avatarOutline"><div id="userAvatar" style="background: url(img/avatars/' . $_GET['id'] . '/avatar.jpg) no-repeat;"></div></div>';
                 }
 
 
