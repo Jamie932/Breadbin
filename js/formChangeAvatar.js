@@ -14,7 +14,7 @@ function submitAvatar() {
         
         var circle = new ProgressBar.Circle('#userAvatar', {
             color: '#FFB540',
-            strokeWidth: 2,
+            strokeWidth: 1,
             fill: "rgba(0, 0, 0, 0.5)",
             duration: 1500,
             text: {

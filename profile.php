@@ -67,8 +67,9 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/jquery.color.js"></script>
-    <script src="js/progressbar.min.js"></script>
     <script>
+        var uploadingFile = false;
+        
         $(document).ready(function(){
             function getUrlParameter(sParam) {
                 var sPageURL = window.location.search.substring(1);
@@ -208,8 +209,6 @@ print(isset($usersname) ? $usersname : 'Unknown');
             $('.bioRow').bind("cut copy paste",function(e) {
               e.preventDefault();
             });
-           
-            var uploadingFile = false;
             
             $(document).on('click','#userAvatar', function() {
                 if (editing) {
@@ -224,6 +223,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
             });
         });
     </script>
+    <script src="js/progressbar.min.js"></script>
 </head>
     
 <body class="profile">
