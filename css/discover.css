@@ -14,6 +14,9 @@ body {
     border-bottom: 1px solid rgb(97, 97, 97); 
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 15px;
+    height: 31px;
+    padding-top: 11px;
 }
 
 ul.cats {
@@ -28,6 +31,7 @@ ul.cats {
 li.cats {
     display: inline;   
     text-decoration: none;
+    padding-lefT: 10px;
 }
 
 a{
