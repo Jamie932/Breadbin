@@ -55,9 +55,7 @@ if (empty($_GET)) {
 ?>
 <html>
 <head>
-    <title><?php
-print(isset($usersname) ? $usersname : 'Unknown');
-?> | Breadbin</title>
+    <title><?php print(isset($usersname) ? $usersname : 'Unknown'); ?> | Breadbin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
@@ -69,6 +67,17 @@ print(isset($usersname) ? $usersname : 'Unknown');
     <script src="js/jquery.color.js"></script>
     <script>
         var uploadingFile = false;
+        var showingError = false;
+        
+        function createError(errorMessage) {
+               if (showingError) {
+                   $('#errorBar').html("ERROR: " + errorMessage);
+               } else {
+                   $('#errorBar').animate({height: "35px"}, 500);
+                   $('#profileContainer').animate({margin-top: "35px"}, 500);
+                   $('#errorBar').html("ERROR: " + errorMessage);
+               }
+        }
         
         $(document).ready(function(){
             function getUrlParameter(sParam) {
@@ -233,7 +242,7 @@ print(isset($usersname) ? $usersname : 'Unknown');
     </noscript>    
         
     <?php require('php/template/navbar.php'); ?>   
-    <div id="progressBar"><div id="innerProgress"></div></div>
+    <div id="errorBar"></div>
     <div id="profileContainer">
         <div id="leftProfile">
             <?php
