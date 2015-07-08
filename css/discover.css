@@ -57,6 +57,8 @@ body {
 	margin: 0;
 	max-height: 400px;
 	max-width: 300px;
+    margin: 0;
+    padding: 0;
 }
 
 #tiles li {
@@ -65,6 +67,8 @@ body {
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #tiles li img {
