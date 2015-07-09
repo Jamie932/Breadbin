@@ -81,6 +81,7 @@
                  echo '<center>You follow everyone tough luck.</center>';
              } else {
                 foreach ($posts as $row) {
+                echo '<ul id="tiles">';
                 
                 if ($row['type'] == "image") {
                     $imgName = ltrim($row['image'], "/.");
@@ -95,10 +96,8 @@
                 </script>
 
                 <?php
-                    
-                echo '<ul id="tiles">';
-                echo '<div class="banner">';
-                    
+                echo '<div class="banner">';    
+                
                     if ($aspectRatio >= 0) {
                         if ($height >=0 && $height < 99) {
                             echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
