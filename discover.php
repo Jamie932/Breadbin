@@ -100,7 +100,15 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             
             $aspectRatio = $width / $height;
             $testHeight  = $height / 2;
-            $testWidth   = $width /2;
+            $testWidth   = $width / 2;
+            
+            ?>
+
+                <script>
+                    console.log(<? echo json_encode($testWidth); ?>);
+                </script>
+
+            <?php
             
             echo '<li>';
             echo '<div class="banner">';
@@ -114,6 +122,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                     </style> 
                 <?php   
             }
+            
             if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 99) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
