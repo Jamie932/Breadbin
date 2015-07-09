@@ -89,7 +89,12 @@ if (empty($_GET)) {
                     url         : 'php/follow.php',
                     data        : formData,
                     dataType    : 'json',
-                    encode      : true
+                    encode      : true,
+                    success:function(data) {
+                        if (!data.success) {
+                            createError(data.error);
+                        }
+                    }
                 })
 
                 $('.followers').html(parseInt($('.followers').text()) + 1);
