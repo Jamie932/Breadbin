@@ -111,9 +111,9 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                     echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
                 } else if ($height >= 350 && $height < 400) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '"';
-                } else if ($height >= 400 && $height < 500) {
+                } else if ($height >= 400 && $height < 499) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 500 && $height < 600) {
+                } else if ($height >= 501 && $height < 600) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
                 } else if ($height >= 700 && $height < 800) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
