@@ -64,7 +64,6 @@ if (empty($_GET)) {
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="js/errorHandler.js"></script>
     <script src="js/jquery.color.js"></script>
     <script>
         var uploadingFile = false;

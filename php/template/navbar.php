@@ -1,3 +1,4 @@
+<script src="../../js/errorHandler.js"></script>
 <script>
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
