@@ -100,13 +100,6 @@ a{
     padding: 0;
 }
 
-#tiles li img {
-    min-height: 300px;
-    max-height: 400px;
-	min-width: 300px;
-    text-align:center;
-    display: inline-block;
-} 
 
 #tiles ali:nth-child(3n) {
 	height: 175px;
