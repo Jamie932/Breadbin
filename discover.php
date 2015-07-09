@@ -147,7 +147,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo $test['username'];
+                echo '@' . $test['username'] .'';
             echo '</div>';
             
             echo '</div>';
