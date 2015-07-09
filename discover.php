@@ -87,11 +87,19 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         } else {
         foreach ($posts as $row) {
             
-            $query        = "SELECT * FROM users WHERE id = :id";
-            $query_params = array(':id' => $row['userid']);
-            $stmt         = $db->prepare($query);
-            $result       = $stmt->execute($query_params);
-            $test          = $stmt->fetch();
+        $query        = "SELECT * FROM users WHERE id = :id";
+        $query_params = array(':id' => $row['userid']);
+        $stmt         = $db->prepare($query);
+        $result       = $stmt->execute($query_params);
+        $test         = $stmt->fetch();
+            
+        ?>
+
+                <script>
+                    console.log(<?echo json_encode($row['username']);?>);
+                </script>
+
+        <?php
                 
         echo '<ul id="tiles">';
         
@@ -136,15 +144,6 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             } else {
                 echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
             }
-            
-            
-                ?>
-
-                <script>
-                    console.log(<?echo json_encode($row['username']);?>);
-                </script>
-
-                <?php
             
             echo '<div class="postUsername">';
                 echo $row['username'];
