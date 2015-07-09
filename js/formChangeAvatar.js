@@ -7,6 +7,9 @@ function submitAvatar() {
 
         if (file['size'] < 2097152) {
             formData.append( 'file', file );
+        } else {
+            createError("The max file size is 2MB."); 
+            return false;
         }
 
         //$('#progressBar').height('5px');
