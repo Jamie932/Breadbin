@@ -82,27 +82,25 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
 
+            $query        = "SELECT * FROM users WHERE id = :id";
+            $query_params = array(':id' => $row['userid']);
+            $stmt         = $db->prepare($query);
+            $result       = $stmt->execute($query_params);
+            $test          = $stmt->fetch();
 
+            if ($test) {
+                $userid    = $row['id'];
+                $usersname = $row['username'];
+                $email     = $row['email'];
+                $firstname     = $row['firstname'];
+                $lastname     = $row['lastname'];
+            }
 
         if (!$posts) {
             echo '<center>You follow everyone tough luck.</center>';
         } else {
         foreach ($posts as $row) {
-            
-        $query        = "SELECT * FROM users WHERE id = :id";
-        $query_params = array(':id' => $row['userid']);
-        $stmt         = $db->prepare($query);
-        $result       = $stmt->execute($query_params);
-        $test         = $stmt->fetch();
-    
-        if ($test) {
-            $userid    = $row['id'];
-            $usersname = $row['username'];
-            $email     = $row['email'];
-            $firstname     = $row['firstname'];
-            $lastname     = $row['lastname'];
-        }
-            
+                
         echo '<ul id="tiles">';
         
         if ($row['type'] == "image") {
@@ -151,7 +149,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 ?>
 
                 <script>
-                    console.log(<?echo json_encode($row['username']);?>);
+                    console.log(<?echo json_encode($usersname);?>);
                 </script>
 
                 <?php
@@ -161,7 +159,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             echo '</div>';
             
             echo '</div>';
-            echo '</li>';
+            echo '</li>'; 
             
         } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
