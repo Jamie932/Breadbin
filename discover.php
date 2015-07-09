@@ -58,7 +58,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
 ?>
     
 			<li class="cats">
-                <a href="#">Staff Recommendation</a>
+                <a href="#">Staff Recommendations</a>
             </li>
             <li class="cats">
                 <a href="#">Top Posts</a>
@@ -137,14 +137,18 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo '@' . $test['username'] .'';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '</div>';
             echo '</li>'; 
             
         } else if ($row['type'] == "text") {
-            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
+                echo '<div class="postUsername">';
+                    echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '</div>';
+            echo '</div></li>';
         }
         
         else if ($row['type'] == 'imagetext') {
@@ -182,9 +186,14 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
             }
             
+            echo '<div class="postUsername">';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+            echo '</div>';
+            
             echo '<div class="bannerText">';
             echo $row['text'];
             echo '</div>';
+            
             echo '</div>';
             echo '</li>';
         }
