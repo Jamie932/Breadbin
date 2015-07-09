@@ -93,15 +93,6 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $result       = $stmt->execute($query_params);
             $test         = $stmt->fetch();
             
-        ?>
-                <script>
-                    console.log(<?echo json_encode($test);?>);
-                    console.log(<?echo json_encode($row['userid']);?>);
-                    console.log(<?echo json_encode($test['username']);?>);
-                </script>
-
-        <?php
-                
         echo '<ul id="tiles">';
         
         if ($row['type'] == "image") {
