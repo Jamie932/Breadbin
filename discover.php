@@ -96,7 +96,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         ?>
 
                 <script>
-                    console.log(<?echo json_encode($row['username']);?>);
+                    console.log(<?echo json_encode($test);?>);
                 </script>
 
         <?php
@@ -146,7 +146,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo $row['username'];
+                echo $test;
             echo '</div>';
             
             echo '</div>';
