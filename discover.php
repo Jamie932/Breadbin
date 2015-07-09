@@ -113,7 +113,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             echo '<li>';
             echo '<div class="banner">';
             
-            if (width > 300) {
+            if ($width > 300) {
                 ?> 
                     <style> 
                         #tiles li img {
