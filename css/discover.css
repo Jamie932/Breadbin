@@ -137,4 +137,6 @@ p.textPost {
     color: white;
     background: rgb(54, 25, 25);
     background: rgba(54, 25, 25, .5);
+    width: auto;
+    height: 20px;
 }
