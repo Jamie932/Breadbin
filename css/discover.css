@@ -64,6 +64,7 @@ a{
 	background: none;
 	display: inline-table;
 	vertical-align: middle;
+    text-align: center;
 }
 
 .bannerText {
