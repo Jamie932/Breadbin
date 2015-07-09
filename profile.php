@@ -221,7 +221,7 @@ if (empty($_GET)) {
             });
         });
     </script>
-    <script src="js/progressbar.min.js"></script>
+    <script src="js/vendor/progressbar.min.js"></script>
 </head>
     
 <body class="profile">
