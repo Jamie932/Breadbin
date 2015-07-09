@@ -117,7 +117,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 ?> 
                     <style> 
                         #tiles li img {
-                            margin-left: -<?php $testWidth ?>;
+                            margin-left: -<?php echo $testWidth; ?>;
                         }
                     </style> 
                 <?php   
