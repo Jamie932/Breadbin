@@ -82,16 +82,16 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
 
+        if (!$posts) {
+            echo '<center>You follow everyone tough luck.</center>';
+        } else {
+        foreach ($posts as $row) {
+            
             $query        = "SELECT username FROM users WHERE id = :id";
             $query_params = array(':id' => $row['userid']);
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $test         = $stmt->fetch();
-
-        if (!$posts) {
-            echo '<center>You follow everyone tough luck.</center>';
-        } else {
-        foreach ($posts as $row) {
             
         ?>
                 <script>
