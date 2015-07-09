@@ -105,6 +105,16 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             echo '<li>';
             echo '<div class="banner">';
             
+            if ($width >300) {
+                ?>
+                    <style>
+                        #tiles li img {
+                            left: -25%;
+                        }
+                    </style>
+                <?php
+            }
+            
             if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 99) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';

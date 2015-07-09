@@ -113,7 +113,6 @@ a{
 	min-width: 300px;
     text-align:center;
     position: relative;
-    left: -25%;
 } 
 
 #tiles ali:nth-child(3n) {
