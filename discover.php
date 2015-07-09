@@ -125,6 +125,10 @@
                     } else {
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
                     }
+                    
+                    echo '<div class="postUsername">';
+                    echo $row['userid'];
+                    echo '</div>';
 
                 } else if ($row['type'] == "text") {
                         echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
