@@ -27,10 +27,10 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,                    
             success: function(data) {
-                if (data.success) {
+                if (data['success']) {
 				    window.location.replace("main.php");   
                 } else {
-                    createError(data.error);
+                    createError(data['error']);
                 }
             },
             
