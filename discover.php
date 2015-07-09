@@ -87,7 +87,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         } else {
         foreach ($posts as $row) {
             
-        $query        = "SELECT * FROM users WHERE id = :id";
+        $query        = "SELECT username FROM users WHERE id = :id";
         $query_params = array(':id' => $row['userid']);
         $stmt         = $db->prepare($query);
         $result       = $stmt->execute($query_params);
