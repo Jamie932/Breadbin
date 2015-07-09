@@ -17,7 +17,13 @@
 
                 echo '<div class="userRecom">';
                     echo '<div class="usericoRecom">';
+                
+                    if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="50px" width="50px">';
+                    } else {
+                        echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px">';
+                    }
+                        
                     echo '</div>';
                     echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
                 echo '</div>';
