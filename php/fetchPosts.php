@@ -1,6 +1,6 @@
 <?php
     require("common.php"); 
-	require("timeago.php");
+	require("vendor/timeago.php");
 
     $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);

@@ -1,7 +1,7 @@
 <?php
 require("php/common.php");
 require("php/checkLogin.php");
-require("php/timeago.php");
+require("php/vendor/timeago.php");
 
 if (empty($_GET)) {
     if ($_SESSION['user']['id']) {
@@ -29,8 +29,8 @@ if (empty($_GET)) {
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/jquery.cookie.js"></script>
     <style>
         body {
             height: auto;

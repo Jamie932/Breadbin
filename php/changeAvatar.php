@@ -1,6 +1,6 @@
 <?php 
     require("common.php"); 
-	require("ImageResize.class.php");
+	require("vendor/ImageResize.class.php");
 
     if(isset($_FILES["file"])) {
         $updirectory = '../img/avatars/' . $_SESSION['user']['id'] . '/';
