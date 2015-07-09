@@ -28,8 +28,6 @@ $(document).ready(function() {
             data        : formData,                    
             success: function(data) {
                 data = JSON.parse(data);
-    
-                console.debug(data);
                 
                 if (data.success) {
 				    window.location.replace("main.php");   
