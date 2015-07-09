@@ -96,8 +96,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         echo '<ul id="tiles">';
         
         if ($row['type'] == "image") {
-            $imgName = ltrim($row['image'], "/.");
-            list($width, $height) = getimagesize($imgName);
+            list($width, $height) = getimagesize($row['image']);
             
             $aspectRatio = $width / $height;
             $testHeight  = $height / 2;
@@ -149,8 +148,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         }
         
         else if ($row['type'] == 'imagetext') {
-            $imgName = ltrim($row['image'], "/.");
-            list($width, $height) = getimagesize($imgName);
+            list($width, $height) = getimagesize($row['image']);
             
             $aspectRatio = $width / $height;
             $testHeight  = $height /= 2; 
