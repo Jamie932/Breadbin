@@ -116,7 +116,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 } else if ($height >= 500 && $height < 600) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
                 } else if ($height >= 700 && $height < 800) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
+                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
                 } else if ($height >= 800 && $height < 1000) {
                     echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
                 } else if ($height >= 1000) {
