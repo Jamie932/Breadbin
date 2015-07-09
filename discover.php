@@ -89,19 +89,13 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         } else {
         foreach ($posts as $row) {
             
-        $query        = "SELECT * FROM users WHERE id = :id";
+        $query        = "SELECT username FROM users WHERE id = :id";
         $query_params = array(':id' => $row['userid']);
         $stmt         = $db->prepare($query);
         $result       = $stmt->execute($query_params);
-        $tests         = $stmt->fetch();
+        $tests        = $stmt->fetch();
             
-        if ($tests) {
-            $userid    = $row['id'];
-            $usersname = $row['username'];
-            $email     = $row['email'];
-            $firstname     = $row['firstname'];
-            $lastname     = $row['lastname'];
-        }
+        $usersname = $row['username'];
             
         echo '<ul id="tiles">';
         
