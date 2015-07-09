@@ -144,7 +144,7 @@ p.textPost {
     padding: 3px;
     color: white;
     background: rgb(56, 26, 26);
-    background: rgba(56, 26, 26, .23);
+    background: rgba(56, 26, 26, .5);
     width: auto;
     height: 20px;
 }
