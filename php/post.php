@@ -1,6 +1,9 @@
 <?php 
+	header("Content-Type: application/json", true);
     require("common.php"); 
 	
+    $data = array();
+
     if(isset($_FILES["file"])) { //If post has an image...
         $updirectory = 'img/uploads/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
@@ -46,17 +49,23 @@
             
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
-            die('Success: File Uploaded.');
+            $data['success'] = true;
 
         } else {
             die("Error: Couldn't upload the file.");
+            $data['success'] = false;
+            $data['error'] = 'A problem was encountered uploading the image.';
         }
         
     } else if (isset($_POST['text'])) { //If post has only text...
-        if (empty($_POST['text'])) { 
-            die('Error: Text is empty.');
+        if (empty($_POST['text'])) {
+            $data['success'] = false;
+            $data['error'] = 'No text was found to post.';
+            
         } else if (ctype_space($_POST['text'])) {
-            die('Error: Text cannot be only spaces.');
+            $data['success'] = false;
+            $data['error'] = 'Posts cannot contain only spaces.';
+            
         } else {
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'text', :text)"; 
             $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['text']); 
@@ -64,9 +73,12 @@
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
-            die('Success: File Uploaded.');
+            $data['success'] = true;
         }
-    } else {
-        die('Error: Found nothing to post.');   
+    } else {            
+        $data['success'] = false;
+        $data['error'] = 'Found nothing to post.';   
     }
+
+    echo json_encode($data);
 ?> 

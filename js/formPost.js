@@ -25,10 +25,15 @@ $(document).ready(function() {
             processData : false,
             contentType : false,
             cache       : false,
-            data        : formData,
-            success     : function (response) {
-				window.location.replace("main.php");
+            data        : formData,                    
+            success: function(data) {
+                if (data.success) {
+				    window.location.replace("main.php");   
+                } else {
+                    createError(data.error);
+                }
             },
+            
             error       : function(xhr, ajaxOptions, ThrownError){
                 alert("Error: " + ThrownError);
             }
