@@ -1,6 +1,5 @@
-$(document).ready(function() {   
-    var errorExists = false;
-
+$(document).ready(function() {
+    
     $('#postForm').submit(function(event) {
         var formData = new FormData();    
         var has_selected_file = $('input[type=file]').filter(function(){return $.trim(this.value) != ''}).length  > 0;
@@ -11,17 +10,11 @@ $(document).ready(function() {
             if (file['size'] < 2097152) {
                 formData.append( 'file', file );
             } else {
-                if (!errorExists) {
-                    $('#error').css({"height":"30px"});
-                    $('<div class="error"><b>Error:</b> The max file size is 2MB.</div>').hide().appendTo($('#error')).fadeIn(1000);
-                    errorExists = true;
-                    return false;
-                }
+                createError("The max file size is 2MB."); 
+                return false;
             }
         }
         
-        errorExists = false;    
-            
         if ($.trim($('.postText').val())) {
             formData.append('text', $('.postText').val());
         }

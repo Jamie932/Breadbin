@@ -128,8 +128,6 @@ p.report {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #DDD;
-	-moz-border-radius: 5px 5px;
-	border-radius: 5px 5px;
 	background-color: #fff;
 }
 

@@ -175,9 +175,6 @@
             </div> 
             <div class="clearFix"></div>
             
-            <div id="error">
-            </div>
-            
             <?php require('php/recommendToaster.php'); ?>
         </div>
     </div>
