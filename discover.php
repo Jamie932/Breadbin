@@ -102,26 +102,8 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $testHeight  = $height / 2;
             $testWidth   = $width / 2;
             
-            ?>
-
-                <script>
-                    console.log(<? echo json_encode($testWidth); ?>);
-                </script>
-
-            <?php
-            
             echo '<li>';
             echo '<div class="banner">';
-            
-            if ($width > 300) {
-                ?> 
-                    <style> 
-                        #tiles li img {
-                            margin-left: -<?php echo $testWidth; ?>;
-                        }
-                    </style> 
-                <?php   
-            }
             
             if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 99) {
