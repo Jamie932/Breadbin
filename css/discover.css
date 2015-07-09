@@ -109,10 +109,11 @@ a{
 
 #tiles li img {
     min-height: 300px;
-    max-height: 400px;
+    max-height: 400px; 
 	min-width: 300px;
     text-align:center;
-    display: inline-block;
+    position: relative;
+    left: -25%;
 } 
 
 #tiles ali:nth-child(3n) {
