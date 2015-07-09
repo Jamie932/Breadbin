@@ -58,7 +58,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
 ?>
     
 			<li class="cats">
-                <a href="#">Staff Recommendation</a>
+                <a href="#">Staff Recommendations</a>
             </li>
             <li class="cats">
                 <a href="#">Top Posts</a>
