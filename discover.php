@@ -136,11 +136,12 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
             }
             
+            echo '</div>';
+            
             echo '<div class="postUsername">';
                 echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
-            echo '</div>';
             echo '</li>'; 
             
         } else if ($row['type'] == "text") {
@@ -186,15 +187,18 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
             }
             
-            echo '<div class="postUsername">';
-                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-            echo '</div>';
+            
             
             echo '<div class="bannerText">';
             echo $row['text'];
             echo '</div>';
             
             echo '</div>';
+            
+            echo '<div class="postUsername">';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+            echo '</div>';
+            
             echo '</li>';
         }
         echo '</ul>';
