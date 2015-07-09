@@ -97,6 +97,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
 
                 <script>
                     console.log(<?echo json_encode($test);?>);
+                    console.log(<?echo json_encode($row['userid']);?>);
                 </script>
 
         <?php
