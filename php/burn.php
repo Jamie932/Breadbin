@@ -2,7 +2,6 @@
 	header("Content-Type: application/json", true);
     require("common.php");
       
-	$errors = array();
 	$data = array();
 
     $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
@@ -63,6 +62,7 @@
     } else {
         if($hasBurnt){
             $data['success'] = false;
+            
         } else {
             $query = "INSERT INTO post_burns (p_id, u_id) VALUES(:postId, :userId)";
             $query_params = array(':postId' => $_POST['post'], ':userId' => $_SESSION['user']['id']);

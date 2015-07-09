@@ -10,9 +10,7 @@ if (empty($_GET)) {
 } else {
     
     $query        = "SELECT * FROM users WHERE id = :id";
-    $query_params = array(
-        ':id' => intval($_GET['id'])
-    );
+    $query_params = array(':id' => intval($_GET['id']));
     
     $stmt   = $db->prepare($query);
     $result = $stmt->execute($query_params);

@@ -51,11 +51,16 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
-                var url = response.trim() + '?r=' + new Date().getTime();
+                console.log(response);
                 
-                $('#userAvatar').css('background-image', 'url(' + url + ')');
-                uploadingFile = false;
-                //window.location.replace("profile.php");
+                if (data.success) {
+                    var url = response.url.trim() + '?r=' + new Date().getTime();
+                
+                    $('#userAvatar').css('background-image', 'url(' + url + ')');
+                    uploadingFile = false;
+                } else {
+                    createError(response.error);   
+                }
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
                 console.log("Error in the upload.");

@@ -2,6 +2,8 @@
     require("common.php"); 
 	require("vendor/ImageResize.class.php");
 
+	$data = array();
+
     if(isset($_FILES["file"])) {
         $updirectory = '../img/avatars/' . $_SESSION['user']['id'] . '/';
         $filename = strtolower($_FILES['file']['name']);
@@ -19,13 +21,18 @@
         $UploadAvatar  = new ImageResize('file');
         $UploadResult = $UploadAvatar->Resize(150, $updirectory . $newfile, 100);
         
-        if($UploadResult) {   
-            echo 'img/avatars/' . $_SESSION['user']['id'] . '/' . $newfile;
+        if($UploadResult) {
+            $data['success'] = true;
+            $data['url'] = 'img/avatars/' . $_SESSION['user']['id'] . '/' . $newfile;
         } else {
-            die("Error: Couldn't upload the avatar.");
+            $data['success'] = false;
+            $data['error'] = 'A problem occured resizing the avatar.';
         }
         
     } else {
-        die('Error: Nothing found to upload.');   
+        $data['success'] = false;
+        $data['error'] = 'Nothing found to upload.';  
     }
+
+    echo json_encode($data);
 ?> 

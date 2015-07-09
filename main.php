@@ -31,8 +31,12 @@
                         data        : formData,
                         dataType    : 'json',
                         encode      : true,
-                        success:function(data) {  
-                            window.location.replace("main.php");
+                        success:function(data) {
+                            if (data.success) {
+                                window.location.replace("main.php");
+                            } else {
+                                createError(data.error);
+                            }
                         }
                     })
                 }
