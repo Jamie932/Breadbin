@@ -126,6 +126,14 @@
                         echo '<li><img class="tiles" src="' . $row['image'] . '" height="220px" width="300px"></li>'; 
                     }
                     
+                    ?>
+
+                    <script>
+                        console.log(<? echo json_encode($row['userid']); ?>);
+                    </script>
+
+                    <?php
+                    
                     echo '<div class="postUsername">';
                     echo $row['userid'];
                     echo '</div>';
