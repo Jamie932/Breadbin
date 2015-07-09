@@ -87,21 +87,12 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         } else {
         foreach ($posts as $row) {
             
-            $query        = "SELECT * FROM users WHERE id = :id"; 
+            $query        = "SELECT username FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']);
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $test         = $stmt->fetch();
             
-        ?>
-                <script>
-                    console.log(<?echo json_encode($test);?>);
-                    console.log(<?echo json_encode($row['userid']);?>);
-                    console.log(<?echo json_encode($row['username']);?>);
-                </script>
-
-        <?php
-                
         echo '<ul id="tiles">';
         
         if ($row['type'] == "image") {
@@ -109,7 +100,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             list($width, $height) = getimagesize($imgName);
             
             $aspectRatio = $width / $height;
-            $testHeight  = $height /= 2;
+            $testHeight  = $height / 2;
             
             echo '<li>';
             echo '<div class="banner">';
@@ -147,7 +138,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo $test;
+                echo '@' . $test['username'] .'';
             echo '</div>';
             
             echo '</div>';
@@ -162,7 +153,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             list($width, $height) = getimagesize($imgName);
             
             $aspectRatio = $width / $height;
-            $testHeight  = $height /= 2;
+            $testHeight  = $height /= 2; 
             
             echo '<li>';
             echo '<div class="banner">';
