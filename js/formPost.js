@@ -27,6 +27,8 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,                    
             success: function(data) {
+                data = JSON.parse(data);
+    
                 console.debug(data);
                 
                 if (data.success) {
