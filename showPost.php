@@ -196,9 +196,8 @@ if (empty($_GET)) {
                 $totalToasts = $row['toasts'] - $row['burns'];
 
                 if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-                    $imgName = ltrim($row['image'], "/.");
 
-                    if (!file_exists($imgName)) {
+                    if (!file_exists($row['image'])) {
                         $query = "DELETE FROM posts WHERE id = :id"; 
                         $query_params = array(':id' => $row['id']); 
 
@@ -206,7 +205,7 @@ if (empty($_GET)) {
                         $result = $stmt->execute($query_params); 
                     }
 
-                    list($width, $height) = getimagesize($imgName);
+                    list($width, $height) = getimagesize($row['image']);
 
                     if ($width > 600) {
                         $class = 'imgNoPadding';
