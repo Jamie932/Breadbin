@@ -27,10 +27,13 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,                    
             success: function(data) {
+                console.debug(data[0]['error']);
+                console.debug(data['error']);
+                
                 if (data['success']) {
 				    window.location.replace("main.php");   
                 } else {
-                    createError(data['error']);
+                    createError(data[0]['error']);
                 }
             },
             
