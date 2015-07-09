@@ -103,14 +103,6 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $lastname     = $row['lastname'];
         }
             
-        ?>
-
-            <script>
-                console.log(<?echo json_encode($usersname);?>);
-            </script>
-
-        <?php
-            
         echo '<ul id="tiles">';
         
         if ($row['type'] == "image") {
@@ -154,6 +146,15 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             } else {
                 echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
             }
+            
+            
+                ?>
+
+                <script>
+                    console.log(<?echo json_encode($row['username']);?>);
+                </script>
+
+                <?php
             
             echo '<div class="postUsername">';
                 echo $usersname;
