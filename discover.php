@@ -182,9 +182,14 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
             }
             
+            echo '<div class="postUsername">';
+                echo '@' . $test['username'] .'';
+            echo '</div>';
+            
             echo '<div class="bannerText">';
             echo $row['text'];
             echo '</div>';
+            
             echo '</div>';
             echo '</li>';
         }
