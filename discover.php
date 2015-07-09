@@ -144,7 +144,11 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             echo '</li>'; 
             
         } else if ($row['type'] == "text") {
-            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
+            echo '<div class="postUsername">';
+            echo '@' . $test['username'] .'';
+            echo '</div>';
+            echo '</div></li>';
         }
         
         else if ($row['type'] == 'imagetext') {
