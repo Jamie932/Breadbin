@@ -64,3 +64,5 @@
 		</ul>
 	</div>
 </div>
+
+<div id="errorBar"></div>
