@@ -137,7 +137,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo '@' . $test['username'] .'';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '</div>';
@@ -145,9 +145,9 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             
         } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
-            echo '<div class="postUsername">';
-            echo '@' . $test['username'] .'';
-            echo '</div>';
+                echo '<div class="postUsername">';
+                    echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '</div>';
             echo '</div></li>';
         }
         
@@ -187,7 +187,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo '@' . $test['username'] .'';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '<div class="bannerText">';
