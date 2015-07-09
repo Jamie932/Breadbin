@@ -82,7 +82,8 @@
              } else {
                 foreach ($posts as $row) {
                 echo '<ul id="tiles">';
-
+                echo '<div class="banner">';
+                
                 if ($row['type'] == "image") {
                     $imgName = ltrim($row['image'], "/.");
                     list($width, $height) = getimagesize($imgName);
@@ -136,6 +137,7 @@
                     
                     echo '<div class="postUsername">';
                     echo $row['userid'];
+                    echo '</div>';
                     echo '</div>';
 
                 } else if ($row['type'] == "text") {
