@@ -75,7 +75,8 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+            $query        = "SELECT * FROM posts WHERE userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+            /*userid <> :id AND */
             $query_params = array(
                 ':id' => $_SESSION['user']['id']
             );
