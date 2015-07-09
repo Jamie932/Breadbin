@@ -4,7 +4,7 @@
 ?>
 <html>
 <head>
-    <title>Breadbin - Home</title>
+    <title>Breadbin - Discover</title>
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
