@@ -93,9 +93,9 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         $query_params = array(':id' => $row['userid']);
         $stmt         = $db->prepare($query);
         $result       = $stmt->execute($query_params);
-        $row         = $stmt->fetch();
+        $tests         = $stmt->fetch();
             
-        if ($row) {
+        if ($tests) {
             $userid    = $row['id'];
             $usersname = $row['username'];
             $email     = $row['email'];
