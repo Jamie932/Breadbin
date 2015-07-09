@@ -307,11 +307,10 @@ if (empty($_GET)) {
                 echo '<ul id="tiles">';
 
                 if ($row['type'] == "image") {
-                    $imgName = ltrim($row['image'], "/.");
-                    list($width, $height) = getimagesize($imgName);
+                    list($width, $height) = getimagesize($row['image']);
 
                     $aspectRatio = $width/$height;
-                    $testHeight = $height/=2;
+                    $testHeight = $height/2;
                 ?>
 
                 <script>
@@ -353,12 +352,10 @@ if (empty($_GET)) {
                         echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
 
                 } else if ($row['type'] == 'imagetext') {
-                    $imgName = ltrim($row['image'], "/.");
-                    list($width, $height) = getimagesize($imgName);
+                    list($width, $height) = getimagesize($row['image']);
 
                     $aspectRatio = $width/$height;
-                    $testHeight = $height/=2;
-
+                    $testHeight = $height/2;
                 ?>
 
                 <script>
