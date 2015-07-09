@@ -82,24 +82,16 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
 
+        if (!$posts) {
+            echo '<center>You follow everyone tough luck.</center>';
+        } else {
+        foreach ($posts as $row) {
+            
             $query        = "SELECT * FROM users WHERE id = :id";
             $query_params = array(':id' => $row['userid']);
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $test          = $stmt->fetch();
-
-            if ($test) {
-                $userid    = $row['id'];
-                $usersname = $row['username'];
-                $email     = $row['email'];
-                $firstname     = $row['firstname'];
-                $lastname     = $row['lastname'];
-            }
-
-        if (!$posts) {
-            echo '<center>You follow everyone tough luck.</center>';
-        } else {
-        foreach ($posts as $row) {
                 
         echo '<ul id="tiles">';
         
@@ -149,13 +141,13 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 ?>
 
                 <script>
-                    console.log(<?echo json_encode($usersname);?>);
+                    console.log(<?echo json_encode($row['username']);?>);
                 </script>
 
                 <?php
             
             echo '<div class="postUsername">';
-                echo $usersname;
+                echo $row['username'];
             echo '</div>';
             
             echo '</div>';
