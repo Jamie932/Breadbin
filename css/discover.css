@@ -143,8 +143,8 @@ p.textPost {
     left: 5px;
     padding: 3px;
     color: white;
-    background: rgb(54, 25, 25);
-    background: rgba(54, 25, 25, .5);
+    background: rgb(56, 26, 26);
+    background: rgba(56, 26, 26, .23);
     width: auto;
     height: 20px;
 }
