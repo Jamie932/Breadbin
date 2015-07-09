@@ -151,7 +151,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 <?php
             
             echo '<div class="postUsername">';
-                echo $row['username'];
+                echo $test;
             echo '</div>';
             
             echo '</div>';
