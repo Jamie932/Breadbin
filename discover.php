@@ -147,7 +147,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             }
             
             echo '<div class="postUsername">';
-                echo $test;
+                echo $test['username'];
             echo '</div>';
             
             echo '</div>';
@@ -162,7 +162,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             list($width, $height) = getimagesize($imgName);
             
             $aspectRatio = $width / $height;
-            $testHeight  = $height /= 2;
+            $testHeight  = $height /= 2; 
             
             echo '<li>';
             echo '<div class="banner">';
