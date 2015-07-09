@@ -100,7 +100,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             list($width, $height) = getimagesize($imgName);
             
             $aspectRatio = $width / $height;
-            $testHeight  = $height /= 2;
+            $testHeight  = $height / 2;
             
             echo '<li>';
             echo '<div class="banner">';
