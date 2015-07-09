@@ -130,9 +130,10 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
             }
             
-            echo '<div class="postUsername">';
+            /*echo '<div class="postUsername">';
             echo $row['userid'];
-            echo '</div>';
+            echo '</div>';*/
+            
             echo '</div>';
             echo '</li>';
             
