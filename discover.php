@@ -96,8 +96,6 @@
                 </script>
 
                 <?php
-                echo '<div class="banner">';    
-                
                     if ($aspectRatio >= 0) {
                         if ($height >=0 && $height < 99) {
                             echo '<li><img class="tiles" src="' . $row['image'] . '" height="100px"></li>'; 
