@@ -140,3 +140,7 @@ p.textPost {
     width: auto;
     height: 20px;
 }
+
+#main {
+    height: auto !important;   
+}
