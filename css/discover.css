@@ -9,6 +9,14 @@ body {
     font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
+
+footer {
+    border-top: 1px solid rgb(97, 97, 97); 
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
 /* categories */
 #categories {
     border-bottom: 1px solid rgb(97, 97, 97); 
