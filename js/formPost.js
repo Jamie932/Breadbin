@@ -27,20 +27,14 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,                    
             success: function(data) {
-                console.debug(data[0]['error']);
-                console.debug(data['error']);
+                console.debug(data);
                 
-                if (data['success']) {
+                if (data.success) {
 				    window.location.replace("main.php");   
                 } else {
-                    createError(data[0]['error']);
+                    createError(data.error);
                 }
-            },
-            
-            error       : function(xhr, ajaxOptions, ThrownError){
-                alert("Error: " + ThrownError);
             }
-            
         })
 		
 		/*.done(function(data) {
