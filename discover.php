@@ -198,7 +198,9 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                </ul>
             </div>
         </div>
-    
+        <footer>
+                <center>Will we ever have a footer?</center>
+        </footer>
         <script src="js/jquery.wookmark.js"></script>
         <script type="text/javascript">
         var colors = [
