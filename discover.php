@@ -77,9 +77,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             <?php
             $query        = "SELECT * FROM posts WHERE userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
             /*userid <> :id AND */
-            $query_params = array(
-                ':id' => $_SESSION['user']['id']
-            );
+            $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
@@ -91,11 +89,19 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
         } else {
         foreach ($posts as $row) {
             
-        $query        = "SELECT username FROM users WHERE id = :id";
+        $query        = "SELECT * FROM users WHERE id = :id";
         $query_params = array(':id' => $row['userid']);
         $stmt         = $db->prepare($query);
         $result       = $stmt->execute($query_params);
-        $test         = $stmt->fetch();
+        $row         = $stmt->fetch();
+            
+        if ($row) {
+            $userid    = $row['id'];
+            $usersname = $row['username'];
+            $email     = $row['email'];
+            $firstname     = $row['firstname'];
+            $lastname     = $row['lastname'];
+        }
             
         echo '<ul id="tiles">';
         
@@ -145,13 +151,13 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 ?>
 
                 <script>
-                    console.log(<?echo json_encode($test);?>);
+                    console.log(<?echo json_encode($usersname);?>);
                 </script>
 
                 <?php
             
             echo '<div class="postUsername">';
-                echo $test;
+                echo $usersname;
             echo '</div>';
             
             echo '</div>';
