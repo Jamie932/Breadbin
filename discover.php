@@ -82,22 +82,22 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
 
+            $query        = "SELECT username FROM users WHERE id = :id";
+            $query_params = array(':id' => $row['userid']);
+            $stmt         = $db->prepare($query);
+            $result       = $stmt->execute($query_params);
+            $test         = $stmt->fetch();
+
         if (!$posts) {
             echo '<center>You follow everyone tough luck.</center>';
         } else {
         foreach ($posts as $row) {
             
-        $query        = "SELECT username FROM users WHERE id = :id";
-        $query_params = array(':id' => $row['userid']);
-        $stmt         = $db->prepare($query);
-        $result       = $stmt->execute($query_params);
-        $test         = $stmt->fetch();
-            
         ?>
-
                 <script>
                     console.log(<?echo json_encode($test);?>);
                     console.log(<?echo json_encode($row['userid']);?>);
+                    console.log(<?echo json_encode($row['username']);?>);
                 </script>
 
         <?php
