@@ -23,7 +23,7 @@ require('php/template/navbar.php');
 ?>
     
     <?php
-/*$query = "SELECT colour FROM user_settings WHERE user_id = :userId"; 
+$query = "SELECT colour FROM user_settings WHERE user_id = :userId"; 
 $query_params = array(':userId' => $_SESSION['user']['id']); 
 
 $stmt = $db->prepare($query); 
@@ -42,7 +42,7 @@ $newColour = '#FFC46C';
 $newColour = '#FF93DB';
 }
 }
-*/
+
 ?>
 
                 <script>
@@ -53,7 +53,7 @@ echo json_encode($newColour);
 
         <?php
 
-echo '<div id="categories" style="background-color:#fff">';
+echo '<div id="categories" style="background-color:'. $newColour .'">';
 echo '<ul class="cats" style="color:' . $fontColour . '">';
 ?>
     
