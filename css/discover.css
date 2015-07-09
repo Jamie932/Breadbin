@@ -100,6 +100,13 @@ a{
     padding: 0;
 }
 
+#tiles li img {
+    min-height: 300px;
+    max-height: 400px;
+	min-width: 300px;
+    text-align:center;
+    display: inline-block;
+} 
 
 #tiles ali:nth-child(3n) {
 	height: 175px;
@@ -124,13 +131,12 @@ p.textPost {
 }
 
 .postUsername {
-            visibility: visible;
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            padding: 3px;
-            color: white;
-            background: rgb(54, 25, 25); /* Fall-back for browsers that don't
-                                    support rgba */
-            background: rgba(54, 25, 25, .5);
+    visibility: visible;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 3px;
+    color: white;
+    background: rgb(54, 25, 25);
+    background: rgba(54, 25, 25, .5);
 }
