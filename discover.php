@@ -141,6 +141,15 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
             }
             
+            
+            ?>
+
+                <script>
+                    console.log(<?echo json_encode($row['username']);?>);
+                </script>
+
+            <?php
+            
             echo '<div class="postUsername">';
                 echo $row['username'];
             echo '</div>';
@@ -159,13 +168,6 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             $aspectRatio = $width / $height;
             $testHeight  = $height /= 2;
             
-                ?>
-
-                <script>
-                    console.log(<?echo json_encode($aspectRatio);?>);
-                </script>
-
-                <?php
             echo '<li>';
             echo '<div class="banner">';
             
