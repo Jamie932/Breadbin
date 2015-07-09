@@ -91,6 +91,8 @@ if (empty($_GET)) {
                     dataType    : 'json',
                     encode      : true,
                     success:function(data) {
+                        data = JSON.parse(data);
+                        
                         if (!data.success) {
                             createError(data.error);
                         }

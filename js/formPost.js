@@ -27,17 +27,14 @@ $(document).ready(function() {
             cache       : false,
             data        : formData,                    
             success: function(data) {
-                if (data['success']) {
+                data = JSON.parse(data);
+                
+                if (data.success) {
 				    window.location.replace("main.php");   
                 } else {
-                    createError(data['error']);
+                    createError(data.error);
                 }
-            },
-            
-            error       : function(xhr, ajaxOptions, ThrownError){
-                alert("Error: " + ThrownError);
             }
-            
         })
 		
 		/*.done(function(data) {
