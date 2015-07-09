@@ -17,6 +17,11 @@
             height: 20px;
         }
     </style>
+    <script>
+    function myFunction() {
+        window.open("image") 
+    }
+    </script>
 </head>
 <body>
     <div id="content">
@@ -24,7 +29,7 @@
         <ul id="tiles">
             <div class="banner">
             <li>
-                <img class="tiles" src="img/cKI9AhG.jpg" height="400px">
+                <img class="tiles" src="img/cKI9AhG.jpg" height="400px"> 
                 <div class="postUsername">
                     @Texttext
                 </div>
@@ -41,7 +46,7 @@
     </div>
     </div>
     
-    <script src="js/jquery.wookmark.js"></script>
+    <script src="js/vendor/jquery.wookmark.js"></script>
         <script type="text/javascript">
         var colors = [
             "rgb(138, 230, 138)",
@@ -80,7 +85,9 @@
           handler.wookmark(options);
 
           // Capture clicks on grid items.
-         
+         handler.click(function(){
+            
+         });
         });
     </script>
     

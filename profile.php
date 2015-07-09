@@ -219,7 +219,7 @@ if (empty($_GET)) {
             });
         });
     </script>
-    <script src="js/progressbar.min.js"></script>
+    <script src="js/vendor/progressbar.min.js"></script>
 </head>
     
 <body class="profile">
@@ -542,7 +542,7 @@ if (empty($_GET)) {
         </div>
             
     <script src="js/formSettings.js"></script>
-    <script src="js/jquery.wookmark.js"></script>
+    <script src="js/vendor/jquery.wookmark.js"></script>
     <script type="text/javascript">
         var colors = [
             "rgb(138, 230, 138)",
