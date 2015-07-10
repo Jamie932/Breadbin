@@ -145,34 +145,34 @@ require('../php/template/discoverNavbar.php');
             
             if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 200 && $height < 300) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 } else if ($height >= 600 && $height < 1000) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 } else if ($height >= 1000) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 }
             } else if ($aspectRatio == 1) {
                 if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="100px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="100px" width="300px">';
                 } else if ($height >= 100 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 400) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 }
             } else {
-                echo '<img class="blurImage" src="' . $direcFix . '" height="220px">';
+                echo '<img class="blurImage" src="' . $direcFix . '" height="220px" width="300px">';
             }
             
             
