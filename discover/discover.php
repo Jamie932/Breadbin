@@ -1,18 +1,18 @@
 <?php
-require("/php/common.php");
-require("/php/checkLogin.php");
+require("../php/common.php");
+require("../php/checkLogin.php");
 ?>
 <html>
 <head>
     <title>Breadbin - Discover</title>
-    <link href="/css/common.css" rel="stylesheet" type="text/css">
-    <link href="/css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="/css/discover.css" rel="stylesheet" type="text/css">
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="../css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="/js/vendor/jquery.cookie.js"></script>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <script src="../js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="../js/vendor/jquery.cookie.js"></script>
 </head>
 <body>
     <noscript>
@@ -20,7 +20,7 @@ require("/php/checkLogin.php");
     </noscript>    
     
     <?php
-require('/php/template/navbar.php');
+require('../php/template/navbar.php'); 
 ?>
     
     <?php
@@ -100,40 +100,40 @@ $newColour = '#FF93DB';
             
             if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 99) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="100px">';
                 } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="' . $height . '">';
                 } else if ($height >= 200 && $height < 300) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="' . $height . '">';
                 } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="' . $height . '">';
                 } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '"';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="' . $height . '"';
                 } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="' . $height . '">';
                 } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="400px">';
                 } else if ($height >= 600 && $height < 700) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="400px">';
                 } else if ($height >= 700 && $height < 800) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="400px">';
                 } else if ($height >= 800 && $height < 1000) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="' . $testHeight . '">';
                 } else if ($height >= 1000) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="400px">';
                 } else {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                    echo '<img class="tiles" src="../' . $row['image'] . '" height="400px">';
                 }
             } else if ($aspectRatio == 1) {
-                echo '<img class="tiles" src="' . $row['image'] . '" height="300px" width="300px">';
+                echo '<img class="tiles" src="../' . $row['image'] . '" height="300px" width="300px">';
             } else {
-                echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
+                echo '<img class="tiles" src="../' . $row['image'] . '" height="220px" width="300px">';
             }
             
             echo '</div>';
             
             echo '<div class="postUsername">';
-                echo '<a href="/profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '</li>'; 
@@ -141,7 +141,7 @@ $newColour = '#FF93DB';
         } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
                 echo '<div class="postUsername">';
-                    echo '<a href="/profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                    echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
                 echo '</div>';
             echo '</div></li>';
         }
@@ -159,26 +159,26 @@ $newColour = '#FF93DB';
                 echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
             } else if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 600 && $height < 1000) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 1000) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $height . '" width="300px">';
                 }
             } else if ($aspectRatio == 1) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $testHeight . '"">';
+                echo '<img class="blurImage" src="../' . $row['image'] . '" height="' . $testHeight . '"">';
             } else {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
+                echo '<img class="blurImage" src="../' . $row['image'] . '" width="300px" height="220px">';
             }
             
             
@@ -194,11 +194,11 @@ $newColour = '#FF93DB';
             echo '</div>';*/
             
             echo '<div class="postUsername">';
-                echo '<a href="/profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '<div class="postText">';
-                echo '<img src="/img/text.png" height="30px">';
+                echo '<img src="../img/text.png" height="30px">';
             echo '</div>';
             
             echo '</li>';
@@ -211,7 +211,7 @@ $newColour = '#FF93DB';
                </ul>
             </div>
         </div>
-        <script src="/js/vendor/jquery.wookmark.js"></script>
+        <script src="../js/vendor/jquery.wookmark.js"></script>
         <script type="text/javascript">
         var colors = [
             "rgb(138, 230, 138)",
