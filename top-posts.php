@@ -27,13 +27,13 @@ require('../php/template/discoverNavbar.php');
         <ul class="cats">
 
 			<li class="cats">
-                <a class="active">All</a>
+                <a href="discover.php">All</a>
             </li>
             <li class="cats">
                 <a>Staff Recommendations</a>
             </li>
             <li class="cats">
-                <a href="top-posts.php">Top Posts</a>
+                <a class="active">Top Posts</a>
             </li>
             <li class="cats">
                 <a href="#">Just Pictures</a>
@@ -48,7 +48,7 @@ require('../php/template/discoverNavbar.php');
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+            $query        = "SELECT * FROM posts WHERE userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY toasts";
             /*userid <> :id AND */
             $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
