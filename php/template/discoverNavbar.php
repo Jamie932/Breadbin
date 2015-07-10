@@ -1,11 +1,5 @@
 <script src="../../js/errorHandler.js"></script>
 <script>
-    $(document).ready(function(){
-        $(document).on('click','#closeError', function() {
-            clearErrors();
-        })
-    });
-
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
             var confirmed = confirm("Are you sure you want to log out?");
@@ -21,8 +15,6 @@
             }
         }
     }
-    
-    
 </script>
 
 <?php
@@ -49,13 +41,13 @@
 ?>
 
 	<div class="left">
-		<a href="main.php" class="navLinks">Bread Bin</a>
+		<a href="/main.php" class="navLinks">Bread Bin</a>
 	</div>
 	
 	<div class="right">
 		<ul class="nav">		
 			<li class="nav">
-                <a class="navLinks" href="discover/discover.php">Discover</a>
+                <a class="navLinks" href="discover.php">Discover</a>
             </li>
             <li class="nav">
                 <?php
@@ -65,15 +57,13 @@
                         echo '<div id="navAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
                     }*/
 
-				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
+				    echo '<a class="navLinks" href="/profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                     echo '<div class="arrow-up"></div>';
                 ?>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
 	</div>
-</div> 
-
-<div id="errorBar">
-    <div id="closeError"><i class="fa fa-times"></i></div>
 </div>
+
+<div id="errorBar"></div>
