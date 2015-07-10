@@ -48,7 +48,7 @@ require('../php/template/discoverNavbar.php');
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE toasts > 0 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY DESC toasts";
+            $query        = "SELECT * FROM posts WHERE toasts > 0 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY toasts DESC";
             /*userid <> :id AND */
             $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
