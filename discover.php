@@ -204,6 +204,10 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
                 echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
+            echo '<div class="postText">';
+                echo '<img src="img/text.png" height="30px">';
+            echo '</div>';
+            
             echo '</li>';
         }
         echo '</ul>';

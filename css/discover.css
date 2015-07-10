@@ -108,7 +108,7 @@ a{
     padding: 0;
 }
 
-#tiles li img {
+#tiles .tiles {
     min-height: 300px;
     max-height: 400px; 
 	min-width: 300px;
@@ -162,4 +162,13 @@ p.textPost {
     height: 40px;
     font-size: 25px;
     padding-top: 10px;
+}
+
+.postText {
+    visibility: visible;
+    position: absolute;
+    top: 5px;
+    left: 90%;
+    width: 30px;
+    height: 30px;
 }
