@@ -10,6 +10,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
@@ -173,7 +174,7 @@
                     </div>
                     
                     <div class="uploadRest">
-                        <a href="#" onclick="getFile();" style="float:left;"><img src="img/camera.png" class="postImage" id="uploadImage" height="30px" width="30px" style="vertical-align:top; margin-left:5px;"></a>
+                        <div id="imageIcon"><a href="#" onclick="getFile();" style="float:left;"><i class="fa fa-camera"></i></a></div>
                         <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*"/></div>
                         <div id="uploadname" style="float:left;"></div>
                         

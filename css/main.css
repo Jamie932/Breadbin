@@ -250,3 +250,10 @@ h5 {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+#imageIcon {
+    vertical-align:top; 
+    margin-left:5px;   
+    width: 30px;
+    height: 30px;
+}
