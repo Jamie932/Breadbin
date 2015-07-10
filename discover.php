@@ -100,6 +100,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             
             $aspectRatio = $width / $height;
             $testHeight  = $height / 2;
+            $testWidth   = $width / 2;
             
             echo '<li>';
             echo '<div class="banner">';
