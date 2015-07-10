@@ -20,7 +20,7 @@ require("../php/checkLogin.php");
     </noscript>    
     
     <?php
-require('../php/template/navbar.php'); 
+require('../php/template/discoverNavbar.php'); 
 ?>
       
     <div id="categories" style="background-color:#fff">
