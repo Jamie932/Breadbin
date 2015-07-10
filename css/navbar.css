@@ -105,7 +105,6 @@ a.navLinks:hover { color: #616161 }
     font-size: 0.9em;
 }
 
-#closeError {
-    position: absolute;
-    right: 20px;
+#errorClose {
+    font-size: 1.2em;
 }

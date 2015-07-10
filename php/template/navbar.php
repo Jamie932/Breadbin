@@ -75,5 +75,6 @@
 </div> 
 
 <div id="errorBar">
-    <div id="closeError"><i class="fa fa-times"></i></div>
+    <div id="errorText"></div>
+    <div id="errorClose"><i class="fa fa-times" style="line-height: 35px"></i></div>
 </div>

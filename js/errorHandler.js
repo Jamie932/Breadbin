@@ -1,6 +1,6 @@
 function createError(errorMessage) {
     $('#errorBar').animate({height: "35px"}, 500);
-    $('#errorBar').html("ERROR: " + errorMessage);
+    $('#errorText').html(errorMessage);
 
     if ($('#profileContainer').length) {
         $('#profileContainer').animate({marginTop: "35px"}, 500);
@@ -11,7 +11,7 @@ function createError(errorMessage) {
 
 function clearErrors() {
     $('#errorBar').animate({height: "0px"}, 500);
-    $('#errorBar').html("");  
+    $('#errorText').html("");  
     
     if ($('#profileContainer').length) {
         $('#profileContainer').animate({marginTop: "0px"}, 500);
