@@ -143,9 +143,7 @@ require('../php/template/discoverNavbar.php');
             echo '<li>';
             echo '<div class="banner">';
             
-            if ($height <= 200) {
-                echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-            } else if ($aspectRatio >= 0) {
+            if ($aspectRatio >= 0) {
                 if ($height >= 0 && $height < 100) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
                 } else if ($height >= 100 && $height < 200) {
