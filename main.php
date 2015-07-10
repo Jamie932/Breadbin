@@ -175,7 +175,7 @@
                     
                     <div class="uploadRest">
                         <input type="submit" value="Submit" id="submitPost" class="buttonstyle">
-                        
+                         
                         <div id="imageIcon"><a href="#" onclick="getFile();"><i class="fa fa-camera"></i></a></div>
                         <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*"/></div>
                         <div id="uploadname" style="float:left;"></div>
