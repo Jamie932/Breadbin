@@ -35,8 +35,9 @@
                         success:function(data) {
                             if (data.success) {
                                 //window.location.replace("main.php");
+                                //$('.post-' + postid).fadeOut(600, function() { $(this).remove(); });
+                                $('.post-' + postid).animate({height: 0, opacity: 0}, 'slow', function() { $(this).remove();});
                                 
-                                $('.post-' + postid).fadeOut(600, function() { $(this).remove(); });
                             } else {
                                 createError(data.error);
                             }
