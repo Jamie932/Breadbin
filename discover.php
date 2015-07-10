@@ -44,19 +44,10 @@ $newColour = '#FF93DB';
 }
 */
 ?>
+        
+    <div id="categories" style="background-color:#fff">
+        <ul class="cats">
 
-                <script>
-                    console.log(<?
-echo json_encode($newColour);
-?>); 
-                </script>
-
-        <?php
-
-echo '<div id="categories" style="background-color:#fff">';
-echo '<ul class="cats" style="color:' . $fontColour . '">';
-?>
-    
 			<li class="cats">
                 <a href="#">Staff Recommendations</a>
             </li>
@@ -69,6 +60,7 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             <li class="cats">
                 <a href="#">Just Recipies</a>
             </li>
+            
 		</ul>
     </div>
         
