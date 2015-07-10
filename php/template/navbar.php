@@ -1,5 +1,11 @@
 <script src="../../js/errorHandler.js"></script>
 <script>
+    $(document).ready(function(){
+        $(document).on('click','#closeError', function() {
+            clearErrors();
+        })
+    });
+
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
             var confirmed = confirm("Are you sure you want to log out?");
@@ -15,6 +21,8 @@
             }
         }
     }
+    
+    
 </script>
 
 <?php
@@ -66,4 +74,6 @@
 	</div>
 </div>
 
-<div id="errorBar"></div>
+<div id="errorBar">
+    <div id="closeError"><i class="fa fa-times"></i></div>
+</div>

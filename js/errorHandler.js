@@ -1,4 +1,4 @@
-function createError(errorMessage) { //Improve this later by pushing content down automatically!
+function createError(errorMessage) {
     $('#errorBar').animate({height: "35px"}, 500);
     $('#errorBar').html("ERROR: " + errorMessage);
 
@@ -9,7 +9,7 @@ function createError(errorMessage) { //Improve this later by pushing content dow
     }
 }
 
-function clearError() {
+function clearErrors() {
     $('#errorBar').animate({height: "0px"}, 500);
     $('#errorBar').html("");  
     

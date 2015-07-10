@@ -104,3 +104,8 @@ a.navLinks:hover { color: #616161 }
     line-height: 35px;
     font-size: 0.9em;
 }
+
+#closeError {
+    position: absolute;
+    right: 20px;
+}
