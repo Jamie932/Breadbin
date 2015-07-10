@@ -104,9 +104,9 @@ require('../php/template/navbar.php');
                     echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
                 }
             } else if ($aspectRatio == 1) {
-                if ($height >= 0 && < 100) {
+                if ($height >= 0 && $height < 100) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="100px">';
-                } else if ($height >= 100 && < 400) {
+                } else if ($height >= 100 && $height < 400) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
                 } else if ($height >= 400) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
@@ -161,9 +161,9 @@ require('../php/template/navbar.php');
                     echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 }
             } else if ($aspectRatio == 1) {
-                if ($height >= 0 && < 100) {
+                if ($height >= 0 && $height < 100) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="100px">';
-                } else if ($height >= 100 && < 400) {
+                } else if ($height >= 100 && $height < 400) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
                 } else if ($height >= 400) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
