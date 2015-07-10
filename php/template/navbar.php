@@ -1,7 +1,7 @@
 <script src="../../js/errorHandler.js"></script>
 <script>
     $(document).ready(function(){
-        $(document).on('click','#closeError', function() {
+        $(document).on('click','#errorClose', function() {
             clearErrors();
         })
     });
