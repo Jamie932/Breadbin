@@ -113,6 +113,6 @@ a.navLinks:hover { color: #616161 }
 }
 
 #errorText {
-    dislay: inline-block;
+    display: inline-block;
     margin-right: -15px;
 }
