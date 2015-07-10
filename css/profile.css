@@ -281,3 +281,11 @@ p.textPost {
     -moz-border-radius: 3px 3px;
 	border-radius: 3px 3px;
 }
+
+.editableContent {
+    border: 1px dashed #666;
+    background-color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
