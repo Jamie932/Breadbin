@@ -10,7 +10,7 @@ require("/php/checkLogin.php");
     <link href="/css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
     <script src="/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="/js/vendor/jquery.cookie.js"></script>
 </head>
@@ -133,7 +133,7 @@ $newColour = '#FF93DB';
             echo '</div>';
             
             echo '<div class="postUsername">';
-                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '<a href="/profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '</li>'; 
@@ -141,7 +141,7 @@ $newColour = '#FF93DB';
         } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
                 echo '<div class="postUsername">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                    echo '<a href="/profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
                 echo '</div>';
             echo '</div></li>';
         }
@@ -194,11 +194,11 @@ $newColour = '#FF93DB';
             echo '</div>';*/
             
             echo '<div class="postUsername">';
-                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '<a href="/profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '<div class="postText">';
-                echo '<img src="img/text.png" height="30px">';
+                echo '<img src="/img/text.png" height="30px">';
             echo '</div>';
             
             echo '</li>';
