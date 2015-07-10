@@ -252,8 +252,11 @@ h5 {
 }
 
 #imageIcon {
-    vertical-align:top; 
-    margin-left:5px;   
-    width: 30px;
-    height: 30px;
+    float: right;
+    margin-right: 15px;
+}
+
+#imageIcon a {
+    float: left;
+    color: gray;
 }
