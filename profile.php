@@ -362,10 +362,6 @@ if (empty($_GET)) {
 
                     echo '</div>';
 
-                    echo '<div class="postUsername">';
-                        echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-                    echo '</div>';
-
                     echo '</li>'; 
             
                 } else if ($row['type'] == "text") {
