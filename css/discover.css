@@ -17,6 +17,10 @@ footer {
     background-color: white;
 }
 
+a.active {
+    color: black;   
+}
+
 /* categories */
 #categories {
     border-bottom: 1px solid rgb(97, 97, 97); 

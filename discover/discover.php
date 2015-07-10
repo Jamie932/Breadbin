@@ -10,7 +10,7 @@ require("../php/checkLogin.php");
     <link href="../css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
     <script src="../js/vendor/jquery.cookie.js"></script>
 </head>
@@ -20,13 +20,16 @@ require("../php/checkLogin.php");
     </noscript>    
     
     <?php
-require('../php/template/navbar.php'); 
+require('../php/template/discoverNavbar.php'); 
 ?>
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
 
 			<li class="cats">
+                <a href="#" class="active">All</a>
+            </li>
+            <li class="cats">
                 <a href="#">Staff Recommendations</a>
             </li>
             <li class="cats">
