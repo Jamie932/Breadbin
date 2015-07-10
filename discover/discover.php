@@ -104,7 +104,13 @@ require('../php/template/navbar.php');
                     echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
                 }
             } else if ($aspectRatio == 1) {
-                echo '<img class="tiles" src="' . $direcFix . '" height="300px" width="300px">';
+                if ($height >= 0 && < 100) {
+                    echo '<img class="tiles" src="' . $direcFix . '" height="100px">';
+                } else if ($height >= 100 && < 400) {
+                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
+                } else if ($height >= 400) {
+                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
+                }
             } else {
                 echo '<img class="tiles" src="' . $direcFix . '" height="220px" width="300px">';
             }
@@ -148,14 +154,20 @@ require('../php/template/navbar.php');
                 } else if ($height >= 400 && $height < 500) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
                 } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 } else if ($height >= 600 && $height < 1000) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 } else if ($height >= 1000) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 }
             } else if ($aspectRatio == 1) {
-                echo '<img class="blurImage" src="' . $direcFix . '" height="400px">';
+                if ($height >= 0 && < 100) {
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="100px">';
+                } else if ($height >= 100 && < 400) {
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
+                } else if ($height >= 400) {
+                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
+                }
             } else {
                 echo '<img class="blurImage" src="' . $direcFix . '" width="300px" height="220px">';
             }
