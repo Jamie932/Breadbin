@@ -110,7 +110,7 @@ a.navLinks:hover { color: #616161 }
     margin-right: 15px;
     font-size: 1.2em;
     cursor: pointer;
-    display: none;
+    opacity: 0;
 }
 
 #errorText {

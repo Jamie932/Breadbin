@@ -1,5 +1,5 @@
 function createError(errorMessage) {
-    $('#errorBar').animate({height: "35px"}, 500, function() { $('#errorClose').fadeIn(); });
+    $('#errorBar').animate({height: "35px"}, 500, function() { $('#errorClose').animate({opacity:1}, 200); });
     $('#errorText').html(errorMessage);
 
     if ($('#profileContainer').length) {
@@ -10,7 +10,7 @@ function createError(errorMessage) {
 }
 
 function clearErrors() {
-    $('#errorClose').fadeOut();
+    $('#errorClose').animate({opacity:1}, 200);
     $('#errorBar').animate({height: "0px"}, 500);
     $('#errorText').html("");  
     
