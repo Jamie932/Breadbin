@@ -32,10 +32,10 @@
                         dataType    : 'json',
                         encode      : true,
                         success:function(data) {
-                            data = JSON.parse(data);
-                            
                             if (data.success) {
-                                window.location.replace("main.php");
+                                //window.location.replace("main.php");
+                                
+                                $('.post-' + postid).fadeOut(300, function() { $(this).remove(); });
                             } else {
                                 createError(data.error);
                             }
