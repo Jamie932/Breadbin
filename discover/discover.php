@@ -22,30 +22,7 @@ require("../php/checkLogin.php");
     <?php
 require('../php/template/navbar.php'); 
 ?>
-    
-    <?php
-/*$query = "SELECT colour FROM user_settings WHERE user_id = :userId"; 
-$query_params = array(':userId' => $_SESSION['user']['id']); 
-
-$stmt = $db->prepare($query); 
-$result = $stmt->execute($query_params); 
-$row = $stmt->fetch();
-
-if($row){ 
-if ($row['colour'] == 1) {
-$newColour = '#AFE4AF;';
-$fontColour = '#000';
-} else if ($row['colour'] == 2){
-$newColour = '#81ABFF';
-} else if ($row['colour'] == 3){
-$newColour = '#FFC46C';
-} else if ($row['colour'] == 4){
-$newColour = '#FF93DB';
-}
-}
-*/
-?>
-        
+      
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
 
@@ -88,8 +65,10 @@ $newColour = '#FF93DB';
             
         echo '<ul id="tiles">';
         
+        $direcFix = '../'.$row['image'];
+            
         if ($row['type'] == "image") {
-            list($width, $height) = getimagesize($row['image']);
+            list($width, $height) = getimagesize($direcFix);
             
             $aspectRatio = $width / $height;
             $testHeight  = $height / 2;
@@ -147,7 +126,7 @@ $newColour = '#FF93DB';
         }
         
         else if ($row['type'] == 'imagetext') {
-            list($width, $height) = getimagesize($row['image']);
+            list($width, $height) = getimagesize($direcFix);
             
             $aspectRatio = $width / $height;
             $testHeight  = $height /= 2; 
