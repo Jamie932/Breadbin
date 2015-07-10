@@ -421,7 +421,7 @@ if (empty($_GET)) {
                     echo '</div>';*/
 
                     echo '<div class="postText">';
-                        echo '<img src="../img/text.png" height="30px">';
+                        echo '<img src="../img/text.png" height="23px">';
                     echo '</div>';
 
                     echo '</li>';
