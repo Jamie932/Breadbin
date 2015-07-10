@@ -51,6 +51,7 @@ function submitAvatar() {
             cache       : false,
             data        : formData,
             success     : function (response) {
+                response = JSON.parse(response);
                 console.log(response);
                 
                 if (data.success) {
