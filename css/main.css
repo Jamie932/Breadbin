@@ -1,268 +1,252 @@
 html, body {
-	padding: 0px;
-	margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
-	background-color: #F6F6F6;
-	font-family: 'Roboto', sans-serif;
-	margin: 0;
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
-p {
-	margin-bottom: -10px;
-}
+p { margin-bottom: -10px }
 
-.clearFix {
-	clear: both;
-}
+.clearFix { clear: both }
 
 p.report {
-	font-size: 10px;
-	padding-top: 8px;
+    font-size: 10px;
+    padding-top: 8px;
 }
 
 #center {
-	margin: 50px  auto;
-	width: 1100px;
-	position: relative;
+    margin: 50px  auto;
+    width: 1100px;
+    position: relative;
 }
 
 #content {
-	float: left;
-	font-color: #000;
-	height: auto;
-	display: inline;
+    float: left;
+    font-color: #000;
+    height: auto;
+    display: inline;
 }
 
 #contentPost, #contentPostFollow {
-	float: left;
-	width: 640px;
-	margin-bottom: 45px;
+    float: left;
+    width: 640px;
+    margin-bottom: 45px;
 }
 
 .imgtext {
-	margin-top: 20px;
-	margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #contentInfoText {
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
 }
 
-#contentInfoText .left {
-	float: left;
-}
+#contentInfoText .left { float: left }
 
 #contentInfoText .right {
-	float: right;
-	font-size: 13px;
-	padding-top: 4px;
+    float: right;
+    font-size: 13px;
+    padding-top: 4px;
 }
 
-/* Image Formatting */
+/* ===[ Image Formatting ]=== */
+
 #contentPost .contentPostImage {
-	width: 640px;
-	background-color: white;
-	border-width: 1px;
-	border-color: #DDD;
-	border-style: solid;
-	text-align: center;
+    width: 640px;
+    background-color: white;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+    text-align: center;
 }
 
 .contentPostImage img {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .imgPadding {
-	padding: 10px;
-	width: 620px !important;
+    padding: 10px;
+    width: 620px !important;
 }
 
 .imgNoPadding {
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
 }
 
 #contentPost a {
-	color: blue;
-	text-decoration: none;
+    color: blue;
+    text-decoration: none;
 }
 
-/* Liking the post */
+/* ===[ Liking the post ]=== */
+
 #contentLike, #contentLikeFollow {
-	margin-top: -15px;
-	margin-left: 10px;
-	float: left;
-	text-align: left;
+    margin-top: -15px;
+    margin-left: 10px;
+    float: left;
+    text-align: left;
 }
 
-/* Text Formatting */
+/* ===[ Text Formatting ]=== */
+
 .contentPostText {
-	background-color: #fff;
-	width: 620px;
-	height: auto;
-	border-width: 1px;
-	border-color: #DDD;
-	border-style: solid;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	min-height: 80px;
-	word-wrap: break-word;
+    background-color: #fff;
+    width: 620px;
+    height: auto;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 80px;
+    word-wrap: break-word;
 }
 
-/* Sidebar (main.css) */
+/* ===[ Sidebar (main.css) ]=== */
+
 #sidebar {
-	display: inline;
-	float: right;
-	position: fixed;
-	margin-left: 100px;
-	width: 300px;
-	height: auto;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #DDD;
-	background-color: #fff;
+    display: inline;
+    float: right;
+    position: fixed;
+    margin-left: 100px;
+    width: 300px;
+    height: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #DDD;
+    background-color: #fff;
 }
 
 #sidebar .upload {
-	padding-left: 10px;
-	padding-top: 10px;
-	height: auto;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: auto;
 }
 
-/* Sidebar textarea (main.css) */
+/* ===[ Sidebar textarea (main.css) ]=== */
+
 #uploadText {
-	resize: none;
-	width: 280px;
-	height: 40px;
-	font-size: 15px;
-	padding-left: 5px;
-	padding-top: 5px;
-	font-family: inherit;
-	border: 1px solid #616161;
-	-moz-border-radius: 3px 3px;
-	border-radius: 3px 3px;
-	-webkit-transition: all .5s ease;
-	-moz-transition: all .5s ease;
-	transition: all .5s ease;
-	background-color: #F3F3F3;
+    resize: none;
+    width: 280px;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-family: inherit;
+    border: 1px solid #616161;
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    background-color: #F3F3F3;
 }
 
-#uploadText:focus {
-	height: 120px;
-}
+#uploadText:focus { height: 120px }
 
 #uploadText::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 #sidebar .uploadRest {
-	height: 30px;
-	width: 100%;
-	margin-top: 5px;
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
 }
 
 #placehold {
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 15px;
-	padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 #placehold .userRecom {
-	width: 100%;
-	height: 60px;
-    padding-left:10px;
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
 }
 
-.userRecom:first-of-type {
-	margin-top: 20px;
-}
+.userRecom:first-of-type { margin-top: 20px }
 
 h5 {
-	margin-top: 0;
-	margin-bottom: 0;
-	border-bottom-style: solid;
-	border-bottom-color: #616161;
-	border-bottom-width: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #616161;
+    border-bottom-width: 2px;
 }
 
 .usernameRecom {
-	text-decoration: none;
-	color: #666766;
-	display: inline-block;
-	left: inline;
-	margin-top: -40px;
-	margin-left: 15px;
+    text-decoration: none;
+    color: #666766;
+    display: inline-block;
+    left: inline;
+    margin-top: -40px;
+    margin-left: 15px;
 }
 
-.usericoRecom {
-	display: inline;
-}
+.usericoRecom { display: inline }
 
 #submitPost {
-	vertical-align: top;
-	float: right;
-	margin-right: 12px;
+    vertical-align: top;
+    float: right;
+    margin-right: 12px;
 }
 
-.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover {
-	cursor: pointer;
-}
+.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
 
 .toast, .burn, .hide {
-	padding-bottom: 5px;
-	color: black;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-webkit-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+    padding-bottom: 5px;
+    color: black;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .buttonstyle {
-	border: 1px solid #616161;
-	-moz-border-radius: 3px 3px;
-	border-radius: 3px 3px;
-	height: 25px;
-    
-	cursor: pointer;
+    border: 1px solid #616161;
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    height: 25px;
+    cursor: pointer;
 }
 
-.hide {
-	visibility: visible;
-}
+.hide { visibility: visible }
 
-.burn, .unburn {
-	margin-top: 10px !important;
-}
+.burn, .unburn { margin-top: 10px !important }
 
-.toast, .untoast {
-	margin-top: 15px !important;
-}
+.toast, .untoast { margin-top: 15px !important }
 
 .untoast, .unburn {
-	color: darkgray;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-webkit-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+    color: darkgray;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 #uploadname {
-	float: left;
-	margin-left: 5px;
-	margin-top: 5px;
-	font-size: 0.8em;
-	width: 160px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 0.8em;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

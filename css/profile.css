@@ -1,132 +1,138 @@
-html,
-body {
-	min-height: 100% !important;
-	height: 100%;
-	padding: 0px;
-	margin: 0px;
+
+MaxCDN Tools
+
+    PING TEST
+    HTTP TEST
+    SSL TEST
+    PROCSSOR
+    LEARN MORE
+
+Procssor cleans and organizes your css the way you want it.
+Perfect for css consistency when multiple people contribute.
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
-	background-color: rgb(242, 242, 242);
-	font-family: "Roboto",sans-serif;
-	margin: 0;
+    background-color: rgb(242, 242, 242);
+    font-family: "Roboto",sans-serif;
+    margin: 0;
 }
 
 #blackOverlay {
-    opacity: 0.5; 
-    background: #000; 
+    opacity: 0.5;
+    background: #000;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     z-index: 10;
-    top: 0; 
-    left: 0; 
+    top: 0;
+    left: 0;
     position: fixed;
     display: none;
 }
 
 p {
-	margin-bottom: -10px;
-	font-size: 18px;
+    margin-bottom: -10px;
+    font-size: 18px;
 }
 
-.clearFix {
-	clear: both;
-}
+.clearFix { clear: both }
 
 #profileButtons {
-	position: fixed;
-	bottom: 15px;
-	left: 0px;
-	width: 280px;
+    position: fixed;
+    bottom: 15px;
+    left: 0px;
+    width: 280px;
     z-index: 11;
 }
 
 .buttonstyle {
-	border: 1px solid #616161;
-	-moz-border-radius: 3px 3px;
-	border-radius: 3px 3px;
-	height: 30px;
-	width: 75px;
-    
-	cursor: pointer;
+    border: 1px solid #616161;
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    height: 30px;
+    width: 75px;
+    cursor: pointer;
 }
 
-.bottomRow {
-	text-align: center;
-}
+.bottomRow { text-align: center }
 
 #leftProfile {
-	float: left;
-	display: inline;
-	width: 280px;
-	background-color: #fff;
-	position: fixed;
-	height: 100%;
-	margin-top: 42px;
-	border-right: 1px solid rgb(97, 97, 97);
-	margin-left: -280px;
-	font-family: 'Roboto', sans-serif;
+    float: left;
+    display: inline;
+    width: 280px;
+    background-color: #fff;
+    position: fixed;
+    height: 100%;
+    margin-top: 42px;
+    border-right: 1px solid rgb(97, 97, 97);
+    margin-left: -280px;
+    font-family: 'Roboto', sans-serif;
     z-index: 11;
 }
 
 #leftProfile .userInfo {
-	margin-top: 20px;
-	text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 #rightProfile {
-	height: auto;
-	margin-top: 80px;
-	margin-bottom: 20px;
-	float: right;
-	width: 95%;
-	padding-right: 2%;
+    height: auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    float: right;
+    width: 95%;
+    padding-right: 2%;
 }
 
 #userAvatar {
-	width: 150px;
-	height: 150px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
-	background: url(../img/profile2.png) no-repeat;
-	background-size: 150px 150px;
-	border: 1px solid #616161;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    background: url(../img/profile2.png) no-repeat;
+    background-size: 150px 150px;
+    border: 1px solid #616161;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
     box-sizing: border-box;
 }
 
 #avatarOverlay {
-	float: right;
-	margin-top: -155px;
-	margin-right: 40px;
+    float: right;
+    margin-top: -155px;
+    margin-right: 40px;
 }
 
 .nameRow {
-	font-size: 2em;
-	font-weight: bold;
-	margin-left: auto;
-	margin-right: auto;
-	font-family: 'Lato', sans-serif !important;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Lato', sans-serif !important;
 }
 
 .locationRow {
-	margin-top: 5px;
-	margin-bottom: 20px;
-	font-size: 1em;
-	color: #2f2f2f;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #2f2f2f;
 }
 
 .bioRow {
-	margin-bottom: 30px;
-	font-size: 0.9em;
-    padding-top:5px;
-    padding-bottom:5px;
-	color: #2f2f2f;
-	word-wrap: break-word;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #2f2f2f;
+    word-wrap: break-word;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -134,124 +140,113 @@ p {
 }
 
 .followerRow {
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 50px;
 }
 
 .followerLeft {
-	position: absolute;
-	left: 25;
+    position: absolute;
+    left: 25;
 }
 
 .followerTitle {
-	color: #242424;
-	font-size: 1em;
+    color: #242424;
+    font-size: 1em;
 }
 
 .followerContent {
-	color: #2f2f2f;
-	font-size: 0.9em;
+    color: #2f2f2f;
+    font-size: 0.9em;
 }
 
 .followerRight {
-	position: absolute;
-	right: 25;
+    position: absolute;
+    right: 25;
 }
 
-#profileContainer {
-	padding-left: 280px;
-}
+#profileContainer { padding-left: 280px }
 
 p.textPost {
-	word-break: break-all;
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	font-size: 1em;
-	padding-left: 10px;
-	padding-right: 10px;
+    word-break: break-all;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .textPost a {
-	color: blue;
-	text-decoration: none;
+    color: blue;
+    text-decoration: none;
 }
 
-.backBut {
-	display: none;
-}
+.backBut { display: none }
 
-/* grid styling pls */
+/* grid styling pls  */
+
 .banner {
-	height: 100%;
-	width: 100%;
-	position: relative;
-	background: none;
-	display: inline-table;
-	vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: none;
+    display: inline-table;
+    vertical-align: middle;
 }
 
 .bannerText {
-	visibility: hidden;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.banner:hover .bannerText {
-	visibility: visible;
-}`
+.banner:hover .bannerText { visibility: visible }
 
 .banner:hover .blurImage {
-	-webkit-filter: blur(300px);
-	-moz-filter: blur(300px);
-	-o-filter: blur(300px);
-	-ms-filter: blur(300px);
-	filter: blur(300px);
-	outline: none;
+    -webkit-filter: blur(300px);
+    -moz-filter: blur(300px);
+    -o-filter: blur(300px);
+    -ms-filter: blur(300px);
+    filter: blur(300px);
+    outline: none;
 }
 
 #tiles {
-	list-style-type: none;
-	position: relative;
-	margin: 0;
-	max-height: 400px;
-	max-width: 300px;
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    max-height: 400px;
+    max-width: 300px;
 }
 
 #tiles li {
     max-width: 300px;
-	background-color: #ffffff;
-	display: none;
-	cursor: pointer;
-	overflow: hidden;
+    background-color: #ffffff;
+    display: none;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 #tiles li img {
-	min-width: 300px;
-    text-align:center;
+    min-width: 300px;
+    text-align: center;
     display: inline-block;
-} 
-
-#tiles ali:nth-child(3n) {
-	height: 175px;
 }
 
-#tiles ali:nth-child(4n-3) {
-	padding-bottom: 30px;
-}
+#tiles ali:nth-child(3n) { height: 175px }
 
-#tiles ali:nth-child(5n) {
-	height: 250px;
-}
+#tiles ali:nth-child(4n-3) { padding-bottom: 30px }
+
+#tiles ali:nth-child(5n) { height: 250px }
 
 .editableContent {
     border: 1px dashed #666;
     background-color: #fff;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
