@@ -5,6 +5,7 @@ require("php/checkLogin.php");
 <html>
 <head>
     <title>Breadbin - Discover</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>

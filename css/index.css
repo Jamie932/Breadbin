@@ -1,9 +1,5 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    background-image: url(/img/testback.jpg);
+    background-image: url(/img/testback.jpg) !important;
 }
 
 .error { border: 1px solid red }
@@ -18,8 +14,6 @@ small {
     padding-top: 5px;
     text-align: left;
 }
-
-.clearFix { clear: both }
 
 .dockMiddle {
     position: relative;

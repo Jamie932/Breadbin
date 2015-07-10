@@ -55,6 +55,7 @@ if (empty($_GET)) {
 <head>
     <title><?php print(isset($usersname) ? $usersname : 'Unknown'); ?> | Breadbin</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
     <link href="css/settings.css" rel="stylesheet" type="text/css">
