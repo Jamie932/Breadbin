@@ -14,7 +14,7 @@ $(document).ready(function() {
                 return false;
             }
         } else {
-            if ($('.postText').val().length < 0) {
+            if ($('.postText').val().length == 0) {
                 //No text was given
                 return false;    
             }   
