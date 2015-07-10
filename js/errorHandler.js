@@ -10,7 +10,7 @@ function createError(errorMessage) {
 }
 
 function clearErrors() {
-    $('#errorClose').animate({opacity:1}, 200);
+    $('#errorClose').animate({opacity:0}, 200);
     $('#errorBar').animate({height: "0px"}, 500);
     $('#errorText').html("");  
     
