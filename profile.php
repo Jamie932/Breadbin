@@ -336,9 +336,9 @@ if (empty($_GET)) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
                 }
             } else if ($aspectRatio == 1) {
-                if ($height >= 0 && < 100) {
+                if ($height >= 0 && $height < 100) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="100px">';
-                } else if ($height >= 100 && < 400) {
+                } else if ($height >= 100 && $height < 400) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
                 } else if ($height >= 400) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
@@ -352,8 +352,8 @@ if (empty($_GET)) {
             echo '</li>'; 
             
         } else if ($row['type'] == "text") {
-            echo '<li><div class="box"><p class="textPost">' . $row['text
-            echo '</div></li>'
+            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
+            echo '</div></li>';
         }
         
         else if ($row['type'] == 'imagetext') {
@@ -386,9 +386,9 @@ if (empty($_GET)) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
                 }
             } else if ($aspectRatio == 1) {
-                if ($height >= 0 && < 100) {
+                if ($height >= 0 && $height < 100) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="100px">';
-                } else if ($height >= 100 && < 400) {
+                } else if ($height >= 100 && $height < 400) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '">';
                 } else if ($height >= 400) {
                     echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
