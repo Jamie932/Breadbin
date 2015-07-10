@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Breadbin - Home</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>

@@ -1,17 +1,4 @@
-html, body {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    background-color: #F6F6F6;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-}
-
 p { margin-bottom: -10px }
-
-.clearFix { clear: both }
 
 p.report {
     font-size: 10px;

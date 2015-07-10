@@ -1,13 +1,4 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-}
-
 .error { border: 1px solid red }
-
-.clearFix { clear: both }
 
 hr { margin-bottom: 30px }
 
