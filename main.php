@@ -35,7 +35,7 @@
                             if (data.success) {
                                 //window.location.replace("main.php");
                                 
-                                $('.post-' + postid).fadeOut(300, function() { $(this).remove(); });
+                                $('.post-' + postid).fadeOut(600, function() { $(this).remove(); });
                             } else {
                                 createError(data.error);
                             }
