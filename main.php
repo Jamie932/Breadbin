@@ -14,8 +14,9 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
-    <script src="js/errorHandler.js"></script>
-    <script>
+    <script src="js/errorHandler.js" async></script>
+    <script src="js/formPost.js" async></script>
+    <script async>
         $(document).ready(function(){
             $(document).on('click','.delete', function() {
                 var confirmed = confirm("Are you sure you want to delete this post?");
@@ -187,7 +188,5 @@
             <?php require('php/recommendToaster.php'); ?>
         </div>
     </div>
-
-	<script src="js/formPost.js"></script>
 </body>
 </html>
