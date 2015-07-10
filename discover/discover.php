@@ -27,6 +27,9 @@ require('../php/template/navbar.php');
         <ul class="cats">
 
 			<li class="cats">
+                <a href="#">All</a>
+            </li>
+            <li class="cats">
                 <a href="#">Staff Recommendations</a>
             </li>
             <li class="cats">
