@@ -50,16 +50,17 @@ function submitAvatar() {
             contentType : false,
             cache       : false,
             data        : formData,
-            success     : function (response) {
-                console.log(response);
+            success     : function (data) {
+                data = JSON.parse(data);
+                console.log(data);
                 
                 if (data.success) {
-                    var url = response.url.trim() + '?r=' + new Date().getTime();
+                    var url = data.url.trim() + '?r=' + new Date().getTime();
                 
                     $('#userAvatar').css('background-image', 'url(' + url + ')');
                     uploadingFile = false;
                 } else {
-                    createError(response.error);   
+                    createError(data.error);   
                 }
             }, 
             error       : function(xhr, ajaxOptions, ThrownError){
