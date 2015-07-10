@@ -73,6 +73,7 @@ a{
 	display: inline-table;
 	vertical-align: middle;
     text-align: center;
+    min-height: 200px;
 }
 
 .bannerText {
