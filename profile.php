@@ -66,7 +66,7 @@ if (empty($_GET)) {
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/jquery.color.js"></script>
-    <script>
+    <script async>
         var uploadingFile = false;
         
         $(document).ready(function(){
@@ -227,7 +227,8 @@ if (empty($_GET)) {
             });
         });
     </script>
-    <script src="js/vendor/progressbar.min.js"></script>
+    <script src="js/vendor/progressbar.min.js" async></script>
+    <script src="js/formChangeAvatar.js" async></script>
 </head>
     
 <body class="profile">
@@ -617,7 +618,5 @@ if (empty($_GET)) {
     <form id="avatarForm" method="POST" enctype="multipart/form-data">
         <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
     </form>
-        
-    <script src="js/formChangeAvatar.js"></script>
 </body>
 </html>
