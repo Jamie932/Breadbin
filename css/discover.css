@@ -72,7 +72,8 @@ a{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translateX(-50%)    translateY(-50%);
+	transform: translateX(-50%)        translateY(-50%);
+    color: white;
 }
 
 .banner:hover .bannerText {
@@ -80,11 +81,11 @@ a{
 }
 
 .banner:hover .blurImage {
-	-webkit-filter: blur(300px);
-	-moz-filter: blur(300px);
-	-o-filter: blur(300px);
-	-ms-filter: blur(300px);
-	filter: blur(300px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
 	outline: none;
 }
 
@@ -107,7 +108,7 @@ a{
     padding: 0;
 }
 
-#tiles li img {
+#tiles .tiles {
     min-height: 300px;
     max-height: 400px; 
 	min-width: 300px;
@@ -148,4 +149,30 @@ p.textPost {
     background: rgba(56, 26, 26, .5);
     width: auto;
     height: 20px;
+}
+
+.postTitle {
+    position: absolute;
+    top: 45%;
+    padding: 3px;
+    color: white;
+    background: rgb(56, 26, 26);
+    background: rgba(56, 26, 26, .5);
+    width: 100%;
+    height: 40px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.postText {
+    visibility: visible;
+    position: absolute;
+    top: 5px;
+    left: 88%;
+    width: 30px;
+    height: 30px;
+    background: rgb(56, 26, 26);
+    background: rgba(56, 26, 26, .5);
+    -moz-border-radius: 3px 3px;
+	border-radius: 3px 3px;
 }

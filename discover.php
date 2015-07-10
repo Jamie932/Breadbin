@@ -191,13 +191,21 @@ echo '<ul class="cats" style="color:' . $fontColour . '">';
             
             
             echo '<div class="bannerText">';
-            echo $row['text'];
+                echo $row['text'];
             echo '</div>';
             
             echo '</div>';
+            
+             /*echo '<div class="postTitle">';
+                echo 'Recipie title';
+            echo '</div>';*/
             
             echo '<div class="postUsername">';
                 echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+            echo '</div>';
+            
+            echo '<div class="postText">';
+                echo '<img src="img/text.png" height="30px">';
             echo '</div>';
             
             echo '</li>';
