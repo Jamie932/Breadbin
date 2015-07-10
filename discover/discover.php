@@ -27,7 +27,7 @@ require('../php/template/discoverNavbar.php');
         <ul class="cats">
 
 			<li class="cats">
-                <a href="#">All</a>
+                <a href="#" class="active">All</a>
             </li>
             <li class="cats">
                 <a href="#">Staff Recommendations</a>
