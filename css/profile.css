@@ -207,12 +207,12 @@ p.textPost {
 .banner:hover .bannerText { visibility: visible }
 
 .banner:hover .blurImage {
-    -webkit-filter: blur(300px);
-    -moz-filter: blur(300px);
-    -o-filter: blur(300px);
-    -ms-filter: blur(300px);
-    filter: blur(300px);
-    outline: none;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	outline: none;
 }
 
 #tiles {
@@ -249,4 +249,18 @@ p.textPost {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+
+
+.postText {
+    visibility: visible;
+    position: absolute;
+    top: 5px;
+    left: 88%;
+    width: 30px;
+    height: 30px;
+    background: rgb(56, 26, 26);
+    background: rgba(56, 26, 26, .5);
+    -moz-border-radius: 3px 3px;
+	border-radius: 3px 3px;
 }

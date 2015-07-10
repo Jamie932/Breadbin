@@ -399,6 +399,11 @@ if (empty($_GET)) {
                     echo '<div class="bannerText">';
                     echo $row['text'];
                     echo '</div>'; 
+                    
+                    echo '<div class="postText">';
+                        echo '<img src="img/text.png" height="30px">';
+                    echo '</div>';
+                    
                     echo '</div>';
                     echo '</li>'; 
                 }
