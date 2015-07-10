@@ -135,6 +135,19 @@ p.report {
     height: auto;
 }
 
+#error {
+    height: 0px;
+    padding-left: 15px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+}
+
 /* ===[ Sidebar textarea (main.css) ]=== */
 
 #uploadText {
