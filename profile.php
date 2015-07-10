@@ -278,146 +278,160 @@ if (empty($_GET)) {
         <div id="rightProfile">
            <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
-            /*userid <> :id AND */
-            $query_params = array(':id' => $_SESSION['user']['id']);
-            $stmt         = $db->prepare($query);
-            $result       = $stmt->execute($query_params);
-            $posts        = $stmt->fetchAll();
+                $query = "SELECT * FROM posts WHERE userid = :id ORDER BY date DESC";
+                $query_params = array(
+                    ':id' => $userid
+                );
 
-        if (!$posts) {
-            echo '<center>You follow everyone tough luck.</center>';
-        } else {
-        foreach ($posts as $row) {
+                $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params);
+                $posts = $stmt->fetchAll();
+
+                foreach ($posts as $row) {
+                    if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+                        if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+                            $users = $matches[1];
+
+                            foreach ($users as $user) {
+                                $query = "SELECT id, username FROM users WHERE username = :username";
+                                $query_params = array(
+                                    ':username' => $user
+                                );
+
+                                $stmt = $db->prepare($query);
+                                $result = $stmt->execute($query_params);
+                                $userFound = $stmt->fetch();
+
+                                if ($userFound) {
+                                    $row['text'] = str_replace('@' . $user, '<a href="profile.php?id=' . $userFound['id'] . '">' . $userFound['username'] . '</a>', $row['text']);
+                                }
+
+                            }
+                        }
+                    }
+
+                echo '<ul id="tiles">';
+
+                if ($row['type'] == "image") {
+                    list($width, $height) = getimagesize($row['image']);
+
+                    $aspectRatio = $width / $height;
+                    $testHeight  = $height / 2;
+                    $testWidth   = $width / 2;
+
+                    echo '<li>';
+                    echo '<div class="banner">';
+
+                    if ($aspectRatio >= 0) {
+                        if ($height >= 0 && $height < 99) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
+                        } else if ($height >= 100 && $height < 200) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 200 && $height < 300) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 300 && $height < 350) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 350 && $height < 400) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '"';
+                        } else if ($height >= 400 && $height < 500) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 500 && $height < 600) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else if ($height >= 600 && $height < 700) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else if ($height >= 700 && $height < 800) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else if ($height >= 800 && $height < 1000) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
+                        } else if ($height >= 1000) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        }
+                    } else if ($aspectRatio == 1) {
+                        if ($height >= 0 && $height < 100) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
+                        } else if ($height >= 100 && $height < 400) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 400) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        }
+                    } else {
+                        echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
+                    }
+
+                    echo '</div>';
+
+                    echo '<div class="postUsername">';
+                        echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                    echo '</div>';
+
+                    echo '</li>'; 
             
-            $query        = "SELECT username FROM users WHERE id = :id"; 
-            $query_params = array(':id' => $row['userid']);
-            $stmt         = $db->prepare($query);
-            $result       = $stmt->execute($query_params);
-            $test         = $stmt->fetch();
-            
-        echo '<ul id="tiles">';
-        
-        $direcFix = '../'.$row['image'];
-            
-        if ($row['type'] == "image") {
-            list($width, $height) = getimagesize($row['image']);
-            
-            $aspectRatio = $width / $height;
-            $testHeight  = $height / 2;
-            $testWidth   = $width / 2;
-            
-            echo '<li>';
-            echo '<div class="banner">';
-            
-            if ($aspectRatio >= 0) {
-                if ($height >= 0 && $height < 99) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
-                } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 200 && $height < 300) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '"';
-                } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
-                } else if ($height >= 600 && $height < 700) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
-                } else if ($height >= 700 && $height < 800) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
-                } else if ($height >= 800 && $height < 1000) { 
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
-                } else if ($height >= 1000) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
-                } else {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                } else if ($row['type'] == "text") {
+                        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+                } else if ($row['type'] == 'imagetext') {
+                    list($width, $height) = getimagesize($row['image']);
+
+                    $aspectRatio = $width / $height;
+                    $testHeight  = $height /= 2; 
+
+                    echo '<li>';
+                    echo '<div class="banner">';
+
+                    if ($height <= 200) {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                    } else if ($aspectRatio >= 0) {
+                        if ($height >= 0 && $height < 100) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                        } else if ($height >= 100 && $height < 200) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                        } else if ($height >= 300 && $height < 350) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                        } else if ($height >= 350 && $height < 400) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                        } else if ($height >= 400 && $height < 500) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
+                        } else if ($height >= 500 && $height < 600) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
+                        } else if ($height >= 600 && $height < 1000) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
+                        } else if ($height >= 1000) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
+                        }
+                    } else if ($aspectRatio == 1) {
+                        if ($height >= 0 && $height < 100) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="100px">';
+                        } else if ($height >= 100 && $height < 400) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 400) {
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
+                        }
+                    } else {
+                        echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
+                    }
+
+
+
+                    echo '<div class="bannerText">';
+                        echo $row['text'];
+                    echo '</div>';
+
+                    echo '</div>';
+
+                     /*echo '<div class="postTitle">';
+                        echo 'Recipie title';
+                    echo '</div>';*/
+
+                    echo '<div class="postText">';
+                        echo '<img src="../img/text.png" height="30px">';
+                    echo '</div>';
+
+                    echo '</li>';
                 }
-            } else if ($aspectRatio == 1) {
-                if ($height >= 0 && $height < 100) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
-                } else if ($height >= 100 && $height < 400) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 400) {
-                    echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
-                }
-            } else {
-                echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
+                echo '</ul>';
             }
-            
-            echo '</div>';
-            
-            echo '</li>'; 
-            
-        } else if ($row['type'] == "text") {
-            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
-            echo '</div></li>';
-        }
-        
-        else if ($row['type'] == 'imagetext') {
-            list($width, $height) = getimagesize($row['image']);
-            
-            $aspectRatio = $width / $height;
-            $testHeight  = $height /= 2; 
-            
-            echo '<li>';
-            echo '<div class="banner">';
-            
-            if ($height <= 200) {
-                echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-            } else if ($aspectRatio >= 0) {
-                if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                } else if ($height >= 600 && $height < 1000) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                } else if ($height >= 1000) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                }
-            } else if ($aspectRatio == 1) {
-                if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="100px">';
-                } else if ($height >= 100 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
-                } else if ($height >= 400) {
-                    echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                }
-            } else {
-                echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
-            }
-            
-            echo '<div class="bannerText">';
-                echo $row['text'];
-            echo '</div>';
-            
-            echo '</div>';
-            
-             /*echo '<div class="postTitle">';
-                echo 'Recipie title';
-            echo '</div>';*/
-            
-            echo '<div class="postText">';
-                echo '<img src="img/text.png" height="30px">';
-            echo '</div>';
-            
-            echo '</li>';
-        }
-        echo '</ul>';
-    }
-}
-?>
+        ?>
                
                </ul>
             </div>
