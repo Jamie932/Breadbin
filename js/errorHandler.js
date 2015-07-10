@@ -2,7 +2,7 @@ var isError = false;
 
 function createError(errorMessage) {
     if (!isError) {
-        ifError = true;
+        isError = true;
         $('#errorBar').animate({height: "35px"}, 500, function() { $('#errorClose').animate({opacity:1}, 200); });
         $('#errorText').html(errorMessage);
 
