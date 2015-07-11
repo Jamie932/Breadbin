@@ -58,7 +58,6 @@ if (empty($_GET)) {
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
-    <link href="css/settings.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -121,30 +120,6 @@ if (empty($_GET)) {
                 $('#unFollowBut').replaceWith('<button id="followBut" class="buttonstyle">Follow</button>');
             })
             
-            $(document).on('click','.settingsBut', function() {
-               $(".settingsBut").fadeOut('normal')
-               $("#rightProfile").fadeOut('normal', function(){
-                    $("#settingsBox").fadeIn('normal');
-                    $(".backBut").fadeIn('normal');
-                    $(".leftSettings").animate({ 'marginLeft': '0px' }, 350);
-                });
-            });
-            
-            $(".backBut").click(function(){
-               $(".backBut").fadeOut('normal');
-               $(".leftSettings").animate({ 'marginLeft': '-140px' }, 350);
-               $("#settingsBox").fadeOut('normal', function(){
-                    $("#rightProfile").fadeIn('normal');
-                    $(".settingsBut").fadeIn('normal');
-                });
-            });
-            
-            $(".passwordReset").click(function(){
-                $(".accountSettingsField").fadeOut('normal', function(){
-                    $(".passwordSettingsField").fadeIn('normal');
-                });
-            });
-            
             var lastBio = "";
             var editing = false;
             
@@ -156,8 +131,8 @@ if (empty($_GET)) {
                     
                     $('#blackOverlay').fadeIn('normal');
                     $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
-                    $('.settingsBut').html('Save');
-                    $('.settingsBut').addClass('saveBut').removeClass('settingsBut');
+                    //$('.settingsBut').html('Save');
+                    //$('.settingsBut').addClass('saveBut').removeClass('settingsBut');
                     
                     lastBio = $('.bioRow').text();
                     editing  = true;
@@ -190,8 +165,8 @@ if (empty($_GET)) {
                 $('#userAvatar').removeClass('editableContent');
                 $('#blackOverlay').fadeOut('normal');
                 $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
-                $('.saveBut').html('Settings');
-                $('.saveBut').addClass('settingsBut').removeClass('saveBut');
+                //$('.saveBut').html('Settings');
+                //$('.saveBut').addClass('settingsBut').removeClass('saveBut');
                 editing = false;
             });
             
@@ -435,188 +410,53 @@ if (empty($_GET)) {
         </div>
         
         <div id="clearFix"></div>
-        
-        <div id="rightSettings">
-            <div class="leftSettings">
-                <ul class="settingsList">
-                    <li class="settingsListFirst">
-                        Account Details
-                    </li>
-                <a href="privacySettings.php" class="settingsLinks">
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                </a>
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                    <a class="passwordReset">
-                    <li class="settingsList">
-                        Password reset
-                    </li>
-                    </a>
-                    <li class="settingsListLast">
-                        Delete account
-                    </li>
-                </ul>
-            </div>
-            
-            <div id="settingsBox" style="height:500px;">
-                <div class="rightSettings">
-                    <div class="accountSettingsField">
-                        <div class="settingsHeader">
-                            <h3 class="settings">Account Details</h3>
-                            <p class="settingsDetail">Update your account details</p>
-                        </div>
-                        <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
-                            <label>First name: </label>
-                                <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                                <br>
-                                <br>
-                            <label>Last name: </label>
-                                <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                <br>
-                                <br>
-                            <label>Email: </label>
-                                <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                <br>
-                                <br>
-                           <label> Colour: </label>
-                                <select name="colour" class="settings" id="setColour">
-                                    <option value="1" style="background:#8AE68A">Green</option>
-                                    <option value="2" style="background:#6699FF">Blue</option>
-                                    <option value="3" style="background:#FFB540">Orange</option>
-                                    <option value="4" style="background:#FF66CC">Pink</option>
-                                </select>
-                                <br>
-                                <br>
-                            <label> </label>
+               
+        <script src="js/vendor/jquery.wookmark.js"></script>
+        <script type="text/javascript">
+            var colors = [
+                "rgb(138, 230, 138)",
+                "rgb(102, 153, 255)",
+                "rgb(255, 181, 64)",
+                "rgb(255, 102, 204)"
+            ];
 
-                                <input type="submit" value="Save" class="saveSettings">
-                        </form>
-                    </div>
+            var boxes = document.querySelectorAll(".box");
 
-                    <div class="passwordSettingsField">
-                        <div class="settingsHeader">
-                            <h3 class="settings">Reset your password</h3>
-                            <p class="settingsDetail"></p>
-                        </div>
-                        <form action="php/passwordUpdate.php" method="post" class="accountSettings">
-                            <label>Current Password: </label>
-                                <input type="password" name="currentPassword" class="settings" id="currentPassword">
-                                <br>
-                                <br>
-                            <label>New password: </label>
-                                <input type="password" name="newPassword" class="settings" id="newPassword">
-                                <br>
-                                <br>
-                            <label>Verify password: </label>
-                                <input type="password" name="newPassword2" class="settings" id="newPassword2">
-                                <br>
-                                <br>
+            for (i = 0; i < boxes.length; i++) {
+              // Pick a random color from the array 'colors'.
+              boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+              boxes[i].style.width = '300';
+              boxes[i].style.height = '230';
+              boxes[i].style.display = 'inline-table';
+              boxes[i].style.margin = '0';
+              boxes[i].style.textAlign = 'center';
+              boxes[i].style.verticalAlign = 'middle';
+              boxes[i].style.position = 'relative';
+            }
 
-                                <input type="submit" value="Save" class="saveSettings">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="profileButtons">
-                <?php
-                    if (isset($usersname)) {
-                        if (($userid != $_SESSION['user']['id'])) {
-                ?>
-                <div class="bottomRow">
-                    <?php
-                        $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
-                        $query_params = array(
-                            ':id' => $_SESSION['user']['id'],
-                            ':userid' => $_GET['id']
-                        );
-        
-                        $stmt   = $db->prepare($query);
-                        $result = $stmt->execute($query_params);
-                        $row    = $stmt->fetch();
+            $(document).ready(new function() {
+              // Prepare layout options.
+              var options = {
+                autoResize: true, // This will auto-update the layout when the browser window is resized.
+                container: $('#main'), // Optional, used for some extra CSS styling
+                offset: 5, // Optional, the distance between grid items
+                itemWidth: 310 // Optional, the width of a grid item
+              };
 
-                        if ($row['user_no'] != intval($_GET['id'])) {
-                            echo '<button id="followBut" class="buttonstyle">Follow</button>';
-                        } else {
-                            echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
-                        }
-                    ?>
-                    <button id="messageBut" class="buttonstyle">Message</button>
-                    <button id="reportBut" class="buttonstyle">Report</button>
-                </div>
-   
-                <?php
-                    } else {
-                ?>
-                <div class="bottomRow">
-                    <button class="settingsBut buttonstyle">Settings</button>
-                    <button class="backBut buttonstyle">Back</button>
-                </div>
-                
-                <?php
-                    }
-                }
-                ?> 
-            </div>
-            
-            <div class="clearFix"></div>
-        </div>
-            
-    <script src="js/formSettings.js"></script>
-    <script src="js/vendor/jquery.wookmark.js"></script>
-    <script type="text/javascript">
-        var colors = [
-            "rgb(138, 230, 138)",
-            "rgb(102, 153, 255)",
-            "rgb(255, 181, 64)",
-            "rgb(255, 102, 204)"
-        ];
+              // Get a reference to your grid items.
+              var handler = $('#tiles li');
 
-        var boxes = document.querySelectorAll(".box");
+              // Call the layout function.
+              handler.wookmark(options);
 
-        for (i = 0; i < boxes.length; i++) {
-          // Pick a random color from the array 'colors'.
-          boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-          boxes[i].style.width = '300';
-          boxes[i].style.height = '230';
-          boxes[i].style.display = 'inline-table';
-          boxes[i].style.margin = '0';
-          boxes[i].style.textAlign = 'center';
-          boxes[i].style.verticalAlign = 'middle';
-          boxes[i].style.position = 'relative';
-        }
+              // Capture clicks on grid items.
 
-        $(document).ready(new function() {
-          // Prepare layout options.
-          var options = {
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
-            container: $('#main'), // Optional, used for some extra CSS styling
-            offset: 5, // Optional, the distance between grid items
-            itemWidth: 310 // Optional, the width of a grid item
-          };
+            });
+        </script>
 
-          // Get a reference to your grid items.
-          var handler = $('#tiles li');
-
-          // Call the layout function.
-          handler.wookmark(options);
-
-          // Capture clicks on grid items.
-         
-        });
-    </script>
-    
-    <form id="avatarForm" method="POST" enctype="multipart/form-data">
-        <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
-    </form>
+        <form id="avatarForm" method="POST" enctype="multipart/form-data">
+            <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
+        </form>
+    </div>
 </body>
 </html>
