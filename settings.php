@@ -199,26 +199,32 @@
                     <li class="settingsListFirst">
                         Account Details
                     </li>
-                <a href="privacySettings.php" class="settingsLinks">
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                </a>
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                    <li class="settingsList">
-                        Privacy
-                    </li>
-                    <a class="passwordReset">
-                    <li class="settingsList">
-                        Password reset
-                    </li>
+                    
+                    <a href="privacySettings.php" class="settingsLinks">
+                        <li class="settingsList">
+                            Privacy
+                        </li>
                     </a>
-                    <li class="settingsListLast">
+                    
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+                    
+                    <a class="passwordReset">
+                        <li class="settingsList">
+                            Password reset
+                        </li>
+                    </a>
+                    
+                    <li class="settingsList">
                         Delete account
                     </li>
                 </ul>

@@ -29,9 +29,6 @@ p.settingsDetail {
 }
 
 .leftSettings {
-    border-right-style: solid;
-    border-right-color: #616161;
-    border-right-width: 1px;
     width: 140px;
     background-color: #fff;
     display: inline;
@@ -39,6 +36,7 @@ p.settingsDetail {
     margin-top: 85px;
     z-index: -20px;
     transition: transform 0.2s ease-in;
+    font-size:0.9em;
 }
 
 ul.settingsList {
@@ -48,43 +46,22 @@ ul.settingsList {
 }
 
 li.settingsList {
-    height: 40px;
     padding-left: 7px;
-    padding-top: 13px;
-    border-top-color: #616161;
-    border-top-style: solid;
-    border-top-width: 1px;
     font-size: 15px;
     color: black;
 }
 
+li.settingsList:first-child {
+    background-color: rgb(102, 153, 255);
+    color: #fff;
+}
+
 a.settingsLinks { text-decoration: none }
-
-li.settingsList, li.settingsListFirst {
-    height: 40px;
-    padding-left: 7px;
-    padding-top: 13px;
-    border-top-color: #616161;
-    border-top-style: solid;
-    border-top-width: 1px;
-    font-size: 15px;
-}
-
-li.settingsListFirst {
-    background-color: #E7E7E7;
-    color: #6D6D6D;
-}
 
 li.settingslistLast {
     height: 40px;
     padding-left: 7px;
     padding-top: 13px;
-    border-top-color: #616161;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-bottom-color: #616161;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
     font-size: 15px;
 }
 
@@ -117,20 +94,13 @@ h3.settings {
     margin-bottom: 10px;
 }
 
-input.settings {
+input.settings, select.settings {
     border: 1px solid #616161;
     -moz-border-radius: 3px 3px;
     border-radius: 3px 3px;
     height: 30px;
     width: 200px;
-}
-
-select.settings {
-    border: 1px solid #616161;
-    -moz-border-radius: 3px 3px;
-    border-radius: 3px 3px;
-    height: 30px;
-    width: 200px;
+    padding-left:5px;
 }
 
 label {
