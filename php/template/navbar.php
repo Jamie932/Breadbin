@@ -49,7 +49,7 @@
             }
         }
 
-        echo '<div id="navbar" style="background-color:' .$colour .'" >'
+        echo '<div id="navbar" class="noselect" style="background-color:' .$colour .'" >'
 ?>
 
 	<div class="left">

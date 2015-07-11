@@ -194,7 +194,7 @@
         </div>
         
         <div id="rightSettings">
-            <div class="leftSettings">
+            <div class="leftSettings noselect">
                 <ul class="settingsList">
                     <li class="leftHeader">
                         User Settings
