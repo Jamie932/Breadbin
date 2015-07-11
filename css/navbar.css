@@ -19,7 +19,7 @@ ul.nav {
 }
 
 #navbar ul ul li:first-child {
-    height: 35px;
+    height: 30px;
 }
 
 #navbar ul li:hover > ul { display: block }
