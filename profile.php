@@ -410,8 +410,6 @@ if (empty($_GET)) {
                         echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
                     }
 
-
-
                     /*echo '<div class="bannerText">';
                         echo $row['text'];
                     echo '</div>';*/
