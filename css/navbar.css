@@ -19,8 +19,9 @@ ul.nav {
 #navbar ul li:hover > ul { display: block }
 
 li.nav {
-    padding-left: 35px;
+    margin-left: 35px;
     float: left;
+    height: 42px;
 }
 
 a.navLinks {
@@ -39,7 +40,6 @@ a.navLinks:hover { color: #616161 }
     background-color: #FFB540;
     background-image: none;
     height: 42px;
-    padding-top: 5px;
     color: #fff;
     border-bottom: 1px solid rgba(100, 100, 100, 0.15);
     box-sizing: border-box;
@@ -49,6 +49,7 @@ a.navLinks:hover { color: #616161 }
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    line-height: 42px;
 }
 
 #navbar .left {
@@ -61,7 +62,6 @@ a.navLinks:hover { color: #616161 }
     float: right;
     display: inline;
     margin-right: 5%;
-    padding-top: 5px;
     font-size: 1em;
 }
 
