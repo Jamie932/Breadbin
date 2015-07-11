@@ -162,10 +162,6 @@
     <div id="break"></div>
     
     <div id="center">
-        <div id="content">
-            <?php require('php/fetchPosts.php');?>
-        </div>
-        
         <div id="sidebar">
             <div class="upload">
                 <form action="php/post.php" method="POST" id="postForm" enctype="multipart/form-data">
@@ -186,6 +182,10 @@
             
             <?php require('php/recommendToaster.php'); ?>
         </div>
+        
+        <div id="content">
+            <?php require('php/fetchPosts.php');?>
+        </div>        
     </div>
 </body>
 </html>
