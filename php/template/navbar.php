@@ -69,19 +69,20 @@
             </li>
         
             <?php
-                if (basename($_SERVER['PHP_SELF']) == "profile.php" || basename($_SERVER['PHP_SELF']) == "settings.php") {
+                if (basename($_SERVER['PHP_SELF']) == "profile.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
                 }
 
-               /* if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
-                    echo '<div id="navAvatar"></div>';
-                } else {
-                    echo '<div id="navAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
-                }*/
-
                 echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
+                echo '</li>';
+
+              if (basename($_SERVER['PHP_SELF']) == "settings.php") {
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                } else {
+                    echo '<li class="nav">';
+                }
                 echo '<div class="arrow-up"></div>';
             ?>
                 <ul>
