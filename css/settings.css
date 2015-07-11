@@ -18,7 +18,6 @@ p.settingsDetail {
     right: 0;
     width: 560px;
     overflow: hidden;
-    display: none;
     border-width: 1px;
     border-style: solid;
     border-color: #616161;
@@ -39,7 +38,6 @@ p.settingsDetail {
     display: inline;
     float: left;
     margin-top: 85px;
-    margin-left: -140px;
     z-index: -20px;
     transition: transform 0.2s ease-in;
 }
