@@ -7,13 +7,15 @@ ul.nav {
 }
 
 #navbar ul ul {
+    position: absolute;
     display: none;
     list-style-type: none;
     background-color: #fff;
     color: #000;
-    width: 175%;
+    width: 110px;
     padding-left: 20px;
     margin-left: -10px;
+    font-size: 0.9em;
 }
 
 #navbar ul ul li:first-child {
