@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Breadbin</title>
+    <meta name="viewport" content="width=device-width" />
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
