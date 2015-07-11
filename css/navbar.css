@@ -19,9 +19,11 @@ ul.nav {
 #navbar ul li:hover > ul { display: block }
 
 li.nav {
-    margin-left: 35px;
+    margin-left: 25px;
     float: left;
     height: 42px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 a.navLinks {
@@ -87,7 +89,7 @@ a.navLinks:hover { color: #616161 }
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #FFF;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 8px;
     float: right;
 }
