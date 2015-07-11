@@ -4,7 +4,7 @@
 ?>
 <html>
 <head>
-    <title>Breadbin - Home</title>
+    <title>Breadbin</title>
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
