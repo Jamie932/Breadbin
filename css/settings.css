@@ -73,6 +73,7 @@ li.leftHeader {
 li.settingsList:hover {
     background-color: #E7E7E7;
     color: #6D6D6D;
+    cursor: pointer;
 }
 
 a.settingsLinks { text-decoration: none }
