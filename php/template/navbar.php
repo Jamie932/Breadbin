@@ -76,13 +76,6 @@
                 }
 
                 echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
-                echo '</li>';
-
-              if (basename($_SERVER['PHP_SELF']) == "settings.php") {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
-                } else {
-                    echo '<li class="nav">';
-                }
                 echo '<div class="arrow-up"></div>';
             ?>
                 <ul>
