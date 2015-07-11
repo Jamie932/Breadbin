@@ -53,21 +53,33 @@
 	</div>
 	
 	<div class="right">
-		<ul class="nav">		
-			<li class="nav">
+		<ul class="nav">
+            <?php
+                if (basename($_SERVER['PHP_SELF']) == "discover.php") {
+                    echo '<li class="nav" style="background-color: #F5A52B">';
+                } else {
+                    echo '<li class="nav">';
+                }
+            ?>
                 <a class="navLinks" href="discover/discover.php">Discover</a>
             </li>
-            <li class="nav">
-                <?php
-                   /* if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
-                        echo '<div id="navAvatar"></div>';
-                    } else {
-                        echo '<div id="navAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
-                    }*/
+        
+            <?php
+                if (basename($_SERVER['PHP_SELF']) == "profile.php") {
+                    echo '<li class="nav" style="background-color: #F5A52B">';
+                } else {
+                    echo '<li class="nav">';
+                }
 
-				    echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
-                    echo '<div class="arrow-up"></div>';
-                ?>
+               /* if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
+                    echo '<div id="navAvatar"></div>';
+                } else {
+                    echo '<div id="navAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
+                }*/
+
+                echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
+                echo '<div class="arrow-up"></div>';
+            ?>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
