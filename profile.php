@@ -384,7 +384,7 @@ if (empty($_GET)) {
                         } else if ($height >= 100 && $height < 200) {
                             echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
                         } else if ($height >= 200 && $height < 300) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
+                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
                         } else if ($height >= 300 && $height < 350) {
                             echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
                         } else if ($height >= 350 && $height < 400) {
@@ -412,15 +412,15 @@ if (empty($_GET)) {
 
 
 
-                    echo '<div class="bannerText">';
+                    /*echo '<div class="bannerText">';
                         echo $row['text'];
-                    echo '</div>';
-
-                    echo '</div>';
-
-                     /*echo '<div class="postTitle">';
-                        echo 'Recipie title';
                     echo '</div>';*/
+
+                    echo '</div>';
+
+                     echo '<div class="postTitle">';
+                        echo 'Recipie title';
+                    echo '</div>';
 
                     echo '<div class="postText">';
                         echo '<img src="../img/text.png" height="23px">';
