@@ -19,7 +19,7 @@ ul.nav {
 #navbar ul li:hover > ul { display: block }
 
 li.nav {
-    margin-left: 25px;
+    margin-left: 10px;
     float: left;
     height: 42px;
     padding-left: 10px;
