@@ -62,7 +62,7 @@
                 if (basename($_SERVER['PHP_SELF']) == "discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
-                    echo '<li class="nav">' . basename($_SERVER['PHP_SELF']);
+                    echo '<li class="nav">';
                 }
             ?>
                 <a class="navLinks" href="discover/discover.php">Discover</a>
@@ -84,6 +84,10 @@
                 echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                 echo '<div class="arrow-up"></div>';
             ?>
+                <ul>
+                    <li>hello</li>
+                    <li>there</li>
+                </ul>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
