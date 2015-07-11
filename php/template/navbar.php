@@ -59,7 +59,7 @@
 	<div class="right">
 		<ul class="nav">
             <?php
-                if (basename($_SERVER['PHP_SELF']) == "discover/discover.php") {
+                if (basename($_SERVER['PHP_SELF']) == "discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
