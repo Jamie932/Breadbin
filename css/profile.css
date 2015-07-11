@@ -266,6 +266,7 @@ p.textPost {
     height: 40px;
     font-size: 25px;
     padding-top: 10px;
+    text-align: center;
 }
 
 .postText {
