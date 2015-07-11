@@ -85,8 +85,8 @@
                 echo '<div class="arrow-up"></div>';
             ?>
                 <ul>
-                    <li><a href="settings.php">Settings</a></li>
-                    <li><a href="#" onClick="logout(); return false;">Logout</a></li>
+                    <li><a class="navLinks" href="settings.php">Settings</a></li>
+                    <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
                 </ul>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->

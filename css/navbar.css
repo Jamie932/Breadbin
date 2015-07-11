@@ -9,7 +9,8 @@ ul.nav {
 #navbar ul ul {
     display: none;
     list-style-type: none;
-    background-color: gray;
+    background-color: #fff;
+    color: #000;
     width: 175%;
     padding-left: 20px;
     margin-left: -10px;
