@@ -179,15 +179,15 @@ require('../php/template/discoverNavbar.php');
             
             
             
-            echo '<div class="bannerText">';
+            /*echo '<div class="bannerText">';
                 echo $row['text'];
-            echo '</div>';
-            
-            echo '</div>';
-            
-             /*echo '<div class="postTitle">';
-                echo 'Recipie title';
             echo '</div>';*/
+            
+            echo '</div>';
+            
+             echo '<div class="postTitle">';
+                echo 'Recipie title';
+            echo '</div>';
             
             echo '<div class="postUsername">';
                 echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
