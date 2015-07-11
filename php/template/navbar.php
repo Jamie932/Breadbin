@@ -36,12 +36,16 @@
         if($row){ 
             if ($row['colour'] == 1) {
                 $colour = '#8AE68A';
+                $activecolour = '#44CB44';
             } else if ($row['colour'] == 2) {
                 $colour = '#6699FF';
+                $activecolour = '#4979D8';
             } else if ($row['colour'] == 3) {
                 $colour = '#FFB540';
+                $activecolour = '#F5A52B';
             } else if ($row['colour'] == 4) {
                 $colour = '#FF66CC';
+                $activecolour = '#CB479F';
             }
         }
 
@@ -55,8 +59,8 @@
 	<div class="right">
 		<ul class="nav">
             <?php
-                if (basename($_SERVER['PHP_SELF']) == "discover.php") {
-                    echo '<li class="nav" style="background-color: #F5A52B">';
+                if (basename($_SERVER['PHP_SELF']) == "discover/discover.php") {
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
                 }
@@ -66,7 +70,7 @@
         
             <?php
                 if (basename($_SERVER['PHP_SELF']) == "profile.php") {
-                    echo '<li class="nav" style="background-color: #F5A52B">';
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
                 }
