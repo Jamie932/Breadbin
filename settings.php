@@ -1,8 +1,7 @@
 <?php
-require("php/common.php");
-require("php/checkLogin.php");
+    require("php/common.php");
+    require("php/checkLogin.php");
 
-if (!empty($_GET)) {
     $query        = "SELECT * FROM users WHERE id = :id";
     $query_params = array(':id' => $_SESSION['user']['id']);
     
@@ -39,7 +38,6 @@ if (!empty($_GET)) {
     $result = $db->prepare($query);
     $result->execute($query_params);
     $noOfFollowing = $result->fetchColumn();
-}
 ?>
 <html>
 <head>
