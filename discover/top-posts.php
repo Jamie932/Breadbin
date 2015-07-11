@@ -138,7 +138,7 @@ require('../php/template/discoverNavbar.php');
             list($width, $height) = getimagesize($direcFix);
             
             $aspectRatio = $width / $height;
-            $testHeight  = $height /= 2; 
+            $testHeight  = $height / 2; 
             
             echo '<li>';
             echo '<div class="banner">';

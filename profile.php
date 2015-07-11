@@ -371,7 +371,7 @@ if (empty($_GET)) {
                     list($width, $height) = getimagesize($row['image']);
 
                     $aspectRatio = $width / $height;
-                    $testHeight  = $height /= 2; 
+                    $testHeight  = $height / 2; 
 
                     echo '<li>';
                     echo '<div class="banner">';
