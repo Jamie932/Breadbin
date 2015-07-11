@@ -53,10 +53,6 @@ li.settingsList {
     color: black;
 }
 
-li.settingsList:first-of-type {
-    margin-top: 10px;   
-}
-
 li.settingsList:last-child {
     margin-bottom: 10px;   
 }
@@ -68,6 +64,7 @@ li.leftHeader {
     padding-left: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 li.settingsList:hover {
