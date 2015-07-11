@@ -47,14 +47,17 @@ ul.settingsList {
 
 li.settingsList {
     padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     font-size: 1em;
     color: black;
 }
 
-li.settingsHeader {
+li.leftHeader {
     background-color: rgb(102, 153, 255);
     color: #fff;
     font-size: 1.1em;
+    padding-left: 20px;
 }
 
 li.settingsList:hover {

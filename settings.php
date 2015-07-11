@@ -196,7 +196,7 @@
         <div id="rightSettings">
             <div class="leftSettings">
                 <ul class="settingsList">
-                    <li class="settingsHeader">
+                    <li class="leftHeader">
                         User Settings
                     </li>
                 
