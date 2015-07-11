@@ -262,3 +262,7 @@ h5 {
     float: left;
     color: gray;
 }
+
+#post {
+    overflow: auto;   
+}
