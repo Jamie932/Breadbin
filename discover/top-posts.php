@@ -8,7 +8,6 @@ require("../php/checkLogin.php");
     <link href="../css/common.css" rel="stylesheet" type="text/css">
     <link href="../css/navbar.css" rel="stylesheet" type="text/css">
     <link href="../css/discover.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
