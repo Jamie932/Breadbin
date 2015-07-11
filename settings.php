@@ -196,24 +196,20 @@
         <div id="rightSettings">
             <div class="leftSettings">
                 <ul class="settingsList">
-                    <li class="settingsList">
-                        Account Details
+                    <li class="settingsHeader">
+                        User Settings
                     </li>
                 
-                    <li class="settingsList">
-                        Privacy
-                    </li>
+                    <li class="settingsList active">
+                        Account Details
+                    </li>                    
                     
                     <li class="settingsList">
                         Privacy
                     </li>
                     
                     <li class="settingsList">
-                        Privacy
-                    </li>
-                    
-                    <li class="settingsList">
-                        Privacy
+                        Messages
                     </li>
     
                     <li class="settingsList">

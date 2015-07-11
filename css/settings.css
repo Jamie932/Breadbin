@@ -29,7 +29,7 @@ p.settingsDetail {
 }
 
 .leftSettings {
-    width: 140px;
+    width: 160px;
     background-color: #fff;
     display: inline;
     float: left;
@@ -46,30 +46,23 @@ ul.settingsList {
 }
 
 li.settingsList {
-    padding-left: 7px;
-    font-size: 15px;
+    padding-left: 20px;
+    font-size: 1em;
     color: black;
 }
 
-li.settingsList:first-child {
+li.settingsHeader {
     background-color: rgb(102, 153, 255);
     color: #fff;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
-a.settingsLinks { text-decoration: none }
-
-li.settingslistLast {
-    height: 40px;
-    padding-left: 7px;
-    padding-top: 13px;
-    font-size: 15px;
-}
-
-li.settingsList:hover, li.settingslistLast:hover {
+li.settingsList:hover {
     background-color: #E7E7E7;
     color: #6D6D6D;
 }
+
+a.settingsLinks { text-decoration: none }
 
 .rightSettings {
     display: inline;
