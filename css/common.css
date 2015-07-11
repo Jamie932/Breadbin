@@ -3,6 +3,11 @@ html, body {
     margin: 0px;
 }
 
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
 body {
     background-color: #F2F2F2; /* #F6F6F6 */
     font-family: 'Roboto', sans-serif;
