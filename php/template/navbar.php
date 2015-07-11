@@ -69,7 +69,7 @@
             </li>
         
             <?php
-                if (basename($_SERVER['PHP_SELF']) == "profile.php") {
+                if (basename($_SERVER['PHP_SELF']) == "profile.php" || basename($_SERVER['PHP_SELF']) == "settings.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
