@@ -161,16 +161,13 @@
     <div id="profileContainer">
         <div id="leftProfile">
             <?php
-                if (!file_exists('img/avatars/' . $_GET['id'] . '/avatar.jpg')) {
+                if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
                     echo '<div id="userAvatar"></div>';
                 } else {
-                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_GET['id'] . '/avatar.jpg) no-repeat;"></div>';
+                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
                 }
 
-
-                if ($_GET['id'] == $_SESSION['user']['id']) {
-                    echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
-                }
+                echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
             ?>
             
             <div class="userInfo">            
@@ -287,46 +284,12 @@
                 </div>
             </div>
             
-            <div id="profileButtons">
-                <?php
-                    if (isset($usersname)) {
-                        if (($userid != $_SESSION['user']['id'])) {
-                ?>
-                <div class="bottomRow">
-                    <?php
-                        $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
-                        $query_params = array(
-                            ':id' => $_SESSION['user']['id'],
-                            ':userid' => $_GET['id']
-                        );
-        
-                        $stmt   = $db->prepare($query);
-                        $result = $stmt->execute($query_params);
-                        $row    = $stmt->fetch();
-
-                        if ($row['user_no'] != intval($_GET['id'])) {
-                            echo '<button id="followBut" class="buttonstyle">Follow</button>';
-                        } else {
-                            echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
-                        }
-                    ?>
-                    <button id="messageBut" class="buttonstyle">Message</button>
-                    <button id="reportBut" class="buttonstyle">Report</button>
-                </div>
-   
-                <?php
-                    } else {
-                ?>
+            <!--<div id="profileButtons">
                 <div class="bottomRow">
                     <button class="settingsBut buttonstyle">Settings</button>
                     <button class="backBut buttonstyle">Back</button>
                 </div>
-                
-                <?php
-                    }
-                }
-                ?> 
-            </div>
+            </div>-->
             
             <div class="clearFix"></div>
         </div>
