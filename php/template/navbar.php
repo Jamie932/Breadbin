@@ -59,10 +59,10 @@
 	<div class="right">
 		<ul class="nav">
             <?php
-                if (strpos(basename($_SERVER['PHP_SELF']), 'discover.php')) {
+                if (basename($_SERVER['PHP_SELF']) == "discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
-                    echo '<li class="nav">';
+                    echo '<li class="nav">' . basename($_SERVER['PHP_SELF']);
                 }
             ?>
                 <a class="navLinks" href="discover/discover.php">Discover</a>
