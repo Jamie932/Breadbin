@@ -15,6 +15,10 @@ ul.nav {
     margin-left: -10px;
 }
 
+#navbar ul ul li:first-child {
+    height: 35px;
+}
+
 #navbar ul li:hover > ul { display: block }
 
 li.nav {
