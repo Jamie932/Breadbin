@@ -2,6 +2,7 @@
 
 #rightSettings {
     width: auto;
+    overflow: auto;
 }
 
 p.settingsDetail {
@@ -9,35 +10,26 @@ p.settingsDetail {
     font-size: 18px;
 }
 
+#settingsContainer {
+    width: 50%;
+    margin: 70px auto 0px;
+}
+
 #settingsBox {
-    margin: auto;
-    position: absolute;
-    top: 85px;
-    left: 300;
-    right: 0;
-    width: 560px;
-    overflow: hidden;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #616161;
-    -moz-border-radius: 2px 2px;
-    border-radius: 2px 2px;
-    /*-moz-box-shadow: 0 0 1px #616161;;
-    -webkit-box-shadow: 0 0 1px #616161;
-    box-shadow: 0 0 1px #616161;*/
     background-color: #F3F3F3;
+    width: 560px;
+    border: 1px solid rgba(100, 100, 100, 0.5);
+    overflow: hidden;
 }
 
 .leftSettings {
     width: 160px;
     background-color: #fff;
-    display: inline;
     float: left;
-    margin-top: 85px;
-    z-index: -20px;
     transition: transform 0.2s ease-in;
-    font-size:0.9em;
+    font-size: 0.9em;
     border: 1px solid rgba(100, 100, 100, 0.5);
+    margin-right: 15px;
 }
 
 ul.settingsList {
