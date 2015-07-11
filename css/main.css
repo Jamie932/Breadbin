@@ -273,7 +273,7 @@ h5 {
 
 
 
-@media screen and max-width 1125px {
+@media screen and (max-width: 1125px) {
     #center {
         margin: 0 !important;
         width: 100% !important;
