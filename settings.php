@@ -196,16 +196,10 @@
         <div id="rightSettings">
             <div class="leftSettings">
                 <ul class="settingsList">
-                    <li class="settingsListFirst">
+                    <li class="settingsList">
                         Account Details
                     </li>
-                    
-                    <a href="privacySettings.php" class="settingsLinks">
-                        <li class="settingsList">
-                            Privacy
-                        </li>
-                    </a>
-                    
+                
                     <li class="settingsList">
                         Privacy
                     </li>
@@ -218,11 +212,13 @@
                         Privacy
                     </li>
                     
-                    <a class="passwordReset">
-                        <li class="settingsList">
-                            Password reset
-                        </li>
-                    </a>
+                    <li class="settingsList">
+                        Privacy
+                    </li>
+    
+                    <li class="settingsList">
+                        Password reset
+                    </li>
                     
                     <li class="settingsList">
                         Delete account

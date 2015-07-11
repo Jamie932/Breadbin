@@ -54,6 +54,7 @@ li.settingsList {
 li.settingsList:first-child {
     background-color: rgb(102, 153, 255);
     color: #fff;
+    font-size: 1em;
 }
 
 a.settingsLinks { text-decoration: none }
