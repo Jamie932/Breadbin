@@ -281,7 +281,7 @@
                     </div>
                 </div>
 
-                 <div id="settingsBox" style="height: 400px; margin-top: 20px; margin-left: 178px;">
+                 <div id="settingsBox" style="height: 400px; margin-top: 20px;">
                     <div class="rightSettings">
                         <div class="accountSettingsField">
                             <div class="settingsHeader">

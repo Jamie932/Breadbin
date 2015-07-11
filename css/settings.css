@@ -20,6 +20,7 @@ p.settingsDetail {
     width: 560px;
     border: 1px solid rgba(100, 100, 100, 0.5);
     overflow: hidden;
+    margin-left: 178px;
 }
 
 .leftSettings {
