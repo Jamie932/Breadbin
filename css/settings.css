@@ -2,7 +2,6 @@
 
 #rightSettings {
     width: auto;
-    overflow: auto;
 }
 
 p.settingsDetail {
@@ -11,9 +10,13 @@ p.settingsDetail {
 }
 
 #settingsContainer {
-    width: 50%;
-    margin: 70px auto 0px;
+    width:750px; 
     text-align: center;
+    display: table;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #settingsBox {
@@ -156,4 +159,8 @@ p.settingsExplain {
 
 .rowContainer {
     margin-bottom: 20px;   
+}
+
+#leftProfile {
+    margin-top: -28px;   
 }
