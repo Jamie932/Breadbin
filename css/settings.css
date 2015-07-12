@@ -19,7 +19,7 @@ p.settingsDetail {
     padding-right: 15px;
 }
 
-#settingsBox {
+.settingsBox {
     background-color: #F3F3F3;
     width: 560px;
     border: 1px solid rgba(100, 100, 100, 0.5);
@@ -79,8 +79,6 @@ li.settingsList:hover {
 a.settingsLinks { text-decoration: none }
 
 .rightSettings {
-    display: inline;
-    float: right;
     background-color: #fff;
     width: 559px;
     height: 100%;
@@ -172,23 +170,23 @@ p.settingsExplain {
 
 /* ===[ Box Styles & Label Sizes ]=== */
 
-.accountdetailsBox {
+#accountdetailsBox {
     height: 320px;
 }
 
-.privacyBox {
+#privacyBox {
     height: 320px; 
     margin-top: 20px;
     display: none;
 }
 
-.passwordresetBox {
+#passwordresetBox {
     height: 280px; 
     margin-top: 20px;   
     display: none;
 }
 
-.deleteaccountBox {
+#deleteaccountBox {
     height: 200px; 
     margin-top: 20px;
     margin-bottom: 560px;
@@ -199,7 +197,7 @@ p.settingsExplain {
     font-size: 0.9em;   
 }
 
-.accountdetailsBox label { width: 75px; }
-.privacyBox label { width: 75px; }
-.passwordresetBox label { width: 120px; }
-.deleteaccountBox label { width: 75px; }
+#accountdetailsBox label { width: 75px; }
+#privacyBox label { width: 75px; }
+#passwordresetBox label { width: 120px; }
+#deleteaccountBox label { width: 75px; }

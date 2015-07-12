@@ -144,13 +144,13 @@
             
             $('li.settingsList').click(function() {
                 if ($(this).hasClass('accountdetails')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.accountdetailsBox').fadeIn('normal').css('display', 'inline-block !important'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#accountdetailsBox').fadeIn('normal').css('display', 'inline-block'); });
                 } else if ($(this).hasClass('privacy')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.privacyBox').fadeIn('normal').css('display', 'inline-block !important'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#privacyBox').fadeIn('normal').css('display', 'inline-block'); });
                 } else if ($(this).hasClass('passwordreset')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.passwordresetBox').fadeIn('normal').css('display', 'inline-block !important'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#passwordresetBox').fadeIn('normal').css('display', 'inline-block'); });
                 } else if ($(this).hasClass('deleteaccount')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.deleteaccountBox').fadeIn('normal').css('display', 'inline-block !important'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#deleteaccountBox').fadeIn('normal').css('display', 'inline-block'); });
                 }
             });
         });
@@ -218,7 +218,7 @@
                     </ul>
                 </div>
 
-                <div id="settingsBox" class="accountdetailsBox">
+                <div id="accountdetailsBox" class="settingsBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
@@ -255,7 +255,7 @@
                     </div>
                 </div> 
                 
-                <div id="settingsBox" class="privacyBox">
+                <div id="privacyBox" class="settingsBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
@@ -292,7 +292,7 @@
                     </div>
                 </div> 
             
-                 <div id="settingsBox" class="passwordresetBox">
+                 <div id="passwordresetBox" class="settingsBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
@@ -319,7 +319,7 @@
                     </div>
                 </div>    
                 
-                 <div id="settingsBox" class="deleteaccountBox">
+                 <div id="deleteaccountBox" class="settingsBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
