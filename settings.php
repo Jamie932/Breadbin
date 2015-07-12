@@ -196,63 +196,45 @@
             <div id="settingsContainer">
                 <div class="leftSettings noselect">
                     <ul class="settingsList">
-                        <li class="leftHeader">
-                            User Settings
-                        </li>
-
-                        <li class="settingsList active">
-                            Account Details
-                        </li>                    
-
-                        <li class="settingsList">
-                            Privacy
-                        </li>
-
-                        <li class="settingsList">
-                            Messages
-                        </li>
-
-                        <li class="settingsList">
-                            Password reset
-                        </li>
-
-                        <li class="settingsList">
-                            Delete account
-                        </li>
+                        <li class="leftHeader">User Settings</li>
+                        <li class="settingsList active">Account Details</li>                    
+                        <li class="settingsList">Privacy</li>
+                        <li class="settingsList">Messages</li>
+                        <li class="settingsList">Password reset</li>
+                        <li class="settingsList">Delete account</li>
                     </ul>
                 </div>
 
                 <div id="settingsBox" style="height:400px;">
                     <div class="rightSettings">
-                        <div class="accountSettingsField">
-                            <div class="settingsHeader">
-                                <h3 class="settings">Account Details</h3>
-                            </div>
+                        <div class="container">
+                            <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
+                            
                             <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
-                                <label>First name: </label>
+                                <div class="rowContainer">
+                                    <label>Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                                    <br>
-                                    <br>
-                                <label>Last name: </label>
                                     <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                    <br>
-                                    <br>
-                                <label>Email: </label>
+                                    <div class="underBox" style="float: left; margin-left: 125px;">First</div>
+                                    <div class="underBox" style="float: right; margin-right: 217px;">Last</div>
+                                </div>
+                                
+                                <div class="rowContainer">
+                                    <label>Email: </label>
                                     <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                    <br>
-                                    <br>
-                               <label> Colour: </label>
+                                </div>
+                                
+                                <div class="rowContainer">
+                                   <label> Colour: </label>
                                     <select name="colour" class="settings" id="setColour">
                                         <option value="1" style="background:#8AE68A">Green</option>
                                         <option value="2" style="background:#6699FF">Blue</option>
                                         <option value="3" style="background:#FFB540">Orange</option>
                                         <option value="4" style="background:#FF66CC">Pink</option>
                                     </select>
-                                    <br>
-                                    <br>
-                                <label> </label>
+                                </div>
 
-                                    <input type="submit" value="Save" class="saveSettings">
+                                <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
 
@@ -283,7 +265,7 @@
 
                  <div id="settingsBox" style="height: 400px; margin-top: 20px;">
                     <div class="rightSettings">
-                        <div class="accountSettingsField">
+                        <div class="container">
                             <div class="settingsHeader">
                                 <h3 class="settings">Privacy</h3>
                             </div>

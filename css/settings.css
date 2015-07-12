@@ -78,7 +78,7 @@ a.settingsLinks { text-decoration: none }
     height: 100%;
 }
 
-.accountSettingsField {
+.container {
     margin-left: 30px;
 }
 
@@ -95,8 +95,6 @@ h3.settings {
 
 input.settings, select.settings {
     border: 1px solid #616161;
-    -moz-border-radius: 3px 3px;
-    border-radius: 3px 3px;
     height: 30px;
     width: 200px;
     padding-left:5px;
@@ -104,10 +102,11 @@ input.settings, select.settings {
 
 label {
     display: inline-block;
-    width: 130px;
+    width: 30px;
     margin-right: 30px;
-    text-align: right;
-    font-size: 15px;
+    margin-left: 15px;
+    text-align: left;
+    font-size: 0.9em;
 }
 
 .settingsHeader {
@@ -146,3 +145,9 @@ p.settingsExplain {
 }
 
 #errormsg { color: red }
+
+.underBox {
+    margin-top: 5px;
+    font-size: 0.7em;
+    color: gray;
+}
