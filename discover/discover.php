@@ -45,8 +45,12 @@ require("../php/checkLogin.php");
     </noscript>          
     
     <?php
-require('../php/template/discoverNavbar.php'); 
-?>
+    require('../php/template/discoverNavbar.php'); 
+    ?>
+        
+    <div id="loader">
+        <img src="../img/roll.gif">
+    </div>  
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
@@ -69,10 +73,6 @@ require('../php/template/discoverNavbar.php');
             
 		</ul>
     </div>
-        
-    <div id="loader">
-        <img src="../img/roll.gif">
-    </div>  
         
     <div id="content">
         <div id="main">
