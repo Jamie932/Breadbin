@@ -74,8 +74,7 @@
                     
                     $('#blackOverlay').fadeIn('normal');
                     $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
-                    $('.settingsBut').html('Save');
-                    $('.settingsBut').addClass('saveBut').removeClass('settingsBut');
+                    $('.saveBut').fadeIn('normal');
                     
                     lastBio = $('.bioRow').text();
                     editing  = true;
@@ -108,8 +107,7 @@
                 $('#userAvatar').removeClass('editableContent');
                 $('#blackOverlay').fadeOut('normal');
                 $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
-                $('.saveBut').html('Settings');
-                $('.saveBut').addClass('settingsBut').removeClass('saveBut');
+                $('.saveBut').fadeOut('normal');
                 editing = false;
             });
             
@@ -430,6 +428,12 @@
             </div>
         </div>
             
+        <div id="profileButtons">
+            <div class="bottomRow">
+                <button class="saveBut buttonstyle" style="display: none;">Save</button>
+            </div>
+        </div>        
+        
         <form id="avatarForm" method="POST" enctype="multipart/form-data">
             <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
         </form>
