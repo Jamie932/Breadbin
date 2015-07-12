@@ -144,36 +144,19 @@
             
             $('li.settingsList').click(function() {
                 if ($(this).hasClass('accountdetails')) {
-                    $('html, body').animate({scrollTop: ($('.accountdetailsBox').offset().top - 42 - 10)}, 500); 
+                    $('#settingsBox').fadeOut('normal', function() { $('.accountdetailsBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('privacy')) {
-                    $('html, body').animate({scrollTop: ($('.privacyBox').offset().top - 42 - 10)}, 500); 
+                    $('#settingsBox').fadeOut('normal', function() { $('.privacyBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('passwordreset')) {
-                    $('html, body').animate({scrollTop: ($('.passwordresetBox').offset().top - 42 - 10)}, 500); 
+                    $('#settingsBox').fadeOut('normal', function() { $('.passwordresetBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('deleteaccount')) {
-                    $('html, body').animate({scrollTop: ($('.deleteaccountBox').offset().top - 42 - 10)}, 500); 
+                    $('#settingsBox').fadeOut('normal', function() { $('.deleteaccountBox').fadeIn('normal'); });
                 }
             });
         });
         
         $(window).scroll(function() {
             $('.leftSettings').css('marginLeft', -$(window).scrollLeft()); 
-            
-            if ($(window).scrollTop() > ($('.deleteaccountBox').offset().top - 42 - 20)) {
-                $('.active').removeClass('active');
-                $('.deleteaccount').addClass('active');
-                
-            } else if ($(window).scrollTop() > ($('.passwordresetBox').offset().top - 42 - 20)) {
-                $('.active').removeClass('active');
-                $('.passwordreset').addClass('active');
-                
-            } else if ($(window).scrollTop() > ($('.privacyBox').offset().top - 42 - 20)) {
-                $('.active').removeClass('active');
-                $('.privacy').addClass('active');
-                
-            } else {
-                $('.active').removeClass('active');
-                $('.accountdetails').addClass('active');
-            }
         });        
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
@@ -343,31 +326,9 @@
                             
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
-                                    <label>First Name: </label>
-                                    <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                    <p class="innerContent">WARNING: Deleting your account will completely remove ALL content associated with it.
+                                    There is no way back, so please be careful with this option.</p>
                                 </div>
-                                
-                                  <div class="rowContainer">
-                                    <label>Last Name: </label>
-                                    <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                </div>                              
-                                
-                                <div class="rowContainer">
-                                    <label>Email: </label>
-                                    <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                </div>
-                                
-                                <div class="rowContainer">
-                                   <label> Colour: </label>
-                                    <select name="colour" class="settings" id="setColour">
-                                        <option value="1" style="background:#8AE68A">Green</option>
-                                        <option value="2" style="background:#6699FF">Blue</option>
-                                        <option value="3" style="background:#FFB540">Orange</option>
-                                        <option value="4" style="background:#FF66CC">Pink</option>
-                                    </select>
-                                </div>
-
-                                <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
                     </div>
