@@ -204,8 +204,8 @@
                         <li class="settingsList active">Account Details</li>                    
                         <li class="settingsList">Privacy</li>
                         <li class="settingsList">Messages</li>
-                        <li class="settingsList">Password reset</li>
-                        <li class="settingsList">Delete account</li>
+                        <li class="settingsList">Password Reset</li>
+                        <li class="settingsList">Delete Account</li>
                     </ul>
                 </div>
 
@@ -243,91 +243,147 @@
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
-
-                        <div class="passwordSettingsField">
-                            <div class="settingsHeader">
-                                <h3 class="settings">Reset your password</h3>
-                                <p class="settingsDetail"></p>
-                            </div>
-                            <form action="php/passwordUpdate.php" method="post" class="accountSettings">
-                                <label>Current Password: </label>
-                                    <input type="password" name="currentPassword" class="settings" id="currentPassword">
-                                    <br>
-                                    <br>
-                                <label>New password: </label>
-                                    <input type="password" name="newPassword" class="settings" id="newPassword">
-                                    <br>
-                                    <br>
-                                <label>Verify password: </label>
-                                    <input type="password" name="newPassword2" class="settings" id="newPassword2">
-                                    <br>
-                                    <br>
-
-                                    <input type="submit" value="Save" class="saveSettings">
-                            </form>
-                        </div>
                     </div>
-                </div>
-
-                 <div id="settingsBox" style="height: 400px; margin-top: 20px;">
+                </div> 
+                
+                <div id="settingsBox" style="height: 320px; margin-top: 20px;">
                     <div class="rightSettings">
                         <div class="container">
-                            <div class="settingsHeader">
-                                <h3 class="settings">Privacy</h3>
-                            </div>
+                            <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
+                            
                             <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
-                                <label>First name: </label>
+                                <div class="rowContainer">
+                                    <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                                    <br>
-                                    <br>
-                                <label>Last name: </label>
+                                </div>
+                                
+                                  <div class="rowContainer">
+                                    <label>Last Name: </label>
                                     <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                    <br>
-                                    <br>
-                                <label>Email: </label>
+                                </div>                              
+                                
+                                <div class="rowContainer">
+                                    <label>Email: </label>
                                     <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                    <br>
-                                    <br>
-                               <label> Colour: </label>
+                                </div>
+                                
+                                <div class="rowContainer">
+                                   <label> Colour: </label>
                                     <select name="colour" class="settings" id="setColour">
                                         <option value="1" style="background:#8AE68A">Green</option>
                                         <option value="2" style="background:#6699FF">Blue</option>
                                         <option value="3" style="background:#FFB540">Orange</option>
                                         <option value="4" style="background:#FF66CC">Pink</option>
                                     </select>
-                                    <br>
-                                    <br>
-                                <label> </label>
+                                </div>
 
-                                    <input type="submit" value="Save" class="saveSettings">
-                            </form>
-                        </div>
-
-                        <div class="passwordSettingsField">
-                            <div class="settingsHeader">
-                                <h3 class="settings">Reset your password</h3>
-                                <p class="settingsDetail"></p>
-                            </div>
-                            <form action="php/passwordUpdate.php" method="post" class="accountSettings">
-                                <label>Current Password: </label>
-                                    <input type="password" name="currentPassword" class="settings" id="currentPassword">
-                                    <br>
-                                    <br>
-                                <label>New password: </label>
-                                    <input type="password" name="newPassword" class="settings" id="newPassword">
-                                    <br>
-                                    <br>
-                                <label>Verify password: </label>
-                                    <input type="password" name="newPassword2" class="settings" id="newPassword2">
-                                    <br>
-                                    <br>
-
-                                    <input type="submit" value="Save" class="saveSettings">
+                                <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> 
 
+                 <div id="settingsBox" style="height: 320px; margin-top: 20px;">
+                    <div class="rightSettings">
+                        <div class="container">
+                            <div class="settingsHeader"><h3 class="settings">Messages</h3></div>
+                            
+                            <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
+                                <div class="rowContainer">
+                                    <label>First Name: </label>
+                                    <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                </div>
+                                
+                                  <div class="rowContainer">
+                                    <label>Last Name: </label>
+                                    <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
+                                </div>                              
+                                
+                                <div class="rowContainer">
+                                    <label>Email: </label>
+                                    <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
+                                </div>
+                                
+                                <div class="rowContainer">
+                                   <label> Colour: </label>
+                                    <select name="colour" class="settings" id="setColour">
+                                        <option value="1" style="background:#8AE68A">Green</option>
+                                        <option value="2" style="background:#6699FF">Blue</option>
+                                        <option value="3" style="background:#FFB540">Orange</option>
+                                        <option value="4" style="background:#FF66CC">Pink</option>
+                                    </select>
+                                </div>
+
+                                <input type="submit" value="Save" class="saveSettings">
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+                
+                 <div id="settingsBox" style="height: 320px; margin-top: 20px;">
+                    <div class="rightSettings">
+                        <div class="container">
+                            <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
+                            
+                            <form action="php/passwordUpdate.php" method="post" class="accountSettings">
+                                <div class="rowContainer">
+                                    <label>Current Password: </label>
+                                    <input type="password" name="currentPassword" class="settings" id="currentPassword">
+                                </div>
+                                
+                                  <div class="rowContainer">
+                                    <label>New Password: </label>
+                                    <input type="password" name="newPassword" class="settings" id="newPassword">
+                                </div>                              
+                                
+                                <div class="rowContainer">
+                                    <label>Verify Password: </label>
+                                    <input type="password" name="newPassword2" class="settings" id="newPassword2">
+                                </div>
+                                
+                                <input type="submit" value="Save" class="saveSettings">
+                            </form>
+                        </div>
+                    </div>
+                </div>    
+                
+                 <div id="settingsBox" style="height: 320px; margin-top: 20px;">
+                    <div class="rightSettings">
+                        <div class="container">
+                            <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
+                            
+                            <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
+                                <div class="rowContainer">
+                                    <label>First Name: </label>
+                                    <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                </div>
+                                
+                                  <div class="rowContainer">
+                                    <label>Last Name: </label>
+                                    <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
+                                </div>                              
+                                
+                                <div class="rowContainer">
+                                    <label>Email: </label>
+                                    <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
+                                </div>
+                                
+                                <div class="rowContainer">
+                                   <label> Colour: </label>
+                                    <select name="colour" class="settings" id="setColour">
+                                        <option value="1" style="background:#8AE68A">Green</option>
+                                        <option value="2" style="background:#6699FF">Blue</option>
+                                        <option value="3" style="background:#FFB540">Orange</option>
+                                        <option value="4" style="background:#FF66CC">Pink</option>
+                                    </select>
+                                </div>
+
+                                <input type="submit" value="Save" class="saveSettings">
+                            </form>
+                        </div>
+                    </div>
+                </div>         
+                
                 <!--<div id="profileButtons">
                     <div class="bottomRow">
                         <button class="settingsBut buttonstyle">Settings</button>
