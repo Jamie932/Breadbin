@@ -33,6 +33,7 @@ a.active {
     top: 40;
     left: 0;
     z-index: 9999;
+    margin-top: 42px;
 }
 
 ul.cats {
