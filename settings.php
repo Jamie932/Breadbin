@@ -143,10 +143,10 @@
             $("#upfile").change(function (){
                 uploadingFile = true;
             });
-        });
             
-        $(window).scroll(function() {
-            $('.leftSettings').css('left', -$(window).scrollLeft()); 
+            $(window).scroll(function() {
+                $('.leftSettings').css('marginLeft', -$(window).scrollLeft()); 
+            });
         });
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
