@@ -49,31 +49,29 @@
             <?php
                 $filename = basename($_SERVER['PHP_SELF']);
             
-                if ($filename == "discover/discover.php") {
+                if ($filename == "discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
                 }
             ?>
-                <a class="navLinks" href="discover/discover.php">Discover</a>
+                <a class="navLinks" href="discover.php">Discover</a>
             </li>
         
-            <li class="nav">
-                <?php
-                   /* if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
-                        echo '<div id="navAvatar"></div>';
-                    } else {
-                        echo '<div id="navAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
-                    }*/
+            <?php
+                if (($filename == "profile.php" && (isset($_GET['id']) && $_GET['id'] == $_SESSION['user']['id'])) || $filename == "settings.php") {
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                } else {
+                    echo '<li class="nav">';
+                }
 
-				    echo '<a class="navLinks" href="/profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
-                    echo '<div class="arrow-up"></div>';
+                echo '<a class="navLinks" href="../profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
+                echo '<div class="arrow-up"></div>';
             ?>
                 <ul>
-                    <li><a class="navLinks" href="settings.php">Settings</a></li>
+                    <li><a class="navLinks" href="../settings.php">Settings</a></li>
                     <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
                 </ul>
-                ?>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
