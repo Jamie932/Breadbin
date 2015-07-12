@@ -39,6 +39,7 @@
     $result->execute($query_params);
     $noOfFollowing = $result->fetchColumn();
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Settings | Breadbin</title>
