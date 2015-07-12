@@ -148,7 +148,7 @@ p.textPost {
 	font-size: 1em;
 	padding-left: 10px;
 	padding-right: 10px;
-    width: 300px !important;
+    min-width: 300px !important;
     height: 230px !important;
 }
 
