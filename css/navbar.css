@@ -119,3 +119,15 @@ a.navLinks:hover { color: #616161 }
     display: inline-block;
     margin-right: -15px;
 }
+
+
+#loader {
+    position: fixed;
+    z-index: 9999;
+   top: 0;
+   left: 50%;
+   width: 330px;
+   height: 330px;
+   margin-top: -115px; /* Half the height */
+   margin-left: -115px;
+}

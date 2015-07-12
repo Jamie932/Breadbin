@@ -43,6 +43,10 @@
 	<div class="left">
 		<a href="/main.php" class="navLinks">Bread Bin</a>
 	</div>
+
+    <div id="loader">
+        <img src="../../img/roll.gif">
+    </div>
 	
 	<div class="right">
 		<ul class="nav">

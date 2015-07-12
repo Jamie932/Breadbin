@@ -32,10 +32,7 @@ require("../php/checkLogin.php");
     <?php
     require('../php/template/discoverNavbar.php'); 
     ?>
-        
-    <div id="loader">
-        <img src="../img/roll.gif">
-    </div>  
+      
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
