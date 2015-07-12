@@ -74,6 +74,8 @@ require("../php/checkLogin.php");
 		</ul>
     </div>
         
+            <div id="cheeky">
+
     <div id="content">
         <div id="main">
             <?php
@@ -236,6 +238,7 @@ require("../php/checkLogin.php");
                </ul>
             </div>
         </div>
+    </div>
         <script src="../js/vendor/jquery.wookmark.js"></script>
         <script type="text/javascript">
         var colors = [

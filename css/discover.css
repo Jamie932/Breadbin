@@ -55,6 +55,10 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
+#cheeky {
+    display: none;
+}
 /* Posts */
 #content {
     width: 100%;
