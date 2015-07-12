@@ -156,7 +156,7 @@
         });
         
         $(window).scroll(function() {
-            $('#leftSettings').css('marginLeft', -$(window).scrollLeft()); 
+            $('.leftSettings').css('marginLeft', -$(window).scrollLeft()); 
         });        
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
@@ -204,17 +204,11 @@
                 }
                 ?>
             </div>
-            
-            <div id="profileButtons">
-                <div class="bottomRow">
-                    <button class="saveBut buttonstyle" style="display: none;">Save</button>
-                </div>
-            </div>               
         </div>
         
-        <div id="rightContainer">
+        <div id="rightSettings">
             <div id="settingsContainer">
-                <div id="leftSettings" class="noselect">
+                <div class="leftSettings noselect">
                     <ul class="settingsList">
                         <li class="leftHeader">User Settings</li>
                         <li class="settingsList accountdetails active">Account Details</li>                    
@@ -223,29 +217,28 @@
                         <li class="settingsList deleteaccount">Delete Account</li>
                     </ul>
                 </div>
-                
-                <div id="rightSettings">
-                    <div id="accountdetailsBox" class="settingsBox">
-                        <div class="innerStyle">
-                            <div class="container">
+
+                <div id="accountdetailsBox" class="settingsBox">
+                    <div class="rightSettings">
+                        <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
-
+                            
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
                                     <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                                 </div>
-
+                                
                                   <div class="rowContainer">
                                     <label>Last Name: </label>
                                     <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
                                 </div>                              
-
+                                
                                 <div class="rowContainer">
                                     <label>Email: </label>
                                     <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
                                 </div>
-
+                                
                                 <div class="rowContainer">
                                    <label> Colour: </label>
                                     <select name="colour" class="settings" id="setColour">
@@ -259,30 +252,30 @@
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
-                        </div>
-                    </div> 
-
-                    <div id="privacyBox" class="settingsBox">
-                        <div class="innerStyle">
-                            <div class="container">
+                    </div>
+                </div> 
+                
+                <div id="privacyBox" class="settingsBox">
+                    <div class="rightSettings">
+                        <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
-
+                            
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
                                     <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                                 </div>
-
+                                
                                   <div class="rowContainer">
                                     <label>Last Name: </label>
                                     <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
                                 </div>                              
-
+                                
                                 <div class="rowContainer">
                                     <label>Email: </label>
                                     <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
                                 </div>
-
+                                
                                 <div class="rowContainer">
                                    <label> Colour: </label>
                                     <select name="colour" class="settings" id="setColour">
@@ -296,41 +289,41 @@
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
-                        </div>
-                    </div> 
-
-                    <div id="passwordresetBox" class="settingsBox">
-                        <div class="innerStyle">
-                            <div class="container">
+                    </div>
+                </div> 
+            
+                 <div id="passwordresetBox" class="settingsBox">
+                    <div class="rightSettings">
+                        <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
-
+                            
                             <form action="php/passwordUpdate.php" method="post">
                                 <div class="rowContainer">
                                     <label>Current Password: </label>
                                     <input type="password" name="currentPassword" class="settings" id="currentPassword">
                                 </div>
-
+                                
                                   <div class="rowContainer">
                                     <label>New Password: </label>
                                     <input type="password" name="newPassword" class="settings" id="newPassword">
                                 </div>                              
-
+                                
                                 <div class="rowContainer">
                                     <label>Verify Password: </label>
                                     <input type="password" name="newPassword2" class="settings" id="newPassword2">
                                 </div>
-
+                                
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
-                        </div>
-                    </div>    
-
-                    <div id="deleteaccountBox" class="settingsBox">
-                        <div class="innerStyle">
-                            <div class="container">
+                    </div>
+                </div>    
+                
+                 <div id="deleteaccountBox" class="settingsBox">
+                    <div class="rightSettings">
+                        <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
-
+                            
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
                                     <p class="innerContent">WARNING: Deleting your account will completely remove ALL content associated with it.
@@ -338,9 +331,22 @@
                                 </div>
                             </form>
                         </div>
-                        </div>
-                    </div>         
-                </div>
+                    </div>
+                </div>         
+                
+                <!--<div id="profileButtons">
+                    <div class="bottomRow">
+                        <button class="settingsBut buttonstyle">Settings</button>
+                        <button class="backBut buttonstyle">Back</button>
+                    </div>
+                </div>-->
+                
+                
+                <div id="profileButtons">
+                    <div class="bottomRow">
+                        <button class="saveBut buttonstyle" style="display: none;">Save</button>
+                    </div>
+                </div>   
 
                 <div class="clearFix"></div>
             </div>

@@ -29,7 +29,7 @@ p.settingsDetail {
     text-align: left;
 }
 
-#leftSettings {
+.leftSettings {
     width: 160px;
     background-color: #fff;
     float: left;
@@ -40,10 +40,6 @@ p.settingsDetail {
     position: fixed;
     display: inline-block;
     text-align: left;
-}
-
-#rightSettings {
-    min-width: 560px;
 }
 
 ul.settingsList {
@@ -82,7 +78,7 @@ li.settingsList:hover {
 
 a.settingsLinks { text-decoration: none }
 
-.innerStyle {
+.rightSettings {
     background-color: #fff;
     width: 559px;
     height: 100%;
@@ -184,7 +180,7 @@ p.settingsExplain {
 }
 
 #passwordresetBox {
-    height: 280px;  
+    height: 280px; 
     display: none;
 }
 
