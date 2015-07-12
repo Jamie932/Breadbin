@@ -63,6 +63,7 @@ a{
     height: auto;
     text-align:center;
     padding-top: 100px;
+    display:none;
 }
 
 .banner {
