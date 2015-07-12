@@ -21,9 +21,9 @@ a.active {
     color: black;   
 }
 
-#cheeky {
+/*#cheeky {
     display: none;   
-}
+}*/
 
 /* categories */
 #categories {
@@ -118,7 +118,7 @@ a{
     max-width: 300px;
     max-height: 400px;
 	background-color: #ffffff;
-	/*display: none;*/
+	display: none;
 	cursor: pointer;
 	overflow: hidden;
     margin: 0;
