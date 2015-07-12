@@ -214,7 +214,7 @@
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
                             
-                            <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
+                            <form action="php/SettingsUpdate.php" method="post" class="accountdetails">
                                 <div class="rowContainer">
                                     <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
@@ -251,7 +251,7 @@
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
                             
-                            <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
+                            <form action="php/SettingsUpdate.php" method="post" class="privacy">
                                 <div class="rowContainer">
                                     <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
@@ -288,7 +288,7 @@
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Messages</h3></div>
                             
-                            <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
+                            <form action="php/SettingsUpdate.php" method="post" class="messages">
                                 <div class="rowContainer">
                                     <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
@@ -320,12 +320,12 @@
                     </div>
                 </div> 
                 
-                 <div id="settingsBox" style="height: 320px; margin-top: 20px;">
+                 <div id="settingsBox" class="passwordreset">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
                             
-                            <form action="php/passwordUpdate.php" method="post" class="accountSettings">
+                            <form action="php/passwordUpdate.php" method="post">
                                 <div class="rowContainer">
                                     <label>Current Password: </label>
                                     <input type="password" name="currentPassword" class="settings" id="currentPassword">
@@ -352,7 +352,7 @@
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
                             
-                            <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
+                            <form action="php/SettingsUpdate.php" method="post" class="deleteaccount">
                                 <div class="rowContainer">
                                     <label>First Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">

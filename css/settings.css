@@ -164,3 +164,10 @@ p.settingsExplain {
 #leftProfile {
     margin-top: -28px;   
 }
+
+.passwordreset {
+    height: 280px; 
+    margin-top: 20px;   
+}
+
+.passwordreset label { width: 120px !important; }
