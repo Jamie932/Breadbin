@@ -215,8 +215,8 @@
                                     <label>Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                                     <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                    <div class="underBox" style="float: left; margin-left: 125px;">First</div>
-                                    <div class="underBox" style="float: right; margin-right: 217px;">Last</div>
+                                    <div class="underBox" style="float: left; margin-left: 80px;">First</div>
+                                    <div class="underBox" style="float: right; margin-right: 225px;">Last</div>
                                 </div>
                                 
                                 <div class="rowContainer smallGap">
