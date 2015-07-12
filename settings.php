@@ -147,6 +147,27 @@
         
         $(window).scroll(function() {
             $('.leftSettings').css('marginLeft', -$(window).scrollLeft()); 
+            
+            if ($(window).scrollTop() > $('.deleteaccountBox').offset().top) {
+                $('.active').removeClass('active');
+                $('.deleteaccount').addClass('active');
+                
+            } else if ($(window).scrollTop() > $('.passwordresetBox').offset().top) {
+                $('.active').removeClass('active');
+                $('.passwordreset').addClass('active');
+                
+            } else if ($(window).scrollTop() > $('.messagesBox').offset().top) {
+                $('.active').removeClass('active');
+                $('.messages').addClass('active');
+                
+            } else if ($(window).scrollTop() > $('.privacyBox').offset().top) {
+                $('.active').removeClass('active');
+                $('.privacy').addClass('active');
+                
+            } else {
+                $('.active').removeClass('active');
+                $('.accountdetails').addClass('active');
+            }
         });        
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
@@ -201,15 +222,15 @@
                 <div class="leftSettings noselect">
                     <ul class="settingsList">
                         <li class="leftHeader">User Settings</li>
-                        <li class="settingsList active">Account Details</li>                    
-                        <li class="settingsList">Privacy</li>
-                        <li class="settingsList">Messages</li>
-                        <li class="settingsList">Password Reset</li>
-                        <li class="settingsList">Delete Account</li>
+                        <li class="settingsList accountdetails active">Account Details</li>                    
+                        <li class="settingsList privacy">Privacy</li>
+                        <li class="settingsList messages">Messages</li>
+                        <li class="settingsList passwordreset">Password Reset</li>
+                        <li class="settingsList deleteaccount">Delete Account</li>
                     </ul>
                 </div>
 
-                <div id="settingsBox" class="accountdetails">
+                <div id="settingsBox" class="accountdetailsBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
@@ -246,7 +267,7 @@
                     </div>
                 </div> 
                 
-                <div id="settingsBox" class="privacy">
+                <div id="settingsBox" class="privacyBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
@@ -283,7 +304,7 @@
                     </div>
                 </div> 
 
-                 <div id="settingsBox" class="messages">
+                 <div id="settingsBox" class="messagesBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Messages</h3></div>
@@ -320,7 +341,7 @@
                     </div>
                 </div> 
                 
-                 <div id="settingsBox" class="passwordreset">
+                 <div id="settingsBox" class="passwordresetBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
@@ -347,7 +368,7 @@
                     </div>
                 </div>    
                 
-                 <div id="settingsBox" class="deleteaccount">
+                 <div id="settingsBox" class="deleteaccountBox">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>

@@ -71,7 +71,7 @@ li.leftHeader {
 }
 
 li.settingsList:hover {
-    background-color: #E7E7E7;
+    /*background-color: #E7E7E7;*/
     color: #6D6D6D;
     cursor: pointer;
 }
@@ -162,6 +162,10 @@ p.settingsExplain {
 
 #leftProfile {
     margin-top: -28px;   
+}
+
+.active {
+    background-color: #E7E7E7;   
 }
 
 
