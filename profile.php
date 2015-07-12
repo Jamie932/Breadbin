@@ -130,8 +130,7 @@ if (empty($_GET)) {
                     
                     $('#blackOverlay').fadeIn('normal');
                     $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
-                    //$('.settingsBut').html('Save');
-                    //$('.settingsBut').addClass('saveBut').removeClass('settingsBut');
+                    $('.saveBut').fadeIn('normal');
                     
                     lastBio = $('.bioRow').text();
                     editing  = true;
@@ -164,8 +163,7 @@ if (empty($_GET)) {
                 $('#userAvatar').removeClass('editableContent');
                 $('#blackOverlay').fadeOut('normal');
                 $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
-                //$('.saveBut').html('Settings');
-                //$('.saveBut').addClass('settingsBut').removeClass('saveBut');
+                $('.saveBut').fadeOut('normal');
                 editing = false;
             });
             
@@ -205,13 +203,15 @@ if (empty($_GET)) {
     <script src="js/formChangeAvatar.js" async></script>
 </head>
     
-<body class="profile">
-    <div id="blackOverlay"></div>
+<body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
-    </noscript>    
+    </noscript>     
+    
+    <div id="blackOverlay"></div>   
         
     <?php require('php/template/navbar.php'); ?>
+    
     <div id="profileContainer">
         <div id="leftProfile">
             <?php
@@ -409,7 +409,46 @@ if (empty($_GET)) {
         </div>
         
         <div id="clearFix"></div>
-               
+    
+        <div id="profileButtons">
+            <?php
+                if (isset($usersname)) {
+                    if (($userid != $_SESSION['user']['id'])) {
+            ?>
+            <div class="bottomRow">
+                <?php
+                    $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
+                    $query_params = array(
+                        ':id' => $_SESSION['user']['id'],
+                        ':userid' => $_GET['id']
+                    );
+
+                    $stmt   = $db->prepare($query);
+                    $result = $stmt->execute($query_params);
+                    $row    = $stmt->fetch();
+                    if ($row['user_no'] != intval($_GET['id'])) {
+                        echo '<button id="followBut" class="buttonstyle">Follow</button>';
+                    } else {
+                        echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
+                    }
+                ?>
+                <button id="messageBut" class="buttonstyle">Message</button>
+                <button id="reportBut" class="buttonstyle">Report</button>
+            </div>
+
+            <?php
+                } else {
+            ?>
+            <div class="bottomRow">
+                <button class="saveBut buttonstyle" style="display: none;">Save</button>
+            </div>
+
+            <?php
+                }
+            }
+            ?> 
+        </div>     
+        
         <script src="js/vendor/jquery.wookmark.js"></script>
         <script type="text/javascript">
             var colors = [
