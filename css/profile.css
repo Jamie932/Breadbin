@@ -121,8 +121,7 @@ p {
 }
 
 .followerLeft {
-    position: absolute;
-    left: 25;
+    display: inline-block;
 }
 
 .followerTitle {
@@ -136,8 +135,8 @@ p {
 }
 
 .followerRight {
-    position: absolute;
-    right: 25;
+    display: inline-block;
+    margin-left: 50px;
 }
 
 #profileContainer { padding-left: 280px }
