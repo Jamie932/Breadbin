@@ -21,9 +21,9 @@ a.active {
     color: black;   
 }
 
-#cheeky {
-    visibility: hidden;   
-}
+/*#cheeky {
+    display: none;   
+}*/
  
 /* categories */
 #categories {
