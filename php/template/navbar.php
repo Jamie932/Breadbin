@@ -70,14 +70,22 @@
         
             <?php
                 if (basename($_SERVER['PHP_SELF']) == "profile.php") {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '; padding-right: 3px;">';
                 } else {
-                    echo '<li class="nav">';
+                    echo '<li class="nav" style="padding-right: 3px;">';
                 }
 
                 echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
-                echo '<div class="arrow-up"></div>';
+                echo '</li>';
+
+                if (basename($_SERVER['PHP_SELF']) == "settings.php") {
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '; margin-left: 0px; padding-left: 0px;">';
+                } else {
+                    echo '<li class="nav" style="margin-left: 0px; padding-left: 0px;">';
+                }
+                echo '<div id="arrowContainer"><div class="arrow-up"></div></div>';
             ?>
+        
                 <ul>
                     <li><a class="navLinks" href="settings.php">Settings</a></li>
                     <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>

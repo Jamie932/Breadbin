@@ -90,7 +90,7 @@ a.navLinks:hover { color: #616161 }
     border-right: 5px solid transparent;
     border-top: 5px solid #FFF;
     margin-top: 20px;
-    margin-left: 8px;
+    margin-right: 5px;
     float: right;
 }
 
@@ -118,4 +118,11 @@ a.navLinks:hover { color: #616161 }
 #errorText {
     display: inline-block;
     margin-right: -15px;
+}
+
+#arrowContainer {
+    overflow: auto;
+    height: 100%;
+    width: 20px;
+    text-align: center;
 }
