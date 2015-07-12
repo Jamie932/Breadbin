@@ -145,15 +145,15 @@
             });
             
             $('li.settingsList').click(function() {
-                if ($(this).hasClass('accountdetails') {
+                if ($(this).hasClass('accountdetails')) {
                     $('html, body').animate({scrollTop: $('accountdetailsBox').offset().top}, 2000); 
-                } else if ($(this).hasClass('privacy') {
+                } else if ($(this).hasClass('privacy')) {
                     $('html, body').animate({scrollTop: $('privacyBox').offset().top}, 2000); 
-                } else if ($(this).hasClass('messages') {
+                } else if ($(this).hasClass('messages')) {
                     $('html, body').animate({scrollTop: $('messagesBox').offset().top}, 2000); 
-                } else if ($(this).hasClass('passwordreset') {
+                } else if ($(this).hasClass('passwordreset')) {
                     $('html, body').animate({scrollTop: $('passwordresetBox').offset().top}, 2000); 
-                } else if ($(this).hasClass('deleteaccount') {
+                } else if ($(this).hasClass('deleteaccount')) {
                     $('html, body').animate({scrollTop: $('deleteaccountBox').offset().top}, 2000); 
                 }
             });
