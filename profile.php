@@ -229,7 +229,7 @@ if (empty($_GET)) {
                 }
                 
                 if (isset($rank) && !empty($rank) && $rank != "user") { //Add a star
-                    echo '<div id="starOverlay"><i class="fa fa-star></i></div>';
+                    echo '<div id="starOverlay"><i class="fa fa-star"></i></div>';
                 }
             ?>
             
