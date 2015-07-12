@@ -97,7 +97,7 @@ h3.settings {
 }
 
 input.settings, select.settings {
-    border: 1px solid #616161;
+    border: 1px solid rgba(100, 100, 100, 0.5);
     height: 30px;
     width: 200px;
     padding-left:5px;
