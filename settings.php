@@ -144,13 +144,13 @@
             
             $('li.settingsList').click(function() {
                 if ($(this).hasClass('accountdetails')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.accountdetailsBox').fadeIn('normal'); });
+                    $('#settingsBox').fadeOut('normal', function() { $('.accountdetailsBox').fadeIn('normal').css('display', 'inline-block !important'); }).css('display', 'none !important');
                 } else if ($(this).hasClass('privacy')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.privacyBox').fadeIn('normal'); });
+                    $('#settingsBox').fadeOut('normal', function() { $('.privacyBox').fadeIn('normal').css('display', 'inline-block !important'); }).css('display', 'none !important');
                 } else if ($(this).hasClass('passwordreset')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.passwordresetBox').fadeIn('normal'); });
+                    $('#settingsBox').fadeOut('normal', function() { $('.passwordresetBox').fadeIn('normal').css('display', 'inline-block !important'); }).css('display', 'none !important');
                 } else if ($(this).hasClass('deleteaccount')) {
-                    $('#settingsBox').fadeOut('normal', function() { $('.deleteaccountBox').fadeIn('normal'); });
+                    $('#settingsBox').fadeOut('normal', function() { $('.deleteaccountBox').fadeIn('normal').css('display', 'inline-block !important'); }).css('display', 'none !important');
                 }
             });
         });
