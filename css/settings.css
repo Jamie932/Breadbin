@@ -13,6 +13,7 @@ p.settingsDetail {
 #settingsContainer {
     width: 50%;
     margin: 70px auto 0px;
+    text-align: center;
 }
 
 #settingsBox {
@@ -21,6 +22,8 @@ p.settingsDetail {
     border: 1px solid rgba(100, 100, 100, 0.5);
     overflow: hidden;
     margin-left: 178px;
+    display: inline-block;
+    text-align: left;
 }
 
 .leftSettings {
@@ -32,6 +35,8 @@ p.settingsDetail {
     border: 1px solid rgba(100, 100, 100, 0.5);
     margin-right: 15px;
     position: fixed;
+    display: inline-block;
+    text-align: left;
 }
 
 ul.settingsList {
