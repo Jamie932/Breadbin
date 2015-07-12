@@ -86,6 +86,7 @@ a.settingsLinks { text-decoration: none }
 .container {
     position: relative;
     margin-left: 20px;
+    margin-right: 20px;
     height: 100%;
     overflow: hidden;
 }
@@ -139,7 +140,7 @@ p.settingsDetail {
     width: 100px;
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 0px;
 }
 
 p.settingsExplain {
