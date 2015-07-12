@@ -391,7 +391,7 @@ if (empty($_GET)) {
                     echo '</div>';
 
                      echo '<div class="postTitle">';
-                        echo 'Recipie title';
+                        echo 'pie title';
                     echo '</div>';
 
                     echo '<div class="postText">';

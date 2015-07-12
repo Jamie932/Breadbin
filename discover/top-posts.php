@@ -183,7 +183,7 @@ require('../php/template/discoverNavbar.php');
             echo '</div>';
             
             echo '<div class="postTitle">';
-                echo 'Recipie title';
+                echo 'pie title';
             echo '</div>';
             
             echo '<div class="postUsername">';
