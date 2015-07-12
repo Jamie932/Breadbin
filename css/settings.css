@@ -167,6 +167,9 @@ p.settingsExplain {
     background-color: #E7E7E7;   
 }
 
+#boxContainer {
+    display: inline-block;   
+}
 
 /* ===[ Box Styles & Label Sizes ]=== */
 

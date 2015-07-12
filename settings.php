@@ -144,13 +144,13 @@
             
             $('li.settingsList').click(function() {
                 if ($(this).hasClass('accountdetails')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#accountdetailsBox').fadeIn('normal').css('display', 'inline-block'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#accountdetailsBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('privacy')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#privacyBox').fadeIn('normal').css('display', 'inline-block'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#privacyBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('passwordreset')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#passwordresetBox').fadeIn('normal').css('display', 'inline-block'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#passwordresetBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('deleteaccount')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#deleteaccountBox').fadeIn('normal').css('display', 'inline-block'); });
+                    $('.settingsBox').fadeOut('normal', function() { $('#deleteaccountBox').fadeIn('normal'); });
                 }
             });
         });
@@ -204,6 +204,12 @@
                 }
                 ?>
             </div>
+
+            <div id="profileButtons">
+                <div class="bottomRow">
+                    <button class="saveBut buttonstyle" style="display: none;">Save</button>
+                </div>
+            </div>
         </div>
         
         <div id="rightSettings">
@@ -217,137 +223,125 @@
                         <li class="settingsList deleteaccount">Delete Account</li>
                     </ul>
                 </div>
+                
+                <div id="boxContainer">
+                    <div id="accountdetailsBox" class="settingsBox">
+                        <div class="rightSettings">
+                            <div class="container">
+                                <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
 
-                <div id="accountdetailsBox" class="settingsBox">
-                    <div class="rightSettings">
-                        <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
-                            
-                            <form action="php/SettingsUpdate.php" method="post">
-                                <div class="rowContainer">
-                                    <label>First Name: </label>
-                                    <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                                </div>
-                                
-                                  <div class="rowContainer">
-                                    <label>Last Name: </label>
-                                    <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                </div>                              
-                                
-                                <div class="rowContainer">
-                                    <label>Email: </label>
-                                    <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                </div>
-                                
-                                <div class="rowContainer">
-                                   <label> Colour: </label>
-                                    <select name="colour" class="settings" id="setColour">
-                                        <option value="1" style="background:#8AE68A">Green</option>
-                                        <option value="2" style="background:#6699FF">Blue</option>
-                                        <option value="3" style="background:#FFB540">Orange</option>
-                                        <option value="4" style="background:#FF66CC">Pink</option>
-                                    </select>
-                                </div>
+                                <form action="php/SettingsUpdate.php" method="post">
+                                    <div class="rowContainer">
+                                        <label>First Name: </label>
+                                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                    </div>
 
-                                <input type="submit" value="Save" class="saveSettings">
-                            </form>
-                        </div>
-                    </div>
-                </div> 
-                
-                <div id="privacyBox" class="settingsBox">
-                    <div class="rightSettings">
-                        <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
-                            
-                            <form action="php/SettingsUpdate.php" method="post">
-                                <div class="rowContainer">
-                                    <label>First Name: </label>
-                                    <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                                </div>
-                                
-                                  <div class="rowContainer">
-                                    <label>Last Name: </label>
-                                    <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                </div>                              
-                                
-                                <div class="rowContainer">
-                                    <label>Email: </label>
-                                    <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                </div>
-                                
-                                <div class="rowContainer">
-                                   <label> Colour: </label>
-                                    <select name="colour" class="settings" id="setColour">
-                                        <option value="1" style="background:#8AE68A">Green</option>
-                                        <option value="2" style="background:#6699FF">Blue</option>
-                                        <option value="3" style="background:#FFB540">Orange</option>
-                                        <option value="4" style="background:#FF66CC">Pink</option>
-                                    </select>
-                                </div>
+                                      <div class="rowContainer">
+                                        <label>Last Name: </label>
+                                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
+                                    </div>                              
 
-                                <input type="submit" value="Save" class="saveSettings">
-                            </form>
-                        </div>
-                    </div>
-                </div> 
-            
-                 <div id="passwordresetBox" class="settingsBox">
-                    <div class="rightSettings">
-                        <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
-                            
-                            <form action="php/passwordUpdate.php" method="post">
-                                <div class="rowContainer">
-                                    <label>Current Password: </label>
-                                    <input type="password" name="currentPassword" class="settings" id="currentPassword">
-                                </div>
-                                
-                                  <div class="rowContainer">
-                                    <label>New Password: </label>
-                                    <input type="password" name="newPassword" class="settings" id="newPassword">
-                                </div>                              
-                                
-                                <div class="rowContainer">
-                                    <label>Verify Password: </label>
-                                    <input type="password" name="newPassword2" class="settings" id="newPassword2">
-                                </div>
-                                
-                                <input type="submit" value="Save" class="saveSettings">
-                            </form>
-                        </div>
-                    </div>
-                </div>    
-                
-                 <div id="deleteaccountBox" class="settingsBox">
-                    <div class="rightSettings">
-                        <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
-                            
-                            <form action="php/SettingsUpdate.php" method="post">
-                                <div class="rowContainer">
-                                    <p class="innerContent">WARNING: Deleting your account will completely remove ALL content associated with it.
-                                    There is no way back, so please be careful with this option.</p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>         
-                
-                <!--<div id="profileButtons">
-                    <div class="bottomRow">
-                        <button class="settingsBut buttonstyle">Settings</button>
-                        <button class="backBut buttonstyle">Back</button>
-                    </div>
-                </div>-->
-                
-                
-                <div id="profileButtons">
-                    <div class="bottomRow">
-                        <button class="saveBut buttonstyle" style="display: none;">Save</button>
-                    </div>
-                </div>   
+                                    <div class="rowContainer">
+                                        <label>Email: </label>
+                                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
+                                    </div>
 
+                                    <div class="rowContainer">
+                                       <label> Colour: </label>
+                                        <select name="colour" class="settings" id="setColour">
+                                            <option value="1" style="background:#8AE68A">Green</option>
+                                            <option value="2" style="background:#6699FF">Blue</option>
+                                            <option value="3" style="background:#FFB540">Orange</option>
+                                            <option value="4" style="background:#FF66CC">Pink</option>
+                                        </select>
+                                    </div>
+
+                                    <input type="submit" value="Save" class="saveSettings">
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div id="privacyBox" class="settingsBox">
+                        <div class="rightSettings">
+                            <div class="container">
+                                <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
+
+                                <form action="php/SettingsUpdate.php" method="post">
+                                    <div class="rowContainer">
+                                        <label>First Name: </label>
+                                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                    </div>
+
+                                      <div class="rowContainer">
+                                        <label>Last Name: </label>
+                                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
+                                    </div>                              
+
+                                    <div class="rowContainer">
+                                        <label>Email: </label>
+                                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
+                                    </div>
+
+                                    <div class="rowContainer">
+                                       <label> Colour: </label>
+                                        <select name="colour" class="settings" id="setColour">
+                                            <option value="1" style="background:#8AE68A">Green</option>
+                                            <option value="2" style="background:#6699FF">Blue</option>
+                                            <option value="3" style="background:#FFB540">Orange</option>
+                                            <option value="4" style="background:#FF66CC">Pink</option>
+                                        </select>
+                                    </div>
+
+                                    <input type="submit" value="Save" class="saveSettings">
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+
+                     <div id="passwordresetBox" class="settingsBox">
+                        <div class="rightSettings">
+                            <div class="container">
+                                <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
+
+                                <form action="php/passwordUpdate.php" method="post">
+                                    <div class="rowContainer">
+                                        <label>Current Password: </label>
+                                        <input type="password" name="currentPassword" class="settings" id="currentPassword">
+                                    </div>
+
+                                      <div class="rowContainer">
+                                        <label>New Password: </label>
+                                        <input type="password" name="newPassword" class="settings" id="newPassword">
+                                    </div>                              
+
+                                    <div class="rowContainer">
+                                        <label>Verify Password: </label>
+                                        <input type="password" name="newPassword2" class="settings" id="newPassword2">
+                                    </div>
+
+                                    <input type="submit" value="Save" class="saveSettings">
+                                </form>
+                            </div>
+                        </div>
+                    </div>    
+
+                     <div id="deleteaccountBox" class="settingsBox">
+                        <div class="rightSettings">
+                            <div class="container">
+                                <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
+
+                                <form action="php/SettingsUpdate.php" method="post">
+                                    <div class="rowContainer">
+                                        <p class="innerContent">WARNING: Deleting your account will completely remove ALL content associated with it.
+                                        There is no way back, so please be careful with this option.</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                
                 <div class="clearFix"></div>
             </div>
         </div>     
