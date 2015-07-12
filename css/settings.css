@@ -114,7 +114,6 @@ input.settings, select.settings {
 
 label {
     display: inline-block;
-    width: 75px;
     margin-right: 30px;
     margin-left: 15px;
     text-align: right;
@@ -165,9 +164,35 @@ p.settingsExplain {
     margin-top: -28px;   
 }
 
+
+/* ===[ Box Styles & Label Sizes ]=== */
+
+.accountdetails {
+    height: 320px;
+}
+
+.privacy {
+    height: 320px; 
+    margin-top: 20px;
+}
+
+.messages {
+    height: 320px; 
+    margin-top: 20px;
+}
+
 .passwordreset {
     height: 280px; 
     margin-top: 20px;   
 }
 
-.passwordreset label { width: 120px !important; }
+.deleteaccount {
+    height: 320px; 
+    margin-top: 20px;
+}
+
+.accountdetails label { width: 75px; }
+.privacy label { width: 75px; }
+.messages label { width: 75px; }
+.passwordreset label { width: 120px; }
+.deleteaccount label { width: 75px; }
