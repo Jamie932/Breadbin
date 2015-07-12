@@ -149,7 +149,10 @@ p.textPost {
 	padding-left: 10px;
 	padding-right: 10px;
     min-width: 300px !important;
+    max-width: 300px !important;
     height: 230px !important;
+    max-height: 230px !important;
+    min-height: 230px !important;
 }
 
 .postUsername {
