@@ -18,7 +18,7 @@ require("../php/checkLogin.php");
     $(document).ready(function() {
         $(window).load(function() {
              $('#loader').hide();
-             $('#cheeky').css('visibility', 'visibile');
+             $('#cheeky').show();
         });
     });
     
@@ -225,6 +225,7 @@ require("../php/checkLogin.php");
             </div>
         </div>
     </div>
+    
         <script src="../js/vendor/jquery.wookmark.js"></script>
         <script type="text/javascript">
         var colors = [
