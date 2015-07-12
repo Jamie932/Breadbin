@@ -132,6 +132,7 @@ p.report {
 
 #sidebar .upload {
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 10px;
     height: auto;
 }
@@ -141,7 +142,7 @@ p.report {
 #uploadText {
     resize: none;
     width: 280px;
-    height: 40px;
+    height: 45px;
     font-size: 15px;
     padding-left: 5px;
     padding-top: 5px;
@@ -153,6 +154,7 @@ p.report {
     -moz-transition: all .5s ease;
     transition: all .5s ease;
     background-color: #F3F3F3;
+    box-sizing: border-box;
 }
 
 #uploadText:focus { height: 120px }
