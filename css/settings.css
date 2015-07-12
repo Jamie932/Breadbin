@@ -29,7 +29,7 @@ p.settingsDetail {
     text-align: left;
 }
 
-.leftSettings {
+#leftSettings {
     width: 160px;
     background-color: #fff;
     float: left;
@@ -40,6 +40,10 @@ p.settingsDetail {
     position: fixed;
     display: inline-block;
     text-align: left;
+}
+
+#rightSettings {
+    min-width: 560px;
 }
 
 ul.settingsList {
@@ -78,18 +82,14 @@ li.settingsList:hover {
 
 a.settingsLinks { text-decoration: none }
 
-.rightSettings {
-    background-color: #fff;
-    width: 559px;
-    height: 100%;
-}
-
 .container {
     position: relative;
     margin-left: 20px;
     margin-right: 20px;
     height: 100%;
     overflow: hidden;
+    background-color: #fff;
+    width: 559px;
 }
 
 .passwordSettingsField {
