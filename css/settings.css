@@ -193,6 +193,7 @@ p.settingsExplain {
 .deleteaccountBox {
     height: 320px; 
     margin-top: 20px;
+    margin-bottom: 300px;
 }
 
 .accountdetailsBox label { width: 75px; }

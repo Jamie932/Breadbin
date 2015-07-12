@@ -148,19 +148,19 @@
         $(window).scroll(function() {
             $('.leftSettings').css('marginLeft', -$(window).scrollLeft()); 
             
-            if ($(window).scrollTop() > $('.deleteaccountBox').offset().top) {
+            if ($(window).scrollTop() > ($('.deleteaccountBox').offset().top - 20)) {
                 $('.active').removeClass('active');
                 $('.deleteaccount').addClass('active');
                 
-            } else if ($(window).scrollTop() > $('.passwordresetBox').offset().top) {
+            } else if ($(window).scrollTop() > ($('.passwordresetBox').offset().top - 20)) {
                 $('.active').removeClass('active');
                 $('.passwordreset').addClass('active');
                 
-            } else if ($(window).scrollTop() > $('.messagesBox').offset().top) {
+            } else if ($(window).scrollTop() > ($('.messagesBox').offset().top - 20)) {
                 $('.active').removeClass('active');
                 $('.messages').addClass('active');
                 
-            } else if ($(window).scrollTop() > $('.privacyBox').offset().top) {
+            } else if ($(window).scrollTop() > ($('.privacyBox').offset().top - 20)) {
                 $('.active').removeClass('active');
                 $('.privacy').addClass('active');
                 
