@@ -45,10 +45,19 @@
 	</div>
 	
 	<div class="right">
-		<ul class="nav">		
-			<li class="nav">
-                <a class="navLinks" href="discover.php">Discover</a>
+		<ul class="nav">
+            <?php
+                $filename = basename($_SERVER['PHP_SELF']);
+            
+                if ($filename == "discover/discover.php") {
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                } else {
+                    echo '<li class="nav">';
+                }
+            ?>
+                <a class="navLinks" href="discover/discover.php">Discover</a>
             </li>
+        
             <li class="nav">
                 <?php
                    /* if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
@@ -59,6 +68,11 @@
 
 				    echo '<a class="navLinks" href="/profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                     echo '<div class="arrow-up"></div>';
+            ?>
+                <ul>
+                    <li><a class="navLinks" href="settings.php">Settings</a></li>
+                    <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
+                </ul>
                 ?>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
