@@ -59,7 +59,9 @@
 	<div class="right">
 		<ul class="nav">
             <?php
-                if (basename($_SERVER['PHP_SELF']) == "discover.php") {
+                $filename = basename($_SERVER['PHP_SELF'])
+            
+                if ($filename == "discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
@@ -69,7 +71,7 @@
             </li>
         
             <?php
-                if (basename($_SERVER['PHP_SELF']) == "profile.php" || basename($_SERVER['PHP_SELF']) == "settings.php") {
+                if (($filename == "profile.php" && isset($_GET['id']) && $_GET['id'] == $_SESSION['user']['id'])|| $filename == "settings.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
