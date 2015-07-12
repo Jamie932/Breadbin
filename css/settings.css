@@ -171,32 +171,32 @@ p.settingsExplain {
 
 /* ===[ Box Styles & Label Sizes ]=== */
 
-.accountdetails {
+.accountdetailsBox {
     height: 320px;
 }
 
-.privacy {
+.privacyBox {
     height: 320px; 
     margin-top: 20px;
 }
 
-.messages {
+.messagesBox {
     height: 320px; 
     margin-top: 20px;
 }
 
-.passwordreset {
+.passwordresetBox {
     height: 280px; 
     margin-top: 20px;   
 }
 
-.deleteaccount {
+.deleteaccountBox {
     height: 320px; 
     margin-top: 20px;
 }
 
-.accountdetails label { width: 75px; }
-.privacy label { width: 75px; }
-.messages label { width: 75px; }
-.passwordreset label { width: 120px; }
-.deleteaccount label { width: 75px; }
+.accountdetailsBox label { width: 75px; }
+.privacyBox label { width: 75px; }
+.messagesBox label { width: 75px; }
+.passwordresetBox label { width: 120px; }
+.deleteaccountBox label { width: 75px; }
