@@ -100,16 +100,9 @@ a.settingsLinks { text-decoration: none }
     display: none;
 }
 
-.boxLeft {
+h3.settings {
     color: #616161;
     margin-bottom: 10px;
-    float: left;
-}
-
-.boxRight {
-    color: #616161;
-    margin-top: 15px;
-    float: right;
 }
 
 input.settings, select.settings {
@@ -132,7 +125,7 @@ label {
     border-bottom-style: solid;
     border-bottom-width: 1px;
     margin-bottom: 20px;
-    overflow: hidden;
+    
 }
 
 p.settingsDetail {
