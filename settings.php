@@ -423,16 +423,17 @@
                         <button class="backBut buttonstyle">Back</button>
                     </div>
                 </div>-->
+                
+                
+                <div id="profileButtons">
+                    <div class="bottomRow">
+                        <button class="saveBut buttonstyle" style="display: none;">Save</button>
+                    </div>
+                </div>   
 
                 <div class="clearFix"></div>
             </div>
-        </div>
-            
-        <div id="profileButtons">
-            <div class="bottomRow">
-                <button class="saveBut buttonstyle" style="display: none;">Save</button>
-            </div>
-        </div>        
+        </div>     
         
         <form id="avatarForm" method="POST" enctype="multipart/form-data">
             <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
