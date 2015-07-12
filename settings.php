@@ -205,7 +205,7 @@
                     </ul>
                 </div>
 
-                <div id="settingsBox" style="height:400px;">
+                <div id="settingsBox" style="height:320px;">
                     <div class="rightSettings">
                         <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>

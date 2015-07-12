@@ -79,7 +79,10 @@ a.settingsLinks { text-decoration: none }
 }
 
 .container {
+    position: relative;
     margin-left: 30px;
+    height: 100%;
+    overflow: hidden;
 }
 
 .passwordSettingsField {
@@ -130,7 +133,9 @@ p.settingsDetail {
     border-radius: 3px 3px;
     height: 30px;
     width: 100px;
-    margin-left: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 p.settingsExplain {
@@ -151,4 +156,4 @@ p.settingsExplain {
 }
 
 .largeGap { margin-bottom: 40px; }
-.smallGap { margin-bottom: 20px;}
+.smallGap { margin-bottom: 20px; }
