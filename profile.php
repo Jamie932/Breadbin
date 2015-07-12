@@ -222,11 +222,6 @@ if (empty($_GET)) {
                 } else {
                     echo '<div id="userAvatar" style="background: url(img/avatars/' . $_GET['id'] . '/avatar.jpg) no-repeat;"></div>';
                 }
-
-
-                if ($_GET['id'] == $_SESSION['user']['id']) {
-                    echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
-                }
                 
                 if (isset($rank) && !empty($rank) && $rank != "user") { //Add a star
                     echo '<div id="starOverlay"><i class="fa fa-star"></i></div>';
@@ -237,6 +232,11 @@ if (empty($_GET)) {
                 <?php
                 if (isset($usersname)) {
                     echo '<div class="nameRow">' . $usersname . '</div>';
+
+                    if ($_GET['id'] == $_SESSION['user']['id']) {
+                        echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
+                    }
+                    
                     echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
                     echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
                     echo '<div class="followerRow">';
