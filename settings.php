@@ -147,8 +147,6 @@
                     $('html, body').animate({scrollTop: ($('.accountdetailsBox').offset().top - 42 - 10)}, 500); 
                 } else if ($(this).hasClass('privacy')) {
                     $('html, body').animate({scrollTop: ($('.privacyBox').offset().top - 42 - 10)}, 500); 
-                } else if ($(this).hasClass('messages')) {
-                    $('html, body').animate({scrollTop: ($('.messagesBox').offset().top - 42 - 10)}, 500); 
                 } else if ($(this).hasClass('passwordreset')) {
                     $('html, body').animate({scrollTop: ($('.passwordresetBox').offset().top - 42 - 10)}, 500); 
                 } else if ($(this).hasClass('deleteaccount')) {
@@ -167,10 +165,6 @@
             } else if ($(window).scrollTop() > ($('.passwordresetBox').offset().top - 42 - 20)) {
                 $('.active').removeClass('active');
                 $('.passwordreset').addClass('active');
-                
-            } else if ($(window).scrollTop() > ($('.messagesBox').offset().top - 42 - 20)) {
-                $('.active').removeClass('active');
-                $('.messages').addClass('active');
                 
             } else if ($(window).scrollTop() > ($('.privacyBox').offset().top - 42 - 20)) {
                 $('.active').removeClass('active');
@@ -236,7 +230,6 @@
                         <li class="leftHeader">User Settings</li>
                         <li class="settingsList accountdetails active">Account Details</li>                    
                         <li class="settingsList privacy">Privacy</li>
-                        <li class="settingsList messages">Messages</li>
                         <li class="settingsList passwordreset">Password Reset</li>
                         <li class="settingsList deleteaccount">Delete Account</li>
                     </ul>
@@ -315,44 +308,7 @@
                         </div>
                     </div>
                 </div> 
-
-                 <div id="settingsBox" class="messagesBox">
-                    <div class="rightSettings">
-                        <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Messages</h3></div>
-                            
-                            <form action="php/SettingsUpdate.php" method="post">
-                                <div class="rowContainer">
-                                    <label>First Name: </label>
-                                    <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
-                                </div>
-                                
-                                  <div class="rowContainer">
-                                    <label>Last Name: </label>
-                                    <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
-                                </div>                              
-                                
-                                <div class="rowContainer">
-                                    <label>Email: </label>
-                                    <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
-                                </div>
-                                
-                                <div class="rowContainer">
-                                   <label> Colour: </label>
-                                    <select name="colour" class="settings" id="setColour">
-                                        <option value="1" style="background:#8AE68A">Green</option>
-                                        <option value="2" style="background:#6699FF">Blue</option>
-                                        <option value="3" style="background:#FFB540">Orange</option>
-                                        <option value="4" style="background:#FF66CC">Pink</option>
-                                    </select>
-                                </div>
-
-                                <input type="submit" value="Save" class="saveSettings">
-                            </form>
-                        </div>
-                    </div>
-                </div> 
-                
+            
                  <div id="settingsBox" class="passwordresetBox">
                     <div class="rightSettings">
                         <div class="container">

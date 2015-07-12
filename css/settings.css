@@ -181,11 +181,6 @@ p.settingsExplain {
     margin-top: 20px;
 }
 
-.messagesBox {
-    height: 320px; 
-    margin-top: 20px;
-}
-
 .passwordresetBox {
     height: 280px; 
     margin-top: 20px;   
@@ -199,6 +194,5 @@ p.settingsExplain {
 
 .accountdetailsBox label { width: 75px; }
 .privacyBox label { width: 75px; }
-.messagesBox label { width: 75px; }
 .passwordresetBox label { width: 120px; }
 .deleteaccountBox label { width: 75px; }
