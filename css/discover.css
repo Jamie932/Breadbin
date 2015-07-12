@@ -22,7 +22,7 @@ a.active {
 }
 
 #cheeky {
-    visibility: hidden;   
+    display: none;   
 }
 
 /* categories */
