@@ -79,9 +79,9 @@
                 echo '</li>';
 
                 if (basename($_SERVER['PHP_SELF']) == "settings.php") {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '; margin-left: 0px; padding-left: 0px;">';
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '; margin-left: 3px; padding-left: 0px;">';
                 } else {
-                    echo '<li class="nav" style="margin-left: 0px; padding-left: 0px;">';
+                    echo '<li class="nav" style="margin-left: 3px; padding-left: 0px;">';
                 }
                 echo '<div id="arrowContainer"><div class="arrow-up"></div></div>';
             ?>
