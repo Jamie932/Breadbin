@@ -22,6 +22,7 @@ if (empty($_GET)) {
         $email     = $row['email'];
         $firstname     = $row['firstname'];
         $lastname     = $row['lastname'];
+        $rank = $row['rank'];
         
         if ($row['bio']) {
             $bio = $row['bio'];
@@ -225,6 +226,10 @@ if (empty($_GET)) {
 
                 if ($_GET['id'] == $_SESSION['user']['id']) {
                     echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
+                }
+                
+                if (isset($rank) && !empty($rank) && $rank != "user") { //Add a star
+                    echo '<div id="starOverlay"><i class="fa fa-star></i></div>';
                 }
             ?>
             
