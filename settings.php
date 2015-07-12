@@ -245,7 +245,10 @@
                 <div id="settingsBox" class="accountdetailsBox">
                     <div class="rightSettings">
                         <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
+                            <div class="settingsHeader">
+                                <h3 class="boxLeft">Account Details</h3>
+                                <span class="boxRight">>></span>
+                            </div>
                             
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
@@ -282,7 +285,10 @@
                 <div id="settingsBox" class="privacyBox">
                     <div class="rightSettings">
                         <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
+                            <div class="settingsHeader">
+                                <h3 class="boxLeft">Privacy</h3>
+                                <span class="boxRight">>></span>
+                            </div>
                             
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
@@ -319,7 +325,10 @@
                  <div id="settingsBox" class="messagesBox">
                     <div class="rightSettings">
                         <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Messages</h3></div>
+                            <div class="settingsHeader">
+                                <h3 class="boxLeft">Messages</h3>
+                                <span class="boxRight">>></span>
+                            </div>
                             
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
@@ -356,7 +365,10 @@
                  <div id="settingsBox" class="passwordresetBox">
                     <div class="rightSettings">
                         <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
+                            <div class="settingsHeader">
+                                <h3 class="boxLeft">Password Reset</h3>
+                                <span class="boxRight">>></span>
+                            </div>
                             
                             <form action="php/passwordUpdate.php" method="post">
                                 <div class="rowContainer">
@@ -383,7 +395,10 @@
                  <div id="settingsBox" class="deleteaccountBox">
                     <div class="rightSettings">
                         <div class="container">
-                            <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
+                            <div class="settingsHeader">
+                                <h3 class="boxLeft">Delete Account</h3>
+                                <span class="boxRight">>></span>
+                            </div>
                             
                             <form action="php/SettingsUpdate.php" method="post">
                                 <div class="rowContainer">
