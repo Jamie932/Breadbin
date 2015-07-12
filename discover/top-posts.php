@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 require("../php/common.php");
 require("../php/checkLogin.php");
