@@ -236,9 +236,7 @@ p.textPost {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	font-size: 1em;
-	padding-left: 10px;
-	padding-right: 10px;
+	font-size: 1em; 
     min-width: 300px !important;
     max-width: 300px !important;
     height: 230px !important;
