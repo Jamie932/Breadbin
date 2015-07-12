@@ -211,7 +211,7 @@
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
                             
                             <form action="php/SettingsUpdate.php" method="post" class="accountSettings">
-                                <div class="rowContainer">
+                                <div class="rowContainer largeGap">
                                     <label>Name: </label>
                                     <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                                     <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
@@ -219,12 +219,12 @@
                                     <div class="underBox" style="float: right; margin-right: 217px;">Last</div>
                                 </div>
                                 
-                                <div class="rowContainer">
+                                <div class="rowContainer smallGap">
                                     <label>Email: </label>
                                     <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
                                 </div>
                                 
-                                <div class="rowContainer">
+                                <div class="rowContainer smallGap">
                                    <label> Colour: </label>
                                     <select name="colour" class="settings" id="setColour">
                                         <option value="1" style="background:#8AE68A">Green</option>

@@ -133,8 +133,6 @@ p.settingsDetail {
     margin-left: 50px;
 }
 
-form.accountSettings { margin-left: 40px }
-
 p.settingsExplain {
     font-size: 12px;
     color: #828282;
@@ -151,3 +149,6 @@ p.settingsExplain {
     font-size: 0.7em;
     color: gray;
 }
+
+.largeGap { margin-bottom: 40px; }
+.smallGap { margin-bottom: 20px;}
