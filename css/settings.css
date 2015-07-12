@@ -80,7 +80,7 @@ a.settingsLinks { text-decoration: none }
 
 .container {
     position: relative;
-    margin-left: 30px;
+    margin-left: 20px;
     height: 100%;
     overflow: hidden;
 }
@@ -105,7 +105,7 @@ input.settings, select.settings {
 
 label {
     display: inline-block;
-    width: 30px;
+    width: 60px;
     margin-right: 30px;
     margin-left: 15px;
     text-align: left;
@@ -149,11 +149,6 @@ p.settingsExplain {
 
 #errormsg { color: red }
 
-.underBox {
-    margin-top: 5px;
-    font-size: 0.7em;
-    color: gray;
+.rowContainer {
+    margin-bottom: 20px;   
 }
-
-.largeGap { margin-bottom: 40px; }
-.smallGap { margin-bottom: 20px; }
