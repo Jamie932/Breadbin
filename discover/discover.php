@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 require("../php/common.php");
 require("../php/checkLogin.php");
@@ -27,6 +28,14 @@ require("../php/checkLogin.php");
             });
         });
     })
+    
+    $(document).ready(function(){
+        window.onload = function(){
+          var el = document.getElementById('#loader');
+          el.style.display = 'none';
+        };
+    })
+    
     </script>
     
 </head>
@@ -34,6 +43,10 @@ require("../php/checkLogin.php");
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
+    
+    <div id="loader">
+        <img src="../img/roll.gif">
+    </div>    
     
     <?php
 require('../php/template/discoverNavbar.php'); 
