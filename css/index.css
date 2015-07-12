@@ -26,8 +26,8 @@ small {
 
 .dockHeader {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0px;
+    right: 0px;
     text-align: right;
     font-weight: normal;
     font-size: 0.75em;
@@ -35,9 +35,9 @@ small {
 
 .dockBottom {
     position: absolute;
-    bottom: 15;
-    left: 0;
-    right: 0;
+    bottom: 15px;
+    left: 0px;
+    right: 0px;
     text-align: center;
     margin-left: -15px;
     font-size: 0.75em;
@@ -207,8 +207,8 @@ h3 {
     color: white;
     font-family: inherit;
     font-size: 30px;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     margin-top: 10px;
 }
 
@@ -220,8 +220,8 @@ h3 {
 
 ul.headerNav {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     color: #fff;
 }
 
@@ -236,14 +236,14 @@ a.loginHeaderLink {
 h1 {
     font-size: 100px;
     color: #fff;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     margin-bottom: -10px;
 }
 
 p.headerTag {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     margin-bottom: 30px;
     font-size: 20px;
 }
@@ -260,5 +260,5 @@ button.headerLoginBut {
 
 p.headerTagRegister {
     font-size: 13px;
-    margin: 0;
+    margin: 0px;
 }
