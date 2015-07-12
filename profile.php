@@ -51,6 +51,7 @@ if (empty($_GET)) {
     $noOfFollowing = $result->fetchColumn();
 }
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <title><?php print(isset($usersname) ? $usersname : 'Unknown'); ?> | Breadbin</title>

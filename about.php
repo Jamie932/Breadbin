@@ -1,6 +1,7 @@
 <?php
     require("php/common.php");
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Bread Bin</title>

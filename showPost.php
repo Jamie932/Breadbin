@@ -22,6 +22,7 @@ if (empty($_GET)) {
     }
 }?>
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Post <?php echo $_GET['p'] ?> | Breadbin</title>
