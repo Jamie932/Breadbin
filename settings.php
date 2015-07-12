@@ -226,7 +226,8 @@
                 
                 <div id="rightSettings">
                     <div id="accountdetailsBox" class="settingsBox">
-                        <div class="container">
+                        <div class="innerStyle">
+                            <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
 
                             <form action="php/SettingsUpdate.php" method="post">
@@ -258,10 +259,12 @@
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
+                        </div>
                     </div> 
 
                     <div id="privacyBox" class="settingsBox">
-                        <div class="container">
+                        <div class="innerStyle">
+                            <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
 
                             <form action="php/SettingsUpdate.php" method="post">
@@ -293,10 +296,12 @@
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
+                        </div>
                     </div> 
 
                     <div id="passwordresetBox" class="settingsBox">
-                        <div class="container">
+                        <div class="innerStyle">
+                            <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Password Reset</h3></div>
 
                             <form action="php/passwordUpdate.php" method="post">
@@ -318,9 +323,11 @@
                                 <input type="submit" value="Save" class="saveSettings">
                             </form>
                         </div>
+                        </div>
                     </div>    
 
                     <div id="deleteaccountBox" class="settingsBox">
+                        <div class="innerStyle">
                             <div class="container">
                             <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
 
@@ -330,6 +337,7 @@
                                     There is no way back, so please be careful with this option.</p>
                                 </div>
                             </form>
+                        </div>
                         </div>
                     </div>         
                 </div>

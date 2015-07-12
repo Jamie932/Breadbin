@@ -82,14 +82,18 @@ li.settingsList:hover {
 
 a.settingsLinks { text-decoration: none }
 
+.innerStyle {
+    background-color: #fff;
+    width: 559px;
+    height: 100%;
+}
+
 .container {
     position: relative;
     margin-left: 20px;
     margin-right: 20px;
     height: 100%;
     overflow: hidden;
-    background-color: #fff;
-    width: 559px;
 }
 
 .passwordSettingsField {
@@ -175,12 +179,12 @@ p.settingsExplain {
 }
 
 #privacyBox {
-    height: 320px;
+    height: 320px; 
     display: none;
 }
 
 #passwordresetBox {
-    height: 280px; 
+    height: 280px;  
     display: none;
 }
 
