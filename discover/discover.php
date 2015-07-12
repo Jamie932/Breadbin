@@ -15,12 +15,12 @@ require("../php/checkLogin.php");
     <script src="../js/vendor/jquery.cookie.js"></script>
     
     <script>
-   /* $(document).ready(function() {
+    $(document).ready(function() {
         $(window).load(function() {
              $('#loader').hide();
-             $('#cheeky').show();
+             $('#cheeky').css('visibility', 'visibile');
         });
-    });*/
+    });
     
     </script>
     
@@ -60,7 +60,7 @@ require("../php/checkLogin.php");
 		</ul>
     </div>
         
-            <div id="cheeky">
+    <div id="cheeky">
 
     <div id="content">
         <div id="main">
