@@ -12,6 +12,23 @@ require("../php/checkLogin.php");
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
     <script src="../js/vendor/jquery.cookie.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        // to fade in on page load
+        $("#content").css("display", "none");
+        $("#content").fadeIn(400); 
+        // to fade out before redirect
+        $('a').click(function(e){
+            redirect = $(this).attr('href');
+            e.preventDefault();
+            $('#content').fadeOut(400, function(){
+                document.location.href = redirect
+            });
+        });
+    })
+    </script>
+    
 </head>
 <body>
     <noscript>
