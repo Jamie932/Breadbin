@@ -199,8 +199,9 @@ p.textPost {
 }
 
 #loader {
-    position: absolute;
-   top: 50%;
+    position: fixed;
+    z-index: 9999;
+   top: 0;
    left: 50%;
    width: 330px;
    height: 330px;
