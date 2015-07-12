@@ -21,10 +21,10 @@ a.active {
     color: black;   
 }
 
-/*#cheeky {
-    display: none;   
-}*/
-
+#cheeky {
+    visibility: hidden;   
+}
+ 
 /* categories */
 #categories {
     border-bottom: 1px solid rgb(97, 97, 97); 

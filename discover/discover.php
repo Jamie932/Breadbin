@@ -21,7 +21,6 @@ require("../php/checkLogin.php");
              $('#cheeky').show();
         });
     });
-    
     </script>
     
 </head>
