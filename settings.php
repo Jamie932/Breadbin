@@ -144,13 +144,13 @@
             
             $('li.settingsList').click(function() {
                 if ($(this).hasClass('accountdetails')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#accountdetailsBox').fadeIn('normal'); });
+                    $('.settingsBox').fadeOut('normal').promise().done(function() { $('#accountdetailsBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('privacy')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#privacyBox').fadeIn('normal'); });
+                    $('.settingsBox').fadeOut('normal').promise().done(function() { $('#privacyBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('passwordreset')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#passwordresetBox').fadeIn('normal'); });
+                    $('.settingsBox').fadeOut('normal').promise().done(function() { $('#passwordresetBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('deleteaccount')) {
-                    $('.settingsBox').fadeOut('normal', function() { $('#deleteaccountBox').fadeIn('normal'); });
+                    $('.settingsBox').fadeOut('normal').promise().done(function() { $('#deleteaccountBox').fadeIn('normal'); });
                 }
             });
         });
