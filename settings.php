@@ -150,8 +150,11 @@
                 } else if ($(this).hasClass('passwordreset')) {
                     $('.settingsBox').fadeOut('normal').promise().done(function() { $('#passwordresetBox').fadeIn('normal'); });
                 } else if ($(this).hasClass('deleteaccount')) {
-                    $('.settingsBox').fadeOut('normal').promise().done(function() { $('#deleteaccountBox').fadeIn('normal'); });
+                    $('.settingsBox').fadeOut('normal').promise().done(function() { $('#deleteaccountBox').fadeIn('normal'); }) ;
                 }
+                
+                $('.active').removeClass('active');
+                $(this).addClass('active');
             });
         });
         
