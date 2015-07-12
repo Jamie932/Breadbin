@@ -49,7 +49,7 @@
             <?php
                 $filename = basename($_SERVER['PHP_SELF']);
             
-                if ($filename == "discover.php") {
+                if ($filename == "discover/discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
