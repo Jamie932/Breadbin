@@ -1,7 +1,5 @@
 <?php
 
-namespace Eventviva;
-
 use \Exception;
 
 /**
