@@ -1,0 +1,207 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+p { margin-bottom: -10px }
+
+.clearFix { clear: both }
+
+p.report {
+    font-size: 10px;
+    padding-top: 8px;
+}
+
+#content {
+    font-color: #000;
+    height: auto;
+    display: inline;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#contentPost, #contentPostFollow {
+    float: left;
+    width: 640px;
+    margin-bottom: 45px;
+}
+
+.imgtext {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#contentInfoText {
+    padding-left: 30px;
+    padding-top: 5px;
+    overflow: auto;
+}
+
+#contentInfoText .left { float: left }
+
+#contentInfoText .right {
+    float: right;
+    font-size: 13px;
+    padding-top: 4px;
+}
+
+.timeago {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.admin {
+    display: inline-block;
+}
+
+.fa-heart-o {
+    padding-left: 5px;
+}
+
+/* ===[ Image Formatting ]=== */
+
+#contentPost .contentPostImage {
+    width: 640px;
+    background-color: white;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+    text-align: center;
+}
+
+.contentPostImage img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.imgPadding {
+    padding: 10px;
+    width: 620px !important;
+}
+
+.imgNoPadding {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+#contentPost a {
+    color: blue;
+    text-decoration: none;
+}
+
+/* ===[ Liking the post ]=== */
+
+#contentLike, #contentLikeFollow {
+    margin-top: -15px;
+    margin-left: 10px;
+    float: left;
+    text-align: left;
+}
+
+/* ===[ Text Formatting ]=== */
+
+.contentPostText {
+    background-color: #fff;
+    width: 620px;
+    height: auto;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 80px;
+    word-wrap: break-word;
+}
+
+.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
+
+.toast, .burn, .hide {
+    padding-bottom: 5px;
+    color: black;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.buttonstyle {
+    border: 1px solid #616161;
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hide { visibility: visible }
+
+.burn, .unburn { margin-top: 10px !important }
+
+.toast, .untoast { margin-top: 15px !important }
+
+.untoast, .unburn {
+    color: darkgray;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+#uploadname {
+    float: left;
+    margin-left: 10px;
+    margin-top: 8px;
+    font-size: 0.8em;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #565656;
+}
+
+#imageIcon {
+    float: left;
+    margin-left: 5px;
+    margin-top:5px;
+}
+
+#imageIcon a {
+    float: left;
+    color: gray;
+}
+
+
+@media screen and (max-width: 1125px) {
+    #center {
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        min-width: 750px;
+    }
+    
+    #content {
+        display: inline-block !important;
+        float: none !important;
+        width: auto !important;
+        margin: 0px auto !important;
+    }
+    
+    #sidebar {
+        float: none !important;
+        display: block !important;
+        margin: 0 auto !important;
+        margin-bottom: 30px !important;
+        position: relative;
+        
+    }
+}

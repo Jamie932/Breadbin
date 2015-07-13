@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/toasted.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -112,10 +112,8 @@
     
     <div id="break"></div>
     
-    <div id="center">
-        <div id="content">
+    <div id="content">
             <?php require('php/fetchToasted.php'); ?>
-        </div>        
-    </div>
+    </div> 
 </body>
 </html>
