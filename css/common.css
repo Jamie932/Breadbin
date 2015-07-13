@@ -23,3 +23,28 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
+#popup {
+    position: fixed;
+    top:30%;
+    left: 50%;
+    z-index: 200;
+    background-color: #fff;
+    width: 400px;
+    min-height: 150px;
+    margin-left: -200px;
+    display: none;
+}
+
+.popupTitle {
+    background-color: rgb(102, 153, 255);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.popupContent {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 0.9em;
+}

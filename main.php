@@ -161,8 +161,9 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-   <?php require('php/template/navbar.php');?>
-    
+    <?php require('php/template/navbar.php');?>
+    <?php require('php/template/popup.php');?>
+        
     <div id="break"></div>
     
     <div id="center">
