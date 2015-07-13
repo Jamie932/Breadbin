@@ -301,10 +301,8 @@ if (empty($_GET)) {
                 echo '<ul id="tiles">';
 
                 if ($row['type'] == "image") {
-                    $profImage  = new ImageResize($row['image']);
-                    $profImage->quality_jpg = 90;
-                    $profImage->resizeToBestFit(300, 400);
-                    $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 90);
+                    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
+                    $imageLocation = $withoutExt . '-profile.jpg';
              
                     echo '<li>';
                     echo '<div class="banner">';                
@@ -353,10 +351,8 @@ if (empty($_GET)) {
                         echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
                     }*/
                     
-                    echo '<img class="tiles" src="' . $result . '"';
-
+                    echo '<img class="tiles" src="' . $imageLocation . '"';
                     echo '</div>';
-
                     echo '</li>'; 
             
                 } else if ($row['type'] == "text") {
