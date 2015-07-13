@@ -95,6 +95,7 @@
                             createError("Incorrect burn data returned. Please inform an adminstrator."); 
                         }
                         
+                        $(postid).animate({height: 0, opacity: 0, marginBottom: 0}, 600, function() { $(this).remove();});
                         burnButton.css('color', 'darkgray'); 
                         burnButton.toggleClass('burn unburn');
                     }
