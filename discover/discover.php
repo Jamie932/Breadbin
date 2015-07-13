@@ -222,8 +222,8 @@ require("../php/checkLogin.php");
                 echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
-            echo '<div class="postText">';
-                echo '<i class="fa fa-font"></i>';
+             echo '<div class="postText">';
+                echo '<img src="../img/text.png" height="27px">';
             echo '</div>';
             
             echo '</li>';
