@@ -95,6 +95,7 @@ p {
     position: absolute;
     top: 20px;
     right: 55px;
+    cursor: pointer;
 }
 
 .nameRow {
