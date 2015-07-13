@@ -99,54 +99,13 @@ require('../php/template/discoverNavbar.php');
         
         $direcFix = '../'.$row['image'];
             
-        if ($row['type'] == "image") {
-            list($width, $height) = getimagesize($direcFix);
-            
-            $aspectRatio = $width / $height;
-            $testHeight  = $height / 2;
-            $testWidth   = $width / 2;
-            
+        if ($row['type'] == "image") {                    
+            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $direcFix);
+            $imageLocation = $withoutExt . '-profile.jpg';
+
             echo '<li>';
-            echo '<div class="banner">';
-            
-            if ($aspectRatio >= 0) {
-                if ($height >= 0 && $height < 99) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="100px">';
-                } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
-                } else if ($height >= 200 && $height < 300) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
-                } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
-                } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '"';
-                } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
-                } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
-                } else if ($height >= 600 && $height < 700) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
-                } else if ($height >= 700 && $height < 800) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
-                } else if ($height >= 800 && $height < 1000) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $testHeight . '">';
-                } else if ($height >= 1000) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
-                } else {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
-                }
-            } else if ($aspectRatio == 1) {
-                if ($height >= 0 && $height < 100) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="100px">';
-                } else if ($height >= 100 && $height < 400) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
-                } else if ($height >= 400) {
-                    echo '<img class="tiles" src="' . $direcFix . '" height="400px">';
-                }
-            } else {
-                echo '<img class="tiles" src="' . $direcFix . '" height="220px" width="300px">';
-            }
-            
+            echo '<div class="banner">';                
+            echo '<img class="tiles" src="' . $imageLocation . '"';
             echo '</div>';
             
             echo '<div class="postUsername">';
@@ -164,64 +123,16 @@ require('../php/template/discoverNavbar.php');
         }
         
         else if ($row['type'] == 'imagetext') {
-            list($width, $height) = getimagesize($direcFix);
-            
-            $aspectRatio = $width / $height;
-            $testHeight  = $height / 2; 
-            
+            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $direcFix);
+            $imageLocation = $withoutExt . '-profile.jpg';
+
             echo '<li>';
-            echo '<div class="banner">';
-            
-            if ($aspectRatio >= 0) {
-                if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 100 && $height < 200) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 200 && $height < 300) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 300 && $height < 350) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 350 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 400 && $height < 500) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 500 && $height < 600) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
-                } else if ($height >= 600 && $height < 1000) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
-                } else if ($height >= 1000) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
-                }
-            } else if ($aspectRatio == 1) {
-                if ($height >= 0 && $height < 100) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="100px" width="300px">';
-                } else if ($height >= 100 && $height < 400) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="' . $height . '" width="300px">';
-                } else if ($height >= 400) {
-                    echo '<img class="blurImage" src="' . $direcFix . '" height="400px" width="300px">';
-                }
-            } else {
-                echo '<img class="blurImage" src="' . $direcFix . '" height="220px" width="300px">';
-            }
-            
-            
-            
-            /*echo '<div class="bannerText">';
-                echo $row['text'];
-            echo '</div>';*/
-            
-            echo '</div>';
-            
-            echo '<div class="postTitle">';
-                echo 'pie title';
+            echo '<div class="banner">';                
+            echo '<img class="blurImage" src="' . $imageLocation . '"';
             echo '</div>';
             
             echo '<div class="postUsername">';
                 echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-            echo '</div>';
-            
-            echo '<div class="postText">';
-                echo '<img src="../img/text.png" height="27px">';
             echo '</div>';
             
             echo '</li>';
