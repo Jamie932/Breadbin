@@ -133,6 +133,7 @@ p.report {
 
 #sidebar .upload {
     padding: 10px;
+    padding-bottom: 5px;
     height: auto;
 }
 
@@ -267,8 +268,6 @@ h5 {
 #post {
     overflow: auto;   
 }
-
-
 
 
 
