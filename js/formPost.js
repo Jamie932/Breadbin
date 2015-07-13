@@ -26,7 +26,7 @@ $(document).ready(function() {
         
         //$('#progress').height('5px');
         
-       var line = new ProgressBar.Line('#sidebar', {
+       var line = new ProgressBar.Line('.upload', {
             color: '#FFB540',
             strokeWidth: 1,
             fill: "rgba(0, 0, 0, 0.5)",
