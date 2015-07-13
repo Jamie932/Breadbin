@@ -229,6 +229,7 @@ p.textPost {
 #tiles .tiles {
     text-align: center;
     position: relative;
+    min-width: 300px;
 } 
 
 #tiles ali:nth-child(3n) {
