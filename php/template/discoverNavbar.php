@@ -45,7 +45,7 @@
 	</div>
 
     <div id="loader">
-        <img src="../../img/roll.gif">
+        <img src="../img/roll.gif">
     </div>
 	
 	<div class="right">
