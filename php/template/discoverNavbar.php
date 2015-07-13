@@ -45,7 +45,7 @@
 	</div>
 
     <div id="loader">
-        <img src="../img/roll.gif">
+        <img src="../../img/roll.gif">
     </div>
 	
 	<div class="right">
@@ -53,7 +53,7 @@
             <?php
                 $filename = basename($_SERVER['PHP_SELF']);
             
-                if ($filename == "discover/discover.php") {
+                if ($filename == "discover.php") {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '; z-index: 9999;">';
                 } else {
                     echo '<li class="nav">';

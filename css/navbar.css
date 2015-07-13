@@ -59,7 +59,7 @@ a.navLinks:hover { color: #616161 }
     display: inline;
     margin-left: 5%;
     font-size: 1.4em;
-    width: 12%;
+    width: 20%;
 }
 
 #navbar .right {
@@ -67,7 +67,7 @@ a.navLinks:hover { color: #616161 }
     display: inline;
     margin-right: 5%;
     font-size: 1em;
-    width: 12%;
+    width: 20%;
 }
 
 #break { margin-top: 70px }
@@ -127,7 +127,7 @@ a.navLinks:hover { color: #616161 }
 #loader {
     float: left;
     display: inline;
-    width: 66%;
+    width: 50%;
     margin: 0 auto;
     height: 100%;
     text-align: center;
