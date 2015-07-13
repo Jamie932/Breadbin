@@ -116,8 +116,9 @@ require("../php/vendor/ImageResize.php");
             $test         = $stmt->fetch();
             
         echo '<ul id="tiles">';
-        $direcFix = '../'.$row['image'];    
         
+        $direcFix = '../'.$row['image'];
+            
         if ($row['type'] == "image") {                    
             $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $direcFix);
             $imageLocation = $withoutExt . '-profile.jpg';
@@ -152,14 +153,6 @@ require("../php/vendor/ImageResize.php");
             
             echo '<div class="postUsername">';
                 echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-            echo '</div>';
-            
-            echo '<div class="postTitle">';
-                echo 'Recipie title';
-            echo '</div>';
-            
-            echo '<div class="postText">';
-                echo '<img src="../img/text.png" height="27px">';
             echo '</div>';
             
             echo '</li>';
