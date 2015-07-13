@@ -24,9 +24,9 @@ $(document).ready(function() {
             formData.append('text', $('.postText').val());
         }
         
-        $('#progress').height('5px');
+        //$('#progress').height('5px');
         
-       var line = new ProgressBar.Line('#progress', {
+       var line = new ProgressBar.Line('#sidebar', {
             color: '#FFB540',
             strokeWidth: 1,
             fill: "rgba(0, 0, 0, 0.5)",
