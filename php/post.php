@@ -29,7 +29,7 @@
             $uploadImage->resizeToWidth(640);
             $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG);
             
-        } else if ((width >= 300) && (height >= 200)) {
+        } else if (($width >= 300) && ($height >= 200)) {
             $uploadImage  = new ImageResize($_FILES['file']['tmp_name']);
             $uploadImage->quality_jpg = 90;
             $uploadImage->crop($width, $height);
