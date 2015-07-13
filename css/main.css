@@ -265,11 +265,6 @@ h5 {
     color: gray;
 }
 
-#post {
-    overflow: auto;   
-}
-
-
 
 
 @media screen and (max-width: 1125px) {
