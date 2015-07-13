@@ -186,7 +186,7 @@ class ImageResize
 
         unlink($string_temp);
 
-        return $string;
+        return 'data:image/jpeg;base64,' . base64_encode($string);
     }
 
     /**
