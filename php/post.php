@@ -37,6 +37,8 @@
         } else {
             $data['success'] = false;
             $data['error'] = 'Uploaded images need to be at least 300px by 200px.';
+            echo json_encode($data);
+            return false;
         }
         
         $profileImage  = new ImageResize($_FILES['file']['tmp_name']);
