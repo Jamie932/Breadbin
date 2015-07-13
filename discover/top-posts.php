@@ -32,8 +32,10 @@ require("../php/checkLogin.php");
     
     $(document).ready(function() {
         $(window).load(function() {
-             $('#loader').hide();
-             $('#cheeky').show();
+            $('#loader').hide();
+
+            $("#content").fadeIn(400); 
+            $('#content').css("pointer-events", "auto");
         });
     });
     </script>
