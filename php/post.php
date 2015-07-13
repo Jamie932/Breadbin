@@ -36,6 +36,11 @@
             $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG); 
         }
         
+        $profileImage  = new ImageResize($_FILES['file']['tmp_name']);
+        $profileImage->quality_jpg = 90;
+        $profileImage->resizeToBestFit(300, 400);
+        $profileImage->save("../" . $updirectory.$rand . '-profile' . $extension, IMAGETYPE_JPEG); 
+        
         if (file_exists("../" . $updirectory.$newfile )) {
             if (isset($_POST['text'])) {    
                 $query = "INSERT INTO posts (userid, type, text, image)  VALUES (:userid, 'imagetext', :text, :image)"; 
