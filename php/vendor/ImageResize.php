@@ -102,7 +102,7 @@ class ImageResize
      */
     public function save($filename, $image_type = null, $quality = null, $permissions = null)
     {
-        $image_type = $image_type ?: $this->source_type;
+        $image_type = $image_type ? $image_type : $this->source_type;
 
         $dest_image = imagecreatetruecolor($this->getDestWidth(), $this->getDestHeight());
 
@@ -206,7 +206,7 @@ class ImageResize
      */
     public function output($image_type = null, $quality = null)
     {
-        $image_type = $image_type ?: $this->source_type;
+        $image_type = $image_type ? $image_type : $this->source_type;
 
         header('Content-Type: ' . image_type_to_mime_type($image_type));
 
