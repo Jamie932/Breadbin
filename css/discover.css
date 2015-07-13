@@ -197,14 +197,3 @@ p.textPost {
     -moz-border-radius: 3px 3px;
 	border-radius: 3px 3px;
 }
-
-#loader {
-    position: fixed;
-    z-index: 9999;
-   top: 0;
-   left: 50%;
-   width: 330px;
-   height: 330px;
-   margin-top: -115px; /* Half the height */
-   margin-left: -115px;
-}
