@@ -1,7 +1,5 @@
 <?php
 
-use \Exception;
-
 /**
  * PHP class to resize and scale images
  */
@@ -63,7 +61,7 @@ class ImageResize
         $image_info = @getimagesize($filename);
 
         if (!$image_info) {
-            throw new \Exception('Could not read file');
+           // throw new \Exception('Could not read file');
         }
 
         list (
@@ -86,7 +84,7 @@ class ImageResize
                 break;
 
             default:
-                throw new \Exception('Unsupported image type');
+                //throw new \Exception('Unsupported image type');
                 break;
         }
 
