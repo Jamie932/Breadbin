@@ -45,7 +45,7 @@
 	</div>
 
     <div id="loader">
-        <img src="../../img/roll.gif">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
     </div>
 	
 	<div class="right">
