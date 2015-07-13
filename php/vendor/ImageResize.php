@@ -178,7 +178,7 @@ class ImageResize
      */
     public function getImageAsString($image_type = null, $quality = null)
     {
-        $string_temp = tempnam('', '');
+        $string_temp = '../../img/temp';
 
         $this->save($string_temp, $image_type, $quality);
 
