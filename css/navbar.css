@@ -24,6 +24,10 @@ ul.nav {
     height: 30px;
 }
 
+#navbar ul ul li:last-child {
+    margin-bottom: 15px;
+}
+
 #navbar ul li:hover > ul { display: block }
 
 li.nav {
