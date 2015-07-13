@@ -114,7 +114,7 @@
     
     <div id="center">
         <div id="content">
-            <?php /*require('php/fetchToasted.php');*/ ?>
+            <?php require('php/fetchToasted.php'); ?>
         </div>        
     </div>
 </body>
