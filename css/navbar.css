@@ -4,6 +4,7 @@ ul.nav {
     padding: 0;
     overflow: hidden;
     display: inline;
+    float: right;
 }
  
 #navbar ul ul {
