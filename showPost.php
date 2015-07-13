@@ -267,7 +267,7 @@ if (empty($_GET)) {
                 if ($_SESSION['user']['id'] == $row['userid']) { 
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">
                         <p class="delete">Delete</p>';
-                        echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
+                        echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
                 } else {
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">';
 
@@ -282,7 +282,7 @@ if (empty($_GET)) {
                         echo '<p class="unburn">Burn</p>';
                     }
                     echo '<p class="report">Report</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
+                    echo '<p class="totalToasts">' .$totalToasts. '</p></div>';  
                 }
             ?>
         </div>

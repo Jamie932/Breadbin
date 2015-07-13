@@ -30,7 +30,7 @@
             
             echo '<div id="contentLikeFollow">';
                 echo '<p class="hide">Hide</p>';
-            echo '</div><br>';  
+            echo '</div>';  
         }
         
         foreach ($posts as $row) {
@@ -121,7 +121,7 @@
 
                 if ($_SESSION['user']['id'] == $row['userid']) {
                     echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
+                    echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
                 } else {
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                     if ($ifToasted == 0) {
@@ -135,7 +135,7 @@
                         echo '<p class="unburn">Burn</p>';
                     }
                     echo '<p class="report">Report</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
+                    echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
                 }             
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -148,7 +148,7 @@
 
                 if ($_SESSION['user']['id'] == $row['userid']) {
                     echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
+                    echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
                 } else {
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">';
                     if ($ifToasted == 0) {
@@ -162,7 +162,7 @@
                         echo '<p class="unburn">Burn</p>';
                     }
                     echo '<p class="report">Report</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</div><br>'; 
+                    echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
                 }
 
             } else if ($row['type'] == "text") { 
@@ -177,7 +177,7 @@
                 if ($_SESSION['user']['id'] == $row['userid']) { 
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">
                         <p class="delete">Delete</p>';
-                        echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';
+                        echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
                 } else {
                     echo '<div id="contentLike" class="post-' . $row['id'] . '">';
 
@@ -192,7 +192,7 @@
                         echo '<p class="unburn">Burn</p>';
                     }
                     echo '<p class="report">Report</p>';
-                    echo '<p class="totalToasts">' .$totalToasts. '</p></div><br>';  
+                    echo '<p class="totalToasts">' .$totalToasts. '</p></div>';  
                 }
             }
             echo '</div>';
