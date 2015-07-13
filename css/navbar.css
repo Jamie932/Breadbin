@@ -16,6 +16,7 @@ ul.nav {
     padding-left: 20px;
     font-size: 0.9em;
     right:5%;
+    z-index:20;
 }
 
 #navbar ul ul li:first-child {
