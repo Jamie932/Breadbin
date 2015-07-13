@@ -221,7 +221,7 @@ require('../php/template/discoverNavbar.php');
             echo '</div>';
             
             echo '<div class="postText">';
-                echo '<img src="../img/text.png" height="23px">';
+                echo '<img src="../img/text.png" height="27px">';
             echo '</div>';
             
             echo '</li>';
