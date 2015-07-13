@@ -51,7 +51,7 @@ require("../php/checkLogin.php");
     ?>
        
     <div id="loader">
-        <i class="fa fa-circle-o-notch fa-spin" style="font-size: 5em;"></i>
+        <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
     </div>
       
     <div id="categories" style="background-color:#fff">
