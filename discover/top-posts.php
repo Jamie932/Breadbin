@@ -27,7 +27,7 @@ require("../php/checkLogin.php");
         });
     })    
     
-    $(document).ready(function(){
+    /*$(document).ready(function(){
         // to fade out before redirect
         $('a.navLinks').click(function(e){
             redirect = $(this).attr('href');
@@ -37,7 +37,7 @@ require("../php/checkLogin.php");
                 document.location.href = redirect
             });
         });
-    })
+    })*/
     
     $(document).ready(function() {
         $(window).load(function() {
