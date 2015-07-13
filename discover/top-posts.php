@@ -27,6 +27,18 @@ require("../php/checkLogin.php");
         });
     })    
     
+    $(document).ready(function(){
+        // to fade out before redirect
+        $('a.navLinks').click(function(e){
+            redirect = $(this).attr('href');
+            e.preventDefault(); 
+            $('#categories').fadeOut(400);
+            $('#content').fadeOut(400, function(){
+                document.location.href = redirect
+            });
+        });
+    })
+    
     $(document).ready(function() {
         $(window).load(function() {
             $('#loader').hide();
