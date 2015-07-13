@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="css/error.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
@@ -41,12 +42,10 @@ if ($title == false || strlen($status) != 3) {
 
 ?>
 
-
+<div id="content">
 <?php
 echo '<p><h1>' . $title . '</h1></p>' . 
      '<p>' . $message . '</p>'; 
-
- 
 ?> 
-    
+</div>
 </body>
