@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function(){
         function createPopup(title, content) {
-            if ((title && title != '') && (content && content != '')) {
+            if (title != undefined && content != undefined) {
                 $('.popupTitle').text(title);
                 $('.popupContent').text(content);
                 $('#popup').fadeIn();
