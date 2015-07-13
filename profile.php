@@ -231,11 +231,9 @@ if (empty($_GET)) {
             <div class="userInfo">            
                 <?php
                 if (isset($usersname)) {
-                    echo '<div class="nameRow">' . $usersname . '</div>';
-
-                    if ($_GET['id'] == $_SESSION['user']['id']) {
-                        echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
-                    }
+                    echo '<div class="nameRow">' . $usersname;
+                    if ($_GET['id'] == $_SESSION['user']['id']) { echo '<div id="avatarOverlay"><i class="fa fa-pencil"></i></div>'; }
+                    echo '</div>';
                     
                     echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
                     echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
