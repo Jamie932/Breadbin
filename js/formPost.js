@@ -23,8 +23,28 @@ $(document).ready(function() {
         if ($.trim($('.postText').val())) {
             formData.append('text', $('.postText').val());
         }
+        
+        $('#progress').height('5px');
+        
+       var line = new ProgressBar.Line('#progress', {
+            color: '#FFB540',
+            strokeWidth: 1,
+            fill: "rgba(0, 0, 0, 0.5)",
+            duration: 1500
+        });                   
 
         $.ajax({
+           xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                          line.animate(percentComplete);
+                    }
+               }, false);
+                
+               return xhr;
+            },
             type        : 'POST',
             url         : 'php/post.php',
             processData : false,

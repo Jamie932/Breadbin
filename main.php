@@ -153,6 +153,8 @@
             $('#upfile').click();
         }
     </script>
+    <script src="js/vendor/progressbar.min.js" async></script>
+    
 </head>
 <body>
     <noscript>
@@ -182,7 +184,8 @@
             </div> 
             <div class="clearFix"></div>
             
-            <?php require('php/recommendToaster.php'); ?>
+            <?php require('php/recommendToaster.php');  ?>
+            <div id="progress"></div>
         </div>
         
         <div id="content">
