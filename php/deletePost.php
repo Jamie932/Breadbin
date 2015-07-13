@@ -25,7 +25,11 @@
 
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
                 if (file_exists($row['image'])) {
+                    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
+                    $imageLocation = $withoutExt . '-profile.jpg';
+                    
                     unlink($row['image']);
+                    unlink($imageLocation);
                 }
             }
 
