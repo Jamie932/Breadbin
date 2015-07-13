@@ -147,7 +147,7 @@ require("../php/vendor/ImageResize.php");
             echo '</div>';
             
             echo '<div class="postText">';
-                echo '<img src="../img/text.png" height: "27px">';
+                echo '<img src="../img/text.png" height="27px">';
             echo '</div>';
             
             echo '</li>';
