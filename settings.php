@@ -165,11 +165,9 @@
         });        
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
-    <script src="js/formChangeAvatar.js" async></script>
-    <script src="js/formSettings.js" async></script>
 </head>
     
-<body class="profile">
+<body>
     <div id="blackOverlay"></div>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
@@ -267,7 +265,7 @@
                                         </select>
                                     </div>
 
-                                    <input type="submit" value="Save" class="saveAccountDetails">
+                                    <input type="submit" value="Save" class="saveAccount">
                                 </form>
                             </div>
                         </div>
@@ -361,5 +359,8 @@
             <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
         </form>
     </div>
+        
+    <script src="js/formChangeAvatar.js" async></script>
+    <script src="js/formSettings.js" async></script>        
 </body>
 </html>
