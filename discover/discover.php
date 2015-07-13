@@ -34,8 +34,7 @@ require("../php/checkLogin.php");
         $(window).load(function() {
             $('#loader').hide();
 
-            /*$('#content').animate({opacity: 1}, 600);*/
-            $("#content").fadeIn(400); 
+            $('#content').animate({opacity: 1}, 600);
             $('#content').css("pointer-events", "auto");
         });
     });
