@@ -223,7 +223,7 @@ require("../php/checkLogin.php");
             echo '</div>';
             
             echo '<div class="postText">';
-                echo '<img src="../img/text.png" height="23px">';
+                echo '<i class="fa fa-font"></i>';
             echo '</div>';
             
             echo '</li>';
