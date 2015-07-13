@@ -21,6 +21,13 @@
             }
         }
     }    
+    
+    $(document).ready(function() {
+        $(window).load(function() {
+            $('#loader').hide();
+        });
+    });
+      
 </script>
 
 <?php
@@ -78,6 +85,11 @@
                 echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                 echo '<div class="arrow-up"></div>';
             ?>
+        
+            <div id="loader">
+                <i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
+            </div>
+        
                 <ul >
                     <li><a class="navLinks" href="settings.php">Settings</a></li>
                     <li><a class="navLinks" href="toasted.php">Toasted</a></li>

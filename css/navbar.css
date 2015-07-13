@@ -124,3 +124,9 @@ a.navLinks:hover { color: #616161 }
     display: inline-block;
     margin-right: -15px; 
 }
+
+#loader {
+    width: 50%;
+    display: inline;
+    text-align: center;
+}
