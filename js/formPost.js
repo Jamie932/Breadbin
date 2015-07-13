@@ -30,7 +30,12 @@ $(document).ready(function() {
             color: '#FFB540',
             strokeWidth: 1,
             fill: "rgba(0, 0, 0, 0.5)",
-            duration: 1500
+            duration: 1500,
+            step: function(state, bar) {
+                if (bar.value() == 1) {
+                    line.destroy();
+                }
+            }
         });                   
 
         $.ajax({
