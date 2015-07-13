@@ -86,6 +86,7 @@ p {
     font-size: 0.6em;
     display: inline-block;
     color: rgb(104, 104, 104);
+    cursor: pointer;
 }
 
 #starOverlay {
@@ -98,6 +99,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     font-family: 'Arial', sans-serif !important;
+    padding-left: 30px;
 }
 
 .locationRow {
