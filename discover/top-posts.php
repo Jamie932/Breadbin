@@ -30,8 +30,13 @@ require("../php/checkLogin.php");
     $(document).ready(function() {
         $(window).load(function() {
             $('#loader').hide();
+<<<<<<< HEAD
 
             $('#content').animate({opacity: 1}, 600);
+=======
+            
+            $("#content").animate({ opacity: 1}, 600); 
+>>>>>>> origin/master
             $('#content').css("pointer-events", "auto");
         });
     });
