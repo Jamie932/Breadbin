@@ -65,9 +65,7 @@ a{
 
 /* Posts */
 #content {
-    
-    width: 0;
-    height: 0;
+    width: 100%;
     opacity: 0;
     
     margin-top: 0px;
