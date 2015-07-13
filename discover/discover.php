@@ -107,7 +107,17 @@ require("../php/vendor/ImageResize.php");
         $direcFix = '../'.$row['image'];    
         
         if ($row['type'] == "image") {
-            if ($height >= 0 && $height < 99) {
+            list($width, $height) = getimagesize($direcFix);
+            
+            $aspectRatio = $width / $height;
+            $testHeight  = $height / 2;
+            $testWidth   = $width / 2;
+            
+            echo '<li>';
+            echo '<div class="banner">';
+            
+            if ($aspectRatio >= 0) {
+                if ($height >= 0 && $height < 99) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="100px">';
                 } else if ($height >= 100 && $height < 200) {
                     echo '<img class="tiles" src="' . $direcFix . '" height="' . $height . '">';
