@@ -172,7 +172,6 @@
                     <div class="textarea">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Write a slice..."></textarea>
                     </div>
-                    <div id="progress"></div>
                     
                     <div class="uploadRest">
                         <input type="submit" value="Submit" id="submitPost" class="buttonstyle">
@@ -186,6 +185,7 @@
             <div class="clearFix"></div>
             
             <?php require('php/recommendToaster.php');  ?>
+            <div id="progress"></div>
         </div>
         
         <div id="content">
