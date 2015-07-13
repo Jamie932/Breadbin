@@ -90,7 +90,11 @@ p {
 }
 
 #starOverlay {
-    font-size: 10em;
+    font-size: 3.5em;
+    color: #FFD600;
+    position: absolute;
+    top: 20px;
+    right: 55px;
 }
 
 .nameRow {
