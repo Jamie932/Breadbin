@@ -227,9 +227,6 @@ p.textPost {
 }
 
 #tiles .tiles {
-    min-height: 300px;
-    max-height: 400px; 
-	min-width: 300px;
     text-align: center;
     position: relative;
 } 
