@@ -101,7 +101,7 @@ require('../php/template/discoverNavbar.php');
 
             $total = $toasts - $burns;
 
-        if (!$posts && $total = 0) {
+        if (!$posts && $total == 0) {
             echo '<center>Nothing to discover.</center>';
         } else {
         foreach ($posts as $row) {
