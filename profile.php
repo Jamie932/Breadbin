@@ -312,53 +312,14 @@ if (empty($_GET)) {
             
                 } else if ($row['type'] == "text") {
                         echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+                    
                 } else if ($row['type'] == 'imagetext') {
-                    list($width, $height) = getimagesize($row['image']);
-
-                    $aspectRatio = $width / $height;
-                    $testHeight  = $height / 2; 
+                    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
+                    $imageLocation = $withoutExt . '-profile.jpg';
 
                     echo '<li>';
                     echo '<div class="banner">';
-
-                    if ($height <= 200) {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                    } else if ($aspectRatio >= 0) {
-                        if ($height >= 0 && $height < 100) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                        } else if ($height >= 100 && $height < 200) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                        } else if ($height >= 200 && $height < 300) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                        } else if ($height >= 300 && $height < 350) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                        } else if ($height >= 350 && $height < 400) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                        } else if ($height >= 400 && $height < 500) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '" width="300px">';
-                        } else if ($height >= 500 && $height < 600) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                        } else if ($height >= 600 && $height < 1000) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                        } else if ($height >= 1000) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                        }
-                    } else if ($aspectRatio == 1) {
-                        if ($height >= 0 && $height < 100) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="100px">';
-                        } else if ($height >= 100 && $height < 400) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="' . $height . '">';
-                        } else if ($height >= 400) {
-                            echo '<img class="blurImage" src="' . $row['image'] . '" height="400px" width="300px">';
-                        }
-                    } else {
-                        echo '<img class="blurImage" src="' . $row['image'] . '" width="300px" height="220px">';
-                    }
-
-                    /*echo '<div class="bannerText">';
-                        echo $row['text'];
-                    echo '</div>';*/
-
+                    echo '<img class="tiles" src="' . $imageLocation . '"';
                     echo '</div>';
 
                      echo '<div class="postTitle">';
