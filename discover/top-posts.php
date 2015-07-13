@@ -85,7 +85,7 @@ require('../php/template/discoverNavbar.php');
             $posts        = $stmt->fetchAll();
 
         if (!$posts) {
-            echo '<center>You follow everyone tough luck.</center>';
+            echo '<center>Nothing to discover.</center>';
         } else {
         foreach ($posts as $row) {
             
