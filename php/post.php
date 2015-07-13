@@ -27,13 +27,13 @@
             $uploadImage  = new ImageResize($_FILES['file']['tmp_name']);
             $uploadImage->quality_jpg = 80;
             $uploadImage->resizeToWidth(640);
-            $uploadImage->save("../" . $updirectory.$newfile);
+            $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG);
             
         } else {
             $uploadImage  = new ImageResize($_FILES['file']['tmp_name']);
             $uploadImage->quality_jpg = 80;
             $uploadImage->crop($width, $height);
-            $uploadImage->save("../" . $updirectory.$newfile); 
+            $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG); 
         }
         
         if (file_exists("../" . $updirectory.$newfile )) {
