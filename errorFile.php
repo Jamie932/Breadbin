@@ -26,7 +26,7 @@
 $status = $_SERVER['REDIRECT_STATUS'];
 $codes = array(
         403 => array('403 Forbidden', 'The server has refused to fulfill your request.'),
-        404 => array('404 Not Found', 'The document/file requested was not found.'),
+        404 => array('PAGE NOT FOUND', 'YOU LOOK LOST'),
         405 => array('405 Method Not Allowed', 'The method specified in the Request-Line is not allowed for the specified resource.'),
         408 => array('408 Request Timeout', 'Your browser failed to sent a request in the time allowed by the server.'),
         500 => array('500 Internal Server Error', 'The request was unsuccessful due to an unexpected condition encountered by the server.'),
@@ -47,5 +47,6 @@ if ($title == false || strlen($status) != 3) {
 echo '<p><h1>' . $title . '</h1></p>' . 
      '<p>' . $message . '</p>'; 
 ?> 
+    <button>Go Home</button>
 </div>
 </body>
