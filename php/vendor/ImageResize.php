@@ -1,5 +1,12 @@
 <?php
 
+namespace Eventviva;
+
+use \Exception;
+
+/**
+ * PHP class to resize and scale images
+ */
 class ImageResize
 {
     const CROPTOP = 1;
