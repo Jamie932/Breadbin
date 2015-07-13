@@ -6,6 +6,10 @@ ul.nav {
     display: inline;
 }
 
+ul.rightList {
+    float: right;   
+}
+ 
 #navbar ul ul {
     position: absolute;
     display: none;
@@ -68,6 +72,7 @@ a.navLinks:hover { color: #616161 }
     display: inline;
     margin-right: 5%;
     font-size: 1em;
+    width: 20%;
 }
 
 #break { margin-top: 70px }
