@@ -14,6 +14,7 @@ require("../php/checkLogin.php");
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
     <script src="../js/vendor/jquery.cookie.js"></script>
+    <script src="../js/vendor/jquery.unveil.js"></script>
     
     <script>
     $(document).ready(function(){
@@ -33,6 +34,12 @@ require("../php/checkLogin.php");
 
             $('#content').animate({opacity: 1}, 600);
             $('#content').css("pointer-events", "auto");
+        });
+    });
+      
+    $(document).ready(function() {
+        $(function() {
+            $("img.tiles").unveil(300);
         });
     });
     </script>
