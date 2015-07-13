@@ -47,6 +47,16 @@ body {
     color: #fff;
 }
 
+#leftTitle {
+    display: inline-block;
+}
+
+#rightTitle {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
 .popupContent {
     padding-left: 10px;
     padding-top: 10px;

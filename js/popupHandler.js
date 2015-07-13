@@ -2,9 +2,9 @@ var isPopup = false;
 
 function createPopup(title, content, yesno) {
     if (title != undefined && content != undefined) {
-        $('.popupTitle').html(title);
+        $('#leftTitle').html(title);
         $('.popupContent').html(content);
-            $('.popupOK').fadeIn();
+        //$('.popupOK').fadeIn();
         
         if (yesno != undefined) { //Two buttons - OK and Cancel
             $('.popupCancel').fadeIn();
