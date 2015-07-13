@@ -107,7 +107,7 @@ a{
 #tiles {
 	list-style-type: none;
 	position: relative;
-	margin: 0;
+	margin: 0px;
 	max-height: 400px;
 	max-width: 300px;
 }
@@ -119,16 +119,15 @@ a{
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 #tiles .tiles {
-    min-height: 300px;
-    max-height: 400px; 
-	min-width: 300px;
-    text-align:center;
+    text-align: center;
     position: relative;
+    min-width: 300px;
+    vertical-align: top;
 } 
 
 #tiles ali:nth-child(3n) {
