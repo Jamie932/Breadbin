@@ -11,7 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
+    <script src="js/vendor/jquery.cookie.js"></script>
     <script>
         $(document).ready(function(){
            $(".registerBtn").click(function(){
