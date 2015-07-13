@@ -59,16 +59,16 @@ require('../php/template/discoverNavbar.php');
                 <a href="discover.php">All</a>
             </li>
             <li class="cats">
-                <a>Staff Recommendations</a>
+                <a href="staff-recom.php">Staff Recommendations</a>
             </li>
             <li class="cats">
                 <a class="active">Top Posts</a>
             </li>
             <li class="cats">
-                <a href="#">Just Pictures</a>
+                <a href="just-pictures.php">Just Pictures</a>
             </li>
             <li class="cats">
-                <a href="#">Just Recipies</a>
+                <a href="just-recipes.php">Just Recipes</a>
             </li>
             
 		</ul>
