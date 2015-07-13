@@ -133,6 +133,7 @@ if (empty($_GET)) {
                     $('#blackOverlay').fadeIn('normal');
                     $('#leftProfile').animate({backgroundColor:'#7B7B7B'}, 400);
                     $('.saveBut').fadeIn('normal');
+                    $('#starOverlay').fadeOut('normal');
                     
                     lastBio = $('.bioRow').text();
                     editing  = true;
@@ -166,6 +167,7 @@ if (empty($_GET)) {
                 $('#blackOverlay').fadeOut('normal');
                 $('#leftProfile').animate({backgroundColor:'#FFF'}, 400);
                 $('.saveBut').fadeOut('normal');
+                $('#starOverlay').fadeIn('normal');
                 editing = false;
             });
             
