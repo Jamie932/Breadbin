@@ -9,7 +9,7 @@
                 alert("Error making a popup");   
             }
         }
-    }
+    })
 </script>
 
 <div id="popup">
