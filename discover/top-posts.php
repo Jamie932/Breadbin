@@ -89,14 +89,19 @@ require('../php/template/discoverNavbar.php');
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE toasts > 0 ORDER BY toasts DESC";
+            $query        = "SELECT * FROM posts ORDER BY toasts DESC";
             /*userid <> :id AND */
             $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
 
-        if (!$posts) {
+            $toasts = $posts['toasts'];
+            $burns = $posts['burns'];
+
+            $total = $toasts - $burns;
+
+        if (!$posts && $total = 0) {
             echo '<center>Nothing to discover.</center>';
         } else {
         foreach ($posts as $row) {
@@ -106,6 +111,12 @@ require('../php/template/discoverNavbar.php');
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $test         = $stmt->fetch();
+            
+            ?>
+                    <script>
+                        console.log(<? echo json_encode($total); ?>);
+                    </script>
+            <?php
             
         echo '<ul id="tiles">';
         

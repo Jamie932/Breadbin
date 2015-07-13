@@ -15,12 +15,6 @@
     } else {
         
         foreach ($posts as $row) {
-             ?>
-                    <script>
-                        console.log(<? echo json_encode($posts); ?>);
-                    </script>
-            <?php
-
             
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
