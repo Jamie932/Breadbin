@@ -96,9 +96,25 @@ require("../php/checkLogin.php");
             $test         = $stmt->fetch();
             
         echo '<ul id="tiles">';
+        $direcFix = '../'.$row['image'];    
         
-        $direcFix = '../'.$row['image'];
-            
+        $exte = getimagesize($direcFix);
+        $mime   = $info['mime'];
+
+        if ($mime = '.gif') {
+            ?>
+            <scirpt>
+                $(function(){
+                var image = new Image();
+                image.src ='http://rack.3.mshcdn.com/media/ZgkyMDEyLzEwLzE5LzExXzMzXzMzXzE3Nl9maWxlCnAJdGh1bWIJMTIwMHg5NjAwPg/462b8072';
+                $('.tiles').click(function(){
+                   $(this).attr('src',image.src);
+                });
+                });
+            </scirpt>    
+            <?php
+        }
+        
         if ($row['type'] == "image") {
             list($width, $height) = getimagesize($direcFix);
             
