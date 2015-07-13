@@ -20,7 +20,7 @@ require("../php/vendor/ImageResize.php");
     <script>
     $(document).ready(function(){
         // to fade out before redirect
-        $('a').click(function(e){
+        $('a.catLink').click(function(e){
             redirect = $(this).attr('href');
             e.preventDefault(); 
             $('#content').fadeOut(400, function(){
@@ -76,16 +76,16 @@ require("../php/vendor/ImageResize.php");
         <ul class="cats">
 
 			<li class="cats">
-                <a href="discover.php">All</a>
+                <a class="catLink" href="discover.php">All</a>
             </li>
             <li class="cats">
-                <a href="staff-recom.php">Staff Recommendations</a>
+                <a class="catLink" href="staff-recom.php">Staff Recommendations</a>
             </li>
             <li class="cats">
-                <a href="top-posts.php">Top Posts</a>
+                <a class="catLink" href="top-posts.php">Top Posts</a>
             </li>
             <li class="cats">
-                <a href="just-pictures.php">Just Pictures</a>
+                <a class="catLink" href="just-pictures.php">Just Pictures</a>
             </li>
             <li class="cats">
                 <a class="active">Just Text</a>
