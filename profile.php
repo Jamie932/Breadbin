@@ -304,7 +304,7 @@ if (empty($_GET)) {
                     $profImage  = new ImageResize($row['image']);
                     $profImage->quality_jpg = 90;
                     $profImage->resizeToBestFit(300, 400);
-                    $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 4);
+                    $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 90);
                     
                    /*list($width, $height) = getimagesize($row['image']);
 
@@ -353,7 +353,7 @@ if (empty($_GET)) {
                         echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
                     }*/
                     
-                    echo '<img class="tiles" src="' . $result . '" height="' . $height . '"';
+                    echo '<img class="tiles" src="' . $result . '"';
 
                     echo '</div>';
 
