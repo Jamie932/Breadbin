@@ -102,12 +102,7 @@
             })
             
         })
-        
-        function getFile(){
-            $('#upfile').click();
-        }
     </script>
-    <script src="js/vendor/progressbar.min.js" async></script>
     
 </head>
 <body>
@@ -115,13 +110,13 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-   <?php require('php/template/navbar.php');?>
+    <?php require('php/template/navbar.php');?>
     
     <div id="break"></div>
     
     <div id="center">
         <div id="content">
-            <?php require('php/fetchPosts.php');?>
+            <?php require('php/fetchToasted.php');?>
         </div>        
     </div>
 </body>
