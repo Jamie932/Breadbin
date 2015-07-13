@@ -2,12 +2,6 @@
     require("common.php"); 
 	require("vendor/timeago.php");
 
-    $query= "SELECT * FROM following WHERE follower_id = :userId"; 
-    $query_params = array(':userId' => $_SESSION['user']['id']);
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute($query_params); 
-	$following = $stmt->rowCount();
-
     $query= "SELECT * FROM posts_toasts WHERE uid = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
