@@ -124,7 +124,7 @@ require("../php/vendor/ImageResize.php");
         }
         
         if ($row['type'] == "image") {
-            $profImage  = new ImageResize($row['image']);
+            $profImage  = new ImageResize($direcFix);
             $profImage->quality_jpg = 90;
             $profImage->resizeToBestFit(300, 400);
             $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 90);
