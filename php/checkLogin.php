@@ -29,7 +29,7 @@
             $result = $stmt->execute($query_params);     
 
             if(!isset($_SESSION['user']) || empty($_SESSION['user']) || ($_SESSION['user']['id'] != $row['userid'])) {
-                $query = "SELECT id, username, email FROM users WHERE id = :userid"; 
+                $query = "SELECT id, username, email, rank FROM users WHERE id = :userid"; 
                 $query_params = array(':userid' => $row['userid']); 
 
                 $stmt = $db->prepare($query); 

@@ -115,7 +115,16 @@
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
                     echo '<div id="contentInfoText">';
                         echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
-                        echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
+                        echo '<div class="right">';
+                        
+                        $rank = $_SESSION['user']['rank'];
+                        if (isset($rank) && !empty($rank) && ($rank != "user") && ($row['userid'] != $_SESSION['user']['id'])) {
+                            echo '<div class="timeago" style="padding-right: 17px;">' . timeAgoInWords($row['date']) . '</div>';
+                            echo '<div class="admin"><i class="fa fa-trash-o"></i><i class="fa fa-heart-o"></i></div>';
+                        } else {
+                            echo '<div class="timeago">' . timeAgoInWords($row['date']) . '</div>';
+                        }
+                        echo '</div>';
                     echo '</div>';
                 echo '</div>';
 

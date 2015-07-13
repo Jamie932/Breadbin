@@ -45,8 +45,8 @@ p.report {
 
 #contentInfoText {
     padding-left: 30px;
-    padding-right: 30px;
     padding-top: 5px;
+    overflow: auto;
 }
 
 #contentInfoText .left { float: left }
@@ -55,6 +55,19 @@ p.report {
     float: right;
     font-size: 13px;
     padding-top: 4px;
+}
+
+.timeago {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.admin {
+    display: inline-block;
+}
+
+.fa-heart-o {
+    padding-left: 5px;
 }
 
 /* ===[ Image Formatting ]=== */
