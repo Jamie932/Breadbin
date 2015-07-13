@@ -114,6 +114,11 @@ require("../php/vendor/ImageResize.php");
             echo '<div class="banner">';                
             echo '<img class="tiles" src="' . $imageLocation . '"';
             echo '</div>';
+            
+            echo '<div class="postUsername">';
+                echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+            echo '</div>';
+            
             echo '</li>'; 
             
         } else if ($row['type'] == "text") {
