@@ -20,7 +20,7 @@ require("../php/vendor/ImageResize.php");
     <script>
     $(document).ready(function(){
         // to fade out before redirect
-        $('a').click(function(e){
+        $('a.catLink').click(function(e){
             redirect = $(this).attr('href');
             e.preventDefault(); 
             $('#content').fadeOut(400, function(){
@@ -43,6 +43,25 @@ require("../php/vendor/ImageResize.php");
     
     $(document).ready(function() {
         $(window).load(function() {
+            $(document).ready(new function() {
+          // Prepare layout options.
+          var options = {
+            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            container: $('#main'), // Optional, used for some extra CSS styling
+            offset: 5, // Optional, the distance between grid items
+            itemWidth: 310 // Optional, the width of a grid item
+          };
+
+          // Get a reference to your grid items.
+          var handler = $('#tiles li');
+
+          // Call the layout function.
+          handler.wookmark(options);
+
+          // Capture clicks on grid items.
+         
+        });
+            
             $('#loader').hide();
 
             $('#content').animate({opacity: 1}, 600);
@@ -76,19 +95,19 @@ require("../php/vendor/ImageResize.php");
         <ul class="cats">
 
 			<li class="cats">
-                <a href="discover.php">All</a>
+                <a class="catLink" href="discover.php">All</a>
             </li>
             <li class="cats">
-                <a href="staff-recom.php">Staff Recommendations</a>
+                <a class="catLink" href="staff-recom.php">Staff Recommendations</a>
             </li>
             <li class="cats">
-                <a href="top-posts.php">Top Posts</a>
+                <a class="catLink" href="top-posts.php">Top Posts</a>
             </li>
             <li class="cats">
                 <a class="active">Just Pictures</a>
             </li>
             <li class="cats">
-                <a href="just-text.php">Just Text</a>
+                <a class="catLink" href="just-text.php">Just Text</a>
             </li>
             
 		</ul>
@@ -196,24 +215,7 @@ require("../php/vendor/ImageResize.php");
           boxes[i].style.position = 'relative';
         }
 
-        $(document).ready(new function() {
-          // Prepare layout options.
-          var options = {
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
-            container: $('#main'), // Optional, used for some extra CSS styling
-            offset: 5, // Optional, the distance between grid items
-            itemWidth: 310 // Optional, the width of a grid item
-          };
-
-          // Get a reference to your grid items.
-          var handler = $('#tiles li');
-
-          // Call the layout function.
-          handler.wookmark(options);
-
-          // Capture clicks on grid items.
-         
-        });
+        
     </script>
 </body>
 </html>

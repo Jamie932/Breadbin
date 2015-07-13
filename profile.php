@@ -68,6 +68,27 @@ if (empty($_GET)) {
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/jquery.color.js"></script>
     <script async>
+        $(document).ready(function() {
+        $(window).load(function() {
+            // Prepare layout options.
+              var options = {
+                autoResize: true, // This will auto-update the layout when the browser window is resized.
+                container: $('#main'), // Optional, used for some extra CSS styling
+                offset: 5, // Optional, the distance between grid items
+                itemWidth: 310 // Optional, the width of a grid item
+              };
+
+              // Get a reference to your grid items.
+              var handler = $('#tiles li');
+
+              // Call the layout function.
+              handler.wookmark(options);
+
+              // Capture clicks on grid items.
+
+            });
+        });
+        
         var uploadingFile = false;
         
         $(document).ready(function(){
@@ -404,24 +425,6 @@ if (empty($_GET)) {
               boxes[i].style.position = 'relative';
             }
 
-            $(document).ready(new function() {
-              // Prepare layout options.
-              var options = {
-                autoResize: true, // This will auto-update the layout when the browser window is resized.
-                container: $('#main'), // Optional, used for some extra CSS styling
-                offset: 5, // Optional, the distance between grid items
-                itemWidth: 310 // Optional, the width of a grid item
-              };
-
-              // Get a reference to your grid items.
-              var handler = $('#tiles li');
-
-              // Call the layout function.
-              handler.wookmark(options);
-
-              // Capture clicks on grid items.
-
-            });
         </script>
 
         <form id="avatarForm" method="POST" enctype="multipart/form-data">
