@@ -20,10 +20,6 @@ footer {
 a.active {
     color: black;   
 }
-
-/*#cheeky {
-    display: none;   
-}*/
  
 /* categories */
 #categories {
@@ -67,7 +63,7 @@ a{
 #content {
     width: 100%;
     opacity: 0;
-    
+    pointer-events: none;
     margin-top: 0px;
 	margin-bottom: 20px !important;
     height: auto;

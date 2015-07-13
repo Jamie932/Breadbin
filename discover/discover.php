@@ -35,6 +35,7 @@ require("../php/checkLogin.php");
             $('#loader').hide();
 
             $('#content').animate({opacity: 100}, 600);
+            $('#content').css("pointer-events", "auto");
         });
     });
     </script>
