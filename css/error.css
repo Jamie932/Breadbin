@@ -8,8 +8,5 @@ p {
 }
 
 a.home {
-    border: 1px black solid;
-    width: 200px;
-    height: 50px;
-    margin-top: 10px;
+    text-decoration: none;
 }
