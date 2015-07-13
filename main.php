@@ -185,7 +185,6 @@
             <div class="clearFix"></div>
             
             <?php require('php/recommendToaster.php');  ?>
-            <div id="progress"></div>
         </div>
         
         <div id="content">
