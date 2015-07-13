@@ -4,9 +4,10 @@
 }
 
 p {
-       
+    margin-bottom: 50px;
 }
 
 a.home {
     text-decoration: none;
+    color: black;
 }
