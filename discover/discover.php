@@ -80,6 +80,7 @@ require("../php/vendor/ImageResize.php");
         $(window).load(function() {
             $('#loader').hide();
             
+            enableScroll();
             $('#content').animate({opacity: 1}, 600);
             $('#content').css("pointer-events", "auto");
         });
