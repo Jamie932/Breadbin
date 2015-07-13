@@ -52,6 +52,7 @@ require("../php/checkLogin.php");
        
     <div id="loader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
+        <p>Loading some beautiful content...</p> 
     </div>
       
     <div id="categories" style="background-color:#fff">
