@@ -1,6 +1,7 @@
 <?php
 require("php/common.php");
 require("php/checkLogin.php");
+require("php/vendor/ImageResize.php");
 
 if (empty($_GET)) {
     if ($_SESSION['user']['id']) {
@@ -300,7 +301,12 @@ if (empty($_GET)) {
                 echo '<ul id="tiles">';
 
                 if ($row['type'] == "image") {
-                    list($width, $height) = getimagesize($row['image']);
+                    $profImage  = new ImageResize($row['image']);
+                    $profImage->quality_jpg = 90;
+                    $profImage->resizeToBestFit(300, 400);
+                    $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 4);
+                    
+                   /*list($width, $height) = getimagesize($row['image']);
 
                     $aspectRatio = $width / $height;
                     $testHeight  = $height / 2;
@@ -345,7 +351,9 @@ if (empty($_GET)) {
                         }
                     } else {
                         echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
-                    }
+                    }*/
+                    
+                    echo '<img class="tiles" src="' . $result . '" height="' . $height . '"';
 
                     echo '</div>';
 
