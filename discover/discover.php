@@ -158,7 +158,7 @@ require("../php/vendor/ImageResize.php");
 
             echo '<li>';
             echo '<div class="banner">';                
-            echo '<img class="tiles" src="../img/roll.gif" data-src="' . $imageLocation . '"';
+            echo '<img class="tiles" src="' . $imageLocation . '"';
             echo '</div>';
             
             echo '<div class="postUsername">';
@@ -181,7 +181,7 @@ require("../php/vendor/ImageResize.php");
 
             echo '<li>';
             echo '<div class="banner">';                
-            echo '<img class="blurImage" src="../img/roll.gif" data-src="' . $imageLocation . '"';
+            echo '<img class="blurImage" src="' . $imageLocation . '"';
             echo '</div>';
             
             echo '<div class="postUsername">';
