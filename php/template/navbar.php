@@ -61,6 +61,10 @@
 		<a href="main.php" class="navLinks">Bread Bin</a>
 	</div>
 	
+    <div id="loader">
+        <i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
+    </div>
+
 	<div class="right">
 		<ul class="nav">
             <?php
@@ -85,10 +89,6 @@
                 echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                 echo '<div class="arrow-up"></div>';
             ?>
-        
-            <div id="loader">
-                <i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
-            </div>
         
                 <ul >
                     <li><a class="navLinks" href="settings.php">Settings</a></li>
