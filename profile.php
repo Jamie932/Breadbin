@@ -305,15 +305,15 @@ if (empty($_GET)) {
                     $profImage->quality_jpg = 90;
                     $profImage->resizeToBestFit(300, 400);
                     $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 90);
+             
+                    echo '<li>';
+                    echo '<div class="banner">';                
                     
                    /*list($width, $height) = getimagesize($row['image']);
 
                     $aspectRatio = $width / $height;
                     $testHeight  = $height / 2;
                     $testWidth   = $width / 2;
-
-                    echo '<li>';
-                    echo '<div class="banner">';
 
                     if ($aspectRatio >= 0) {
                         if ($height >= 0 && $height < 99) {
