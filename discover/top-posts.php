@@ -111,7 +111,7 @@ require('../php/template/discoverNavbar.php');
             
             ?>
                     <script>
-                        console.log(<? echo json_encode($total); ?>);
+                        console.log(<? echo json_encode($totalToasts); ?>);
                     </script>
             <?php
             
