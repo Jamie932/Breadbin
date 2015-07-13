@@ -29,11 +29,14 @@
             $uploadImage->resizeToWidth(640);
             $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG);
             
-        } else {
+        } else if ((width >= 300) && (height >= 200)) {
             $uploadImage  = new ImageResize($_FILES['file']['tmp_name']);
             $uploadImage->quality_jpg = 90;
             $uploadImage->crop($width, $height);
             $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG); 
+        } else {
+            $data['success'] = false;
+            $data['error'] = 'Uploaded images need to be at least 300px by 200px.';
         }
         
         $profileImage  = new ImageResize($_FILES['file']['tmp_name']);
