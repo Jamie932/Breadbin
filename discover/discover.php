@@ -125,9 +125,9 @@ require("../php/vendor/ImageResize.php");
         
         if ($row['type'] == "image") {
             $profImage  = new ImageResize($direcFix);
-            $profImage->quality_jpg = 90;
+            $profImage->quality_jpg = 100;
             $profImage->resizeToBestFit(300, 400);
-            $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 90);
+            $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 100);
              
                     echo '<li>';
                     echo '<div class="banner">';                
