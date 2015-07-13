@@ -44,9 +44,10 @@ if ($title == false || strlen($status) != 3) {
 
 <div id="content">
 <?php
-echo '<p><h1>' . $title . '</h1></p>' . 
-     '<p>' . $message . '</p>'; 
+echo '<p>' . $message . '</p>' . 
+     '<p><h1>' . $title . '</h1></p>'; 
+     
 ?> 
-    <button>Go Home</button>
+    <a class="home" href="main.php">Go Home</a>
 </div>
 </body>

@@ -1,4 +1,15 @@
 #content {
     text-align: center;
-    margin-top: 25%;
+    margin-top: 15%;
+}
+
+p {
+       
+}
+
+a.home {
+    border: 1px black solid;
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
 }
