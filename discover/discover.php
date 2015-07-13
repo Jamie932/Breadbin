@@ -49,7 +49,10 @@ require("../php/checkLogin.php");
     <?php
     require('../php/template/discoverNavbar.php'); 
     ?>
-      
+       
+    <div id="loader">
+        <i class="fa fa-circle-o-notch fa-spin" style="font-size: 5em;"></i>
+    </div>
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
@@ -73,8 +76,6 @@ require("../php/checkLogin.php");
 		</ul>
     </div>
         
-    <div id="cheeky">
-
     <div id="content">
         <div id="main">
             <?php
@@ -237,7 +238,6 @@ require("../php/checkLogin.php");
                </ul>
             </div>
         </div>
-    </div>
     
         <script src="../js/vendor/jquery.wookmark.js"></script>
         <script type="text/javascript">

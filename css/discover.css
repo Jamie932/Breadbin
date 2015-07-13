@@ -195,3 +195,13 @@ p.textPost {
     -moz-border-radius: 3px 3px;
 	border-radius: 3px 3px;
 }
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-top: -250px; /* Half the height */
+    margin-left: -250px; /* Half the width */
+}

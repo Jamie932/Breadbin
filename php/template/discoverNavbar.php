@@ -43,10 +43,6 @@
 	<div class="left">
 		<a href="/main.php" class="navLinks">Bread Bin</a>
 	</div>
-
-    <div id="loader">
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-    </div>
 	
 	<div class="right">
 		<ul class="nav">
