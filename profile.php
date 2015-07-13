@@ -231,8 +231,12 @@ if (empty($_GET)) {
             <div class="userInfo">            
                 <?php
                 if (isset($usersname)) {
-                    echo '<div class="nameRow">' . $usersname;
-                    if ($_GET['id'] == $_SESSION['user']['id']) { echo '<div id="avatarOverlay"><i class="fa fa-pencil"></i></div>'; }
+                    if ($_GET['id'] == $_SESSION['user']['id']) { 
+                        echo '<div class="nameRow" style="padding-left:30px">' . $usersname;
+                        echo '<div id="avatarOverlay"><i class="fa fa-pencil"></i></div>'; 
+                    } else {
+                        echo '<div class="nameRow">' . $usersname;
+                    }
                     echo '</div>';
                     
                     echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
