@@ -2,7 +2,7 @@
     require("common.php"); 
 	require("vendor/timeago.php");
 
-	$query= "SELECT * FROM posts WHERE id IN (SELECT pid FROM posts_toasts WHERE uid = :userId) ORDER BY date DESC"; 
+	$query= "SELECT * FROM posts WHERE id IN (SELECT pid FROM post_toasts WHERE uid = :userId) ORDER BY date DESC"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
