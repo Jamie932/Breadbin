@@ -12,7 +12,7 @@
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>You haven\'t toasted anything.</center></div>';
         echo '</div>';
-    }
+    } else {
         
         foreach ($posts as $row) {
             $query = "SELECT * FROM users WHERE id = :id"; 
