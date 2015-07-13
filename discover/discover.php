@@ -157,7 +157,7 @@ require("../php/vendor/ImageResize.php");
                         echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
                     }*/
                     
-                    echo '<img class="tiles" src="' . $result . '"';
+                    echo '<img class="tiles" src="' . $imageLocation . '"';
 
                 echo '</div>';
             
