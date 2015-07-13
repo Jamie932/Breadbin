@@ -1,16 +1,4 @@
-<script>
-    $(document).ready(function(){
-        function createPopup(title, content) {
-            if (title != undefined && content != undefined) {
-                $('.popupTitle').text(title);
-                $('.popupContent').text(content);
-                $('#popup').fadeIn();
-            } else {
-                alert("Error making a popup");   
-            }
-        }
-    })
-</script>
+<script src="../../js/popupHandler.js"></script>
 
 <div id="popup">
     <div class="popupTitle"></div>
