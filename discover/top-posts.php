@@ -28,6 +28,13 @@ require("../php/checkLogin.php");
             });
         });
     })
+    
+    $(document).ready(function() {
+        $(window).load(function() {
+             $('#loader').hide();
+             $('#cheeky').show();
+        });
+    });
     </script>
     
 </head>
