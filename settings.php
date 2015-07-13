@@ -177,21 +177,30 @@
     <?php require('php/template/navbar.php'); ?>
         
     <div id="profileContainer">
-        <div id="leftProfile">
+       <div id="leftProfile">
             <?php
-                if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
+                if (!file_exists('img/avatars/' . $_GET['id'] . '/avatar.jpg')) {
                     echo '<div id="userAvatar"></div>';
                 } else {
-                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
+                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_GET['id'] . '/avatar.jpg) no-repeat;"></div>';
                 }
-
-                echo '<div id="avatarOverlay"><img src="img/Inclined_Pencil_32.png" width="20" height="20"></div>';
+                
+                if (isset($rank) && !empty($rank) && $rank != "user") { //Add a star
+                    echo '<div id="starOverlay"><i class="fa fa-star"></i></div>';
+                }
             ?>
             
             <div class="userInfo">            
                 <?php
                 if (isset($usersname)) {
-                    echo '<div class="nameRow">' . $usersname . '</div>';
+                    if ($_GET['id'] == $_SESSION['user']['id']) { 
+                        echo '<div class="nameRow" style="padding-left:30px">' . $usersname;
+                        echo '<div id="avatarOverlay"><i class="fa fa-pencil"></i></div>'; 
+                    } else {
+                        echo '<div class="nameRow">' . $usersname;
+                    }
+                    echo '</div>';
+                    
                     echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
                     echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
                     echo '<div class="followerRow">';
@@ -209,12 +218,6 @@
                 }
                 ?>
             </div>
-
-            <div id="profileButtons">
-                <div class="bottomRow">
-                    <button class="saveBut buttonstyle" style="display: none;">Save</button>
-                </div>
-            </div>
         </div>
         
         <div id="rightSettings">
@@ -223,7 +226,7 @@
                     <ul class="settingsList">
                         <?php
                             if (isset($colour)) {
-                                echo '<li class="leftHeader" style="background-color: '. $colour . '>User Settings</li>';
+                                echo '<li class="leftHeader" style="background-color: '. $colour . '">User Settings</li>';
                             } else {
                                 echo '<li class="leftHeader">User Settings</li>';
                             }
