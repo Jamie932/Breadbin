@@ -68,7 +68,7 @@ require('../php/template/discoverNavbar.php');
                 <a href="just-pictures.php">Just Pictures</a>
             </li>
             <li class="cats">
-                <a href="just-recipes.php">Just Recipes</a>
+                <a href="just-text.php">Just Text</a>
             </li>
             
 		</ul>

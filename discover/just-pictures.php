@@ -76,7 +76,7 @@ require("../php/vendor/ImageResize.php");
                 <a class="active">Just Pictures</a>
             </li>
             <li class="cats">
-                <a href="just-recipes.php">Just Recipes</a>
+                <a href="just-text.php">Just Text</a>
             </li>
             
 		</ul>

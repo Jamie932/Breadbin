@@ -64,7 +64,7 @@ require("../php/vendor/ImageResize.php");
         <ul class="cats">
 
 			<li class="cats">
-                <a class="active">All</a>
+                <a href="discover.php">All</a>
             </li>
             <li class="cats">
                 <a href="staff-recom.php">Staff Recommendations</a>
@@ -76,7 +76,7 @@ require("../php/vendor/ImageResize.php");
                 <a href="just-pictures.php">Just Pictures</a>
             </li>
             <li class="cats">
-                <a href="just-text.php">Just Text</a>
+                <a class="active">Just Text</a>
             </li>
             
 		</ul>
@@ -85,7 +85,7 @@ require("../php/vendor/ImageResize.php");
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+            $query        = "SELECT * FROM posts WHERE type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
             /*userid <> :id AND */
             $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
