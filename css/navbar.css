@@ -5,10 +5,6 @@ ul.nav {
     overflow: hidden;
     display: inline;
 }
-
-ul.rightList {
-    float: right;   
-}
  
 #navbar ul ul {
     position: absolute;
