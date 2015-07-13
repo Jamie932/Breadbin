@@ -98,10 +98,8 @@
                         burnButton.css('color', 'darkgray'); 
                         burnButton.toggleClass('burn unburn');
                     }
-                })
+                });
             })
-            
-        })
     </script>
     
 </head>
