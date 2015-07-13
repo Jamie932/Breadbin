@@ -51,7 +51,6 @@
             $data['success'] = true;
 
         } else {
-            die("Error: Couldn't upload the file.");
             $data['success'] = false;
             $data['error'] = 'A problem was encountered uploading the image.';
         }
