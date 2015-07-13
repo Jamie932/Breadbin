@@ -180,10 +180,10 @@
     <div id="profileContainer">
        <div id="leftProfile">
             <?php
-                if (!file_exists('img/avatars/' . $_GET['id'] . '/avatar.jpg')) {
+                if (!file_exists('img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg')) {
                     echo '<div id="userAvatar"></div>';
                 } else {
-                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_GET['id'] . '/avatar.jpg) no-repeat;"></div>';
+                    echo '<div id="userAvatar" style="background: url(img/avatars/' . $_SESSION['user']['id'] . '/avatar.jpg) no-repeat;"></div>';
                 }
                 
                 if (isset($rank) && !empty($rank) && $rank != "user") { //Add a star
@@ -194,15 +194,11 @@
             <div class="userInfo">            
                 <?php
                 if (isset($usersname)) {
-                    if ($_GET['id'] == $_SESSION['user']['id']) { 
                         echo '<div class="nameRow" style="padding-left:30px">' . $usersname;
                         echo '<div id="avatarOverlay"><i class="fa fa-pencil"></i></div>'; 
-                    } else {
-                        echo '<div class="nameRow">' . $usersname;
-                    }
                     echo '</div>';
                     
-                    echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
+                    echo '<div sclass="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
                     echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
                     echo '<div class="followerRow">';
                     echo '<div class="followerLeft">';
