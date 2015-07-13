@@ -175,6 +175,7 @@
     </noscript>    
         
     <?php require('php/template/navbar.php'); ?>
+        
     <div id="profileContainer">
         <div id="leftProfile">
             <?php
@@ -220,7 +221,13 @@
             <div id="settingsContainer">
                 <div class="leftSettings noselect">
                     <ul class="settingsList">
-                        <li class="leftHeader">User Settings</li>
+                        <?php
+                            if (isset($colour)) {
+                                echo '<li class="leftHeader" style="background-color: '. $colour . '>User Settings</li>';
+                            } else {
+                                echo '<li class="leftHeader">User Settings</li>';
+                            }
+                            ?>
                         <li class="settingsList accountdetails active">Account Details</li>                    
                         <li class="settingsList privacy">Privacy</li>
                         <li class="settingsList passwordreset">Password Reset</li>
