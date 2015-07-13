@@ -74,14 +74,17 @@
 
                     $stmt = $db->prepare($query); 
                     $result = $stmt->execute($query_params); 
-                } else {
-                    list($width, $height) = getimagesize($row['image']);
+                    
+                    echo '<script>window.location.reload()</script>';
+                    
+                }
+                
+                list($width, $height) = getimagesize($row['image']);
 
-                    if ($width > 600) {
-                        $class = 'imgNoPadding';
-                    } else {
-                        $class = 'imgPadding';
-                    }
+                if ($width > 600) {
+                    $class = 'imgNoPadding';
+                } else {
+                    $class = 'imgPadding';
                 }
             }
 
