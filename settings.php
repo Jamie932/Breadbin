@@ -265,7 +265,7 @@
                                         </select>
                                     </div>
 
-                                    <input type="submit" value="Save" class="saveAccount">
+                                    <input type="submit" value="Save" class="saveSettings">
                                 </form>
                             </div>
                         </div>
@@ -301,8 +301,6 @@
                                             <option value="4" style="background:#FF66CC">Pink</option>
                                         </select>
                                     </div>
-
-                                    <input type="submit" value="Save" class="saveSettings">
                                 </form>
                             </div>
                         </div>
@@ -328,8 +326,6 @@
                                         <label>Verify Password: </label>
                                         <input type="password" name="newPassword2" class="settings" id="newPassword2">
                                     </div>
-
-                                    <input type="submit" value="Save" class="saveSettings">
                                 </form>
                             </div>
                         </div>
