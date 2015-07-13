@@ -106,28 +106,9 @@ require("../php/vendor/ImageResize.php");
         echo '<ul id="tiles">';
         $direcFix = '../'.$row['image'];    
         
-        $exte = getimagesize($direcFix);
-        $mime   = $info['mime'];
-
-        if ($mime = '.gif') {
-            ?>
-            <script>
-                $(function(){
-                var image = new Image();
-                image.src ='http://rack.3.mshcdn.com/media/ZgkyMDEyLzEwLzE5LzExXzMzXzMzXzE3Nl9maWxlCnAJdGh1bWIJMTIwMHg5NjAwPg/462b8072';
-                $('.tiles').click(function(){
-                   $(this).attr('src',image.src);
-                });
-                });
-            </script>    
-            <?php
-        }
-        
         if ($row['type'] == "image") {
-            $profImage  = new ImageResize($direcFix);
-            $profImage->quality_jpg = 100;
-            $profImage->resizeToBestFit(300, 400);
-            $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 100);
+            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $direcFix);
+            $imageLocation = $withoutExt . '-profile.jpg';
              
                     echo '<li>';
                     echo '<div class="banner">';                
