@@ -20,7 +20,7 @@ ul.nav {
     z-index:20;
 }
 
-#navbar ul ul li:first-child {
+#navbar ul ul li {
     height: 30px;
 }
 
