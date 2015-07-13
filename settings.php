@@ -15,6 +15,7 @@
         $email     = $row['email'];
         $firstname     = $row['firstname'];
         $lastname     = $row['lastname'];
+        $rank = $row['rank'];
         
         if ($row['bio']) {
             $bio = $row['bio'];
