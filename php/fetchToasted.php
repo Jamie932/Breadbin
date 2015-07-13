@@ -8,6 +8,12 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 	
+    ?>
+            <script>
+                console.log(<? echo json_encode($posts); ?>);
+            </script>
+    <?php
+
     if (!$posts) {
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>You haven\'t toasted anything.</center></div>';
@@ -15,11 +21,7 @@
     } else {
         
         foreach ($posts as $row) {
-            ?>
-            <script>
-                console.log(<? echo json_encode($posts); ?>);
-            </script>
-            <?php
+        
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
             $stmt = $db->prepare($query); 
