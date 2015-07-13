@@ -165,6 +165,8 @@
         });        
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
+    <script src="js/formChangeAvatar.js" async></script>
+    <script src="js/formSettings.js" async></script>    
 </head>
     
 <body>
@@ -239,7 +241,7 @@
                             <div class="container">
                                 <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
 
-                                <form action="php/SettingsUpdate.php" method="post">
+                                <form action="php/SettingsUpdate.php" method="post" id="detailsForm" >
                                     <div class="rowContainer">
                                         <label>First Name: </label>
                                         <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
@@ -354,9 +356,6 @@
         <form id="avatarForm" method="POST" enctype="multipart/form-data">
             <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" value="upfile" accept="image/*" onchange="submitAvatar()"/></div>
         </form>
-    </div>
-        
-    <script src="js/formChangeAvatar.js" async></script>
-    <script src="js/formSettings.js" async></script>        
+    </div>    
 </body>
 </html>
