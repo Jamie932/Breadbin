@@ -2,6 +2,7 @@
 <?php
 require("../php/common.php");
 require("../php/checkLogin.php");
+require("../php/vendor/ImageResize.php");
 ?>
 <html>
 <head>
