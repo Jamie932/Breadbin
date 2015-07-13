@@ -1,5 +1,5 @@
 $(document).ready(function() {    
-    $('.accountSettings').submit(function(event) {
+    $('.saveAccountDetails').submit(function(event) {
         var formData = {
             'firstname' : $('#setFirstname').val(),
             'lastname' : $('#setLastname').val(),

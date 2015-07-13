@@ -198,7 +198,7 @@
                         echo '<div id="avatarOverlay"><i class="fa fa-pencil"></i></div>'; 
                     echo '</div>';
                     
-                    echo '<div sclass="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
+                    echo '<div class="locationRow">' . (isset($country) ? $country : "Earth") . '</div>';
                     echo '<div class="bioRow">' . (isset($bio) ? $bio : "") . '</div>';
                     echo '<div class="followerRow">';
                     echo '<div class="followerLeft">';
@@ -267,7 +267,7 @@
                                         </select>
                                     </div>
 
-                                    <input type="submit" value="Save" class="saveSettings">
+                                    <input type="submit" value="Save" class="saveAccountDetails">
                                 </form>
                             </div>
                         </div>
