@@ -124,17 +124,61 @@ require("../php/vendor/ImageResize.php");
         }
         
         if ($row['type'] == "image") {
-            $discImage  = new ImageResize($row['image']);
-            $discImage->quality_jpg = 90;
-            $discImage->resizeToBestFit(300, 400);
-            $result = $discImage->getImageAsString(IMAGETYPE_JPEG, 90);
-            
-            echo '<li>';
-            echo '<div class="banner">';
-            
-            echo '<img class="tiles" src="' . $result . '"';
-            
-            echo '</div>';
+            $profImage  = new ImageResize($row['image']);
+            $profImage->quality_jpg = 90;
+            $profImage->resizeToBestFit(300, 400);
+            $result = $profImage->getImageAsString(IMAGETYPE_JPEG, 90);
+             
+                    echo '<li>';
+                    echo '<div class="banner">';                
+                    
+                   /*list($width, $height) = getimagesize($row['image']);
+
+                    $aspectRatio = $width / $height;
+                    $testHeight  = $height / 2;
+                    $testWidth   = $width / 2;
+
+                    if ($aspectRatio >= 0) {
+                        if ($height >= 0 && $height < 99) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
+                        } else if ($height >= 100 && $height < 200) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 200 && $height < 300) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 300 && $height < 350) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 350 && $height < 400) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '"';
+                        } else if ($height >= 400 && $height < 500) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 500 && $height < 600) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else if ($height >= 600 && $height < 700) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else if ($height >= 700 && $height < 800) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else if ($height >= 800 && $height < 1000) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $testHeight . '">';
+                        } else if ($height >= 1000) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        } else {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        }
+                    } else if ($aspectRatio == 1) {
+                        if ($height >= 0 && $height < 100) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="100px">';
+                        } else if ($height >= 100 && $height < 400) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="' . $height . '">';
+                        } else if ($height >= 400) {
+                            echo '<img class="tiles" src="' . $row['image'] . '" height="400px">';
+                        }
+                    } else {
+                        echo '<img class="tiles" src="' . $row['image'] . '" height="220px" width="300px">';
+                    }*/
+                    
+                    echo '<img class="tiles" src="' . $result . '"';
+
+                echo '</div>';
             
             echo '<div class="postUsername">';
                 echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
