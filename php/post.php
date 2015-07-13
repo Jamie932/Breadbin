@@ -25,13 +25,13 @@
         
         if ($width > 640) {
             $uploadImage  = new ImageResize($_FILES['file']['tmp_name']);
-            $uploadImage->quality_jpg = 80;
+            $uploadImage->quality_jpg = 90;
             $uploadImage->resizeToWidth(640);
             $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG);
             
         } else {
             $uploadImage  = new ImageResize($_FILES['file']['tmp_name']);
-            $uploadImage->quality_jpg = 80;
+            $uploadImage->quality_jpg = 90;
             $uploadImage->crop($width, $height);
             $uploadImage->save("../" . $updirectory.$newfile, IMAGETYPE_JPEG); 
         }
