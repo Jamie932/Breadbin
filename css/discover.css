@@ -65,7 +65,11 @@ a{
 
 /* Posts */
 #content {
-    width: 100%;
+    
+    width: 0;
+    height: 0;
+    opacity: 0;
+    
     margin-top: 0px;
 	margin-bottom: 20px !important;
     height: auto;
