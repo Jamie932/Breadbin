@@ -87,7 +87,7 @@ require("../php/vendor/ImageResize.php");
        
     <div id="music">
         <audio autoplay>
-          <source src="https://upload.wikimedia.org/wikipedia/en/8/82/Baby_%28Justin_Bieber_song_sample%29.ogg" type="audio/mpeg">
+          <source src="https://a.tumblr.com/tumblr_n2nuotn5DN1tqgjq4o1.mp3#_=_" type="audio/mpeg">
           <p>If you can read this, your browser does not support the audio element.</p>
         </audio>
     </div>
