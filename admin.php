@@ -6,6 +6,7 @@
     $interval = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
 
     $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
+    echo($query);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numPosts = $stmt->fetchColumn();
