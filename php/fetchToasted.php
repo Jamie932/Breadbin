@@ -37,7 +37,7 @@
                                 $result = $stmt->execute($query_params); 
                                 $userrow = $stmt->fetch();
                             
-                                echo '<li class="eachImg"><img src="' . $row['image'] . '" height="130px" width="130px"><a>'. $userrow['username']; .'</a></li>';
+                                echo '<li class="eachImg"><img src="' . $row['image'] . '" height="130px" width="130px"><a>'. $userrow['username'] .'</a></li>';
                         }
                     echo '</ul>';
                 echo '</div>';
