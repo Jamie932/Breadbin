@@ -1,19 +1,19 @@
 <?php 
-    require("/php/common.php");
-    require("/php/checkLogin.php");
+    require("php/common.php");
+    require("php/checkLogin.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Breadbin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/css/common.css" rel="stylesheet" type="text/css">
-    <link href="/css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="/css/error.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="css/error.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="/js/vendor/jquery.cookie.js"></script>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/jquery.cookie.js"></script>
 </head>
 <body>
     <noscript>
