@@ -35,8 +35,8 @@ $codes = array(
         );
 
 if (isset($_GET['error'])) {
-    $title = $codes[$GET['error']][0];
-    $message = $codes[$GET['error']][1];
+    $title = $codes[$_GET['error']][0];
+    $message = $codes[$_GET['error']][1];
     
 } else {
     $title = $codes[$status][0];
