@@ -18,6 +18,10 @@
 </script>
 
 <?php
+        function isActive($pageName) {
+            return basename($_SERVER['PHP_SELF']) == $pageName ? true : false;
+        }
+
         $query = "SELECT * FROM user_settings WHERE user_id = :id"; 
         $query_params = array(':id' => $_SESSION['user']['id']); 
         
