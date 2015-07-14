@@ -71,8 +71,7 @@
 
 	<div class="right">
 		<ul class="nav">
-            <?php echo $_SESSION['user']['rank'];
-            
+            <?php 
                 if (!empty($_SESSION['user']['rank']) && ($_SESSION['user']['rank'] != "user")) { 
                     if (isActive("admin.php")) {
                         echo '<li class="nav" style="background-color: ' . $activecolour . '">';
