@@ -25,7 +25,7 @@
 <?php
 $status = $_SERVER['REDIRECT_STATUS'];
 $codes = array(
-        403 => array('403 Forbidden', 'The server has refused to fulfill your request.'),
+        403 => array('403 Forbidden', 'You do not have the correct permissions to view this page.'),
         404 => array('PAGE NOT FOUND', 'YOU LOOK LOST'),
         405 => array('405 Method Not Allowed', 'The method specified in the Request-Line is not allowed for the specified resource.'),
         408 => array('408 Request Timeout', 'Your browser failed to sent a request in the time allowed by the server.'),
