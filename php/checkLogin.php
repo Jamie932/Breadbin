@@ -1,11 +1,9 @@
-<?php 
-    if (!function_exists('hasHash')) {
-        function hasHash() {
-            if(isset($_COOKIE['hashkey'])) {
-                return true;
-            }
-            return false;
+<?php
+    function hasHash() {
+        if(isset($_COOKIE['hashkey'])) {
+            return true;
         }
+        return false;
     }
 
     if (hasHash()) {
