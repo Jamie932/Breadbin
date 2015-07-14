@@ -3,22 +3,28 @@
     require("php/checkLogin.php");
     require("php/checkRank.php");
 
-    $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $interval = '1 DAY';
+
+    if (isset($_GET('t'))) {
+        $interval = $_GET('t') . ' HOUR';
+    }
+
+    $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numPosts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numToasts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numBurns = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numUsers = $stmt->fetchColumn();
@@ -74,7 +80,7 @@
                 </div>  
             </div>
 
-            <div id="bottomTopBar"><div class="content">24hr | 48hr | 1wk</div></div>
+            <div id="bottomTopBar"><div class="content"><a href="admin.php">24hr</a> | <a href="admin.php?t=48">48hr</a> | <a href="admin.php?t=168">1wk</a></div></div>
         </div>
 
         <div id="midContainer">
