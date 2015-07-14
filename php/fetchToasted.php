@@ -34,6 +34,12 @@
                     }
                 echo '</div>';
                 echo '</div>';
+                
+                ?>
+                    <script>
+                        console.log(<? echo json_encode($randUser); ?>);
+                    </script>
+                <?php
             
             } else {
                 
