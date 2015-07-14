@@ -69,10 +69,9 @@ hr { margin-bottom: 30px }
     margin: auto;
     margin-top: 6%;
     margin-bottom: 3%;
-    -moz-border-radius: 5px 5px;
-    border-radius: 5px 5px;
-    -moz-box-shadow: 0 0 3px #616161;
-    -webkit-box-shadow: 0 0 3px #616161;
+    border: 1px solid rgba(100, 100, 100, 0.5);
+    -moz-box-shadow: 0 0 2px #616161;
+    -webkit-box-shadow: 0 0 2px #616161;
     box-shadow: 0 0 3px #616161;
     z-index: 1;
     -webkit-transition: all .5s ease;
