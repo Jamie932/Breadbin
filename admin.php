@@ -7,26 +7,26 @@
 
     if (isset($_GET['t']) && $_GET['t'] != 'all' || !isset($_GET['t'])) {
         $pre = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
-        $interval = 'WHERE date > DATE_SUB(now(), INTERVAL ' . $pre;
+        $interval = ' WHERE date > DATE_SUB(now(), INTERVAL ' . $pre;
     }
    
 
-    $query = "SELECT COUNT(*) FROM posts " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM posts" . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numPosts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_toasts " . $interval . ")";
+    $query = "SELECT COUNT(*) FROM post_toasts" . $interval . ")";
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numToasts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_burns " . $interval . ")";
+    $query = "SELECT COUNT(*) FROM post_burns" . $interval . ")";
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numBurns = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM users " . $interval . ")";
+    $query = "SELECT COUNT(*) FROM users" . $interval . ")";
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numUsers = $stmt->fetchColumn();
