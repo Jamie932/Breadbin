@@ -16,8 +16,8 @@ ul.nav {
     width: 90px;
     padding-left: 20px;
     font-size: 0.9em;
-    right:5%;
-    z-index:20;
+    right: 5%;
+    z-index: 10;
     border: 1px solid rgba(100, 100, 100, 0.2);
     border-top: none;
 }
@@ -51,7 +51,7 @@ a.navLinks:hover { color: #616161 }
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 10;
     width: 100%;
     background-color: #FFB540;
     background-image: none;
@@ -107,7 +107,7 @@ a.navLinks:hover { color: #616161 }
 #errorBar {
     height: 0px;
     width: 100%;
-    z-index: 100;
+    z-index: 9;
     top: 42px;
     position: fixed;
     background-color: rgb(200, 76, 76);
