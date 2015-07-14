@@ -66,8 +66,8 @@
 	</div>
 	
     <div id="loader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+		<form>
+		      <input type="text" class="searchBar" placeholder="&#xF002">
 		</form>
 	
         <i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
