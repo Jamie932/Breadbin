@@ -17,7 +17,7 @@
         $count = 0;
         
         foreach ($posts as $row) {
-            if ($count == 3) {
+            if ($count == 5) {
                 
                $query = "SELECT * FROM posts WHERE type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND() LIMIT 4";
                 /* AND userid <> :id */
@@ -28,6 +28,7 @@
                 
                 echo '<div id="contentPost">';
                 echo '<div class="contentPostDisc">';
+                echo '<h5>Fancy some more</h5>';
                     echo '<ul class="images">';
                         foreach ($randUser as $row) {
                                 echo '<li class="eachImg"><img src="' . $row['image'] . '" height="130px" width="130px"></li>';
@@ -37,12 +38,6 @@
                 echo '</div>';
                 
                 $count = 0;
-                
-                ?>
-                    <script>
-                        console.log(<? echo json_encode($randUser); ?>);
-                    </script>
-                <?php
             
             } else {
                 
