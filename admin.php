@@ -5,13 +5,13 @@
     
     $interval = '';
 
-    if (isset($_GET['t']) && $_GET['t'] != 'all' || !isset($_GET['t'])) {
+    if ((isset($_GET['t']) && $_GET['t'] != 'all') || (!isset($_GET['t']))) {
         $pre = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
         $interval = ' WHERE date > DATE_SUB(now(), INTERVAL ' . $pre;
     }
-   
 
     $query = "SELECT COUNT(*) FROM posts" . $interval . ")"; 
+echo($query);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numPosts = $stmt->fetchColumn();
