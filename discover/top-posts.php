@@ -96,7 +96,7 @@ require('../php/template/discoverNavbar.php');
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
 
-            $totalToasts = $posts['burns']; - $posts['toasts'];
+            $totalToasts = $posts['burns'] - $posts['toasts'];
 
         if (!$posts && $totalToasts == 0) {
             echo '<center>Nothing to discover.</center>';
