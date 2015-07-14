@@ -137,6 +137,7 @@ p.report {
     padding-bottom: 10px;
     min-height: 80px;
     word-wrap: break-word;
+    text-align: center;
 }
 
 .delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
@@ -211,7 +212,6 @@ ul.images {
     padding: 0;
     overflow: hidden;
     display: inline;
-    text-align: center;
 }
 
 li.eachImg, li.eachImgFirst, li.eachImgLast {
