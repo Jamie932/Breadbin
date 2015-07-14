@@ -150,6 +150,7 @@ a.navLinks:hover { color: #616161 }
     -moz-transition: all .5s ease;
     transition: all .5s ease;
     display: inline;
+    float:left;
 }
 
 .searchBar:focus { width: 150px }
