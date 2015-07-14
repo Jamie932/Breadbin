@@ -180,6 +180,14 @@ p.report {
     color: gray;
 }
 
+.miniDiscover {
+       
+}
+
+.discoverImage {
+    height: 100px;
+    width: 100px;
+}
 
 @media screen and (max-width: 1125px) {
     #center {
