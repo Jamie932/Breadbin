@@ -6,30 +6,22 @@
     $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
-    $row = $stmt->fetch();
-
-    $numPosts = $row[0];
+    $numPosts = $stmt->fetchColumn();
 
     $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
-    $row = $stmt->fetch();
-
-    $numToasts = $row[0];
+    $numToasts = $stmt->fetchColumn();
 
     $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
-    $row = $stmt->fetch();
-
-    $numBurns = $row[0];
+    $numBurns = $stmt->fetchColumn();
 
     $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
-    $row = $stmt->fetch();
-
-    $numUsers = $row[0];
+    $numUsers = $stmt->fetchColumn();
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +69,7 @@
                     <div class="statBottom">Reports</div>
                 </div>   
                 <div class="content">
-                    <div class="statNumber"><?php echo numUsers; ?></div>
+                    <div class="statNumber"><?php echo $numUsers; ?></div>
                     <div class="statBottom">New Users</div>
                 </div>  
             </div>
