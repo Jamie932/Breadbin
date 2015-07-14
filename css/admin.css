@@ -1,0 +1,102 @@
+#topBar {
+    margin: 60px auto 40px;
+    border: 1px solid rgba(97, 97, 97, 0.2);
+    background-color: #fff;
+    min-height: 100px;
+    width: 75%;
+}
+
+.contentContainer {
+    height: 100px;  
+    padding: 10px; 
+}
+
+.contentContainer .content {
+    float: left;
+    width: 19%;
+    display: inline-block;
+    margin-right: 1%;
+    height: 100%;
+    padding-top: 5px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+.contentContainer div:first-child {
+    margin-left: 0.5%;   
+}
+
+.contentContainer div:last-child {
+    margin-right: 0px !important;
+}
+
+.title {
+    background-color: #6699FF; 
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.statNumber {
+    font-size: 3em;
+    color: #69F;
+    width: 100%;
+}
+
+.statBottom {
+    font-size: 0.9em;   
+    width: 100%;
+    margin-top: 8px;
+    color: #3E3E3E;
+}
+
+#bottomTopBar {
+    float: right;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 0.7em;
+    color: gray;
+}
+
+#bottomTopBar .content {
+    float: right;   
+    text-align: right;
+}
+
+#midContainer {
+    margin: 20px auto 20px;
+    overflow: auto;
+    width: 75%;
+}
+
+#midLeft {
+    width: 49%;
+    display: inline-block;
+    float: left;
+    border: 1px solid rgba(97, 97, 97, 0.2);
+    background-color: #fff;
+    box-sizing: border-box;
+    min-height: 200px;
+}
+
+#midRight {
+    width: 49%;
+    display: inline-block;
+    float: right;
+    border: 1px solid rgba(97, 97, 97, 0.2);
+    background-color: #fff;
+    box-sizing: border-box;
+    min-height: 200px;
+}
+
+.ct-chart {
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.ct-series-a .ct-line, .ct-series-a .ct-point {
+    stroke: #6699FF !important;   
+}
