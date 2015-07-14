@@ -56,6 +56,10 @@ p.report {
     padding-left: 5px;
 }
 
+.fa-heart-o, .fa-trash-o {
+    cursor: pointer;   
+}
+
 /* ===[ Image Formatting ]=== */
 
 #contentPost .contentPostImage {
