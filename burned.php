@@ -119,7 +119,7 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
         
-        <iframe id="video" src="https://www.youtube.com/embed/ncNwe13rguE" frameborder="0" allowfullscreen></iframe>
+        <iframe id="video" src="https://www.youtube.com/embed/ncNwe13rguE?autoplay=1" frameborder="0" allowfullscreen></iframe>
         
 </body>
 </html>
