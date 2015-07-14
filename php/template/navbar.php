@@ -63,13 +63,12 @@
 
 	<div class="left">
 		<a href="main.php" class="navLinks">Bread Bin</a>
+        <form>
+		      <input type="text" class="searchBar" placeholder="&#xF002">
+		</form>
 	</div>
 	
     <div id="loader">
-		<form>
-		      <input type="text" class="searchBar" placeholder="&#xF002">
-		</form>
-	
         <i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
     </div>
 

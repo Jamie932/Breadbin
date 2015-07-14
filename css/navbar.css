@@ -134,6 +134,7 @@ a.navLinks:hover { color: #616161 }
     float:left;
     width: 50%;
     display: inline;
+    text-align: center;
 }
 
 .searchBar {
