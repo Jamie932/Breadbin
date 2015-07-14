@@ -54,6 +54,11 @@ p {
     width: 100%;
 }
 
+.buttonstyle {
+    height: 30px;
+    width: 75px;
+}
+
 #userAvatar {
     width: 150px;
     height: 150px;
