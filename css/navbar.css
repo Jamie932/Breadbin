@@ -67,7 +67,7 @@ a.navLinks:hover { color: #616161 }
     display: inline;
     margin-left: 5%;
     font-size: 1.4em;
-    width: 20%;
+    width: 30%;
 }
 
 #navbar .right {
@@ -132,7 +132,7 @@ a.navLinks:hover { color: #616161 }
 
 #loader {
     float:left;
-    width: 50%;
+    width: 30%;
     display: inline;
     text-align: center;
 }
