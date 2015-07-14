@@ -58,7 +58,7 @@
         </div>
 
         <div id="midContainer">
-            <div id="midLeft"><div class="title">Unique Visitors</div><div class="ct-chart ct-minor-sixth"></div></div>
+            <div id="midLeft"><div class="title">Unique Visitors</div><div class="ct-chart ct-octave"></div></div>
             <div id="midRight"><div class="title">Reports</div></div>
         </div>
     </div>
