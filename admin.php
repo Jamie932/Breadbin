@@ -5,23 +5,22 @@
 
     $interval = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
 
-    $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
-    echo($query);
+    $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numPosts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numToasts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numBurns = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numUsers = $stmt->fetchColumn();
