@@ -145,7 +145,7 @@ a.navLinks:hover { color: #616161 }
     border-top: none;
     border-left: none;
     border-right: none;
-    width: 100px;
+    width: 50px;
     height: 28px;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -153,11 +153,11 @@ a.navLinks:hover { color: #616161 }
     background: none;
     font-size: 0.8em;
     padding-left: 5px;
-    margin-left: 20px;
 }
 
 .searchBar:focus { width: 150px }
 
 .searchForm {
     display: inline;
+    margin-left: 20px;
 }
