@@ -24,6 +24,18 @@ body {
     user-select: none;
 }
 
+a:active, a:focus { outline: none; }
+
+.buttonstyle {
+    border: 1px solid rgba(97, 97, 97, 0.44);
+    background-color: #fff;
+    color: rgb(77, 77, 77);
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    height: 25px;
+    cursor: pointer;
+}
+
 #popup {
     position: fixed;
     top:30%;
