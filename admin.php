@@ -2,6 +2,34 @@
     require("php/common.php");
     require("php/checkLogin.php");
     require("php/checkRank.php");
+
+    $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $row = $stmt->fetch();
+
+    $numPosts = $row[0];
+
+    $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $row = $stmt->fetch();
+
+    $numToasts = $row[0];
+
+    $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $row = $stmt->fetch();
+
+    $numBurns = $row[0];
+
+    $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), INTERVAL 1 DAY)"; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $row = $stmt->fetch();
+
+    $numUsers = $row[0];
 ?>
 
 <!DOCTYPE html>
@@ -28,28 +56,28 @@
     
     <?php require('php/template/navbar.php');?>
     <?php require('php/template/popup.php');?>
-    
+        
     <div id="contentWrap">
         <div id="topBar">
             <div class="contentContainer">
                 <div class="content">
-                    <div class="statNumber">50</div>
+                    <div class="statNumber"><?php echo $numPosts; ?></div>
                     <div class="statBottom">Posts</div>
                 </div>   
                 <div class="content">
-                    <div class="statNumber">216</div>
+                    <div class="statNumber"><?php echo $numToasts; ?></div>
                     <div class="statBottom">Toasts</div>
                 </div>   
                 <div class="content">
-                    <div class="statNumber">10</div>
+                    <div class="statNumber"><?php echo $numBurns; ?></div>
                     <div class="statBottom">Burns</div>
                 </div>   
                 <div class="content">
-                    <div class="statNumber">1092</div>
+                    <div class="statNumber">0</div>
                     <div class="statBottom">Reports</div>
                 </div>   
                 <div class="content">
-                    <div class="statNumber">7</div>
+                    <div class="statNumber"><?php echo numUsers; ?></div>
                     <div class="statBottom">New Users</div>
                 </div>  
             </div>
