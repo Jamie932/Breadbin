@@ -134,5 +134,20 @@ a.navLinks:hover { color: #616161 }
     float:left;
     width: 50%;
     display: inline;
-    text-align: center;
 }
+
+.searchBar {
+    box-shadow: none;
+    outline: 0;
+    border: 1px solid black;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.searchBar:focus { width: 150px }
