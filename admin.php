@@ -5,8 +5,8 @@
 
     $interval = '1 DAY';
 
-    if (isset($_GET('t'))) {
-        $interval = $_GET('t') . ' HOUR';
+    if (isset($_GET['t'])) {
+        $interval = $_GET['t'] . ' HOUR';
     }
 
     $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
