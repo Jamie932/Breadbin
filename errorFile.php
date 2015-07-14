@@ -34,7 +34,7 @@ $codes = array(
         504 => array('504 Gateway Timeout', 'The upstream server failed to send a request in the time allowed by the server.')
         );
 
-if ($status = 200) {
+if ($status == 200) {
     if (isset($_GET['error'])) {
         $title = $codes[$GET['error']][0];
         $message = $codes[$GET['error']][1];
