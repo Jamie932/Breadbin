@@ -1,6 +1,6 @@
 <?php 
     require("php/common.php");
-    require("php/checkLogin.php");
+    include_once("php/checkLogin.php");
     require("php/checkRank.php");
 ?>
 
@@ -26,8 +26,8 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-    <?php require('php/template/navbar.php');?>
-    <?php require('php/template/popup.php');?>
+    <?php include_once('php/template/navbar.php');?>
+    <?php include_once('php/template/popup.php');?>
     
     <div id="contentWrap">
         <div id="topBar">
