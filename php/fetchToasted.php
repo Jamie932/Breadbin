@@ -29,7 +29,9 @@
                 echo '<div id="contentPost">';
                 echo '<div class="contentPostDisc">';
                     foreach ($randUser as $row) {
-                        echo '<img class="discImg" src="' . $row['image'] . '" height="100px" width="100px"></div>';
+                        echo '<div class="discImg">';
+                            echo '<img src="' . $row['image'] . '" height="100px" width="100px"></div>';
+                        echo '</div>';
                     }
                 echo '</div>';
                 echo '</div>';
