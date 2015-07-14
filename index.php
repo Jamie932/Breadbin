@@ -41,12 +41,19 @@
        });
     }); 
     </script>
+    <?php 
+        
+    ?>
 </head>
 <body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
-    </noscript>        
+    </noscript>  
     
+    <div id="mainLogo">
+        <img src="img/logobants.png">    
+    </div>
+        
     <div id="mid">
 		<div class="login">
 			<div id="header">

@@ -1,5 +1,5 @@
 body {
-    background-image: url(/img/testback.jpg) !important;
+    /*background-image: url(/img/testback.jpg) !important;*/
 }
 
 .error { border: 1px solid red }
@@ -15,6 +15,7 @@ small {
     text-align: left;
 }
 
+
 .dockMiddle {
     position: relative;
     bottom: -15px;
@@ -22,11 +23,12 @@ small {
     width: 100%;
 }
 
-#header { position: relative }
+#header { position: relative;
+margin-top: 10px;}
 
 .dockHeader {
     position: absolute;
-    bottom: 0px;
+    bottom: 8px;
     right: 0px;
     text-align: right;
     font-weight: normal;
@@ -55,7 +57,7 @@ small {
 
 h2 {
     font-size: 1.8em;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-top: 0px;
 }
 
@@ -67,12 +69,9 @@ hr { margin-bottom: 30px }
     width: 450px;
     height: 350px;
     margin: auto;
-    margin-top: 6%;
     margin-bottom: 3%;
+    margin-top: 30px;
     border: 1px solid rgba(100, 100, 100, 0.5);
-    -moz-box-shadow: 0 0 2px #616161;
-    -webkit-box-shadow: 0 0 2px #616161;
-    box-shadow: 0 0 3px #616161;
     z-index: 1;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -129,9 +128,9 @@ input {
     height: 30px;
     width: 250px;
     padding: 5px;
-    border: 1px solid #616161;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    border: 1px solid rgba(100, 100, 100, 0.4);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
     margin-bottom: 15px;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -140,8 +139,8 @@ input {
 
 input:focus {
     outline: none;
-    box-shadow: 0px 0px 5px #ccc;
-    border: 1px solid #ccc;
+    /*box-shadow: 0px 0px 3px #ccc;*/
+    border: 1px solid rgba(100, 100, 100, 0.7);
 }
 
 a { cursor: pointer }
@@ -195,6 +194,13 @@ input#submit:hover {
     display: inline;
     float: left;
     margin-right: 20px;
+}
+
+#mainLogo {    
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
 }
 
 .titleHeader {
