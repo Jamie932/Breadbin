@@ -124,6 +124,21 @@ p.report {
     word-wrap: break-word;
 }
 
+.contentPostDisc {
+    background-color: #fff;
+    width: 620px;
+    height: auto;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 80px;
+    word-wrap: break-word;
+}
+
 .delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
 
 .toast, .burn, .hide {

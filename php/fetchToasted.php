@@ -28,7 +28,7 @@
                 $count = 0;    
 
                 echo '<div id="contentPost">';
-                    echo '<div class="discoverImage"><img src="' . $randUser['image'] . '" height="100px" width="100px"></div>';
+                    echo '<div class="contentPostDisc"><img src="' . $randUser['image'] . '" height="100px" width="100px"></div>';
                 echo '</div>';
             
             } else {
