@@ -105,6 +105,7 @@
                 <ul >
                     <li><a class="navLinks" href="settings.php">Settings</a></li>
                     <li><a class="navLinks" href="toasted.php">Toasted</a></li>
+                    <li><a class="navLinks" href="burned.php">Burned</a></li>
                     <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
                 </ul>
 			</li>
