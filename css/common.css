@@ -55,6 +55,7 @@ body {
     display: inline-block;
     position: absolute;
     right: 10px;
+    cursor: pointer;
 }
 
 .popupContent {
