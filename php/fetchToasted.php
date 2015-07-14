@@ -17,7 +17,7 @@
         $count = 0;
         
         foreach ($posts as $row) {
-            if ($count == 3) {
+            if ($count == 7) {
                 
                $query = "SELECT * FROM posts WHERE type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND() LIMIT 4";
                 /* AND userid <> :id */
