@@ -18,10 +18,6 @@
 </script>
 
 <?php
-        function isActive($pageName) {
-            return basename($_SERVER['PHP_SELF']) == $pageName ? true : false;
-        }
-
         $query = "SELECT * FROM user_settings WHERE user_id = :id"; 
         $query_params = array(':id' => $_SESSION['user']['id']); 
         
@@ -51,47 +47,31 @@
 	<div class="right">
 		<ul class="nav">
             <?php if (!empty($_SESSION['user']['rank']) && ($_SESSION['user']['rank'] != "user")) { 
-                    if (isActive("admin.php")) {
-                        echo '<li class="nav" style="background-color: ' . $activecolour . '">';
-                    } else {
-                        echo '<li class="nav">';
-                    }
                     
-                    echo '<a class="navLinks" href="../admin.php">Admin</a></li>';
+                        echo '<li class="nav">';
+                        echo '<a class="navLinks" href="admin.php">Admin</a></li>';
+            
                 }
-
-
-                if (isActive("discover.php")) {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
-                } else {
-                    echo '<li class="nav">';
-                }
-            ?>
-                <a class="navLinks" href="discover.php">Discover</a>
-            </li>
+            
+                    echo '<li class="nav" style="background-color: ' . $activecolour . '; z-index: 9999;">';?>
+                        <a class="navLinks" href="discover.php">Discover</a>
+                    </li>
         
             <?php
-                if ((isActive("profile.php") && (isset($_GET['id']) && $_GET['id'] == $_SESSION['user']['id'])) || isActive("settings.php")) {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
-                } else {
-                    echo '<li class="nav">';
-                }
-
+                echo '<li class="nav">';
                 echo '<a class="navLinks" href="../profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                 echo '<div class="arrow-up"></div>';
             ?>
-        
-                <ul >
+                <ul>
+                    <li><a class="navLinks" href="../admin.php">Admin</a></li>
                     <li><a class="navLinks" href="../settings.php">Settings</a></li>
                     <li><a class="navLinks" href="../toasted.php">Toasted</a></li>
-                    <li><a class="navLinks" href="../burned.php">Burned</a></li>
                     <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
                 </ul>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
 	</div>
-</div> 
-
+</div>
 
 <div id="errorBar"></div>
