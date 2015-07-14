@@ -9,5 +9,6 @@
     $result = $stmt->execute($query_params); 
 
     unset($_COOKIE['hashkey']);
+    unset($_SESSION['user']);
     setcookie('hashkey', '', time() - 3600, '/', '.yourmums.science');
 ?> 
