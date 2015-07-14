@@ -28,9 +28,11 @@
                 $count = 0;    
                 
                 echo '<div id="contentPost">';
+                echo '<div class="contentPostDisc">';
                     foreach ($randUser as $row) {
-                        echo '<div class="contentPostDisc"><img src="' . $row['image'] . '" height="100px" width="100px"></div>';
+                        echo '<img src="' . $row['image'] . '" height="100px" width="100px"></div>';
                     }
+                echo '</div>';
                 echo '</div>';
             
             } else {
