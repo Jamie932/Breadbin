@@ -14,7 +14,16 @@
         echo '</div>';
     } else {
         
+        $count = 0
+        
         foreach ($posts as $row) {
+            if ($count == 3) {
+            echo '<div id="contentPost">';
+                echo '<div class="contentPostText" style="padding-top: 65px;"><center>You haven\'t toasted anything.</center></div>';
+            echo '</div>';
+            $count = 0
+            } else {
+            $count++
             
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
