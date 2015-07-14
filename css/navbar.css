@@ -18,7 +18,8 @@ ul.nav {
     font-size: 0.9em;
     right:5%;
     z-index:20;
-    border: 1px solid rgba(100, 100, 100, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-top: none;
 }
 
 #navbar ul ul li {
