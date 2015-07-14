@@ -61,6 +61,7 @@ require("../php/vendor/ImageResize.php");
 
             
             $('#loader').hide();
+            $('#music').hide();
             
             $('#content').animate({opacity: 1}, 600);
             $('#content').css("pointer-events", "auto");
@@ -84,6 +85,13 @@ require("../php/vendor/ImageResize.php");
     require('../php/template/discoverNavbar.php'); 
     ?>
        
+    <div id="music">
+        <audio autoplay>
+          <source src="https://upload.wikimedia.org/wikipedia/en/8/82/Baby_%28Justin_Bieber_song_sample%29.ogg" type="audio/mpeg">
+          <p>If you can read this, your browser does not support the audio element.</p>
+        </audio>
+    </div>
+
     <div id="loader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
         <p>Loading some beautiful content...</p> 
