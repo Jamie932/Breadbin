@@ -112,7 +112,7 @@ p.report {
 .contentPostText {
     background-color: #fff;
     width: 620px;
-    height: auto;
+    height: 150px;
     border-width: 1px;
     border-color: #DDD;
     border-style: solid;
@@ -211,11 +211,11 @@ ul.images {
     padding: 0;
     overflow: hidden;
     display: inline;
-    float:right;
 }
 
 li.eachImg {
-    display: inline;   
+    display: inline;  
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 1125px) {
