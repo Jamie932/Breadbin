@@ -6,6 +6,10 @@
     width: 75%;
 }
 
+#contentWrap {
+    width: 1100px;   
+}
+
 .contentContainer {
     height: 100px;  
     padding: 10px; 

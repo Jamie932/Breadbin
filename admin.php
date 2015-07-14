@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Breadbin</title>
+    <title>Breadbin - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
@@ -28,37 +28,39 @@
     
     <?php require('php/template/navbar.php');?>
     <?php require('php/template/popup.php');?>
-        
-    <div id="topBar">
-        <div class="contentContainer">
-            <div class="content">
-                <div class="statNumber">50</div>
-                <div class="statBottom">Posts</div>
-            </div>   
-            <div class="content">
-                <div class="statNumber">216</div>
-                <div class="statBottom">Toasts</div>
-            </div>   
-            <div class="content">
-                <div class="statNumber">10</div>
-                <div class="statBottom">Burns</div>
-            </div>   
-            <div class="content">
-                <div class="statNumber">1092</div>
-                <div class="statBottom">Reports</div>
-            </div>   
-            <div class="content">
-                <div class="statNumber">7</div>
-                <div class="statBottom">New Users</div>
-            </div>  
+    
+    <div id="contentWrap">
+        <div id="topBar">
+            <div class="contentContainer">
+                <div class="content">
+                    <div class="statNumber">50</div>
+                    <div class="statBottom">Posts</div>
+                </div>   
+                <div class="content">
+                    <div class="statNumber">216</div>
+                    <div class="statBottom">Toasts</div>
+                </div>   
+                <div class="content">
+                    <div class="statNumber">10</div>
+                    <div class="statBottom">Burns</div>
+                </div>   
+                <div class="content">
+                    <div class="statNumber">1092</div>
+                    <div class="statBottom">Reports</div>
+                </div>   
+                <div class="content">
+                    <div class="statNumber">7</div>
+                    <div class="statBottom">New Users</div>
+                </div>  
+            </div>
+
+            <div id="bottomTopBar"><div class="content">24hr | 48hr | 1wk</div></div>
         </div>
-        
-        <div id="bottomTopBar"><div class="content">24hr | 48hr | 1wk</div></div>
-    </div>
-        
-    <div id="midContainer">
-        <div id="midLeft"><div class="title">Unique Visitors</div><div class="ct-chart ct-minor-sixth"></div></div>
-        <div id="midRight"><div class="title">Reports</div></div>
+
+        <div id="midContainer">
+            <div id="midLeft"><div class="title">Unique Visitors</div><div class="ct-chart ct-minor-sixth"></div></div>
+            <div id="midRight"><div class="title">Reports</div></div>
+        </div>
     </div>
         
     <script>
