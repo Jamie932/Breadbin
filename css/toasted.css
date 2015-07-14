@@ -199,7 +199,8 @@ p.report {
        
 }
 
-.discoverImage {
+.discImg {
+    dislay: inline;
     height: 100px;
     width: 100px;
 }
