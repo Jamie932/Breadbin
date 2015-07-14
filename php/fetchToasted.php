@@ -31,7 +31,13 @@
                 echo '<h5>Fancy some more</h5>';
                     echo '<ul class="images">';
                         foreach ($randUser as $row) {
-                                echo '<li class="eachImg"><img src="' . $row['image'] . '" height="130px" width="130px"></li>';
+                                $query = "SELECT * FROM users WHERE id = :id"; 
+                                $query_params = array(':id' => $row['userid']); 
+                                $stmt = $db->prepare($query); 
+                                $result = $stmt->execute($query_params); 
+                                $userrow = $stmt->fetch();
+                            
+                                echo '<li class="eachImg"><img src="' . $row['image'] . '" height="130px" width="130px"><a>'. $userrow['username']; .'</a></li>';
                         }
                     echo '</ul>';
                 echo '</div>';
