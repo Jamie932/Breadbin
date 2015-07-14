@@ -1,5 +1,6 @@
 <?php 
     require("php/common.php");
+    require("php/checkLogin.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-   <?php include_once('php/template/navbar.php');?>
+   <?php require('php/template/navbar.php');?>
         
 <?php
 $status = $_SERVER['REDIRECT_STATUS'];
@@ -32,11 +33,18 @@ $codes = array(
         502 => array('502 Bad Gateway', 'The server received an invalid response from the upstream server while trying to fulfill the request.'),
         504 => array('504 Gateway Timeout', 'The upstream server failed to send a request in the time allowed by the server.')
         );
-        
-$title = $codes[$status][0];
-$message = $codes[$status][1];
-if ($title == false || strlen($status) != 3) {
-    $message = 'Please supply a valid status code.';
+
+if ($status = 200) {
+    if (isset($_GET['error'])) {
+        $title = $codes[$GET['error']][0];
+        $message = $codes[$GET['error']][1];
+    
+} else {
+    $title = $codes[$status][0];
+    $message = $codes[$status][1];
+    if ($title == false || strlen($status) != 3) {
+        $message = 'Please supply a valid status code.';
+    }
 }
 
 ?>
