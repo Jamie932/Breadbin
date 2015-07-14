@@ -26,9 +26,11 @@
                 $randUser = $stmt->fetchAll();
                 
                 $count = 0;    
-
+                
                 echo '<div id="contentPost">';
-                    echo '<div class="contentPostDisc"><img src="' . $randUser['image'] . '" height="100px" width="100px"></div>';
+                    foreach ($randUser as $row) {
+                        echo '<div class="contentPostDisc"><img src="' . $row['image'] . '" height="100px" width="100px"></div>';
+                    }
                 echo '</div>';
             
             } else {
