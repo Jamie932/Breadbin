@@ -30,10 +30,14 @@
       
 </script>
 
-<?php
+    <?php
+        function isActive($pageName) {
+            return basename($_SERVER['PHP_SELF']) == $pageName ? true : false;
+        }
+
         $query = "SELECT * FROM user_settings WHERE user_id = :id"; 
         $query_params = array(':id' => $_SESSION['user']['id']); 
-        
+
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         $row = $stmt->fetch();
@@ -55,7 +59,7 @@
         }
 
         echo '<div id="navbar" class="noselect" style="background-color:' .$colour .'" >'
-?>
+    ?>
 
 	<div class="left">
 		<a href="main.php" class="navLinks">Bread Bin</a>
@@ -67,10 +71,18 @@
 
 	<div class="right">
 		<ul class="nav">
-            <?php
-                $filename = basename($_SERVER['PHP_SELF']);
-            
-                if ($filename == "discover.php") {
+            <?php if (!empty($_SESSION['user']['rank']) && ($_SESSION['user']['rank'] != "user")) { 
+                    if (isActive("admin.php")) {
+                        echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                    } else {
+                        echo '<li class="nav">';
+                    }
+                    
+                    echo '<a class="navLinks" href="admin.php">Admin</a></li>';
+                }
+
+
+                if (isActive("discover.php")) {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
@@ -80,7 +92,7 @@
             </li>
         
             <?php
-                if (($filename == "profile.php" && (isset($_GET['id']) && $_GET['id'] == $_SESSION['user']['id'])) || $filename == "settings.php") {
+                if ((isActive("profile.php") && (isset($_GET['id']) && $_GET['id'] == $_SESSION['user']['id'])) || isActive("settings.php")) {
                     echo '<li class="nav" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
