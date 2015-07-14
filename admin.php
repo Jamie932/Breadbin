@@ -2,25 +2,31 @@
     require("php/common.php");
     require("php/checkLogin.php");
     require("php/checkRank.php");
+    
+    $interval = '';
 
-    $interval = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
+    if (isset($_GET['t']) && $_GET['t'] != 'all' || !isset($_GET['t'])) {
+        $pre = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
+        $interval = 'WHERE date > DATE_SUB(now(), INTERVAL ' . $pre;
+    }
+   
 
-    $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM posts " . $interval . ")"; 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numPosts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_toasts WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM post_toasts " . $interval . ")";
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numToasts = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM post_burns WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM post_burns " . $interval . ")";
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numBurns = $stmt->fetchColumn();
 
-    $query = "SELECT COUNT(*) FROM users WHERE date > DATE_SUB(now(), INTERVAL " . $interval . ")"; 
+    $query = "SELECT COUNT(*) FROM users " . $interval . ")";
     $stmt = $db->prepare($query); 
     $result = $stmt->execute(); 
     $numUsers = $stmt->fetchColumn();
@@ -76,7 +82,11 @@
                 </div>  
             </div>
 
-            <div id="bottomTopBar"><div class="content"><a href="admin.php">24hr</a> | <a href="admin.php?t=48">48hr</a> | <a href="admin.php?t=168">1wk</a></div></div>
+            <div id="bottomTopBar">
+                <div class="content">
+                    <a href="admin.php">24hr</a> | <a href="admin.php?t=48">48hr</a> | <a href="admin.php?t=168">1wk</a> | <a href="admin.php?t=all">all</a>
+                </div>
+            </div>
         </div>
 
         <div id="midContainer">
