@@ -28,12 +28,16 @@
         if($row){ 
             if ($row['colour'] == 1) {
                 $colour = '#8AE68A';
+                $activecolour = '#44CB44';
             } else if ($row['colour'] == 2) {
                 $colour = '#6699FF';
+                $activecolour = '#4979D8';
             } else if ($row['colour'] == 3) {
                 $colour = '#FFB540';
+                $activecolour = '#F5A52B';
             } else if ($row['colour'] == 4) {
                 $colour = '#FF66CC';
+                $activecolour = '#CB479F';
             }
         }
 
