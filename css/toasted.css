@@ -214,6 +214,10 @@ ul.images {
     float:right;
 }
 
+li.eachImg {
+    display: inline;   
+}
+
 @media screen and (max-width: 1125px) {
     #center {
         margin: 0 !important;

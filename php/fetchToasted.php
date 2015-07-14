@@ -30,7 +30,7 @@
                 echo '<div class="contentPostDisc">';
                     echo '<ul class="images">';
                         foreach ($randUser as $row) {
-                                echo '<li><img src="' . $row['image'] . '" height="100px" width="100px"></li>';
+                                echo '<li class="eachImg"><img src="' . $row['image'] . '" height="100px" width="100px"></li>';
                         }
                     echo '</ul>';
                 echo '</div>';
