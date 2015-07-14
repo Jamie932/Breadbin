@@ -243,7 +243,7 @@ h5 {
 
 .hide { visibility: visible }
 
-.burn, .unburn { margin-top: 10px !important }
+.unburn { margin-top: 10px !important }
 
 .toast, .untoast { margin-top: 15px !important }
 
