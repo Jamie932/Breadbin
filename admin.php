@@ -3,11 +3,7 @@
     require("php/checkLogin.php");
     require("php/checkRank.php");
 
-    $interval = '1 DAY';
-
-    if (isset($_GET['t'])) {
-        $interval = $_GET['t'] . ' HOUR';
-    }
+    $interval = isset($_GET['t']) ? $_GET['t'] . ' HOUR' : '1 DAY';
 
     $query = "SELECT COUNT(*) FROM posts WHERE date > DATE_SUB(now(), " . $interval . ")"; 
     $stmt = $db->prepare($query); 
