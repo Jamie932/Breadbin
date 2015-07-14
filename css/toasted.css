@@ -213,9 +213,14 @@ ul.images {
     display: inline;
 }
 
-li.eachImg {
+li.eachImg, li.eachImgFirst, li.eachImgLast {
     display: inline;  
+}
+
+li.eachImg {
     margin-right: 20px;
+    margin-left: 20px;
+    border-right: 1px black solid;
 }
 
 @media screen and (max-width: 1125px) {
