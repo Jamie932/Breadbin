@@ -19,13 +19,12 @@
         foreach ($posts as $row) {
             if ($count == 3) {
                 
-               $query = "SELECT * FROM posts WHERE type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) AND userid <> :id ORDER BY RAND() LIMIT 3";
+               $query = "SELECT * FROM posts WHERE type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND() LIMIT 3";
+                /* AND userid <> :id */
                 $query_params = array(':id' => $_SESSION['user']['id']); 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
                 $randUser = $stmt->fetchAll();
-                
-                $count = 0;    
                 
                 echo '<div id="contentPost">';
                 echo '<div class="contentPostDisc">';
@@ -34,6 +33,8 @@
                     }
                 echo '</div>';
                 echo '</div>';
+                
+                $count = 0;
                 
                 ?>
                     <script>
