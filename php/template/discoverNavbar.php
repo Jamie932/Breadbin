@@ -47,12 +47,10 @@
 	<div class="right">
 		<ul class="nav">
             <?php if (!empty($_SESSION['user']['rank']) && ($_SESSION['user']['rank'] != "user")) { 
-                    
                         echo '<li class="nav">';
                         echo '<a class="navLinks" href="admin.php">Admin</a></li>';
-            
                 }
-            
+
                     echo '<li class="nav" style="background-color: ' . $activecolour . '; z-index: 9999;">';?>
                         <a class="navLinks" href="discover.php">Discover</a>
                     </li>
@@ -63,7 +61,6 @@
                 echo '<div class="arrow-up"></div>';
             ?>
                 <ul>
-                    <li><a class="navLinks" href="../admin.php">Admin</a></li>
                     <li><a class="navLinks" href="../settings.php">Settings</a></li>
                     <li><a class="navLinks" href="../toasted.php">Toasted</a></li>
                     <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
