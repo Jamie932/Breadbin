@@ -28,11 +28,11 @@
                 
                 echo '<div id="contentPost">';
                 echo '<div class="contentPostDisc">';
-                    foreach ($randUser as $row) {
-                        echo '<div class="discImg">';
-                            echo '<img src="' . $row['image'] . '" height="100px" width="100px"></div>';
-                        echo '</div>';
-                    }
+                    echo '<ul class="images">';
+                        foreach ($randUser as $row) {
+                                echo '<li><img src="' . $row['image'] . '" height="100px" width="100px"></div></li>';
+                        }
+                    echo '</ul>';
                 echo '</div>';
                 echo '</div>';
                 
