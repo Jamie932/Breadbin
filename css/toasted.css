@@ -211,6 +211,7 @@ ul.images {
     padding: 0;
     overflow: hidden;
     display: inline;
+    text-align: center;
 }
 
 li.eachImg, li.eachImgFirst, li.eachImgLast {
@@ -218,9 +219,8 @@ li.eachImg, li.eachImgFirst, li.eachImgLast {
 }
 
 li.eachImg {
-    margin-right: 20px;
-    margin-left: 20px;
-    border-right: 1px black solid;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 1125px) {
