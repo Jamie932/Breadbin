@@ -23,28 +23,28 @@
    <?php require('php/template/navbar.php');?>
         
 <?php
-$status = $_SERVER['REDIRECT_STATUS'];
-$codes = array(
-        403 => array('403 Forbidden', 'You do not have the correct permissions to view this page.'),
-        404 => array('PAGE NOT FOUND', 'YOU LOOK LOST'),
-        405 => array('405 Method Not Allowed', 'The method specified in the Request-Line is not allowed for the specified resource.'),
-        408 => array('408 Request Timeout', 'Your browser failed to sent a request in the time allowed by the server.'),
-        500 => array('500 Internal Server Error', 'The request was unsuccessful due to an unexpected condition encountered by the server.'),
-        502 => array('502 Bad Gateway', 'The server received an invalid response from the upstream server while trying to fulfill the request.'),
-        504 => array('504 Gateway Timeout', 'The upstream server failed to send a request in the time allowed by the server.')
-        );
+    $status = $_SERVER['REDIRECT_STATUS'];
+    $codes = array(
+            403 => array('403 Forbidden', 'You do not have the correct permissions to view this page.'),
+            404 => array('PAGE NOT FOUND', 'YOU LOOK LOST'),
+            405 => array('405 Method Not Allowed', 'The method specified in the Request-Line is not allowed for the specified resource.'),
+            408 => array('408 Request Timeout', 'Your browser failed to sent a request in the time allowed by the server.'),
+            500 => array('500 Internal Server Error', 'The request was unsuccessful due to an unexpected condition encountered by the server.'),
+            502 => array('502 Bad Gateway', 'The server received an invalid response from the upstream server while trying to fulfill the request.'),
+            504 => array('504 Gateway Timeout', 'The upstream server failed to send a request in the time allowed by the server.')
+            );
 
-if (isset($_GET['error'])) {
-    $title = $codes[$_GET['error']][0];
-    $message = $codes[$_GET['error']][1];
-    
-} else {
-    $title = $codes[$status][0];
-    $message = $codes[$status][1];
+    if (isset($_GET['error'])) {
+        $title = $codes[$_GET['error']][0];
+        $message = $codes[$_GET['error']][1];
+    } else {
+        $title = $codes[$status][0];
+        $message = $codes[$status][1];
+    }
+
     if ($title == false || strlen($status) != 3) {
         $message = 'Please supply a valid status code.';
     }
-}
 
 ?>
 
