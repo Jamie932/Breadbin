@@ -211,6 +211,7 @@ ul.images {
     padding: 0;
     overflow: hidden;
     display: inline;
+    float:right;
 }
 
 @media screen and (max-width: 1125px) {
