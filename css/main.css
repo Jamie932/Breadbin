@@ -16,8 +16,6 @@ p.report {
     font-color: #000;
     height: auto;
     display: inline;
-    width: 90%;
-    margin-left: 5%;
 }
 
 #contentPost, #contentPostFollow {
