@@ -59,7 +59,7 @@
         var uploadingFile = false;
         
         $(document).ready(function(){
-            $('.colourBox').on("mouseover", function() {
+            $('.colourBox').click(function() {
                 $('#navbar').css("background-color", $(this).css("background-color"));
                 $('.leftHeader').css("background-color", $(this).css("background-color"));
                 
@@ -70,6 +70,8 @@
                 if (active) {
                     $('.activePage').css("background-color", active);
                 } 
+                
+                $(this).addClass('depressedColour');
             });
             
             $(".passwordReset").click(function(){
