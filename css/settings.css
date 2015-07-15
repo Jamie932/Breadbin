@@ -190,6 +190,10 @@ p.settingsExplain {
 .purple { background-color: #8C68D8 }
 .pink { background-color: #CC7AB0 }
 
+.depressedColour {
+    
+}
+
 /* ===[ Box Styles & Label Sizes ]=== */
 
 #accountdetailsBox {
