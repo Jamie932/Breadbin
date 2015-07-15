@@ -259,14 +259,22 @@
 
                                     <div class="rowContainer">
                                        <label> Colour: </label>
-                                        <select name="colour" class="settings" id="setColour">
+                                        <div id="colourContainer">
+                                            <div class="colourBox orange"></div>
+                                            <div class="colourBox blue"></div>
+                                            <div class="colourBox green"></div>
+                                            <div class="colourBox red"></div>
+                                            <div class="colourBox purple"></div>
+                                            <div class="colourBox pink"></div>
+                                        </div>
+                                        <!--<select name="colour" class="settings" id="setColour">
                                             <option value="1">Orange</option>
                                             <option value="2">Blue</option>
                                             <option value="3">Green</option>
                                             <option value="4">Red</option>
                                             <option value="5">Purple</option>
                                             <option value="6">Pink</option>
-                                        </select>
+                                        </select>-->
                                     </div>
 
                                     <input type="submit" value="Save" class="saveSettings">
