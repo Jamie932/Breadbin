@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
     $('#postRecipeForm').submit(function(event) {
+                var values = $("input[name='recipeIngredients\\[\\]']")
+                              .map(function(){return $(this).val();}).get();
+        
+                            alert(values);
+                });
+
+        
                     var formData = {
                         'title' : $('#recipeTitle').val(),
                         'ingredients' : $('#recipeIngredients').val(),
