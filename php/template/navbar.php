@@ -43,18 +43,24 @@
         $row = $stmt->fetch();
 
         if($row){ 
-            if ($row['colour'] == 1) {
+            if ($row['colour'] == 2) {
                 $colour = '#50B350';
                 $activecolour = '#219921';
-            } else if ($row['colour'] == 2) {
-                $colour = '#6699FF';
-                $activecolour = '#4979D8';
             } else if ($row['colour'] == 3) {
+                $colour = '#F84343';
+                $activecolour = '#DD2B2B';
+            } else if ($row['colour'] == 4) {
                 $colour = '#FFB540';
                 $activecolour = '#F5A52B';
-            } else if ($row['colour'] == 4) {
+            } else if ($row['colour'] == 5) {
+                $colour = '#8C68D8';
+                $activecolour = '#7153B0';
+            } else if ($row['colour'] == 6) {
                 $colour = '#CC7AB0';
                 $activecolour = '#C2569E';
+            } else {
+                $colour = '#6699FF';
+                $activecolour = '#4979D8';   
             }
         }
 

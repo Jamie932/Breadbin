@@ -260,10 +260,12 @@
                                     <div class="rowContainer">
                                        <label> Colour: </label>
                                         <select name="colour" class="settings" id="setColour">
-                                            <option value="1" style="background:#8AE68A">Green</option>
-                                            <option value="2" style="background:#6699FF">Blue</option>
-                                            <option value="3" style="background:#FFB540">Orange</option>
-                                            <option value="4" style="background:#FF66CC">Pink</option>
+                                            <option value="1">Blue</option>
+                                            <option value="2">Green</option>
+                                            <option value="3">Red</option>
+                                            <option value="4">Orange</option>
+                                            <option value="5">Purple</option>
+                                            <option value="6">Pink</option>
                                         </select>
                                     </div>
 
