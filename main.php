@@ -17,6 +17,7 @@
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/errorHandler.js" async></script>
     <script src="js/formPost.js" async></script>
+    <script src="js/formRecipePost.js" async></script>
     <script async>
         $(document).ready(function(){
             $(document).on('click','.delete', function() {
@@ -130,22 +131,6 @@
                         burnButton.css('color', 'darkgray'); 
                         burnButton.toggleClass('burn unburn');
                     }
-                })
-            })
-            
-            $('#postRecipeForm').submit(function(event) {
-                var formData = {
-                    'title' : $('#recipeTitle').val(),
-                    'ingredients' : $('#recipeIngredients').val(),
-                    'instructions' : $('#recipeInstructions').val()
-                };
-
-                $.ajax({
-                    type        : 'POST',
-                    url         : 'php/postRecipe.php',
-                    data        : formData,
-                    dataType    : 'json',
-                    encode      : true
                 })
             })
             
