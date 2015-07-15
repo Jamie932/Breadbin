@@ -4,7 +4,6 @@
 	
     $data = array();
     
-
     ?>
                     <script>
                         console.log(<? echo json_encode($_POST['title']); ?>);
@@ -25,8 +24,7 @@
             
         } else {
             $query = "INSERT INTO posts (userid, type, title)  VALUES (:userid, 'recipe', :text)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':title' => $_POST['title']); 
-
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
@@ -34,4 +32,5 @@
         }
 
     echo json_encode($data);
+
 ?> 
