@@ -1,71 +1,35 @@
 <!DOCTYPE html>
 <?php
-require("../php/common.php");
-require("../php/checkLogin.php");
+    require("../php/common.php");
+    require("../php/checkLogin.php");
 ?>
 <html>
 <head>
-    <title>Breadbin - Discover</title>
+    <title>Discovery | Breadbin</title>
     <link href="../css/common.css" rel="stylesheet" type="text/css">
     <link href="../css/navbar.css" rel="stylesheet" type="text/css">
     <link href="../css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
     <script src="../js/vendor/jquery.cookie.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    
+    <script src="../js/vendor/jquery.wookmark.js"></script>
+    <script src="../js/tileFunctions.js"></script>  
     <script>
-    $(document).ready(function(){
-        // to fade out before redirect
-        $('a.catLink').click(function(e){
-            redirect = $(this).attr('href');
-            e.preventDefault(); 
-            $('#content').fadeOut(400, function(){
-                document.location.href = redirect
+        $(document).ready(function(){
+            $('a.catLink').click(function(e){
+                redirect = $(this).attr('href');
+                e.preventDefault(); 
+                $('#content').fadeOut(400, function(){
+                    document.location.href = redirect
+                });
             });
-        });
-    })    
-    
-    /*$(document).ready(function(){
-        // to fade out before redirect
-        $('a.navLinks').click(function(e){
-            redirect = $(this).attr('href');
-            e.preventDefault(); 
-            $('#categories').fadeOut(400);
-            $('#content').fadeOut(400, function(){
-                document.location.href = redirect
-            });
-        });
-    })*/
-    
-    $(document).ready(function() {
-        $(window).load(function() {
-            $(document).ready(new function() {
-          // Prepare layout options.
-          var options = {
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
-            container: $('#main'), // Optional, used for some extra CSS styling
-            offset: 5, // Optional, the distance between grid items
-            itemWidth: 310 // Optional, the width of a grid item
-          };
 
-          // Get a reference to your grid items.
-          var handler = $('#tiles li');
-
-          // Call the layout function.
-          handler.wookmark(options);
-
-          // Capture clicks on grid items.
-         
-        });
-            
             $('#mainLoader').hide();
-            
             $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
         });
-    });
     </script>
     
 </head>

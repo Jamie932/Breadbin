@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
-require("../php/common.php");
-require("../php/checkLogin.php");
-require("../php/vendor/ImageResize.php");
+    require("../php/common.php");
+    require("../php/checkLogin.php");
 ?>
 <html>
 <head>
-    <title>Breadbin - Discover</title>
+    <title>Discovery | Breadbin</title>
     <link href="../css/common.css" rel="stylesheet" type="text/css">
     <link href="../css/navbar.css" rel="stylesheet" type="text/css">
     <link href="../css/discover.css" rel="stylesheet" type="text/css">
@@ -16,6 +15,7 @@ require("../php/vendor/ImageResize.php");
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
     <script src="../js/vendor/jquery.cookie.js"></script>
     <script src="../js/vendor/jquery.unveil.js"></script>
+    <script src="../js/vendor/jquery.wookmark.js"></script>
     <script src="../js/tileFunctions.js"></script>
     <script>
         $(document).ready(function(){

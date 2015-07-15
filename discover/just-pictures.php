@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <?php
-require("../php/common.php");
-require("../php/checkLogin.php");
-require("../php/vendor/ImageResize.php");
+    require("../php/common.php");
+    require("../php/checkLogin.php");
+    require("../php/vendor/ImageResize.php");
 ?>
 <html>
 <head>
-    <title>Breadbin - Discover</title>
+    <title>Discovery | Breadbin</title>
     <link href="../css/common.css" rel="stylesheet" type="text/css">
     <link href="../css/navbar.css" rel="stylesheet" type="text/css">
     <link href="../css/discover.css" rel="stylesheet" type="text/css">
@@ -16,58 +16,22 @@ require("../php/vendor/ImageResize.php");
     <script src="../js/vendor/jquery-1.11.2.min.js"></script>
     <script src="../js/vendor/jquery.cookie.js"></script>
     <script src="../js/vendor/jquery.unveil.js"></script>
-    
+    <script src="../js/vendor/jquery.wookmark.js"></script>
+    <script src="../js/tileFunctions.js"></script>
     <script>
-    $(document).ready(function(){
-        // to fade out before redirect
-        $('a.catLink').click(function(e){
-            redirect = $(this).attr('href');
-            e.preventDefault(); 
-            $('#content').fadeOut(400, function(){
-                document.location.href = redirect
+        $(document).ready(function(){
+            $('a.catLink').click(function(e){
+                redirect = $(this).attr('href');
+                e.preventDefault(); 
+                $('#content').fadeOut(400, function(){
+                    document.location.href = redirect
+                });
             });
-        });
-    })    
-    
-    /*$(document).ready(function(){
-        // to fade out before redirect
-        $('a.navLinks').click(function(e){
-            redirect = $(this).attr('href');
-            e.preventDefault(); 
-            $('#categories').fadeOut(400);
-            $('#content').fadeOut(400, function(){
-                document.location.href = redirect
-            });
-        });
-    })*/
-    
-    $(document).ready(function() {
-        $(window).load(function() {
-            $(document).ready(new function() {
-          // Prepare layout options.
-          var options = {
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
-            container: $('#main'), // Optional, used for some extra CSS styling
-            offset: 5, // Optional, the distance between grid items
-            itemWidth: 310 // Optional, the width of a grid item
-          };
-
-          // Get a reference to your grid items.
-          var handler = $('#tiles li');
-
-          // Call the layout function.
-          handler.wookmark(options);
-
-          // Capture clicks on grid items.
-         
-        });
             
             $('#mainLoader').hide();
-            
             $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
         });
-    });
     </script>
     
 </head>
@@ -185,31 +149,5 @@ require("../php/vendor/ImageResize.php");
                </ul>
             </div>
         </div>
-    
-        <script src="../js/vendor/jquery.wookmark.js"></script>
-        <script type="text/javascript">
-        var colors = [
-            "rgb(138, 230, 138)",
-            "rgb(102, 153, 255)",
-            "rgb(255, 181, 64)",
-            "rgb(255, 102, 204)"
-        ];
-
-        var boxes = document.querySelectorAll(".box");
-
-        for (i = 0; i < boxes.length; i++) {
-          // Pick a random color from the array 'colors'.
-          boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-          boxes[i].style.width = '300';
-          boxes[i].style.height = '230';
-          boxes[i].style.display = 'inline-table';
-          boxes[i].style.margin = '0';
-          boxes[i].style.textAlign = 'center';
-          boxes[i].style.verticalAlign = 'middle';
-          boxes[i].style.position = 'relative';
-        }
-
-        
-    </script>
 </body>
 </html>
