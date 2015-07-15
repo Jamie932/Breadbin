@@ -1,6 +1,7 @@
 <?php
     header("Content-Type: application/json", true);
-    require("common.php");
+    require("../php/common.php");
+    
 
     function checkLength($s, $min, $max) {
 		if (strlen($s) > $max) { return 2; }
@@ -9,19 +10,24 @@
 	};
 
     $data = array();
-    $upEmail = true;
+    $errors = array();
 
-    if (!empty($_POST['firstname']) && ctype_space($_POST['firstname'])) {
-        $data['success'] = false;
-        $data['error'] = 'Your first name cannot contain spaces.'; 
-    } else if (!empty($_POST['lastname']) && ctype_space($_POST['lastname'])) {
-        $data['success'] = false;
-        $data['error'] = 'Your last name cannot contain spaces.';   
-    } else if (!empty($_POST['email'])) {
+    if (!empty($_POST['firstname'])) {
+        if(ctype_space($_POST['firstname'])) {
+            $errors['firstname'] = 'Firstname can\'t have spaces.';  
+        }
+    }
+
+    if (!empty($_POST['lastname'])) {
+        if(ctype_space($_POST['lastname'])) {
+            $errors['lastname'] = 'Lastname can\'t have spaces.';  
+        }
+    }
+
+    if (!empty($_POST['email'])) {
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $data['success'] = false;
-            $data['error'] = 'Your email address is invalid.';
-        } else {
+            $errors['email'] = 'The specified email is not valid.';
+	   } else {
             $query = "SELECT * FROM users WHERE email = :email";
             $query_params = array(':email' => $_POST['email']); 
             
@@ -34,14 +40,31 @@
                     $data['success'] = false;
                     $data['error'] = 'This email address has already been registered.';
                 } else {
-                    $upEmail = false;
+                    $data['donotupemail'] = true;
                 }
-            }  
+            }
         }
+    } else {
+        $errors['email'] = 'The email field cannot be blank.';   
     }
 
-    if ($data['success'] != false) {
-        if ($upEmail) {
+    if (!empty($errors)) { // Were any errors found? If so do not continue and feed back the errors to HTML.
+        $data['success'] = false;
+        $data['errors']  = $errors;
+        
+    } else {
+        if ($data['donotupemail']) {
+            $query = "UPDATE users SET 
+                firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
+                lastname = COALESCE(NULLIF(:lastname, ''),lastname)
+                WHERE id = :id";
+            
+            $query_params = array( 
+                ':firstname' => $_POST['firstname'], 
+                ':lastname' => $_POST['lastname'],
+                ':id' => $_SESSION['user']['id']
+            );            
+        } else {            
             $query = "UPDATE users SET 
                 firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
                 lastname = COALESCE(NULLIF(:lastname, ''),lastname), 
@@ -53,25 +76,13 @@
                 ':lastname' => $_POST['lastname'], 
                 ':email' => $_POST['email'],
                 ':id' => $_SESSION['user']['id']
-            );              
-            
-        } else {
-            $query = "UPDATE users SET 
-                firstname = COALESCE(NULLIF(:firstname, ''),firstname), 
-                lastname = COALESCE(NULLIF(:lastname, ''),lastname)
-                WHERE id = :id";
-            
-            $query_params = array( 
-                ':firstname' => $_POST['firstname'], 
-                ':lastname' => $_POST['lastname'],
-                ':id' => $_SESSION['user']['id']
             );            
         }
         
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         
-        if ($_POST['colour'] && !empty($_POST['colour']) && $_POST['colour'] != '') {
+        if ($_POST['colour'] && !empty($_POST['colour']) && $_POST['colour'] != '') { 
             $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPLICATE KEY UPDATE colour=:colour";
             $query_params = array( 
                 ':colour' => $_POST['colour'], 
@@ -83,6 +94,7 @@
         }
         
         $data['success'] = true;
+        $data['message'] = 'Success!';
     }
 
     echo json_encode($data);
