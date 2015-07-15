@@ -81,7 +81,8 @@
 }
 
 .timeActive {
-    color: black;
+    color: black !important;
+    font-weight: bold;
 }
 
 #midContainer {
