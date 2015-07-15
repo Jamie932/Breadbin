@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    var options = [
+    var options = {
         autoResize: true, // This will auto-update the layout when the browser window is resized.
         container: $('#main'), // Optional, used for some extra CSS styling
         offset: 5, // Optional, the distance between grid items
         itemWidth: 310 // Optional, the width of a grid item
-    ];
+    };
     
     var colors = {
         "rgb(138, 230, 138)",
