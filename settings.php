@@ -69,7 +69,7 @@
                 
                 if (active) {
                     $('.activePage').css("background-color", active);
-                }
+                } 
             });
             
             $(".passwordReset").click(function(){
