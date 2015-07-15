@@ -215,7 +215,6 @@ h5 {
 .delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
 
 .toast, .burn, .hide {
-    padding-bottom: 5px;
     color: black;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
@@ -225,7 +224,7 @@ h5 {
 
 .hide { visibility: visible }
 
-.burn, .unburn { margin-top: 10px !important }
+.burn, .unburn { margin-top: 10px !important; padding-top: 5px; }
 
 .toast, .untoast { margin-top: 15px !important }
 
