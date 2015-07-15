@@ -78,7 +78,7 @@
                 }
             });
             
-            $('.colourBox').on("mouseleave", function() {
+            $('#colourContainer').on("mouseleave", function() {
                 $('#navbar').css("background-color",  oldMain);
                 $('.leftHeader').css("background-color", oldMain);
                 $('.activePage').css("background-color", oldAlt);
