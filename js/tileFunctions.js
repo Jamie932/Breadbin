@@ -6,12 +6,12 @@ $(document).ready(function() {
         itemWidth: 310 // Optional, the width of a grid item
     };
     
-    var colors = {
+    var colors = [
         "rgb(138, 230, 138)",
         "rgb(102, 153, 255)",
         "rgb(255, 181, 64)",
         "rgb(255, 102, 204)"
-    };
+    ];
 
     var boxes = document.querySelectorAll(".box");    
     var handler = $('#tiles li');
