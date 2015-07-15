@@ -63,8 +63,10 @@
             var oldAlt = '';
             
             $('.colourBox').on("mouseover", function() {
-                oldMain = $('#navbar').css("background-color");
-                oldAlt = $('.activePage').css("background-color");
+                if (oldMain != '' && oldAlt != '') {
+                    oldMain = $('#navbar').css("background-color");
+                    oldAlt = $('.activePage').css("background-color");
+                }
                     
                 $('#navbar').css("background-color", $(this).css("background-color"));
                 $('.leftHeader').css("background-color", $(this).css("background-color"));
