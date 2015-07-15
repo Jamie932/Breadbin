@@ -46,7 +46,7 @@
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/chartist.min.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="js/pages/admin.js"></script>
     <script src="js/errorHandler.js"></script>
 </head>
 <body>
