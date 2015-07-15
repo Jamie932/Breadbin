@@ -1,7 +1,9 @@
 /* ===[ Settings Styles ]=== */
 
 #rightSettings {
-    width: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    float: right;
 }
 
 p.settingsDetail {
@@ -157,10 +159,6 @@ p.settingsExplain {
 
 .rowContainer {
     margin-bottom: 20px;   
-}
-
-#leftProfile {
-    margin-top: -28px;   
 }
 
 .active {
