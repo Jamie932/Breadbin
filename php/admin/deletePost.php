@@ -20,6 +20,7 @@
             if (empty($_SESSION['user']['rank']) || $_SESSION['user']['rank'] == 'user') {
                 $data['success'] = false;
                 $data['error']  = 'You do not have the correct permissions to do this.';
+                echo json_encode($data);
                 return false;
             }
 

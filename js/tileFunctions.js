@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
     var options = {
         autoResize: true, // This will auto-update the layout when the browser window is resized.
         container: $('#main'), // Optional, used for some extra CSS styling
@@ -6,6 +6,12 @@ $(document).ready(function() {
         itemWidth: 310 // Optional, the width of a grid item
     };
     
+    var handler = $('#tiles li');
+    handler.wookmark(options);
+    
+});
+
+$(document).ready(function() {    
     var colors = [
         "rgb(138, 230, 138)",
         "rgb(102, 153, 255)",
@@ -13,10 +19,7 @@ $(document).ready(function() {
         "rgb(255, 102, 204)"
     ];
 
-    var boxes = document.querySelectorAll(".box");    
-    var handler = $('#tiles li');
-    
-    handler.wookmark(options);
+    var boxes = document.querySelectorAll(".box");
 
     for (i = 0; i < boxes.length; i++) {
       boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
