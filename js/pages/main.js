@@ -70,10 +70,13 @@ $(document).ready(function(){
     $('#postRecipeForm').submit(function(event) {
                
             
-                var values = $('#recipeIngredients')
-                              .map(function(){return $(this).val();}).get();
+                var taskArray = new Array();
+        
+                $("input[name=recipeIngredients]").each(function() {
+                   taskArray.push($(this).val());
+                });
 
-                alert(values);
+                alert(taskArray); 
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
