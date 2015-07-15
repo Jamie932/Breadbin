@@ -133,6 +133,22 @@
                 })
             })
             
+            $('#postRecipeForm').submit(function(event) {
+                var formData = {
+                    'title' : $('#recipeTitle').val(),
+                    'ingredients' : $('#recipeIngredients"').val(),
+                    'instructions' : $('#recipeInstructions').val()
+                };
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/postRecipe.php',
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
+                })
+            })
+            
             $(".hide").click(function(){
                 $("#contentLikeFollow").hide(500);
                 $("#contentPostFollow").hide(500);
@@ -168,7 +184,7 @@
         })
 
         function add_fields() {
-            document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>';
+            document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>';
         }
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
@@ -193,15 +209,15 @@
                 <hr></hr>
                 
                 <div id="recipeForm">
-                    <form>
+                    <form action="php/postRecipe.php" method="POST" id="postRecipeForm" enctype="multipart/form-data">
                         <h3>Recipe Title</h3>
-                            <center><input type="text" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
+                            <center><input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
                         <h3>Ingredients</h3>
                         <div id="Ingredients">
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
                         </div>
                             <center><input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" /></center>
                         <h3>Recipe Instructions</h3>
