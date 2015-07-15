@@ -68,6 +68,9 @@
                     ($(this).hasClass('green') ? '#219921' : false) || ($(this).hasClass('red') ? '#DD2B2B' : false) ||
                     ($(this).hasClass('purple') ? '#7153B0' : false) || ($(this).hasClass('pink') ? '#C2569E' : false);
                 
+                alert($active);
+                alert($(this).hasClass('orange'));
+                
                 if ($active) {
                     $('.activePage').css("background-color", $active);
                 }
