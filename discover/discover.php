@@ -83,13 +83,6 @@ require("../php/vendor/ImageResize.php");
     <?php
     require('../php/template/navbar.php'); 
     ?>
-       
-    <div id="music">
-        <audio autoplay>
-          <source src="https://a.tumblr.com/tumblr_n2nuotn5DN1tqgjq4o1.mp3#_=_" type="audio/mpeg">
-          <p>If you can read this, your browser does not support the audio element.</p>
-        </audio>
-    </div>
 
     <div id="loader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
