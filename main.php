@@ -206,7 +206,7 @@
                             <center><input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" /></center>
                         <h3>Recipe Instructions</h3>
                             <center><textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="150" placeholder="Recipe Instructions..."></textarea></center>
-                            <center><input type="submit" value="Submit" id="submitPost" class="buttonstyle">
+                            <center><input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
                             <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
                     </form>
                 </div>
