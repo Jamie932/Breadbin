@@ -152,6 +152,24 @@
         function getFile(){
             $('#upfile').click();
         }
+        
+        $(document).ready(function(){
+            $("#blackout").click(function(){
+                $('#blackOverlay').fadeIn('normal');
+                $('#recipeBox').fadeIn('normal');
+            })
+        })
+
+        $(document).ready(function(){
+            $("#cancel").click(function(){
+                $('#blackOverlay').fadeOut('normal');
+                $('#recipeBox').fadeOut('normal');
+            })
+        })
+
+        function add_fields() {
+            document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>';
+        }
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
     
@@ -165,6 +183,37 @@
     <?php require('php/template/popup.php');?>
         
     <div id="break"></div>
+        
+    <div id="recipeBox">
+            <div class="recipeContent">
+                <div class="recipeHeader">
+                    <h1>Post your recipe</h1>
+                </div>
+
+                <hr></hr>
+                
+                <div id="recipeForm">
+                    <form>
+                        <h3>Recipe Title</h3>
+                            <center><input type="text" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
+                        <h3>Ingredients</h3>
+                        <div id="Ingredients">
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                        </div>
+                            <center><input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" /></center>
+                        <h3>Recipe Instructions</h3>
+                            <center><textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="150" placeholder="Recipe Instructions..."></textarea></center>
+                            <center><input type="submit" value="Submit" id="submitPost" class="buttonstyle">
+                            <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <div id="blackOverlay"></div>   
     
     <div id="center">
         <div id="content">

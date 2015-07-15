@@ -14,15 +14,133 @@
             position: fixed;
             display: none;
         }
+        
+        #recipeBox {
+            margin: auto;
+            position: absolute;
+            top: 100; left: 0; right: 0;
+            border: 1px solid #DDD;
+            width: 500px;
+            height: auto;
+            background-color: #fff;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            z-index: 7;
+        }
+        
+        .recipeHeader {
+            margin-bottom: 0;
+        }
+        
+        .recipeContent {
+            padding: 10px;
+        }
+        
+        h1 {
+            margin-bottom: 0;   
+        }
+        h3 {
+            margin-top: 5px;   
+            margin-bottom: 5px;   
+        }
+        
+        #recipeForm {
+            margin-top: 15px;
+        }
+        
+        input.recipeTitle {
+            width: 460px;   
+            height: 40px;
+            border: 1px solid rgba(100, 100, 100, 0.4);
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            padding-left: 10px;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        
+        input.recipeIngredients {
+            width: 224px;   
+            height: 40px;
+            border: 1px solid rgba(100, 100, 100, 0.4);
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            padding-left: 10px;
+            font-size: 15px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        
+        textarea.recipeInstructions {
+            resize: none;
+            width: 460px;
+            height: 300px;
+            font-size: 15px;
+            padding-left: 5px;
+            padding-top: 5px;
+            font-family: inherit;
+            border: 1px solid rgba(97, 97, 97, 0.44);
+            -moz-border-radius: 3px 3px;
+            border-radius: 3px 3px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
     </style>
     <script>
+    $(document).ready(function(){
         $("#blackout").click(function(){
             $('#blackOverlay').fadeIn('normal');
-        });
+            $('#recipeBox').fadeIn('normal');
+        })
+    })
+    
+    $(document).ready(function(){
+        $("#cancel").click(function(){
+            $('#blackOverlay').fadeOut('normal');
+            $('#recipeBox').fadeOut('normal');
+        })
+    })
+    
+    function add_fields() {
+        document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>';
+    }
     </script>
 </head>
+    <body>
+        
+        <div id="recipeBox">
+            <div class="recipeContent">
+                <div class="recipeHeader">
+                    <h1>Post your recipe</h1>
+                </div>
+
+                <hr></hr>
+                
+                <div id="recipeForm">
+                    <form>
+                        <h3>Recipe Title</h3>
+                            <center><input type="text" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
+                        <h3>Ingredients</h3>
+                        <div id="Ingredients">
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                        </div>
+                            <center><input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" /></center>
+                        <h3>Recipe Instructions</h3>
+                            <center><textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="150" placeholder="Recipe Instructions..."></textarea></center>
+                            <center><input type="submit" value="Submit" id="submitPost" class="buttonstyle">
+                            <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
+                    </form>
+                </div>
+            </div>
+        </div>
 
     <div id="blackOverlay"></div>   
+    
+    
     
      <div id="navbar">
          
@@ -66,4 +184,5 @@
     <div id="blackout">
         <a href="#">blackout</a>
     </div>
+</body>
 </html>
