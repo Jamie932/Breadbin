@@ -25,8 +25,8 @@
             $data['error'] = 'Recipes need a instructions.';
             
         } else {
-            $query = "INSERT INTO posts (userid, type, title)  VALUES (:userid, 'recipe', :text)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title']); 
+            $query = "INSERT INTO posts (userid, type, title, ingred)  VALUES (:userid, 'recipe', :text, :ingreds)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':ingreds' => $ingredArray); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
