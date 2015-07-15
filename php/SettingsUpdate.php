@@ -81,7 +81,7 @@
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         
-        if (!$_POST['colour'] || empty($_POST['colour']) || $_POST['colour'] == '') { 
+        if ($_POST['colour'] && !empty($_POST['colour']) && $_POST['colour'] != '') { 
             $query = "INSERT INTO user_settings (user_id, colour) VALUES (:id, :colour) ON DUPLICATE KEY UPDATE colour=:colour";
             $query_params = array( 
                 ':colour' => $_POST['colour'], 
