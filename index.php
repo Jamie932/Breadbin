@@ -10,40 +10,9 @@
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
-    <script>
-        $(document).ready(function(){
-           $(".registerBtn").click(function(){
-               $(".login").fadeOut('normal', function(){
-                $(".register").fadeIn('normal');
-				$("#mid").addClass('tall');
-				
-				$('.logUserName').removeClass('error');
-				$('.logUserPass').removeClass('error');
-				$('small').remove();
-           });
-		});
-       });
-        
-        $(document).ready(function(){
-           $(".loginBtn").click(function(){
-               $(".register").fadeOut('normal', function(){
-                $(".login").fadeIn('normal');
-				$("#mid").removeClass('tall');
-				
-				$('.regUserName').removeClass('error');
-				$('.regUserEmail').removeClass('error');
-				$('.regUserPass').removeClass('error');
-				$('.regUserConfirm').removeClass('error');
-				$('small').remove();
-           });
-       });
-    }); 
-    </script>
-    <?php 
-        
-    ?>
+    <script src="js/index.js"></script>
 </head>
 <body>
     <noscript>

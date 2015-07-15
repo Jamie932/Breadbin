@@ -45,8 +45,9 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
-    <script src="js/errorHandler.js" async></script>
     <script src="js/vendor/chartist.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/errorHandler.js"></script>
 </head>
 <body>
     <noscript>
@@ -117,17 +118,5 @@
             </div>
         </div>
     </div>
-        
-    <script>
-        var data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-            series: [
-                [5, 2, 4, 2, 0]
-            ]
-        };
-
-        new Chartist.Line('.ct-chart', data);
-
-    </script>        
 </body>
 </html>
