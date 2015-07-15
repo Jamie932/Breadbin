@@ -31,9 +31,9 @@
             $result = $stmt->execute($query_params);
 
             $data['success'] = true;
-
-            location.reload(); 
-
+            
+            header("location: ../main.php");
+            
         }
 
     echo json_encode($data);
