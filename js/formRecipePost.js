@@ -1,10 +1,14 @@
 $(document).ready(function() {
 
     $('#postRecipeForm').submit(function(event) {
-                var values = $("input[name='recipeIngredients']")
-                        .map(function(){return $(this).val();}).get();
+               
+                var newArray = new Array();
+
+                $('#recipeIngredients').each(function(){
+                    newArray.push($(this));
+                });
         
-                            alert(values);
+                alert(newArray);
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
