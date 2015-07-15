@@ -116,7 +116,7 @@
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"></div>';
-            } else if ($row['type'] == "text") {
+            } else {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
             }
