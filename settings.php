@@ -62,6 +62,7 @@
             
             $('.colourBox').on("mouseover", function() {
                 $('#navbar').css("background-color", $(this).css("background-color"));
+                $('.leftHeader').css("background-color", $(this).css("background-color"));
                 
                 $active = ($(this).hasClass('orange') && '#D7870F') || ($(this).hasClass('blue') && '#4979D8') || 
                     ($(this).hasClass('green') && '#219921') || ($(this).hasClass('red') && '#DD2B2B') ||
@@ -69,7 +70,6 @@
                 
                 if ($active) {
                     $('.activePage').css("background-color", $active);
-                    $('.leftHeader').css("background-color", $active);
                 }
             });
             
