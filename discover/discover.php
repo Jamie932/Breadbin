@@ -7,15 +7,15 @@ require("../php/vendor/ImageResize.php");
 <html>
 <head>
     <title>Breadbin - Discover</title>
-    <link href="/css/common.css" rel="stylesheet" type="text/css">
-    <link href="/css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="/css/discover.css" rel="stylesheet" type="text/css">
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="../css/discover.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="/js/vendor/jquery.cookie.js"></script>
-    <script src="/js/vendor/jquery.unveil.js"></script>
+    <script src="../js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="../js/vendor/jquery.cookie.js"></script>
+    <script src="../js/vendor/jquery.unveil.js"></script>
     
     <script>
     $(document).ready(function(){
