@@ -11,16 +11,12 @@
     $data = array();
     $upEmail = true;
 
-    if (!empty($_POST['firstname'])) {
-        if(ctype_space($_POST['firstname'])) {
-            $data['success'] = false;
-            $data['error'] = 'Your first name cannot contain spaces.';  
-        }
-    } else if (!empty($_POST['lastname'])) {
-        if(ctype_space($_POST['lastname'])) {
-            $data['success'] = false;
-            $data['error'] = 'Your last name cannot contain spaces.';   
-        }
+    if (!empty($_POST['firstname']) && ctype_space($_POST['firstname'])) {
+        $data['success'] = false;
+        $data['error'] = 'Your first name cannot contain spaces.'; 
+    } else if (!empty($_POST['lastname']) && ctype_space($_POST['lastname'])) {
+        $data['success'] = false;
+        $data['error'] = 'Your last name cannot contain spaces.';   
     } else if (!empty($_POST['email'])) {
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $data['success'] = false;
@@ -35,7 +31,8 @@
             
             if($row){                
                 if ($row['email'] != $_SESSION['user']['email']) {
-                    $errors['email'] = 'This email address has already been registered';   
+                    $data['success'] = false;
+                    $data['error'] = 'This email address has already been registered.';
                 } else {
                     $upEmail = false;
                 }
