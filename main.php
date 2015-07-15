@@ -136,7 +136,7 @@
             $('#postRecipeForm').submit(function(event) {
                 var formData = {
                     'title' : $('#recipeTitle').val(),
-                    /*'ingredients' : $('#recipeIngredients').val(),*/
+                    'ingredients' : $('#recipeIngredients').val(),
                     'instructions' : $('#recipeInstructions').val()
                 };
 
