@@ -8,7 +8,7 @@ $(document).ready(function() {
             'firstname' : $('#setFirstname').val(),
             'lastname' : $('#setLastname').val(),
             'email' : $('#setEmail').val(),
-            'colour' : $('#setColour').val()
+            'colour' : colourSelection
         };
 
         
