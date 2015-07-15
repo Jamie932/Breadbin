@@ -5,6 +5,10 @@
             clearErrors();
         })
     });
+    
+    $(window).load(function() {
+        $('#loader').hide();
+    });
 
     function logout() {
         if (document.cookie.indexOf("hashkey") >= 0) {
@@ -20,14 +24,7 @@
                 });
             }
         }
-    }    
-    
-    $(document).ready(function() {
-        $(window).load(function() {
-            $('#loader').hide();
-        });
-    });
-      
+    }
 </script>
 
     <?php

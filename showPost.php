@@ -33,6 +33,7 @@ if (empty($_GET)) {
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
+    <script src="js/postFunctions.js"></script>
     <style>
         body {
             height: auto;
@@ -43,117 +44,6 @@ if (empty($_GET)) {
             height: auto;   
         }
     </style>
-    <script>
-        $(document).ready(function(){
-            $(document).on('click','.delete', function() {
-                var confirmed = confirm("Are you sure you want to delete this post?");
-      
-                if (confirmed) {
-                    var postid = $(this).parent().attr('class').split('-')[1];
-
-                    var formData = {
-                        'post' : postid
-                    };
-
-                    $.ajax({
-                        type        : 'POST',
-                        url         : 'php/deletePost.php',
-                        data        : formData,
-                        dataType    : 'json',
-                        encode      : true,
-                        success:function(data) {  
-                            window.location.replace("main.php");
-                        }
-                    })
-                }
-            })
-            
-            $(document).on('click','.toast', function() {
-                var postid = $(this).parent().attr('class').split('-')[1]; 
-                var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
-                var toastButton = $(this).closest('#contentLike').children('.toast');
-                var burnButton = $(this).closest('#contentLike').children('.unburn');
-                
-                var formData = {
-                    'post' : postid
-                };
-
-                $.ajax({
-                    type        : 'POST',
-                    url         : 'php/toast.php',
-                    data        : formData,
-                    dataType    : 'json',
-                    encode      : true
-                }) 
-
-                .done(function(data) {
-                     console.log(data);
-                    
-                    if (!data.success) {
-                        // Already toasted the post - error.
-                        alert("not successful soz");
-                    } else {
-                        if (data.removedBurn && data.addedToast) { // Previously toasted
-                            totalToasts.html(parseInt(totalToasts.text()) + 2);
-                            
-                            burnButton.css('color', 'black'); 
-                            burnButton.toggleClass('unburn burn');
-                        } else if (data.removedBurn || data.addedToast) {
-                            totalToasts.html(parseInt(totalToasts.text()) + 1);
-                        } else {
-                            alert("problem detected woop woop");
-                        }
-                        
-                        toastButton.css('color', 'darkgray'); 
-                        toastButton.toggleClass('toast untoast');
-                    };
-                })
-            })
-            
-            $(document).on('click','.burn', function() {
-                var postid = $(this).parent().attr('class').split('-')[1];
-                var totalToasts = $(this).closest('#contentLike').children('.totalToasts');
-                var burnButton = $(this).closest('#contentLike').children('.burn');
-                var toastButton = $(this).closest('#contentLike').children('.untoast');
-                
-                var formData = {
-                    'post' : postid
-                };
-
-                $.ajax({
-                    type        : 'POST',
-                    url         : 'php/burn.php',
-                    data        : formData,
-                    dataType    : 'json',
-                    encode      : true
-                })
-                
-                .done(function(data) {
-			         console.log(data); 
-                    
-                    if (!data.success) {
-                        // Already burnt the post - error.
-                        alert("not successful soz");
-                        
-                    } else {
-                        if (data.removedToast && data.addedBurn) { // Previously toasted
-                            totalToasts.html(parseInt(totalToasts.text()) - 2);
-                            
-                            toastButton.css('color', 'black'); 
-                            toastButton.toggleClass('untoast toast');
-                        } else if (data.removedToast || data.addedBurn) {
-                            totalToasts.html(parseInt(totalToasts.text()) - 1);
-                        } else {
-                            alert("problem detected woop woop");
-                        }
-                        
-                        burnButton.css('color', 'darkgray'); 
-                        burnButton.toggleClass('burn unburn');
-                    }
-                })
-            })
-        })
-    </script>
 </head>
     
 <body>

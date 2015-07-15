@@ -112,8 +112,5 @@
             </ul>
         </div>
 	</div>
-	
-	<script src="js/formRegister.js"></script>
-	<script src="js/formLogin.js"></script>
 </body>
 </html>
