@@ -44,8 +44,8 @@
 
         if($row){ 
             if ($row['colour'] == 1) {
-                $colour = '#8AE68A';
-                $activecolour = '#44CB44';
+                $colour = '#4DB64D';
+                $activecolour = '#219921';
             } else if ($row['colour'] == 2) {
                 $colour = '#6699FF';
                 $activecolour = '#4979D8';
