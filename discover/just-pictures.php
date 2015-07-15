@@ -62,16 +62,10 @@ require("../php/vendor/ImageResize.php");
          
         });
             
-            $('#loader').hide();
-
-            $('#content').animate({opacity: 1}, 600);
+            $('#mainLoader').hide();
+            
+            $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
-        });
-    });
-      
-    $(document).ready(function() {
-        $(function() {
-            $("img.tiles").unveil(300);
         });
     });
     </script>
@@ -80,11 +74,16 @@ require("../php/vendor/ImageResize.php");
 <body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
-    </noscript>          
+    </noscript>    
     
     <?php
-    require('../php/template/discoverNavbar.php'); 
+    require('../php/template/navbar.php'); 
     ?>
+
+    <div id="mainLoader">
+        <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
+        <p>Loading some beautiful content...</p> 
+    </div> 
        
     <div id="loader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>

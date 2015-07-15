@@ -62,7 +62,7 @@ require("../php/vendor/ImageResize.php");
          
         });
             
-            $('#loader').hide();
+            $('#mainLoader').hide();
             
             $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
@@ -80,7 +80,7 @@ require("../php/vendor/ImageResize.php");
     require('../php/template/navbar.php'); 
     ?>
 
-    <div id="loader">
+    <div id="mainLoader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
         <p>Loading some beautiful content...</p> 
     </div> 
