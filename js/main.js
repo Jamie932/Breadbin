@@ -192,10 +192,12 @@ $(document).ready(function(){
                 $('#recipeIngredients').each(function(){
                     newArray.push($(this));
                 })
+                
+                alert(newArray);
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
-                        'ingredients' : $('#recipeIngredients').val(),
+                        'ingredients' : newArray,
                         'instructions' : $('#recipeInstructions').val()
                     };
 
@@ -209,8 +211,8 @@ $(document).ready(function(){
                     
         event.preventDefault();
         
-    })
-});
+        })
+    });
 
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);
