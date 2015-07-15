@@ -6,7 +6,7 @@
  */
 
 // Variables. Change these to meet your needs.
-$file_types = array('php','js','scss');
+$file_types = array('php','js','css');
 $skip_directories = array('.git', 'files', 'external', 'scripts');
 $starting_directory = '../';
 
