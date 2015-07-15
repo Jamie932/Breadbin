@@ -82,7 +82,7 @@ require("../php/vendor/ImageResize.php");
     </noscript>          
     
     <?php
-    require('/php/template/navbar.php'); 
+    require('../php/template/navbar.php'); 
     ?>
        
     <div id="music">
