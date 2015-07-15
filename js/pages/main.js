@@ -70,11 +70,10 @@ $(document).ready(function(){
     $('#postRecipeForm').submit(function(event) {
                
             
-                var newArray = new Array();
+                var values = $('#recipeIngredients')
+                              .map(function(){return $(this).val();}).get();
 
-                $('#recipeIngredients').each(function(){
-                    newArray.push($(this));
-                })
+                alert(values);
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
