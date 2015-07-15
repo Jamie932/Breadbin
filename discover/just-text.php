@@ -26,7 +26,9 @@
                     document.location.href = redirect
                 });
             });
-
+        });
+        
+        $(window).load(function() { 
             $('#mainLoader').hide();
             $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
