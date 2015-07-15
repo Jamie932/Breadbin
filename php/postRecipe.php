@@ -3,6 +3,7 @@
     require("common.php"); 
 	
     $data = array();
+    
 
     ?>
                     <script>
