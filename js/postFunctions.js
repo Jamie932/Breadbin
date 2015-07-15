@@ -112,4 +112,64 @@ $(document).ready(function(){
             }
         })
     })
-});
+
+    $('#postRecipeForm').submit(function(event) {
+               
+            
+                var newArray = new Array();
+
+                $('#recipeIngredients').each(function(){
+                    newArray.push($(this));
+                })
+        
+                    var formData = {
+                        'title' : $('#recipeTitle').val(),
+                        'ingredients' : $('#recipeIngredients').val(),
+                        'instructions' : $('#recipeInstructions').val()
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/postRecipe.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+                    
+        event.preventDefault();
+        
+    })
+    
+    $(".hide").click(function(){
+        $("#contentLikeFollow").hide(500);
+        $("#contentPostFollow").hide(500);
+    });
+
+    $("#uploadText").keypress(function(event) {
+        if(event.which == '13') {
+            return false;
+        }
+    });
+
+    $('input[type=file]').change(function(e){
+        $('#uploadname').html($(this).val());
+    });
+    
+    $("#blackout").click(function(){
+        $('#blackOverlay').fadeIn('normal');
+        $('#recipeBox').fadeIn('normal');
+    });
+    
+    $("#cancel").click(function(){
+        $('#blackOverlay').fadeOut('normal');
+        $('#recipeBox').fadeOut('normal');
+    })   
+})
+
+function getFile(){
+    $('#upfile').click();
+}
+
+function add_fields() {
+    document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients"/>';
+}
