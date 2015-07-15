@@ -5,8 +5,6 @@ $(document).ready(function() {
                               .map(function(){return $(this).val();}).get();
         
                             alert(values);
-                });
-
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
