@@ -6,7 +6,7 @@ $(document).ready(function() {
 
                 $('#recipeIngredients').each(function(){
                     newArray.push($(this));
-                });
+                })
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
