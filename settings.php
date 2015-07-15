@@ -59,15 +59,7 @@
         var uploadingFile = false;
         
         $(document).ready(function(){
-            var oldMain = '';
-            var oldAlt = '';
-            
             $('.colourBox').on("mouseover", function() {
-                if (oldMain != '' && oldAlt != '') {
-                    oldMain = $('#navbar').css("background-color");
-                    oldAlt = $('.activePage').css("background-color");
-                }
-                    
                 $('#navbar').css("background-color", $(this).css("background-color"));
                 $('.leftHeader').css("background-color", $(this).css("background-color"));
                 
@@ -78,12 +70,6 @@
                 if (active) {
                     $('.activePage').css("background-color", active);
                 }
-            });
-            
-            $('#colourContainer').on("mouseleave", function() {
-                $('#navbar').css("background-color",  oldMain);
-                $('.leftHeader').css("background-color", oldMain);
-                $('.activePage').css("background-color", oldAlt);
             });
             
             $(".passwordReset").click(function(){
