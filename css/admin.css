@@ -70,6 +70,15 @@
     text-align: right;
 }
 
+.content a {
+    text-decoration: none;   
+    color: gray;
+}
+
+.active {
+    color: black;
+}
+
 #midContainer {
     margin: 20px auto 20px;
     overflow: auto;
