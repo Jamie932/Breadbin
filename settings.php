@@ -73,6 +73,12 @@
                 }
             });
             
+            $('.colourBox').on("mouseleave", function() {
+                $('#navbar').css("background-color",  $colour);
+                $('.leftHeader').css("background-color", $colour);
+                $('.activePage').css("background-color", $activecolour);
+            });
+            
             $(".passwordReset").click(function(){
                 $(".accountSettingsField").fadeOut('normal', function(){
                     $(".passwordSettingsField").fadeIn('normal');
