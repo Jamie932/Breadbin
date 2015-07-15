@@ -235,6 +235,11 @@
                         <div id="uploadname"></div>
                     </div>
                 </form>
+                
+                <div id="blackout">
+                    <a href="#">blackout</a>
+                </div>
+                
             </div> 
             <div class="clearFix"></div>
             
