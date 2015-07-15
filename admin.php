@@ -89,8 +89,27 @@
         </div>
 
         <div id="midContainer">
-            <div id="midLeft"><div class="title">Unique Visitors</div><div class="ct-chart ct-octave"></div></div>
-            <div id="midRight"><div class="title">Reports</div></div>
+            <div id="midLeft">                        
+                <?php
+                    if (isset($colour)) {
+                        echo '<div class="title" style="background-color: '. $colour . '">Unique Visitors</div>';
+                    } else {
+                        echo '<div class="title">Unique Visitors</div>';
+                    }
+                ?>
+                
+                <div class="ct-chart ct-octave"></div>
+            </div>
+            
+            <div id="midRight">
+                <?php
+                    if (isset($colour)) {
+                        echo '<div class="title" style="background-color: '. $colour . '">Reports</div>';
+                    } else {
+                        echo '<div class="title">Reports</div>';
+                    }
+                ?>
+            </div>
         </div>
     </div>
         
