@@ -143,10 +143,9 @@
                 $.ajax({
                     type        : 'POST',
                     url         : 'php/postRecipe.php',
-                    processData : false,
-                    contentType : false,
-                    cache       : false,
-                    data        : formData
+                    data        : formData,
+                    dataType    : 'json',
+                    encode      : true
                 })
             })
             
