@@ -26,7 +26,7 @@
             
         } else {
             $query = "INSERT INTO posts (userid, type, title, ingred)  VALUES (:userid, 'recipe', :text, :ingreds)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':ingreds' => $ingredArray); 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':ingreds' => $_POST['ingredients']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
