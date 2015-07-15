@@ -8,8 +8,6 @@ $(document).ready(function() {
                     newArray.push($(this));
                 });
         
-                alert(newArray);
-        
                     var formData = {
                         'title' : $('#recipeTitle').val(),
                         'ingredients' : $('#recipeIngredients').val(),
