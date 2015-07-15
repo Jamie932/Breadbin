@@ -68,7 +68,7 @@
                     ($(this).hasClass('purple') && '#7153B0') || ($(this).hasClass('pink') && '#C2569E');
                 
                 if ($active) {
-                    $('.active').css("background-color", $active);
+                    $('.activePage').css("background-color", $active);
                     $('.leftHeader').css("background-color", $active);
                 }
             });
