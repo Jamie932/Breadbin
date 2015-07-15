@@ -60,7 +60,7 @@ require("../php/checkLogin.php");
          
         });
             
-            $('#loader').hide();
+            $('#mainLoader').hide();
             
             $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
@@ -75,10 +75,10 @@ require("../php/checkLogin.php");
     </noscript>    
     
     <?php
-require('../php/template/discoverNavbar.php'); 
-?>
-      
-    <div id="loader">
+    require('../php/template/navbar.php'); 
+    ?>
+
+    <div id="mainLoader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
         <p>Loading some beautiful content...</p> 
     </div> 
