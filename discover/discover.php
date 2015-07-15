@@ -61,7 +61,6 @@ require("../php/vendor/ImageResize.php");
 
             
             $('#loader').hide();
-            $('#music').hide();
             
             $('#content').animate({opacity: 1}, 600);
             $('#content').css("pointer-events", "auto");
