@@ -69,7 +69,6 @@ $(document).ready(function(){
 
     $('#postRecipeForm').submit(function(event) {
                
-            
                 var ingredArray = new Array();
         
                 $("input[name=recipeIngredients]").each(function() {
