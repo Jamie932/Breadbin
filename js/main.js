@@ -182,21 +182,35 @@ $(document).ready(function(){
         })
     })
 
-    $('#postRecipeForm').submit(function(event) {
-        var formData = {
-            'title' : $('#recipeTitle').val(),
-            'ingredients' : $('#recipeIngredients').val(),
-            'instructions' : $('#recipeInstructions').val()
-        };
+    $(document).ready(function() {
 
-        $.ajax({
-            type        : 'POST',
-            url         : 'php/postRecipe.php',
-            data        : formData,
-            dataType    : 'json',
-            encode      : true
-        })
+    $('#postRecipeForm').submit(function(event) {
+               
+            
+                var newArray = new Array();
+
+                $('#recipeIngredients').each(function(){
+                    newArray.push($(this));
+                })
+        
+                    var formData = {
+                        'title' : $('#recipeTitle').val(),
+                        'ingredients' : $('#recipeIngredients').val(),
+                        'instructions' : $('#recipeInstructions').val()
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/postRecipe.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+                    
+        event.preventDefault();
+        
     })
+});
 
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);

@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     $('#postRecipeForm').submit(function(event) {
                
+            
                 var newArray = new Array();
 
                 $('#recipeIngredients').each(function(){
