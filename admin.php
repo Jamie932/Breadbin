@@ -83,7 +83,12 @@
 
             <div id="bottomTopBar">
                 <div class="content">
-                    <a href="admin.php">24hr</a> | <a href="admin.php?t=48">48hr</a> | <a href="admin.php?t=168">1wk</a> | <a href="admin.php?t=all">all</a>
+                    <?php
+                        echo '<a href="admin.php" ' . (((isset($_GET['t']) && $_GET['t'] == '24') || !isset($_GET['t'])) ? 'class="timeActive"' : '') . '>24hr</a> |'; 
+                        echo '<a href="admin.php?t=48" ' . ((isset($_GET['t']) && $_GET['t'] == '48') ? 'class="timeActive"' : '') . '>48hr</a> |'; 
+                        echo '<a href="admin.php?t=168" ' . ((isset($_GET['t']) && $_GET['t'] == '168') ? 'class="timeActive"' : '') . '>1wk</a> |'; 
+                        echo '<a href="admin.php?t=all" ' . ((isset($_GET['t']) && $_GET['t'] == 'all') ? 'class="timeActive"' : '') . '>all</a> |'; 
+                     ?>
                 </div>
             </div>
         </div>
