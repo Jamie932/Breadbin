@@ -62,6 +62,15 @@
             
             $('.colourBox').on("mouseover", function() {
                 $('#navbar').css("background-color", $(this).css("background-color"));
+                
+                $active = ($(this).hasClass('orange') && '#D7870F') || ($(this).hasClass('blue') && '#4979D8') || 
+                    ($(this).hasClass('green') && '#219921') || ($(this).hasClass('red') && '#DD2B2B') ||
+                    ($(this).hasClass('purple') && '#7153B0') || ($(this).hasClass('pink') && '#C2569E');
+                
+                if ($active) {
+                    $('.active').css("background-color", $active);
+                    $('.leftHeader').css("background-color", $active);
+                }
             });
             
             $(".passwordReset").click(function(){

@@ -85,7 +85,7 @@
             <?php 
                 if (!empty($_SESSION['user']['rank']) && ($_SESSION['user']['rank'] != "user")) { 
                     if (isActive("admin.php")) {
-                        echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                        echo '<li class="nav" class="active" style="background-color: ' . $activecolour . '">';
                     } else {
                         echo '<li class="nav">';
                     }
@@ -95,7 +95,7 @@
 
 
                 if (isActive("discover.php")) {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                    echo '<li class="nav" class="active" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
                 }
@@ -105,7 +105,7 @@
         
             <?php
                 if ((isActive("profile.php") && (isset($_GET['id']) && $_GET['id'] == $_SESSION['user']['id'])) || isActive("settings.php")) {
-                    echo '<li class="nav" style="background-color: ' . $activecolour . '">';
+                    echo '<li class="nav" class="active" style="background-color: ' . $activecolour . '">';
                 } else {
                     echo '<li class="nav">';
                 }
