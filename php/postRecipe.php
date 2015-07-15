@@ -4,9 +4,11 @@
 	
     $data = array();
     
+    $ingredArray = json_decode($_POST['ingredients']);
+
     ?>
                     <script>
-                        console.log(<? echo json_encode($_POST['title']); ?>);
+                        console.log(<? echo json_encode($ingredArray); ?>);
                     </script>
     <?php
 

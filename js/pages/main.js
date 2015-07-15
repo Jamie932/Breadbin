@@ -70,17 +70,17 @@ $(document).ready(function(){
     $('#postRecipeForm').submit(function(event) {
                
             
-                var taskArray = new Array();
+                var ingredArray = new Array();
         
                 $("input[name=recipeIngredients]").each(function() {
-                   taskArray.push($(this).val());
+                   ingredArray.push($(this).val());
                 });
 
-                alert(taskArray); 
+                alert(ingredArray); 
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
-                        'ingredients' : $('#recipeIngredients').val(),
+                        'ingredients' : JSON.stringify(ingredArray),
                         'instructions' : $('#recipeInstructions').val()
                     };
 
