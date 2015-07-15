@@ -238,7 +238,7 @@
                 </form>
                 
                 <div id="blackout">
-                    <a href="#">blackout</a>
+                    <p>blackout</p>
                 </div>
                 
             </div> 
