@@ -32,7 +32,7 @@
 
             $data['success'] = true;
 
-            header('Location: '.$_SERVER['REQUEST_URI']);
+            location.reload(); 
 
         }
 
