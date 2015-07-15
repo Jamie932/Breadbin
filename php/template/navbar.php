@@ -90,7 +90,7 @@
                         echo '<li class="nav">';
                     }
                     
-                    echo '<a class="navLinks" href="admin.php">Admin</a></li>';
+                    echo '<a class="navLinks" href="/admin.php">Admin</a></li>';
                 }
 
 
@@ -100,7 +100,7 @@
                     echo '<li class="nav">';
                 }
             ?>
-                <a class="navLinks" href="discover/discover.php">Discover</a>
+                <a class="navLinks" href="/discover/discover.php">Discover</a>
             </li>
         
             <?php
@@ -110,14 +110,14 @@
                     echo '<li class="nav">';
                 }
 
-                echo '<a class="navLinks" href="profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
+                echo '<a class="navLinks" href="/profile.php?id=' . $_SESSION['user']['id'] . '">' . $_SESSION['user']['username'] . '</a>';
                 echo '<div class="arrow-up"></div>';
             ?>
         
                 <ul >
-                    <li><a class="navLinks" href="settings.php">Settings</a></li>
-                    <li><a class="navLinks" href="toasted.php">Toasted</a></li>
-                    <li><a class="navLinks" href="burned.php">Burned</a></li>
+                    <li><a class="navLinks" href="/settings.php">Settings</a></li>
+                    <li><a class="navLinks" href="/toasted.php">Toasted</a></li>
+                    <li><a class="navLinks" href="/burned.php">Burned</a></li>
                     <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
                 </ul>
 			</li>
