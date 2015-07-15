@@ -60,6 +60,7 @@
         
         $(document).ready(function(){
             $('.colourBox').click(function() {
+                $('.depressedColour').removeClass('depressedColour');
                 $('#navbar').css("background-color", $(this).css("background-color"));
                 $('.leftHeader').css("background-color", $(this).css("background-color"));
                 
