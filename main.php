@@ -198,10 +198,10 @@
                             <center><input type="text" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
                         <h3>Ingredients</h3>
                         <div id="Ingredients">
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
-                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -2px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
+                            <input type="text" name="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
                         </div>
                             <center><input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" /></center>
                         <h3>Recipe Instructions</h3>

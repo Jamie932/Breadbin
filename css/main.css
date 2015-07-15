@@ -310,7 +310,7 @@ h5 {
         }
         
         input.recipeTitle {
-            width: 460px;   
+            width: 450px;   
             height: 40px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
@@ -321,7 +321,7 @@ h5 {
         }
         
         input.recipeIngredients {
-            width: 224px;   
+            width: 211px;   
             height: 40px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
