@@ -1,7 +1,8 @@
 p { margin-bottom: -10px }
+
 p.report {
     font-size: 10px;
-    padding-top: 8px;
+    padding-top: 15px;
 }
 
 #center {
@@ -224,7 +225,7 @@ h5 {
 
 .hide { visibility: visible }
 
-.burn, .unburn { margin-top: 10px !important; padding-top: 5px; }
+.burn, .unburn { margin-top: 10px !important; padding-top: 2px; }
 
 .toast, .untoast { margin-top: 15px !important }
 
