@@ -25,9 +25,9 @@ $(document).ready(function() {
 			console.log(data);
 		
 			if (!data.success) {
-                alert('Hello');
+                alert("shit error");
 			} else {
-				alert('Right');
+				window.location.replace("settings.php"); 
 			}
 		});
 		
