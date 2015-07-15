@@ -1,11 +1,9 @@
 <?php 
 	header("Content-Type: application/json", true);
     require("common.php"); 
-	require("vendor/ImageResize.php");
 	
     $data = array();
-    
-    if (isset($_POST['title'])) { //If post has only text...
+
         if (empty($_POST['title'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a title.';
@@ -27,10 +25,6 @@
 
             $data['success'] = true;
         }
-    } else {            
-        $data['success'] = false;
-        $data['error'] = 'Found nothing to post.';   
-    }
 
     echo json_encode($data);
 ?> 
