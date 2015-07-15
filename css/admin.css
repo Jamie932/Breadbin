@@ -73,9 +73,14 @@
 .content a {
     text-decoration: none;   
     color: gray;
+    padding-right: 10px;
 }
 
-.active {
+.content a:last-child {
+    padding-right: 0px !important;   
+}
+
+.timeActive {
     color: black;
 }
 
