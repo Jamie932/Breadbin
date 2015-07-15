@@ -43,7 +43,8 @@ require("../php/vendor/ImageResize.php");
     
     $(document).ready(function() {
         $(window).load(function() {
-            // Prepare layout options.
+            $(document).ready(new function() {
+              // Prepare layout options.
               var options = {
                 autoResize: true, // This will auto-update the layout when the browser window is resized.
                 container: $('#main'), // Optional, used for some extra CSS styling
@@ -59,10 +60,11 @@ require("../php/vendor/ImageResize.php");
 
               // Capture clicks on grid items.
 
+            });
             
             $('#loader').hide();
             
-            $('#content').animate({opacity: 1}, 600);
+            $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
         });
     });
