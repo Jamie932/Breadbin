@@ -50,7 +50,7 @@
                 $colour = '#50B350';
                 $activecolour = '#219921';
             } else if ($row['colour'] == 4) {
-                $colour = '#F84343';
+                $colour = '#EC5858';
                 $activecolour = '#DD2B2B';
             } else if ($row['colour'] == 5) {
                 $colour = '#8C68D8';
