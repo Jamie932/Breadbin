@@ -59,24 +59,29 @@
         var uploadingFile = false;
         
         $(document).ready(function(){
+            var oldMain = '';
+            var oldAlt = '';
             
             $('.colourBox').on("mouseover", function() {
+                oldMain = $('#navbar').css("background-color");
+                oldAlt = $('.activePage').css("background-color");
+                    
                 $('#navbar').css("background-color", $(this).css("background-color"));
                 $('.leftHeader').css("background-color", $(this).css("background-color"));
                 
-                $active = ($(this).hasClass('orange') ? '#D7870F' : false) || ($(this).hasClass('blue') ? '#4979D8' : false) || 
+                var active = ($(this).hasClass('orange') ? '#D7870F' : false) || ($(this).hasClass('blue') ? '#4979D8' : false) || 
                     ($(this).hasClass('green') ? '#219921' : false) || ($(this).hasClass('red') ? '#DD2B2B' : false) ||
                     ($(this).hasClass('purple') ? '#7153B0' : false) || ($(this).hasClass('pink') ? '#C2569E' : false);
                 
-                if ($active) {
-                    $('.activePage').css("background-color", $active);
+                if (active) {
+                    $('.activePage').css("background-color", active);
                 }
             });
             
             $('.colourBox').on("mouseleave", function() {
-                $('#navbar').css("background-color",  $colour);
-                $('.leftHeader').css("background-color", $colour);
-                $('.activePage').css("background-color", $activecolour);
+                $('#navbar').css("background-color",  oldMain);
+                $('.leftHeader').css("background-color", oldMain);
+                $('.activePage').css("background-color", oldAlt);
             });
             
             $(".passwordReset").click(function(){
