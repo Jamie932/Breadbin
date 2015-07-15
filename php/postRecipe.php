@@ -4,6 +4,12 @@
 	
     $data = array();
 
+    ?>
+                    <script>
+                        console.log(<? echo json_encode($_POST['title']); ?>);
+                    </script>
+    <?php
+
         if (empty($_POST['title'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a title.';

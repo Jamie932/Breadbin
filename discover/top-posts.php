@@ -128,12 +128,6 @@ require('../php/template/discoverNavbar.php');
             $result       = $stmt->execute($query_params);
             $test         = $stmt->fetch();
             
-            /*?>
-                    <script>
-                        console.log(<? echo json_encode($totalToasts); ?>);
-                    </script>
-            <?php*/
-            
         echo '<ul id="tiles">';
         
         $direcFix = '../'.$row['image'];
