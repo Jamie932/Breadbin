@@ -59,6 +59,11 @@
         var uploadingFile = false;
         
         $(document).ready(function(){
+            
+            $('.colourBox').on("mouseover", function() {
+                $('#navbar').css("background-color", $(this).css("background-color"));
+            });
+            
             $(".passwordReset").click(function(){
                 $(".accountSettingsField").fadeOut('normal', function(){
                     $(".passwordSettingsField").fadeIn('normal');
@@ -162,7 +167,7 @@
         
         $(window).scroll(function() {
             $('.leftSettings').css('marginLeft', -$(window).scrollLeft()); 
-        });        
+        });
     </script>
     <script src="js/vendor/progressbar.min.js" async></script>
     <script src="js/formChangeAvatar.js" async></script>
