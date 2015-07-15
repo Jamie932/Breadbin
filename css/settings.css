@@ -172,13 +172,14 @@ p.settingsExplain {
 }
 
 #colourContainer {
-    
+    dispay: inline-block;
+    vertical-align: middle;
 }
 
 .colourBox {
     width: 20px;
     height: 20px;
-    padding-right: 5px;
+    margin-right: 5px;
     float: left;
 }
 
