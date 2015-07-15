@@ -27,7 +27,7 @@ require("../php/vendor/ImageResize.php");
                 document.location.href = redirect
             });
         });
-    }) 
+    })    
     
     /*$(document).ready(function(){
         // to fade out before redirect
@@ -44,34 +44,28 @@ require("../php/vendor/ImageResize.php");
     $(document).ready(function() {
         $(window).load(function() {
             $(document).ready(new function() {
-              // Prepare layout options.
-              var options = {
-                autoResize: true, // This will auto-update the layout when the browser window is resized.
-                container: $('#main'), // Optional, used for some extra CSS styling
-                offset: 5, // Optional, the distance between grid items
-                itemWidth: 310 // Optional, the width of a grid item
-              };
+          // Prepare layout options.
+          var options = {
+            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            container: $('#main'), // Optional, used for some extra CSS styling
+            offset: 5, // Optional, the distance between grid items
+            itemWidth: 310 // Optional, the width of a grid item
+          };
 
-              // Get a reference to your grid items.
-              var handler = $('#tiles li');
+          // Get a reference to your grid items.
+          var handler = $('#tiles li');
 
-              // Call the layout function.
-              handler.wookmark(options);
+          // Call the layout function.
+          handler.wookmark(options);
 
-              // Capture clicks on grid items.
-
-            });
+          // Capture clicks on grid items.
+         
+        });
             
             $('#loader').hide();
             
             $("#content").animate({ opacity: 1}, 1000); 
             $('#content').css("pointer-events", "auto");
-        });
-    });
-      
-    $(document).ready(function() {
-        $(function() {
-            $("img.tiles").unveil(300);
         });
     });
     </script>
@@ -80,7 +74,7 @@ require("../php/vendor/ImageResize.php");
 <body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
-    </noscript>          
+    </noscript>    
     
     <?php
     require('../php/template/navbar.php'); 
@@ -89,7 +83,7 @@ require("../php/vendor/ImageResize.php");
     <div id="loader">
         <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
         <p>Loading some beautiful content...</p> 
-    </div>
+    </div> 
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
