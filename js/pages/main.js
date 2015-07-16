@@ -65,7 +65,35 @@ $(document).ready(function(){
         });
         
         event.preventDefault();
-    });    
+    });  
+    
+    $('#postRecipeForm').submit(function(event) {
+               
+                var ingredArray = new Array();
+        
+                $("input[name=recipeIngredients]").each(function() {
+                   ingredArray.push($(this).val());
+                });
+
+                alert(ingredArray); 
+        
+                    var formData = {
+                        'title' : $('#recipeTitle').val(),
+                        'ingredients' : JSON.stringify(ingredArray),
+                        'instructions' : $('#recipeInstructions').val()
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/postRecipe.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+                    
+        event.preventDefault();
+        
+    })
 
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);
