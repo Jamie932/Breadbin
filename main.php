@@ -40,7 +40,7 @@
     <div id="break"></div>
         
     <div id="recipeBox">
-            <div class="recipeContent">
+            <div class="recipeContent"> 
                 <div class="recipeHeader">
                     <h1>Post your recipe</h1>
                 </div>
