@@ -117,11 +117,7 @@
             </div> 
             <div class="clearFix"></div>
             
-                
-                <?php require('php/recommendToaster.php');  ?>
-                
-                    
-            <p id="loadMore">Load More</p>
+            <?php require('php/recommendToaster.php');  ?>
         </div>        
     </div>
 </body>
