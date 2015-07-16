@@ -115,14 +115,11 @@ $(document).ready(function(){
 
     $('#postRecipeForm').submit(function(event) {
                
-            
                 var newArray = new Array();
 
                 $('#recipeIngredients').each(function(){
                     newArray.push($(this));
                 })
-                
-                alert(newArray);
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
@@ -137,6 +134,15 @@ $(document).ready(function(){
                         dataType    : 'json',
                         encode      : true
                     })
+                    
+                .done(function(data) {
+                    console.log(data);
+
+                    if (!data.success) {
+                        createError(data.error);
+                    } else {
+                        window.location.replace("main.php"); 
+                    }
                     
         event.preventDefault();
     })

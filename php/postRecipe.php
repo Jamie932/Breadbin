@@ -32,8 +32,6 @@
 
             $data['success'] = true;
             
-            header("location: ../main.php");
-            
         }
 
     echo json_encode($data);
