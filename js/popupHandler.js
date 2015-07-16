@@ -39,7 +39,7 @@ $(document).ready(function() {
       clearPopup();
   });
     
-  $('#rightTitle').click(function() {
+  $('#rightTitle .fa').click(function() {
       clearPopup();
   });
 })  

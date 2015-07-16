@@ -41,7 +41,7 @@ body {
     z-index: 10;
     background-color: #fff;
     width: 400px;
-    min-height: 150px;
+    min-height: 130px;
     margin-left: -200px;
     display: none;
     box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
@@ -76,6 +76,6 @@ body {
 
 #popupBottomRow {
     position: absolute;
-    right: 5px;
-    bottom: 5px;
+    right: 10px;
+    bottom: 10px;
 }
