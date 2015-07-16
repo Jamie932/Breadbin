@@ -260,7 +260,7 @@ h5 {
     color: gray;
 }
 
-ul#images { list-style: none; }
+ul#images { list-style: none; overflow: auto; margin: 0px; }
 
 /* ===[ Recipe Area (main.css) ]=== */
 
