@@ -77,6 +77,8 @@ $(document).ready(function(){
 
                 alert(ingredArray); 
         
+                
+        
                     var formData = {
                         'title' : $('#recipeTitle').val(),
                         'ingredients' : JSON.stringify(ingredArray),
@@ -96,7 +98,8 @@ $(document).ready(function(){
                         } else {
                             window.location.replace("settings.php"); 
                         }
-                    });
+                    })
+                });
                     
         event.preventDefault();
         
