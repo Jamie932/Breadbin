@@ -134,7 +134,7 @@ $(document).ready(function(){
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
 
-    $(".fa-heart-o").click(function(){
+    $(".fa-heart").click(function(){
         $(this).addClass('fa-heart-o').removeClass('fa-heart');
     });
 })
