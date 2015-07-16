@@ -98,8 +98,8 @@ $(document).ready(function(){
                         } else {
                             window.location.replace("settings.php"); 
                         }
-                    })
-                });
+                    } 
+                })
                     
         event.preventDefault();
         
