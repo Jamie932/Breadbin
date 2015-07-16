@@ -1,5 +1,5 @@
 <?php
-    $id = $_SERVER['PHP_SELF'] == "profile.php" ? $_GET['id'] : $_SESSION['user']['id'];
+    $id = basename($_SERVER['REQUEST_URI'], '?' . $SERVER['QUERY_STRING']) == "profile.php" ? $_GET['id'] : $_SESSION['user']['id'];
 
     if (empty($_GET) && $_SERVER['PHP_SELF'] == "profile.php") {
         if ($_SESSION['user']['id']) {
