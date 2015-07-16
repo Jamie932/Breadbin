@@ -27,11 +27,12 @@ function createPopup(title, content, yesno, clicked) {
 }
 
 function clearPopup() {
-    $('#popup').fadeOut();
+    $('#popup').fadeOut('normal', function() { 
+        $('#leftTitle').html('');
+        $('#popupContent').html('');
+    });
     $('.popupCancel').fadeOut();
     $('.popupOK').fadeOut();
-    $('#leftTitle').html('');
-    $('#popupContent').html('');
 }
 
 $(document).ready(function() {
@@ -42,11 +43,4 @@ $(document).ready(function() {
     $('#rightTitle .fa').click(function() {
       clearPopup();
     });
-    
-   $('body').on({'mousewheel' : function(e) {
-       if ($('#popup').is(':visible')) {
-            e.preventDefault();
-            e.stopPropagation();
-       }
-   }});
 })  
