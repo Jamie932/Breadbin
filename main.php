@@ -88,6 +88,8 @@
             <div class="clearFix"></div>
             
             <?php require('php/recommendToaster.php');  ?>
+            
+            <a href="#" id="load">Load More</a>
         </div>        
     </div>
 </body>
