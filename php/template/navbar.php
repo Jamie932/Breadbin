@@ -11,19 +11,13 @@
     });
 
     function logout() {
-        if (document.cookie.indexOf("hashkey") >= 0) {
-            var confirmed = confirm("Are you sure you want to log out?");
-      
-            if (confirmed) {
-                $.ajax({
-                   type: "POST",
-                   url: '/php/logout.php',
-                   success:function(data) {
-                       window.location.href = document.location.origin;
-                   }
-                });
-            }
-        }
+        $.ajax({
+           type: "POST",
+           url: '/php/logout.php',
+           success:function(data) {
+               window.location.href = document.location.origin;
+           }
+        });
     }
 </script>
 
@@ -114,7 +108,7 @@
                     <li><a class="navLinks" href="/settings.php">Settings</a></li>
                     <li><a class="navLinks" href="/toasted.php">Toasted</a></li>
                     <li><a class="navLinks" href="/burned.php">Burned</a></li>
-                    <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
+                    <li><a class="navLinks" href="#" onClick="createPopup('Logout', 'Are you sure you want to log out?', true, function() { logout(); }); return false;">Logout</a></li>
                 </ul>
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->

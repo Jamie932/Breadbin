@@ -38,4 +38,8 @@ $(document).ready(function() {
   $('.popupCancel').click(function() {
       clearPopup();
   });
+    
+  $('#rightTitle').click(function() {
+      clearPopup();
+  });
 })  
