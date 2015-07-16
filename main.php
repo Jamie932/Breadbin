@@ -63,15 +63,17 @@
     <div id="center">
         <script>
             var loading = false;
-
+            var groupNumber = 1;
+            
             $(window).scroll(function() {
                 if ($(window).scrollTop() + $(window).height() == $(document).height()) {
                     if (loading == false) {
                         loading = true;
                         
-                        $.post('php/fetchPosts.php', function(data) {
+                        $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
                             $("#images").append(data);
                             loading = false;
+                            groupNumber++;
                         });
                     }
                 }
