@@ -7,7 +7,7 @@
     </div>
     <div id="popupContent">Hello</div>
     <div id="popupBottomRow">
-        <button class="popupOkay buttonstyle">OK</button>
-        <button class="popupCancel buttonstyle">Cancel</button>
+        <button class="popupOkay buttonstyle" style="display: none;">OK</button>
+        <button class="popupCancel buttonstyle" style="display: none;">Cancel</button>
     </div>
 </div>
