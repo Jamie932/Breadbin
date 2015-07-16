@@ -35,11 +35,18 @@ function clearPopup() {
 }
 
 $(document).ready(function() {
-  $('.popupCancel').click(function() {
+    $('.popupCancel').click(function() {
       clearPopup();
-  });
+    });
+
+    $('#rightTitle .fa').click(function() {
+      clearPopup();
+    });
     
-  $('#rightTitle .fa').click(function() {
-      clearPopup();
-  });
+   $('body').on({'mousewheel' : function(e) {
+       if ($('#popup').is(':visible')) {
+            e.preventDefault();
+            e.stopPropagation();
+       }
+   }});
 })  
