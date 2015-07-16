@@ -143,7 +143,7 @@ $(document).ready(function(){
                     } else {
                         window.location.replace("main.php"); 
                     } 
-                    
+                })
         event.preventDefault();
     })
 
