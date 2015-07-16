@@ -5,9 +5,9 @@
         <div id="leftTitle"></div>
         <div id="rightTitle"><i class="fa fa-times"></i></div>
     </div>
-    <div id="popupContent">Hello</div>
+    <div id="popupContent"></div>
     <div id="popupBottomRow">
-        <button class="popupOkay buttonstyle" style="display: none;">OK</button>
+        <button class="popupOK buttonstyle" style="display: none;">OK</button>
         <button class="popupCancel buttonstyle" style="display: none;">Cancel</button>
     </div>
 </div>
