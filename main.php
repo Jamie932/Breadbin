@@ -89,7 +89,7 @@
             
             <?php require('php/recommendToaster.php');  ?>
             
-            <a href="#" id="load">Load More</a>
+            <p id="loadMore">Load More</p>
         </div>        
     </div>
 </body>
