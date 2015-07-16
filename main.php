@@ -74,7 +74,7 @@
             var groupNumber = 1;
             
             $(window).scroll(function() {
-                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if($(window).scrollTop() + $(window).height() == $(document).height() - 50) {
                     if (loading == false && groupNumber <= <?php echo $numPages ?>) {
                         loading = true;
                         
