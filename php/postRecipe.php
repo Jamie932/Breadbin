@@ -16,13 +16,25 @@
             $data['success'] = false;
             $data['error'] = 'Recipes need a title.';
             
+        } else if (ctype_space($_POST['title'])) {
+            $data['success'] = false;
+            $data['error'] = 'Title cannot contain only spaces.';
+            
         } else if (empty($_POST['ingredients'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a ingredients.';
             
+        } else if (ctype_space($_POST['ingredients'])) {
+            $data['success'] = false;
+            $data['error'] = 'Ingredients cannot contain only spaces.';
+            
         } else if (empty($_POST['instructions'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a instructions.';
+            
+        } else if (ctype_space($_POST['instructions'])) {
+            $data['success'] = false;
+            $data['error'] = 'Instructions cannot contain only spaces.';
             
         } else {
             $query = "INSERT INTO posts (userid, type, title, ingred, text)  VALUES (:userid, 'recipe', :text, :ingreds, :text)"; 
