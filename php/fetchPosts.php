@@ -108,7 +108,7 @@
                 }
             }
 
-            echo '<li><div id="post" style="display: none;">';
+            echo '<li><div id="post">';
 
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
