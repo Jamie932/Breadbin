@@ -139,7 +139,7 @@ $(document).ready(function(){
                     console.log(data);
 
                     if (!data.success) {
-                        createError(data.error);
+                        alert(data.error);
                     } else {
                         window.location.replace("main.php"); 
                     }
