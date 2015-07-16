@@ -76,7 +76,9 @@
             }
 
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-                if (!file_exists($row['image'])) {
+                $img = '/' . $row['image'];
+                
+                /*if (!file_exists($img)) {
                     $query = "DELETE FROM posts WHERE id = :id"; 
                     $query_params = array(':id' => $row['id']); 
 
@@ -85,9 +87,9 @@
                     
                     echo '<script>window.location.reload()</script>';
                     
-                }
+                }*/
                 
-                list($width, $height) = getimagesize($row['image']);
+                list($width, $height) = getimagesize($img);
 
                 if ($width > 600) {
                     $class = 'imgNoPadding';
@@ -120,10 +122,10 @@
 
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
+                echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"></div>';
+                echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
