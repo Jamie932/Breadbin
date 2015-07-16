@@ -57,7 +57,7 @@
     if ($pagename == "profile.php") {?>
         <script>
             $(document).ready(function() {
-                $(this).attr("title", (isset($usersname) ? $usersname : 'Unknown') . " | Breadbin");
+                $(this).attr("title", <?php (isset($usersname) ? $usersname : 'Unknown') . " | Breadbin" ?>);
             }
         </script>
     <?php } ?>
