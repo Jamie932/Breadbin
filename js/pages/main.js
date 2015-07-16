@@ -86,18 +86,19 @@ $(document).ready(function(){
                     $.ajax({
                         type        : 'POST',
                         url         : 'php/postRecipe.php',
-                        processData : false,
-                        contentType : false,
-                        cache       : false,
-                        data        : formData,                    
-                        success: function(data) {
-                            data = JSON.parse(data);
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true
+                    })
+                    
+                    .done(function(data) {
+                        data = JSON.parse(data);
 
-                            if (data.success) {
-                                window.location.replace("main.php");   
-                            } else {
-                                createError(data.error);
-                            }
+                        if (!data.success) {
+                            alert("error");
+                            createError(data.error);
+                        } else {
+                            window.location.replace("settings.php"); 
                         }
                     });
                     
