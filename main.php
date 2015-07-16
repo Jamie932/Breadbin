@@ -1,14 +1,6 @@
 <?php 
     require("php/common.php");
     require("php/checkLogin.php");
-
-    $postsPerPage = 10;
-
-    $query = 'SELECT COUNT(*) FROM posts'; 
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute(); 
-    $numPosts = $stmt->fetchColumn();
-    $numPages = ceil($numPosts / $postsPerPage);
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,39 +24,7 @@
 <body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
-    </noscript>   
-        
-    <script> 
-        var track_load = 0; //total loaded record group(s)
-        var loading  = false; //to prevents multipal ajax loads
-        var total_groups = <?php echo $numPages; ?>; //total record group(s)
-
-        $('#images').load($.post("php/fetchPosts.php", {'group_no':track_load}, function() {track_load++;})); //load first group
-
-        $(window).scroll(function() { 
-            if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
-                if (track_load <= total_groups && loading == false) {
-                    loading = true;
-
-                    $.post('php/fetchPosts.php',{'group_no': track_load}, function(data){
-                        $("#images").append(data);
-                        //$('.animation_image').hide(); //hide loading image once data is received
-
-                        track_load++; //loaded group increment
-                        loading = false;
-
-                    }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
-
-                        createError(thrownError);
-                        //$('.animation_image').hide(); //hide loading image
-                        loading = false;
-
-                    });
-
-                }
-            }
-        });
-    </script>
+    </noscript>    
     
     <?php require('php/template/navbar.php');?>
     <?php require('php/template/popup.php');?>
@@ -104,6 +64,7 @@
         <div id="content">
             
             <ul id="images">
+                <?php require('php/fetchPosts.php');?>
             </ul>
                 
         </div>

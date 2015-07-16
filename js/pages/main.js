@@ -143,14 +143,3 @@ function getFile(){
 function add_fields() {
     document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients"/>';
 }
-
-$(function() {
-    $(document).endlessScroll({
-      bottomPixels: 500,
-      fireDelay: 10,
-      callback: function(i) {
-        var last_img = $("ul#images li:last");
-        last_img.after(last_img.prev().prev().prev().prev().prev().prev().clone());
-      }
-    });
-});
