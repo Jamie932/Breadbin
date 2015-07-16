@@ -142,7 +142,7 @@ $(document).ready(function(){
                         alert(data.error);
                     } else {
                         window.location.replace("main.php"); 
-                    }
+                    } 
                     
         event.preventDefault();
     })
