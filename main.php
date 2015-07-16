@@ -34,35 +34,37 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>   
         
-    <script>      
-        var track_load = 0; //total loaded record group(s)
-        var loading  = false; //to prevents multipal ajax loads
-        var total_groups = <?php echo $numPages; ?>; //total record group(s)
+    <script>    
+        $(document).load(function() {
+            var track_load = 0; //total loaded record group(s)
+            var loading  = false; //to prevents multipal ajax loads
+            var total_groups = <?php echo $numPages; ?>; //total record group(s)
 
-        $('#images').load("fetchPosts.php", {'group_no':track_load}, function() {track_load++;}); //load first group
+            $('#images').load("php/fetchPosts.php", {'group_no':track_load}, function() {track_load++;}); //load first group
 
-        $(window).scroll(function() { 
-            if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
-                if (track_load <= total_groups && loading == false) {
-                    loading = true;
+            $(window).scroll(function() { 
+                if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
+                    if (track_load <= total_groups && loading == false) {
+                        loading = true;
 
-                    $.post('fetchPosts.php',{'group_no': track_load}, function(data){
-                        $("#images").append(data);
-                        //$('.animation_image').hide(); //hide loading image once data is received
+                        $.post('php/fetchPosts.php',{'group_no': track_load}, function(data){
+                            $("#images").append(data);
+                            //$('.animation_image').hide(); //hide loading image once data is received
 
-                        track_load++; //loaded group increment
-                        loading = false;
+                            track_load++; //loaded group increment
+                            loading = false;
 
-                    }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+                        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
 
-                        createError(thrownError);
-                        //$('.animation_image').hide(); //hide loading image
-                        loading = false;
+                            createError(thrownError);
+                            //$('.animation_image').hide(); //hide loading image
+                            loading = false;
 
-                    });
+                        });
 
+                    }
                 }
-            }
+            });
         });
     </script>
     
