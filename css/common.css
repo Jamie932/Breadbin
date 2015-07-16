@@ -68,8 +68,14 @@ body {
     cursor: pointer;
 }
 
-.popupContent {
+#popupContent {
     padding-left: 10px;
     padding-top: 10px;
     font-size: 0.9em;
+}
+
+#popupBottomRow {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
 }
