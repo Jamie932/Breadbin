@@ -150,15 +150,12 @@ function add_fields() {
 }
 
 $(function() {
-      $('#images').scrollTop(101);
-      var images = $("ul#images").clone().find("li");
-      $('#images').endlessScroll({
-        pagesToKeep: 5,
-        inflowPixels: 100,
-        fireDelay: 10,
-        content: function(i, p, d) {
-          console.log(i, p, d)
-          return images.eq(Math.floor(Math.random()*8))[0].outerHTML;
-        }
+    $(document).endlessScroll({
+      bottomPixels: 500,
+      fireDelay: 10,
+      callback: function(i) {
+        var last_img = $("ul#images li:last");
+        last_img.after(last_img.prev().prev().prev().prev().prev().prev().clone());
+      }
     });
 });

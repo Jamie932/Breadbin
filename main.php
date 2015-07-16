@@ -62,7 +62,11 @@
     
     <div id="center">
         <div id="content">
-            <?php require('php/fetchPosts.php');?>
+            
+            <ul id="images">
+                <?php require('php/fetchPosts.php');?>
+            </ul>
+                
         </div>
         
         <div id="sidebar">
@@ -88,8 +92,10 @@
             </div> 
             <div class="clearFix"></div>
             
+                
                 <?php require('php/recommendToaster.php');  ?>
-            
+                
+                    
             <p id="loadMore">Load More</p>
         </div>        
     </div>

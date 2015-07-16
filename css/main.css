@@ -260,6 +260,8 @@ h5 {
     color: gray;
 }
 
+ul#images { text-align: center; list-style: none; }
+
 /* ===[ Recipe Area (main.css) ]=== */
 
 #blackOverlay {
