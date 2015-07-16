@@ -3,10 +3,10 @@ var isPopup = false;
 function createPopup(title, content, yesno, clicked) {
     if (title != undefined && content != undefined) {
         $('#leftTitle').html(title);
-        $('.popupContent').html(content);
+        $('#popupContent').html(content);
     } else if (title != undefined) {
         $('#leftTitle').html('Breadbin');
-        $('.popupContent').html(title);
+        $('#popupContent').html(title);
     } else {
         createError("PopUp failed to be created.");
     }
@@ -29,7 +29,7 @@ function clearPopup() {
     $('.popupCancel').fadeOut();
     $('.popupOK').fadeOut();
     $('#leftTitle').html('');
-    $('.popupContent').html('');
+    $('#popupContent').html('');
 }
 
 $(document).ready(function() {
