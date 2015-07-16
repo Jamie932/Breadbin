@@ -78,7 +78,7 @@
                     if (loading == false && groupNumber <= <?php echo $numPages ?>) {
                         loading = true;
                         
-                        if (groupNumber + 1 <= <?php echo $numPages ?>) {
+                        if (groupNumber + 1  == <?php echo $numPages ?>) {
                             $.post('php/fetchPosts.php', {'groupNumber' : groupNumber, 'lastGroup' : true}, function(data) {
                                 $("#images").append(data);
                                 loading = false;
