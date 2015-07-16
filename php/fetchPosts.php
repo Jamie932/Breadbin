@@ -2,7 +2,7 @@
     require("common.php"); 
 	require("vendor/timeago.php");
     
-    $postsPerPage = 10;
+    $postsPerPage = $_POST['lastGroup'] ? (10 - $_POST['lastGroup']) : 10;
 
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;

@@ -78,11 +78,19 @@
                     if (loading == false && groupNumber <= <?php echo $numPages ?>) {
                         loading = true;
                         
-                        $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
-                            $("#images").append(data);
-                            loading = false;
-                            groupNumber++;
-                        });
+                        if (groupNumber + 1 <= <?php echo $numPages ?>) {
+                            $.post('php/fetchPosts.php', {'groupNumber' : groupNumber, 'lastGroup' : true}, function(data) {
+                                $("#images").append(data);
+                                loading = false;
+                                groupNumber++;
+                            });                        
+                        } else {
+                            $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
+                                $("#images").append(data);
+                                loading = false;
+                                groupNumber++;
+                            });
+                        }
                     }
                 }
             });
