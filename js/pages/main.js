@@ -135,6 +135,8 @@ $(document).ready(function(){
         e.preventDefault();
     });
    
+    var loading = false;
+    
     $(window).scroll(function() { 
         if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
             if (loading == false) {
