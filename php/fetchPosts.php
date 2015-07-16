@@ -76,7 +76,7 @@
             }
 
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-                $img = $_SERVER['DOCUMENT_ROOT'] . '/' . $row['image'];
+                $img = (getcwd() == "php") ? '../' . $row['image'] : $row['image'];
                 
                 /*if (!file_exists($img)) {
                     $query = "DELETE FROM posts WHERE id = :id"; 
