@@ -211,6 +211,7 @@ h5 {
 #submitPost {
     vertical-align: top;
     float: right;
+    font-size: 0.8em;
 }
 
 .delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }

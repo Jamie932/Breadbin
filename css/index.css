@@ -15,7 +15,6 @@ small {
     text-align: left;
 }
 
-
 .dockMiddle {
     position: relative;
     bottom: -15px;
@@ -266,4 +265,8 @@ button.headerLoginBut {
 p.headerTagRegister {
     font-size: 13px;
     margin: 0px;
+}
+
+input {
+    margin-bottom: 10px;   
 }
