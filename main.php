@@ -61,12 +61,34 @@
     <div id="blackOverlay"></div>   
     
     <div id="center">
+        <script>
+            var loading = false;
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() + $(window).height() == $(document).height() - 100) {
+                    if (loading == false) {
+                        loading = true;
+
+                        $.ajax({
+                            type        : 'POST',
+                            url         : 'php/fetchPosts.php',
+                            dataType    : 'json',
+                            encode      : true
+                        })
+
+                      .done(function(data) {
+                            $("#images").append(data);
+                            loading = false;
+                        })
+                    }
+                }
+            });
+        </script>    
+        
         <div id="content">
-            
             <ul id="images">
                 <?php require('php/fetchPosts.php');?>
             </ul>
-                
         </div>
         
         <div id="sidebar">
