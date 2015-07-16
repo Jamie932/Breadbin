@@ -88,10 +88,8 @@ $(document).ready(function(){
                         url         : 'php/postRecipe.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true
-                    })
-                    
-                    .done(function(data) {
+                        encode      : true,
+                        success: function(data) {
                         if (!data.success) {
                             alert("error");
                             createError(data.error);
