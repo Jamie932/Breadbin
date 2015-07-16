@@ -88,7 +88,16 @@ $(document).ready(function(){
                         url         : 'php/postRecipe.php',
                         data        : formData,
                         dataType    : 'json',
-                        encode      : true
+                        encode      : true,
+                        success: function(data) {
+                            data = JSON.parse(data);
+
+                            if (data.success) {
+                                window.location.replace("main.php");   
+                            } else {
+                                createError(data.error);
+                            }
+                        }
                     })
                     
         event.preventDefault();
