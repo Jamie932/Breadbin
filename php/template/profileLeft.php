@@ -58,7 +58,7 @@
         <script>
             $(document).ready(function() {
                 $(this).attr("title", <?php (isset($usersname) ? $usersname : 'Unknown') . " | Breadbin" ?>);
-            }
+            });
         </script>
     <?php } ?>
 
