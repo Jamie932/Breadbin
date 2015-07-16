@@ -1,8 +1,6 @@
 <?php
     require("common.php"); 
 	require("vendor/timeago.php");
-    
-    $postsPerPage = $_POST['lastGroup'] ? (10 - $_POST['lastGroup']) : 10;
 
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
@@ -12,6 +10,10 @@
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
+
+    if (!$posts && $_POST['groupNumber']) {
+        exit();
+    }
 
     $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
