@@ -53,11 +53,15 @@ p.report {
     display: inline-block;
 }
 
-.fa-heart-o {
+.fa-heart {
+    color: #AA2E2E;   
+}
+
+.fa-heart-o, .fa-heart {
     padding-left: 5px;
 }
 
-.fa-heart-o, .fa-trash-o {
+.fa-heart-o, .fa-heart, .fa-trash-o {
     cursor: pointer;   
 }
 
@@ -262,6 +266,8 @@ h5 {
 }
 
 ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
+
+
 
 /* ===[ Recipe Area (main.css) ]=== */
 

@@ -103,7 +103,7 @@ $(document).ready(function(){
                     
         event.preventDefault();
         
-    })
+    });
 
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);
@@ -128,10 +128,14 @@ $(document).ready(function(){
     $("#cancel").click(function(){
         $('#blackOverlay').fadeOut('normal');
         $('#recipeBox').fadeOut('normal');
-    })   
+    });
     
-    $("#load").click(function(e){ // click event for load more
-        e.preventDefault();
+    $(".fa-heart-o").click(function(){
+        $(this).addClass('.fa-heart').removeClass('.fa-heart-o');
+    });
+
+    $(".fa-heart-o").click(function(){
+        $(this).addClass('.fa-heart-o').removeClass('.fa-heart');
     });
 })
 
