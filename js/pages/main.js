@@ -86,9 +86,10 @@ $(document).ready(function(){
                     $.ajax({
                         type        : 'POST',
                         url         : 'php/postRecipe.php',
-                        data        : formData,
-                        dataType    : 'json',
-                        encode      : true,
+                        processData : false,
+                        contentType : false,
+                        cache       : false,
+                        data        : formData,                    
                         success: function(data) {
                             data = JSON.parse(data);
 
