@@ -134,10 +134,6 @@ $(document).ready(function(){
     $("#load").click(function(e){ // click event for load more
         e.preventDefault();
     });
-    
-    var track_load = 0; //total loaded record group(s)
-    var loading  = false; //to prevents multipal ajax loads
-    var total_groups = <?php echo $numPages; ?>; //total record group(s)
    
     $(window).scroll(function() { 
         if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
