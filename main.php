@@ -19,7 +19,8 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
-</head>
+    <script src="js/vendor/jquery.endless-scroll.js"></script>
+</head> 
 <body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
@@ -87,7 +88,9 @@
             </div> 
             <div class="clearFix"></div>
             
-            <?php require('php/recommendToaster.php');  ?>
+            <ul id="images">
+                <?php require('php/recommendToaster.php');  ?>
+            </ul>
             
             <p id="loadMore">Load More</p>
         </div>        

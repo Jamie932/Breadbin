@@ -149,13 +149,16 @@ function add_fields() {
     document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients"/>';
 }
 
-$(function(){
-    $("div#post").slice(0, 10).show(); // select the first ten
-    $("#loadMore").click(function(e){ // click event for load more
-        e.preventDefault();
-        $("div#post:hidden").slice(0, 10).show(); // select next 10 hidden divs and show them
-        if($("div#post:hidden").length == 0){ // check if any hidden divs still exist
-            alert("No more divs"); // alert if there are none left
+$(function() {
+      $('#images').scrollTop(101);
+      var images = $("ul#images").clone().find("li");
+      $('#images').endlessScroll({
+        pagesToKeep: 5,
+        inflowPixels: 100,
+        fireDelay: 10,
+        content: function(i, p, d) {
+          console.log(i, p, d)
+          return images.eq(Math.floor(Math.random()*8))[0].outerHTML;
         }
     });
 });
