@@ -53,7 +53,7 @@ body {
     background-color: rgb(102, 153, 255);
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 10px;
+    padding-left: 15px;
     color: #fff;
 }
 
@@ -64,18 +64,18 @@ body {
 #rightTitle {
     display: inline-block;
     position: absolute;
-    right: 10px;
+    right: 15px;
     cursor: pointer;
 }
 
 #popupContent {
-    padding-left: 10px;
+    padding-left: 15px;
     padding-top: 10px;
     font-size: 0.9em;
 }
 
 #popupBottomRow {
     position: absolute;
-    right: 10px;
+    right: 15px;
     bottom: 10px;
 }
