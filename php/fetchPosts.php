@@ -81,7 +81,7 @@
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
                 $img = '../' . $row['image'];
                 
-                if (!file_exists($img) {
+                if (!file_exists($img)) {
                     $query = "DELETE FROM posts WHERE id = :id"; 
                     $query_params = array(':id' => $row['id']); 
 
