@@ -65,21 +65,14 @@
             var loading = false;
 
             $(window).scroll(function() {
-                if ($(window).scrollTop() + $(window).height() == $(document).height() - 100) {
+                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
                     if (loading == false) {
                         loading = true;
-
-                        $.ajax({
-                            type        : 'POST',
-                            url         : 'php/fetchPosts.php',
-                            dataType    : 'json',
-                            encode      : true
-                        })
-
-                      .done(function(data) {
+                        
+                        $.post('php/fetchPosts.php', function(data) {
                             $("#images").append(data);
                             loading = false;
-                        })
+                        });
                     }
                 }
             });
