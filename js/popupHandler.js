@@ -13,15 +13,17 @@ function createPopup(title, content, yesno, clicked) {
         
     $('.popupOK').fadeIn();
     
-    if (yesno != undefined && !yesno) { //Two buttons - OK and Cancel
+    if (yesno != undefined && yesno) { //Two buttons - OK and Cancel
         $('.popupCancel').fadeIn();
+        
+        if (clicked) {
+            $('.popupOK').click(clicked);
+        }
+    } else {
+        $('.popupOK').click(function() { clearPopup()  });
     }
         
     $('#popup').fadeIn();
-    
-    if (clicked) {
-        $('.popupOK').click(clicked);
-    }
 }
 
 function clearPopup() {
