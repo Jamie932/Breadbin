@@ -90,7 +90,6 @@ $(document).ready(function(){
                         url         : 'php/postRecipe.php',
                         data        : formData,
                         dataType    : 'json',
-                        contentType: 'application/json; charset=UTF-8',
                         encode      : true,
                         success: function(data) {
                         if (!data.success) {
