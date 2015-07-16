@@ -1,7 +1,10 @@
 <?php
-    $id = basename($_SERVER['REQUEST_URI'], '?' . $SERVER['QUERY_STRING']) == "profile.php" ? $_GET['id'] : $_SESSION['user']['id'];
+    $pagename = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
+    $id = ($pagename == "profile.php") ? $_GET['id'] : $_SESSION['user']['id'];
+    
+    echo $id;
 
-    if (empty($_GET) && $_SERVER['PHP_SELF'] == "profile.php") {
+    if (empty($_GET) && ($pagename == "profile.php")) {
         if ($_SESSION['user']['id']) {
             header('Location: profile.php?id=' . $_SESSION['user']['id']);
             die();
