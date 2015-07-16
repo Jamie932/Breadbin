@@ -130,11 +130,11 @@ $(document).ready(function(){
         $('#recipeBox').fadeOut('normal');
     });
     
-    $(".fa-heart-o").click(function(){
+    $(document).on('click','.fa-heart-o', function() {
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
 
-    $(".fa-heart").click(function(){
+    $(document).on('click','.fa-heart', function() {
         $(this).addClass('fa-heart-o').removeClass('fa-heart');
     });
 })
