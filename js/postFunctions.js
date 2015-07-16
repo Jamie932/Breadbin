@@ -1,8 +1,6 @@
 $(document).ready(function(){
     $(document).on('click','.delete', function() {
-        var confirmed = confirm("Are you sure you want to delete this post?");
-
-        if (confirmed) {
+        createPopup('Delete', 'Are you sure you want to delete this post?', true, function() {
             var postid = $(this).parent().attr('class').split('-')[1];
 
             var formData = {
@@ -17,16 +15,15 @@ $(document).ready(function(){
                 encode      : true,
                 success:function(data) {
                     if (data.success) {
-                        //window.location.replace("main.php");
-                        //$('.post-' + postid).fadeOut(600, function() { $(this).remove(); });
-                        $('.post-' + postid).animate({height: 0, opacity: 0, marginBottom: 0}, 600, function() { $(this).remove();});
+                        window.location.replace("main.php");
+                        //$('.post-' + postid).animate({height: 0, opacity: 0, marginBottom: 0}, 600, function() { $(this).remove();});
 
                     } else {
                         createError(data.error);
                     }
                 }
             })
-        }
+        });
     })
 
     $(document).on('click','.toast', function() {
