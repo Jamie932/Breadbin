@@ -1,6 +1,14 @@
 <?php 
     require("php/common.php");
     require("php/checkLogin.php");
+
+    $postsPerPage = 10;
+
+    $query = 'SELECT COUNT(*) FROM posts'; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $numPosts = $stmt->fetchColumn();
+    $numPages = ceil($numPosts / $postsPerPage);
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +75,7 @@
             
             $(window).scroll(function() {
                 if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                    if (loading == false) {
+                    if (loading == false && groupNumber <= <php echo $numPages ?>) {
                         loading = true;
                         
                         $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {

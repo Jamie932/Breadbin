@@ -1,16 +1,10 @@
 <?php
     require("common.php"); 
 	require("vendor/timeago.php");
-
+    
     $postsPerPage = 10;
 
-    $query = 'SELECT COUNT(*) FROM posts'; 
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute(); 
-    $numPosts = $stmt->fetchColumn();
-    $numPages = ceil($numPosts / $postsPerPage);
-
-    $groupNumber = $_GET['groupNumber'] ? $_GET['groupNumber'] : 0;
+    $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
 
     $query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
