@@ -75,7 +75,7 @@
             
             $(window).scroll(function() {
                 if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
-                    if (loading == false && groupNumber <= <?php echo $numPages ?>) {
+                    if (loading == false && groupNumber < <?php echo $numPages ?>) {
                         loading = true;
                         
                         $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
