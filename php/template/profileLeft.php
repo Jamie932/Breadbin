@@ -93,3 +93,42 @@
         ?>
     </div>
 </div>
+
+<div id="profileButtons">
+    <?php
+        if (isset($usersname)) {
+            if (($id != $_SESSION['user']['id'])) {
+    ?>
+    <div class="bottomRow">
+        <?php
+            $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
+            $query_params = array(
+                ':id' => $_SESSION['user']['id'],
+                ':userid' => $id
+            );
+
+            $stmt   = $db->prepare($query);
+            $result = $stmt->execute($query_params);
+            $row    = $stmt->fetch();
+            if ($row['user_no'] != intval($id)) {
+                echo '<button id="followBut" class="buttonstyle">Follow</button>';
+            } else {
+                echo '<button id="unFollowBut" class="buttonstyle">Unfollow</button>';
+            }
+        ?>
+        <button id="messageBut" class="buttonstyle">Message</button>
+        <button id="reportBut" class="buttonstyle">Report</button>
+    </div>
+
+    <?php
+        } else {
+    ?>
+    <div class="bottomRow">
+        <button class="saveBut buttonstyle" style="display: none;">Save</button>
+    </div>
+
+    <?php
+        }
+    }
+    ?> 
+</div>
