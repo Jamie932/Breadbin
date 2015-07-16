@@ -352,7 +352,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
             margin-bottom: 15px;
             
         }
-
+/*
 @media screen and (max-width: 1125px) {
     #center {
         margin: 0 !important;
@@ -376,4 +376,4 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
         position: relative;
         
     }
-}
+}*/
