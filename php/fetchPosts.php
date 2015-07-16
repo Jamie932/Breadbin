@@ -76,9 +76,7 @@
             }
 
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-                $img = '../' . $row['image'];
-                
-                /*if (!file_exists($img)) {
+                if (!file_exists($row['image'])) {
                     $query = "DELETE FROM posts WHERE id = :id"; 
                     $query_params = array(':id' => $row['id']); 
 
@@ -87,9 +85,9 @@
                     
                     echo '<script>window.location.reload()</script>';
                     
-                }*/
+                }
                 
-                list($width, $height) = getimagesize($img);
+                list($width, $height) = getimagesize($row['image']);
 
                 if ($width > 600) {
                     $class = 'imgNoPadding';
