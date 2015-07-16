@@ -131,14 +131,40 @@ $(document).ready(function(){
         $('#recipeBox').fadeOut('normal');
     })   
     
-    $("#post").slice(0, 10).show(); // select the first ten
     $("#load").click(function(e){ // click event for load more
         e.preventDefault();
-        $("div:hidden").slice(0, 10).show(); // select next 10 hidden divs and show them
-        if($("div:hidden").length == 0){ // check if any hidden divs still exist
-            alert("No more divs"); // alert if there are none left
+    });
+    
+    var track_load = 0; //total loaded record group(s)
+    var loading  = false; //to prevents multipal ajax loads
+    var total_groups = <?php echo $numPages; ?>; //total record group(s)
+   
+    $('#results').load("fetchPosts.php", {'group_no':track_load}, function() {track_load++;}); //load first group
+   
+    $(window).scroll(function() { 
+        if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
+            if (track_load <= total_groups && loading == false) {
+                loading = true;
+                
+                $.post('fetchPosts.php',{'group_no': track_load}, function(data){
+                    $("#images").append(data);
+                    //$('.animation_image').hide(); //hide loading image once data is received
+                   
+                    track_load++; //loaded group increment
+                    loading = false;
+               
+                }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+                   
+                    createError(thrownError);
+                    //$('.animation_image').hide(); //hide loading image
+                    loading = false;
+               
+                });
+               
+            }
         }
     });
+    
 })
 
 function getFile(){

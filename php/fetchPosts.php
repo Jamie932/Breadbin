@@ -2,13 +2,16 @@
     require("common.php"); 
 	require("vendor/timeago.php");
 
+    $groupNumber = filter_var($_POST["group_no"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+    $position = ($groupNumber * $postsPerPage);
+        
     $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 	$following = $stmt->rowCount();
 
-	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC"; 
+	$query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $position . ", " . $postsPerPage; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
