@@ -88,9 +88,7 @@
             </div> 
             <div class="clearFix"></div>
             
-            <ul id="images">
                 <?php require('php/recommendToaster.php');  ?>
-            </ul>
             
             <p id="loadMore">Load More</p>
         </div>        

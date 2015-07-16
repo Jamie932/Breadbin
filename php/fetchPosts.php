@@ -108,7 +108,7 @@
                 }
             }
 
-            echo '<li><div id="post" style="display: none;">';
+            echo '<div id="post" style="display: none;">';
 
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -155,7 +155,7 @@
                 echo '<p class="report">Report</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
             }             
-            echo '</div></li>';
+            echo '</div>';
         }
     }
 ?>
