@@ -1,8 +1,8 @@
 <?php
     $pagename = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
     $id = ($pagename == "profile.php") ? $_GET['id'] : $_SESSION['user']['id'];
-    
-    echo $id;
+
+
 
     if (empty($_GET) && ($pagename == "profile.php")) {
         if ($_SESSION['user']['id']) {
@@ -53,7 +53,15 @@
         $result->execute($query_params);
         $noOfFollowing = $result->fetchColumn();
     }
-?>
+
+    if ($pagename == "profile.php") {?>
+        <script>
+            $(document).ready(function() {
+                $(this).attr("title", (isset($usersname) ? $usersname : 'Unknown') . " | Breadbin");
+            }
+        </script>
+    <?php } ?>
+
 <div id="leftProfile">
     <?php
         if (!file_exists('img/avatars/' . $id . '/avatar.jpg')) {
