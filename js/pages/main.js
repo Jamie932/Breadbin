@@ -92,8 +92,6 @@ $(document).ready(function(){
                     })
                     
                     .done(function(data) {
-                        data = JSON.parse(data);
-
                         if (!data.success) {
                             alert("error");
                             createError(data.error);
