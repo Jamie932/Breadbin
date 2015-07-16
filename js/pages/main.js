@@ -131,11 +131,11 @@ $(document).ready(function(){
     });
     
     $(".fa-heart-o").click(function(){
-        $(this).addClass('.fa-heart').removeClass('.fa-heart-o');
+        $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
 
     $(".fa-heart-o").click(function(){
-        $(this).addClass('.fa-heart-o').removeClass('.fa-heart');
+        $(this).addClass('fa-heart-o').removeClass('fa-heart');
     });
 })
 
