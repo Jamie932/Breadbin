@@ -28,7 +28,6 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
-    <script src="js/vendor/jquery.endless-scroll.js"></script>
 </head> 
 <body>
     <noscript>
