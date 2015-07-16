@@ -18,7 +18,6 @@
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/jquery.color.js"></script>
     <script src="js/pages/settings.js"></script>
-    <script src="js/tileFunctions.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
 </head>
     
