@@ -10,7 +10,7 @@
     $numPosts = $stmt->fetchColumn();
     $numPages = ceil($numPosts / $postsPerPage);
 
-    $groupNumber = $groupNumber ? $groupNumber + 1 : 1;
+    $groupNumber = $groupNumber ? $groupNumber + 1 : 0;
     $position = $groupNumber * $postsPerPage;
 
     $query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $position . ", " . $postsPerPage; 
