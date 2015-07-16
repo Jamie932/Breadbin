@@ -134,6 +134,31 @@ $(document).ready(function(){
     $("#load").click(function(e){ // click event for load more
         e.preventDefault();
     });
+    
+    var track_load = 0; //total loaded record group(s)
+    var loading  = false; //to prevents multipal ajax loads
+    var total_groups = <?php echo $numPages; ?>; //total record group(s)
+   
+    $(window).scroll(function() { 
+        if ($(window).scrollTop() + $(window).height() == $(document).height() - 10) {
+            if (loading == false) {
+                loading = true;
+                
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'php/fetchPosts.php',
+                    dataType    : 'json',
+                    encode      : true
+                })
+		
+		      .done(function(data) {
+                    $("#images").append(data);
+                    loading = false;
+                })
+            }
+        }
+    });
+    
 })
 
 function getFile(){

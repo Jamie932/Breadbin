@@ -10,15 +10,10 @@
     $numPosts = $stmt->fetchColumn();
     $numPages = ceil($numPosts / $postsPerPage);
 
-    $groupNumber = $_POST["group_no"] ? filter_var($_POST["group_no"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH) : false;
-    $position = $groupNumber ? ($groupNumber * $postsPerPage) : false;
-    
-    if ($groupNumber) {
-	   $query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $position . ", " . $postsPerPage; 
-    } else {
-	   $query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $postsPerPage; 
-    }
-        
+    $groupNumber = $groupNumber ? $groupNumber + 1 : 1;
+    $position = $groupNumber * $postsPerPage
+
+    $query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $position . ", " . $postsPerPage; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
