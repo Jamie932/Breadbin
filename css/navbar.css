@@ -66,8 +66,11 @@ a.navLinks:hover { color: #616161 }
     float: left;
     display: inline;
     margin-left: 5%;
-    font-size: 1.4em;
     width: 30%;
+}
+
+.title {
+    font-size: 1.4em;	
 }
 
 #navbar .right {
