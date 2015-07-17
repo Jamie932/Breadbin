@@ -66,7 +66,12 @@
                         
                         <h3>Recipe Instructions</h3>
                         <div id="instructionsPost">
-                            1 - <textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
+                            <div class="leftInstruc">
+                            1 -
+                            </div>
+                            <div class="rightInstruc">
+                            <textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
+                            </div>    
                         </div>
                             <center><input type="button" id="more_fields" onclick="add_fieldsInstruc();" value="New Ingredient" /></center>
                             <center><input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">

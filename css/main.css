@@ -297,7 +297,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
             z-index: 7;
-    display: none;
+            display: none;
         }
         
         .recipeHeader {
@@ -347,7 +347,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
         
         textarea.recipeInstructions {
             resize: none;
-            width: 460px;
+            width: 400px;
             height: 90px;
             font-size: 15px;
             padding-left: 5px;
@@ -359,6 +359,23 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
             box-sizing: border-box;
             margin-bottom: 15px;
             
+        }
+
+        .leftInstruc {
+            display: inline;
+            float: left;
+            height: 90px;
+            width: 30px;
+            text-align: center;
+            margin-left: 10px;
+            padding-top: 35px;
+        }
+
+        .rightInstruc {
+            display: inline;
+            float: right;
+            width:310px;
+            margin-right: 110px;
         }
 /*
 @media screen and (max-width: 1125px) {
