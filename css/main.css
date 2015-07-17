@@ -348,7 +348,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
         textarea.recipeInstructions {
             resize: none;
             width: 460px;
-            height: 300px;
+            height: 90px;
             font-size: 15px;
             padding-left: 5px;
             padding-top: 5px;
