@@ -4,6 +4,7 @@
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/pages/main.js"></script>
 </head>
     <body>
     
@@ -64,8 +65,10 @@
     </div>-->
         
     <script>
+        var instruction = 1;
         function add_fieldsInstruc() {
-            document.getElementById('instructionsPost').innerHTML += '<div class="leftInstruc"> 1 - </div><div class="rightInstruc"><textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div>';
+            instruction++;
+            document.getElementById('instructionBody').innerHTML += '<div id="eachInstruc"><div class="leftInstruc"><p class="number">' + instruction +'</p></div><div class="rightInstruc"><textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div></div>';
         }
     </script>
         
@@ -79,25 +82,48 @@
                 
                 <div id="recipeForm">
                     <form action="php/postRecipe.php" method="POST" id="postRecipeForm" enctype="multipart/form-data">
-                        <h3>Recipe Title</h3>
-                            <center><input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
-                        <h3>Ingredients</h3>
-                        <div id="Ingredients">
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-right: -4px;" required/>
-                        </div>
-                            <center><input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" /></center>
                         
-                        <h3>Recipe Instructions</h3>
-                        <div id="instructionsPost">
+                        <div id="sectionHeader">
+                            <h3>Recipe Title</h3>
+                        </div>
+                        <div id="titleBody">
+                            <center><input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
+                        </div>
+                            
+                            
+                        <div id="sectionHeader">
+                            <div class="leftHeader">
+                                <h3>Ingredients</h3>
+                            </div>
+                            <div class="rightHeader">
+                            <input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" />
+                            </div>
+                        </div>
+                        <div id="ingredientBody">
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients"style="margin-left: 6px;" required/>
+                        </div>
+                        
+                        <div id="sectionHeader">
+                            <div class="leftHeader">
+                                <h3>Instructions</h3>
+                            </div>
+                            <div class="rightHeader">
+                            <input type="button" id="more_fields" onclick="add_fieldsInstruc();" value="New Instruction" />
+                            </div>
+                        </div>
+                        <div id="instructionBody">
+                            <div id="eachInstruc">
                             <div class="leftInstruc">
-                                1 -
+                                <p class="number">1</p>
                             </div>
                             <div class="rightInstruc">
-                                <textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
-                            </div>   
+                            <textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
+                            </div>
+                            </div>
                         </div>
-                            <center><input type="button" id="more_fields" onclick="add_fieldsInstruc();" value="New Ingredient" /></center>
+                        
+                            <br>
                             <center><input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
                             <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
                     </form>
