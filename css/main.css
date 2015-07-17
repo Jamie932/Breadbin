@@ -147,9 +147,13 @@ p.report {
     padding: 10px;
 }
 
-.upload {
+#upload {
     padding-bottom: 5px;
     height: auto;
+}
+
+#support {
+	font-size: 0.9em;
 }
 
 /* ===[ Sidebar textarea (main.css) ]=== */
