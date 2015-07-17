@@ -41,12 +41,14 @@ p.report {
 #contentInfoText .right {
     float: right;
     font-size: 13px;
-    padding-top: 4px;
+    height: 20px;
 }
 
 .timeago {
+    height: 100%;
     display: inline-block;
     padding-right: 30px;
+    vertical-align: middle;
 }
 
 .admin {
