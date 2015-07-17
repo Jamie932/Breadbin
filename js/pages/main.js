@@ -149,5 +149,5 @@ function getFile(){
 }
 
 function add_fields() {
-    document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients"/>';
+    document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" />';
 }

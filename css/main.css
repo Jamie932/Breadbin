@@ -389,7 +389,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
         }
 
         input.recipeIngredients {
-            width: 220px;   
+            width: 210px;   
             height: 40px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
