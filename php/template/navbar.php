@@ -59,7 +59,7 @@
     ?>
 
 	<div class="left">
-		<a href="/main.php" class="navLinks title" style="float: left;">Bread Bin</a>
+		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;">Bread Bin</a>
         
 		<div id="searchContainer">
 			<form class="searchForm">
