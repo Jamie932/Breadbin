@@ -147,7 +147,3 @@ $(document).ready(function(){
 function getFile(){
     $('#upfile').click();
 }
-
-function add_fields() {
-    document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" />';
-}
