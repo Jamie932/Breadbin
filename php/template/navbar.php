@@ -62,7 +62,7 @@
 		<a href="/main.php" class="navLinks">Bread Bin</a>
         
         <form class="searchForm">
-            <i class="fa fa-search" style="color: rgb(100, 100, 100); "></i>
+			<div id="searchIcon"><i class="fa fa-search"></i></div>
 		    <input type="text" class="searchBar">
 		</form>
 	</div>
