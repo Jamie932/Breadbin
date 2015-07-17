@@ -142,11 +142,12 @@ p.report {
     border-style: solid;
     border-color: #DDD;
     background-color: #fff;
-	min-height: 80px;
+	min-height: 60px;
+	margin-bottom: 20px;
+    padding: 10px;
 }
 
 .upload {
-    padding: 10px;
     padding-bottom: 5px;
     height: auto;
 }
