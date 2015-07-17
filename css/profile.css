@@ -55,6 +55,7 @@ p {
 
 .buttonstyle {
     height: 30px;
+	line-height: 30px;
     width: 75px;
 }
 
