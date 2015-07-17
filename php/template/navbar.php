@@ -61,10 +61,12 @@
 	<div class="left">
 		<a href="/main.php" class="navLinks">Bread Bin</a>
         
-        <form class="searchForm">
-			<div id="searchIcon"><i class="fa fa-search"></i></div>
-		    <input type="text" class="searchBar">
-		</form>
+		<div id="searchContainer">
+			<form class="searchForm">
+				<div id="searchIcon"><i class="fa fa-search"></i></div>
+				<input type="text" class="searchBar">
+			</form>
+		</div>
 	</div>
 	
     <div id="loader">
