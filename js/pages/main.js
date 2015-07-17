@@ -70,19 +70,24 @@ $(document).ready(function(){
     $('#postRecipeForm').submit(function(event) {
                
                 var ingredArray = new Array();
+                var instrucArray = new Array();
         
                 $("input[name=recipeIngredients]").each(function() {
                    ingredArray.push($(this).val());
                 });
+        
+            $("textarea[name=recipeInstructions]").each(function() {
+                   instrucArray.push($(this).val());
+                });
 
-                alert(ingredArray); 
+                alert(instrucArray); 
         
                 
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
                         'ingredients' : JSON.stringify(ingredArray),
-                        'instructions' : $('#recipeInstructions').val()
+                        'instructions' : JSON.stringify(instrucArray)
                     };
 
                     $.ajax({

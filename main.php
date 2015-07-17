@@ -93,7 +93,7 @@
                                 <p class="number">1</p>
                             </div>
                             <div class="rightInstruc">
-                            <textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
+                            <textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
                             </div>
                             </div>
                         </div>
