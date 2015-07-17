@@ -379,7 +379,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
         }
 
         input.recipeTitle {
-            width: 450px;   
+            width: 464px;   
             height: 40px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
@@ -424,14 +424,14 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
         
         textarea.recipeInstructions {
             resize: none;
-            width: 400px;
+            width: 386px;
             height: 90px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
             border-radius: 3px;
             font-family: inherit;
             font-size: 0.97em;
-            padding-left: 10px;
+            padding-left: 10px; 
             padding-right: 10px;
             padding-top: 5px;
             padding-right: 5px;
