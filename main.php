@@ -112,7 +112,7 @@
         </div>
         
         <div id="sidebar">
-            <div class="upload">
+            <div class="sideBox upload">
                 <form action="php/post.php" method="POST" id="postForm" enctype="multipart/form-data">
                     <div class="textarea">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Make a slice..."></textarea>
@@ -130,11 +130,15 @@
                 <div id="blackout">
                     <p>blackout</p>
                 </div>
-                
-            </div> 
-            <div class="clearFix"></div>
+				
+                <div class="clearFix"></div>
+				<?php require('php/recommendToaster.php');  ?>
+     		</div> 
             
-            <?php require('php/recommendToaster.php');  ?>
+            <div class="sideBox">
+				About Support etc etc
+			</div>
+            
         </div>        
     </div>
 </body>

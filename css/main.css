@@ -135,13 +135,17 @@ p.report {
     margin-left: 100px;
     width: 300px;
     height: auto;
+}
+
+.sideBox {
     border-width: 1px;
     border-style: solid;
     border-color: #DDD;
     background-color: #fff;
+	min-height: 80px;
 }
 
-#sidebar .upload {
+.upload {
     padding: 10px;
     padding-bottom: 5px;
     height: auto;
@@ -174,7 +178,7 @@ p.report {
     padding: 0;
 }
 
-#sidebar .uploadRest {
+.uploadRest {
     height: 30px;
     width: 100%;
     margin-top: 5px;
