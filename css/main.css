@@ -220,7 +220,7 @@ h5 {
 	line-height: 25px;
 }
 
-#submitPost:active {
+#submitPost:hover {
 	background-color: #F3F3F3;
 }
 
