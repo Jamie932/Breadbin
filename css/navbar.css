@@ -182,12 +182,12 @@ a.navLinks:hover { color: #616161 }
 	box-sizing: border-box;
 	height: 25px;
 	width: 30px;
+	font-size: 0.8em;
 }
 
 .fa-search {
 	float: left;
 	padding-left: 5px;
-	padding-top: 4px; 
+	padding-top: 5px; 
 	height: 14px; 
-	font-size: 0.7em !important;
 }
