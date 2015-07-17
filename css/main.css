@@ -145,6 +145,7 @@ p.report {
 	min-height: 60px;
 	margin-bottom: 20px;
     padding: 10px;
+	font-size: 0.9em;
 }
 
 #upload {
