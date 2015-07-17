@@ -45,6 +45,8 @@ $(document).ready(function(){
 
         if (active) {
             $('.activePage').css("background-color", active);
+			$('.searchBar').css("background-color", active);
+			$('#searchIcon').css("background-color", active);
         } 
 
         $(this).addClass('depressedColour');
