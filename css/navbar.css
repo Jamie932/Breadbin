@@ -185,5 +185,5 @@ a.navLinks:hover { color: #616161 }
 	padding-left: 5px;
 	padding-top: 4px; 
 	height: 14px; 
-	font-size: 14px
+	font-size: 0.7em !important;
 }
