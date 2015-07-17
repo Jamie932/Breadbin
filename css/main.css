@@ -220,6 +220,10 @@ h5 {
 	line-height: 25px;
 }
 
+#submitPost:active {
+	background-color: #F3F3F3;
+}
+
 .delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
 
 .toast, .burn, .hide {
