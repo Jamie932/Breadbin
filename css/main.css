@@ -28,6 +28,7 @@ p.report {
 .imgtext {
     margin-top: 20px;
     margin-bottom: 20px; 
+	font-size: 0.9em;
 }
 
 #contentInfoText {
@@ -124,6 +125,7 @@ p.report {
     padding-bottom: 10px;
     min-height: 80px;
     word-wrap: break-word;
+	font-size: 0.9em;
 }
 
 /* ===[ Sidebar (main.css) ]=== */
