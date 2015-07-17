@@ -47,7 +47,7 @@
         }
         
         function add_fields() {
-            document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" />';
+            document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';
         }
     </script>
         
@@ -66,7 +66,7 @@
                             <h3>Recipe Title</h3>
                         </div>
                         <div id="titleBody">
-                            <center><input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/></center>
+                            <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/>
                         </div>
                             
                             
