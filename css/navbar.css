@@ -158,6 +158,7 @@ a.navLinks:hover { color: #616161 }
 	box-sizing: border-box;
 	background-color: #4979D8;
 	float: left;
+	font-size: 0.8em;
 }
 
 .searchForm {
