@@ -63,8 +63,8 @@
         
 		<div id="searchContainer">
 			<form class="searchForm">
-				<div id="searchIcon"><i class="fa fa-search"></i></div>
-				<input type="text" class="searchBar">
+				<div id="searchIcon" <?php echo 'style="background-color:' . $activecolour . '">';?><i class="fa fa-search"></i></div>
+				<input type="text" class="searchBar" <?php echo 'style="background-color:' . $activecolour . '">';?>
 			</form>
 		</div>
 	</div>
