@@ -1,12 +1,12 @@
 $(document).ready(function(){
     $(document).on('click','.delete', function() {
+		var postid = $(this).parent().attr('class').split('-')[1];
+
+		var formData = {
+			'post' : postid
+		};		
+		
         createPopup('Delete', 'Are you sure you want to delete this post?', true, function() {
-            var postid = $(this).parent().attr('class').split('-')[1];
-
-            var formData = {
-                'post' : postid
-            };
-
             $.ajax({
                 type        : 'POST',
                 url         : 'php/deletePost.php',
