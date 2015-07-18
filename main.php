@@ -47,7 +47,11 @@
         }
         
         function add_fields() {
-            document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';
+            var container = document.createElement("div");
+            container.innerHTML = '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';
+            document.getElementById("ingredientBody").appendChild(container);   
+            
+            /*document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';*/
         }
     </script>
         
