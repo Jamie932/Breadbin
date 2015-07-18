@@ -37,8 +37,8 @@
             $data['error'] = 'Instructions cannot contain only spaces.';
             
         } else {
-            $query = "INSERT INTO posts (userid, type, title, ingred, text)  VALUES (:userid, 'recipe', :text, :ingreds, :text)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':ingreds' => $_POST['ingredients'], ':text' => $_POST['instructions']); 
+            $query = "INSERT INTO posts (userid, type, title, ingred, text)  VALUES (:userid, 'recipe', :text, :ingreds, :instruc)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':ingreds' => $_POST['ingredients'], ':instruc' => $_POST['instructions']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 

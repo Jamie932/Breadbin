@@ -76,7 +76,7 @@ $(document).ready(function(){
                    ingredArray.push($(this).val());
                 });
         
-            $("textarea[name=recipeInstructions]").each(function() {
+                $("textarea[name=recipeInstructions]").each(function() {
                    instrucArray.push($(this).val());
                 });
 
