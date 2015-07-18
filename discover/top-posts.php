@@ -75,7 +75,7 @@
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id HAVING (COUNT(post_toasts.userid) - COUNT(post_burns.userid)) > 0 GROUP BY posts.id ORDER BY toasts DESC";
+            $query        = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id GROUP BY posts.id HAVING (toasts - burns) > 0";
             /*userid <> :id AND */
             $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
