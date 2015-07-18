@@ -406,7 +406,7 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
             width: 30px;
             display: inline;
             float: left;
-            height: 90px;
+            height: 86px;
             padding-left: 5px;
         }
 
@@ -419,13 +419,13 @@ ul#images { list-style: none; overflow: auto; margin: 0px; margin-top: 5px; }
             float: right;  
             width: 420px;
             font-size: 0.97em;
-            height: 90px
+            height: 86px
         }
         
         textarea.recipeInstructions {
             resize: none;
             width: 401.5px;
-            height: 90px;
+            height: 79px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
             border-radius: 3px;
