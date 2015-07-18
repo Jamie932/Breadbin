@@ -75,7 +75,7 @@
                         <div id="sectionHeaderHalf">
                             <h3>Cooking Time</h3>
                         </div> 
-                        <div id="titleBody">
+                        <div id="">
                             <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
                         </div>
                         
