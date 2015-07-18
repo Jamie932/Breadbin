@@ -83,12 +83,12 @@
                         
                         <div id="twoHalfsBecomeOne">
                             <div class="sectionHeaderHalf">
-                                <h3>Prep Time</h3> 
+                                <h3>Prep Time</h3>
                             </div> 
                             <div class="sectionHeaderHalf">
                                 <h3>Cooking Time</h3>
                             </div> 
-                            <div class="sectionHeaderHalf">
+                            <div class="sectionHeaderHalfServe">
                                 <h3>Serves</h3>
                             </div> 
                             <div class="bodyHalf">
@@ -103,7 +103,7 @@
                                 <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">mins</p>
                             </div>
-                            <div class="sectionHeaderHalfServe">
+                            <div class="bodyHalfServe">
                                 <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">people</p>
                             </div>
