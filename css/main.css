@@ -350,6 +350,12 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
             height: 30px;
         }
 
+        #sectionHeaderHalf {
+            width: 50%;
+            height: 30px;
+            display: inline;
+        }
+
         .leftHeader, .rightHeader { 
             display: inline;
         }

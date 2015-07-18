@@ -69,12 +69,16 @@
                             <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/>
                         </div>
                             
-                        <div id="sectionHeader">
+                        <div id="sectionHeaderHalf">
                             <h3>Cooking Time</h3>
                         </div> 
                         <div id="titleBody">
                             <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
                         </div>
+                        
+                        <div id="sectionHeaderHalf">
+                            <h3>Cooking Time</h3>
+                        </div> 
                         
                         <div id="sectionHeader">
                             <div class="leftHeader">
