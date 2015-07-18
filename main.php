@@ -83,6 +83,9 @@
                         
                         <div id="twoHalfsBecomeOne">
                             <div class="sectionHeaderHalf">
+                                <h3>Preperation Time</h3>
+                            </div> 
+                            <div class="sectionHeaderHalf">
                                 <h3>Cooking Time</h3>
                             </div> 
                             <div class="sectionHeaderHalf">
