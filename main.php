@@ -53,7 +53,7 @@
         
     <div id="recipeBox">
             <div class="recipeContent"> 
-                <div class="recipeHeader">
+                <div class="popupTitle">
                     <h1>Post your recipe</h1>
                 </div>
 
