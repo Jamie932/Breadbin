@@ -20,6 +20,22 @@
             $data['success'] = false;
             $data['error'] = 'Title cannot contain only spaces.';
             
+        } else if (empty($_POST['time'])) {
+            $data['success'] = false;
+            $data['error'] = 'Recipes need a time.';
+            
+        } else if (ctype_space($_POST['time'])) {
+            $data['success'] = false;
+            $data['error'] = 'Time cannot contain only spaces.';
+            
+        } else if (empty($_POST['serves'])) {
+            $data['success'] = false;
+            $data['error'] = 'How many people will it serve.';
+            
+        } else if (ctype_space($_POST['serves'])) {
+            $data['success'] = false;
+            $data['error'] = 'Serve cannot contain only spaces.';
+            
         } else if (empty($_POST['ingredients'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a ingredients.';

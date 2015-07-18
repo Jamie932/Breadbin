@@ -86,6 +86,8 @@ $(document).ready(function(){
         
                     var formData = {
                         'title' : $('#recipeTitle').val(),
+                        'time' : $('#recipeTime').val(),
+                        'serves' : $('#recipeServe').val(),
                         'ingredients' : JSON.stringify(ingredArray),
                         'instructions' : JSON.stringify(instrucArray)
                     };
