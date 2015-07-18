@@ -48,6 +48,8 @@
         
         function add_fields() {
             var container = document.createElement("div");
+            container.style.width = "210px";
+            container.style.display = "inline";
             container.innerHTML = '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';
             document.getElementById("ingredientBody").appendChild(container);   
             
