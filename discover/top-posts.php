@@ -141,32 +141,9 @@
     }
 }
 ?>
-               
-               </ul>
-            </div>
-        </div>
-        <script src="../js/vendor/jquery.wookmark.js"></script>
-        <script type="text/javascript">
-        var colors = [
-            "rgb(138, 230, 138)",
-            "rgb(102, 153, 255)",
-            "rgb(255, 181, 64)",
-            "rgb(255, 102, 204)"
-        ];
 
-        var boxes = document.querySelectorAll(".box");
-
-        for (i = 0; i < boxes.length; i++) {
-          // Pick a random color from the array 'colors'.
-          boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-          boxes[i].style.width = '300';
-          boxes[i].style.height = '230';
-          boxes[i].style.display = 'inline-table';
-          boxes[i].style.margin = '0';
-          boxes[i].style.textAlign = 'center';
-          boxes[i].style.verticalAlign = 'middle';
-          boxes[i].style.position = 'relative';
-        }
-    </script>
+		   </ul>
+		</div>
+	</div>
 </body>
 </html>
