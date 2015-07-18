@@ -91,7 +91,7 @@
             
             $query        = "SELECT username FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']);
-            $stmt         = $db->prepare($query);
+            $stmt         = $db->prepare($query); 
             $result       = $stmt->execute($query_params);
             $test         = $stmt->fetch();
             
