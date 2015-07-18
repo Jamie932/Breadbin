@@ -70,6 +70,13 @@
                         </div>
                             
                         <div id="sectionHeader">
+                            <h3>Cooking Time</h3>
+                        </div> 
+                        <div id="titleBody">
+                            <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
+                        </div>
+                        
+                        <div id="sectionHeader">
                             <div class="leftHeader">
                                 <h3>Ingredients</h3>
                             </div>
@@ -81,13 +88,6 @@
                         <div id="ingredientBody">
                             <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>
                             <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: 6px;" required/>
-                        </div>
-                        
-                        <div id="sectionHeader">
-                            <h3>Cooking Time</h3>
-                        </div> 
-                        <div id="titleBody">
-                            <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
                         </div>
                         
                         <div id="sectionHeader">
