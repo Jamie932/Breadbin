@@ -54,10 +54,9 @@
     <div id="recipeBox">
             <div class="recipeContent"> 
                 <div class="popupTitle">
-                    <h1>Post your recipe</h1>
+                    <div id="leftTitle">Post your recipe</div>
+                    <div id="rightTitle"><i class="fa fa-times"></i></div>
                 </div>
-
-                <hr></hr>
                 
                 <div id="recipeForm">
                     <form action="php/postRecipe.php" method="POST" id="postRecipeForm" enctype="multipart/form-data">
