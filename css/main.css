@@ -361,7 +361,7 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
         }
 
         .sectionHeaderHalfServe {
-            width: 220px;
+            width: 200px;
             height: 30px;
             display: inline;
             float: left;
@@ -377,7 +377,7 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
         }
 
         .bodyHalfServe {
-            width: 220px;
+            width: 200px;
             height: 50px;
             display: inline;
             float: left;
