@@ -6,7 +6,7 @@
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
 
-    $query= "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts, post_toasts, post_burns WHERE post_toasts.postid = posts.id AND post_burns.postid = posts.id AND userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId GROUP BY posts.* ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
+    $query= "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts, post_toasts, post_burns WHERE post_toasts.postid = posts.id AND post_burns.postid = posts.id AND userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId GROUP BY posts ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
