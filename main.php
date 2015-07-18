@@ -83,7 +83,7 @@
                         
                         <div id="twoHalfsBecomeOne">
                             <div class="sectionHeaderHalf">
-                                <h3>Prep Time</h3>
+                                <h3>Prep Time</h3> 
                             </div> 
                             <div class="sectionHeaderHalf">
                                 <h3>Cooking Time</h3>
