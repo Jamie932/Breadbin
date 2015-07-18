@@ -322,7 +322,7 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
         }
         
         .recipeContent {
-            padding: 10px;
+            
         }
         
         h1 {
@@ -337,6 +337,7 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
         
         #recipeForm {
             margin-top: 15px;
+            padding: 10px; 
         }
 
         #titleBody {
