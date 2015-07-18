@@ -90,7 +90,7 @@
                             </div>
                             <div class="rightHeader">
                             
-                                <input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient" />
+                                <input type="button" id="more_fields" onclick="add_fields();" value="New Ingredient"  class="buttonstyle"/>
                             </div>
                         </div>
                         <div id="ingredientBody">
@@ -103,7 +103,7 @@
                                 <h3>Instructions</h3>
                             </div>
                             <div class="rightHeader">
-                            <input type="button" id="more_fieldsinstuc" onclick="add_fieldsInstruc();" value="New Instruction" /> 
+                            <input type="button" id="more_fieldsinstuc" onclick="add_fieldsInstruc();" value="New Instruction" class="buttonstyle" /> 
                             </div>
                         </div>
                         <div id="instructionBody">
