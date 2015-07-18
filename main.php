@@ -73,10 +73,13 @@
                             <h3>Cooking Time</h3>
                         </div> 
                         <div id="sectionHeaderHalf">
-                            <h3>Cooking Time</h3>
+                            <h3>Serves</h3>
                         </div> 
-                        <div id="">
+                        <div id="bodyHalf">
                             <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
+                        </div>
+                        <div id="bodyHalf">
+                            <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" required/>
                         </div>
                         
                         <div id="sectionHeader">
