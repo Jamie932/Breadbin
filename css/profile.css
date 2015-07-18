@@ -216,6 +216,7 @@ p.textPost {
 #tiles li {
     max-width: 300px;
     max-height: 400px;
+	width: 300px;
 	background-color: #ffffff;
 	display: none;
 	cursor: pointer;
