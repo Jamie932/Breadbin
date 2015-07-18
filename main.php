@@ -68,18 +68,20 @@
                         <div id="titleBody">
                             <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/>
                         </div>
-                            
-                        <div id="sectionHeaderHalf">
+                        
+                        <div id="twoHalfsBecomeOne">
+                        <div class="sectionHeaderHalf">
                             <h3>Cooking Time</h3>
                         </div> 
-                        <div id="sectionHeaderHalf">
+                        <div class="sectionHeaderHalf">
                             <h3>Serves</h3>
                         </div> 
-                        <div id="bodyHalf">
+                        <div class="bodyHalf">
                             <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
                         </div>
-                        <div id="bodyHalf">
+                        <div class="bodyHalf">
                             <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" required/>
+                        </div>
                         </div>
                         
                         <div id="sectionHeader">
