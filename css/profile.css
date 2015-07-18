@@ -160,7 +160,7 @@ p.textPost {
     font-size: 1em;
     padding-left: 10px;
     padding-right: 10px;
-	min-height: 230px;
+	height: 230px;
     width: 300px;
 }
 
