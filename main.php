@@ -95,6 +95,12 @@
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">mins</p>
                             </div>
                             <div class="bodyHalf">
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
+                                <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">hrs</p>
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
+                                <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">mins</p>
+                            </div>
+                            <div class="bodyHalfServe">
                                 <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">people</p>
                             </div>
