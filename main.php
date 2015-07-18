@@ -55,7 +55,7 @@
             <div class="recipeContent"> 
                 <div class="popupTitle">
                     <div id="leftTitle">Post your recipe</div>
-                    <div id="rightTitle"><i class="fa fa-times"></i></div>
+                    <div id="rightTitleRec"><i class="fa fa-times"></i></div>
                 </div>
                 
                 <div id="recipeForm">

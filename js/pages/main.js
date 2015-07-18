@@ -135,6 +135,11 @@ $(document).ready(function(){
         $('#recipeBox').fadeOut('normal');
     });
     
+    $("#rightTitleRec").click(function(){
+        $('#blackOverlay').fadeOut('normal');
+        $('#recipeBox').fadeOut('normal');
+    });
+    
     $(document).on('click','.fa-heart-o', function() {
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
