@@ -43,7 +43,7 @@
         var instruction = 1;
         function add_fieldsInstruc() {
             instruction++;
-            document.getElementById('instructionBody').innerHTML += '<div id="eachInstruc"><div class="leftInstruc"><p class="number">' + instruction +'</p></div><div class="rightInstruc"><textarea name="TextUpload" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div></div>';
+            document.getElementById('instructionBody').innerHTML += '<div id="eachInstruc"><div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div></div>';
         }
         
         function add_fields() {
