@@ -20,7 +20,7 @@ $(document).ready(function(){
 
                     } else {
                         createError(data.error);
-                    }
+                    } 
                 }
             })
         });
@@ -35,7 +35,7 @@ $(document).ready(function(){
         var formData = {
             'post' : postid
         };
-
+ 
         $.ajax({
             type        : 'POST',
             url         : 'php/toast.php',
