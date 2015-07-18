@@ -47,7 +47,7 @@
             var container = document.createElement("div");
             container.style.width = "100%";
             container.style.height = "100px";
-            container.innerHTML = '<div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div>';
+            container.innerHTML = '<div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..." autocomplete="off"></textarea></div>';
             document.getElementById("instructionBody").appendChild(container);   
             
             /*document.getElementById('instructionBody').innerHTML += '<div id="eachInstruc"><div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div></div>';*/
@@ -57,7 +57,7 @@
             var container = document.createElement("div");
             container.style.width = "210px";
             container.style.display = "inline";
-            container.innerHTML = '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';
+            container.innerHTML = '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" autocomplete="off" />';
             document.getElementById("ingredientBody").appendChild(container);   
             
             /*document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';*/
@@ -78,7 +78,7 @@
                             <h3>Recipe Title</h3>
                         </div>
                         <div id="titleBody">
-                            <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" required/>
+                            <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" autocomplete="off"/>
                         </div>
                         
                         <div id="twoHalfsBecomeOne">
@@ -89,12 +89,12 @@
                                 <h3>Serves</h3>
                             </div> 
                             <div class="bodyHalf">
-                                <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
-                                <p style="display: inline; font-size: 0.6em; margin: 0;">mins</p>
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime"/>
+                                <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">mins</p>
                             </div>
                             <div class="bodyHalf">
-                                <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" required/>
-                                <p style="display: inline; font-size: 0.6em; margin: 0;">people</p>
+                                <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe"/>
+                                <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">people</p>
                             </div>
                         </div>
                         
@@ -108,8 +108,8 @@
                             </div>
                         </div>
                         <div id="ingredientBody">
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: -3px;" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" autocomplete="off"/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: -3px;" />
                         </div>
                         
                         <div id="sectionHeader" style="margin-bottom:3px;">
@@ -126,7 +126,7 @@
                                 <p class="number">1</p>
                             </div>
                             <div class="rightInstruc">
-                            <textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea>
+                            <textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..." autocomplete="off"></textarea>
                             </div>
                             </div>
                         </div>
