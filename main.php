@@ -81,10 +81,11 @@
                             </div>
                             <div class="bodyHalf">
                                 <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" required/>
+                                <p style="display: inline; font-size: 0.5em; margin: 0;">people</p>
                             </div>
                         </div>
                         
-                        <div id="sectionHeader">
+                        <div id="sectionHeader" style="margin-bottom:3px;">
                             <div class="leftHeader">
                                 <h3>Ingredients</h3>
                             </div>
@@ -98,7 +99,7 @@
                             <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: 6px;" required/>
                         </div>
                         
-                        <div id="sectionHeader">
+                        <div id="sectionHeader" style="margin-bottom:3px;">
                             <div class="leftHeader">
                                 <h3>Instructions</h3>
                             </div>
