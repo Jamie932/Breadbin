@@ -154,12 +154,15 @@ p {
 
 p.textPost {
     word-break: break-all;
+	white-space: pre-wrap;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     font-size: 1em;
     padding-left: 10px;
     padding-right: 10px;
+	min-height: 230px;
+    width: 300px;
 }
 
 .textPost a {
@@ -239,20 +242,6 @@ p.textPost {
 
 #tiles ali:nth-child(5n) {
 	height: 250px;
-}
-
-p.textPost {
-	word-break: break-all;
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	font-size: 1em; 
-    min-width: 300px !important;
-    width: 300px;
-    max-width: 300px !important;
-    height: 230px !important;
-    max-height: 230px !important;
-    min-height: 230px !important;
 }
 
 .postUsername {
