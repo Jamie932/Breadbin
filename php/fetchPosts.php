@@ -6,7 +6,7 @@
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
 
-    $query= "SELECT * FROM posts WHERE userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
+    $query= "SELECT posts.*, COUNT(post_toasts.*) AS toasts, COUNT(post_burns.*) AS burns FROM posts, post_toasts, post_burns WHERE post_toasts.postid = posts.id AND post_burns.postid = posts.id AND userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR userid = :userId ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
@@ -50,14 +50,14 @@
             $userrow = $stmt->fetch();
             $username = 'Unknown';
 
-            $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
+            $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
             $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
 
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params); 
             $ifBurnt = $stmt->rowCount();
 
-            $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+            $query = "SELECT * FROM post_toasts WHERE postid = :postId AND userid = :userId"; 
             $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params); 

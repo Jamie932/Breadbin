@@ -73,14 +73,14 @@ if (empty($_GET)) {
                 $result = $stmt->execute($query_params); 
                 $userrow = $stmt->fetch();
 
-                $query = "SELECT * FROM post_burns WHERE p_id = :postId AND u_id= :userId"; 
+                $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid = :userId"; 
                 $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
 
                 $stmt = $db->prepare($query);
                 $result = $stmt->execute($query_params); 
                 $ifBurnt = $stmt->rowCount();
 
-                $query = "SELECT * FROM post_toasts WHERE pid = :postId AND uid= :userId"; 
+                $query = "SELECT * FROM post_toasts WHERE postid = :postId AND userid = :userId"; 
                 $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
                 $stmt = $db->prepare($query);
                 $result = $stmt->execute($query_params); 
