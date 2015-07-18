@@ -78,6 +78,7 @@
                             </div> 
                             <div class="bodyHalf">
                                 <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime" required/>
+                                <p style="display: inline; font-size: 0.5em;">mins</p>
                             </div>
                             <div class="bodyHalf">
                                 <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" required/>
