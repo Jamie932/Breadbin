@@ -96,7 +96,7 @@
                         </div>
                         <div id="ingredientBody">
                             <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: 6px;" required/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" required/>
                         </div>
                         
                         <div id="sectionHeader" style="margin-bottom:3px;">
