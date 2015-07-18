@@ -433,6 +433,18 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
             font-size: 0.95em;
             margin-bottom: 10px;
         }
+
+        input.recipeServe {
+            width: 110px;   
+            height: 33px;
+            border: 1px solid rgba(100, 100, 100, 0.4);
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 0.95em;
+            margin-bottom: 10px;   
+        }
         
         .leftInstruc {
             width: 30px;
