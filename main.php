@@ -89,7 +89,9 @@
                                 <h3>Serves</h3>
                             </div> 
                             <div class="bodyHalf">
-                                <input type="text" id="recipeTime" name="recipeTime" placeholder="Cooking Time" class="recipeTime"/>
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
+                                <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">hrs</p>
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">mins</p>
                             </div>
                             <div class="bodyHalf">
