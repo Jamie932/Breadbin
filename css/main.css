@@ -466,12 +466,13 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
             float: right;  
             width: 420px;
             font-size: 0.97em;
-            height: 86px
+            height: 86px;
+            margin-right:9px;
         }
         
         textarea.recipeInstructions {
             resize: none;
-            width: 401.5px;
+            width: 410.5px;
             height: 79px;
             border: 1px solid rgba(100, 100, 100, 0.4);
             -webkit-border-radius: 3px;
