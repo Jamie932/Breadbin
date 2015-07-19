@@ -156,7 +156,9 @@
                         }
                     } else {
                            echo ' 0hr';
-                    } else if ($prepTimeNo > 1) {
+                    } 
+                    
+                    if ($prepTimeNo > 1) {
                         echo ' '. $value .'mins';
                     }
                 }
