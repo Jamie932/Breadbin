@@ -41,8 +41,10 @@
             echo '</div>';  
         }
         
+        $instrucNo == 0;
+        
         foreach ($posts as $row) {
-            $instrucNo == 0;
+            
             
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
