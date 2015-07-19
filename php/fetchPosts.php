@@ -137,7 +137,7 @@
                 echo '</div>';
                 echo '<div class="timeServe">';
                 
-                foreach ($row['prepTime'] as $value)
+                foreach ($row['prepTime'] as $value) { 
                     echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>' . $value . '</p>';
                 }
                 
