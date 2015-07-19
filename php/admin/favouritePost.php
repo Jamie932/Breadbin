@@ -13,7 +13,7 @@
 		$data['error']  = 'You do not have the correct permissions to do this.';
 		
 	} else {
-        $query = "UPDATE posts SET favourite=!favourite WHERE id = :id"; 
+        $query = "UPDATE posts SET favourite = NOT favourite WHERE id = :id"; 
         $query_params = array(':id' => $_POST['post']); 
 
         $stmt = $db->prepare($query); 
