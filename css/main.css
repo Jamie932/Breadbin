@@ -511,7 +511,7 @@ b.instructionNo {
             margin-right: 5px;
         }
 
-        input.recipeTime, input.recipePrepTime {
+        input.recipeTime, input.recipePrepTime1, input.recipePrepTime2 {
             width: 18px;   
             height: 33px;
             border: 1px solid rgba(100, 100, 100, 0.4);

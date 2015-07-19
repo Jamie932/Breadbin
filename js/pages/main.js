@@ -97,7 +97,8 @@ $(document).ready(function(){
                     var formData = {
                         'title' : $('#recipeTitle').val(),
                         'time' : $('#recipeTime').val(),
-                        'prepTime' : JSON.stringify(prepComTime),
+                        'prepTime1' : $('#recipePrepTime1').val(),
+                        'prepTime2' : $('#recipePrepTime2').val(),
                         'cookTime' : JSON.stringify(cookComTime),
                         'serves' : $('#recipeServe').val(),
                         'ingredients' : JSON.stringify(ingredArray),

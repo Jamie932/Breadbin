@@ -143,6 +143,7 @@
                 $prepArray = json_decode($row['prepTime']);
                 
                 $prepTimeNo = 0;
+                $prepTot = count($prepArray);
                 
                 echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>';
                 foreach ($prepArray as $value) {
