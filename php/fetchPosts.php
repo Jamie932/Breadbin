@@ -42,6 +42,8 @@
         }
         
         foreach ($posts as $row) {
+            $instrucNo == 0;
+            
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
             $stmt = $db->prepare($query); 
@@ -171,13 +173,13 @@
                 $instrucArray = json_decode($row['text']);
                 $instrucNo == 0;
                 
-                echo '<p class="instructionList">';
+                echo '';
                 
                 foreach ($instrucArray as $value) { 
                     $instrucNo++;
-                    echo '<b class="instructionNo">' .$instrucNo. '</b>' . $value . '<br>';
+                    echo '<p class="instructionList"><b class="instructionNo">' .$instrucNo. '</b>' . $value . '<br></p>';
                 }
-                echo '</p>';
+                echo '';
                 
                 echo '</div>';
                 echo '</div>';
