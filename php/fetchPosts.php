@@ -134,6 +134,7 @@
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
             } else {
+                $instrucNo == 0;
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">';
                 echo '<div class="recTitle">';
@@ -173,7 +174,6 @@
                 echo '<h6>Instructions</h6>';
                 
                 $instrucArray = json_decode($row['text']);
-                $instrucNo == 0;
                 
                 echo '';
                 
