@@ -8,7 +8,11 @@
         $data['success'] = false;
         $data['error']  = 'No PostID was found.';
         
-    } else {
+	} else if (empty($_SESSION['user']['rank']) || $_SESSION['user']['rank'] == 'user') {
+		$data['success'] = false;
+		$data['error']  = 'You do not have the correct permissions to do this.';
+		
+	} else {
         $query = "SELECT * FROM posts WHERE id = :id"; 
         $query_params = array(':id' => $_POST['post']); 
 
@@ -17,13 +21,6 @@
         $row = $stmt->fetch();
 
         if ($row) {
-            if (empty($_SESSION['user']['rank']) || $_SESSION['user']['rank'] == 'user') {
-                $data['success'] = false;
-                $data['error']  = 'You do not have the correct permissions to do this.';
-                echo json_encode($data);
-                return false;
-            }
-
             if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
                 if (file_exists($row['image'])) {
                     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
@@ -41,7 +38,10 @@
             $result = $stmt->execute($query_params); 
 
             $data['success'] = true;
-        }
+		} else {
+			$data['success'] = false;
+			$data['error']  = 'An invalid PostID was provided.';
+		}
     }
 
     echo json_encode($data);
