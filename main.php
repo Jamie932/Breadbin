@@ -92,15 +92,15 @@
                                 <h3>Serves</h3>
                             </div> 
                             <div class="bodyHalf">
-                                <input type="number" id="recipePrepTime" name="recipePrepTime" placeholder="" class="recipePrepTime" autocomplete="off" maxlength="2"/>
+                                <input type="text" id="recipePrepTime" name="recipePrepTime" placeholder="" class="recipePrepTime" autocomplete="off" maxlength="2"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;">hrs</p>
-                                <input type="number" id="recipePrepTime" name="recipePrepTime" placeholder="" class="recipePrepTime" autocomplete="off" maxlength="2"/>
+                                <input type="text" id="recipePrepTime" name="recipePrepTime" placeholder="" class="recipePrepTime" autocomplete="off" maxlength="2"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;">mins</p>
                             </div>
                             <div class="bodyHalf">
-                                <input type="number" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime" autocomplete="off" maxlength="2"/>
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime" autocomplete="off" maxlength="2"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;">hrs</p>
-                                <input type="number" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime" autocomplete="off" maxlength="2"/>
+                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime" autocomplete="off" maxlength="2"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;">mins</p>
                             </div>
                             <div class="bodyHalfServe">
