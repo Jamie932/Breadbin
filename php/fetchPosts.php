@@ -151,7 +151,7 @@
                 $ingredArray = json_decode($row['ingred']);
                 
                 foreach ($ingredArray as $value) { 
-                    echo '<p class="ingredList">' .$ingredArray. '</p>';
+                    echo '<p class="ingredList">' .$value. '</p>';
                 }
                 
                 echo '</div>';
