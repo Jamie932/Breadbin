@@ -148,18 +148,25 @@
                 foreach ($prepArray as $value) {
                     $prepTimeNo++;
                     if ($prepTimeNo == 1) {
-                        echo ' '. $value .' hr';
+                        echo ' '. $value .'hr';
                     } else {
-                        echo ' '. $value .' mins';
+                        echo ' '. $value .'mins';
                     }
                 }
                 echo '</p>';
                 
                 $cookArray = json_decode($row['cookTime']);
                 
+                $cookTimeNo = 0;
+                
                 echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>'; 
                 foreach ($cookArray as $value) { 
-                    echo '' . $value . '';
+                    $cookTimeNo++;
+                    if ($prepTimeNo == 1) {
+                        echo '' . $value . 'hr';
+                    } else {
+                        echo '' . $value . 'mins';
+                    }
                 }
                 echo '</p>';
                 
