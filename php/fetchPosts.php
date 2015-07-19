@@ -148,13 +148,15 @@
                 echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>';
                 foreach ($prepArray as $value) {
                     $prepTimeNo++;
-                    if ($prepTimeNo == 1) {
+                    if ($prepTimeNo == 1 && $value = 1) {
                         if ($value == 1) {
                             echo ' '. $value .'hr';
                         } else {
                             echo ' '. $value .'hrs';
                         }
-                    } else {
+                    } else if ($prepTimeNo == 1 && is_null($value)) {
+                           echo ' 0hr';
+                    } else if ($prepTimeNo > 1) {
                         echo ' '. $value .'mins';
                     }
                 }
