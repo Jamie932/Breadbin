@@ -139,7 +139,7 @@
 
                     if (($_SESSION['user']['rank'] != "user") && ($row['userid'] != $_SESSION['user']['id'])) {
                         echo '<div class="timeago" style="padding-right: 17px;">' . timeAgoInWords($row['date']) . '</div>';
-                        echo '<div class="admin post-' . $row['id'] . '><i class="fa fa-trash-o"></i><i class="fa fa-heart-o"></i></div>';
+                        echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i><i class="fa fa-heart-o"></i></div>';
                     } else {
                         echo '<div class="timeago">' . timeAgoInWords($row['date']) . '</div>';
                     }
