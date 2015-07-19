@@ -154,7 +154,7 @@
                         } else {
                             echo ' '. $value .'hrs';
                         }
-                    } else {
+                    } else if ($prepTimeNo == 1 && is_null($value)) {
                            echo ' 0hr';
                     } 
                     
