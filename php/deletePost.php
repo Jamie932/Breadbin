@@ -35,12 +35,24 @@
 
             $query = "DELETE FROM posts WHERE id = :id"; 
             $query_params = array(':id' => $_POST['post']); 
-
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
 
+            $query = "DELETE FROM post_burns WHERE postid = :id"; 
+            $query_params = array(':id' => $_POST['post']); 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params);
+			
+            $query = "DELETE FROM post_toasts WHERE postid = :id"; 
+            $query_params = array(':id' => $_POST['post']); 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params);
+			
             $data['success'] = true;
-        }
+        } else {
+			$data['success'] = false;
+			$data['error']  = 'An invalid PostID was provided.';
+		}
     }
 
     echo json_encode($data);
