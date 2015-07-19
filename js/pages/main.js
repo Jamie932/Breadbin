@@ -142,13 +142,6 @@ $(document).ready(function(){
         $('#recipeBox').fadeOut('normal');
     });
     
-    $(document).on('click','.fa-heart-o', function() {
-        $(this).addClass('fa-heart').removeClass('fa-heart-o');
-    });
-
-    $(document).on('click','.fa-heart', function() {
-        $(this).addClass('fa-heart-o').removeClass('fa-heart');
-    });
 })
 
 function getFile(){

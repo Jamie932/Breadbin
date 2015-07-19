@@ -110,70 +110,81 @@ $(document).ready(function(){
         })
     })
 
-    $('#postRecipeForm').submit(function(event) {
-               
-                var newArray = new Array();
-
-                $('#recipeIngredients').each(function(){
-                    newArray.push($(this));
-                })
-        
-                    var formData = {
-                        'title' : $('#recipeTitle').val(),
-                        'ingredients' : newArray,
-                        'instructions' : $('#recipeInstructions').val()
-                    };
-
-                    $.ajax({
-                        type        : 'POST',
-                        url         : 'php/postRecipe.php',
-                        data        : formData,
-                        dataType    : 'json',
-                        encode      : true
-                    })
-                    
-                .done(function(data) {
-                    console.log(data);
-
-                    if (!data.success) {
-                        alert(data.error);
-                    } else {
-                        window.location.replace("main.php"); 
-                    } 
-                })
-        event.preventDefault();
-    })
-
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);
         $("#contentPostFollow").hide(500);
     });
+	
+    $(document).on('click','.fa-heart-o', function() {
+		var postid = $(this).parent().attr('class').split('-')[1];
+		var formData = {
+			'post' : postid
+		};
 
-    $("#uploadText").keypress(function(event) {
-        if(event.which == '13') {
-            return false;
-        }
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/admin/favouritePost.php',
+            data        : formData,
+            dataType    : 'json',
+            encode      : true
+        })
+
+        .done(function(data) {
+             console.log(data); 
+
+            if (!data.success) {
+                 createError(data.error); 
+            }
+		}
+			  
+        $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
 
-    $('input[type=file]').change(function(e){
-        $('#uploadname').html($(this).val());
+    $(document).on('click','.fa-heart', function() {
+		var postid = $(this).parent().attr('class').split('-')[1];
+		var formData = {
+			'post' : postid
+		};
+
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/admin/favouritePost.php',
+            data        : formData,
+            dataType    : 'json',
+            encode      : true
+        })
+
+        .done(function(data) {
+             console.log(data); 
+
+            if (!data.success) {
+                 createError(data.error); 
+            }
+		}
+			  
+        $(this).addClass('fa-heart-o').removeClass('fa-heart');
     });
-    
-    $("#blackout").click(function(){
-        $('#blackOverlay').fadeIn('normal');
-        $('#recipeBox').fadeIn('normal');
+	
+    $(document).on('click','.fa-trash-o', function() {
+		var postid = $(this).parent().attr('class').split('-')[1];
+		var formData = {
+			'post' : postid
+		};
+
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/admin/deletePost.php',
+            data        : formData,
+            dataType    : 'json',
+            encode      : true
+        })
+
+        .done(function(data) {
+             console.log(data); 
+
+            if (!data.success) {
+                 createError(data.error); 
+            }
+		}
     });
-    
-    $("#cancel").click(function(){
-        $('#blackOverlay').fadeOut('normal');
-        $('#recipeBox').fadeOut('normal');
-    })   
 })
-
-function getFile(){
-    $('#upfile').click();
-}
-
-function add_fields() {
-    document.getElementById('Ingredients').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients"/>';
-}
