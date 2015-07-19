@@ -41,8 +41,6 @@
             echo '</div>';  
         }
         
-        $instrucNo == 0;
-        
         foreach ($posts as $row) {
             
             
@@ -134,7 +132,7 @@
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
             } else {
-                $instrucNo == 0;
+                $instrucNo = 0;
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div class="contentPostText">';
                 echo '<div class="recTitle">';
