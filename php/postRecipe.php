@@ -6,6 +6,12 @@
     
     $ingredArray = json_decode($_POST['ingredients']);
 
+        if (empty($_POST['prepTime1']) && !empty($_POST['prepTime2'])) {
+            $prepTimeArray = array("0" , $_POST['prepTime2']);
+        } else if (empty($_POST['prepTime2'] && !empty($_POST['prepTime1'])) {
+            $prepTimeArray = array($_POST['prepTime2'] , "0");
+        }
+
         if (empty($_POST['title'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a title.';
@@ -13,19 +19,14 @@
         } else if (ctype_space($_POST['title'])) {
             $data['success'] = false;
             $data['error'] = 'Title cannot contain only spaces.';
-            
-            
+
         } else if (empty($_POST['prepTime1']) && empty($_POST['prepTime2'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a preperation time.';
-        } else if (empty($_POST['prepTime1'])) {
-            $prepTimeArray = array("0" , $_POST['prepTime2']);
-        } else if (empty($_POST['prepTime2'])) {
-            $prepTimeArray = array($_POST['prepTime2'] , "1");
+            
         } else if (ctype_space($_POST['prepTime1']) || ctype_space($_POST['prepTime2'])) {
             $data['success'] = false;
             $data['error'] = 'Prep times cannot contain only spaces.';
-            
             
         } else if (empty($_POST['cookTime'])) {
             $data['success'] = false;
