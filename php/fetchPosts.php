@@ -147,7 +147,13 @@
                 echo '<p class="times"><b>Serves:</b>' .$row['serves']. '</p>';
                 echo '</div>';
                 echo '<div class="ingredientDis">';
-                echo '<p class="ingredList">' .$row['ingred']. '</p>';
+                
+                $ingredArray = json_decode($row['ingred']);
+                
+                foreach ($prepArray as $value) { 
+                    echo '<p class="ingredList">' .$ingredArray. '</p>';
+                }
+                
                 echo '</div>';
                 echo '<div class="instructionList">';
                 echo '<h6>Instructions</h6>';
