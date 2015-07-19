@@ -6,7 +6,7 @@ $(document).ready(function(){
 			'post' : postid
 		};		
 		
-        createPopup('Delete', 'Are you sure you want to delete this post?', true, function() {
+        createPopup('Delete', 'Are you sure you want to delete this post?', true, 	function() {
             $.ajax({
                 type        : 'POST',
                 url         : 'php/deletePost.php',
@@ -164,20 +164,22 @@ $(document).ready(function(){
 		var formData = {
 			'post' : postid
 		};
-
-        $.ajax({
-            type        : 'POST',
-            url         : 'php/admin/deletePost.php',
-            data        : formData,
-            dataType    : 'json',
-            encode      : true,
-			success:function(data) {
-				if (data.success) {
-                  	window.location.replace("main.php");
-            	} else {
-					createError(data.error);
+		
+		createPopup('Delete', 'Are you sure you want to delete this post?', true, function() {
+			$.ajax({
+				type        : 'POST',
+				url         : 'php/admin/deletePost.php',
+				data        : formData,
+				dataType    : 'json',
+				encode      : true,
+				success:function(data) {
+					if (data.success) {
+						window.location.replace("main.php");
+					} else {
+						createError(data.error);
+					}
 				}
-			}
-        });
+			});
+		}
     });
 })
