@@ -442,7 +442,7 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
             margin-right: 5px;
         }
 
-        input.recipeTime {
+        input.recipeTime, input.recipePrepTime {
             width: 18px;   
             height: 33px;
             border: 1px solid rgba(100, 100, 100, 0.4);

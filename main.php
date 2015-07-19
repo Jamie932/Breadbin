@@ -92,9 +92,9 @@
                                 <h3>Serves</h3>
                             </div> 
                             <div class="bodyHalf">
-                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
+                                <input type="text" id="recipePrepTime" name="recipePrepTime" placeholder="" class="recipePrepTime"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off">hrs</p>
-                                <input type="text" id="recipeTime" name="recipeTime" placeholder="" class="recipeTime"/>
+                                <input type="text" id="recipePrepTime" name="recipePrepTime" placeholder="" class="recipePrepTime"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;" autocomplete="off" maxlength="2">mins</p>
                             </div>
                             <div class="bodyHalf">
