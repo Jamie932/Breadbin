@@ -71,6 +71,8 @@ $(document).ready(function(){
                
                 var ingredArray = new Array();
                 var instrucArray = new Array();
+                var prepComTime = new Array();
+                var cookComTime = new Array();
         
                 $("input[name=recipeIngredients]").each(function() {
                    ingredArray.push($(this).val());
@@ -78,6 +80,14 @@ $(document).ready(function(){
         
                 $("textarea[name=recipeInstructions]").each(function() {
                    instrucArray.push($(this).val());
+                });
+        
+                $("input[name=recipePrepTime]").each(function() {
+                   prepComTime.push($(this).val());
+                });
+        
+                 $("input[name=recipeTime]").each(function() {
+                   cookComTime.push($(this).val());
                 });
 
                 alert(instrucArray); 
@@ -87,6 +97,8 @@ $(document).ready(function(){
                     var formData = {
                         'title' : $('#recipeTitle').val(),
                         'time' : $('#recipeTime').val(),
+                        'prepTime' : JSON.stringify(prepComTime),
+                        'cookTime' : JSON.stringify(cookComTime),
                         'serves' : $('#recipeServe').val(),
                         'ingredients' : JSON.stringify(ingredArray),
                         'instructions' : JSON.stringify(instrucArray)
