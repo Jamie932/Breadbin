@@ -92,7 +92,7 @@
                     echo '<li class="nav">';
                 }
             ?>
-                <a class="navLinks" href="/discover/discover.php">Discover</a>
+                <a class="navLinks" href="/discover.php">Discover</a>
             </li>
         
             <?php

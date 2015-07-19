@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <?php
-    require("../php/common.php");
-    require("../php/checkLogin.php");
+    require("php/common.php");
+    require("php/checkLogin.php");
 ?>
 <html>
 <head>
     <title>Discovery | Breadbin</title>
-    <link href="../css/common.css" rel="stylesheet" type="text/css">
-    <link href="../css/navbar.css" rel="stylesheet" type="text/css">
-    <link href="../css/discover.css" rel="stylesheet" type="text/css">
-    <link href="../css/vendor/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="css/discover.css" rel="stylesheet" type="text/css">
+    <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <script src="../js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="../js/vendor/jquery.cookie.js"></script>
-    <script src="../js/vendor/jquery.unveil.js"></script>
-    <script src="../js/vendor/jquery.wookmark.js"></script>
-    <script src="../js/tileFunctions.js"></script>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/jquery.cookie.js"></script>
+    <script src="js/vendor/jquery.unveil.js"></script>
+    <script src="js/vendor/jquery.wookmark.js"></script>
+    <script src="js/tileFunctions.js"></script>
     <script>
         $(document).ready(function(){
             // to fade out before redirect
@@ -43,7 +43,7 @@
     </noscript>    
     
     <?php
-    require('../php/template/navbar.php'); 
+    require('php/template/navbar.php'); 
     ?>
 
     <div id="mainLoader">
@@ -108,11 +108,9 @@
             $test         = $stmt->fetch();
             
         echo '<ul id="tiles">';
-        
-        $direcFix = '../'.$row['image'];
             
         if ($row['type'] == "image") {                    
-            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $direcFix);
+            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
             $imageLocation = $withoutExt . '-profile.jpg';
 
             echo '<li>';
@@ -121,7 +119,7 @@
             echo '</div>';
             
             echo '<div class="postUsername">';
-                echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '</li>'; 
@@ -129,13 +127,13 @@
         } else if ($row['type'] == "text") {
             echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
                 echo '<div class="postUsername">';
-                    echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                    echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
                 echo '</div>';
             echo '</div></li>';
         }
         
         else if ($row['type'] == 'imagetext') {
-            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $direcFix);
+            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
             $imageLocation = $withoutExt . '-profile.jpg';
 
             echo '<li>';
@@ -144,7 +142,7 @@
             echo '</div>';
             
             echo '<div class="postUsername">';
-                echo '<a href="../profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
             echo '</div>';
             
             echo '</li>';
