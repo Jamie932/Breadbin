@@ -172,7 +172,7 @@
                             <div class="container">
                                 <div class="settingsHeader"><h3 class="settings">Account Details</h3></div>
 
-                                <form action="php/SettingsUpdate.php" method="post" id="detailsForm" >
+                                <form action="php/updateSettings.php" method="post" id="detailsForm" >
                                     <div class="rowContainer">
                                         <label>First Name: </label>
                                         <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
@@ -219,7 +219,7 @@
                             <div class="container">
                                 <div class="settingsHeader"><h3 class="settings">Privacy</h3></div>
 
-                                <form action="php/SettingsUpdate.php" method="post">
+                                <form action="php/updateSettings.php" method="post">
                                     <div class="rowContainer">
                                         <label>First Name: </label>
                                         <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
@@ -279,7 +279,7 @@
                             <div class="container">
                                 <div class="settingsHeader"><h3 class="settings">Delete Account</h3></div>
 
-                                <form action="php/SettingsUpdate.php" method="post">
+                                <form action="php/updateSettings.php" method="post">
                                     <div class="rowContainer">
                                         <p class="innerContent">WARNING: Deleting your account will completely remove ALL content associated with it.
                                         There is no way back, so please be careful with this option.</p>

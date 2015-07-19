@@ -15,21 +15,21 @@ $(document).ready(function(){
         
         $.ajax({
             type        : 'POST',
-            url         : '../php/SettingsUpdate.php',
+            url         : '../php/updateSettings.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
-        })
-		
-		.done(function(data) {
-			console.log(data);
-		
-			if (!data.success) {
-                alert("shit error");
-			} else {
-				window.location.replace("settings.php"); 
+            encode      : true,
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
+				console.log(data);
+
+				if (!data.success) {
+					alert("shit error");
+				} else {
+					window.location.replace("settings.php"); 
+				}
 			}
-		});
+        })
 		
         event.preventDefault();
     });    

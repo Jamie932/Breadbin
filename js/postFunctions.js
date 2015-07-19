@@ -41,30 +41,27 @@ $(document).ready(function(){
             url         : 'php/toast.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
-        }) 
+            encode      : true,
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
+				if (!data.success) {
+					createError("This post has already been toasted by you."); 
+				} else {
+					if (data.removedBurn && data.addedToast) { // Previously toasted
+						totalToasts.html(parseInt(totalToasts.text()) + 2);
 
-        .done(function(data) {
-             console.log(data);
+						burnButton.css('color', 'black'); 
+						burnButton.toggleClass('unburn burn');
+					} else if (data.removedBurn || data.addedToast) {
+						totalToasts.html(parseInt(totalToasts.text()) + 1);
+					} else {
+						createError("Incorrect toast data returned. Please inform an adminstrator."); 
+					}
 
-            if (!data.success) {
-                // Already toasted the post - error.
-                createError("This post has already been toasted by you."); 
-            } else {
-                if (data.removedBurn && data.addedToast) { // Previously toasted
-                    totalToasts.html(parseInt(totalToasts.text()) + 2);
-
-                    burnButton.css('color', 'black'); 
-                    burnButton.toggleClass('unburn burn');
-                } else if (data.removedBurn || data.addedToast) {
-                    totalToasts.html(parseInt(totalToasts.text()) + 1);
-                } else {
-                    createError("Incorrect toast data returned. Please inform an adminstrator."); 
-                }
-
-                toastButton.css('color', 'darkgray'); 
-                toastButton.toggleClass('toast untoast');
-            };
+					toastButton.css('color', 'darkgray'); 
+					toastButton.toggleClass('toast untoast');
+				};
+			}
         })
     })
 
@@ -83,30 +80,27 @@ $(document).ready(function(){
             url         : 'php/burn.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
-        })
+            encode      : true,
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
+				if (!data.success) {
+                 	createError("This post has already been burnt by you."); 
+				} else {
+					if (data.removedToast && data.addedBurn) { // Previously toasted
+						totalToasts.html(parseInt(totalToasts.text()) - 2);
 
-        .done(function(data) {
-             console.log(data); 
+						toastButton.css('color', 'black'); 
+						toastButton.toggleClass('untoast toast');
+					} else if (data.removedToast || data.addedBurn) {
+						totalToasts.html(parseInt(totalToasts.text()) - 1);
+					} else {
+						createError("Incorrect burn data returned. Please inform an adminstrator."); 
+					}
 
-            if (!data.success) {
-                // Already burnt the post - error.
-                 createError("This post has already been burnt by you."); 
-            } else {
-                if (data.removedToast && data.addedBurn) { // Previously toasted
-                    totalToasts.html(parseInt(totalToasts.text()) - 2);
-
-                    toastButton.css('color', 'black'); 
-                    toastButton.toggleClass('untoast toast');
-                } else if (data.removedToast || data.addedBurn) {
-                    totalToasts.html(parseInt(totalToasts.text()) - 1);
-                } else {
-                    createError("Incorrect burn data returned. Please inform an adminstrator."); 
-                }
-
-                burnButton.css('color', 'darkgray'); 
-                burnButton.toggleClass('burn unburn');
-            }
+					burnButton.css('color', 'darkgray'); 
+					burnButton.toggleClass('burn unburn');
+				};
+			}
         })
     })
 
@@ -127,7 +121,8 @@ $(document).ready(function(){
             data        : formData,
             dataType    : 'json',
             encode      : true,
-			success:function(data) {
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
 				if (!data.success) {
 					createError(data.error);
 				} 
@@ -149,7 +144,8 @@ $(document).ready(function(){
             data        : formData,
             dataType    : 'json',
             encode      : true,
-			success: function(data) {
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
 				if (!data.success) {
 					createError(data.error);
 				}
@@ -172,7 +168,8 @@ $(document).ready(function(){
 				data        : formData,
 				dataType    : 'json',
 				encode      : true,
-				success:function(data) {
+				error		: function(request, status, error) { console.log(request.responseText); },
+				success		: function(data) {
 					if (data.success) {
 						window.location.replace("main.php");
 					} else {
