@@ -23,10 +23,10 @@ a.active {
  
 /* categories */
 #categories {
-    border-bottom: 1px solid rgb(97, 97, 97); 
+    border-bottom: 1px solid rgba(100, 100, 100, 0.15);
     text-align: center;
-    height: 28px; 
-    padding-top: 11px;
+    height: 40px;
+	line-height: 40px;
     background-color: rgb(89, 89, 89);
     position: fixed;
     width: 100%;
