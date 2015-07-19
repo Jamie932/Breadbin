@@ -118,7 +118,7 @@
                 }
             }
 
-            echo '<li><div id="post">';
+            echo '<div id="post">';
 
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -131,7 +131,23 @@
                 echo '<div class="contentPostText">' . $row['text'] . '</div>';
             } else {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div class="contentPostText">PIES' . $row['text'] . '</div>';
+                echo '<div class="contentPostText">';
+                echo '<div class="recTitle">';
+                echo '<h3 class="recTit">' .$row['title']. '</h3>';
+                echo '</div>';
+                echo '<div class="timeServe">';
+                echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>' .$row['prepTime']. '</p>';
+                echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>' .$row['cookTime']. '</p>';
+                echo '<p class="times"><b>Serves:</b>' .$row['serves']. '</p>';
+                echo '</div>';
+                echo '<div class="ingredientDis">';
+                echo '<p class="ingredList">' .$row['ingred']. '</p>';
+                echo '</div>';
+                echo '<div class="instructionList">';
+                echo '<h6>Instructions</h6>';
+                echo '<p class="instructionList"><b class="instructionNo">1.</b>' .$row['text']. '</p>';
+                echo '</div>';
+                echo '</div>';
             }
                 echo '<div id="contentInfoText">';
                     echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
@@ -167,7 +183,7 @@
                 echo '<p class="report">Report</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
             }             
-            echo '</div></li>';
+            echo '</div>';
         }
     }
 ?>

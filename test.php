@@ -17,53 +17,39 @@
     <div id="loader">
 		
     </div>
-	
-	<div class="right">
-		<ul class="nav">
-            <li class="nav">
-                <a class="navLinks" href="discover.php">Discover</a>
-            </li>
-                <li class="nav">
 
-               <a class="navLinks" href="../profile.php?id=' . $_SESSION['user']['id'] . '">Bill</a>
-               <div class="arrow-up"></div>
-                <ul>
-                    <li><a class="navLinks" href="../settings.php">Settings</a></li>
-                    <li><a class="navLinks" href="#" onClick="logout(); return false;">Logout</a></li>
-                </ul>
-			</li>
-            <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
-		</ul>
-	</div>
-</div>
-
-<div id="errorBar"></div>
-
-    <!--<div style="margin-top: 100px;">
+    <div id="post">
         <div id="contentPost" class="post-' . $row['id'] . '">
-        <div class="contentPostRecipe">
-            <h3 class="recipeTitle">Post Title</h3>
-            <h4 class="ingredientsTitle">Ingredients</h4>
-            <div id="ingredientLists">
-                <div class="leftIngredients">
-                    <p class="ingred">Bread - 150g</p>
-                    <p class="ingred">Bread - 150g</p>
-                    <p class="ingred">Bread - 150g</p>
+            <div class="contentPostText" style="color: black;">
+                <div class="recTitle">
+                    <h3 class="recTit">Title</h3>
                 </div>
-                <div class="rightIngredients">
-                    <p class="ingred">Bread - 150g</p>
-                    <p class="ingred">Bread - 150g</p>
-                    <p class="ingred">Bread - 150g</p>
-                 </div>
+                <div class="timeServe">
+                    <p class="times" style="margin-right: 50px;"><b>Prep time:</b> 1hr 10mins</p>
+                    <p class="times" style="margin-right: 50px;"><b>Cooking time:</b> 4hrs 45mins</p>
+                    <p class="times" ><b>Serves:</b> 1-4 people</p>
+                </div>
+                <div class="ingredientDis">
+                    <p class="ingredList">Mayo - 100ml</p>
+                    <p class="ingredList">Mayo</p>
+                    <p class="ingredList">Mayo</p>
+                    <p class="ingredList">Mayo</p>
+                    <p class="ingredList">Mayo</p>
+                    <p class="ingredList">Mayo</p>
+                    <p class="ingredList">Mayo</p>
+                    <p class="ingredList">Mayo</p>
+                </div>
+                <div class="instructionList">
+                    <h6>Instructions</h6>
+                    <p class="instructionList"><b class="instructionNo">1.</b>jjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsdlkgjjjsd</p>
+                </div>
             </div>
-            <div id="instructions">
-                <h4 class="ingredientsTitle">Instructions</h4>
-                <p>10 mins in the fridge then cook it whilst doing some yoga :)</p>
-            </div>
+            
         </div>
           
-    </div>-->
-        
+    </div>
+     
+    <!--
     <script>
         var instruction = 1;
         function add_fieldsInstruc() {
@@ -129,7 +115,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div>-->
         
 </body>
 </html>
