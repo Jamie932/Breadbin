@@ -136,7 +136,11 @@
                 echo '<h3 class="recTit">' .$row['title']. '</h3>';
                 echo '</div>';
                 echo '<div class="timeServe">';
-                echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>' .$row['prepTime']. '</p>';
+                
+                foreach ($row['prepTime'] as $value)
+                    echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>' . $value . '</p>';
+                }
+                
                 echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>' .$row['cookTime']. '</p>';
                 echo '<p class="times"><b>Serves:</b>' .$row['serves']. '</p>';
                 echo '</div>';
