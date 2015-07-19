@@ -142,9 +142,16 @@
                 
                 $prepArray = json_decode($row['prepTime']);
                 
+                $prepTimeNo = 0;
+                
                 echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>';
-                foreach ($prepArray as $value) { 
-                    echo ' '. $value .' ';
+                foreach ($prepArray as $value) {
+                    $prepTimeNo++;
+                    if ($prepTimeNo == 0 {
+                        echo ' '. $value .' hr';
+                    } else {
+                        echo ' '. $value .' mins';
+                    }
                 }
                 echo '</p>';
                 

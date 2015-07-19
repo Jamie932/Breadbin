@@ -337,6 +337,7 @@ p.instructionList {
 .instructionList {
     width: 100%;
     height: auto;
+    margin-bottom: 18px;
 }
 
 h6 {
