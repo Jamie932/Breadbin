@@ -163,14 +163,14 @@
                 foreach ($cookArray as $value) { 
                     $cookTimeNo++;
                     if ($cookTimeNo == 1) {
-                        echo '' . $value . 'hr';
+                        echo ' ' . $value . 'hr';
                     } else {
-                        echo '' . $value . 'mins';
+                        echo ' ' . $value . 'mins';
                     }
                 }
                 echo '</p>';
                 
-                echo '<p class="times"><b>Serves:</b>'. $row['serves'] . '</p>';
+                echo '<p class="times"><b>Serves:</b> '. $row['serves'] . '</p>';
                 
                 echo '</div>';
                 echo '<div class="ingredientDis">';
