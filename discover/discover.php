@@ -2,6 +2,20 @@
 <?php
     require("../php/common.php");
     require("../php/checkLogin.php");
+	
+	$query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+
+	if (!empty($_GET)) { //All
+		if ($_GET['f'] == 1) { //Staff Recommended
+			$query = "SELECT * FROM posts WHERE userid <> :id AND favourite == 1 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+		} else if ($_GET['f'] == 2) { //Top Posts
+			$query = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns, (COUNT(post_toasts.userid) - COUNT(post_burns.userid)) AS total FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id GROUP BY posts.id HAVING (total) > 0 ORDER BY total";
+		} else if ($_GET['f'] == 3) { //Just Pictures
+			$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+		} else if ($_GET['f'] == 4) {
+			$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+		}
+	} 
 ?>
 <html>
 <head>
@@ -55,19 +69,19 @@
         <ul class="cats">
 
 			<li class="cats">
-                <a class="active">All</a>
+                <a class="active" href="discover.php">All</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="staff-recom.php">Staff Recommendations</a>
+                <a class="catLink" href="discover.php?f=1">Staff Recommendations</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="top-posts.php">Top Posts</a>
+                <a class="catLink" href="discover.php?f=2">Top Posts</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="just-pictures.php">Just Pictures</a>
+                <a class="catLink" href="discover.php?f=3">Just Pictures</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="just-text.php">Just Text</a>
+                <a class="catLink" href="discover.php?f=4">Just Text</a>
             </li>
             
 		</ul>
@@ -76,8 +90,7 @@
     <div id="content">
         <div id="main">
             <?php
-            $query        = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
-            /*userid <> :id AND */
+
             $query_params = array(':id' => $_SESSION['user']['id']);
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
