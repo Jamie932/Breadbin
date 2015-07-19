@@ -20,13 +20,21 @@
             $data['success'] = false;
             $data['error'] = 'Title cannot contain only spaces.';
             
-        } else if (empty($_POST['time'])) {
+        } else if (empty($_POST['prepTime'])) {
             $data['success'] = false;
-            $data['error'] = 'Recipes need a time.';
+            $data['error'] = 'Recipes need a preperation time.';
             
-        } else if (ctype_space($_POST['time'])) {
+        } else if (ctype_space($_POST['prepTime'])) {
             $data['success'] = false;
-            $data['error'] = 'Time cannot contain only spaces.';
+            $data['error'] = 'Prep time cannot contain only spaces.';
+            
+        } else if (empty($_POST['cookTime'])) {
+            $data['success'] = false;
+            $data['error'] = 'Recipes need a cooking time.';
+            
+        } else if (ctype_space($_POST['cookTime'])) {
+            $data['success'] = false;
+            $data['error'] = 'Cook time cannot contain only spaces.';
             
         } else if (empty($_POST['serves'])) {
             $data['success'] = false;
@@ -53,8 +61,8 @@
             $data['error'] = 'Instructions cannot contain only spaces.';
             
         } else {
-            $query = "INSERT INTO posts (userid, type, title, ingred, text)  VALUES (:userid, 'recipe', :text, :ingreds, :instruc)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':ingreds' => $_POST['ingredients'], ':instruc' => $_POST['instructions']); 
+            $query = "INSERT INTO posts (userid, type, title, prepTime, cookTime, serves, ingred, text)  VALUES (:userid, 'recipe', :text, :prep, :cook, :serves, :ingreds, :instruc)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['title'], ':serves' => $_POST['serves'],':ingreds' => $_POST['ingredients'], ':instruc' => $_POST['instructions'], ':prep' => $_POST['prepTime'], ':cook' => $_POST['cookTime']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
