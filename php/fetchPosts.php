@@ -177,7 +177,7 @@
                 
                 foreach ($instrucArray as $value) { 
                     $instrucNo++;
-                    echo '<p class="instructionList"><b class="instructionNo">' .$instrucNo. '</b>' . $value . '<br></p>';
+                    echo '<p class="instructionList"><b class="instructionNo">' .$instrucNo. '. </b>' . $value . '<br></p>';
                 }
                 echo '';
                 
