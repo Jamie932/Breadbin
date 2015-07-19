@@ -147,7 +147,7 @@
                 
                 $cookArray = json_decode($row['cookTime']);
                 
-                echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>' 
+                echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>'; 
                 foreach ($cookArray as $value) { 
                     echo '' . $value . '';
                 }
