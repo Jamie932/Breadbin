@@ -5,13 +5,6 @@
     $data = array();
     
     $ingredArray = json_decode($_POST['ingredients']);
-    
-
-    ?>
-                    <script>
-                        console.log(<? echo json_encode($prepTimeArray); ?>);
-                    </script>
-    <?php
 
         if (empty($_POST['title'])) {
             $data['success'] = false;
@@ -75,6 +68,12 @@
             $data['success'] = true;
             
         }
+
+        ?>
+                    <script>
+                        console.log(<? echo json_encode($prepTimeArray); ?>);
+                    </script>
+        <?php
 
     echo json_encode($data);
 
