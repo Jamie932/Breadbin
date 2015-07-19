@@ -154,6 +154,7 @@
                         } else {
                             echo ' '. $value .'hrs';
                         }
+                    } else if ($prepTimeNo == 1 && $value == 0) {
                     }
                     
                     if ($prepTimeNo > 1 && $value >= 1) {
@@ -162,6 +163,7 @@
                         } else {
                             echo ' '. $value .'mins';
                         }
+                    } else if ($prepTimeNo > 1 && $value == 0) {
                     }
                 }
                 echo '</p>';
