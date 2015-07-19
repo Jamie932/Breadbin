@@ -139,12 +139,28 @@
                 
                 $prepArray = json_decode($row['prepTime']);
                 
+                echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>';
                 foreach ($prepArray as $value) { 
-                    echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>' . $value . '</p>';
+                    echo ' '. $value .' ';
                 }
+                echo '</p>';
                 
-                echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>' .$row['cookTime']. '</p>';
-                echo '<p class="times"><b>Serves:</b>' .$row['serves']. '</p>';
+                $cookArray = json_decode($row['cookTime']);
+                
+                echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>' 
+                foreach ($cookArray as $value) { 
+                    echo '' . $value . '';
+                }
+                echo '</p>';
+                
+                $serveArray = json_decode($row['serves']);
+                
+                echo '<p class="times"><b>Serves:</b>' 
+                foreach ($serveArray as $value) { 
+                    echo ''. $value . '';
+                }
+                echo '</p>';
+                
                 echo '</div>';
                 echo '<div class="ingredientDis">';
                 
@@ -157,7 +173,19 @@
                 echo '</div>';
                 echo '<div class="instructionList">';
                 echo '<h6>Instructions</h6>';
-                echo '<p class="instructionList"><b class="instructionNo">1.</b>' .$row['text']. '</p>';
+                
+                $instrucArray = json_decode($row['text']);
+                $instrucNo == 0;
+                
+                echo '<p class="instructionList">';
+                
+                foreach ($instrucArray as $value) { 
+                    $instrucNo++;
+                    echo '<b class="instructionNo">' .$instrucNo. '</b>';
+                    echo '' $value '';
+                }
+                echo '</p>';
+                
                 echo '</div>';
                 echo '</div>';
             }
