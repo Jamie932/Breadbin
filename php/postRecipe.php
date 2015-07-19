@@ -8,7 +8,7 @@
 
         if (empty($_POST['prepTime1']) && !empty($_POST['prepTime2'])) {
             $prepTimeArray = array("0" , $_POST['prepTime2']);
-        } else if (empty($_POST['prepTime2'] && !empty($_POST['prepTime1'])) {
+        } else if (empty($_POST['prepTime2']) && !empty($_POST['prepTime1'])) {
             $prepTimeArray = array($_POST['prepTime2'] , "0");
         }
 
