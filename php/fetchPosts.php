@@ -162,7 +162,7 @@
                 echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>'; 
                 foreach ($cookArray as $value) { 
                     $cookTimeNo++;
-                    if ($prepTimeNo == 1) {
+                    if ($cookTimeNo == 1) {
                         echo '' . $value . 'hr';
                     } else {
                         echo '' . $value . 'mins';
