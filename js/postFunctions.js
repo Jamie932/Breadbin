@@ -149,7 +149,7 @@ $(document).ready(function(){
             data        : formData,
             dataType    : 'json',
             encode      : true,
-			success:function(data) {
+			success: function(data) {
 				if (!data.success) {
 					createError(data.error);
 				}

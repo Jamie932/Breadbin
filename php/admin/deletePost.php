@@ -1,6 +1,6 @@
 <?php 
 	header("Content-Type: application/json", true);
-    require("common.php"); 
+    require("../common.php"); 
 	
 	$data = array();
 	
