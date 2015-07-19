@@ -127,7 +127,7 @@ $(document).ready(function(){
             data        : formData,
             dataType    : 'json',
             encode      : true
-        })
+        });
 
         .done(function(data) {
              console.log(data); 
@@ -135,7 +135,7 @@ $(document).ready(function(){
             if (!data.success) {
                  createError(data.error); 
             }
-		}
+		});
 			  
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
@@ -160,7 +160,7 @@ $(document).ready(function(){
             if (!data.success) {
                  createError(data.error); 
             }
-		}
+		});
 			  
         $(this).addClass('fa-heart-o').removeClass('fa-heart');
     });
@@ -185,6 +185,6 @@ $(document).ready(function(){
             if (!data.success) {
                  createError(data.error); 
             }
-		}
+		});
     });
 })
