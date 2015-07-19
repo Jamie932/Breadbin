@@ -154,12 +154,14 @@
                         } else {
                             echo ' '. $value .'hrs';
                         }
-                    } else if ($prepTimeNo == 1 && is_null($value)) {
-                           echo ' 0hr';
-                    } 
+                    }
                     
-                    if ($prepTimeNo > 1) {
-                        echo ' '. $value .'mins';
+                    if ($prepTimeNo > 1 && $value >= 1) {
+                        if ($value == 1) {
+                            echo ' '. $value .'min';
+                        } else {
+                            echo ' '. $value .'mins';
+                        }
                     }
                 }
                 echo '</p>';
@@ -171,14 +173,20 @@
                 echo '<p class="times" style="margin-right: 50px;"><b>Cooking time:</b>'; 
                 foreach ($cookArray as $value) { 
                     $cookTimeNo++;
-                    if ($cookTimeNo == 1) {
+                    if ($cookTimeNo == 1 && $value >= 1) {
                         if ($value == 1) {
                             echo ' '. $value .'hr';
                         } else {
                             echo ' '. $value .'hrs';
                         }
-                    } else {
-                        echo ' ' . $value . 'mins';
+                    }
+                    
+                    if ($cookTimeNo > 1 && $value >= 1) {
+                        if ($value == 1) {
+                            echo ' '. $value .'min';
+                        } else {
+                            echo ' '. $value .'mins';
+                        }
                     }
                 }
                 echo '</p>';
