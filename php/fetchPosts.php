@@ -148,7 +148,11 @@
                 foreach ($prepArray as $value) {
                     $prepTimeNo++;
                     if ($prepTimeNo == 1) {
-                        echo ' '. $value .'hr';
+                        if ($value == 1) {
+                            echo ' '. $value .'hr';
+                        } else {
+                            echo ' '. $value .'hrs';
+                        }
                     } else {
                         echo ' '. $value .'mins';
                     }
@@ -163,7 +167,11 @@
                 foreach ($cookArray as $value) { 
                     $cookTimeNo++;
                     if ($cookTimeNo == 1) {
-                        echo ' ' . $value . 'hr';
+                        if ($value == 1) {
+                            echo ' '. $value .'hr';
+                        } else {
+                            echo ' '. $value .'hrs';
+                        }
                     } else {
                         echo ' ' . $value . 'mins';
                     }
