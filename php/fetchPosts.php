@@ -153,13 +153,7 @@
                 }
                 echo '</p>';
                 
-                $serveArray = json_decode($row['serves']);
-                
-                echo '<p class="times"><b>Serves:</b>' 
-                foreach ($serveArray as $value) { 
-                    echo ''. $value . '';
-                }
-                echo '</p>';
+                echo '<p class="times"><b>Serves:</b>'. $row['serves'] . '</p>';
                 
                 echo '</div>';
                 echo '<div class="ingredientDis">';
