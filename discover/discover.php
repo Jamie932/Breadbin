@@ -55,19 +55,19 @@
         <ul class="cats">
 
 			<li class="cats">
-                <a class="active" href="discover.php">All</a>
+                <a <?php echo empty($_GET) ? 'class="active"' : 'class="catLink"' ?> href="discover.php">All</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="discover.php?f=1">Staff Recommendations</a>
+                <a <?php echo $_GET['f'] == 1 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=1">Staff Recommendations</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="discover.php?f=2">Top Posts</a>
+                <a <?php echo $_GET['f'] == 2 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=2">Top Posts</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="discover.php?f=3">Just Pictures</a>
+                <a <?php echo $_GET['f'] == 3 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=3">Just Pictures</a>
             </li>
             <li class="cats">
-                <a class="catLink" href="discover.php?f=4">Just Text</a>
+                <a <?php echo $_GET['f'] == 4 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=4">Just Text</a>
             </li>
             
 		</ul>
