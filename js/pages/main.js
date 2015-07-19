@@ -110,14 +110,14 @@ $(document).ready(function(){
                         data        : formData,
                         dataType    : 'json',
                         encode      : true,
-                        success: function(data) {
-                        if (!data.success) {
-                            alert("error");
-                            createError(data.error);
-                        } else {
-                            window.location.replace("settings.php"); 
+                        error		: function(request, status, error) { console.log(request.responseText); },
+                        success		: function(data) {
+                            if (data.success) {
+                                window.location.replace("main.php");
+                            } else {
+                                createError(data.error);
+                            }
                         }
-                    } 
                 })
                     
         event.preventDefault();
