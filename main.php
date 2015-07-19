@@ -104,7 +104,7 @@
                                 <p style="display: inline; font-size: 0.6em; margin: 0;">mins</p>
                             </div>
                             <div class="bodyHalfServe">
-                                <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" autocomplete="off" maxlength="2"/>
+                                <input type="text" id="recipeServe" name="recipeServe" placeholder="Serves" class="recipeServe" autocomplete="off" maxlength="7"/>
                                 <p style="display: inline; font-size: 0.6em; margin: 0;">people</p>
                             </div>
                         </div>
