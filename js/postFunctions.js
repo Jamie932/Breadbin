@@ -126,16 +126,13 @@ $(document).ready(function(){
             url         : 'php/admin/favouritePost.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
+            encode      : true,
+			success:function(data) {
+				if (!data.success) {
+					createError(data.error);
+				} 
+			}
         });
-
-        .done(function(data) {
-             console.log(data); 
-
-            if (!data.success) {
-                 createError(data.error); 
-            }
-		});
 			  
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
@@ -151,16 +148,13 @@ $(document).ready(function(){
             url         : 'php/admin/favouritePost.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
+            encode      : true,
+			success:function(data) {
+				if (!data.success) {
+					createError(data.error);
+				}
+			}
         })
-
-        .done(function(data) {
-             console.log(data); 
-
-            if (!data.success) {
-                 createError(data.error); 
-            }
-		});
 			  
         $(this).addClass('fa-heart-o').removeClass('fa-heart');
     });
@@ -176,15 +170,14 @@ $(document).ready(function(){
             url         : 'php/admin/deletePost.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
-        })
-
-        .done(function(data) {
-             console.log(data); 
-
-            if (!data.success) {
-                 createError(data.error); 
-            }
-		});
+            encode      : true,
+			success:function(data) {
+				if (data.success) {
+                  	window.location.replace("main.php");
+            	} else {
+					createError(data.error);
+				}
+			}
+        });
     });
 })
