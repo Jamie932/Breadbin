@@ -137,7 +137,9 @@
                 echo '</div>';
                 echo '<div class="timeServe">';
                 
-                foreach ($row['prepTime'] as $value) { 
+                $prepArray = json_decode($row['prepTime']);
+                
+                foreach ($prepArray as $value) { 
                     echo '<p class="times" style="margin-right: 50px;"><b>Prep time:</b>' . $value . '</p>';
                 }
                 
