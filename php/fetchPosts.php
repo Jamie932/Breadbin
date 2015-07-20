@@ -197,6 +197,7 @@
                 
                 echo '</div>';
                 echo '<div class="ingredientDis">';
+                echo '<h6>Ingredients</h6>';
                 
                 $ingredArray = json_decode($row['ingred']);
                 
