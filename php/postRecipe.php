@@ -67,7 +67,7 @@
 
         ?>
                     <script>
-                        console.log(<? echo json_encode($prepTimeArray); ?>);
+                        console.log(<? echo json_encode($prepArray); ?>);
                     </script>
         <?php
 
