@@ -143,7 +143,9 @@
                         </div>
                         
                             <br>
-                            <center><input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
+                            <center>
+                                <p>Your first recipe? View the <a href="#">Recipe Guideline</a></p>     
+                            <input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
                             <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
                     </form>
                 </div>
