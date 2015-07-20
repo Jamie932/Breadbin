@@ -572,8 +572,10 @@ b.instructionNo {
         }
 
         p.guidelineText {
-            font-size: 10px;
+            font-size: 0.7em;
             margin: 0;
+            margin-bottom: 7px;
+            margin-top: -12px;
             padding: 0;
         }
 /*
