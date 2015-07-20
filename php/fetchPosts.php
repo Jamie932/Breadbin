@@ -208,8 +208,8 @@
                 echo '<br>';
                 
                 echo '<div class="instructionList">';
-                echo '<hr class="test"></hr>';
                 echo '<h6>Instructions</h6>';
+                echo '<hr class="test"></hr>';
                 
                 $instrucArray = json_decode($row['text']);
                 
