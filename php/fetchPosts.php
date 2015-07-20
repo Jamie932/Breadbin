@@ -206,8 +206,9 @@
                 
                 echo '</div>';
                 echo '<br>';
-                echo '<hr class="test"></hr>';
+                
                 echo '<div class="instructionList">';
+                echo '<hr class="test"></hr>';
                 echo '<h6>Instructions</h6>';
                 
                 $instrucArray = json_decode($row['text']);

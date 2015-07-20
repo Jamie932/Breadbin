@@ -331,6 +331,7 @@ p.instructionList {
     width: 100%;
     height: auto;
     margin-bottom: 26px;
+    float: left;
 }
 
 .instructionList {
