@@ -5,6 +5,7 @@
     $data = array();
     
     $ingredArray = json_decode($_POST['ingredients']);
+    $prepArray = json_decode($_POST['prepTime']);
 
         if (empty($_POST['title'])) {
             $data['success'] = false;
@@ -14,11 +15,11 @@
             $data['success'] = false;
             $data['error'] = 'Title cannot contain only spaces.';
 
-        } else if (empty($_POST['prepTime'])) {
+        } else if (empty($prepArray)) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a preperation time.';
             
-        } else if (ctype_space($_POST['prepTime'])) {
+        } else if (ctype_space($prepArray)) {
             $data['success'] = false;
             $data['error'] = 'Prep times cannot contain only spaces.';
             
