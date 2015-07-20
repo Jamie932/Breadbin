@@ -58,16 +58,16 @@
                 <a <?php echo empty($_GET) ? 'class="active"' : 'class="catLink"' ?> href="discover.php">All</a>
             </li>
             <li class="cats">
-                <a <?php echo $_GET['f'] == 1 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=staff-Recom">Staff Recommendations</a>
+                <a <?php echo $_GET['f'] == 1 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=1">Staff Recommendations</a>
             </li>
             <li class="cats">
-                <a <?php echo $_GET['f'] == 2 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=top=posts">Top Posts</a>
+                <a <?php echo $_GET['f'] == 2 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=2">Top Posts</a>
             </li>
             <li class="cats">
-                <a <?php echo $_GET['f'] == 3 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=just-pictures">Just Pictures</a>
+                <a <?php echo $_GET['f'] == 3 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=3">Just Pictures</a>
             </li>
             <li class="cats">
-                <a <?php echo $_GET['f'] == 4 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=just-text">Just Text</a>
+                <a <?php echo $_GET['f'] == 4 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=4">Just Text</a>
             </li>
             
 		</ul>
