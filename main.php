@@ -144,7 +144,8 @@
                         
                             <br>
                             <center>
-                                <p>Your first recipe? View the <a href="#">Recipe Guideline</a></p>     
+                                <p class="guidelineText">Your first recipe? View the <a href="#">Recipe Guideline</a></p>
+                                <br>
                             <input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
                             <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
                     </form>
