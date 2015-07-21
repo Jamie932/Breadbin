@@ -66,7 +66,7 @@
         
     <div id="recipeBox">
             <div class="recipeContent"> 
-                <div class="popupTitle">
+                <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post your recipe</div>
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
                 </div>
