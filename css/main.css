@@ -24,6 +24,7 @@ p.report {
     width: 640px;
     margin-bottom: 45px;
     z-index:2;
+    min-height: 80px;
 }
 
 .imgtext {
