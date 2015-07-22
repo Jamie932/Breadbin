@@ -59,7 +59,7 @@
     <?php require('php/template/popup.php');?>
         
     <div id="contentWrap">
-        <div id="topBar">
+        <div class="bar" id="topBar">
             <div class="contentContainer">
                 <div class="content">
                     <div class="statNumber"><?php echo $numPosts; ?></div>
@@ -116,6 +116,22 @@
                         echo '<div class="title">Reports</div>';
                     }
                 ?>
+            </div>
+        </div>
+		
+        <div class="bar" id="bottomBar">
+			<?php
+				if (isset($colour)) {
+					echo '<div class="title" style="background-color: '. $colour . '">Useful Functions</div>';
+				} else {
+					echo '<div class="title">Useful Functions</div>';
+				}
+			?>
+            <div class="contentContainer">
+				<button id="clearPosts" class="buttonstyle">Clear Posts</button>
+				<button id="clearToasts" class="buttonstyle">Clear Toasts</button>
+				<button id="clearBurns" class="buttonstyle">Clear Burns</button>
+				<button id="clearFavourites" class="buttonstyle">Clear Favourites</button>
             </div>
         </div>
     </div>
