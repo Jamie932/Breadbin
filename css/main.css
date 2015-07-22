@@ -24,7 +24,6 @@ p.report {
     width: 640px;
     margin-bottom: 45px;
     z-index:2;
-    min-height: 80px;
 }
 
 .imgtext {
@@ -128,6 +127,7 @@ p.report {
     word-wrap: break-word;
 	font-size: 0.9em;
     z-index: 2;
+    min-height: 80px;
 }
 
 /* ===[ Sidebar (main.css) ]=== */
