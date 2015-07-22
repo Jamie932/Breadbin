@@ -47,7 +47,7 @@
             var container = document.createElement("div");
             container.style.width = "100%";
             container.style.height = "100px";
-            container.innerHTML = '<div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..." autocomplete="off"></textarea></div>';
+            container.innerHTML = '<div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="260" placeholder="Recipe Instructions..." autocomplete="off"></textarea></div>';
             document.getElementById("instructionBody").appendChild(container);   
             
             /*document.getElementById('instructionBody').innerHTML += '<div id="eachInstruc"><div class="leftInstruc"><p class="number">' + instruction + '</p></div><div class="rightInstruc"><textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..."></textarea></div></div>';*/
@@ -66,7 +66,7 @@
         
     <div id="recipeBox">
             <div class="recipeContent"> 
-                <div class="popupTitle">
+                <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post your recipe</div>
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
                 </div>
@@ -119,8 +119,8 @@
                             </div>
                         </div>
                         <div id="ingredientBody">
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" autocomplete="off"/>
-                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: -3px;" />
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" autocomplete="off" maxlength="28"/>
+                            <input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin-left: -3px;" maxlength="28"/>
                         </div>
                         
                         <div id="sectionHeader" style="margin-bottom:3px;">
@@ -137,13 +137,15 @@
                                 <p class="number">1</p>
                             </div>
                             <div class="rightInstruc">
-                            <textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="220" placeholder="Recipe Instructions..." autocomplete="off"></textarea>
+                            <textarea name="recipeInstructions" class="recipeInstructions" id="recipeInstructions" maxlength="260" placeholder="Recipe Instructions..." autocomplete="off"></textarea>
                             </div>
                             </div>
                         </div>
                         
                             <br>
-                            <center><input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
+                            <center>
+                                <p class="guidelineText">Your first recipe? View the <a href="#">Recipe Guideline</a></p>
+                            <input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
                             <input type="button" id="cancel" class="buttonstyle" value="Cancel" /></center>
                     </form>
                 </div>
