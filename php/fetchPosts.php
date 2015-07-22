@@ -127,7 +127,7 @@
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div id="heart" style="z-index: 1; margin-bottom: -20px;"><i class="fa fa-heart" style="font-size: 2.5em;"></i></div>';
+                echo '<div id="heart" style="z-index: 1; position: absolute;"><i class="fa fa-heart" style="font-size: 2.5em;"></i></div>';
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';

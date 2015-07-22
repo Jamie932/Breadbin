@@ -23,7 +23,7 @@ p.report {
     float: left;
     width: 640px;
     margin-bottom: 45px;
-    margin-top: -17px;
+    z-index:2;
 }
 
 .imgtext {
