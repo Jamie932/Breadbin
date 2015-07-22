@@ -127,7 +127,7 @@
 					echo '<div class="title">Useful Functions</div>';
 				}
 			?>
-            <div class="contentContainer">
+            <div class="contentContainer" style="text-align: center;">
 				<button id="clearPosts" class="buttonstyle">Clear Posts</button>
 				<button id="clearToasts" class="buttonstyle">Clear Toasts</button>
 				<button id="clearBurns" class="buttonstyle">Clear Burns</button>
