@@ -157,6 +157,7 @@ $(document).ready(function(){
     
     $("#rightTitleRec").click(function(){
         $('#blackOverlay').fadeOut('normal');
+        $('#gridBox').fadeOut('normal');
         $('#recipeBox').fadeOut('normal');
     });
     
