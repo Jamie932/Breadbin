@@ -154,8 +154,8 @@ $(document).ready(function(){
     $("#cancel").click(function(){
         $('#blackOverlay').fadeOut('normal');
         $("#gridBox").fadeOut('normal', function(){
-            $('.innerRecipe').hide;
-            $('.innerGrid').show;
+            $('.innerRecipe').hide();
+            $('.innerGrid').show();
         })
     });
     
