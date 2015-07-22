@@ -5,6 +5,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/pages/main.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
     <body>
     
@@ -18,8 +19,21 @@
 		
     </div>
 
-    <div id="post">
-        <div id="contentPost" class="post-' . $row['id'] . '">
+    <div id="gridBox">
+        <div class="gridBoxes 1"></div>
+		<div class="gridBoxes 2"></div>
+		<div class="gridBoxes 3"></div>
+		<div class="gridBoxes 4"></div>
+		<div class="gridBoxes 5"></div>
+		<div class="gridBoxes 6"></div>
+		<div class="gridBoxes 7"></div>
+		<div class="gridBoxes 8"></div>
+		<div class="gridBoxes 9"></div>
+    </div>
+    <!--
+    <div id="post" style="margin-top: 100px;" >
+        <div id="contentPost" class="post-' . $row['id'] . '" >
+            <div id="heart" style="z-index: 1; margin-bottom: -20px;"><i class="fa fa-trash-o" style="font-size: 2em;"></i></div>
             <div class="contentPostText" style="color: black;">
                 <div class="recTitle">
                     <h3 class="recTit">Title</h3>
@@ -49,7 +63,7 @@
           
     </div>
      
-    <!--
+    
     <script>
         var instruction = 1;
         function add_fieldsInstruc() {
