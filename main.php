@@ -63,7 +63,8 @@
             /*document.getElementById('ingredientBody').innerHTML += '<input type="text" name="recipeIngredients" id="recipeIngredients" placeholder="Recipe Ingredient" class="recipeIngredients" style="margin  " />';*/
         }
     </script>
-        
+    
+    
     <div id="gridBox">
         <div class="innerGrid">
         <div class="popupTitle" style="margin: -1px;">
@@ -80,10 +81,10 @@
 		  <div class="gridBoxes 8"></div>
 		  <div class="gridBoxes 9"></div>
         </div>
-    </div>
+    <!--</div>
         
-    <div id="recipeBox">
-        <div class="innerRecipe">
+    <div id="recipeBox">-->
+        <div class="innerRecipe" style="display: none;">
             <div class="recipeContent"> 
                 <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post your recipe</div>

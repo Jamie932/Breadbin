@@ -145,8 +145,10 @@ $(document).ready(function(){
     });
     
     $(".gridBoxes.1").click(function(){
-        $('#gridBox').fadeOut('normal');
-        $('#recipeBox').fadeIn('normal');
+        $(".innerGrid").fadeOut('normal', function(){
+            $('.innerRecipe').fadeIn('normal');
+            $("#gridBox").addClass('tall');
+        })
     });
     
     $("#cancel").click(function(){
