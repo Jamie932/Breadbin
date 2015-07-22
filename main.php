@@ -64,6 +64,18 @@
         }
     </script>
         
+    <div id="gridBox">
+        <div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+    </div>
+        
     <div id="recipeBox">
             <div class="recipeContent"> 
                 <div class="popupTitle" style="margin: -1px;">

@@ -139,9 +139,9 @@ $(document).ready(function(){
         $('#uploadname').html($(this).val());
     });
     
-    $("#blackout").click(function(){
+    $("#gridClick").click(function(){
         $('#blackOverlay').fadeIn('normal');
-        $('#recipeBox').fadeIn('normal');
+        $('#gridBox').fadeIn('normal');
     });
     
     $("#cancel").click(function(){

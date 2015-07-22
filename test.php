@@ -19,6 +19,18 @@
 		
     </div>
 
+    <div id="gridBox">
+        <div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+		<div class="gridBoxes"></div>
+    </div>
+    <!--
     <div id="post" style="margin-top: 100px;" >
         <div id="contentPost" class="post-' . $row['id'] . '" >
             <div id="heart" style="z-index: 1; margin-bottom: -20px;"><i class="fa fa-trash-o" style="font-size: 2em;"></i></div>
@@ -51,7 +63,7 @@
           
     </div>
      
-    <!--
+    
     <script>
         var instruction = 1;
         function add_fieldsInstruc() {
