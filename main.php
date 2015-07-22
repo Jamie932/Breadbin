@@ -65,6 +65,10 @@
     </script>
         
     <div id="gridBox">
+        <div class="popupTitle" style="margin: -1px;">
+                    <div id="leftTitle">Post your recipe</div>
+                    <div id="rightTitleRec"><i class="fa fa-times"></i></div>
+        </div>
         <div class="gridBoxes 1"></div>
 		<div class="gridBoxes 2"></div>
 		<div class="gridBoxes 3"></div>
