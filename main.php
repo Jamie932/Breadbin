@@ -65,25 +65,28 @@
     </script>
         
     <div id="gridBox">
+        <div class="innerGrid">
         <div class="popupTitle" style="margin: -1px;">
-                    <div id="leftTitle">Post your recipe</div>
+                    <div id="leftTitle">Your post grid</div>
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
+            </div>
+            <div class="gridBoxes 1"></div>
+		  <div class="gridBoxes 2"></div>
+		  <div class="gridBoxes 3"></div>
+		  <div class="gridBoxes 4"></div>
+		  <div class="gridBoxes 5"></div>
+		  <div class="gridBoxes 6"></div>
+		  <div class="gridBoxes 7"></div>
+		  <div class="gridBoxes 8"></div>
+		  <div class="gridBoxes 9"></div>
         </div>
-        <div class="gridBoxes 1"></div>
-		<div class="gridBoxes 2"></div>
-		<div class="gridBoxes 3"></div>
-		<div class="gridBoxes 4"></div>
-		<div class="gridBoxes 5"></div>
-		<div class="gridBoxes 6"></div>
-		<div class="gridBoxes 7"></div>
-		<div class="gridBoxes 8"></div>
-		<div class="gridBoxes 9"></div>
     </div>
         
     <div id="recipeBox">
+        <div class="innerRecipe">
             <div class="recipeContent"> 
                 <div class="popupTitle" style="margin: -1px;">
-                    <div id="leftTitle">Your post grid</div>
+                    <div id="leftTitle">Post your recipe</div>
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
                 </div>
                 
@@ -167,6 +170,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
     <div id="blackOverlay"></div>   
     

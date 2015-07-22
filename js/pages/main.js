@@ -145,12 +145,13 @@ $(document).ready(function(){
     });
     
     $(".gridBoxes.1").click(function(){
-        $('#gridBox').fadeOut('normal');
-        $('#recipeBox').fadeIn('normal');
+        $('.innerGrid').fadeOut('normal');
+        $('#innerRecipe').fadeIn('normal');
     });
     
     $("#cancel").click(function(){
         $('#blackOverlay').fadeOut('normal');
+        $('#gridBox').fadeOut('normal');
         $('#recipeBox').fadeOut('normal');
     });
     
