@@ -1,11 +1,15 @@
 .bar {
-    margin: 65px auto 40px;
     border: 1px solid rgba(97, 97, 97, 0.2);
     background-color: #fff;
 }
 
 #topBar {
     min-height: 100px;
+    margin: 65px auto 40px;
+}
+
+#bottomBar {
+    margin: 40px auto 20px;
 }
 
 #contentWrap {
@@ -122,4 +126,8 @@
 
 .ct-series-a .ct-line, .ct-series-a .ct-point {
     stroke: #6699FF !important;   
+}
+
+.buttonstyle {
+	width: 200px;
 }
