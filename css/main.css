@@ -125,6 +125,7 @@ p.report {
     padding-bottom: 10px;
     word-wrap: break-word;
 	font-size: 0.9em;
+    z-index: 2;
 }
 
 /* ===[ Sidebar (main.css) ]=== */
