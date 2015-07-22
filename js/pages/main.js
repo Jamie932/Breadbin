@@ -144,6 +144,11 @@ $(document).ready(function(){
         $('#gridBox').fadeIn('normal');
     });
     
+    $(".gridBoxes 1").click(function(){
+        $('#blackOverlay').fadeOut('normal');
+        $('#recipeBox').fadeIn('normal');
+    });
+    
     $("#cancel").click(function(){
         $('#blackOverlay').fadeOut('normal');
         $('#recipeBox').fadeOut('normal');
