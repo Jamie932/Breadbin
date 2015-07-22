@@ -146,7 +146,7 @@ $(document).ready(function(){
     
     $(".gridBoxes.1").click(function(){
         $('.innerGrid').fadeOut('normal');
-        $('#innerRecipe').fadeIn('normal');
+        $('.innerRecipe').fadeIn('normal');
     });
     
     $("#cancel").click(function(){
