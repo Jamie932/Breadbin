@@ -124,6 +124,7 @@
 
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="heart" style="z-index: 1; position: absolute; margin-top: -17px; margin-left: -22px;"><i class="fa fa-heart" style="font-size: 2.5em;"></i></div>';
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -131,10 +132,12 @@
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="heart" style="z-index: 1; position: absolute; margin-top: -17px; margin-left: -22px;"><i class="fa fa-heart" style="font-size: 2.5em;"></i></div>';
                 echo '<div class="contentPostText"><p style="margin: 0;">' . $row['text'] . '</p></div>';
             } else {
                 $instrucNo = 0;
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="heart" style="z-index: 1; position: absolute; margin-top: -17px; margin-left: -22px;"><i class="fa fa-heart" style="font-size: 2.5em;"></i></div>';
                 echo '<div class="contentPostText">';
                 echo '<div class="recTitle">';
                 echo '<h3 class="recTit">' .$row['title']. '</h3>';
