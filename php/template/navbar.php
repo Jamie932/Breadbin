@@ -49,7 +49,10 @@
             } else if ($row['colour'] == 6) {
                 $colour = '#CC7AB0';
                 $activecolour = '#C2569E';
-            } else {
+			} else if ($row['colour'] == 7) { 
+                $colour = '#363636';
+                $activecolour = '#1A1A1A';
+			} else {
                 $colour = '#F6A628';
                 $activecolour = '#D7870F';   
             }

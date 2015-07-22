@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('#detailsForm').submit(function(event) {
         var colourSelection = ($('.depressedColour').hasClass('orange') ? '1' : false) || ($('.depressedColour').hasClass('blue') ? '2' : false) || 
             ($('.depressedColour').hasClass('green') ? '3' : false) || ($('.depressedColour').hasClass('red') ? '4' : false) ||
-            ($('.depressedColour').hasClass('purple') ? '5' : false) || ($('.depressedColour').hasClass('pink') ? '6' : '');        
+            ($('.depressedColour').hasClass('purple') ? '5' : false) || ($('.depressedColour').hasClass('pink') ? '6' : '') || ($('.depressedColour').hasClass('black') ? '7' : '');
         
         var formData = {
             'firstname' : $('#setFirstname').val(),
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
         var active = ($(this).hasClass('orange') ? '#D7870F' : false) || ($(this).hasClass('blue') ? '#4979D8' : false) || 
             ($(this).hasClass('green') ? '#219921' : false) || ($(this).hasClass('red') ? '#DD2B2B' : false) ||
-            ($(this).hasClass('purple') ? '#7153B0' : false) || ($(this).hasClass('pink') ? '#C2569E' : false);
+            ($(this).hasClass('purple') ? '#7153B0' : false) || ($(this).hasClass('pink') ? '#C2569E' : false) || ($(this).hasClass('black') ? '#1A1A1A' : false);
 
         if (active) {
             $('.activePage').css("background-color", active);
