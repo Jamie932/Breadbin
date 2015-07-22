@@ -209,7 +209,7 @@
                     </div>
                 </form>
                 
-                <div id="blackout">
+                <div id="gridClick">
                     <center><img src="img/grid.png" height="20px"></center>
                 </div>
 				
