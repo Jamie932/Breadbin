@@ -130,7 +130,7 @@
                 echo '<div class="contentPostImage ' . $class . '"><img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div class="contentPostText"><p>' . $row['text'] . '</p></div>';
+                echo '<div class="contentPostText"><p style="margin: 0;">' . $row['text'] . '</p></div>';
             } else {
                 $instrucNo = 0;
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
