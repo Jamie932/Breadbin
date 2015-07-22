@@ -145,7 +145,7 @@ $(document).ready(function(){
     });
     
     $(".gridBoxes.1").click(function(){
-        $('.innerGrid').fadeOut('normal');
+        $('#gridBox').fadeOut('normal');
         $('#recipeBox').fadeIn('normal');
     });
     
