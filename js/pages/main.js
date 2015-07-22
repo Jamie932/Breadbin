@@ -161,8 +161,10 @@ $(document).ready(function(){
     
     $("#rightTitleRec").click(function(){
         $('#blackOverlay').fadeOut('normal');
-        $('#gridBox').fadeOut('normal');
-        $('#recipeBox').fadeOut('normal');
+        $("#gridBox").fadeOut('normal', function(){
+            $('.innerRecipe').hide();
+            $('.innerGrid').show();
+        })
     });
     
     $("#recipePrepTime").keydown(function (e) {
