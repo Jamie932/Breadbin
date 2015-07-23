@@ -88,7 +88,7 @@
             <div class="recipeContent"> 
                 <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post your recipe</div>
-                    <div id="rightTitleRec"><i class="fa fa-times"></i></div>
+                    <div id="rightTitleBack"><i class="fa fa-arrow-right"></i></div>
                 </div>
                 
                 <div id="recipeForm">
