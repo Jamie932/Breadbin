@@ -151,6 +151,13 @@ $(document).ready(function(){
         })
     });
     
+    $(".gridBoxes.2").click(function(){
+        $(".innerGrid").fadeOut('normal', function(){
+            $('.innerVideo').fadeIn('normal');
+            $("#gridBox").addClass('tall');
+        })
+    });
+    
     $("#cancel").click(function(){
         $('#blackOverlay').fadeOut('normal');
         $("#gridBox").fadeOut('normal', function(){
