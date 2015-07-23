@@ -15,7 +15,7 @@
 		  <div class="gridBoxes 9"></div>
         </div>
     
-        <div class="innerVideo">
+        <div class="innerVideo" style="display: none;">
             <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post a video</div>
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
