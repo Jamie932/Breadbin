@@ -35,12 +35,9 @@
 
 foreach ($videoId as $value) {
     
-    if ($value == 'v') {
-        
-        $link == $value;
         ?>
                     <script>
-                        console.log(<? echo json_encode($link); ?>);
+                        console.log(<? echo json_encode("1"); ?>);
                     </script>
         <?php
     }
