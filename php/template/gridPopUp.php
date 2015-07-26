@@ -18,7 +18,7 @@
         <div class="innerVideo" style="display: none;">
             <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post a video</div>
-                    <div id="rightTitleRec"><i class="fa fa-times"></i></div>
+                    <div id="rightTitleRec"><i class="fa fa-arrow-right"></i></div>
             </div>
             <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" autocomplete="off"/>
         </div>
