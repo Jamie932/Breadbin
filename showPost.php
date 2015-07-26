@@ -25,7 +25,7 @@ if (empty($_GET)) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Post <?php echo $_GET['p'] ?> | Breadbin</title>
+    <title>Post <?php echo htmlspecialchars($_GET['p']) ?> | Breadbin</title>
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
