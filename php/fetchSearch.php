@@ -26,7 +26,7 @@
 	$following = $stmt->rowCount();
 
 	if (!$users) {
-		echo 'No search results found.';
+		echo 'No results found using search term: ' . $_GET['q'];
 		die();
 	} 
 
