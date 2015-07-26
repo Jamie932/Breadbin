@@ -124,20 +124,20 @@
 
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favourite">' : '<div class="contentPostImage ' . $class . '">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favourite">' : '<div class="contentPostImage ' . $class . '">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favourite">' : '<div class="contentPostText">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
             } else {
                 $instrucNo = 0;
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favourite">' : '<div class="contentPostText">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<div class="recTitle">';
                 echo '<h3 class="recTit">' .$row['title']. '</h3>';
                 echo '</div>';
