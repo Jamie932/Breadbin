@@ -4,6 +4,11 @@
 	
     $data = array();
 
+        $url = $_POST['videoLink'];
+        $keys = parse_url($url); // parse the url
+        $path = explode("=", $keys['path']); // splitting the path
+        $last = end($path); // get the value of the last element 
+
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a video.';
@@ -15,7 +20,7 @@
         } else {
             
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', :text)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['videoLink']); 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $last); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
