@@ -126,6 +126,13 @@ $(document).ready(function(){
     
     $('#postVideo').submit(function(event) {
         
+        var _videoUrl = $('#videoLink');
+        var matches = _videoUrl.match(/watch\?v=([a-zA-Z0-9\-_]+)/);
+        if (matches)
+        {
+            alert('valid');
+        
+
                     var formData = {
                         'videoLink' : $('#videoLink').val()
                     };
@@ -145,6 +152,7 @@ $(document).ready(function(){
                             }
                         }
                 })
+        }
                     
         event.preventDefault();
         
@@ -225,6 +233,12 @@ $(document).ready(function(){
     $("#recipeTime").keydown(function (e) {
         $('.bodyHalfServe').on('keydown', '#recipeServe', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
     });
+});
+
+$("#videoLink").keydown(function (e) {
+     if (e.keyCode == 32) { 
+       return false; // return false to prevent space from being added
+     }
 });
 
 function getFile(){

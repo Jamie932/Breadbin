@@ -13,6 +13,7 @@
             $data['error'] = 'Video cannot contain only spaces.';
 
         } else {
+            
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', :text)"; 
             $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $_POST['videoLink']); 
             $stmt = $db->prepare($query); 
