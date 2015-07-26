@@ -20,7 +20,7 @@
         } else {
             
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', 'ignore4now')"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $last); 
+            $query_params = array(':userid' => $_SESSION['user']['id']);  
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
