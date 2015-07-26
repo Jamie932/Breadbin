@@ -12,7 +12,7 @@ function getUrlParameter(sParam) {
 
 $(document).ready(function(){
 	if (getUrlParameter('q')) {
-		$('.searchBar').val(getUrlParameter('q'));
+		$('.searchBar').val(decodeURIComponent(getUrlParameter('q')));
 	}
 	
 	$(document).on('click','#errorClose', function() {
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
      $('#searchForm').submit(function(event) {
 		 if ($.trim($('.searchBar').val()).length) {
-        	window.location.replace("/search.php?q=" + $('.searchBar').val());
+        	window.location.replace("/search.php?q=" + encodeURIComponent($('.searchBar').val()));
 		 }
 		 
 		 event.preventDefault();
