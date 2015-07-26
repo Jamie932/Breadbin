@@ -1,36 +1,5 @@
 <script src="../../js/errorHandler.js"></script>
-<script>
-    $(document).ready(function(){
-        $(document).on('click','#errorClose', function() {
-            clearErrors();
-        })
-		
-        $(document).on('click','#searchIcon', function() {
-			$('#searchForm').submit();
-        })		
-		
-		$('.searchBar').keypress(function (e) {
-		  if (e.which == 13) {
-				$('#searchForm').submit();
-				return false;
-			}
-		});
-    });
-    
-    $(window).load(function() {
-        $('#loader').hide();
-    });
-
-    function logout() {
-        $.ajax({
-           type: "POST",
-           url: '/php/logout.php',
-           success:function(data) {
-               window.location.href = document.location.origin;
-           }
-        });
-    }
-</script>
+<script src="../../js/pages/navbar.js"></script>
 
     <?php
         function isActive($pageName) {
@@ -76,7 +45,7 @@
 		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;">Bread Bin</a>
         
 		<div id="searchContainer">
-			<form method="post" action="search.php?q" id="searchForm">
+			<form id="searchForm">
 				<div id="searchIcon" <?php echo 'style="background-color:' . $activecolour . '">';?><i class="fa fa-search"></i></div>
 				<input type="text" class="searchBar" <?php echo 'style="background-color:' . $activecolour . '">';?>
 			</form>
