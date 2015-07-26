@@ -8,11 +8,11 @@ $(document).ready(function(){
 	})
 
      $('#searchForm').submit(function(event) {
-		 console.log($('.searchBar').value);
-		 console.log($('input.searchBar').value);
+		 console.log($('.searchBar').val());
+		 console.log($('input.searchBar').val());
 		 
-		 if ($.trim($('.searchBar').value).length) {
-        	window.location.replace("/search.php?q=" + $('.searchBar').value);
+		 if ($.trim($('.searchBar').val()).length) {
+        	window.location.replace("/search.php?q=" + $('.searchBar').val());
 		 }
 		 
 		 event.preventDefault();
