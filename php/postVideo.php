@@ -40,7 +40,6 @@ foreach ($videoId as $value) {
                         console.log(<? echo json_encode("1"); ?>);
                     </script>
         <?php
-    }
     
 }
 
