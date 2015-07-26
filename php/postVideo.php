@@ -25,7 +25,14 @@
             $data['success'] = true;
             
         }
-*/      
+*/
+
+    ?>
+                    <script>
+                        console.log(<? echo json_encode($videoId); ?>);
+                    </script>
+        <?php
+
 foreach ($videoId as $value) {
     
     if ($value == "v") {
