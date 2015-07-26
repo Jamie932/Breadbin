@@ -7,7 +7,7 @@
         die();
 	}
 	
-    $query= "SELECT * FROM users WHERE username LIKE %:query% OR firstname LIKE %:query% OR lastname LIKE %:query% LIMIT 10";
+    $query= "SELECT * FROM users WHERE username LIKE '%:query%' OR firstname LIKE '%:query%' OR lastname LIKE '%:query%' LIMIT 10";
     $query_params = array(':query' => $_GET['q']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
