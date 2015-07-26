@@ -18,7 +18,7 @@
         } else {
             
             $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', :idVideo)"; 
-            $query_params = array(':userid' => $_SESSION['user']['id'], ':idVideo' => $videoId);  
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':idVideo' => $videoId);
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
@@ -28,7 +28,7 @@
 
         ?>
                     <script>
-                        console.log(<? echo json_encode($my_array_of_vars); ?>);
+                        console.log(<? echo json_encode($videoId); ?>);
                     </script>
         <?php
 
