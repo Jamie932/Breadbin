@@ -18,7 +18,7 @@
         <div class="innerVideo" style="display: none;">
             <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post a video</div>
-                    <div id="rightTitleBack"><i class="fa fa-arrow-right"></i></div> 
+                    <div id="rightTitleBack 1"><i class="fa fa-arrow-right"></i></div> 
             </div>
             <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" autocomplete="off"/>
         </div>
@@ -27,7 +27,7 @@
             <div class="recipeContent"> 
                 <div class="popupTitle" style="margin: -1px;">
                     <div id="leftTitle">Post your recipe</div>
-                    <div id="rightTitleBack"><i class="fa fa-arrow-right"></i></div>
+                    <div id="rightTitleBack 2"><i class="fa fa-arrow-right"></i></div>
                 </div>
                 
                 <div id="recipeForm">

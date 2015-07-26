@@ -174,10 +174,16 @@ $(document).ready(function(){
         })
     });
 
-    $("#rightTitleBack").click(function(){
+    $("#rightTitleBack.2").click(function(){
         $("#gridBox").removeClass('tall');
-        $(".innerVideo").fadeOut('normal');
         $(".innerRecipe").fadeOut('normal', function(){
+            $('.innerGrid').fadeIn('normal');
+        })
+    });
+    
+    $("#rightTitleBack.1").click(function(){
+        $("#gridBox").removeClass('tall');
+        $(".innerVideo").fadeOut('normal', function(){
             $('.innerGrid').fadeIn('normal');
         })
     });
