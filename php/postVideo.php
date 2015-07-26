@@ -4,10 +4,8 @@
 	
     $data = array();
 
-        $url  = $_POST['videoLink'];
-        $keys = parse_url($url); // parse the url
-        $path = explode("watch?v=", $keys['path']); // splitting the path
-        $last = end($path); // get the value of the last element 
+        $url = $_POST['videoLink'];
+        parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
 
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
