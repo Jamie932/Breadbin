@@ -26,11 +26,6 @@
     $result = $stmt->execute($query_params); 
 	$following = $stmt->rowCount();
 
-	if (count($users) == 0) {
-		echo 'No results found using search term: ' . htmlspecialchars($_GET['q']);
-		return false;
-	} 
-
 	echo '<div id="usersBox">';
 	echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>' . $usersCount . '</b> Users Found' : '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found';
 	echo '<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';

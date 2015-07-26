@@ -36,6 +36,11 @@
         <div id="content">
             <ul id="images">
 				<?php require('php/fetchSearch.php');?>
+				
+						
+				<div id="usersBox">
+					<div class="boxTitle"><b>0</b> Posts Found</div>
+				</div>
             </ul>
         </div>
         
