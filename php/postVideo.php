@@ -28,7 +28,7 @@
 
         ?>
                     <script>
-                        console.log(<? echo json_encode($last); ?>);
+                        console.log(<? echo json_encode($my_array_of_vars); ?>);
                     </script>
         <?php
 
