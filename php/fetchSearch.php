@@ -25,7 +25,7 @@
     $result = $stmt->execute($query_params); 
 	$following = $stmt->rowCount();
 
-	if (!$users) {
+	if (count($users) == 0) {
 		echo 'No results found using search term: ' . $_GET['q'];
 		die();
 	} 
