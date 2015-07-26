@@ -189,7 +189,7 @@ p.report {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
-    background-color: rgb(243, 243, 243);
+    background-color: F8F8F8;
     box-sizing: border-box;
 	font-size: 0.9em;
 }
