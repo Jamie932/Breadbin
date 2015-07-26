@@ -176,6 +176,7 @@ $(document).ready(function(){
 
     $("#rightTitleBack").click(function(){
         $("#gridBox").removeClass('tall');
+        $(".innerVideo").fadeOut('normal');
         $(".innerRecipe").fadeOut('normal', function(){
             $('.innerGrid').fadeIn('normal');
         })
