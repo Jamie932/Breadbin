@@ -5,7 +5,7 @@
     $data = array();
 
         $url = $_POST['videoLink'];
-        parse_str( parse_url( $url, PHP_URL_QUERY ), $videoId );
+        parse_str( parse_url( $url ), $videoId );
 
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
