@@ -28,7 +28,7 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery.lazyload.min.jsj"></script>
+    <script type="text/javascript" src="js/vendor/jquery.lazyload.min.js"></script> 
     <script type="text/javascript" src="js/vendor/lite-youtube-min.js"></script>
 </head> 
 <body>
