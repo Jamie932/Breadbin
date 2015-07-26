@@ -5,7 +5,7 @@
     $data = array();
 
         $url = $_POST['videoLink'];
-        parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+        parse_str( parse_url( $url, PHP_URL_QUERY ), $videoId );
 
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
@@ -17,8 +17,8 @@
 
         } else {
             
-            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', 'ignore4now')"; 
-            $query_params = array(':userid' => $_SESSION['user']['id']);  
+            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', :idVideo)"; 
+            $query_params = array(':userid' => $_SESSION['user']['id'], ':idVideo' => $videoId);  
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
 
