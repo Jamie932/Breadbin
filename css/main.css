@@ -295,6 +295,8 @@ h5 {
     color: gray;
 }
 
+ul#images { list-style: none; margin: 0px; margin-top: 5px; }
+
 /* ===[ Grid Area (main.css) ]=== */
 
 #gridBox {

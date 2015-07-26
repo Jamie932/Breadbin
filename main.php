@@ -81,7 +81,7 @@
                         loading = true;
                         
                         $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
-                            $("#content").append(data);
+                            $("#images").append(data);
                             loading = false;
                             groupNumber++;
                         });
@@ -91,7 +91,9 @@
         </script>    
         
         <div id="content">
-         	<?php require('php/fetchPosts.php');?>
+            <ul id="images">
+                <?php require('php/fetchPosts.php');?>
+            </ul>
         </div>
         
         <div id="sidebar">
