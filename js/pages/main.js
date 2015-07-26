@@ -174,14 +174,14 @@ $(document).ready(function(){
         })
     });
 
-    $("#rightTitleBack.2").click(function(){
+    $(".recBack").click(function(){
         $("#gridBox").removeClass('tall');
         $(".innerRecipe").fadeOut('normal', function(){
             $('.innerGrid').fadeIn('normal');
         })
     });
     
-    $("#rightTitleBack.1").click(function(){
+    $(".vidBack").click(function(){
         $("#gridBox").removeClass('tall');
         $(".innerVideo").fadeOut('normal', function(){
             $('.innerGrid').fadeIn('normal');
