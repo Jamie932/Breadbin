@@ -1,4 +1,20 @@
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+
+    for (var i = 0; i < sURLVariables.length; i++) {   
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+
 $(document).ready(function(){
+	if (getUrlParameter('q')) {
+		$('.searchBar').value(getUrlParameter('q'));
+	}
+	
 	$(document).on('click','#errorClose', function() {
 		clearErrors();
 	})
@@ -8,9 +24,6 @@ $(document).ready(function(){
 	})
 
      $('#searchForm').submit(function(event) {
-		 console.log($('.searchBar').val());
-		 console.log($('input.searchBar').val());
-		 
 		 if ($.trim($('.searchBar').val()).length) {
         	window.location.replace("/search.php?q=" + $('.searchBar').val());
 		 }
