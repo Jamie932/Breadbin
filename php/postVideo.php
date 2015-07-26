@@ -6,7 +6,7 @@
 
         $url  = $_POST['videoLink'];
         $keys = parse_url($url); // parse the url
-        $path = explode("v=", $keys['path']); // splitting the path
+        $path = explode("watch?v=", $keys['path']); // splitting the path
         $last = end($path); // get the value of the last element 
 
         if (empty($_POST['videoLink'])) {
