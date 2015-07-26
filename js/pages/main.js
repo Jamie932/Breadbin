@@ -123,6 +123,40 @@ $(document).ready(function(){
         event.preventDefault();
         
     });
+    
+    $('#postVideo').submit(function(event) {
+        
+        var matches = $('#videoLink').val().match(/http:\/\/(?:www\.)?youtube.*watch\?v=([a-zA-Z0-9\-_]+)/);
+        var matchesHttps = $('#videoLink').val().match(/https:\/\/(?:www\.)?youtube.*watch\?v=([a-zA-Z0-9\-_]+)/);
+        if (matches || matchesHttps)
+        {
+            alert('valid');
+        
+
+                    var formData = {
+                        'videoLink' : $('#videoLink').val()
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/postVideo.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true,
+                        error		: function(request, status, error) { console.log(request.responseText); },
+                        success		: function(data) {
+                            if (data.success) {
+                                window.location.replace("main.php");
+                            } else {
+                                createError(data.error);
+                            }
+                        }
+                })
+        }
+                    
+        event.preventDefault();
+        
+    });
 
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);
@@ -174,10 +208,16 @@ $(document).ready(function(){
         })
     });
 
-    $("#rightTitleBack").click(function(){
+    $(".recBack").click(function(){
         $("#gridBox").removeClass('tall');
-        $(".innerVideo").fadeOut('normal');
         $(".innerRecipe").fadeOut('normal', function(){
+            $('.innerGrid').fadeIn('normal');
+        })
+    });
+    
+    $(".vidBack").click(function(){
+        $("#gridBox").removeClass('tall');
+        $(".innerVideo").fadeOut('normal', function(){
             $('.innerGrid').fadeIn('normal');
         })
     });
@@ -193,6 +233,12 @@ $(document).ready(function(){
     $("#recipeTime").keydown(function (e) {
         $('.bodyHalfServe').on('keydown', '#recipeServe', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
     });
+});
+
+$("#videoLink").keydown(function (e) {
+     if (e.keyCode == 32) { 
+       return false; // return false to prevent space from being added
+     }
 });
 
 function getFile(){
