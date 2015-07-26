@@ -228,7 +228,7 @@
                 echo '</div>';
             } else {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage imgNoPadding favouriteImg">' : '<div class="contentPostImage imgNoPadding ">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage imgNoPadding favouriteImg">' : '<div class="contentPostImage imgNoPadding " style="height: 361px;">';
                 echo '<div class="lite" id="llyiQ4I-mcQ" style="width:640px;height:361px;"></div>';
                 
             }
