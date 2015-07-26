@@ -161,7 +161,7 @@ a.navLinks:hover { color: #616161 }
 	font-size: 0.8em;
 }
 
-.searchForm {
+#searchForm {
     display: inline-block;
 }
 

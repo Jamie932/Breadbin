@@ -4,6 +4,17 @@
         $(document).on('click','#errorClose', function() {
             clearErrors();
         })
+		
+        $(document).on('click','#searchIcon', function() {
+			$('#searchForm').submit();
+        })		
+		
+		$('.searchBar').keypress(function (e) {
+		  if (e.which == 13) {
+				$('#searchForm').submit();
+				return false;
+			}
+		});
     });
     
     $(window).load(function() {
@@ -65,7 +76,7 @@
 		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;">Bread Bin</a>
         
 		<div id="searchContainer">
-			<form class="searchForm">
+			<form method="post" action="search.php?q" id="searchForm">
 				<div id="searchIcon" <?php echo 'style="background-color:' . $activecolour . '">';?><i class="fa fa-search"></i></div>
 				<input type="text" class="searchBar" <?php echo 'style="background-color:' . $activecolour . '">';?>
 			</form>
