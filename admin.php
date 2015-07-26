@@ -122,9 +122,9 @@
         <div class="bar" id="bottomBar">
 			<?php
 				if (isset($colour)) {
-					echo '<div class="title" style="background-color: '. $colour . '">Useful Functions</div>';
+					echo '<div class="title" style="background-color: '. $colour . '">Tools</div>';
 				} else {
-					echo '<div class="title">Useful Functions</div>';
+					echo '<div class="title">Tools</div>';
 				}
 			?>
             <div class="contentContainer" style="text-align: center; height: auto; padding-top:25px; padding-bottom:25px;">

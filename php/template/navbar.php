@@ -71,10 +71,6 @@
 			</form>
 		</div>
 	</div>
-	
-    <div id="loader">
-        <i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
-    </div>
 
 	<div class="right">
 		<ul class="nav">
@@ -118,6 +114,10 @@
 			</li>
             <!--<li class="nav"><a class="navLinks" href="#" onClick="logout(); return false;" >Logout</a></li>-->
 		</ul>
+	</div>
+
+	<div id="loader">
+		<i class="fa fa-spinner fa-pulse" style="font-size: 1em; pointer-events: none;"></i>
 	</div>
 </div> 
 
