@@ -8,7 +8,8 @@ $(document).ready(function(){
 	})
 
      $('#searchForm').submit(function(event) {
-		 if ($('.searchBar').value) {
+		 alert("hi");
+		 if ($.trim($('.searchBar').value).length) {
         	window.location.replace("/search.php?q=" + $('.searchBar').value);
 		 }
     });	
