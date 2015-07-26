@@ -27,6 +27,7 @@ $(document).ready(function(){
      $('#searchForm').submit(function(event) {
 		 if ($.trim($('.searchBar').val()).length) {
 			 var url = "/search.php?q=" + encodeURIComponent($('.searchBar').val());
+			 console.log(url);
 			 window.location.replace(url);
 		 }
 		 
