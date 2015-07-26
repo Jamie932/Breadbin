@@ -8,10 +8,14 @@ $(document).ready(function(){
 	})
 
      $('#searchForm').submit(function(event) {
-		 alert("hi");
+		 console.log($('.searchBar').value);
+		 console.log($('input.searchBar').value);
+		 
 		 if ($.trim($('.searchBar').value).length) {
         	window.location.replace("/search.php?q=" + $('.searchBar').value);
 		 }
+		 
+		 event.preventDefault();
     });	
 	
 	$('.searchBar').keypress(function (e) {
