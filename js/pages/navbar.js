@@ -5,11 +5,11 @@ $(document).ready(function(){
 
 	$(document).on('click','#searchIcon', function() {
 		$('#searchForm').submit();
-	})		
+	})
 
      $('#searchForm').submit(function(event) {
-		 if ($('.searchBar').length() > 0) {
-        	window.location.replace("/search.php?q=" + $('.searchBar').val());
+		 if ($('.searchBar').value) {
+        	window.location.replace("/search.php?q=" + $('.searchBar').value);
 		 }
     });	
 	
