@@ -61,6 +61,7 @@
 
 .userTitle {
 	display: inline-block;
+	margin-right: 2px;
 }
 
 .userCountry {
@@ -70,7 +71,7 @@
 }
 
 .userCountry:before {
-	content: " | ";
+	content: "| ";
 }
 
 .userBio {
