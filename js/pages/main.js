@@ -127,7 +127,8 @@ $(document).ready(function(){
     $('#postVideo').submit(function(event) {
         
         var matches = $('#videoLink').val().match(/http:\/\/(?:www\.)?youtube.*watch\?v=([a-zA-Z0-9\-_]+)/);
-        if (matches)
+        var matchesHttps = $('#videoLink').val().match(/https:\/\/(?:www\.)?youtube.*watch\?v=([a-zA-Z0-9\-_]+)/);
+        if (matches || matchesHttps)
         {
             alert('valid');
         
