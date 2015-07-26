@@ -6,7 +6,7 @@
 
         $url = $_POST['videoLink'];
         parse_str( parse_url( $url, PHP_URL_QUERY ), $videoId );
-
+/*
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a video.';
@@ -25,12 +25,18 @@
             $data['success'] = true;
             
         }
-
+*/      
+foreach ($videoId as $value) {
+    
+    if ($value == "v") {
         ?>
                     <script>
-                        console.log(<? echo json_encode($videoId[1]); ?>);
+                        console.log(<? echo json_encode($value); ?>);
                     </script>
         <?php
+    }
+    
+}
 
     echo json_encode($data);
 
