@@ -20,7 +20,10 @@
                     <div id="leftTitle">Post a video</div>
                     <div id="rightTitleBack" class="vidBack"><i class="fa fa-arrow-right"></i></div> 
             </div>
-            <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title" class="recipeTitle" autocomplete="off"/>
+            <form action="php/postVideo.php" method="POST" id="postVideo" enctype="multipart/form-data">
+                <input type="text" id="videoLink" name="videoLink" placeholder="Video link" class="videoLink" autocomplete="off"/>
+                 <input type="submit" value="Submit" id="submitRecipe" class="buttonstyle">
+            </form>
         </div>
     
         <div class="innerRecipe" style="display: none;">

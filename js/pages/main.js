@@ -123,6 +123,32 @@ $(document).ready(function(){
         event.preventDefault();
         
     });
+    
+    $('#postVideo').submit(function(event) {
+        
+                    var formData = {
+                        'videoLink' : $('#videoLink').val()
+                    };
+
+                    $.ajax({
+                        type        : 'POST',
+                        url         : 'php/postVideo.php',
+                        data        : formData,
+                        dataType    : 'json',
+                        encode      : true,
+                        error		: function(request, status, error) { console.log(request.responseText); },
+                        success		: function(data) {
+                            if (data.success) {
+                                window.location.replace("main.php");
+                            } else {
+                                createError(data.error);
+                            }
+                        }
+                })
+                    
+        event.preventDefault();
+        
+    });
 
     $(".hide").click(function(){
         $("#contentLikeFollow").hide(500);
