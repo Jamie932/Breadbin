@@ -69,6 +69,13 @@ p.report {
     cursor: pointer;   
 }
 
+#heart {
+	z-index: 1; 
+	position: absolute; 
+	margin-top: -13px; 
+	margin-left: -24px;
+}
+
 /* ===[ Image Formatting ]=== */
 
 #contentPost .contentPostImage {
