@@ -183,7 +183,6 @@ p.report {
     font-size: 15px;
     padding-left: 5px;
     padding-top: 5px;
-    font-family: inherit;
     border: 1px solid rgba(97, 97, 97, 0.44);
     -moz-border-radius: 3px 3px;
     border-radius: 3px 3px;
@@ -192,6 +191,7 @@ p.report {
     transition: all .5s ease;
     background-color: rgb(243, 243, 243);
     box-sizing: border-box;
+	font-size: 0.9em;
 }
 
 #uploadText:focus { height: 120px }
