@@ -62,7 +62,7 @@ body {
     display: inline-block;
 }
 
-#rightTitle, #rightTitleRec {
+#rightTitle, #rightTitleRec, #rightTitleBack {
     display: inline-block;
     position: absolute;
     right: 15px;

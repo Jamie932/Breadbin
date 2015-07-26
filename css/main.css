@@ -293,13 +293,14 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
     top: 100; left: 0; right: 0;
     border: 1px solid #DDD;
     width: 500px;
-    height: 500px;
+    height: 526px;
     background-color: #fff;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     z-index: 7;
     display: none;
+    
 }
 
 .gridBoxes {
@@ -309,7 +310,10 @@ ul#images { list-style: none; margin: 0px; margin-top: 5px; }
     display: inline;
     float: left;
     margin: 7px;
+    cursor: pointer; 
 }
+
+.tall { height: auto !important }
 
 /* ===[ Recipe Area (main.css) ]=== */
 

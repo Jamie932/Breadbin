@@ -145,18 +145,40 @@ $(document).ready(function(){
     });
     
     $(".gridBoxes.1").click(function(){
-        $('#gridBox').fadeOut('normal');
-        $('#recipeBox').fadeIn('normal');
+        $(".innerGrid").fadeOut('normal', function(){
+            $('.innerRecipe').fadeIn('normal');
+            $("#gridBox").addClass('tall');
+        })
+    });
+    
+    $(".gridBoxes.2").click(function(){
+        $(".innerGrid").fadeOut('normal', function(){
+            $('.innerVideo').fadeIn('normal');
+            $("#gridBox").addClass('tall');
+        })
     });
     
     $("#cancel").click(function(){
         $('#blackOverlay').fadeOut('normal');
-        $('#recipeBox').fadeOut('normal');
+        $("#gridBox").fadeOut('normal', function(){
+            $('.innerRecipe').hide();
+            $('.innerGrid').show();
+        })
     });
     
     $("#rightTitleRec").click(function(){
         $('#blackOverlay').fadeOut('normal');
-        $('#recipeBox').fadeOut('normal');
+        $("#gridBox").fadeOut('normal', function(){
+            $('.innerRecipe').hide();
+            $('.innerGrid').show();
+        })
+    });
+
+    $("#rightTitleBack").click(function(){
+        $("#gridBox").removeClass('tall');
+        $(".innerRecipe").fadeOut('normal', function(){
+            $('.innerGrid').fadeIn('normal');
+        })
     });
     
     $("#recipePrepTime").keydown(function (e) {
