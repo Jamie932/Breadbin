@@ -4,9 +4,15 @@
 	
     $data = array();
 
-        $url = $_POST['videoLink'];
-        parse_str( parse_url( $url, PHP_URL_QUERY ), $videoId );
-/*
+        $link = $_POST['videoLink'];
+        $video_id = explode("?v=", $link); // For videos like http://www.youtube.com/watch?v=...
+        if (empty($video_id[1]))
+            $video_id = explode("/v/", $link); // For videos like http://www.youtube.com/watch/v/..
+
+        $video_id = explode("&", $video_id[1]); // Deleting any other params
+        $video_id = $video_id[0];
+
+        /*
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
             $data['error'] = 'Recipes need a video.';
@@ -27,21 +33,11 @@
         }
 */
 
-    ?>
-                    <script>
-                        console.log(<? echo json_encode($videoId); ?>);
-                    </script>
-        <?php
-
-foreach ($videoId as $value) {
-    
         ?>
                     <script>
-                        console.log(<? echo json_encode("1"); ?>);
+                        console.log(<? echo json_encode($video_id); ?>);
                     </script>
         <?php
-    
-}
 
     echo json_encode($data);
 
