@@ -228,8 +228,9 @@
                 echo '</div>';
             } else {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
-                echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage imgNoPadding favouriteImg">' : '<div class="contentPostImage imgNoPadding ">';
+                echo '<iframe width="642" height="482" src="'. $row['text'] .'" frameborder="0" allowfullscreen></iframe></div>';
+                
             }
                 echo '<div id="contentInfoText">';
                     echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
