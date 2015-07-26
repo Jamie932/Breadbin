@@ -98,11 +98,7 @@
         <div id="midContainer">
             <div id="midLeft">                        
                 <?php
-                    if (isset($colour)) {
-                        echo '<div class="title" style="background-color: '. $colour . '">Unique Visitors</div>';
-                    } else {
-                        echo '<div class="title">Unique Visitors</div>';
-                    }
+                    echo isset($colour) ? '<div class="title" style="background-color: '. $colour . '">Unique Visitors</div>' : '<div class="title">Unique Visitors</div>';
                 ?>
                 
                 <div class="ct-chart ct-octave"></div>
@@ -110,22 +106,14 @@
             
             <div id="midRight">
                 <?php
-                    if (isset($colour)) {
-                        echo '<div class="title" style="background-color: '. $colour . '">Reports</div>';
-                    } else {
-                        echo '<div class="title">Reports</div>';
-                    }
+                    echo isset($colour) ? '<div class="title" style="background-color: '. $colour . '">Reports</div>' : '<div class="title">Reports</div>';
                 ?>
             </div>
         </div>
 		
         <div class="bar" id="bottomBar">
 			<?php
-				if (isset($colour)) {
-					echo '<div class="title" style="background-color: '. $colour . '">Tools</div>';
-				} else {
-					echo '<div class="title">Tools</div>';
-				}
+				echo isset($colour) ? '<div class="title" style="background-color: '. $colour . '">Tools</div>' : '<div class="title">Tools</div>';
 			?>
             <div class="contentContainer" style="text-align: center; height: auto; padding-top:25px; padding-bottom:25px;">
 				<button id="clearPosts" class="buttonstyle">Clear Posts</button>

@@ -12,6 +12,7 @@
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 	$users = $stmt->fetchAll();
+	$usersCount = $stmt->rowCount();
 
     $query= "SELECT * FROM posts WHERE text LIKE '%:query%' LIMIT 10";
     $query_params = array(':query' => $_GET['q']);
@@ -31,7 +32,7 @@
 	} 
 
 	echo '<div id="usersBox">';
-	echo '<div class="boxTitle"><b>3</b> Users Found <div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
+	echo '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found <div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
 
 	foreach ($users as $row) {	
 			echo '<div class="user">';

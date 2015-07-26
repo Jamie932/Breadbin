@@ -2,11 +2,7 @@
 
 <div id="popup">
 	<?php
-		if (isset($colour)) {
-			echo '<div class="popupTitle" style="background-color: '. $colour . '">';
-		} else {
-			echo '<div class="popupTitle">';
-		}
+		echo isset($colour) ? '<div class="popupTitle" style="background-color: '. $colour . '">' : '<div class="popupTitle">';
 	?>
         <div id="leftTitle"></div>
         <div id="rightTitle"><i class="fa fa-times"></i></div>

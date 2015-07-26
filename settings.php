@@ -153,12 +153,8 @@
                 <div class="leftSettings noselect">
                     <ul class="settingsList">
                         <?php
-                            if (isset($colour)) {
-                                echo '<li class="leftHeader" style="background-color: '. $colour . '">User Settings</li>';
-                            } else {
-                                echo '<li class="leftHeader">User Settings</li>';
-                            }
-                            ?>
+                            echo isset($colour) ? '<li class="leftHeader" style="background-color: '. $colour . '">User Settings</li>' : '<li class="leftHeader">User Settings</li>';
+                        ?>
                         <li class="settingsList accountdetails active">Account Details</li>                    
                         <li class="settingsList privacy">Privacy</li>
                         <li class="settingsList passwordreset">Password Reset</li>
