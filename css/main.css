@@ -17,6 +17,7 @@ p.report {
     font-color: #000;
     height: auto;
     display: inline;
+	min-width: 735px;
 }
 
 #contentPost {
@@ -293,8 +294,6 @@ h5 {
     float: left;
     color: gray;
 }
-
-ul#images { list-style: none; margin: 0px; margin-top: 5px; }
 
 /* ===[ Grid Area (main.css) ]=== */
 
