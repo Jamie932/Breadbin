@@ -28,7 +28,7 @@
 
 	if (count($users) == 0) {
 		echo 'No results found using search term: ' . $_GET['q'];
-		die();
+		return false;
 	} 
 
 	echo '<div id="usersBox">';

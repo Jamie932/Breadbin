@@ -12,7 +12,7 @@ function getUrlParameter(sParam) {
 
 $(document).ready(function(){
 	if (getUrlParameter('q')) {
-		$('.searchBar').value(getUrlParameter('q'));
+		$('.searchBar').val(getUrlParameter('q'));
 	}
 	
 	$(document).on('click','#errorClose', function() {
