@@ -6,7 +6,8 @@
         header('Location: main.php');
         die();
 	}
-	
+	echo "SELECT * FROM users WHERE username LIKE '%" . $_GET['q'] . "%' OR firstname LIKE '%" . $_GET['q'] . "%' OR lastname LIKE '%" . $_GET['q'] . "%' LIMIT 10";
+
     $query= "SELECT * FROM users WHERE username LIKE '%:query%' OR firstname LIKE '%:query%' OR lastname LIKE '%:query%' LIMIT 10";
     $query_params = array(':query' => $_GET['q']);
     $stmt = $db->prepare($query); 
