@@ -5,7 +5,7 @@
     $data = array();
 
         $url = $_POST['videoLink'];
-        parse_str( parse_url( PHP_URL_QUERY ), $videoId );
+        parse_str( parse_url( $url, PHP_URL_QUERY ), $videoId );
 
         if (empty($_POST['videoLink'])) {
             $data['success'] = false;
@@ -28,7 +28,7 @@
 
         ?>
                     <script>
-                        console.log(<? echo json_encode($videoId); ?>);
+                        console.log(<? echo json_encode($videoId[1]); ?>);
                     </script>
         <?php
 
