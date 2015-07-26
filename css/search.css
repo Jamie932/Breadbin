@@ -1,0 +1,92 @@
+#usersBox {
+	margin-bottom: 50px;
+}
+
+.boxTitle {
+    background-color: #F6A628;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    color: #fff;
+	margin-bottom:10px;
+}
+
+.expand {
+	float: right;
+	margin-right: 15px;
+}
+
+.user {
+	overflow: auto;
+	width: 95%;
+	margin: 0 auto 5px auto;
+}
+
+.userImage {
+    width: 60px;
+    height: auto;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+	border-right-style: none; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 60px;
+	float: left;
+	background-image: url(../img/profile2.png);
+	background-size: contain;
+	margin-right: 15px;
+	z-index: 2;
+	position: relative;
+}
+
+.userInfo {
+	position: relative;
+    background-color: #fff;
+    height: auto;
+    border-width: 1px;
+    border-color: #DDD;
+    border-style: solid;
+	border-left-style: none; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+	font-size: 0.9em;
+    min-height: 60px;
+}
+
+.userTitle {
+	display: inline-block;
+}
+
+.userCountry {
+	color: gray;
+	display: inline-block;
+	font-size: 0.9em;
+}
+
+.userCountry:before {
+	content: "| ";
+}
+
+.userBio {
+	font-size: 0.9em;
+	margin-top: 10px;
+	color: black;
+	width: 440px;
+}
+
+.userButtons {
+	position: absolute; 
+	bottom: 10px;
+	right: 5px;
+	margin-right: 5px;
+}
+
+.buttonstyle {
+	margin-left: 5px;
+}
