@@ -7,7 +7,7 @@
         die();
 	}
 	
-    $query= "SELECT users.* MATCH(username, firstname, lastname) AGAINST(':query%') AS relevance FROM users WHERE MATCH(username, firstname, lastname) AGAINST(':query%') ORDER BY relevance DESC LIMIT 10";
+    $query= "SELECT users.* MATCH(username, firstname, lastname) AGAINST(':query') AS relevance FROM users WHERE MATCH(username, firstname, lastname) AGAINST(':query') ORDER BY relevance DESC LIMIT 10";
     $query_params = array(':query' => $_GET['q']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
