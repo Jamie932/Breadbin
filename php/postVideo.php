@@ -4,7 +4,7 @@
 	
     $data = array();
 
-        $url = $_POST['videoLink'];
+        $url  = $_POST['videoLink'];
         $keys = parse_url($url); // parse the url
         $path = explode("v=", $keys['path']); // splitting the path
         $last = end($path); // get the value of the last element 
@@ -19,7 +19,7 @@
 
         } else {
             
-            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', :text)"; 
+            $query = "INSERT INTO posts (userid, type, text)  VALUES (:userid, 'video', 'ignore4now')"; 
             $query_params = array(':userid' => $_SESSION['user']['id'], ':text' => $last); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params);
@@ -27,6 +27,12 @@
             $data['success'] = true;
             
         }
+
+        ?>
+                    <script>
+                        console.log(<? echo json_encode($last); ?>);
+                    </script>
+        <?php
 
     echo json_encode($data);
 
