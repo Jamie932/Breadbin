@@ -32,7 +32,8 @@
 	} 
 
 	echo '<div id="usersBox">';
-	echo '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found <div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
+	echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>' . $usersCount . '</b> Users Found' : '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found';
+	echo '<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
 
 	foreach ($users as $row) {	
 			echo '<div class="user">';
