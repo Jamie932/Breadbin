@@ -39,7 +39,8 @@
 				
 						
 				<div id="usersBox">
-					<div class="boxTitle"><b>0</b> Posts Found</div>
+					<?php echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>0</b> Posts Found' : '<div class="boxTitle"><b>0</b> Posts Found'; ?>
+					<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>
 				</div>
             </ul>
         </div>
