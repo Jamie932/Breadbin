@@ -106,7 +106,7 @@
 
         
         $.getJSON('https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=AIzaSyBEl1mBTiYecgCvgjD6mdyXfeR5sAounUM', function (data) { 
-            $el.find('#lazyYT-title-' + id).text(data.entry.title.$t);
+            $el.find('#lazyYT-title-' + id).text(data.items[0].snippet.title);
         });
 
     }
