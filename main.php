@@ -30,6 +30,11 @@
     <script src="js/vendor/progressbar.min.js"></script>
     <script type="text/javascript" src="js/vendor/jquery.lazyload.min.js"></script> 
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
+     <script>
+        $( document ).ready(function() {
+            $('.js-lazyYT').lazyYT(); 
+        });
+    </script>
 </head> 
 <body>
     <noscript>
