@@ -100,57 +100,56 @@
         if (!$posts) {
             echo '<center>Nothing to discover.</center>';
         } else {
-        foreach ($posts as $row) {
-            
-            $query        = "SELECT username FROM users WHERE id = :id"; 
-            $query_params = array(':id' => $row['userid']);
-            $stmt         = $db->prepare($query);
-            $result       = $stmt->execute($query_params);
-            $test         = $stmt->fetch();
-            
-        echo '<ul id="tiles">';
-            
-        if ($row['type'] == "image") {                    
-            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
-            $imageLocation = $withoutExt . '-profile.jpg';
+			echo '<ul id="tiles">';
 
-            echo '<li>';
-            echo '<div class="banner">';                
-            echo '<img class="tiles" src="' . $imageLocation . '"';
-            echo '</div>';
-            
-            echo '<div class="postUsername">';
-                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-            echo '</div>';
-            
-            echo '</li>'; 
-            
-        } else if ($row['type'] == "text") {
-            echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
-                echo '<div class="postUsername">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-                echo '</div>';
-            echo '</div></li>';
-        }
-        
-        else if ($row['type'] == 'imagetext') {
-            $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
-            $imageLocation = $withoutExt . '-profile.jpg';
+        	foreach ($posts as $row) {
+				$query        = "SELECT username FROM users WHERE id = :id"; 
+				$query_params = array(':id' => $row['userid']);
+				$stmt         = $db->prepare($query);
+				$result       = $stmt->execute($query_params);
+				$test         = $stmt->fetch();
 
-            echo '<li>';
-            echo '<div class="banner">';                
-            echo '<img class="blurImage" src="' . $imageLocation . '"';
-            echo '</div>';
-            
-            echo '<div class="postUsername">';
-                echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-            echo '</div>';
-            
-            echo '</li>';
-        }
-    }
-}
-?>
+				if ($row['type'] == "image") {                    
+					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
+					$imageLocation = $withoutExt . '-profile.jpg';
+
+					echo '<li>';
+					echo '<div class="banner">';                
+					echo '<img class="tiles" src="' . $imageLocation . '"';
+					echo '</div>';
+
+					echo '<div class="postUsername">';
+						echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+					echo '</div>';
+
+					echo '</li>'; 
+
+				} else if ($row['type'] == "text") {
+					echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
+						echo '<div class="postUsername">';
+							echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+						echo '</div>';
+					echo '</div></li>';
+				}
+
+				else if ($row['type'] == 'imagetext') {
+					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
+					$imageLocation = $withoutExt . '-profile.jpg';
+
+					echo '<li>';
+					echo '<div class="banner">';                
+					echo '<img class="blurImage" src="' . $imageLocation . '"';
+					echo '</div>';
+
+					echo '<div class="postUsername">';
+						echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+					echo '</div>';
+
+					echo '</li>';
+				}
+			}
+		}
+		?>
                
                </ul>
             </div>
