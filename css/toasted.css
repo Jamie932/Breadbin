@@ -89,7 +89,7 @@ p.report {
 
 /* ===[ Image Formatting ]=== */
 
-#contentPost .contentPostImage {
+#contentPost .contentPostImage, contentPostVideo {
     width: 640px;
     background-color: white;
     border-width: 1px;
@@ -101,6 +101,11 @@ p.report {
 .contentPostImage img {
     max-width: 100%;
     height: auto;
+    vertical-align: top;
+}
+
+.contentPostVideo img {
+    max-width: 100%;
     vertical-align: top;
 }
 
