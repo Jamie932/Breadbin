@@ -1,17 +1,4 @@
-html, body {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    background-color: #F6F6F6;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-}
-
 p { margin-bottom: -10px }
-
-.clearFix { clear: both }
 
 p.report {
     font-size: 10px;
@@ -87,8 +74,6 @@ p.report {
 	text-indent: 1.5em;
 }
 
-/* ===[ Image Formatting ]=== */
-
 #contentPost .contentPostImage, contentPostVideo {
     width: 640px;
     background-color: white;
@@ -139,7 +124,7 @@ p.report {
 .contentPostText {
     background-color: #fff;
     width: 620px;
-    height: 150px;
+    height: auto;
     border-width: 1px;
     border-color: #DDD;
     border-style: solid;
@@ -147,10 +132,11 @@ p.report {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    min-height: 80px;
     word-wrap: break-word;
+	font-size: 0.9em;
+    z-index: 2;
+    min-height: 80px;
 }
-
 .contentPostDisc {
     background-color: #fff;
     width: 620px;
@@ -173,7 +159,7 @@ p.report {
     padding-bottom: 5px;
     color: black;
     -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out; 
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
