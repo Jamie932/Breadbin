@@ -1,17 +1,4 @@
-html, body {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    background-color: #F6F6F6;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-}
-
 p { margin-bottom: -10px }
-
-.clearFix { clear: both }
 
 p.report {
     font-size: 10px;
@@ -53,21 +40,41 @@ p.report {
 }
 
 .timeago {
+    height: 100%;
     display: inline-block;
     padding-right: 30px;
+    vertical-align: middle;
 }
 
 .admin {
     display: inline-block;
 }
 
-.fa-heart-o {
+.fa-heart {
+    color: #AA2E2E;   
+}
+
+.fa-heart-o, .fa-heart {
     padding-left: 5px;
 }
 
-/* ===[ Image Formatting ]=== */
+.fa-heart-o, .fa-heart, .fa-trash-o {
+    cursor: pointer;   
+}
 
-#contentPost .contentPostImage {
+#heart {
+	z-index: 1; 
+	position: absolute; 
+	margin-top: -13px; 
+	margin-left: -24px;
+	font-size: 2.5em;
+}
+
+.favouriteText {
+	text-indent: 1.5em;
+}
+
+#contentPost .contentPostImage, contentPostVideo {
     width: 640px;
     background-color: white;
     border-width: 1px;
@@ -79,6 +86,11 @@ p.report {
 .contentPostImage img {
     max-width: 100%;
     height: auto;
+    vertical-align: top;
+}
+
+.contentPostVideo img {
+    max-width: 100%;
     vertical-align: top;
 }
 
@@ -112,7 +124,7 @@ p.report {
 .contentPostText {
     background-color: #fff;
     width: 620px;
-    height: 150px;
+    height: auto;
     border-width: 1px;
     border-color: #DDD;
     border-style: solid;
@@ -120,10 +132,11 @@ p.report {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    min-height: 80px;
     word-wrap: break-word;
+	font-size: 0.9em;
+    z-index: 2;
+    min-height: 80px;
 }
-
 .contentPostDisc {
     background-color: #fff;
     width: 620px;
@@ -146,7 +159,7 @@ p.report {
     padding-bottom: 5px;
     color: black;
     -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out; 
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
@@ -221,6 +234,73 @@ li.eachImg, li.eachImgFirst, li.eachImgLast {
 li.eachImg {
     margin-right: 10px;
     margin-left: 10px;
+}
+
+/* ===[ Recipe Area (main.css) ]=== */
+
+.recTitle {
+    width: 100%;
+    height: 50px;
+    margin-top: 16px;
+}
+
+.timeServe {
+    width: 100%;
+    height: 41px;
+    text-align:center;
+}
+
+p.times {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -18px;
+    display: inline;
+    font-size: 1.1em;
+}
+
+p.ingredList {
+    width: 206px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    float: left;
+    text-align: center;
+}
+
+p.instructionList {
+    margin: 0;
+    padding: 0;
+    padding-left: 22px;
+    padding-right: 22px;
+    width: 576px;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+}
+
+.ingredientDis {
+    width: 100%;
+    height: auto;
+    margin-bottom: 26px;
+    float: left;
+}
+
+.instructionList {
+    width: 100%;
+    height: auto;
+    margin-bottom: 17px;
+}
+
+h6 {
+    font-size: 1em;   
+    padding: 0;
+    margin: 0;
+    margin-bottom: 6px;
+    padding-left: 10px;
+}
+
+b.instructionNo {
+    font-size: 1.7em;  
 }
 
 @media screen and (max-width: 1125px) {

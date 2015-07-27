@@ -1,6 +1,14 @@
 <?php 
     require("php/common.php");
     require("php/checkLogin.php");
+
+    $postsPerPage = 10;
+
+    $query = 'SELECT COUNT(*) FROM posts'; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $numPosts = $stmt->fetchColumn();
+    $numPages = ceil($numPosts / $postsPerPage);
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +18,7 @@
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/toasted.css" rel="stylesheet" type="text/css">
+    <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -18,6 +27,12 @@
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/postFunctions.js" async></script>
     <script src="js/errorHandler.js" async></script>
+    <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('.js-lazyYT').lazyYT(); 
+        });
+    </script>
 </head>
 <body>
     <noscript>

@@ -60,6 +60,7 @@ if (empty($_GET)) {
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/profile.css" rel="stylesheet" type="text/css">
+    <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -71,6 +72,12 @@ if (empty($_GET)) {
     <script src="js/tileFunctions.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
+    <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('.js-lazyYT').lazyYT(); 
+        });
+    </script>
 </head>
     
 <body>
@@ -233,6 +240,12 @@ if (empty($_GET)) {
                     echo '</div>';
 
                     echo '</li>';
+                } else if ($row['type'] == 'video') {
+                    echo '<li>';
+                    echo '<div class="banner">';                
+                    echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="180px"></div>';
+                    echo '</div>';
+                    echo '</li>'; 
                 }
                 echo '</ul>';
             }

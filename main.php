@@ -18,6 +18,7 @@
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -28,8 +29,12 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery.lazyload.min.js"></script> 
-    <script type="text/javascript" src="js/vendor/lite-youtube-min.js"></script>
+    <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
+     <script>
+        $( document ).ready(function() {
+            $('.js-lazyYT').lazyYT(); 
+        });
+    </script>
 </head> 
 <body>
     <noscript>
