@@ -28,6 +28,11 @@
     <script src="js/postFunctions.js" async></script>
     <script src="js/errorHandler.js" async></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('.js-lazyYT').lazyYT(); 
+        });
+    </script>
 </head>
 <body>
     <noscript>
