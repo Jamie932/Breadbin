@@ -229,7 +229,9 @@
             } else {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage imgNoPadding favouriteImg">' : '<div class="contentPostVideo imgNoPadding">';
-                echo '<div class="lite" id="'.$row['text'].'" style="width:640px;height:361px;"></div>';
+                /*echo '<div class="lite" id="'.$row['text'].'" style="width:640px;height:361px;"></div>';*/
+                
+                echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="640px" data-height="361px"></div>';
                 
             }
                 echo '<div id="contentInfoText">';
