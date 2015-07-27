@@ -102,7 +102,10 @@
             }
           });
 
-        $.getJSON('//gdata.youtube.com/feeds/api/videos/' + id + '?v=2&alt=json', function (data) {
+        //www.googleapis.com/youtube/v3/videos?id=' + id + '&key=AIzaSyCISRbqywYcK-KLvT1aLzzcErM1ywqqDL4
+
+        
+        $.getJSON('//www.googleapis.com/youtube/v3/videos?id=' + id + '&key=AIzaSyCISRbqywYcK-KLvT1aLzzcErM1ywqqDL4', function (data) {
             $el.find('#lazyYT-title-' + id).text(data.entry.title.$t);
         });
 
