@@ -1,6 +1,14 @@
 <?php 
     require("php/common.php");
     require("php/checkLogin.php");
+
+    $postsPerPage = 10;
+
+    $query = 'SELECT COUNT(*) FROM posts'; 
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute(); 
+    $numPosts = $stmt->fetchColumn();
+    $numPages = ceil($numPosts / $postsPerPage);
 ?>
 <!DOCTYPE html>
 <html>
