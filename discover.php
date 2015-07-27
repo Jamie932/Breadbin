@@ -18,6 +18,13 @@
     <script src="js/vendor/jquery.unveil.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/tileFunctions.js"></script>
+    <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
+     <script>
+        $( document ).ready(function() {
+            $('.js-lazyYT').lazyYT(); 
+        });
+    </script>
     <script>
         $(document).ready(function(){
             // to fade out before redirect
@@ -130,9 +137,7 @@
 							echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
 						echo '</div>';
 					echo '</div></li>';
-				}
-
-				else if ($row['type'] == 'imagetext') {
+				} else if ($row['type'] == 'imagetext') {
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
 					$imageLocation = $withoutExt . '-profile.jpg';
 
