@@ -12,10 +12,6 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 	
-    if (!$posts && $_POST['groupNumber']) {
-        exit();
-    }
-
     if (!$posts) {
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>You haven\'t toasted anything.</center></div>';
@@ -65,7 +61,7 @@
             $userrow = $stmt->fetch();
             $username = 'Unknown';
 
-            $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid = :userId"; 
+            $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
             $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
 
             $stmt = $db->prepare($query);
@@ -282,5 +278,6 @@
             }             
             echo '</div>';
         }
+    }
     }
 ?>
