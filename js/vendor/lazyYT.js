@@ -61,7 +61,7 @@
         innerHtml.push('</div>'); // end of .ytp-thumbnail
         
         // Video title (info bar)
-        innerHtml.push('<div class="html5-info-bar"> style="text-align: left;"');
+        innerHtml.push('<div class="html5-info-bar" style="text-align: left;">');
         innerHtml.push('<div class="html5-title" style="text-align: left;">');
         innerHtml.push('<div class="html5-title-text-wrapper" style="text-align: left;">');
         innerHtml.push('<a id="lazyYT-title-', id, '" class="html5-title-text" style="color: #F1F1F3; text-align: left;" target="_blank" tabindex="3100" href="//www.youtube.com/watch?v=', id, '">');
