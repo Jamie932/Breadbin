@@ -105,7 +105,7 @@
         //www.googleapis.com/youtube/v3/videos?id=' + id + '&key=AIzaSyCISRbqywYcK-KLvT1aLzzcErM1ywqqDL4
 
         
-        $.getJSON('//www.googleapis.com/youtube/v3/videos?id=' + id + '&key=AIzaSyCISRbqywYcK-KLvT1aLzzcErM1ywqqDL4', function (data) {
+        $.getJSON('//www.googleapis.com/youtube/v3/videos?id=' + id + '&key=AIzaSyBEl1mBTiYecgCvgjD6mdyXfeR5sAounUM', function (data) { 
             $el.find('#lazyYT-title-' + id).text(data.entry.title.$t);
         });
 
