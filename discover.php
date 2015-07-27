@@ -9,6 +9,7 @@
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/navbar.css" rel="stylesheet" type="text/css">
     <link href="css/discover.css" rel="stylesheet" type="text/css">
+    <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -18,7 +19,6 @@
     <script src="js/vendor/jquery.unveil.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/tileFunctions.js"></script>
-    <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
      <script>
         $( document ).ready(function() {
@@ -83,8 +83,8 @@
     <div id="content">
         <div id="main">
             <?php
-
-			$query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+            /* userid <> :id AND */ 
+			$query = "SELECT * FROM posts WHERE  userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 
 			if (!empty($_GET)) { //All
 				if ($_GET['f'] == 1) { //Staff Recommended
@@ -151,7 +151,7 @@
 					echo '</div>';
 
 					echo '</li>';
-				} else if ($row['type'] == 'video') {
+				} else if ($row['type'] == "video") {
                     echo '<li>';
                     echo '<div class="banner">';                
                     echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
