@@ -146,7 +146,13 @@
 					echo '</div>';
 
 					echo '</li>';
-				}
+				} else if ($row['type'] == 'video') {
+                    echo '<li>';
+                    echo '<div class="banner">';                
+                    echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
+                    echo '</div>';
+                    echo '</li>'; 
+                }
 			}
 		}
 		?>
