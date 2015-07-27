@@ -20,11 +20,6 @@
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/tileFunctions.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
-     <script>
-        $( document ).ready(function() {
-            $('.js-lazyYT').lazyYT(); 
-        });
-    </script>
     <script>
         $(document).ready(function(){
             // to fade out before redirect
@@ -35,6 +30,8 @@
                     document.location.href = redirect
                 });
             });
+            
+             $('.js-lazyYT').lazyYT(); 
         });
         
         $(window).load(function() { 
@@ -153,9 +150,9 @@
 					echo '</li>';
 				} else if ($row['type'] == "video") {
                     echo '<li>';
-                    echo '<div class="banner">';                
-                    echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
-                    echo '</div>';
+                        echo '<div class="banner">';                
+                            echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
+                        echo '</div>';
                     echo '</li>'; 
                 }
 			}

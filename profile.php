@@ -72,6 +72,7 @@ if (empty($_GET)) {
     <script src="js/tileFunctions.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
+    
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
         $( document ).ready(function() {
