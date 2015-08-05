@@ -221,7 +221,6 @@ h5 {
 }
 
 .userRecom {
-    width: 50px;
     padding-left: 10px;
 	margin-bottom: 10px;
 	position: relative;
@@ -235,8 +234,8 @@ h5 {
     color: #666766;
     display: inline-block;
     margin-left: 15px;
-	height: 100%;
 	position: absolute;
+	line-height: 54px;
 }
 
 .usericoRecom { display: inline-block; }
