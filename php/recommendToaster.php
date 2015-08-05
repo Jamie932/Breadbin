@@ -10,21 +10,25 @@
         if ($randUser) {
             echo '<div id="recommendBox" class="sideBox">';
             echo '<div class="boxTitle">Recommended toasters</div>';
-            echo '<div class="userRecom">';
+            
             foreach ($randUser as $row) {
                 $user = $row['id'];
                 $usersname = $row['username'];
 
-				echo '<div class="usericoRecom">';
-					if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
-						echo '<a href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="50px" width="50px" style="border-radius:50%;"></a>';
-					} else {
-						echo '<a href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%;"></a>';
-					}
-				echo '</div>';
+                echo '<div class="userRecom">';
+                    echo '<div class="usericoRecom">';
+                
+                    if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
+                        echo '<img src="img/profile2.png" height="50px" width="50px" style="border-radius:50%;">';
+                    } else {
+                        echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%;">';
+                    }
+                        
+                    echo '</div>';
+                    echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
+                echo '</div>';
             }
-			echo '</div>';
-      		echo '</div>';
+            echo '</div>';
             
         }
 ?>
