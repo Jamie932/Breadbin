@@ -8,7 +8,7 @@
         $randUser = $stmt->fetchAll();
         
         if ($randUser) {
-            echo '<div id="placehold">';
+            echo '<div id="placehold" class="sideBox">';
             echo 'Recommended toasters<hr></hr>';
             
             foreach ($randUser as $row) {

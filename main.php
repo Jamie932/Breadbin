@@ -124,8 +124,9 @@
                 </div>
 				
                 <div class="clearFix"></div>
-				<?php require('php/recommendToaster.php');  ?>
      		</div> 
+			
+			<?php require('php/recommendToaster.php');  ?>
             
             <div id="support" class="sideBox">
 				About Support etc etc
