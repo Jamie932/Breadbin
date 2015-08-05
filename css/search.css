@@ -62,6 +62,8 @@
 .userTitle {
 	display: inline-block;
 	margin-right: 2px;
+	text-decoration: none;
+	color: #000;
 }
 
 .userCountry {
