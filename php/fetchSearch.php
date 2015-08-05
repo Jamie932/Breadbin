@@ -1,6 +1,5 @@
 <?php
     require("common.php"); 
-	require("vendor/timeago.php");
 	
 	if (!isset($_GET['q'])) {
         header('Location: main.php');
@@ -20,12 +19,6 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 
-    $query= "SELECT * FROM following WHERE follower_id = :userId"; 
-    $query_params = array(':userId' => $_SESSION['user']['id']);
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute($query_params); 
-	$following = $stmt->rowCount();
-
 	echo '<div id="usersBox">';
 	echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>' . $usersCount . '</b> Users Found' : '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found';
 	echo '<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
@@ -36,7 +29,20 @@
 				echo '<div class="userInfo">';
 					echo '<div class="userTitle">' . $row["username"] . '</div>';
 					echo '<div class="userCountry">' . $row["country"] . '</div>';
-					echo '<div class="userButtons"><input type="submit" value="Follow" class="buttonstyle"><input type="submit" value="Message" class="buttonstyle"></div>';
+					echo '<div class="userButtons">';
+		
+                    $query = "SELECT * FROM following WHERE follower_id = :id AND user_no = :userid";
+                    $query_params = array(
+                        ':id' => $_SESSION['user']['id'],
+                        ':userid' => $row['id']
+                    );
+
+                    $stmt = $db->prepare($query);
+                    $result = $stmt->execute($query_params);
+                    $following = $stmt->fetch();
+
+					echo $following ? '<input type="submit" value="Unfollow" class="buttonstyle">' : '<input type="submit" value="Follow" class="buttonstyle">';
+					echo '<input type="submit" value="Message" class="buttonstyle"></div>';
 					echo '<div class="userBio">' . $row["bio"] . '</div>';
 				echo '</div>';
 			echo '</div>';
