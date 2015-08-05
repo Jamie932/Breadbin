@@ -25,10 +25,8 @@
 
 	foreach ($users as $row) {	
 			echo '<div class="user">';
-				echo '<div class="userImage">';
-					echo file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="80px" width="80px">' : '';
-				echo '</div>';
-		
+				echo file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? '<div class="userImage" style="background-image: url(img/avatars/' . $row['id'] . '/avatar.jpg)"></div>' : '<div class="userImage"></div>';
+				
 				echo '<div class="userInfo">';
 					echo '<div class="userTitle"><a href="profile.php?id=' . $row['id'] . '">' . $row['username'] . '</a></div>';
 					echo '<div class="userCountry">' . $row["country"] . '</div>';
