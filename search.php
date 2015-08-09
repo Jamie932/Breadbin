@@ -21,6 +21,18 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.fa-angle-double-down').click(function(){
+				$(this).addClass('fa-rotate-90');
+			})
+			
+			
+			$('.fa-rotate-90').click(function(){
+				$(this).removeClass('fa-rotate-90');
+			})
+		})
+	</script>
 </head> 
 <body>
     <noscript>
