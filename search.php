@@ -27,8 +27,7 @@
 				$(this).addClass('fa-rotate-90');
 			})
 			
-			
-			$('.fa-rotate-90').click(function(){
+			$(document).on('click','.fa-rotate-90', function() {
 				$(this).removeClass('fa-rotate-90');
 			})
 		})
