@@ -23,7 +23,7 @@
     <script src="js/vendor/progressbar.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('.fa-angle-double-down').click(function(){
+			$(document).on('click','.fa-angle-double-down', function() {
 				$(this).addClass('fa-rotate-negative-90');
 			})
 			
