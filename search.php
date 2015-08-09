@@ -24,11 +24,11 @@
 	<script>
 		$(document).ready(function(){
 			$('.fa-angle-double-down').click(function(){
-				$(this).addClass('fa-rotate-90');
+				$(this).addClass('fa-rotate-negative-90');
 			})
 			
-			$(document).on('click','.fa-rotate-90', function() {
-				$(this).removeClass('fa-rotate-90');
+			$(document).on('click','.fa-rotate-negative-90', function() {
+				$(this).removeClass('fa-rotate-negative-90');
 			})
 		})
 	</script>
