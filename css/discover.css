@@ -183,9 +183,13 @@ p.textPost {
 	vertical-align: middle;
 	text-align: center;
 	font-size: 1em;
-    min-width: 300px !important;
-    max-width: 300px !important;
+    width: 300px !important;
     height: 230px !important;
     max-height: 230px !important;
     min-height: 230px !important;
+}
+
+.box {
+	padding-left: 5px;
+	padding-right: 5px;
 }
