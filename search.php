@@ -27,9 +27,9 @@
 				$(this).toggleClass('fa-rotate-negative-90');
 				
 				if ($(this).parents("#usersBox").length == 1) {
-					$("#usersRows").fadeToggle(500);
+					$("#usersRows").toggle(500);
 				} else {
-					$("#postsRows").fadeToggle(500);
+					$("#postsRows").toggle(500);
 				}
 			});
 		})
