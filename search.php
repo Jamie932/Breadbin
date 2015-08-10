@@ -25,6 +25,12 @@
 		$(document).ready(function(){
 			$('.fa-angle-double-down').click(function(){
 				$(this).toggleClass('fa-rotate-negative-90');
+				
+				if ($(this).parents("#usersBox").length == 1) {
+					$("#usersBox").fadeToggle(500);
+				} else {
+					$("#postsBox").fadeToggle(500);
+				}
 			});
 		})
 	</script>
@@ -45,7 +51,7 @@
 				<?php require('php/fetchSearch.php');?>
 				
 						
-				<div id="usersBox">
+				<div id="postsBox" class="box">
 					<?php echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>0</b> Posts Found' : '<div class="boxTitle"><b>0</b> Posts Found'; ?>
 					<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>
 				</div>

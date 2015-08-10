@@ -1,5 +1,9 @@
-#usersBox {
+.box {
 	margin-bottom: 50px;
+}
+
+.box:last-of-type {
+	margin-bottom: 0px;
 }
 
 .boxTitle {

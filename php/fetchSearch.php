@@ -19,10 +19,11 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 
-	echo '<div id="usersBox">';
+	echo '<div id="usersBox" class="box">';
 	echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>' . $usersCount . '</b> Users Found' : '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found';
 	echo '<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
 
+	echo '<div id="usersRows">';
 	foreach ($users as $row) {	
 			echo '<div class="user">';
 				echo file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? '<div class="userImage" style="background-image: url(img/avatars/' . $row['id'] . '/avatar.jpg)"></div>' : '<div class="userImage"></div>';
@@ -48,6 +49,6 @@
 				echo '</div>';
 			echo '</div>';
 	}
-
+	echo '</div>';
 	echo '</div>';
 ?>
