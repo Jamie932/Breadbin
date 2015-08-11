@@ -24,8 +24,6 @@
 		<div id="errorClose"><i class="fa fa-times" style="line-height: 35px"></i></div>
 	</div>	
 	
-	<div id="stripe"></div>
-	
     <div id="mainLogo">
         <img src="img/logobants.png">   
     </div>
