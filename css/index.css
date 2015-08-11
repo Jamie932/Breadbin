@@ -1,37 +1,15 @@
-body {
+body, html {
     /*background-image: url(/img/testback.jpg) !important;*/
+	width: 100%;
+	background-color: #fff;
 }
 
-.error { border: 1px solid red }
-
-small {
-    font-size: 0.75rem;
-    font-weight: normal;
-    font-style: italic;
-    color: red;
-    float: right;
-    width: 150px;
-    padding-top: 5px;
-    text-align: left;
-}
-
-.dockMiddle {
-    position: relative;
-    bottom: -15px;
-    text-align: center;
-    width: 100%;
-}
-
-#header { position: relative;
-margin-top: 10px;}
-
-.dockHeader {
-    position: absolute;
-    bottom: 8px;
-    right: 0px;
-    text-align: right;
-    font-weight: normal;
-    font-size: 0.75em;
+#header { 
+	text-align: center; 
+	font-size:1.8em; 
+	margin-top: 10px;
+	margin-bottom: 30px;
+	color: #616161;
 }
 
 .dockBottom {
@@ -42,6 +20,7 @@ margin-top: 10px;}
     text-align: center;
     margin-left: -15px;
     font-size: 0.75em;
+	color: #616161;
 }
 
 .dockBottom li {
@@ -66,67 +45,44 @@ hr { margin-bottom: 30px }
     position: relative;
     background-color: #F9FAF9;
     width: 450px;
-    height: 350px;
+    height: 400px;
     margin: auto;
     margin-bottom: 3%;
     margin-top: 30px;
-    border: 1px solid rgba(100, 100, 100, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.15);
     z-index: 1;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
 }
 
-.tall { height: 450px !important }
+.tall { height: 470px !important }
 
 .longTall {
     height: 500px !important;
     width: 700px !important;
 }
 
-#mid .start {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 a {
-    text-decoration: none;
     color: #616161;
+	border-bottom: 1px solid #BBB;
 }
 
-#top {
-    width: 100%;
-    height: 43%;
-    background-color: #FFB540;
-    margin-top: 0;
-    -moz-box-shadow: 0 0 3px #616161;
-    -webkit-box-shadow: 0 0 3px #616161;
-    box-shadow: 0 0 3px #616161;
-    z-index: 1;
-}
-
-#mid .login, #mid .register, #mid .about, #mid .verify {
+#mid .login, #mid .register, #mid .verify {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 15px;
 }
 
-#mid .register, #mid .about, #mid .verify { display: none }
+#mid .register, #mid .verify { display: none }
 
 form { text-align: center }
 
-/* label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-}
- */
-
 input {
     height: 30px;
-    width: 250px;
+    width: 240px;
     padding: 5px;
+	padding-left: 10px;
     border: 1px solid rgba(100, 100, 100, 0.4);
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -134,6 +90,14 @@ input {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
+}
+
+.textField {
+	margin-top: 15px !important;
+}
+
+.textField:first-of-type {
+	margin-top:0px !important;
 }
 
 input:focus {
@@ -146,9 +110,9 @@ a { cursor: pointer }
 
 input#submit {
     background: none;
-    border: none;
-    font-size: 20px;
     color: #616161;
+    width: 200px;
+	margin-top: 30px;
 }
 
 input#submit:hover {
@@ -156,55 +120,13 @@ input#submit:hover {
     cursor: pointer;
 }
 
-#username-group { text-align: center }
-
 /* ===[ About.php ]=== */
-
-#aboutHeader {
-    height: 500px;
-    width: 100%;
-    background-color: #6699FF;
-    padding-top: 20px;
-}
-
-.leftHeader {
-    float: left;
-    margin-left: 70px;
-    width: 18%;
-}
-
-.centerHeader {
-    float: left;
-    width: 53%;
-    word-wrap: break-word;
-    text-align: center;
-    margin-top: 80px;
-}
-
-.rightHeader {
-    float: right;
-    margin-right: 70px;
-    margin-top: 17px;
-    width: 50px;
-    display: inline;
-}
-
-.logo {
-    display: inline;
-    float: left;
-    margin-right: 20px;
-}
 
 #mainLogo {    
     width: 50%;
     margin: 0 auto;
     text-align: center;
     margin-top: 100px;
-}
-
-.titleHeader {
-    display: inline;
-    top: 10px;
 }
 
 h3 {
@@ -216,27 +138,6 @@ h3 {
     margin-top: 10px;
 }
 
-.navlinksHeader {
-    position: fixed;
-    margin-top: 30px;
-    margin-left: 20px;
-}
-
-ul.headerNav {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    color: #fff;
-}
-
-li.linkItem { margin-bottom: 5px }
-
-a.loginHeaderLink {
-    color: #fff;
-    font-size: 20px;
-    float: right;
-}
-
 h1 {
     font-size: 100px;
     color: #fff;
@@ -245,28 +146,30 @@ h1 {
     margin-bottom: -10px;
 }
 
-p.headerTag {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 30px;
-    font-size: 20px;
-}
-
-button.headerLoginBut {
-    border: 1px solid #E6A33A;
-    -moz-border-radius: 7px 7px;
-    border-radius: 7px 7px;
-    background-color: #FFB540;
-    width: 320px;
-    height: 80px;
-    font-size: 16px;
-}
-
-p.headerTagRegister {
-    font-size: 13px;
-    margin: 0px;
-}
-
 input {
     margin-bottom: 10px;   
+}
+
+.dockBelow {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#stripe {
+	background-color: #FFB540;
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	top: 240px;
+}
+
+.forgotPass {
+	font-size: 0.8em;
+	text-align: center;
+	margin-top: 20px;
+	color: #616161;
+}
+
+#errorBar {
+	top: 0px !important;
 }

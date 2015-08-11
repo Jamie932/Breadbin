@@ -4,28 +4,26 @@ function resetForm() {
 }
 
 $(document).ready(function(){
-   $(".registerBtn").click(function(){
+   $(document).on('click','.registerBtn', function() {
        $(".login").fadeOut('normal', function(){
             $(".register").fadeIn('normal');
             $("#mid").addClass('tall');
-
-            $('.logUserName').removeClass('error');
-            $('.logUserPass').removeClass('error');
-            $('small').remove();
+			
+            clearErrors();
        });
+	   
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Already have an account? <a class="loginBtn">Login</a>') }).animate({'opacity': 1}, 400);
    });
         
-   $(".loginBtn").click(function(){
+   $(document).on('click','.loginBtn', function() {
        $(".register").fadeOut('normal', function(){
             $(".login").fadeIn('normal');
             $("#mid").removeClass('tall');
 
-            $('.regUserName').removeClass('error');
-            $('.regUserEmail').removeClass('error');
-            $('.regUserPass').removeClass('error');
-            $('.regUserConfirm').removeClass('error');
-            $('small').remove();
+            clearErrors();
         });
+		
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Don\'t have an account? <a class="registerBtn">Sign up</a>') }).animate({'opacity': 1}, 400);
    });
     
     $('#regForm').submit(function(event) {
@@ -46,7 +44,7 @@ $(document).ready(function(){
 			success		: function(data) {
 				resetForm();
 				if ( !data.success) {
-					if (data.errors.username) {
+					/*if (data.errors.username) {
 						$('.regUserName').addClass('error');
 						$('<small>' + data.errors.username + '</small>').hide().appendTo("#regUserName-group").fadeIn(700);
 					}
@@ -64,7 +62,9 @@ $(document).ready(function(){
 					if (data.errors.email) {
 						$('.regUserEmail').addClass('error')
 						$('<small>' + data.errors.email + '</small>').hide().appendTo("#regUserEmail-group").fadeIn(700);
-					}
+					}*/
+					
+					createError("An error has occured with your registration.");
 
 				} else {
 					$.ajax({
@@ -77,6 +77,7 @@ $(document).ready(function(){
 
 					$(".register").fadeOut('normal', function(){
 						$(".verify").fadeIn('normal');        
+						$('.dockBelow').fadeOut();
 					 });
 				}
 			}
@@ -103,19 +104,11 @@ $(document).ready(function(){
 
 				if ( !data.success) {
 					if (data.incorrect) {
-						alert("well shit this is wrong yo");
+						createError("An error has occured with your login details.");
 					} else if (!data.validation) {
-						alert("You're not validated sorry.");
+						createError("You have not yet validated your account (check your emails).");
 					} else {
-						if (data.errors.username) {
-							$('.logUserName').addClass('error');
-							$('<small>' + data.errors.username + '</small>').hide().appendTo("#logUserName-group").fadeIn(700);
-						}
-
-						if (data.errors.password) {
-							$('.logUserPass').addClass('error');
-							$('<small>' + data.errors.password + '</small>').hide().appendTo("#logUserPass-group").fadeIn(700);
-						}
+						createError("An error has occured with your login.");
 					}
 
 				} else {
