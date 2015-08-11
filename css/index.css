@@ -1,7 +1,7 @@
 body, html {
     /*background-image: url(/img/testback.jpg) !important;*/
 	width: 100%;
-	background-color: #fff;
+	background-color: #F2F2F2;
 }
 
 #header { 
@@ -43,7 +43,7 @@ hr { margin-bottom: 30px }
 
 #mid {
     position: relative;
-    background-color: #F9FAF9;
+    background-color: #FFF;
     width: 450px;
     height: 400px;
     margin: auto;
