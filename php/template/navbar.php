@@ -86,9 +86,9 @@
             ?>
         
                 <ul >
-                    <li><a class="navLinks" href="/settings.php">Settings</a></li>
                     <li><a class="navLinks" href="/toasted.php">Toasted</a></li>
                     <li><a class="navLinks" href="/burned.php">Burned</a></li>
+                    <li><a class="navLinks" href="/settings.php">Settings</a></li>
                     <li><a class="navLinks" href="#" onClick="createPopup('Logout', 'Are you sure you want to log out?', true, function() { logout(); }); return false;">Logout</a></li>
                 </ul>
 			</li>
