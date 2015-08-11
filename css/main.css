@@ -18,6 +18,7 @@ p.report {
     height: auto;
     display: inline;
 	min-width: 735px;
+	margin-top: 5px;
 }
 
 #contentPost {
