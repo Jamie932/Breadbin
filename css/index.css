@@ -151,6 +151,7 @@ input {
 
 .dockBelow {
 	margin: 0 auto;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
