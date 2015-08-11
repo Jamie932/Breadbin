@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 				if ( !data.success) {
 					if (data.incorrect) {
-						createError("An error has occured with your login details.");
+						createError("Incorrect login details provided.");
 					} else if (!data.validation) {
 						createError("You have not yet validated your account (check your emails).");
 					} else {
