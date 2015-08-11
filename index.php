@@ -27,7 +27,7 @@
 	<div id="stripe"></div>
 	
     <div id="mainLogo">
-        Breadbin
+        <img src="img/logobants.png">   
     </div>
         
     <div id="mid">
