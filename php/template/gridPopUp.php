@@ -5,7 +5,7 @@
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
             </div>
             <div class="gridBoxes 1"></div>
-		  <div class="gridBoxes 2"><i class="fa fa-video-camera"></i></div>
+		  <div class="gridBoxes 2"><i class="fa fa-video-camera" stlye="font-size: 20px;"></i></div>
 		  <div class="gridBoxes 3"></div>
 		  <div class="gridBoxes 4"></div>
 		  <div class="gridBoxes 5"></div>
