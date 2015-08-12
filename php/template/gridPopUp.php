@@ -6,9 +6,9 @@
             </div>
             <div class="gridBoxes 1"></div>
 		  <div class="gridBoxes 2">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-square-o fa-stack-2x fa-5x"></i>
-                    <i class="fa fa-camera fa-stack-1x fa-5x"></i>
+                <span class="fa-stack fa-lg fa-5x">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-camera fa-stack-1x"></i>
                 </span>
             </div>  
 		  <div class="gridBoxes 3"></div>
