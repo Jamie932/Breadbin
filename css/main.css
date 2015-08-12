@@ -319,7 +319,7 @@ ul#images { list-style: none; margin: 0px; }
     -webkit-box-sizing: border-box;
     z-index: 7;
     display: none;
-    
+    position: fixed;
 }
 
 .gridBoxes {
