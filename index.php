@@ -83,7 +83,7 @@
 	</div>
         
     <footer>
-        BreadBin 2016    
+        <p style="float: right;">BreadBin 2016</p>
     </footer>
 </body>
 </html>
