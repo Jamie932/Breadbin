@@ -7,7 +7,7 @@
         $result = $stmt->execute($query_params); 
         $randUser = $stmt->fetchAll();
 
-        $query = "SELECT * FROM user_settings WHERE id = :id"; 
+        $query = "SELECT * FROM user_settings WHERE user_id = :id"; 
         $query_params = array(':id' => $_SESSION['user']['id']); 
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
