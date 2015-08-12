@@ -42,7 +42,7 @@
     ?>
 
 	<div class="left">
-		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;"><img src="/img/logoSmall.png"></img></a>
+		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;"><img src="/img/logoSmall.png" style="vertical-align: middle; margin-bottom: 5px;"></img></a>
         
 		<div id="searchContainer">
 			<form id="searchForm">
