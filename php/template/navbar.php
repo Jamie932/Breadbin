@@ -42,7 +42,7 @@
     ?>
 
 	<div class="left">
-		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;">Bread Bin</a>
+		<a href="/main.php" id="navTitle" class="navLinks" style="float: left;"><img src="/img/logoSmall.png"></img></a>
         
 		<div id="searchContainer">
 			<form id="searchForm">
