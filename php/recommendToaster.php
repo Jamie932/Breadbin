@@ -43,9 +43,9 @@
                     echo '<div class="usericoRecom">';
                 
                     if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
-                        echo '<img src="img/profile2.png" height="50px" width="50px" style="border-radius:50%; border: 1px solid '.$colour.')">';
+                        echo '<img src="img/profile2.png" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. ')">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid '$colour.')">';
+                        echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. ')">';
                     }
                         
                     echo '</div>';
