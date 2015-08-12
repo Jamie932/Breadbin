@@ -25,7 +25,7 @@
 	</div>	
 	
     <div id="mainLogo">
-        <img src="img/logobants.png">   
+        <img src="img/logo.png">   
     </div>
         
     <div id="mid">

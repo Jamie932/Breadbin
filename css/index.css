@@ -1,9 +1,3 @@
-body, html {
-    /*background-image: url(/img/testback.jpg) !important;*/
-	width: 100%;
-	background-color: #F2F2F2;
-}
-
 #header { 
 	text-align: center; 
 	font-size:1.8em; 
@@ -125,7 +119,8 @@ input#submit:hover {
 #mainLogo {    
     margin: 0 auto;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 70px;
+	margin-bottom: 50px;
 }
 
 h3 {
