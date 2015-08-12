@@ -6,7 +6,7 @@
             </div>
             <div class="gridBoxes 1"></div>
 		  <div class="gridBoxes 2">
-                <span class="fa-stack fa-lg fa-4x">
+                <span class="fa-stack fa-lg" style="font-size: 4.7em">
                   <i class="fa fa-square-o fa-stack-2x"></i>
                     <i class="fa fa-camera fa-stack-1x"></i>
                 </span>
