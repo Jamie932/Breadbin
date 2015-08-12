@@ -7,8 +7,8 @@
             <div class="gridBoxes 1"></div>
 		  <div class="gridBoxes 2">
               <span class="fa-stack fa-lg">
-                  <i class="fa fa-square-o fa-stack-2x" style="font-size: 150px;"></i>
-                  <i class="fa fa-video-camera" style="font-size: 150px;"></i>
+                  <i class="fa fa-square-o fa-stack-2x" style="font-size: 200px;"></i>
+                  <i class="fa fa-video-camera" style="font-size: 120px;"></i>
                 </span>
               </div>  
 		  <div class="gridBoxes 3"></div>
