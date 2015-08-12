@@ -15,19 +15,19 @@
 
         if($row){ 
             if ($row['colour'] == 2) {
-                $colour = '#6699FF';
+                $colour = 'rgba(102, 153, 255, 0.2)';
             } else if ($row['colour'] == 3) {
                 $colour = 'rgba(0, 197, 30, 0.2)';
             } else if ($row['colour'] == 4) {
-                $colour = '#EC5858';
+                $colour = 'rgba(236, 88, 88, 0.2)';
             } else if ($row['colour'] == 5) {
-                $colour = '#8C68D8';
+                $colour = 'rgba(140, 104, 216, 0.2)';
             } else if ($row['colour'] == 6) {
-                $colour = '#CC7AB0';
+                $colour = 'rgba(204, 122, 176, 0.2)';
 			} else if ($row['colour'] == 7) { 
-                $colour = '#363636';
+                $colour = 'rgba(54, 54, 54, 0.2)';
 			} else {
-                $colour = '#F6A628';
+                $colour = 'rgba(246, 166, 40, 0.2)';
             }
         }
         
