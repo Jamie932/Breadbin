@@ -37,10 +37,10 @@
         <div class="popupTitleTest" style="margin: -1px;">
             <div id="leftUserImg">
                 <?php 
-                    if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
+                    if (!file_exists('img/avatars/' . $randUser['id'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $randUser['id'] . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                 ?>
             </div>
