@@ -5,7 +5,8 @@
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
             </div>
             <div class="gridBoxes 1">
-                <i class="fa fa-cutlery" style="font-size: 8.2em; text-align: center; margin-left: 9px;"></i>
+                <i class="fa fa-cutlery" style="font-size: 8.2em; text-align: center; margin-left: 23px;"></i>
+                <center>Recipe</center>
             </div>
             <div class="gridBoxes 2">
             <i class="fa fa-video-camera" style="font-size: 8.2em; text-align: center; margin-left: 9px;"></i>
