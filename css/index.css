@@ -1,9 +1,16 @@
 #header { 
 	text-align: center; 
 	font-size:1.8em; 
-	margin-top: 10px;
-	margin-bottom: 30px;
+	padding-top: 25px;
+	padding-bottom: 30px;
 	color: #616161;
+}
+
+.textContainer {
+	font-size: 0.9em;
+	color: rgb(96, 96, 96);
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .dockBottom {
@@ -15,6 +22,10 @@
     margin-left: -15px;
     font-size: 0.75em;
 	color: #616161;
+}
+
+.dockBottom ul li a {
+	border-bottom: none;
 }
 
 .dockBottom li {
@@ -43,14 +54,19 @@ hr { margin-bottom: 30px }
     margin: auto;
     margin-bottom: 3%;
     margin-top: 30px;
+	
+	padding-left: 15px;
+	padding-right: 15px;
+	
     border: 1px solid rgba(100, 100, 100, 0.15);
+	box-sizing: border-box;
     z-index: 1;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    transition: all .5s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
 }
 
-.tall { height: 470px !important }
+.tall { height: 480px !important }
 
 .longTall {
     height: 500px !important;
@@ -62,13 +78,7 @@ a {
 	border-bottom: 1px solid #BBB;
 }
 
-#mid .login, #mid .register, #mid .verify {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px;
-}
-
-#mid .register, #mid .verify { display: none }
+#mid .register, #mid .verify, #mid .terms, #mid .privacy, #mid .about { display: none; }
 
 form { text-align: center }
 
@@ -80,7 +90,7 @@ input {
     border: 1px solid rgba(100, 100, 100, 0.4);
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;   
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
@@ -138,10 +148,6 @@ h1 {
     margin: 0px;
     padding: 0px;
     margin-bottom: -10px;
-}
-
-input {
-    margin-bottom: 10px;   
 }
 
 .dockBelow {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Breadbin - Error</title>
+    <title>Error | Breadbin</title>
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
@@ -11,15 +11,15 @@
     <script src="js/vendor/jquery.cookie.js"></script>
 </head>
 <body>
+    <div id="mainLogo">
+        <img src="img/logo.png">   
+    </div>
+
     <div id="mid" style="height:230px;">
 		<div class="login">
-			<div id="header">
-				<h2>We're sorry!</h2>
-			</div>
-            
-			<hr></hr>
+			<div id="header">We're sorry!</div>
 			
-			<div style="font-size:0.9em;">
+			<div class="textContainer">
                 <p>Breadbin requires Javascript to have full functionality, which you seem not to have enabled.</p> 
                 <p>To try again, click <a href="index.php">here</a>.</p>
 			</div>
