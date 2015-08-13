@@ -37,7 +37,7 @@
 					<input type="text" name="log_username" placeholder="Username" class="logUserName textField" required/> 
 					<input type="password" name="log_password" placeholder="Password" class="logUserPass textField" required/> 
 						
-					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
+					<input type="submit" class="btn btn-info" value="Log In" id="submit"/>		 			
 				</form>
 				<div class="forgotPass"><a>Forgotten your password?</a></div>
 			</div>
@@ -56,7 +56,7 @@
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>	
 					<div style="font-size:0.65em; color: #7E7E7E;">
 						<p>By pressing submit you agree to our terms of service.</p> 			
-					</div>				
+					</div>
 				</form>
 			</div>
 		</div>
