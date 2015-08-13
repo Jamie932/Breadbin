@@ -6,7 +6,7 @@
             </div>
             <div class="gridBoxes 1"></div>
 		  <div class="gridBoxes 2">
-                <i class="fa fa-video-camera"></i>
+                <i class="fa fa-video-camera" style="font-size: 4.2em; text-align: center;"></i>
             </div>  
 		  <div class="gridBoxes 3"></div>
 		  <div class="gridBoxes 4"></div>
