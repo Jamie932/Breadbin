@@ -5,23 +5,23 @@ function resetForm() {
 
 $(document).ready(function(){
    $(document).on('click','.registerBtn', function() {
-       $(".login").fadeOut('normal', function(){
-            $(".register").fadeIn('normal');
-            $("#mid").addClass('tall');
+		$(".login").fadeOut('normal', function(){
+			$("#mid").addClass('tall');
+			$(".register").fadeIn('normal');
 			
-            clearErrors();
-       });
+			clearErrors();
+		});
 	   
 		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Already have an account? <a class="loginBtn">Login</a>') }).animate({'opacity': 1}, 400);
    });
         
    $(document).on('click','.loginBtn', function() {
-       $(".register").fadeOut('normal', function(){
-            $(".login").fadeIn('normal');
-            $("#mid").removeClass('tall');
-
-            clearErrors();
-        });
+		$(".register").fadeOut('normal', function(){
+			$(".login").fadeIn('normal');
+			$("#mid").removeClass('tall');
+			
+			clearErrors();
+		});
 		
 		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Don\'t have an account? <a class="registerBtn">Sign up</a>') }).animate({'opacity': 1}, 400);
    });

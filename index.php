@@ -53,7 +53,10 @@
 					<input type="password" name="reg_password" placeholder="Password" class="regUserPass textField" required/>
 					<input type="password" name="reg_confirmPassword" placeholder="Confirm Password" class="regUserConfirm textField" required/>
 				
-					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>					
+					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>	
+					<div style="font-size:0.65em; color: #7E7E7E;">
+						<p>By pressing submit you agree to our terms of service.</p> 			
+					</div>				
 				</form>
 			</div>
 		</div>
@@ -61,8 +64,41 @@
 		<div class="verify">
 			<div id="header">Almost there!</div>
 			
-			<div style="font-size:0.9em;">
+			<div class="textContainer">
                 <p>To finish your registration, please check validate your email.</p> 
+                <p>Once you've clicked on the link in the email, you will be able to access your account.</p>
+                <br>
+                <p>Can't find the email? Please try to ... </p>
+			</div>
+		</div>
+		
+		<div class="terms">
+			<div id="header">Terms of Service</div>
+			
+			<div class="textContainer">
+                <p>Blah blah blah blah.</p> 
+                <p>Once you've clicked on the link in the email, you will be able to access your account.</p>
+                <br>
+                <p>Can't find the email? Please try to ... </p>
+			</div>
+		</div>
+		
+		<div class="privacy">
+			<div id="header">Privacy Policy</div>
+			
+			<div class="textContainer">
+                <p>Blah blah blah blah.</p> 
+                <p>Once you've clicked on the link in the email, you will be able to access your account.</p>
+                <br>
+                <p>Can't find the email? Please try to ... </p>
+			</div>
+		</div>
+		
+		<div class="about">
+			<div id="header">About</div>
+			
+			<div class="textContainer">
+                <p>Blah blah blah blah.</p> 
                 <p>Once you've clicked on the link in the email, you will be able to access your account.</p>
                 <br>
                 <p>Can't find the email? Please try to ... </p>
@@ -71,9 +107,9 @@
     
         <div class="dockBottom">
             <ul>
-                <li>Terms of Service</li>
-                <li>Privacy Policy</li>
-                <li><a class="aboutBut">About</a></li>
+                <li><a>Terms of Service</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>About</a></li>
             </ul>
         </div>
 	</div>
