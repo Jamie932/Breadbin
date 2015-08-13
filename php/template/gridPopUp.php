@@ -5,7 +5,7 @@
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
             </div>
             <div class="gridBoxes 1">
-                <center><i class="fa fa-cutlery" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i>
+                <center><i class="fa fa-cutlery" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i><br>
                 Recipe</center>
             </div>
             <div class="gridBoxes 2">
