@@ -11,6 +11,10 @@
     <script src="js/vendor/jquery.cookie.js"></script>
 </head>
 <body>
+    <div id="mainLogo">
+        <img src="img/logo.png">   
+    </div>
+
     <div id="mid" style="height:230px;">
 		<div class="login">
 			<div id="header">We're sorry!</div>
