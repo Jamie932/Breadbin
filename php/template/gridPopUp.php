@@ -6,6 +6,8 @@
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         $randUser = $stmt->fetchAll();
+
+        $currentID = $_SESSION['user']['id'];
         
         $query = "SELECT * FROM user_settings WHERE user_id = :id"; 
         $query_params = array(':id' => $_SESSION['user']['id']); 
@@ -32,19 +34,15 @@
         }
 ?>
 
-                    <script>
-                        console.log(<? echo json_encode($randUser['id']); ?>);
-                    </script>
-
 <div id="gridBox">
         <div class="innerGrid">
         <div class="popupTitleTest" style="margin: -1px;">
             <div id="leftUserImg">
                 <?php 
-                    if (!file_exists('img/avatars/' . $randUser['id'] . '/avatar.jpg')) {
+                    if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $randUser['id'] . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                 ?>
             </div>
