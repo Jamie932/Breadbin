@@ -4,8 +4,10 @@
                     <div id="leftTitle">Your post grid</div>
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
             </div>
-            <div class="gridBoxes 1"></div>
-		  <div class="gridBoxes 2">
+            <div class="gridBoxes 1">
+                <i class="fa fa-cutlery" style="font-size: 8.2em; text-align: center; margin-left: 9px;"></i>
+            </div>
+            <div class="gridBoxes 2">
             <i class="fa fa-video-camera" style="font-size: 8.2em; text-align: center; margin-left: 9px;"></i>
             <center>Video</center>
           </div>  
