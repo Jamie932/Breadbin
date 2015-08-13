@@ -53,14 +53,10 @@
 					<input type="password" name="reg_password" placeholder="Password" class="regUserPass textField" required/>
 					<input type="password" name="reg_confirmPassword" placeholder="Confirm Password" class="regUserConfirm textField" required/>
 				
-<<<<<<< HEAD
-					<input type="submit" class="btn btn-info" value="Register" id="submit"/>					
-=======
 					<input type="submit" class="btn btn-info" value="Submit" id="submit"/>	
 					<div style="font-size:0.65em; color: #7E7E7E;">
 						<p>By pressing submit you agree to our terms of service.</p> 			
-					</div>				
->>>>>>> origin/master
+					</div>
 				</form>
 			</div>
 		</div>
