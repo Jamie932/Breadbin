@@ -1,6 +1,9 @@
 <div id="gridBox">
         <div class="innerGrid">
         <div class="popupTitleTest" style="margin: -1px;">
+            <div id="leftUserImg">
+                <img src="../../img/profile2.png" height="20px;">
+            </div>
                     <div id="rightTitleRec"><i class="fa fa-times" style="color: black;"></i></div>
         </div>
             <div class="gridBoxes 1">
