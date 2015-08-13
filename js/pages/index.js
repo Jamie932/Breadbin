@@ -123,8 +123,14 @@ $(document).ready(function(){
 						encode      : true
 					});
 
-					$(".register").fadeOut('normal', function(){
+					$(".active").fadeOut('normal', function(){
+						$(".active").removeClass('active');
+						$("#mid").removeClass('tall');
+						
 						$(".verify").fadeIn('normal');
+						$(".verify").addClass('active');
+			
+						clearErrors();
 						$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Once you\'ve verified, please <a class="loginBtn">login</a>') }).animate({'opacity': 1}, 400);
 					 });
 				}
