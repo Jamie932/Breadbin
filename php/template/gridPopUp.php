@@ -6,11 +6,11 @@
             </div>
             <div class="gridBoxes 1"></div>
 		  <div class="gridBoxes 2">
-              <span class="fa-stack fa-lg">
-                  <i class="fa fa-square-o fa-stack-2x" style="font-size: 200px;"></i>
-                  <i class="fa fa-video-camera" style="font-size: 120px;"></i>
+                <span class="fa-stack fa-lg" style="font-size: 4.7em">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-camera fa-stack-1x"></i>
                 </span>
-              </div>  
+            </div>  
 		  <div class="gridBoxes 3"></div>
 		  <div class="gridBoxes 4"></div>
 		  <div class="gridBoxes 5"></div>

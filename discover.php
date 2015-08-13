@@ -81,7 +81,7 @@
         <div id="main">
             <?php
             /* userid <> :id AND */ 
-			$query = "SELECT * FROM posts WHERE  userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+			$query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 
 			if (!empty($_GET)) { //All
 				if ($_GET['f'] == 1) { //Staff Recommended

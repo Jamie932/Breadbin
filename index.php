@@ -116,6 +116,10 @@
 	
 	<div class="dockBelow">
 		Don't have an account? <a class="registerBtn">Sign up</a>
-	</div>	
+	</div>
+        
+    <footer>
+        <p style="float: right;">BreadBin 2016</p>
+    </footer>
 </body>
 </html>
