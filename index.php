@@ -29,7 +29,7 @@
     </div>
         
     <div id="mid">
-		<div class="login">
+		<div class="login active">
 			<div id="header">Log in</div>
 			
 			<div class="loginForm">
@@ -116,10 +116,6 @@
 	
 	<div class="dockBelow">
 		Don't have an account? <a class="registerBtn">Sign up</a>
-	</div>
-        
-    <footer>
-        <p style="float: right;">BreadBin 2016</p>
-    </footer>
+	</div>	
 </body>
 </html>

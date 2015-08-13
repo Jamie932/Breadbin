@@ -15,7 +15,7 @@ $(document).ready(function(){
 			clearErrors();
 		});
 	   
-		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Already have an account? <a class="loginBtn">Login</a>.') }).animate({'opacity': 1}, 400);
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Already have an account? <a class="loginBtn">Login</a>') }).animate({'opacity': 1}, 400);
    });
         
    $(document).on('click','.loginBtn', function() {
@@ -29,7 +29,7 @@ $(document).ready(function(){
 			clearErrors();
 		});
 		
-		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Don\'t have an account? <a class="registerBtn">Sign up</a>.') }).animate({'opacity': 1}, 400);
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Don\'t have an account? <a class="registerBtn">Sign up</a>') }).animate({'opacity': 1}, 400);
    });
    
    $(document).on('click','.termsBtn', function() {
@@ -43,7 +43,7 @@ $(document).ready(function(){
 			clearErrors();
 		});
 		
-		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('<a class="loginBtn">Login</a> or <a class="registerBtn">Sign up</a>.') }).animate({'opacity': 1}, 400);
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('<a class="loginBtn">Login</a> or <a class="registerBtn">Sign up</a>') }).animate({'opacity': 1}, 400);
    });
    
     $(document).on('click','.privacyBtn', function() {
@@ -57,7 +57,7 @@ $(document).ready(function(){
 			clearErrors();
 		});
 		
-		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('<a class="loginBtn">Login</a> or <a class="registerBtn">Sign up</a>.') }).animate({'opacity': 1}, 400);
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('<a class="loginBtn">Login</a> or <a class="registerBtn">Sign up</a>') }).animate({'opacity': 1}, 400);
    });
    
     $(document).on('click','.aboutBtn', function() {
@@ -71,7 +71,7 @@ $(document).ready(function(){
 			clearErrors();
 		});
 		
-		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('<a class="loginBtn">Login</a> or <a class="registerBtn">Sign up</a>.') }).animate({'opacity': 1}, 400);
+		$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('<a class="loginBtn">Login</a> or <a class="registerBtn">Sign up</a>') }).animate({'opacity': 1}, 400);
    });
     
     $('#regForm').submit(function(event) {
@@ -125,7 +125,7 @@ $(document).ready(function(){
 
 					$(".register").fadeOut('normal', function(){
 						$(".verify").fadeIn('normal');
-						$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Once you\'ve verified, please <a class="loginBtn">login</a>.') }).animate({'opacity': 1}, 400);
+						$('.dockBelow').animate({'opacity': 0}, 400, function () { $('.dockBelow').html('Once you\'ve verified, please <a class="loginBtn">login</a>') }).animate({'opacity': 1}, 400);
 					 });
 				}
 			}

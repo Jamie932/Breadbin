@@ -1,8 +1,8 @@
 #header { 
 	text-align: center; 
 	font-size:1.8em; 
-	margin-top: 10px;
-	margin-bottom: 30px;
+	padding-top: 25px;
+	padding-bottom: 30px;
 	color: #616161;
 }
 
@@ -54,10 +54,9 @@ hr { margin-bottom: 30px }
     margin: auto;
     margin-bottom: 3%;
     margin-top: 30px;
-
+	
 	padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px;
+	padding-right: 15px;
 	
     border: 1px solid rgba(100, 100, 100, 0.15);
 	box-sizing: border-box;
@@ -79,7 +78,7 @@ a {
 	border-bottom: 1px solid #BBB;
 }
 
-#mid .register, #mid .verify, #mid .terms, #mid .privacy, #mid .about { display: none }
+#mid .register, #mid .verify, #mid .terms, #mid .privacy, #mid .about { display: none; }
 
 form { text-align: center }
 
