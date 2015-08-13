@@ -20,7 +20,7 @@
                 $colour = 'rgba(0, 197, 30, 0.2)';
             } else if ($row['colour'] == 4) {
                 $colour = 'rgba(236, 88, 88, 0.2)';
-            } else if ($row['colour'] == 5) {
+            } else if ($row['colour'] == 5) { 
                 $colour = 'rgba(140, 104, 216, 0.2)';
             } else if ($row['colour'] == 6) {
                 $colour = 'rgba(204, 122, 176, 0.2)';
