@@ -2,7 +2,7 @@
         <div class="innerGrid">
         <div class="popupTitleTest" style="margin: -1px;">
             <div id="leftUserImg">
-                <img src="../../img/profile2.png" height="20px;">
+                <img style="border-radius:50%; border: 1px solid rgba(0, 197, 30, 0.2)" src="../../img/profile2.png" height="70px;">
             </div>
                     <div id="rightTitleRec"><i class="fa fa-times" style="color: black;"></i></div>
         </div>
