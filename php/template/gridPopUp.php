@@ -48,6 +48,9 @@
             </div>
                     <div id="rightTitleRec"><i class="fa fa-times" style="color: black;"></i></div>
         </div>
+        <div id="userPostsCount">
+            Recipes - 102
+        </div>
             <div class="gridBoxes 1">
                 <center><i class="fa fa-cutlery" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i><br>
                 Recipe</center>
@@ -67,8 +70,16 @@
     
         <div class="innerVideo" style="display: none;">
             <div class="popupTitle" style="margin: -1px;">
-                    <div id="leftTitle">Post a video</div>
-                    <div id="rightTitleBack" class="vidBack"><i class="fa fa-arrow-right"></i></div> 
+                <div id="leftUserImg">
+                <?php 
+                    if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
+                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    } else { 
+                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    }
+                ?>
+                </div>
+                <div id="rightTitleBack" class="vidBack"><i class="fa fa-arrow-right"></i></div> 
             </div>
             <form action="php/postVideo.php" method="POST" id="postVideo" enctype="multipart/form-data">
                 <input type="text" id="videoLink" name="videoLink" placeholder="Video link" class="videoLink" autocomplete="off"/>
