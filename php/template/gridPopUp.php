@@ -32,6 +32,10 @@
         }
 ?>
 
+                    <script>
+                        console.log(<? echo json_encode($randUser['id']); ?>);
+                    </script>
+
 <div id="gridBox">
         <div class="innerGrid">
         <div class="popupTitleTest" style="margin: -1px;">
