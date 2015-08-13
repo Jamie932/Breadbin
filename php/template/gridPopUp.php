@@ -5,11 +5,11 @@
                     <div id="rightTitleRec"><i class="fa fa-times"></i></div>
             </div>
             <div class="gridBoxes 1">
-                <i class="fa fa-cutlery" style="font-size: 8.2em; text-align: center; margin-left: 23px;"></i>
+                <i class="fa fa-cutlery" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i>
                 <center>Recipe</center>
             </div>
             <div class="gridBoxes 2">
-            <i class="fa fa-video-camera" style="font-size: 8.2em; text-align: center; margin-left: 9px;"></i>
+            <i class="fa fa-video-camera" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i>
             <center>Video</center>
           </div>  
 		  <div class="gridBoxes 3"></div>
