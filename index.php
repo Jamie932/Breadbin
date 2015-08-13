@@ -107,9 +107,9 @@
     
         <div class="dockBottom">
             <ul>
-                <li><a>Terms of Service</a></li>
-                <li><a>Privacy Policy</a></li>
-                <li><a>About</a></li>
+                <li><a class="termsBtn">Terms of Service</a></li>
+                <li><a class="privacyBtn">Privacy Policy</a></li>
+                <li><a class="aboutBtn">About</a></li>
             </ul>
         </div>
 	</div>
