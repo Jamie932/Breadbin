@@ -31,7 +31,7 @@ function clearErrors() {
 }
 
 $(document).ready(function() {
-    $('.errorClose').click(function() {
+    $('#errorClose').click(function() {
 		clearErrors()
     });
 })  
