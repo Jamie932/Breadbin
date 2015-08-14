@@ -213,7 +213,7 @@ p.report {
     transition: all .5s ease;
     background-color: #F8F8F8;
     box-sizing: border-box;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 .uploadRest {
