@@ -38,19 +38,16 @@
             foreach ($randUser as $row) {
                 $user = $row['id'];
                 $usersname = $row['username'];
+				
+				echo '<div class="usericoRecom">';
 
-                echo '<div class="userRecom">';
-                    echo '<div class="usericoRecom">';
-                
-                    if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
-                        echo '<img src="img/profile2.png" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
-                    } else { 
-                        echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
-                    }
-                        
-                    echo '</div>';
-                    echo '<div class="usernameRecom"><a href="profile.php?id=' . $user . '">' . $usersname . '</a></div>';
-                echo '</div>';
+				if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
+					echo '<img src="img/profile2.png" height="40px" width="40px"';
+				} else { 
+					echo '<img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="40px" width="40px"';
+				}
+
+				echo '</div>';
             }
             echo '</div>';
             

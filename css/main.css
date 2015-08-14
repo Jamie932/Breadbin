@@ -247,7 +247,10 @@ h5 {
 	line-height: 54px;
 }
 
-.usericoRecom { display: inline-block; }
+.usericoRecom { 
+	display: inline-block; 
+	margin: 5px;
+}
 
 .boxTitle {
 	margin-bottom: 7px;
