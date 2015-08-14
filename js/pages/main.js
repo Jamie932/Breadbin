@@ -37,7 +37,7 @@ $(document).ready(function(){
 		this.setAttribute('style', 'height:' + (this.scrollHeight + 2) + 'px;overflow-y:hidden;');
 	}).on('input', function () {
 	  	this.style.height = 'auto';
-	  	this.style.height = (this.scrollHeight) + 'px';
+	  	this.style.height = (this.scrollHeight + 2) + 'px';
 	});
 	
    $('#postForm').submit(function(event) {
