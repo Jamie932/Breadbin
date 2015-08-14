@@ -45,13 +45,13 @@
 
         } else {
             if ($_SERVER['SCRIPT_NAME'] != "/index.php") {
-                header("Location: index.php");
+                header("Location: index.php?ref=expired");
             }
         }
 
     } else {
         if ($_SERVER['SCRIPT_NAME'] != "/index.php") {
-            header("Location: index.php");
+            header("Location: index.php?ref=redirect");
         }
     }
 

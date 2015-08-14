@@ -3,7 +3,27 @@ function resetForm() {
     $('small').remove();
 }
 
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+
+    for (var i = 0; i < sURLVariables.length; i++) {   
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+
 $(document).ready(function(){
+	if (getUrlParameter('ref')) {
+		if (getUrlParameter('ref') == 'redirect') {
+			createError("Sorry the requested content is not available to view without being logged in.");
+		} else if (getUrlParameter('ref') == 'expired') {
+			createError("Please re-login as your session has expired.");
+		}
+	}
+	
    $(document).on('click','.registerBtn', function() {
 		$(".active").fadeOut('normal', function(){
 			$("#mid").addClass('tall');
