@@ -107,7 +107,7 @@
             <div id="uploadBox" class="sideBox">
                 <form action="php/post.php" method="POST" id="postForm" enctype="multipart/form-data">
                     <div class="textarea">
-                        <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Make a slice..." rows="6"></textarea>
+                        <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Make a slice..." rows="2"></textarea>
                     </div>
                     
                     <div class="uploadRest">
