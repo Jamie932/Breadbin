@@ -74,7 +74,7 @@
                 <a <?php echo $_GET['f'] == 4 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=4">Just Text</a>
             </li>
             <li class="cats">
-                <a <?php echo $_GET['f'] == 5 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=5">Users</a>
+                <a <?php echo $_GET['f'] == 5 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=5">People</a>
             </li>
 		</ul>
     </div>
