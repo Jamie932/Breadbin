@@ -29,3 +29,9 @@ function clearErrors() {
         $('#center').animate({paddingTop: "0px"}, 500);
     }    
 }
+
+$(document).ready(function() {
+    $('.errorClose').click(function() {
+		clearErrors()
+    });
+})  
