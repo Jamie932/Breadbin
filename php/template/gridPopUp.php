@@ -1,16 +1,64 @@
+<?php 
+    require("php/common.php");
+
+        $query = "SELECT * FROM users WHERE id = :id"; 
+        $query_params = array(':id' => $_SESSION['user']['id']); 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
+        $randUser = $stmt->fetchAll();
+
+        $currentID = $_SESSION['user']['id'];
+        
+        $query = "SELECT * FROM user_settings WHERE user_id = :id"; 
+        $query_params = array(':id' => $_SESSION['user']['id']); 
+        $stmt = $db->prepare($query); 
+        $result = $stmt->execute($query_params); 
+        $row = $stmt->fetch();
+
+        if($row){ 
+            if ($row['colour'] == 2) {
+                $colour = 'rgba(102, 153, 255, 0.2)';
+            } else if ($row['colour'] == 3) {
+                $colour = 'rgba(0, 197, 30, 0.2)';
+            } else if ($row['colour'] == 4) {
+                $colour = 'rgba(236, 88, 88, 0.2)';
+            } else if ($row['colour'] == 5) { 
+                $colour = 'rgba(140, 104, 216, 0.2)';
+            } else if ($row['colour'] == 6) {
+                $colour = 'rgba(204, 122, 176, 0.2)';
+			} else if ($row['colour'] == 7) { 
+                $colour = 'rgba(54, 54, 54, 0.2)';
+			} else {
+                $colour = 'rgba(246, 166, 40, 0.2)';
+            }
+        }
+?>
+
 <div id="gridBox">
         <div class="innerGrid">
-        <div class="popupTitle" style="margin: -1px;">
-                    <div id="leftTitle">Your post grid</div>
-                    <div id="rightTitleRec"><i class="fa fa-times"></i></div>
+        <div class="popupTitleTest" style="margin: -1px;">
+            <div id="leftUserImg">
+                <?php 
+                    if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
+                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    } else { 
+                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    }
+                ?>
             </div>
-            <div class="gridBoxes 1"></div>
-		  <div class="gridBoxes 2">
-                <span class="fa-stack fa-lg" style="font-size: 4.7em">
-                  <i class="fa fa-square-o fa-stack-2x"></i>
-                    <i class="fa fa-camera fa-stack-1x"></i>
-                </span>
-            </div>  
+                    <div id="rightTitleRec"><i class="fa fa-times" style="color: black;"></i></div>
+        </div>
+        <div id="userPostsCount">
+            Recipes - 102
+        </div>
+            <div class="gridBoxes 1">
+                <center><i class="fa fa-cutlery" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i><br>
+                Recipe</center>
+            </div>
+            <div class="gridBoxes 2">
+            <center><i class="fa fa-video-camera" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i><br>
+            Video</center>
+          </div>  
 		  <div class="gridBoxes 3"></div>
 		  <div class="gridBoxes 4"></div>
 		  <div class="gridBoxes 5"></div>
@@ -22,8 +70,16 @@
     
         <div class="innerVideo" style="display: none;">
             <div class="popupTitle" style="margin: -1px;">
-                    <div id="leftTitle">Post a video</div>
-                    <div id="rightTitleBack" class="vidBack"><i class="fa fa-arrow-right"></i></div> 
+                <div id="leftUserImg">
+                <?php 
+                    if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
+                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    } else { 
+                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    }
+                ?>
+                </div>
+                <div id="rightTitleBack" class="vidBack"><i class="fa fa-arrow-right"></i></div> 
             </div>
             <form action="php/postVideo.php" method="POST" id="postVideo" enctype="multipart/form-data">
                 <input type="text" id="videoLink" name="videoLink" placeholder="Video link" class="videoLink" autocomplete="off"/>

@@ -74,13 +74,30 @@ p.report {
 #heart {
 	z-index: 2; 
 	position: absolute; 
-	margin-top: -13px; 
+	margin-top: -16px; 
 	margin-left: -24px;
+	font-size: 2.5em;
+}
+
+#leftUserImg {
+	z-index: 10; 
+	position: absolute; 
+	margin-top: -37px; 
+	margin-left: -94px;
 	font-size: 2.5em;
 }
 
 .favouriteText {
 	text-indent: 1.5em;
+}
+
+#userPostsCount {
+    display: inline;
+    float: left;
+    z-index: 11;
+    margin-left: -104px; 
+    margin-top: 11px;
+    color: white;
 }
 
 /* ===[ Image Formatting ]=== */
@@ -301,7 +318,7 @@ ul#images { list-style: none; margin: 0px; }
 #gridBox {
     margin: auto;
     position: absolute;
-    top: 100; left: 0; right: 0;
+    top: 93px; left: 0; right: 0;
     border: 1px solid #DDD;
     width: 500px;
     height: 526px;
@@ -317,11 +334,11 @@ ul#images { list-style: none; margin: 0px; }
 .gridBoxes {
     width: 150px;
     height: 150px;
-    border: 1px black solid;
     display: inline;
     float: left;
     margin: 7px;
     cursor: pointer; 
+    background-color: rgba(248, 248, 248, 0.4);
 }
 
 .tall { height: auto !important }
