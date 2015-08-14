@@ -67,25 +67,28 @@ p.report {
 }
 
 .fa-heart-o, .fa-heart, .fa-trash-o {
-    cursor: pointer;   
+    cursor: pointer;  
+    cursor:
 }
 
 #heart {
 	z-index: 2; 
 	position: absolute; 
-	margin-top: -16px; 
+	margin-top: -19px; 
 	margin-left: -24px;
 	font-size: 2.5em;
 }
 
 #leftUserImg {
 	position: absolute; 
-	margin-left: -59px;
+	margin-left: -58px;
 	font-size: 2.5em;
+    z-index: 3;
+    margin-top: 5px;
 }
 
 .favouriteText {
-	text-indent: 1.5em;
+	text-indent: 1.1em;
 }
 
 #userPostsCount {
@@ -210,7 +213,7 @@ p.report {
     transition: all .5s ease;
     background-color: #F8F8F8;
     box-sizing: border-box;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 .uploadRest {

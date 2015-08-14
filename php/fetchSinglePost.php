@@ -1,20 +1,12 @@
 <?php
-    require("common.php"); 
-	require("vendor/timeago.php");
-    
-    $postsPerPage = 10;
-    $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
-    $position = $groupNumber * $postsPerPage;
+    require("php/common.php");
+    require("vendor/timeago.php");
 
-    $query= "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR posts.userid = :userId GROUP BY posts.id ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
-    $query_params = array(':userId' => $_SESSION['user']['id']);
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute($query_params); 
-	$posts = $stmt->fetchAll();
-
-    if (!$posts && $_POST['groupNumber']) {
-        exit();
-    }
+    $query        = "SELECT * FROM posts WHERE id = :id";
+    $query_params = array(':id' => intval($_GET['id']));
+    $stmt   = $db->prepare($query);
+    $result = $stmt->execute($query_params);
+    $posts    = $stmt->fetch();
 
     $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
@@ -42,12 +34,10 @@
                 echo '<p class="hide">Hide</p>';
             echo '</div>';  
         }
-        
-        foreach ($posts as $row) {
             
             
             $query = "SELECT * FROM users WHERE id = :id"; 
-            $query_params = array(':id' => $row['userid']); 
+            $query_params = array(':id' => $posts['userid']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
 
@@ -55,36 +45,36 @@
             $username = 'Unknown';
 
             $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
-            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
+            $query_params = array(':postId' => $posts['id'], ':userId' => $_SESSION['user']['id']); 
 
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params); 
             $ifBurnt = $stmt->rowCount();
 
             $query = "SELECT * FROM post_toasts WHERE postid = :postId AND userid = :userId"; 
-            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
+            $query_params = array(':postId' => $posts['id'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params); 
             $ifToasted = $stmt->rowCount();
 
-            $totalToasts = $row['toasts'] - $row['burns'];
+            $totalToasts = $posts['toasts'] - $posts['burns'];
 
             if($userrow){ 
                 $username = $userrow['username'];
             } else {
                 $query = "DELETE FROM posts WHERE userid = :userid"; 
-                $query_params = array(':userid' => $row['userid']); 
+                $query_params = array(':userid' => $posts['userid']); 
 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
             }
 
-            if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-                $img = (basename(getcwd()) == "php") ? '../' . $row['image'] : $row['image'];
+            if (($posts['type'] == 'image') || ($posts['type'] == 'imagetext')) {
+                $img = (basename(getcwd()) == "php") ? '../' . $posts['image'] : $posts['image'];
                 
                 /*if (!file_exists($img)) {
                     $query = "DELETE FROM posts WHERE id = :id"; 
-                    $query_params = array(':id' => $row['id']); 
+                    $query_params = array(':id' => $posts['id']); 
 
                     $stmt = $db->prepare($query); 
                     $result = $stmt->execute($query_params); 
@@ -102,8 +92,8 @@
                 }
             }
 
-            if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
-                if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
+            if (($posts['type'] == 'text') || ($posts['type'] == 'imagetext')) {
+                if (preg_match_all('/(?<!\w)@(\w+)/', $posts['text'], $matches)) {
                     $users = $matches[1];
 
                     foreach ($users as $user) {
@@ -115,7 +105,7 @@
                         $userFound = $stmt->fetch(); 
 
                         if ($userFound) {
-                            $row['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $user . '</a>', $row['text']);
+                            $posts['text'] = str_replace('@' .$user, '<a href="profile.php?id=' .$userFound['id'] . '">' . $user . '</a>', $posts['text']);
                         }
 
                     }
@@ -124,64 +114,64 @@
 
             echo '<div id="post">';
 
-            if ($row['type'] == "imagetext") {
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+            if ($posts['type'] == "imagetext") {
+                echo '<div id="contentPost" class="post-' . $posts['id'] . '">';
                 echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    if (!file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg')) {
+                    echo '<a href="profile.php?id=' . $posts['userid'] . '">';
+                    if (!file_exists('img/avatars/' . $posts['userid'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $posts['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
-                echo '<img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
-            } else if ($row['type'] == "image") {
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo $posts['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
+                echo '<img src="' . $img . '"><div class="imgtext">' . $posts['text'] . '</div></div>';
+            } else if ($posts['type'] == "image") {
+                echo '<div id="contentPost" class="post-' . $posts['id'] . '">';
                 echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    if (!file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg')) {
+                    echo '<a href="profile.php?id=' . $posts['userid'] . '">';
+                    if (!file_exists('img/avatars/' . $posts['userid'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $posts['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
+                echo $posts['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="' . $img . '"></div>';
-            } else if ($row['type'] == "text") {
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+            } else if ($posts['type'] == "text") {
+                echo '<div id="contentPost" class="post-' . $posts['id'] . '">';
                 echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    if (!file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg')) {
+                    echo '<a href="profile.php?id=' . $posts['userid'] . '">';
+                    if (!file_exists('img/avatars/' . $posts['userid'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $posts['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
-                echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
-            } else if ($row['type'] == "recipe") {
+                echo $posts['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
+                echo '<p style="margin: 0;">' . $posts['text'] . '</p></div>';
+            } else if ($posts['type'] == "recipe") {
                 $instrucNo = 0;
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="contentPost" class="post-' . $posts['id'] . '">';
                 echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    if (!file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg')) {
+                    echo '<a href="profile.php?id=' . $posts['userid'] . '">';
+                    if (!file_exists('img/avatars/' . $posts['userid'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $posts['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
+                echo $posts['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<div class="recTitle">';
-                echo '<h3 class="recTit">' .$row['title']. '</h3>';
+                echo '<h3 class="recTit">' .$posts['title']. '</h3>';
                 echo '</div>';
                 echo '<div class="timeServe">';
                 
-                $prepArray = json_decode($row['prepTime']);
+                $prepArray = json_decode($posts['prepTime']);
                 
                 $prepTimeNo = 0;
                 $prepTot = count($prepArray);
@@ -209,7 +199,7 @@
                 }
                 echo '</p>';
                 
-                $cookArray = json_decode($row['cookTime']);
+                $cookArray = json_decode($posts['cookTime']);
                 
                 $cookTimeNo = 0;
                 
@@ -234,13 +224,13 @@
                 }
                 echo '</p>';
                 
-                echo '<p class="times"><b>Serves:</b> '. $row['serves'] . '</p>';
+                echo '<p class="times"><b>Serves:</b> '. $posts['serves'] . '</p>';
                 
                 echo '</div>';
                 echo '<div class="ingredientDis">';
                 echo '<h6>Ingredients</h6>';
                 
-                $ingredArray = json_decode($row['ingred']);
+                $ingredArray = json_decode($posts['ingred']);
                 
                 foreach ($ingredArray as $value) { 
                     echo '<p class="ingredList">' .$value. '</p>';
@@ -252,7 +242,7 @@
                 echo '<div class="instructionList">';
                 echo '<h6>Instructions</h6>';
                 
-                $instrucArray = json_decode($row['text']);
+                $instrucArray = json_decode($posts['text']);
                 
                 echo '';
                 
@@ -265,41 +255,41 @@
                 echo '</div>';
                 echo '</div>';
             } else {
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="contentPost" class="post-' . $posts['id'] . '">';
                 echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    if (!file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg')) {
+                    echo '<a href="profile.php?id=' . $posts['userid'] . '">';
+                    if (!file_exists('img/avatars/' . $posts['userid'] . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/avatars/' . $posts['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostImage  imgNoPadding favouriteImg">' : '<div class="contentPostVideo imgNoPadding">';
-                echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="640px" data-height="361px"></div></div>'; 
+                echo $posts['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div><div class="contentPostImage  imgNoPadding favouriteImg">' : '<div class="contentPostVideo imgNoPadding">';
+                echo '<div class="js-lazyYT" data-youtube-id="'.$posts['text'].'" data-width="640px" data-height="361px"></div></div>'; 
                 
             }
                 echo '<div id="contentInfoText">';
-                    echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
+                    echo '<div class="left"><a href="profile.php?id=' . $posts['userid'] . '">' . $username . '</a></div>';
                     echo '<div class="right">';
 
-                    if (($_SESSION['user']['rank'] != "user") && ($row['userid'] != $_SESSION['user']['id'])) {
-                        echo '<div class="timeago" style="padding-right: 17px;"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
-                        echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i>';
-						echo ($row['favourite'] ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>');
+                    if (($_SESSION['user']['rank'] != "user") && ($posts['userid'] != $_SESSION['user']['id'])) {
+                        echo '<div class="timeago" style="padding-right: 17px;"><a href="post.php?id=' . $posts['id'] . '">' . timeAgoInWords($posts['date']) . '</a></div>';
+                        echo '<div class="admin post-' . $posts['id'] . '"><i class="fa fa-trash-o"></i>';
+						echo ($posts['favourite'] ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>');
 						echo '</div>';
                     } else {
-                        echo '<div class="timeago"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
+                        echo '<div class="timeago"><a href="post.php?id=' . $posts['id'] . '">' . timeAgoInWords($posts['date']) . '</a></div>';
                     }
                     echo '</div>';
                 echo '</div>';
             echo '</div>';
 
-            if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p>';
+            if ($_SESSION['user']['id'] == $posts['userid']) {
+                echo '<div id="contentLike" class="post-' . $posts['id'] . '"><p class="delete">Delete</p>';
                 echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
             } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
+                echo '<div id="contentLike" class="post-' . $posts['id'] . '">';
                 if ($ifToasted == 0) {
                     echo '<p class="toast">Toast</p>';
                 } else {
@@ -314,6 +304,5 @@
                 echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
             }             
             echo '</div>';
-        }
     }
 ?>
