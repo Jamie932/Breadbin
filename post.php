@@ -38,8 +38,9 @@
         
     <div id="break"></div>
         
-    
+    <div id="content">
     <div id="center">
+        
 <?php
     $query        = "SELECT * FROM posts WHERE id = :id";
     $query_params = array(':id' => intval($_GET['id']));
@@ -345,10 +346,6 @@
             echo '</div>';
     }
     ?>
-        
-        <div id="content">
-            <ul id="images">
-            </ul>
         </div>
         
         <div id="sidebar">
