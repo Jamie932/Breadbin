@@ -37,11 +37,9 @@
     <?php require('php/template/popup.php');?>
         
     <div id="break"></div>
-            
-        <div id="content">
-            <ul id="images">
-                
-                <div id="center">
+        
+    
+    <div id="center">
 <?php
     $query        = "SELECT * FROM posts WHERE id = :id";
     $query_params = array(':id' => intval($_GET['id']));
@@ -309,11 +307,13 @@
                 echo '<div class="js-lazyYT" data-youtube-id="'.$posts['text'].'" data-width="640px" data-height="361px"></div></div>'; 
                 
             }
-            
+             
             echo '</div>';
     }
     ?>
-                
+        
+        <div id="content">
+            <ul id="images">
             </ul>
         </div>
         
