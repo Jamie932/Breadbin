@@ -19,10 +19,8 @@ $(document).ready(function(){
 	if (getUrlParameter('ref')) {
 		if (getUrlParameter('ref') == 'redirect') {
 			createError("Sorry the requested content is not available to view without being logged in.");
-			window.location.href = window.location.href.split('?')[0];
 		} else if (getUrlParameter('ref') == 'expired') {
 			createError("Please re-login as your session has expired.");
-			window.location.href = window.location.href.split('?')[0];
 		}
 	}
 	
