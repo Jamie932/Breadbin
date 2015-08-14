@@ -140,7 +140,7 @@
                         echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                 }
                 echo '</div>';
-                
+                 
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
