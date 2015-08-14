@@ -1,5 +1,6 @@
 <?php
     require("php/common.php");
+    require("vendor/timeago.php");
 
     $query        = "SELECT * FROM posts WHERE id = :id";
     $query_params = array(':id' => intval($_GET['id']));
