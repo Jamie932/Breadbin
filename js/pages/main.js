@@ -45,7 +45,7 @@ else {
 }
 
 $(document).ready(function(){
-    var text = $('#uploadText');
+    var text = document.getElementById('uploadText');
 
     function resize () {
         text.style.height = 'auto';
