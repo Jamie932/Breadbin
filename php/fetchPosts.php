@@ -134,11 +134,12 @@
                 echo '<img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="leftUserImg">';
-                if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
-                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                
+                    if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
+                        echo '<img src="img/profile2.png" height="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
-                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
-                }
+                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    }
                 echo '</div>';
                  
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
