@@ -74,7 +74,7 @@
             echo '</div>';  
         }
         
-        foreach ($posts as $row) {
+        for ($posts as $row) {
             
             
             $query = "SELECT * FROM users WHERE id = :id"; 
