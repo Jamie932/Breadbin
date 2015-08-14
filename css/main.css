@@ -80,10 +80,8 @@ p.report {
 }
 
 #leftUserImg {
-	z-index: 10; 
 	position: absolute; 
-	margin-top: -37px; 
-	margin-left: -94px;
+	margin-left: -81px;
 	font-size: 2.5em;
 }
 
