@@ -135,7 +135,7 @@
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: auto;"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -148,7 +148,7 @@
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: auto;"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -161,7 +161,7 @@
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: auto;"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
             } else if ($row['type'] == "recipe") {
                 $instrucNo = 0;
@@ -175,7 +175,7 @@
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: auto;"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<div class="recTitle">';
                 echo '<h3 class="recTit">' .$row['title']. '</h3>';
                 echo '</div>';
@@ -275,7 +275,7 @@
                     }
                     echo '</a>';
                 echo '</div>';
-                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage imgNoPadding favouriteImg">' : '<div class="contentPostVideo imgNoPadding">';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: auto;"></i></div><div class="contentPostImage imgNoPadding favouriteImg">' : '<div class="contentPostVideo imgNoPadding">';
                 echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="640px" data-height="361px"></div></div>';
                 
             }
