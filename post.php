@@ -1,13 +1,6 @@
 <?php 
     require("php/common.php");
     require("php/checkLogin.php");
-
-    $query        = "SELECT * FROM posts WHERE id = :id";
-    $query_params = array(':id' => intval($_GET['id']));
-    $stmt   = $db->prepare($query);
-    $result = $stmt->execute($query_params);
-    $row    = $stmt->fetch();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,7 +41,13 @@
     
     <div id="center">
 <?php
-        $query= "SELECT * FROM following WHERE follower_id = :userId"; 
+    $query        = "SELECT * FROM posts WHERE id = :id";
+    $query_params = array(':id' => intval($_GET['id']));
+    $stmt   = $db->prepare($query);
+    $result = $stmt->execute($query_params);
+    $posts    = $stmt->fetch();
+
+    $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
@@ -311,40 +310,7 @@
                 echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="640px" data-height="361px"></div></div>'; 
                 
             }
-                echo '<div id="contentInfoText">';
-                    echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
-                    echo '<div class="right">';
-
-                    if (($_SESSION['user']['rank'] != "user") && ($row['userid'] != $_SESSION['user']['id'])) {
-                        echo '<div class="timeago" style="padding-right: 17px;"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
-                        echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i>';
-						echo ($row['favourite'] ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>');
-						echo '</div>';
-                    } else {
-                        echo '<div class="timeago"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
-                    }
-                    echo '</div>';
-                echo '</div>';
-            echo '</div>';
-
-            if ($_SESSION['user']['id'] == $row['userid']) {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '"><p class="delete">Delete</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
-            } else {
-                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                if ($ifToasted == 0) {
-                    echo '<p class="toast">Toast</p>';
-                } else {
-                    echo '<p class="untoast">Toast</p>';
-                } 
-                if ($ifBurnt == 0) {
-                    echo '<p class="burn">Burn</p>';
-                } else {
-                    echo '<p class="unburn">Burn</p>';
-                }
-                echo '<p class="report">Report</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
-            }             
+            
             echo '</div>';
         }
     }
