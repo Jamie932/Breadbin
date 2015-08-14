@@ -186,7 +186,6 @@ p.report {
 #uploadText {
     resize: none;
     width: 280px;
-    height: 45px;
     font-size: 15px;
     padding: 5px;
     border: 1px solid rgba(97, 97, 97, 0.44);
@@ -198,13 +197,6 @@ p.report {
     background-color: #F8F8F8;
     box-sizing: border-box;
 	font-size: 0.9em;
-}
-
-#uploadText:focus { height: 120px }
-
-#uploadText::-moz-focus-inner {
-    border: 0;
-    padding: 0;
 }
 
 .uploadRest {
