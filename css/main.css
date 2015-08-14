@@ -81,8 +81,9 @@ p.report {
 
 #leftUserImg {
 	position: absolute; 
-	margin-left: -81px;
+	margin-left: -59px;
 	font-size: 2.5em;
+    margin-top: 4px;
 }
 
 .favouriteText {
