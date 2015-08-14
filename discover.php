@@ -73,7 +73,9 @@
             <li class="cats">
                 <a <?php echo $_GET['f'] == 4 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=4">Just Text</a>
             </li>
-            
+            <li class="cats">
+                <a <?php echo $_GET['f'] == 5 ? 'class="active"' : 'class="catLink"' ?> href="discover.php?f=5">Users</a>
+            </li>
 		</ul>
     </div>
         
@@ -93,6 +95,8 @@
 					$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 4) {
 					$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+				} else if ($_GET['f'] == 5) {
+					$query = "SELECT * FROM posts WHERE userid = :id ORDER BY RAND()";
 				}
 			} 
 
