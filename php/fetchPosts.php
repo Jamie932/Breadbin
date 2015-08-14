@@ -22,6 +22,8 @@
     $result = $stmt->execute($query_params); 
 	$following = $stmt->rowCount();
 
+    $currentID = $_SESSION['user']['id'];
+
     if ($following == 0 && !$posts) {
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
@@ -132,6 +134,13 @@
                 echo '<img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="leftUserImg">';
+                if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
+                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                    } else { 
+                        echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                }
+                echo '</div>';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
             } else if ($row['type'] == "recipe") {
