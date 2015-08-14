@@ -2,10 +2,6 @@
     require("php/common.php");
     require("php/checkLogin.php");
 
-    $query = 'SELECT * FROM posts'; 
-    $stmt = $db->prepare($query); 
-    $row = $stmt->fetch();
-
     $query        = "SELECT * FROM posts WHERE id = :id";
     $query_params = array(':id' => intval($_GET['id']));
     $stmt   = $db->prepare($query);
@@ -51,8 +47,38 @@
         
     
     <div id="center">
+<?php
+        $query= "SELECT * FROM following WHERE follower_id = :userId"; 
+    $query_params = array(':userId' => $_SESSION['user']['id']);
+    $stmt = $db->prepare($query); 
+    $result = $stmt->execute($query_params); 
+	$following = $stmt->rowCount();
+
+    $currentID = $_SESSION['user']['id'];
+
+    if ($following == 0 && !$posts) {
+        echo '<div id="contentPost">';
+            echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
+        echo '</div>';
+    } else if (!$posts) {
+        echo '<div id="contentPost">';
+            echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring toasters haven\'t posted anything.</center></div>';
+        echo '</div>';
+    } else {
+        if ($following == 0) {
+            echo '<div id="contentPostFollow">';
+                echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
+            echo '</div>';
+            
+            echo '<div id="contentLikeFollow">';
+                echo '<p class="hide">Hide</p>';
+            echo '</div>';  
+        }
         
-        $query = "SELECT * FROM users WHERE id = :id"; 
+        foreach ($posts as $row) {
+            
+            
+            $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
@@ -322,8 +348,7 @@
             echo '</div>';
         }
     }
-        
-        
+    ?>
         
         <div id="content">
             <ul id="images">
