@@ -33,7 +33,7 @@
         
         if ($randUser) {
             echo '<div id="recommendBox" class="sideBox">';
-            echo '<div class="boxTitle">Recommended toasters - <a href="discover.php?f=5" style="font-size: 10px;">See More</a></div>';
+            echo '<div class="boxTitle">Recommended toasters - <a href="discover.php?f=5">See More</a></div>';
             
             foreach ($randUser as $row) {
                 $user = $row['id'];
