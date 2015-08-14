@@ -73,9 +73,6 @@
                 echo '<p class="hide">Hide</p>';
             echo '</div>';  
         }
-        
-        for ($posts as $row) {
-            
             
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
@@ -312,7 +309,6 @@
             }
             
             echo '</div>';
-        }
     }
     ?>
         
