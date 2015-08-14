@@ -133,7 +133,6 @@
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="' . $img . '"></div>';
             } else if ($row['type'] == "text") {
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div id="leftUserImg">';
                 if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
                         echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
@@ -141,6 +140,8 @@
                         echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                 }
                 echo '</div>';
+                
+                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';
                 echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
             } else if ($row['type'] == "recipe") {
