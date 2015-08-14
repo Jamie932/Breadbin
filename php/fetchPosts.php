@@ -289,7 +289,7 @@
 						echo ($row['favourite'] ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>');
 						echo '</div>';
                     } else {
-                        echo '<div class="timeago">' . timeAgoInWords($row['date']) . '</div>';
+                        echo '<div class="timeago"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
                     }
                     echo '</div>';
                 echo '</div>';
