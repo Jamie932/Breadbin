@@ -27,14 +27,14 @@ p.report {
     z-index:2;
 }
 
-#contentPost a {
-    text-decoration: none;
-}
-
 .imgtext {
     margin-top: 20px;
     margin-bottom: 20px; 
 	font-size: 0.9em;
+}
+
+.imgtext a, .contentPostText a {
+	color: blue;
 }
 
 #contentInfoText {
@@ -54,13 +54,8 @@ p.report {
     height: 20px;
 }
 
-#contentInfoText .left a {
+#contentInfoText .left a, #contentInfoText .right a {
     color: blue;
-    text-decoration: none;	
-}
-
-#contentInfoText .right a {
-	color: black;
 }
 
 .timeago {
@@ -125,6 +120,7 @@ p.report {
     border-color: #DDD;
     border-style: solid;
     text-align: center;
+	text-decoration: none;
 }
 
 .contentPostImage img {
