@@ -718,6 +718,16 @@ span:after{
     transform:rotate(45deg);
 }
 
+#imageHoverLarge {
+    width: 100%;
+    height: 88px;
+}
+
+#theRest {
+    width:100%;
+    height: 20px;
+}
+
 
 /*
 @media screen and (max-width: 1125px) {
