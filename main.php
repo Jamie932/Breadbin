@@ -72,7 +72,7 @@
     </script>
     
     
-    <?php require('php/template/gridPopUp.php');?>
+    <?/*php require('php/template/gridPopUp.php');*/?>
 
     <div id="blackOverlay"></div>   
     
