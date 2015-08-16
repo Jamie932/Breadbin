@@ -25,7 +25,10 @@ p.report {
     width: 640px;
     margin-bottom: 35px;
     z-index: 2;
-	text-decoration: none;
+}
+
+#contentPost a {
+	text-decoration: none;	
 }
 
 .imgtext {
