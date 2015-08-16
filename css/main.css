@@ -678,7 +678,7 @@ img.recomImg {
     position:relative;   
 }
 
-recomImg:hover span{
+.recomImg:hover span{
     display:block;
 }
 
