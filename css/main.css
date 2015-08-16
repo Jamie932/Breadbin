@@ -674,8 +674,10 @@ hr.test {
 
 
 
-img.recomImg {
-    position:relative;   
+.recomImg {
+    float:left;
+    position:relative;
+    cursor:pointer;
 }
 
 .recomImg:hover span{
