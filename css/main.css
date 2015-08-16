@@ -704,7 +704,7 @@ span{
 span:after{
     content:'';
     position:absolute;
-    top:-16px; 
+    top:-6px; 
     width:10px;
     height:10px;
     border-top:1px solid #dfdfdf;
