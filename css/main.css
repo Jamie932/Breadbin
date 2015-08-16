@@ -686,7 +686,7 @@ hr.test {
 span{
     background:#F8F8F8;
     border: 1px solid #DFDFDF;
-    color: #717171;
+    color: #292929;
     height: auto;
     position: absolute;
     top: 65px;
@@ -710,6 +710,7 @@ span:after{
     -moz-transform:rotate(45deg);
     -webkit-transform:rotate(45deg);
     transform:rotate(45deg);
+    padding: 5;
 }
 
 #imageHoverLarge {
@@ -723,6 +724,11 @@ span:after{
     height: 20px;
 }
 
+h7 {
+    font-size: 1.5em;   
+    color: #292929;
+    font-weight:bold;
+}
 
 /*
 @media screen and (max-width: 1125px) {
