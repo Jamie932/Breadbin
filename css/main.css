@@ -728,6 +728,8 @@ h7 {
     font-size: 1.5em;   
     color: #292929;
     font-weight:bold;
+    margin: 0;
+    padding: 0;
 }
 
 /*
