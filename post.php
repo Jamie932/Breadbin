@@ -38,6 +38,7 @@
         
     <div id="break"></div>
            
+    <div id="center">
         <div id="content">
             <ul id="images">
                 <?php require('php/fetchSinglePost.php');?>
