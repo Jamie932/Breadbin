@@ -22,11 +22,11 @@
                 $usersname = $row['username'];
 				
 				echo '<div class="usericoRecom">';
-
+ 
 				if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
-					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="57px" width="57px" style="border: 1px solid rgba(54, 54, 54, 0.25); border-radius: 5%;"><span>Honey Im home</span></a>'; 
+					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="57px" width="57px" style="border: 1px solid rgba(54, 54, 54, 0.25); border-radius: 5%;"><span><div id="imageHoverLarge"><img src="img/profile2.png" width="165px"></div><div id="theRest"><h7>'.$usersname.'</h7></div></span></a>'; 
 				} else { 
-					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="57px" width="57px" style="border: 1px solid rgba(54, 54, 54, 0.25); border-radius: 5%;"><span><div id="imageHoverLarge"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" width="165px"></div><div id="theRest"><h6></div></span></a>';
+					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="57px" width="57px" style="border: 1px solid rgba(54, 54, 54, 0.25); border-radius: 5%;"><span><div id="imageHoverLarge"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" width="165px"></div><div id="theRest"><h7>'.$usersname.'</h7></div></span></a>';
 				}
 
 				echo '</div>';
