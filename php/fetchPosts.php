@@ -127,7 +127,7 @@
                     echo file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="img/profile2.png" height="50px" style="border-radius:50%;">' : '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="50px" width="50px" style="border-radius:50%;">';
                     echo '</a>';
                 echo '</div>';
-				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>';
+				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 
             if ($row['type'] == "imagetext") {
 				echo $row['favourite'] ? '<div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
