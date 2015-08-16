@@ -42,9 +42,9 @@
 				echo '<div class="usericoRecom">';
 
 				if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
-					echo '<a href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="40px" width="40px"></a>';
+					echo '<a href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="50px" width="50px" style="border: 1px solid'.$color.'"></a>';
 				} else { 
-					echo '<a href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="40px" width="40px"></a>';
+					echo '<a href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="50px" width="50px"></a>';
 				}
 
 				echo '</div>';
