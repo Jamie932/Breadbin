@@ -54,12 +54,12 @@ p.report {
     height: 20px;
 }
 
-.left a {
+#contentInfoText .left a {
     color: blue;
     text-decoration: none;	
 }
 
-.right a {
+#contentInfoText .right a {
 	color: black;
 }
 
