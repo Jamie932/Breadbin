@@ -672,6 +672,50 @@ hr.test {
 	background: #999; 
 }
 
+
+
+img.recomImg {
+    position:relative;   
+}
+
+recomImg:hover span{
+    display:block;
+}
+
+span{
+    background:#F8F8F8;
+    border: 5px solid #DFDFDF;
+    color: #717171;
+    font-size: 13px;
+    height: 30px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    top: 10px;
+    left:-60px;
+    display:none;
+    padding:0 20px;
+    
+}
+span:after{
+    content:'';
+    position:absolute;
+    top:-12px; 
+    width:10px;
+    height:10px;
+    border-top:5px solid #dfdfdf;
+    border-left:5px solid #dfdfdf;
+    background:#f8f8f8;
+    left:50%;
+    margin-left:-10px;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+
 /*
 @media screen and (max-width: 1125px) {
     #center {
