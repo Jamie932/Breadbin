@@ -43,8 +43,13 @@ p.report {
 
 #contentInfoText .right {
     float: right;
-    font-size: 13px;
+    font-size: 0.8em;
     height: 20px;
+}
+
+.right a {
+    color: blue;
+    text-decoration: none;	
 }
 
 .timeago {
@@ -133,11 +138,6 @@ p.report {
     padding-bottom: 0px;
 }
 
-#contentPost a {
-    color: blue;
-    text-decoration: none;
-}
-
 /* ===[ Liking the post ]=== */
 
 #contentLike, #contentLikeFollow {
@@ -183,7 +183,7 @@ p.report {
     border-color: #DDD;
     background-color: #fff;
 	min-height: 60px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
     padding: 10px;
 	font-size: 0.9em;
 }
@@ -426,237 +426,237 @@ b.instructionNo {
 }
         
 #recipeBox {
-            margin: auto;
-            position: absolute;
-            top: 100; left: 0; right: 0;
-            border: 1px solid #DDD;
-            width: 500px;
-            height: auto;
-            background-color: #fff;
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            z-index: 7;
-            display: none;
-        }
-        
-        .recipeHeader {
-            margin-bottom: 0;
-        }
-        
-        .recipeContent {
-            padding:0;
-            margin:0;
-        }
-        
-        h1 {
-            margin-bottom: 0;   
-        }
+	margin: auto;
+	position: absolute;
+	top: 100; left: 0; right: 0;
+	border: 1px solid #DDD;
+	width: 500px;
+	height: auto;
+	background-color: #fff;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	z-index: 7;
+	display: none;
+}
 
-        h3 {
-            font-weight: 100;
-            font-size:1.1em;
-            margin: 0;
-        }
+.recipeHeader {
+	margin-bottom: 0;
+}
 
-        h3.recTit {
-            margin: 0; 
-            font-size: 2em;
-            font-weight: 500;
-            text-align: center;
-        }
-        
-        #recipeForm {
-            margin-top: 7px;
-            padding: 10px; 
-        }
+.recipeContent {
+	padding:0;
+	margin:0;
+}
 
-        #titleBody {
-            width: 100%;
-            height: 50px;
-            margin-bottom: 10px;
-        }
+h1 {
+	margin-bottom: 0;   
+}
 
-        #sectionHeader {
-            width: 100%;
-            height: 30px;
-        }
+h3 {
+	font-weight: 100;
+	font-size:1.1em;
+	margin: 0;
+}
 
-        .sectionHeaderHalf {
-            width: 117px;
-            height: 30px;
-            display: inline;
-            float: left;
-            margin-right: 19px;
-        }
+h3.recTit {
+	margin: 0; 
+	font-size: 2em;
+	font-weight: 500;
+	text-align: center;
+}
 
-        .sectionHeaderHalfServe {
-            width: 200px;
-            height: 30px;
-            display: inline;
-            float: left;
-        }
+#recipeForm {
+	margin-top: 7px;
+	padding: 10px; 
+}
 
-        .bodyHalf {
-            width: 117px;
-            height: 50px;
-            display: inline;
-            float: left;
-            margin-bottom: 10px;
-            margin-right: 20px;
-        }
+#titleBody {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 10px;
+}
 
-        .bodyHalfServe {
-            width: 200px;
-            height: 50px;
-            display: inline;
-            float: left;
-            margin-bottom: 10px;
-        }
+#sectionHeader {
+	width: 100%;
+	height: 30px;
+}
 
-        #twoHalfsBecomeOne {
-            width: 100%;
-            height: 90px;
-        }
+.sectionHeaderHalf {
+	width: 117px;
+	height: 30px;
+	display: inline;
+	float: left;
+	margin-right: 19px;
+}
 
-        .leftHeader, .rightHeader { 
-            display: inline;
-        }
+.sectionHeaderHalfServe {
+	width: 200px;
+	height: 30px;
+	display: inline;
+	float: left;
+}
 
-        .leftHeader {
-            float: left;   
-        }
+.bodyHalf {
+	width: 117px;
+	height: 50px;
+	display: inline;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
 
-        .rightHeader {
-            float: right;   
-        }
+.bodyHalfServe {
+	width: 200px;
+	height: 50px;
+	display: inline;
+	float: left;
+	margin-bottom: 10px;
+}
 
-        #ingredientBody {
-            width: 100%;
-            height: auto !important;
-            margin-bottom: 10px;
-        }
+#twoHalfsBecomeOne {
+	width: 100%;
+	height: 90px;
+}
 
-        #instructionBody {
-            width: 100%;
-            height: auto !important;
-        }
+.leftHeader, .rightHeader { 
+	display: inline;
+}
 
-        #eachInstruc {
-            width: 100%;
-            height: 100px;
-        }
+.leftHeader {
+	float: left;   
+}
 
-        input.recipeTitle {
-            width: 455px;   
-            height: 33px;
-            border: 1px solid rgba(100, 100, 100, 0.4);
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 0.95em;
-            margin-bottom: 10px;
-        }
+.rightHeader {
+	float: right;   
+}
 
-        input.videoLink {
-            width: 455px;   
-            height: 33px;
-            border: 1px solid rgba(100, 100, 100, 0.4);
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 0.95em;
-            margin-bottom: 10px;
-        }
+#ingredientBody {
+	width: 100%;
+	height: auto !important;
+	margin-bottom: 10px;
+}
 
-        input.recipeIngredients {
-            width: 210px;   
-            height: 33px;
-            border: 1px solid rgba(100, 100, 100, 0.4);
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 0.95em;
-            margin-bottom: 10px;
-            margin-right: 5px;
-        }
+#instructionBody {
+	width: 100%;
+	height: auto !important;
+}
 
-        input.recipeTime, input.recipePrepTime {
-            width: 18px;   
-            height: 33px;
-            border: 1px solid rgba(100, 100, 100, 0.4);
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            padding-left: 5px;
-            padding-right: 5px;
-            font-size: 0.95em;
-            margin-bottom: 10px;
-        }
+#eachInstruc {
+	width: 100%;
+	height: 100px;
+}
 
-        input.recipeServe {
-            width: 110px;   
-            height: 33px;
-            border: 1px solid rgba(100, 100, 100, 0.4);
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 0.95em;
-            margin-bottom: 10px;   
-        }
-        
-        .leftInstruc {
-            width: 30px;
-            display: inline;
-            float: left;
-            height: 86px;
-            padding-left: 5px;
-        }
+input.recipeTitle {
+	width: 455px;   
+	height: 33px;
+	border: 1px solid rgba(100, 100, 100, 0.4);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 0.95em;
+	margin-bottom: 10px;
+}
 
-        p.number {
-            padding-top: 20px;   
-        }
+input.videoLink {
+	width: 455px;   
+	height: 33px;
+	border: 1px solid rgba(100, 100, 100, 0.4);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 0.95em;
+	margin-bottom: 10px;
+}
 
-        .rightInstruc {
-            display: inline;
-            float: right;  
-            width: 420px;
-            font-size: 0.97em;
-            height: 86px;
-            margin-right:9px;
-        }
-        
-        textarea.recipeInstructions {
-            resize: none;
-            width: 410.5px;
-            height: 79px;
-            border: 1px solid rgba(100, 100, 100, 0.4);
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            font-family: inherit;
-            font-size: 0.97em;
-            padding-left: 10px; 
-            padding-right: 10px;
-            padding-top: 5px;
-            padding-right: 5px;
-        }
+input.recipeIngredients {
+	width: 210px;   
+	height: 33px;
+	border: 1px solid rgba(100, 100, 100, 0.4);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 0.95em;
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
 
-        p.guidelineText {
-            font-size: 0.7em;
-            margin: 0;
-            margin-bottom: 7px;
-            margin-top: -12px;
-            padding: 0;
-        }
+input.recipeTime, input.recipePrepTime {
+	width: 18px;   
+	height: 33px;
+	border: 1px solid rgba(100, 100, 100, 0.4);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 0.95em;
+	margin-bottom: 10px;
+}
 
-        hr.test {  
-            border: 0; 
-            border-bottom: 1px dashed #ccc; 
-            background: #999; 
-        }
+input.recipeServe {
+	width: 110px;   
+	height: 33px;
+	border: 1px solid rgba(100, 100, 100, 0.4);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 0.95em;
+	margin-bottom: 10px;   
+}
+
+.leftInstruc {
+	width: 30px;
+	display: inline;
+	float: left;
+	height: 86px;
+	padding-left: 5px;
+}
+
+p.number {
+	padding-top: 20px;   
+}
+
+.rightInstruc {
+	display: inline;
+	float: right;  
+	width: 420px;
+	font-size: 0.97em;
+	height: 86px;
+	margin-right:9px;
+}
+
+textarea.recipeInstructions {
+	resize: none;
+	width: 410.5px;
+	height: 79px;
+	border: 1px solid rgba(100, 100, 100, 0.4);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: 0.97em;
+	padding-left: 10px; 
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+p.guidelineText {
+	font-size: 0.7em;
+	margin: 0;
+	margin-bottom: 7px;
+	margin-top: -12px;
+	padding: 0;
+}
+
+hr.test {  
+	border: 0; 
+	border-bottom: 1px dashed #ccc; 
+	background: #999; 
+}
 
 /*
 @media screen and (max-width: 1125px) {
