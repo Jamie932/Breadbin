@@ -59,6 +59,10 @@ p.report {
     text-decoration: none;	
 }
 
+.right a {
+	color: black;
+}
+
 .timeago {
     height: 100%;
     display: inline-block;
