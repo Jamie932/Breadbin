@@ -58,7 +58,7 @@ p.report {
     height: 20px;
 }
 
-#contentInfoText .left a, #contentInfoText .right a {
+#contentInfoText .left a {
     color: blue;
 }
 
