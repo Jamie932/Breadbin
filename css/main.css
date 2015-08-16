@@ -727,7 +727,7 @@ span:after{
 #hoverBio {
     width: 97%;
     padding: 5px;
-    height: 50px;
+    height: auto;
     word-wrap: break-word;
 }
 
