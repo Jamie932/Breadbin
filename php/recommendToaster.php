@@ -12,24 +12,6 @@
         $stmt = $db->prepare($query); 
         $result = $stmt->execute($query_params); 
         $row = $stmt->fetch();
-
-        if($row){ 
-            if ($row['colour'] == 2) {
-                $colour = 'rgba(102, 153, 255, 0.1)';
-            } else if ($row['colour'] == 3) {
-                $colour = 'rgba(0, 197, 30, 0.1)';
-            } else if ($row['colour'] == 4) {
-                $colour = 'rgba(236, 88, 88, 0.1)';
-            } else if ($row['colour'] == 5) {
-                $colour = 'rgba(140, 104, 216, 0.1)';
-            } else if ($row['colour'] == 6) {
-                $colour = 'rgba(204, 122, 176, 0.1)';
-			} else if ($row['colour'] == 7) { 
-                $colour = 'rgba(54, 54, 54, 0.1)';
-			} else {
-                $colour = 'rgba(246, 166, 40, 0.1)';
-            }
-        }
         
         if ($randUser) {
             echo '<div id="recommendBox" class="sideBox">';
@@ -42,9 +24,9 @@
 				echo '<div class="usericoRecom">';
 
 				if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
-					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="57px" width="57px" style="border: 1px solid '.$colour.';"><span>Honey Im home</span></a>'; 
+					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="57px" width="57px" style="border: 1px solid rgba(54, 54, 54, 0.25); border-radius: 5%;"><span>Honey Im home</span></a>'; 
 				} else { 
-					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="57px" width="57px" style="border: 1px solid '.$colour.';"><span><div id="imageHoverLarge"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" width="165px"></div><div id="theRest">hellohellohello</div></span></a>';
+					echo '<a class="recomImg" href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="57px" width="57px" style="border: 1px solid rgba(54, 54, 54, 0.25); border-radius: 5%;"><span><div id="imageHoverLarge"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" width="165px"></div><div id="theRest">hellohellohello</div></span></a>';
 				}
 
 				echo '</div>';
