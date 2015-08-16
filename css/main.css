@@ -708,9 +708,9 @@ span:after{
     left:50%;
     margin-left:-10px;
     -moz-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg); 
     transform:rotate(45deg);
-    padding: 5;
+    padding: 5px;
 }
 
 #imageHoverLarge {
