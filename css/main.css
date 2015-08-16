@@ -694,6 +694,7 @@ span{
     left:-51px;
     display:none;
     width:165px;
+    z-index:1;
 }
 
 span:after{
