@@ -24,7 +24,8 @@ p.report {
     float: left;
     width: 640px;
     margin-bottom: 35px;
-    z-index:2;
+    z-index: 2;
+	text-decoration: none;
 }
 
 .imgtext {
@@ -120,7 +121,6 @@ p.report {
     border-color: #DDD;
     border-style: solid;
     text-align: center;
-	text-decoration: none;
 }
 
 .contentPostImage img {
