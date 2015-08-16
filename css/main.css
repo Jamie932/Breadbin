@@ -676,7 +676,7 @@ hr.test {
 
 .recomImg {
     float:left;
-    position:absolute;
+    position:relative;
     cursor:pointer;
 }
 
@@ -692,7 +692,7 @@ span{
     height: 30px;
     letter-spacing: 1px;
     line-height: 30px;
-    position: relative;
+    position: absolute;
     text-align: center;
     text-transform: uppercase;
     top: 10px;
