@@ -688,17 +688,11 @@ span{
     background:#F8F8F8;
     border: 1px solid #DFDFDF;
     color: #717171;
-    font-size: 13px;
-    height: 30px;
-    letter-spacing: 1px;
-    line-height: 30px;
+    height: auto;
     position: absolute;
-    text-align: center;
-    text-transform: uppercase;
     top: 65px;
     left:-69px;
     display:none;
-    padding:0 20px;
     width:165px;
 }
 
@@ -721,6 +715,7 @@ span:after{
 #imageHoverLarge {
     width: 100%;
     height: 88px;
+    overflow: hidden;
 }
 
 #theRest {
