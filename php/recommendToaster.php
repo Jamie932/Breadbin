@@ -44,7 +44,7 @@
 				if (!file_exists('img/avatars/' . $row['id'] . '/avatar.jpg')) {
 					echo '<a href="profile.php?id=' . $user . '"><img src="img/profile2.png" height="54px" width="54px" style="border: 1px solid '.$colour.';"></a>';
 				} else { 
-					echo '<a href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="54px" width="54px"></a>';
+					echo '<a href="profile.php?id=' . $user . '"><img src="img/avatars/' . $row['id'] . '/avatar.jpg" height="54px" width="54px" style="border: 1px solid '.$colour.';"></a>';
 				}
 
 				echo '</div>';
