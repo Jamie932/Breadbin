@@ -285,11 +285,16 @@
                 echo '</div>';
             echo '</div>';
 
-            if ($_SESSION['user']['id'] == $posts['userid']) {
-                echo '<div id="contentLike" class="post-' . $posts['id'] . '"><p class="delete">Delete</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</p></div>';
+            if ($_SESSION['user']['id'] == $row['userid']) {
+                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
+                echo '<p class="totalToasts">' .$totalToasts. '</p>';
+                echo '<p class="delete">Delete</p>';
+                echo '</div>';
+			
             } else {
-                echo '<div id="contentLike" class="post-' . $posts['id'] . '">';
+                echo '<div id="contentLike" class="post-' . $row['id'] . '">';
+
+                echo '<p class="totalToasts">' .$totalToasts . '</p>'; 
                 if ($ifToasted == 0) {
                     echo '<p class="toast">Toast</p>';
                 } else {
@@ -301,8 +306,8 @@
                     echo '<p class="unburn">Burn</p>';
                 }
                 echo '<p class="report">Report</p>';
-                echo '<p class="totalToasts">' .$totalToasts. '</div>'; 
-            }             
+                echo '</div>';
+            }                      
             echo '</div>';
     }
 ?>
