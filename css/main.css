@@ -760,6 +760,18 @@ h7 {
     padding: 0;
 }
 
+.stickit {
+	margin-left: 660px;
+	position: fixed;
+	top: 0;
+}
+
+.stickit-end {
+	bottom: 40px;
+	position: absolute;
+	right: 0;
+}
+
 /*
 @media screen and (max-width: 1125px) {
     #center {
