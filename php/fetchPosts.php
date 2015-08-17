@@ -51,6 +51,7 @@
                 echo '<div id="contentLikeFollow">';
                     echo '<p class="hide">Hide</p>';
                 echo '</div>';  
+                echo '</div>';  
             echo '</div>';  
         }
         
