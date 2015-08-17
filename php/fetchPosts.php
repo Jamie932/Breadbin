@@ -124,7 +124,7 @@
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div id="leftUserImg">';
                     echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    echo file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" height="40px" width="40px" style="border-radius:5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="img/profile2.png" height="40px" width="40px" style="border-radius:5%; border: 1px solid rgba(54, 54, 54, 0.25);">';
+                    echo file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg"' : '<img src="img/profile2.png" class="avatarImg">';
                     echo '</a>';
                 echo '</div>';
 				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';

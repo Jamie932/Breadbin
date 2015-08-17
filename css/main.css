@@ -151,6 +151,13 @@ p.report {
     padding-bottom: 0px;
 }
 
+.avatarImg {
+	width: 40px;
+	height: 40px;
+	border-radius: 5%;
+	border: 1px solid rgba(54, 54, 54, 0.25);
+}
+
 /* ===[ Liking the post ]=== */
 
 #contentLike, #contentLikeFollow {
@@ -670,8 +677,6 @@ hr.test {
 	border-bottom: 1px dashed #ccc; 
 	background: #999; 
 }
-
-
 
 .recomImg {
     float:left;
