@@ -91,6 +91,7 @@
                             $("#images").append(data);
                             loading = false;
                             groupNumber++;
+            				$('.js-lazyYT').lazyYT(); 
                         });
                     }
                 }
