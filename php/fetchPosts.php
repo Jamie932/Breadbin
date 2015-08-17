@@ -38,8 +38,8 @@
         if ($following == 0) {
                 echo '<div id="contentPost">';
                     echo '<div id="leftUserImg">';
-                        echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                            echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
+                        echo '<a href="profile.php?id=' . $posts['userid'] . '">';
+                            echo file_exists($root . 'img/avatars/' . $posts['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
                         echo '</a>';
                     echo '</div>';
 
