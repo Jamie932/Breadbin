@@ -1,6 +1,7 @@
 <?php
     require("common.php"); 
 	require("vendor/timeago.php");
+	require('vendor/BBCodeParser2.php');
 
     $postsPerPage = 10;
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
@@ -141,7 +142,15 @@
 				
             } else if ($row['type'] == "text") {
                 echo $row['favourite'] ? '<div class="contentPostText favouriteText">' : '<div class="contentPostText">';
-                echo '<p style="margin: 0;">' . $row['text'] . '</p></div>';
+				
+				$config = parse_ini_file('BBCodeParser2.ini', true);
+				$options = $config['HTML_BBCodeParser2'];
+				$parser = new HTML_BBCodeParser2($options);
+				$parser->setText($row['text']);
+				$parser->parse();
+				$parsed = $parser->getParsed();
+				
+                echo '<p style="margin: 0;">' . $parsed . '</p></div>';
 				
             } else if ($row['type'] == "recipe") {
                 $instrucNo = 0;
