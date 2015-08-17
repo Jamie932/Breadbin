@@ -700,11 +700,11 @@ hr.test {
     cursor:pointer;
 }
 
-.recomImg:hover .hoverSpan{
+.recomImg:hover span{
     display:block;
 }
 
-.hoverSpan{
+span{
     background:#F8F8F8;
     border: 1px solid #DFDFDF;
     color: #292929;
@@ -717,7 +717,7 @@ hr.test {
     z-index:1;
 }
 
-.hoverSpan:after{
+span:after{
     content:'';
     position:absolute;
     top:-6px; 
