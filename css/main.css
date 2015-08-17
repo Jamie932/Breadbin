@@ -165,7 +165,7 @@ p.report {
 /* ===[ Liking the post ]=== */
 
 #contentLike, #contentLikeFollow {
-    margin-left: 12px;
+    margin-left: 5px;
     float: left;
     text-align: left;
     background: white; 
