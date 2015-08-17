@@ -37,12 +37,21 @@
         echo '</div>';
     } else {
         if ($following == 0) {
-            echo '<div id="contentPostFollow">';
-                echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
-            echo '</div>';
+            echo '<div id="post">';
+                echo '<div id="contentPost">';
+                echo '<div id="leftUserImg">';
+                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
+                    echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
+                    echo '</a>';
+                echo '</div>';
             
-            echo '<div id="contentLikeFollow">';
-                echo '<p class="hide">Hide</p>';
+                echo '<div class="contentPostText">';
+                    echo '<p style="margin: 0;"><center>You don\'t follow any toasters.</center></p>';
+                echo '</div>';
+
+                echo '<div id="contentLikeFollow">';
+                    echo '<p class="hide">Hide</p>';
+                echo '</div>';  
             echo '</div>';  
         }
         
