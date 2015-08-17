@@ -5,6 +5,7 @@ p { margin-bottom: -10px }
 	background-color: #fff;
 	border-radius: 5%;
 	border: 1px solid rgba(54, 54, 54, 0.25);
+	width: 75%;
 }
 
 p.report {
