@@ -98,7 +98,9 @@
         </script>    
         
         <div id="content">
-         	<?php require('php/fetchPosts.php');?>
+            <ul id="images">
+                <?php require('php/fetchPosts.php');?>
+            </ul>
         </div>
         
         <div id="sidebar">
