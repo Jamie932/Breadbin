@@ -1,8 +1,6 @@
 <?php
     require("common.php"); 
 	require("vendor/timeago.php");
-    
-	$root = $_SERVER['DOCUMENT_ROOT'];
 
     $postsPerPage = 10;
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
@@ -17,6 +15,8 @@
     if (!$posts && $_POST['groupNumber']) {
         exit();
     }
+
+	$root = $groupNumber != 0 ? '../' : '';
 
     $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
