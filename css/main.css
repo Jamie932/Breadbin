@@ -168,10 +168,13 @@ p.report {
 /* ===[ Liking the post ]=== */
 
 #contentLike, #contentLikeFollow {
-    margin-top: -15px;
-    margin-left: 10px;
+    margin-left: 1px;
     float: left;
     text-align: left;
+    background: white;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    border-top: 1px solid #DDD;
 }
 
 /* ===[ Text Formatting ]=== */
