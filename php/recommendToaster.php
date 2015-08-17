@@ -27,7 +27,7 @@
 				echo '<a class="recomImg" href="profile.php?id=' . $user . '">
 					<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/profile2.png") . '" class="recomAvatarImg">
 
-					<span>
+					<span class="hoverSpan">
 						<div id="imageHoverLarge">
 							<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/profile2.png") . '"  width="165px" style="margin-top: -14px;">
 						</div>
