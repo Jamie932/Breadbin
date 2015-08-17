@@ -100,7 +100,7 @@ p.report {
 
 #leftUserImg {
 	position: absolute; 
-	margin-left: -65px;
+	margin-left: -55px;
 	font-size: 2.5em;
     z-index: 3;
 }
