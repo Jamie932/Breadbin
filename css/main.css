@@ -746,7 +746,7 @@ hr.test {
 }
 
 #hoverBio {
-    width: 97%;
+    width: 95%;
     padding: 5px;
     height: auto;
     word-wrap: break-word;
@@ -758,6 +758,18 @@ h7 {
     font-weight:bold;
     margin: 0;
     padding: 0;
+}
+
+.stickit {
+	margin-left: 660px;
+	position: fixed;
+	top: 0;
+}
+
+.stickit-end {
+	bottom: 40px;
+	position: absolute;
+	right: 0;
 }
 
 /*
