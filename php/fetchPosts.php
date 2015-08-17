@@ -26,27 +26,6 @@
 
     $currentID = $_SESSION['user']['id'];
 
-    $query = "SELECT * FROM users WHERE id = :id"; 
-            $query_params = array(':id' => $row['userid']); 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-
-            $userrow = $stmt->fetch();
-            $username = 'Unknown';
-
-            $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
-            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
-
-            $stmt = $db->prepare($query);
-            $result = $stmt->execute($query_params); 
-            $ifBurnt = $stmt->rowCount();
-
-            $query = "SELECT * FROM post_toasts WHERE postid = :postId AND userid = :userId"; 
-            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
-            $stmt = $db->prepare($query);
-            $result = $stmt->execute($query_params); 
-            $ifToasted = $stmt->rowCount();
-
     if ($following == 0 && !$posts) {
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
@@ -75,6 +54,26 @@
         }
         
         foreach ($posts as $row) {
+            $query = "SELECT * FROM users WHERE id = :id"; 
+            $query_params = array(':id' => $row['userid']); 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+
+            $userrow = $stmt->fetch();
+            $username = 'Unknown';
+
+            $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
+            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
+
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params); 
+            $ifBurnt = $stmt->rowCount();
+
+            $query = "SELECT * FROM post_toasts WHERE postid = :postId AND userid = :userId"; 
+            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params); 
+            $ifToasted = $stmt->rowCount();
 
             $totalToasts = $row['toasts'] - $row['burns'];
 
