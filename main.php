@@ -120,7 +120,7 @@
                 </form>
                 
                 <div id="gridClick">
-                    <center><img src="img/grid.png" height="20px"></center>
+                    <center><img src="/img/grid.png" height="20px"></center>
                 </div>
 				
                 <div class="clearFix"></div>

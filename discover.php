@@ -123,7 +123,7 @@
 
 					echo '<li>';
 					echo '<div class="banner">';                
-					echo '<img class="tiles" src="' . $imageLocation . '"';
+					echo '<img class="tiles" src="/' . $imageLocation . '"';
 					echo '</div>';
 
 					echo '<div class="postUsername">';
@@ -144,7 +144,7 @@
 
 					echo '<li>';
 					echo '<div class="banner">';                
-					echo '<img class="blurImage" src="' . $imageLocation . '"';
+					echo '<img class="blurImage" src="/' . $imageLocation . '"';
 					echo '</div>';
 
 					echo '<div class="postUsername">';

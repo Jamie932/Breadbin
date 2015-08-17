@@ -41,7 +41,7 @@
                                 $result = $stmt->execute($query_params); 
                                 $userrow = $stmt->fetch();
                             
-                                echo '<li class="eachImg"><img src="' . $row['image'] . '" height="130px" width="130px"></li>';
+                                echo '<li class="eachImg"><img src="/' . $row['image'] . '" height="130px" width="130px"></li>';
                         }
                     echo '</ul>';
                 echo '</div>';
@@ -134,11 +134,11 @@
             if ($row['type'] == "imagetext") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
-                echo '<img src="' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
+                echo '<img src="/' . $img . '"><div class="imgtext">' . $row['text'] . '</div></div>';
             } else if ($row['type'] == "image") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
-                echo '<img src="' . $img . '"></div>';
+                echo '<img src="/' . $img . '"></div>';
             } else if ($row['type'] == "text") {
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart"></i></div><div class="contentPostText favouriteText">' : '<div class="contentPostText">';

@@ -138,7 +138,7 @@ if (empty($_GET)) {
                     
                 } else if ($row['type'] == "image") {
                    echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                    echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"></div>';
+                    echo '<div class="contentPostImage ' . $class . '"><img src="/' . $row['image'] . '"></div>';
                          echo '<div id="contentInfoText">';
                             echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $userrow['username']  . '</a></div>';
                             echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
@@ -147,7 +147,7 @@ if (empty($_GET)) {
                     
                 } else if ($row['type'] == "imagetext") {
                     echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                    echo '<div class="contentPostImage ' . $class . '"><img src="' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
+                    echo '<div class="contentPostImage ' . $class . '"><img src="/' . $row['image'] . '"><div class="imgtext">' . $row['text'] . '</div></div>';
                         echo '<div id="contentInfoText">';
                             echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
                             echo '<div class="right">' . timeAgoInWords($row['date']) . '</div>';
