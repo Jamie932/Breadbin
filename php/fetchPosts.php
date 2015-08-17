@@ -50,7 +50,7 @@
                     echo '<div id="contentLikeFollow">';
                         echo '<p class="hide">Hide</p>';
                     echo '</div>';  
-                echo '</div>';  
+                echo '</div>'; 
         }
         
         foreach ($posts as $row) {
@@ -129,6 +129,15 @@
                     }
                 }
             }
+
+            echo '<div id="post">';
+                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
+                echo '<div id="leftUserImg">';
+                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
+                    echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
+                    echo '</a>';
+                echo '</div>';
+				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 
             if ($row['type'] == "imagetext") {
 				echo $row['favourite'] ? '<div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
