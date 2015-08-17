@@ -26,37 +26,7 @@
 
     $currentID = $_SESSION['user']['id'];
 
-    if ($following == 0 && !$posts) {
-        echo '<div id="contentPost">';
-            echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
-        echo '</div>';
-    } else if (!$posts) {
-        echo '<div id="contentPost">';
-            echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring toasters haven\'t posted anything.</center></div>';
-        echo '</div>';
-    } else {
-        if ($following == 0) {
-            echo '<div id="post">';
-                echo '<div id="contentPost">';
-                echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
-                    echo '</a>';
-                echo '</div>';
-            
-                echo '<div class="contentPostText">';
-                    echo '<p style="margin: 0;"><center>You don\'t follow any toasters.</center></p>';
-                echo '</div>';
-
-                echo '<div id="contentLikeFollow">';
-                    echo '<p class="hide">Hide</p>';
-                echo '</div>';  
-                echo '</div>';  
-            echo '</div>';  
-        }
-        
-        foreach ($posts as $row) {
-            $query = "SELECT * FROM users WHERE id = :id"; 
+    $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
@@ -76,6 +46,35 @@
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params); 
             $ifToasted = $stmt->rowCount();
+
+    if ($following == 0 && !$posts) {
+        echo '<div id="contentPost">';
+            echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
+        echo '</div>';
+    } else if (!$posts) {
+        echo '<div id="contentPost">';
+            echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring toasters haven\'t posted anything.</center></div>';
+        echo '</div>';
+    } else {
+        if ($following == 0) {
+                echo '<div id="contentPost">';
+                    echo '<div id="leftUserImg">';
+                        echo '<a href="profile.php?id=' . $row['userid'] . '">';
+                            echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
+                        echo '</a>';
+                    echo '</div>';
+
+                    echo '<div class="contentPostText">';
+                        echo '<p style="margin: 0;"><center>You don\'t follow any toasters.</center></p>';
+                    echo '</div>';
+
+                    echo '<div id="contentLikeFollow">';
+                        echo '<p class="hide">Hide</p>';
+                    echo '</div>';  
+                echo '</div>';  
+        }
+        
+        foreach ($posts as $row) {
 
             $totalToasts = $row['toasts'] - $row['burns'];
 
@@ -131,15 +130,6 @@
                     }
                 }
             }
-
-            echo '<div id="post">';
-                echo '<div id="contentPost" class="post-' . $row['id'] . '">';
-                echo '<div id="leftUserImg">';
-                    echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
-                    echo '</a>';
-                echo '</div>';
-				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 
             if ($row['type'] == "imagetext") {
 				echo $row['favourite'] ? '<div class="contentPostImage ' . $class . ' favouriteImg">' : '<div class="contentPostImage ' . $class . '">';
