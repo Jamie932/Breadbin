@@ -143,7 +143,7 @@
             } else if ($row['type'] == "text") {
                 echo $row['favourite'] ? '<div class="contentPostText favouriteText">' : '<div class="contentPostText">';
 				
-				$config = parse_ini_file('BBCodeParser2.ini', true);
+				$config = parse_ini_file('vendor/BBCodeParser2.ini', true);
 				$options = $config['HTML_BBCodeParser2'];
 				$parser = new HTML_BBCodeParser2($options);
 				$parser->setText($row['text']);
