@@ -2,6 +2,8 @@
     require("common.php"); 
 	require("vendor/timeago.php");
     
+	$root = $_SERVER['DOCUMENT_ROOT'];
+
     $postsPerPage = 10;
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
@@ -124,7 +126,7 @@
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div id="leftUserImg">';
                     echo '<a href="profile.php?id=' . $row['userid'] . '">';
-                    echo file_exists('/img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="img/profile2.png" class="avatarImg">';
+                    echo file_exists($root . '/img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/profile2.png" class="avatarImg">';
                     echo '</a>';
                 echo '</div>';
 				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
