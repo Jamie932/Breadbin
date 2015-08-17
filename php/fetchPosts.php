@@ -3,6 +3,10 @@
 	require("vendor/timeago.php");
 	require('vendor/BBCodeParser2.php');
 
+	$config = parse_ini_file('vendor/BBCodeParser2.ini', true);
+	$options = $config['HTML_BBCodeParser2'];
+	$parser = new HTML_BBCodeParser2($options);
+
     $postsPerPage = 10;
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
@@ -142,10 +146,6 @@
 				
             } else if ($row['type'] == "text") {
                 echo $row['favourite'] ? '<div class="contentPostText favouriteText">' : '<div class="contentPostText">';
-				
-				$config = parse_ini_file('vendor/BBCodeParser2.ini', true);
-				$options = $config['HTML_BBCodeParser2'];
-				$parser = new HTML_BBCodeParser2($options);
 				$parser->setText($row['text']);
 				$parser->parse();
 				$parsed = $parser->getParsed();
