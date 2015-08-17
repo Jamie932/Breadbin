@@ -175,6 +175,7 @@ p.report {
     border-right: 1px solid #DDD;
     border-bottom: 1px solid #DDD;
     border-top: 1px solid #DDD;
+    height: 100px;
 }
 
 /* ===[ Text Formatting ]=== */
