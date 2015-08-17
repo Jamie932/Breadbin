@@ -8,7 +8,7 @@
         $data['success'] = false;
         $data['error']  = 'No PostID was found.';
         
-	} else if ($_SESSION['user']['rank'] != 'owner' || $_SESSION['user']['rank'] != 'admin') {
+	} else if ($_SESSION['user']['rank'] != 'owner' && $_SESSION['user']['rank'] != 'admin') {
 		$data['success'] = false;
 		$data['error']  = 'You do not have the correct permissions to do this.';
 		

@@ -15,7 +15,7 @@
 		//rmdir($directory);
 	}
 
-    if ($_SESSION['user']['rank'] != 'owner' || $_SESSION['user']['rank'] != 'admin') {
+    if ($_SESSION['user']['rank'] != 'owner' && $_SESSION['user']['rank'] != 'admin') {
 		$data['success'] = false;
 		$data['error']  = 'You do not have the correct permissions to do this.';
 		
