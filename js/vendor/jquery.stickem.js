@@ -26,8 +26,8 @@
 
 	Stickem.prototype = {
 		defaults: {
-			item: '.stickem',
-			container: '.stickem-container',
+			item: '#contentLike',
+			container: '#post',
 			stickClass: 'stickit',
 			endStickClass: 'stickit-end',
 			offset: 0,

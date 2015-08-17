@@ -129,7 +129,7 @@
                 }
             }
 
-            echo '<div id="post stickem-container">';
+            echo '<div id="post">';
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
                 echo '<div id="leftUserImg">';
                     echo '<a href="profile.php?id=' . $row['userid'] . '">';
@@ -263,13 +263,13 @@
 		echo '</div>';
 
 		if ($_SESSION['user']['id'] == $row['userid']) {
-			echo '<div id="contentLike stickem" class="post-' . $row['id'] . '" style="height: 57px;">'; 
+			echo '<div id="contentLike" class="post-' . $row['id'] . '" style="height: 57px;">'; 
 			echo '<p class="totalToasts">' .$totalToasts. '</p>';
 			echo '<p class="delete">Delete</p>';
 			echo '</div>';
 			
 		} else {
-			echo '<div id="contentLike stickem" class="post-' . $row['id'] . '">';
+			echo '<div id="contentLike" class="post-' . $row['id'] . '">';
 			
                 echo '<p class="totalToasts">' .$totalToasts . '</p>'; 
                 if ($ifToasted == 0) {
