@@ -25,7 +25,7 @@
 				echo '<div class="usericoRecom">';
 				
 				echo '<a class="recomImg" href="profile.php?id=' . $user . '">
-					<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/profile2.png") . '" class="avatarImg">
+					<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/profile2.png") . '" class="recomAvatarImg">
 
 					<span>
 						<div id="imageHoverLarge">
