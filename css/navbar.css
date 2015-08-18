@@ -142,7 +142,7 @@ a.navLinks:hover { color: #616161 }
 	padding-left: 5px;
 	padding-top: 2px;
 	box-sizing: border-box;
-	background-color: #4979D8;
+	background-color: #D7870F;
 	float: left;
 	font-size: 0.8em;
 }
@@ -153,7 +153,7 @@ a.navLinks:hover { color: #616161 }
 
 #searchIcon {
 	display: inline-block;
-	background-color: #4979D8;
+	background-color: #D7870F;
 	color: #fff;
 	float: left;
 	margin-top: 8px;
