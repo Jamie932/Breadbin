@@ -277,7 +277,7 @@
 			
                 echo '<div class="totalToasts">' .$totalToasts . '</div>'; 
                 if ($ifToasted == 0) {
-                    echo '<div class="toast"><img src="img/toastUp.php" height="30px"></div>';
+                    echo '<div class="toast"><img src="img/toastUp.png" height="30px"></div>';
                 } else {
                     echo '<div class="untoast">Toast</div>';
                 } 
