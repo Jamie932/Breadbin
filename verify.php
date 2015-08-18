@@ -63,9 +63,9 @@
                                 $stmt = $db->prepare($query); 
                                 $result = $stmt->execute($query_params);  
 
-                                echo "<p>You've successfully validated your email.</p><p>Please click <a class='loginBtn'>here</a> to login.";
+                                echo "<p>You've successfully verified your email and are ready to start your Breadbin experience!</p><p>Please click <a href='index.php'>here</a> to login.";
                             } else {
-                                echo "<p>Your email could not be validated - please tell an administrator.</p>";
+                                echo "<p>Your email could not be verified - please tell an administrator.</p>";
                             }
                         } else {
                             echo "<p>This URL is either invalid or you have already activated your account.</p>";   
