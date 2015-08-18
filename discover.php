@@ -61,18 +61,18 @@
         <div id="main">
             <?php
             /* userid <> :id AND */ 
-			$query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+			$query = "SELECT * FROM posts WHERE userid != :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 
 			if (!empty($_GET)) { //All
 				if ($_GET['f'] == 1) { //Staff Recommended
-					$query = "SELECT * FROM posts WHERE userid <> :id AND favourite = 1 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+					$query = "SELECT * FROM posts WHERE userid != :id AND favourite = 1 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 2) { //Top Posts
-					$query = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns, (COUNT(post_toasts.userid) - COUNT(post_burns.userid)) AS total FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.userid <> :id GROUP BY posts.id HAVING (total) > 0 ORDER BY total";
+					$query = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns, (COUNT(post_toasts.userid) - COUNT(post_burns.userid)) AS total FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.userid != :id GROUP BY posts.id HAVING (total) > 0 ORDER BY total";
                     /*AND posts.userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id)*/
 				} else if ($_GET['f'] == 3) { //Just Pictures
-					$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+					$query = "SELECT * FROM posts WHERE userid != :id AND type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 4) {
-					$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+					$query = "SELECT * FROM posts WHERE userid != :id AND type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 5) {
 					$query = "SELECT * FROM posts WHERE userid = :id ORDER BY RAND()";
 				}
