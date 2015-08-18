@@ -288,3 +288,7 @@ $("#videoLink").keydown(function (e) {
 function getFile(){
     $('#upfile').click();
 }
+
+$(window).scroll(function() {
+    $('#sidebar').css('left', -$(window).scrollLeft()); 
+});
