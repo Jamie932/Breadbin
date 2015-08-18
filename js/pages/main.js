@@ -290,5 +290,5 @@ function getFile(){
 }
 
 $(window).scroll(function() {
-    $('#sidebar').css('left', -$(window).scrollLeft()); 
+    $('#sidebar').css('margin-left', -$(window).scrollLeft()); 
 });
