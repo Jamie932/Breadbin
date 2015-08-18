@@ -40,7 +40,7 @@
             <div id="leftUserImg">
                 <?php 
                     if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
-                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/defaultAvatar.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
                         echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }
@@ -73,7 +73,7 @@
                 <div id="leftUserImg">
                 <?php 
                     if (!file_exists('img/avatars/' . $currentID . '/avatar.jpg')) {
-                        echo '<img src="img/profile2.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
+                        echo '<img src="img/defaultAvatar.png" height="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     } else { 
                         echo '<img src="img/avatars/' . $currentID . '/avatar.jpg" height="70" width="70px" style="border-radius:50%; border: 1px solid ' .$colour. '">';
                     }

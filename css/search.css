@@ -39,7 +39,7 @@
     padding-bottom: 10px;
     min-height: 60px;
 	float: left;
-	background-image: url(../img/profile2.png);
+	background-image: url(../img/defaultAvatar.png);
 	background-size: contain;
 	margin-right: 15px;
 	z-index: 2;

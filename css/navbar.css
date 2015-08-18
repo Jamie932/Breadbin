@@ -91,7 +91,7 @@ a.navLinks:hover { color: #616161 }
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
-    background: url(../img/profile2.png) no-repeat;
+    background: url(../img/defaultAvatar.png) no-repeat;
     background-size: contain !important;
     box-sizing: border-box;
 }
