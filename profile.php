@@ -221,7 +221,7 @@ if (empty($_GET)) {
                     echo '</li>'; 
             
                 } else if ($row['type'] == "text") {
-                        echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li>';
+                        echo '<a href="post.php?id=' . $row['id'] . '"><li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li></a>';
                     
                 } else if ($row['type'] == 'imagetext') {
                     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
