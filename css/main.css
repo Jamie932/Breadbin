@@ -11,9 +11,11 @@ p.report {
 }
 
 #center {
-    margin: 0px auto;
-    width: 1180px;
     position: relative;
+    width: 1180px;
+    margin: 0px auto;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 #content {
