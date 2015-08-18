@@ -130,10 +130,13 @@
             }
 
             echo '<div id="post">';
+                echo 'div id="leftSide">';
                 echo '<div id="contentAvatar">';
                     echo '<a href="profile.php?id=' . $row['userid'] . '">';
                     echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
                     echo '</a>';
+                echo '</div>';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
                 echo '</div>';
 			
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -266,8 +269,6 @@
 			echo '<div id="contentLike" class="post-' . $row['id'] . '" style="height: 57px;">'; 
 			echo '<div class="totalToasts">' .$totalToasts. '</div>';
 			echo '<div class="delete">Delete</div>';
-			
-			echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 			echo '</div>';
 			
 		} else {
@@ -285,7 +286,6 @@
                     echo '<div class="unburn">Burn</div>';
                 }
                 echo '<div class="report">Report</div>';
-				echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 			
 			echo '</div><div class="clearFix"></div>';
 		}             
