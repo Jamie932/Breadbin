@@ -58,7 +58,8 @@ $(document).ready(function(){
 						createError("Incorrect toast data returned. Please inform an adminstrator."); 
 					}
 
-					toastButton.css('color', 'darkgray'); 
+					toastButton.css('-webkit-filter', 'grayscale'); 
+					toastButton.css('filter', 'grayscale(100%)'); 
 					toastButton.toggleClass('toast untoast');
 				};
 			}
@@ -89,7 +90,8 @@ $(document).ready(function(){
 					if (data.removedToast && data.addedBurn) { // Previously toasted
 						totalToasts.html(parseInt(totalToasts.text()) - 2);
 
-						toastButton.css('color', 'black'); 
+						toastButton.css('-webkit-filter', 'none'); 
+					    toastButton.css('filter', 'grayscale(0%)'); 
 						toastButton.toggleClass('untoast toast');
 					} else if (data.removedToast || data.addedBurn) {
 						totalToasts.html(parseInt(totalToasts.text()) - 1);
