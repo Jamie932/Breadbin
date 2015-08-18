@@ -279,7 +279,7 @@
                 if ($ifToasted == 0) {
                     echo '<div class="toast"><img src="img/toastUp.png" height="30px"></div>';
                 } else {
-                    echo '<div class="untoast">Toast</div>';
+                    echo '<div class="untoast"><img src="img/toastUp.png" height="30px" style="-webkit-filter: grayscale(100%); filter: grayscale(100%);"></div>';
                 } 
                 if ($ifBurnt == 0) {
                     echo '<div class="burn">Burn</div>';

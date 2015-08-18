@@ -58,7 +58,8 @@ $(document).ready(function(){
 						createError("Incorrect toast data returned. Please inform an adminstrator."); 
 					}
 
-					toastButton.css('color', 'darkgray'); 
+					toastButton.css('-webkit-filter', 'grayscale'); 
+					toastButton.css('filter', 'grayscale(100%)'); 
 					toastButton.toggleClass('toast untoast');
 				};
 			}
