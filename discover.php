@@ -31,14 +31,7 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-    <?php
-    require('php/template/navbar.php'); 
-    ?>
-
-    <div id="mainLoader">
-        <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
-        <p>Loading some beautiful content...</p> 
-    </div> 
+    <?php require('php/template/navbar.php'); ?>
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
