@@ -33,7 +33,7 @@
     </div>
         
     <div id="mid">
-		<div class="verify active">
+		<div class="validated active">
 			<div id="header">Email Verification</div>
 
 			<div class="textContainer">
