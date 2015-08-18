@@ -265,8 +265,8 @@
 
 		if ($_SESSION['user']['id'] == $row['userid']) {
 			echo '<div id="contentLike" class="post-' . $row['id'] . '" style="height: 57px;">'; 
-			echo '<p class="totalToasts">' .$totalToasts. '</p>';
-			echo '<p class="delete">Delete</p>';
+			echo '<div class="totalToasts">' .$totalToasts. '</div>';
+			echo '<div class="delete">Delete</div>';
 			echo '</div>';
 			
 		} else {

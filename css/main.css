@@ -5,7 +5,7 @@
 
 .report {
 	position: absolute;
-	bottom: 0px;
+	bottom: 5px;
 	left: 0px;
 	right: 0px;
 	
@@ -320,9 +320,9 @@ h5 {
 
 .hide { visibility: visible }
 
-.burn, .unburn { margin-top: 10px !important; padding-top: 2px; }
+.burn, .unburn { padding-top: 2px; }
 
-.toast, .untoast { margin-top: 15px !important }
+.toast, .untoast, .delete { margin-top: 5px !important }
 
 .untoast, .unburn {
     color: darkgray;
