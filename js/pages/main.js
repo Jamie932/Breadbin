@@ -279,6 +279,26 @@ $(document).ready(function(){
     });
 });
 
+var loading = false;
+var groupNumber = 1;
+
+$(window).scroll(function() {
+    $('#sidebar').css('margin-left', 100 - $(window).scrollLeft()); 
+	
+	if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+		if (loading == false && groupNumber <= <?php echo $numPages ?>) {
+			loading = true;
+
+			$.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
+				$("#images").append(data);
+				loading = false;
+				groupNumber++;
+				$('.js-lazyYT').lazyYT(); 
+			});
+		}
+	}
+});
+
 $("#videoLink").keydown(function (e) {
      if (e.keyCode == 32) { 
        return false; // return false to prevent space from being added
@@ -288,7 +308,3 @@ $("#videoLink").keydown(function (e) {
 function getFile(){
     $('#upfile').click();
 }
-
-$(window).scroll(function() {
-    $('#sidebar').css('margin-left', 100 - $(window).scrollLeft()); 
-});

@@ -77,27 +77,6 @@
     <div id="blackOverlay"></div>   
     
     <div id="center">
-        <script>
-            var loading = false;
-            var groupNumber = 1;
-            
-            $(window).scroll(function() {
-                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                    
-                    if (loading == false && groupNumber <= <?php echo $numPages ?>) {
-                        loading = true;
-                        
-                        $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
-                            $("#images").append(data);
-                            loading = false;
-                            groupNumber++;
-            				$('.js-lazyYT').lazyYT(); 
-                        });
-                    }
-                }
-            });
-        </script>    
-        
         <div id="content">
         	<?php require('php/fetchPosts.php');?>
         </div>
@@ -125,7 +104,7 @@
                 <div class="clearFix"></div>
      		</div> 
 			
-			<?php require('php/recommendToaster.php');  ?>
+			<?php require('php/recommendToaster.php'); ?>
             
             <div id="supportBox" class="sideBox">
 				About Support etc etc

@@ -1,11 +1,14 @@
-p { margin-bottom: -10px }
-
 .totalToasts {
 	text-align: center;
     margin-top: 3px;
 }
 
-p.report {
+.report {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	
     font-size: 10px;
     padding-top: 15px;
 }
@@ -174,6 +177,7 @@ p.report {
 /* ===[ Liking the post ]=== */
 
 #contentLike, #contentLikeFollow {
+	position: relative;
 	display: inline-block;
     float: right;
     margin-left: 15px;

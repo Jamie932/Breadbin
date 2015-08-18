@@ -272,18 +272,18 @@
 		} else {
 			echo '<div id="contentLike" class="post-' . $row['id'] . '">';
 			
-                echo '<p class="totalToasts">' .$totalToasts . '</p>'; 
+                echo '<div class="totalToasts">' .$totalToasts . '</div>'; 
                 if ($ifToasted == 0) {
-                    echo '<p class="toast">Toast</p>';
+                    echo '<div class="toast">Toast</div>';
                 } else {
-                    echo '<p class="untoast">Toast</p>';
+                    echo '<div class="untoast">Toast</div>';
                 } 
                 if ($ifBurnt == 0) {
-                    echo '<p class="burn">Burn</p>';
+                    echo '<div class="burn">Burn</div>';
                 } else {
-                    echo '<p class="unburn">Burn</p>';
+                    echo '<div class="unburn">Burn</div>';
                 }
-                echo '<p class="report">Report</p>';
+                echo '<div class="report">Report</div>';
 			echo '</div><div class="clearFix"></div>';
 		}             
 		echo '</div>';
