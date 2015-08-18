@@ -284,7 +284,7 @@
                     echo '<p class="unburn">Burn</p>';
                 }
                 echo '<p class="report">Report</p>';
-			echo '</div>';
+			echo '</div><div class="clearFix"></div>';
 		}             
 		echo '</div>';
 	}
