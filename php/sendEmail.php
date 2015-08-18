@@ -1,6 +1,7 @@
 <?php
 	header("Content-Type: application/json", true);
     require("common.php");
+	require('vendor/class.phpmailer.php');
 	
     $hash = md5(uniqid(rand(), true));
 
@@ -20,10 +21,13 @@
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 
-    $to      = $_POST['email'];
-    $subject = 'Breadbin | Email Verification'; 
-    $message = '
+	$mail = new PHPMailer;
+	$mail->AddReplyTo("noreply@breadbin.com","Breadbin Verificaton");
+	$mail->SetFrom('noreply@breadbin.com', 'Breadbin Verificaton');
+	$mail->AddAddress($_POST['email'], $_POST['username']);
+	$mail->Subject = "Breadbin | Email Verification";
 
+    $message = '
     Thanks for signing up!
     Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
 
@@ -37,6 +41,11 @@
 
     ';
 
-    $headers = 'From: noreply@breadbin.com' . "\r\n" . 'Reply-To: noreply@breadbin.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-    mail($to, $subject, $message, $headers); // Send our email
+	$mail->MsgHTML($message);
+
+	if(!$mail->Send()) {
+		echo "Mailer Error: " . $mail->ErrorInfo;
+	} else {
+		echo "Message sent!";
+	}
 ?>
