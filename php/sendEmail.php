@@ -22,12 +22,13 @@
     $result = $stmt->execute($query_params); 
 
 	$mail = new PHPMailer;
-	$mail->AddReplyTo("noreply@breadbin.com","Breadbin Verificaton");
-	$mail->SetFrom('noreply@breadbin.com', 'Breadbin Verificaton');
+	$mail->AddReplyTo("noreply@breadbin.com","Breadbin");
+	$mail->SetFrom('noreply@breadbin.com', 'Breadbin');
 	$mail->AddAddress($_POST['email'], $_POST['username']);
 	$mail->Subject = "Breadbin | Email Verification";
+	$mail->isHTML(true); 
 
-    $message = '
+    $message = '<pre>
     Thanks for signing up!
     Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
 
@@ -39,7 +40,7 @@
     Please click this link to activate your account:
     http://yourmums.science/verify.php?email='.$row['email'].'&hash='.$hash.'
 
-    ';
+    </pre>';
 
 	$mail->MsgHTML($message);
 
