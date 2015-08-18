@@ -63,7 +63,7 @@
                                 $stmt = $db->prepare($query); 
                                 $result = $stmt->execute($query_params);  
 
-                                echo "<p>You've successfully verified your email and are ready to start your Breadbin experience!</p><p>Please click <a href='index.php'>here</a> to login.";
+                                echo "<p>You've successfully verified your email and are ready to start your Breadbin experience!</p><p>Please click <a href='index.php' style='text-decoration: none;'>here</a> to login.";
                             } else {
                                 echo "<p>Your email could not be verified - please tell an administrator.</p>";
                             }
