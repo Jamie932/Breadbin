@@ -20,10 +20,13 @@ p.report {
     display: inline-block;
 }
 
+#post {
+	margin-bottom: 45px;
+}
+
 #contentPost {
 	display: inline-block;
     width: 640px;
-    margin-bottom: 45px;
     z-index: 2;
 }
 
