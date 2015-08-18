@@ -134,8 +134,8 @@
                     echo '<a href="profile.php?id=' . $row['userid'] . '">';
                     echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
                     echo '</a>';
-                    echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
                 echo '</div>';
+                echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 			
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
 
