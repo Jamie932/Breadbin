@@ -88,13 +88,8 @@
     color: #AA2E2E;   
 }
 
-.fa-heart-o, .fa-heart {
-    padding-left: 5px;
-}
-
 .fa-heart-o, .fa-heart, .fa-trash-o {
-    cursor: pointer;  
-    cursor:
+    cursor: pointer; 
 }
 
 #heart {
