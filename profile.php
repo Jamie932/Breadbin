@@ -216,7 +216,7 @@ if (empty($_GET)) {
              
                     echo '<li>';
                     echo '<div class="banner">';                
-                    echo '<img class="tiles" src="/' . $imageLocation . '"';
+                        echo '<a href="post.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
                     echo '</div>';
                     echo '</li>'; 
             
@@ -229,7 +229,7 @@ if (empty($_GET)) {
 
                     echo '<li>';
                     echo '<div class="banner">';
-                    echo '<img class="tiles" src="/' . $imageLocation . '"';
+                        echo '<a href="post.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
                     echo '</div>';
 
                      echo '<div class="postTitle">';
