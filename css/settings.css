@@ -78,8 +78,6 @@ li.settingsList:hover {
     cursor: pointer;
 }
 
-a.settingsLinks { text-decoration: none }
-
 .rightSettings {
     background-color: #fff;
     width: 559px;
@@ -146,17 +144,6 @@ p.settingsDetail {
     bottom: 20px;
     right: 0px;
 }
-
-p.settingsExplain {
-    font-size: 12px;
-    color: #828282;
-    margin: 0;
-    padding: 0;
-    margin-bottom: -40px;
-    margin-left: 20px;
-}
-
-#errormsg { color: red }
 
 .rowContainer {
     margin-bottom: 20px;   

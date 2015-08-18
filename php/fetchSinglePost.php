@@ -29,10 +29,6 @@
             echo '<div id="contentPostFollow">';
                 echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
             echo '</div>';
-            
-            echo '<div id="contentLikeFollow">';
-                echo '<p class="hide">Hide</p>';
-            echo '</div>';  
         }
             
             

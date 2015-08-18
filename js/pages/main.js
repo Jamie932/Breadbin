@@ -199,11 +199,6 @@ $(document).ready(function(){
         
     });
 
-    $(".hide").click(function(){
-        $("#contentLikeFollow").hide(500);
-        $("#contentPostFollow").hide(500);
-    });
-
     $("#uploadText").keypress(function(event) {
         if(event.which == '13') {
             return false;

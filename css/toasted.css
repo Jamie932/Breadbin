@@ -112,7 +112,7 @@ p.report {
 
 /* ===[ Liking the post ]=== */
 
-#contentLike, #contentLikeFollow {
+#contentLike {
     margin-top: -15px;
     margin-left: 10px;
     float: left;
@@ -153,9 +153,9 @@ p.report {
     text-align: center;
 }
 
-.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
+.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover { cursor: pointer }
 
-.toast, .burn, .hide {
+.toast, .burn {
     padding-bottom: 5px;
     color: black;
     -moz-transition: all .2s ease-in-out;
@@ -171,9 +171,6 @@ p.report {
     height: 25px;
     cursor: pointer;
 }
-
-.hide { visibility: visible }
-
 .burn, .unburn { margin-top: 10px !important }
 
 .toast, .untoast { margin-top: 15px !important }

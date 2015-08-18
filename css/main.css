@@ -106,10 +106,6 @@
     z-index: 3;
 }
 
-.favouriteText {
-	text-indent: 1.1em;
-}
-
 #userPostsCount {
     display: inline;
     float: left;
@@ -169,7 +165,7 @@
 
 /* ===[ Liking the post ]=== */
 
-#contentLike, #contentLikeFollow {
+#contentLike {
 	position: relative;
 	display: inline-block;
     float: right;
@@ -264,15 +260,6 @@ h5 {
     border-bottom-width: 2px;
 }
 
-.userRecom {
-    padding-left: 7px;
-	margin-bottom: 10px;
-	position: relative;
-}
-
-.userRecom:first-of-type { margin-top: 20px }
-.userRecom:last-of-type { margin-bottom: 0px }
-
 .usernameRecom {
     text-decoration: none;
     color: #666766;
@@ -301,17 +288,15 @@ h5 {
 	background-color: #F3F3F3;
 }
 
-.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover, .hide:hover { cursor: pointer }
+.delete:hover, .toast:hover, .burn:hover, .untoast:hover, .unburn:hover, .report:hover { cursor: pointer }
 
-.toast, .burn, .hide {
+.toast, .burn {
     color: black;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
-
-.hide { visibility: visible }
 
 .burn, .unburn { padding-top: 2px; }
 

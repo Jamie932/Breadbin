@@ -103,11 +103,6 @@ $(document).ready(function(){
 			}
         })
     })
-
-    $(".hide").click(function(){
-        $("#contentLikeFollow").hide(500);
-        $("#contentPostFollow").hide(500);
-    });
 	
     $(document).on('click','.fa-heart-o', function() {
 		var postid = $(this).parent().attr('class').split('-')[1];
