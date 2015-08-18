@@ -33,8 +33,8 @@
                 $colour = '#363636';
                 $activecolour = '#1A1A1A';
 			} else {
-                $colour = '#F6A628';
-                $activecolour = '#D7870F';   
+                $colour = '#E0722A';
+                $activecolour = '#BD760C';   
             }
         }
 
