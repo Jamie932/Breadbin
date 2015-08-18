@@ -176,7 +176,7 @@ p.report {
 #contentLike, #contentLikeFollow {
 	display: inline-block;
     float: right;
-    margin-left: 10px;
+    margin-left: 15px;
     text-align: left;
     background: white; 
     border: 1px solid #DDD;
