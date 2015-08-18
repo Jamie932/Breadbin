@@ -28,19 +28,17 @@
 	$mail->Subject = "Breadbin | Email Verification";
 	$mail->isHTML(true); 
 
-    $message = '<pre>
-    Thanks for signing up!
-    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+    $message = '<img src="http://yourmums.science/img/logo.png" style="display:block; margin:auto;"><br>
+    Thanks for signing up!<br>
+    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.<br><br>
 
-    ------------------------
-    Username: '.$username.'
-    Password: '.$_POST['password'].'
-    ------------------------
+    ------------------------<br>
+    Username: '.$username.'<br>
+    Password: '.$_POST['password'].'<br>
+    ------------------------<br><br>
 
-    Please click this link to activate your account:
-    http://yourmums.science/verify.php?email='.$row['email'].'&hash='.$hash.'
-
-    </pre>';
+    Please click this link to activate your account:<br>
+    http://yourmums.science/verify.php?email='.$row['email'].'&hash='.$hash.'<br>';
 
 	$mail->MsgHTML($message);
 
