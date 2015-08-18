@@ -99,10 +99,11 @@
 }
 
 #heart {
-	display: inline-block;
 	margin-top: 40px;
 	z-index: 2; 
 	font-size: 2.2em;
+    text-align: center;
+    margin-top: 2px;
 }
 
 #contentAvatar {
