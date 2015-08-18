@@ -209,7 +209,7 @@
 #sidebar {
     display: inline-block;
     position: fixed;
-    margin-left: 100px;
+    margin-left: 50px;
     width: 300px;
     height: auto;
 }

@@ -285,5 +285,5 @@ function getFile(){
 }
 
 $(window).scroll(function() {
-    $('#sidebar').css('margin-left', 100 - $(window).scrollLeft()); 
+    $('#sidebar').css('margin-left', 50 - $(window).scrollLeft()); 
 });
