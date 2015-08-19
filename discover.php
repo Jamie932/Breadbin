@@ -22,7 +22,22 @@
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
         $(document).ready(function(){
+            // to fade out before redirect
+            $('a.catLink').click(function(e){
+                redirect = $(this).attr('href');
+                e.preventDefault(); 
+                $('#content').fadeOut(400, function(){
+                    document.location.href = redirect
+                });
+            });
+            
              $('.js-lazyYT').lazyYT(); 
+        });
+        
+        $(window).load(function() { 
+            $('#mainLoader').hide();
+            $("#content").animate({ opacity: 1}, 1000); 
+            $('#content').css("pointer-events", "auto");
         });
     </script>
 </head>
