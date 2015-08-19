@@ -14,7 +14,7 @@
         $row = $stmt->fetch();
         
         if ($randUser) {
-            echo '<div id="recommendBox" class="sideBox" data-step="3" data-intro="Here is a list of other users on the site blah.">';
+            echo '<div id="recommendBox" class="sideBox">';
             echo '<div class="boxTitle">Recommended toasters - <a href="discover.php?f=5">See More</a></div>';
             
             foreach ($randUser as $row) {

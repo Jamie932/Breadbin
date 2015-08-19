@@ -35,11 +35,37 @@
      <script>
         $( document ).ready(function() {
             $('.js-lazyYT').lazyYT(); 
-			introJs().start();
+			
+			if(!isset($_COOKIE['firstTime'])) {	
+				setcookie( "firstTime", 'true', (time()+ 60 * 60 * 24 * 30), '/', '.yourmums.science' ); 
+				
+				var intro = introJs();
+				intro.setOptions({
+					steps: [{
+						intro: 'Welcome to Breadbin! This is a little introduction to help you understand our interface.'
+					},
+					{
+						element: document.querySelector('#uploadBox'),
+						intro: "This is the post box. Anything you want to upload..."
+					},	
+					{
+						element: document.querySelectorAll('#post')[0],
+						intro: "This is the result of making a post. On the right you can see the ratings..."
+					},	
+					{
+						element: document.querySelector('#recommendBox')[0],
+						intro: "Followers are a central idea on Breadbin - and this box lets you find them..."
+					},	
+					{
+						intro: "Have fun and don't murder anyone xo"
+					},	
+					]
+				});
+			}
         });
     </script>
 </head> 
-<body data-step="1" data-intro="Welcome to Breadbin!">
+<body>
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
@@ -80,12 +106,12 @@
     <div id="blackOverlay"></div>   
     
     <div id="center">  
-        <div id="content" data-step="4" data-intro='Here is your feed, where you will see...'>
+        <div id="content">
         	<?php require('php/fetchPosts.php');?>
         </div>
         
         <div id="sidebar">
-            <div id="uploadBox" class="sideBox" data-step="2" data-intro="This is the post box, blah blah.">
+            <div id="uploadBox" class="sideBox">
                 <form action="php/post.php" method="POST" id="postForm" enctype="multipart/form-data">
                     <div class="textarea">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Make a slice..." rows="1"></textarea>
