@@ -44,8 +44,6 @@
     <?php require('php/template/navbar.php');?>
     <?php require('php/template/popup.php');?>
         
-    <div id="break"></div>
-        
     <script>
         var instruction = 1;
         function add_fieldsInstruc() {
