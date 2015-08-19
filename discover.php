@@ -22,22 +22,7 @@
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
         $(document).ready(function(){
-            // to fade out before redirect
-            $('a.catLink').click(function(e){
-                redirect = $(this).attr('href');
-                e.preventDefault(); 
-                $('#content').fadeOut(400, function(){
-                    document.location.href = redirect
-                });
-            });
-            
              $('.js-lazyYT').lazyYT(); 
-        });
-        
-        $(window).load(function() { 
-            $('#mainLoader').hide();
-            $("#content").animate({ opacity: 1}, 1000); 
-            $('#content').css("pointer-events", "auto");
         });
     </script>
 </head>
@@ -46,14 +31,7 @@
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
     
-    <?php
-    require('php/template/navbar.php'); 
-    ?>
-
-    <div id="mainLoader">
-        <i class="fa fa-spinner fa-pulse" style="font-size: 5em; pointer-events: none;"></i>
-        <p>Loading some beautiful content...</p> 
-    </div> 
+    <?php require('php/template/navbar.php'); ?>
       
     <div id="categories" style="background-color:#fff">
         <ul class="cats">
@@ -83,18 +61,18 @@
         <div id="main">
             <?php
             /* userid <> :id AND */ 
-			$query = "SELECT * FROM posts WHERE userid <> :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+			$query = "SELECT * FROM posts WHERE userid != :id AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 
 			if (!empty($_GET)) { //All
 				if ($_GET['f'] == 1) { //Staff Recommended
-					$query = "SELECT * FROM posts WHERE userid <> :id AND favourite = 1 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+					$query = "SELECT * FROM posts WHERE userid != :id AND favourite = 1 AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 2) { //Top Posts
-					$query = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns, (COUNT(post_toasts.userid) - COUNT(post_burns.userid)) AS total FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.userid <> :id GROUP BY posts.id HAVING (total) > 0 ORDER BY total";
+					$query = "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns, (COUNT(post_toasts.userid) - COUNT(post_burns.userid)) AS total FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.userid != :id GROUP BY posts.id HAVING (total) > 0 ORDER BY total";
                     /*AND posts.userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id)*/
 				} else if ($_GET['f'] == 3) { //Just Pictures
-					$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+					$query = "SELECT * FROM posts WHERE userid != :id AND type = 'image' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 4) {
-					$query = "SELECT * FROM posts WHERE userid <> :id AND type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
+					$query = "SELECT * FROM posts WHERE userid != :id AND type = 'text' AND userid NOT IN (SELECT user_no FROM following WHERE follower_id = :id) ORDER BY RAND()";
 				} else if ($_GET['f'] == 5) {
 					$query = "SELECT * FROM posts WHERE userid = :id ORDER BY RAND()";
 				}
