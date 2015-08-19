@@ -53,7 +53,7 @@
 						intro: "This is the result of making a post. On the right you can see the ratings..."
 					},	
 					{
-						element: document.querySelector('#recommendBox')[0],
+						element: document.querySelector('#recommendBox'),
 						intro: "Followers are a central idea on Breadbin - and this box lets you find them..."
 					},	
 					{
@@ -61,6 +61,8 @@
 					},	
 					]
 				});
+				
+				intro.start();
 			}
         });
     </script>
