@@ -42,8 +42,10 @@ a{
 
 /* Posts */
 #content {
-    width: 90%;
-    margin-left: 5%;
+    width: 95%;
+    margin-left: 2.5%;
+    opacity: 0;
+    pointer-events: none;
     margin-top: 0px;
 	margin-bottom: 20px !important;
     height: auto;
