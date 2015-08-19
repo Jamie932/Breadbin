@@ -20,7 +20,6 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
-    <link href="css/vendor/introjs.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -30,45 +29,10 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
-    <script src="js/vendor/intro.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
-     <script>
-		 function createIntro() {
-			var intro = introJs();
-			intro.setOption('showStepNumbers', 'false');
-			intro.setOption('showBullets', 'false');
-			intro.setOptions({
-				steps: [{
-					intro: 'Welcome to Breadbin! This is a little introduction to help you understand our interface.'
-				},
-				{
-					element: document.querySelector('#uploadBox'),
-					intro: "This is the post box. Anything you want to upload..."
-				},	
-				{
-					element: document.querySelectorAll('#post')[0],
-					intro: "This is the result of making a post. On the right you can see the ratings..."
-				},	
-				{
-					element: document.querySelector('#recommendBox'),
-					intro: "Followers are a central idea on Breadbin - and this box lets you find them..."
-				},	
-				{
-					intro: "Have fun and don't murder anyone xo"
-				},	
-				]
-			});
-
-			intro.start();	 
-		 }
-		 
+     <script>		 
         $( document ).ready(function() {
             $('.js-lazyYT').lazyYT(); 
-			
-			if(!$.cookie('firstTime')) {	
-				$.cookie('firstTime', 'true', { expires: 365 });
-				createIntro();
-			}
         });
     </script>
 </head> 
