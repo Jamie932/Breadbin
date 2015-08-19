@@ -20,6 +20,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/lazyYT.css" rel="stylesheet" type="text/css">
     <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/vendor/introjs.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png" />
@@ -29,14 +30,16 @@
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
+    <script src="js/vendor/intro.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
      <script>
         $( document ).ready(function() {
             $('.js-lazyYT').lazyYT(); 
+			introJs().start();
         });
     </script>
 </head> 
-<body>
+<body data-step="1" data-intro="Welcome to Breadbin!">
     <noscript>
       <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.php">
     </noscript>    
@@ -76,34 +79,13 @@
 
     <div id="blackOverlay"></div>   
     
-    <div id="center">
-        <script>
-            var loading = false;
-            var groupNumber = 1;
-            
-            $(window).scroll(function() {
-                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                    
-                    if (loading == false && groupNumber <= <?php echo $numPages ?>) {
-                        loading = true;
-                        
-                        $.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
-                            $("#images").append(data);
-                            loading = false;
-                            groupNumber++;
-            				$('.js-lazyYT').lazyYT(); 
-                        });
-                    }
-                }
-            });
-        </script>    
-        
-        <div id="content">
+    <div id="center">  
+        <div id="content" data-step="4" data-intro='Here is your feed, where you will see...'>
         	<?php require('php/fetchPosts.php');?>
         </div>
         
         <div id="sidebar">
-            <div id="uploadBox" class="sideBox">
+            <div id="uploadBox" class="sideBox" data-step="2" data-intro="This is the post box, blah blah.">
                 <form action="php/post.php" method="POST" id="postForm" enctype="multipart/form-data">
                     <div class="textarea">
                         <textarea name="TextUpload" class="postText" id="uploadText" maxlength="150" placeholder="Make a slice..." rows="1"></textarea>
@@ -133,5 +115,26 @@
             
         </div>        
     </div>
+		
+	<script>
+		var loading = false;
+		var groupNumber = 1;
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+				if (loading == false && groupNumber <= <?php echo $numPages ?>) {
+					loading = true;
+
+					$.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
+						$("#images").append(data);
+						loading = false;
+						groupNumber++;
+						$('.js-lazyYT').lazyYT(); 
+					});
+				}
+			}
+		});
+	</script>  
 </body>
 </html>
