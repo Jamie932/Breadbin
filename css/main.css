@@ -5,10 +5,9 @@
 
 .report {
 	position: absolute;
-	bottom: 5px;
+	bottom: -20px;
 	left: 0px;
 	right: 0px;
-	
     font-size: 0.6em;
 }
 
@@ -180,7 +179,7 @@
     text-align: left;
     background: white; 
     border: 1px solid #DDD;
-    height: 100px;
+    height: 80px;
     width: 62px;
     text-align: center;
 }
