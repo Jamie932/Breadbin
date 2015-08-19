@@ -33,36 +33,41 @@
     <script src="js/vendor/intro.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
      <script>
+		 function createIntro() {
+			var intro = introJs();
+			intro.setOption('showStepNumbers', 'false');
+			intro.setOption('showBullets', 'false');
+			intro.setOptions({
+				steps: [{
+					intro: 'Welcome to Breadbin! This is a little introduction to help you understand our interface.'
+				},
+				{
+					element: document.querySelector('#uploadBox'),
+					intro: "This is the post box. Anything you want to upload..."
+				},	
+				{
+					element: document.querySelectorAll('#post')[0],
+					intro: "This is the result of making a post. On the right you can see the ratings..."
+				},	
+				{
+					element: document.querySelector('#recommendBox'),
+					intro: "Followers are a central idea on Breadbin - and this box lets you find them..."
+				},	
+				{
+					intro: "Have fun and don't murder anyone xo"
+				},	
+				]
+			});
+
+			intro.start();	 
+		 }
+		 
         $( document ).ready(function() {
             $('.js-lazyYT').lazyYT(); 
 			
 			if(!$.cookie('firstTime')) {	
 				$.cookie('firstTime', 'true', { expires: 365 });
-				
-				var intro = introJs();
-				intro.setOptions({
-					steps: [{
-						intro: 'Welcome to Breadbin! This is a little introduction to help you understand our interface.'
-					},
-					{
-						element: document.querySelector('#uploadBox'),
-						intro: "This is the post box. Anything you want to upload..."
-					},	
-					{
-						element: document.querySelectorAll('#post')[0],
-						intro: "This is the result of making a post. On the right you can see the ratings..."
-					},	
-					{
-						element: document.querySelector('#recommendBox'),
-						intro: "Followers are a central idea on Breadbin - and this box lets you find them..."
-					},	
-					{
-						intro: "Have fun and don't murder anyone xo"
-					},	
-					]
-				});
-				
-				intro.start();
+				createIntro();
 			}
         });
     </script>
