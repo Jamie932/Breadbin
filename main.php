@@ -36,8 +36,8 @@
         $( document ).ready(function() {
             $('.js-lazyYT').lazyYT(); 
 			
-			if(!isset($_COOKIE['firstTime'])) {	
-				setcookie( "firstTime", 'true', (time()+ 60 * 60 * 24 * 30), '/', '.yourmums.science' ); 
+			if(!$.cookie('firstTime')) {	
+				$.cookie('firstTime', 'true', { expires: 365 });
 				
 				var intro = introJs();
 				intro.setOptions({
