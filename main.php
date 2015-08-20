@@ -96,7 +96,9 @@
                 </form>
                 
                 <div id="gridClick">
-                    <center><img src="/img/grid.png" height="20px"></center>
+                    <div class="gridBoxes 1">
+                        <i class="fa fa-video-camera" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i>
+                    </div>
                 </div>
 				
                 <div class="clearFix"></div>
