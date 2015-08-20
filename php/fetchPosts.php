@@ -69,7 +69,7 @@
 
             $userrow = $stmt->fetch();
             $username = 'Unknown';
-
+            
             $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
             $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
 
@@ -87,6 +87,7 @@
 
             if($userrow){ 
                 $username = $userrow['username'];
+                $bio = $userrow['bio'];
             } else {
                 $query = "DELETE FROM posts WHERE userid = :userid"; 
                 $query_params = array(':userid' => $row['userid']); 
@@ -140,24 +141,23 @@
 
             echo '<div id="post">';
                     echo '<div id="contentAvatar">';
-                        echo '<a class="recomImg" href="profile.php?id=' . $row['userid'] . '">';
-                        echo file_exists($root . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">
-                        
-                        <span class="hoverSpan">
-                            <div id="imageHoverLarge">
-                                <img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
-                            </div>
+                        echo '<a class="recomImg" href="profile.php?id=' . $row['userid'] . '">
+					<img src="' . (file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg">
 
-                            <div id="hoverUsername">
-                                <h7>'.$usersname.'</h7>
-                            </div>
+					<span class="hoverSpan">
+						<div id="imageHoverLarge">
+							<img src="' . (file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
+						</div>
 
-                            <div id="hoverBio">
-                                '.$bio.
-                            '</div>
-                        </span>
-                        ';
-                        echo '</a>';
+						<div id="hoverUsername">
+							<h7>'.$usersname.'</h7>
+						</div>
+
+						<div id="hoverBio">
+							'.$bio.
+						'</div>
+					</span>
+				    </a>';
                          echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
                     echo '</div>';
                     
