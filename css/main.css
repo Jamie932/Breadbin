@@ -112,6 +112,8 @@
 	float: left;
 	margin-right: 10px;
     z-index: 3;
+    color: #292929;
+    font-size: 0.9em;
 }
 
 #userPostsCount {

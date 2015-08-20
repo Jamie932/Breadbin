@@ -150,7 +150,7 @@
 						</div>
 
 						<div id="hoverUsername">
-							<h7>'.$usersname.'</h7>
+							<h7>'.$username.'</h7>
 						</div>
 
 						<div id="hoverBio">
