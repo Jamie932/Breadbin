@@ -243,7 +243,17 @@
 
 #credits li {
 	display: inline-block;
-	
+	padding-left: 6px;
+}
+
+#credits li:last-of-type {
+	padding-left: 0px;
+}
+
+#credits li a {
+	text-decoration: none;
+	color: #4E4E4E;
+	border-bottom: 1px solid #BBB;
 }
 
 /* ===[ Sidebar textarea (main.css) ]=== */
