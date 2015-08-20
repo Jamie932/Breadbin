@@ -105,7 +105,13 @@
 			<?php require('php/recommendToaster.php'); ?>
             
             <div id="supportBox" class="sideBox">
-				About Support etc etc
+				<ul id="creditsBox">
+					<li>&#169; 2015 Breadbin.</li>
+					<li>About</li>
+					<li>Help</li>
+					<li>Privacy</li>
+					<li>Terms</li>
+				</ul>
 			</div>
             
         </div>        
