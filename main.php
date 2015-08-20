@@ -30,11 +30,11 @@
     <script src="js/errorHandler.js"></script>
     <script src="js/vendor/progressbar.min.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
-     <script>		 
-        $( document ).ready(function() {
-            $('.js-lazyYT').lazyYT(); 
-        });
-    </script>
+	<script>		 
+		$( document ).ready(function() {
+			$('.js-lazyYT').lazyYT(); 
+		});
+	</script>
 </head> 
 <body>
     <noscript>
@@ -76,7 +76,7 @@
     
     <div id="center">  
         <div id="content">
-        	<?php require('php/fetchPosts.php');?>
+        	<?php require('php/fetchPosts.php'); ?>
         </div>
         
         <div id="sidebar">
