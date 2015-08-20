@@ -21,7 +21,7 @@
 
 	echo '<div id="usersBox" class="box">';
 	echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>' . $usersCount . '</b> Users Found' : '<div class="boxTitle"><b>' . $usersCount . '</b> Users Found';
-	echo '<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>';
+	echo '<div class="expand"> ' . $usersCount != 0 ? '<i class="fa fa-angle-double-down"></i>' : '<i class="fa fa-angle-double-down fa-rotate-negative-90"></i>' . '</div></div>';
 
 	echo '<div id="usersRows">';
 	foreach ($users as $row) {	
