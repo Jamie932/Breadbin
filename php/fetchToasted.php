@@ -251,12 +251,12 @@
 				echo '<div class="right">';
 
 				if (($_SESSION['user']['rank'] != "user") && ($row['userid'] != $_SESSION['user']['id'])) {
-					echo '<div class="timeago" style="padding-right: 17px;"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
+					echo '<div class="timeago" style="padding-right: 17px;"><a href="showPost.php?p=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
 					echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i>';
 					echo ($row['favourite'] ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>');
 					echo '</div>';
 				} else {
-					echo '<div class="timeago"><a href="post.php?id=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
+					echo '<div class="timeago"><a href="showPost.php?p=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
 				}
 				echo '</div>';
 			echo '</div>';

@@ -216,12 +216,12 @@ if (empty($_GET)) {
              
                     echo '<li>';
                     echo '<div class="banner">';                
-                        echo '<a href="post.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
+                        echo '<a href="showPost.php?p=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
                     echo '</div>';
                     echo '</li>'; 
             
                 } else if ($row['type'] == "text") {
-                        echo '<a href="post.php?id=' . $row['id'] . '"><li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li></a>';
+                        echo '<a href="showPost.php?p=' . $row['id'] . '"><li><div class="box"><p class="textPost">' . $row['text'] . '</p></div></li></a>';
                     
                 } else if ($row['type'] == 'imagetext') {
                     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
@@ -229,7 +229,7 @@ if (empty($_GET)) {
 
                     echo '<li>';
                     echo '<div class="banner">';
-                        echo '<a href="post.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
+                        echo '<a href="showPost.php?p=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
                     echo '</div>';
 
                      echo '<div class="postTitle">';

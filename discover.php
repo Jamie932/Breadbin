@@ -116,7 +116,7 @@
 
 					echo '<li>';
 					echo '<div class="banner">';                
-					echo '<a href="post.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
+					echo '<a href="showPost.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
 
 					echo '<div class="postUsername">';
@@ -137,11 +137,11 @@
 
 					echo '<li>';
 					echo '<div class="banner">';                
-					echo '<a href="post.php?id=' . $row['id'] . '"><img class="blurImage" src="/' . $imageLocation . '"></a>';
+					echo '<a href="showPost.php?p=' . $row['id'] . '"><img class="blurImage" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
 
 					echo '<div class="postUsername">';
-						echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
+						echo '<a href="profile.php?p=' . $row['userid'] . '">@' . $test['username'] .'</a>';
 					echo '</div>';
 
 					echo '</li>';
