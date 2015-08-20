@@ -56,7 +56,7 @@
                 Recipe</center>
             </div>
             <div class="gridBoxes 2">
-            <center><i class="fa fa-video-camera" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i><br>
+                <center><i class="fa fa-video-camera" style="font-size: 6em; margin-bottom: 17px; margin-top: 12px;"></i><br>
             Video</center>
           </div>  
 		  <div class="gridBoxes 3"></div>

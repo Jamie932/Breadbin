@@ -382,13 +382,14 @@ ul#images { list-style: none; margin: 0px; }
 }
 
 .gridBoxes {
-    width: 150px;
-    height: 150px;
+    width: 60px;
+    height: 35px;
     display: inline;
     float: left;
     margin: 7px;
     cursor: pointer; 
-    background-color: rgba(248, 248, 248, 0.4);
+    text-align: center;
+    color: #808080;
 }
 
 .tall { height: auto !important }

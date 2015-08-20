@@ -70,7 +70,7 @@
     </script>
     
     
-    <?/*php require('php/template/gridPopUp.php');*/?>
+    <?php require('php/template/gridPopUp.php');?>
 
     <div id="blackOverlay"></div>   
     
@@ -96,7 +96,12 @@
                 </form>
                 
                 <div id="gridClick">
-                    <center><img src="/img/grid.png" height="20px"></center>
+                    <div class="gridBoxes 2">
+                        <i class="fa fa-video-camera" style="font-size: 2.3em;"></i>
+                    </div>
+                    <div class="gridBoxes 1">
+                        <i class="fa fa-cutlery" style="font-size: 2.3em;"></i>
+                    </div>
                 </div>
 				
                 <div class="clearFix"></div>
