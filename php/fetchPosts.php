@@ -277,7 +277,7 @@
 				echo '<div class="right">';
 
 				if (($_SESSION['user']['rank'] == "owner" || $_SESSION['user']['rank'] == "admin") && ($row['userid'] != $_SESSION['user']['id'])) {
-					echo '<div class="timeago" style="padding-right: 15px;"><a href="showPost.php?p=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
+					echo '<div class="timeago" style="padding-right: 10;"><a href="showPost.php?p=' . $row['id'] . '">' . timeAgoInWords($row['date']) . '</a></div>';
 					echo '<div class="share" style="padding-right: 15px;"><a href="showPost.php?p=' . $row['id'] . '"><i class="fa fa-share-square-o"></i></a></div>';
 					
 					echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i>';
@@ -285,7 +285,7 @@
 					echo '</div>';
 				} else {
 					echo '<div class="timeago">' . timeAgoInWords($row['date']) . '</div>';
-					echo '<div class="share" style="padding-right: 20px;"><a href="showPost.php?p=' . $row['id'] . '"><i class="fa fa-share-square-o"></i></a></div>';
+					echo '<div class="share" style="padding-right: 30px;"><a href="showPost.php?p=' . $row['id'] . '"><i class="fa fa-share-square-o"></i></a></div>';
 				}
 				echo '</div>';
 			echo '</div>';
