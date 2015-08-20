@@ -11,8 +11,8 @@
 		$query_params = array(':userId' => $_SESSION['user']['id']);
 		
 	} else {
- 		$query= "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.id=:id AND posts.userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR posts.userid = :userId GROUP BY posts.id ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
-		$query_params = array(':id' => $_GET['p'], ':userId' => $_SESSION['user']['id']);
+ 		$query= "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.id=:id"; 
+		$query_params = array(':id' => $_GET['p']);
 	}
 
     $stmt = $db->prepare($query); 
