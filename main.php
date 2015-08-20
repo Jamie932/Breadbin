@@ -107,10 +107,10 @@
             <div id="supportBox" class="sideBox">
 				<ul id="credits">
 					<li>&#169; 2015 Breadbin</li>
-					<li><a href="google.co.uk">About</a></li>
-					<li><a href="google.co.uk">Help</a></li>
-					<li><a href="google.co.uk">Privacy</a></li>
-					<li><a href="google.co.uk">Terms</a></li>
+					<li><a href="http://google.co.uk" target="_blank">About</a></li>
+					<li><a href="http://google.co.uk" target="_blank">Help</a></li>
+					<li><a href="http://google.co.uk" target="_blank">Privacy</a></li>
+					<li><a href="http://google.co.uk" target="_blank">Terms</a></li>
 				</ul>
 			</div>
             
