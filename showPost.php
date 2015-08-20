@@ -62,15 +62,18 @@ if (empty($_GET)) {
         </div>
 		
         <div id="sidebar">
-            <div id="uploadBox" class="sideBox">
-                quackquackquackquackquackquack
-     		</div> 
-			
 			<?php require('php/recommendToaster.php'); ?>
             
             <div id="supportBox" class="sideBox">
-				About Support etc etc
+				<ul id="credits">
+					<li>&#169; 2015 Breadbin</li>
+					<li><a href="http://google.co.uk" target="_blank">About</a></li>
+					<li><a href="http://google.co.uk" target="_blank">Help</a></li>
+					<li><a href="http://google.co.uk" target="_blank">Privacy</a></li>
+					<li><a href="http://google.co.uk" target="_blank">Terms</a></li>
+				</ul>
 			</div>
+            
         </div>        
     </div>
 </body>
