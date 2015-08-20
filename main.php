@@ -105,12 +105,12 @@
 			<?php require('php/recommendToaster.php'); ?>
             
             <div id="supportBox" class="sideBox">
-				<ul id="creditsBox">
-					<li>&#169; 2015 Breadbin.</li>
-					<li>About</li>
-					<li>Help</li>
-					<li>Privacy</li>
-					<li>Terms</li>
+				<ul id="credits">
+					<li>&#169; 2015 Breadbin</li>
+					<li><a href="google.co.uk">About</a></li>
+					<li><a href="google.co.uk">Help</a></li>
+					<li><a href="google.co.uk">Privacy</a></li>
+					<li><a href="google.co.uk">Terms</a></li>
 				</ul>
 			</div>
             

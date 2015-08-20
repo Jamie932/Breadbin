@@ -236,6 +236,16 @@
 	color: #4E4E4E;
 }
 
+#credits {
+	margin: 0px;
+	padding: 0px;
+}
+
+#credits li {
+	display: inline-block;
+	
+}
+
 /* ===[ Sidebar textarea (main.css) ]=== */
 
 #uploadText {
