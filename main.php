@@ -97,10 +97,10 @@
                 
                 <div id="gridClick">
                     <div class="gridBoxes 2">
-                        <i class="fa fa-video-camera" style="font-size: 3.3em;"></i>
+                        <i class="fa fa-video-camera" style="font-size: 2.3em;"></i>
                     </div>
                     <div class="gridBoxes 1">
-                        <i class="fa fa-cutlery" style="font-size: 3.3em;"></i>
+                        <i class="fa fa-cutlery" style="font-size: 2.3em;"></i>
                     </div>
                 </div>
 				
