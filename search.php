@@ -42,21 +42,16 @@
 		
     <?php require('php/template/navbar.php');?>
     <?php require('php/template/popup.php');?>
-        
-    <div id="break"></div>
     
     <div id="center">  
         <div id="content">
-            <ul id="images">
-				<?php require('php/fetchSearch.php');?>
-				
-						
-				<div id="postsBox" class="box">
-					<?php echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>0</b> Posts Found' : '<div class="boxTitle"><b>0</b> Posts Found'; ?>
-					<div class="expand"><i class="fa fa-angle-double-down"></i></div></div>
-				</div>
-            </ul>
-        </div>
+			<?php require('php/fetchSearch.php');?>
+			
+			<div id="postsBox" class="box">
+				<?php echo isset($colour) ? '<div class="boxTitle" style="background-color: '. $colour . '"><b>0</b> Posts Found' : '<div class="boxTitle"><b>0</b> Posts Found'; ?>
+				<div class="expand"><i class="fa fa-angle-double-down"></i></div>
+			</div>
+		</div>
         
         <div id="sidebar">
             <div id="support" class="sideBox">
