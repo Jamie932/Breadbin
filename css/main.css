@@ -220,7 +220,6 @@
     border-style: solid;
     border-color: #DDD;
     background-color: #fff;
-	min-height: 60px;
 	margin-bottom: 15px;
     padding: 10px;
 	font-size: 0.9em;
@@ -239,11 +238,12 @@
 #credits {
 	margin: 0px;
 	padding: 0px;
+	text-align: center;
 }
 
 #credits li {
 	display: inline-block;
-	padding-right: 6px;
+	padding-right: 9px;
 }
 
 #credits li:last-of-type {
