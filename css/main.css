@@ -81,7 +81,7 @@
     vertical-align: middle;
 }
 
-.admin {
+.admin, .share {
     display: inline-block;
 }
 
