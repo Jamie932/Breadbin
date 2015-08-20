@@ -49,7 +49,24 @@
             
                     echo '<div id="contentAvatar">';
                         echo '<a href="profile.php?id=' . $currentID . '">';
-                        echo file_exists($root . 'img/avatars/' . $currentID . '/avatar.jpg') ? '<img src="/img/avatars/' . $currentID . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
+                        echo file_exists($root . 'img/avatars/' . $currentID . '/avatar.jpg') ? '<img src="/img/avatars/' . $currentID . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">
+                        <span class="hoverSpan">
+                            <div id="imageHoverLarge">
+                                <img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
+                            </div>
+
+                            <div id="hoverUsername">
+                                <h7>'.$usersname.'</h7>
+                            </div>
+
+                            <div id="hoverBio">
+                                '.$bio.
+                            '</div>
+                        </span>
+                        
+                        ';
+            
+                        
                         echo '</a>';
                     echo '</div>';
                 echo '<div id="contentPost">';
