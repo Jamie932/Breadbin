@@ -278,16 +278,13 @@ $(document).ready(function(){
 });
 
 function makeTall(){
-    $(".hoverSpan").show, function() {
-        $(".hoverSpan").animate({"height":75},200);
-    }
+    $(".hoverSpan").animate({"height":75},200);
+    $(".hoverSpan").show;
 }
 function makeShort(){
-    $(".hoverSpan").animate({"height":50},200, function() {
-        $(".hoverSpan").hide;
-    }
+    $(".hoverSpan").animate({"height":50},200);
+    $(".hoverSpan").hide;
 } 
-function show(){$(".hoverSpan").show;}
 
 $("#videoLink").keydown(function (e) {
      if (e.keyCode == 32) { 
