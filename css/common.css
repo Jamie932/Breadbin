@@ -89,12 +89,6 @@ body {
     bottom: 10px;
 }
 
-a {
-	text-decoration: none;
-    color: #616161;
-	border-bottom: 1px solid #BBB;
-}
-
 #bottomImgTools {
     width:100%;
     bottom:0;

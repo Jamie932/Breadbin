@@ -35,13 +35,17 @@
     z-index: 2;
 }
 
+#contentPost a {
+	text-decoration: none;	
+}
+
 .imgtext {
     margin-top: 20px;
     margin-bottom: 20px; 
 	font-size: 0.9em;
 }
 
-.imgtext a, .contentPostText a, #contentInfoText .left a {
+.imgtext a, .contentPostText a {
 	color: blue;
 }
 
@@ -60,6 +64,15 @@
     float: right;
     font-size: 0.8em;
     height: 20px;
+}
+
+#contentInfoText .left a {
+    color: blue;
+}
+
+#contentInfoText .right a {
+    color: black;
+	border-bottom: 1px solid #BBB;
 }
 
 .timeago {
@@ -238,6 +251,12 @@
 
 #credits li:last-of-type {
 	padding-right: 0px;
+}
+
+#credits li a {
+	text-decoration: none;
+	color: #626262;
+	border-bottom: 1px solid #BBB;
 }
 
 /* ===[ Sidebar textarea (main.css) ]=== */
