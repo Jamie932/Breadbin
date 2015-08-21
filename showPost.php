@@ -1,25 +1,26 @@
 <?php
-require("php/common.php");
-require("php/checkLogin.php");
+	require("php/common.php");
+	require("php/checkLogin.php");
 
-if (empty($_GET)) {
-    if ($_SESSION['user']['id']) {
-        header('Location: main.php');
-        die();
-    }
-} else {
-    $query = "SELECT * FROM posts WHERE id=:id";
-    $query_params = array(':id' => $_GET['p']); 
+	if (empty($_GET)) {
+		if ($_SESSION['user']['id']) {
+			header('Location: main.php');
+			die();
+		}
+	} else {
+		$query = "SELECT * FROM posts WHERE id=:id";
+		$query_params = array(':id' => $_GET['p']); 
 
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute($query_params); 
-    $row = $stmt->fetch();  
-    
-    if (!$row) {
-        header('Location: main.php');
-        die();
-    }
-}?>
+		$stmt = $db->prepare($query); 
+		$result = $stmt->execute($query_params); 
+		$row = $stmt->fetch();  
+
+		if (!$row) {
+			header('Location: main.php');
+			die();
+		}
+	}
+?>
 
 <!DOCTYPE html>
 <html>
