@@ -94,3 +94,14 @@ a {
     color: #616161;
 	border-bottom: 1px solid #BBB;
 }
+
+#bottomImgTools {
+    width:100%;
+    bottom:0;
+    background: -webkit-linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
+    background: -o-linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
+    background: -moz-linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
+    background: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
+    height:0px;
+    position:absolute;
+}

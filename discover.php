@@ -18,6 +18,7 @@
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/jquery.unveil.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
+    <script src="js/vendor/jquery.hoverIntent.js"></script>
     <script src="js/tileFunctions.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
@@ -119,9 +120,11 @@
 					echo '<a href="showPost.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
 
-					echo '<div class="postUsername">';
-						echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-					echo '</div>';
+                    echo '<div id="bottomImgTools">';
+                        echo '<div class="postUsername">';
+				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
+					    echo '</div>';
+                    echo '</div>';
 
 					echo '</li>'; 
 
