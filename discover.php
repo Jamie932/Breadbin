@@ -110,6 +110,23 @@
 				$stmt         = $db->prepare($query);
 				$result       = $stmt->execute($query_params);
 				$test         = $stmt->fetch();
+                
+                ?>
+            <script>
+            $(document).ready(function() {    
+                $("#main li").hoverIntent( showBottom, hideBottom ); 
+            });
+
+            function showBottom(){
+                $("#bottomImgTools").animate({"height":30},100);
+                $(".postUsername").animate({"bottom":"3px"},100);
+            }
+            function hideBottom(){
+                $("#bottomImgTools").animate({"height":0},100);
+                $(".postUsername").animate({"bottom":"-20px"},100);
+            } 
+            </script>
+                <?php
 
 				if ($row['type'] == "image") {                    
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
