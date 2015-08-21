@@ -281,7 +281,10 @@ function makeTall(){
     $(".hoverSpan").animate({"height":75},200);
     $(".hoverSpan").show;
 }
-function makeShort(){$(".hoverSpan").animate({"height":50},200);} 
+function makeShort(){
+    $(".hoverSpan").animate({"height":50},200);
+    $(".hoverSpan").hide;
+} 
 function show(){$(".hoverSpan").show;}
 
 $("#videoLink").keydown(function (e) {
