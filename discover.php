@@ -119,11 +119,10 @@
 					echo '<a href="showPost.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
 
-					echo '<div class="postUsername">';
-						echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-					echo '</div>';
-                    
                     echo '<div id="bottomImgTools">';
+                        echo '<div class="postUsername">';
+				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
+					    echo '</div>';
                     echo '</div>';
 
 					echo '</li>'; 
