@@ -37,7 +37,9 @@ $(document).ready(function() {
 
 function makeTall(){
     $("#bottomImgTools").animate({"height":30},200);
+    $("#bottomImgTools").animate({"bottom":"3px"},200);
 }
 function makeShort(){
     $("#bottomImgTools").animate({"height":0},200);
+    $("#bottomImgTools").animate({"bottom":"-20px"},200);
 } 
