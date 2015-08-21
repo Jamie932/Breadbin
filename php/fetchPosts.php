@@ -5,6 +5,8 @@
     $postsPerPage = 10;
     $groupNumber = $_POST['groupNumber'] ? $_POST['groupNumber'] : 0;
     $position = $groupNumber * $postsPerPage;
+
+	$isRoot = $groupNumber != 0 ? '../' : '';
 	
 	if (!isActive("showPost.php")) {
  	   $query= "SELECT posts.*, COUNT(post_toasts.userid) AS toasts, COUNT(post_burns.userid) AS burns FROM posts LEFT JOIN post_toasts ON post_toasts.postid = posts.id LEFT JOIN post_burns ON post_burns.postid = posts.id WHERE posts.userid IN (SELECT user_no FROM following WHERE follower_id= :userId) OR posts.userid = :userId GROUP BY posts.id ORDER BY date DESC LIMIT " . $postsPerPage . " OFFSET " . $position; 
@@ -19,13 +21,9 @@
     $result = $stmt->execute($query_params); 
 	$posts = $stmt->fetchAll();
 
-    $userId = $posts['userid'];
-
-    if (!$posts && $_POST['groupNumber']) {
+    if (!$posts && $_POST['groupNumber']) { //Are there any more posts?
         exit();
     }
-
-	$root = $groupNumber != 0 ? '../' : '';
 
     $query= "SELECT * FROM following WHERE follower_id = :userId"; 
     $query_params = array(':userId' => $_SESSION['user']['id']);
@@ -35,44 +33,48 @@
 
     $currentID = $_SESSION['user']['id'];
 
-    if ($following == 0 && !$posts) {
-        echo '<div id="contentPost">';
-            echo '<div class="contentPostText" style="padding-top: 65px;"><center>You don\'t follow any toasters.</center></div>';
-        echo '</div>';
+    if ($following == 0) {
+		echo '<div id="post">';
+			echo '<div id="contentAvatar">';
+				echo '<a href="profile.php?id=' . $currentID . '">';
+				echo file_exists($isRoot . 'img/avatars/' . $currentID . '/avatar.jpg') ? '<img src="/img/avatars/' . $currentID . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
+				echo '</a>';
+			echo '</div>';
+			echo '<div id="contentPost">';
+			   echo '<div class="contentPostText">';
+					echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</center></p>';
+				echo '</div>';
+			echo '</div>';
+		echo '</div>'; 
+		
     } else if (!$posts) {
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring toasters haven\'t posted anything.</center></div>';
         echo '</div>';
+		
     } else {
-        if ($following == 0) {
-                echo '<div id="post">';
-            
-                    echo '<div id="contentAvatar">';
-                        echo '<a href="profile.php?id=' . $currentID . '">';
-                        echo file_exists($root . 'img/avatars/' . $currentID . '/avatar.jpg') ? '<img src="/img/avatars/' . $currentID . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
-                        echo '</a>';
-                    echo '</div>';
-                echo '<div id="contentPost">';
-                   echo '<div class="contentPostText">';
-                        echo '<p style="margin: 0;"><center>You don\'t follow any toasters.</center></p>';
-                    echo '</div>';
-                echo '</div>';
-            
-                echo '</div>'; 
-        }
-        
         foreach ($posts as $row) {
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
             $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-
+            $result = $stmt->execute($query_params);
             $userrow = $stmt->fetch();
             $username = 'Unknown';
+			
+            $query = "SELECT * FROM post_burns WHERE postid = :postId"; 
+            $query_params = array(':postId' => $row['id']);
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params); 
+            $numBurnt = $stmt->rowCount();
+			
+	        $query = "SELECT * FROM post_toasts WHERE postid = :postId"; 
+            $query_params = array(':postId' => $row['id']);
+            $stmt = $db->prepare($query);
+            $result = $stmt->execute($query_params); 
+            $numToasted = $stmt->rowCount();
             
             $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
-            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']); 
-
+            $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
             $stmt = $db->prepare($query);
             $result = $stmt->execute($query_params); 
             $ifBurnt = $stmt->rowCount();
@@ -83,21 +85,23 @@
             $result = $stmt->execute($query_params); 
             $ifToasted = $stmt->rowCount();
 
-            $totalToasts = $ifToasted - $ifBurnt;
+            $totalToasts = $numToasted - $numBurnt;
 
-            if($userrow){ 
-                $username = $userrow['username'];
-                $bio = $userrow['bio'];
-            } else {
-                $query = "DELETE FROM posts WHERE userid = :userid"; 
+            if(!$userrow){ //Invalid post
+	          	$query = "DELETE FROM posts WHERE userid = :userid"; 
                 $query_params = array(':userid' => $row['userid']); 
 
                 $stmt = $db->prepare($query); 
                 $result = $stmt->execute($query_params); 
+				
+				exit();
             }
+                
+			$username = $userrow['username'];
+           	$bio = $userrow['bio'];
 
-            if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) {
-                $img = (basename(getcwd()) == "php") ? '../' . $row['image'] : $row['image'];
+            if (($row['type'] == 'image') || ($row['type'] == 'imagetext')) { 
+                $img = $isRoot . $row['image'];
                 
                 /*if (!file_exists($img)) {
                     $query = "DELETE FROM posts WHERE id = :id"; 
@@ -119,7 +123,7 @@
                 }
             }
 
-            if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) {
+            if (($row['type'] == 'text') || ($row['type'] == 'imagetext')) { //Tagging
                 if (preg_match_all('/(?<!\w)@(\w+)/', $row['text'], $matches)) {
                     $users = $matches[1];
 
@@ -140,26 +144,26 @@
             }
 
             echo '<div id="post">';
-                    echo '<div id="contentAvatar">';
-                        echo '<a class="recomImg" href="profile.php?id=' . $row['userid'] . '">
-					<img src="' . (file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg">
+				echo '<div id="contentAvatar">';
+					echo '<a class="recomImg" href="profile.php?id=' . $row['userid'] . '">
+				<img src="' . (file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg">
 
-					<span class="hoverSpan">
-						<div id="imageHoverLarge">
-							<img src="' . (file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
-						</div>
+				<span class="hoverSpan">
+					<div id="imageHoverLarge">
+						<img src="' . (file_exists('img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
+					</div>
 
-						<div id="hoverUsername">
-							<h7>'.$username.'</h7>
-						</div>
+					<div id="hoverUsername">
+						<h7>'.$username.'</h7>
+					</div>
 
-						<div id="hoverBio">
-							'.$bio.
-						'</div>
-					</span>
-				    </a>';
-                         echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
-                    echo '</div>';
+					<div id="hoverBio">
+						'.$bio.
+					'</div>
+				</span>
+				</a>';
+					 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
+				echo '</div>';
                     
 			
                 echo '<div id="contentPost" class="post-' . $row['id'] . '">';
@@ -290,13 +294,13 @@
 
 		if ($_SESSION['user']['id'] == $row['userid']) {
 			echo '<div id="contentLike" class="post-' . $row['id'] . '" style="height: 57px;">'; 
-				echo '<div class="totalToasts">' .$totalToasts. '</div>';
+				echo '<div class="totalToasts">' . $totalToasts . '</div>';
 				echo '<div class="delete">Delete</div>';
 			echo '</div>';
 			
 		} else {
 			echo '<div id="contentLike" class="post-' . $row['id'] . '">';
-                echo '<div class="totalToasts">' .$totalToasts . '</div>'; 
+                echo '<div class="totalToasts">' . $totalToasts . '</div>'; 
 				echo $ifToasted ? '<div class="untoast">Toast</div>' : '<div class="toast">Toast</div>';
 				echo $ifBurnt ? '<div class="unburn">Burn</div>' : '<div class="burn">Burn</div>';
                 echo '<div class="report">Report</div>';
@@ -305,6 +309,7 @@
 			echo '<div class="clearFix"></div>';
 		}             
 		echo '</div>';
+	}
 	}
 }
 ?>
