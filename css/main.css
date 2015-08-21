@@ -715,10 +715,6 @@ hr.test {
     cursor:pointer;
 }
 
-.recomImg:hover .hoverSpan{
-    display:block;
-}
-
 .hoverSpan{
     background:#F8F8F8;
     border: 1px solid #DFDFDF;

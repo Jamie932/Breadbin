@@ -25,6 +25,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
+    <script src="js/vendor/jquery.hoverIntent.js"></script>
     <script src="js/pages/main.js"></script>
     <script src="js/postFunctions.js"></script>
     <script src="js/errorHandler.js"></script>
