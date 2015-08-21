@@ -32,12 +32,14 @@ $(document).ready(function() {
       boxes[i].style.position = 'relative';
     }
     
-    $("#main li").hoverIntent( makeTall, makeShort ); 
+    $("#main li").hoverIntent( showBottom, hideBottom ); 
 });
 
-function makeTall(){
-    $("#bottomImgTools").animate({"height":30},200);
+function showBottom(){
+    $("#bottomImgTools").animate({"height":30},100);
+    $(".postUsername").animate({"bottom":"3px"},100);
 }
-function makeShort(){
-    $("#bottomImgTools").animate({"height":0},200);
+function hideBottom(){
+    $("#bottomImgTools").animate({"height":0},100);
+    $(".postUsername").animate({"bottom":"-20px"},100);
 } 
