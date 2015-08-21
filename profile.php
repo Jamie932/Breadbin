@@ -67,7 +67,8 @@ if (empty($_GET)) {
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/jquery.cookie.js"></script>
-    <script src="js/vendor/jquery.color.js"></script>
+    <script src="js/vendor/jquery.color.js"></script> 
+    <script src="js/vendor/jquery.hoverIntent.js"></script>
     <script src="js/pages/profile.js"></script>
     <script src="js/tileFunctions.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
@@ -243,9 +244,9 @@ if (empty($_GET)) {
                     echo '</li>';
                 } else if ($row['type'] == 'video') {
                     echo '<li>';
-                    echo '<div class="banner">';                
-                    echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
-                    echo '</div>';
+                        echo '<div class="banner">';                
+                            echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
+                        echo '</div>';
                     echo '</li>'; 
                 }
                 echo '</ul>';
