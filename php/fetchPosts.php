@@ -83,7 +83,7 @@
             $result = $stmt->execute($query_params); 
             $ifToasted = $stmt->rowCount();
 
-            $totalToasts = $row['toasts'] - $row['burns'];
+            $totalToasts = $ifToasted - $ifBurnt;
 
             if($userrow){ 
                 $username = $userrow['username'];
