@@ -276,17 +276,17 @@ $(document).ready(function(){
     $(".recomImg").hoverIntent({
         over: makeTall,
         out: makeShort,
-        selector: '.hoverSpan'
+        selector: '.recomImg'
     });
     
 });
 
 function makeTall(){
-    $(this).animate({"height":75},200);
-    $(this).show;
+    $(".hoverSpan").animate({"height":75},200);
+    $(".hoverSpan").show;
 }
-function makeShort(){$(this).animate({"height":50},200);} 
-function show(){$(this).show;}
+function makeShort(){$(".hoverSpan").animate({"height":50},200);} 
+function show(){$(".hoverSpan").show;}
 
 $("#videoLink").keydown(function (e) {
      if (e.keyCode == 32) { 
