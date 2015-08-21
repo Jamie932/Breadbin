@@ -88,3 +88,9 @@ body {
     right: 15px;
     bottom: 10px;
 }
+
+a {
+	text-decoration: none;
+    color: #616161;
+	border-bottom: 1px solid #BBB;
+}
