@@ -96,6 +96,6 @@ body {
     background: -o-linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
     background: -moz-linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
     background: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.7));
-    height:30px;
+    height:0px;
     position:absolute;
 }

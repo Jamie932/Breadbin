@@ -31,4 +31,13 @@ $(document).ready(function() {
       boxes[i].style.verticalAlign = 'middle';
       boxes[i].style.position = 'relative';
     }
+    
+    $("#main li").hoverIntent( makeTall, makeShort ); 
 });
+
+function makeTall(){
+    $("#bottomImgTools").animate({"height":30},200);
+}
+function makeShort(){
+    $("#bottomImgTools").animate({"height":0},200);
+} 

@@ -18,6 +18,7 @@
     <script src="js/vendor/jquery.cookie.js"></script>
     <script src="js/vendor/jquery.unveil.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
+    <script src="js/vendor/jquery.hoverIntent.js"></script>
     <script src="js/tileFunctions.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
