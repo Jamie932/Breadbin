@@ -279,11 +279,9 @@ $(document).ready(function(){
 
 function makeTall(){
     $(".hoverSpan").animate({"height":75},200);
-    $(".hoverSpan").show;
 }
 function makeShort(){
-    $(".hoverSpan").animate({"height":50},200);
-    $(".hoverSpan").hide;
+    $(".hoverSpan").animate({"height":0},200);
 } 
 
 $("#videoLink").keydown(function (e) {
