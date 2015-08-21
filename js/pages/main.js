@@ -278,12 +278,14 @@ $(document).ready(function(){
 });
 
 function makeTall(){
-    $(".hoverSpan").animate({"height":75},200);
-    $(".hoverSpan").show;
+    $(".hoverSpan").show, function() {
+        $(".hoverSpan").animate({"height":75},200);
+    }
 }
 function makeShort(){
-    $(".hoverSpan").animate({"height":50},200);
-    $(".hoverSpan").hide;
+    $(".hoverSpan").animate({"height":50},200, function() {
+        $(".hoverSpan").hide;
+    }
 } 
 function show(){$(".hoverSpan").show;}
 
