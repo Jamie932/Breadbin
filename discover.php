@@ -117,8 +117,12 @@
 
                     echo '<div id="bottomImgTools">';
                         echo '<div class="postUsername">';
-                            echo file_exists($isRoot . 'img/avatars/' . $row['id'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['id'] . '/avatar.jpg" height="20px" width="20px">' : '<img src="/img/defaultAvatar.png" height="20px" width="20px">'; 
-				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>'; 
+                            echo '<div class="imageAvatar" style="display: inline;">';
+                                echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="20px" width="20px">' : '<img src="/img/defaultAvatar.png" height="20px" width="20px">'; 
+                            echo '</div>';
+                            echo '<div class="profileName" style="display: inline;">';
+				                echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>'; 
+					        echo '</div>';
 					    echo '</div>';
                         echo '<div class="postLikeToast">';
 				            echo '<i class="fa fa-arrow-circle-up"></i>&nbsp;<i class="fa fa-arrow-circle-down"></i>';
