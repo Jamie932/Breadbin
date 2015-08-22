@@ -134,7 +134,7 @@
 					loading = true;
 
 					$.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
-						$("#images").append(data);
+						$("#content").append(data);
 						loading = false;
 						groupNumber++;
 						$('.js-lazyYT').lazyYT(); 
