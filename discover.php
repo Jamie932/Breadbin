@@ -117,8 +117,14 @@
                 
                 ?>
             <script>
-            $(document).ready(function() {    
-                $("#main li").hoverIntent( showBottom, hideBottom ); 
+            $(document).ready(function() {
+                $("li").hover(function() {
+                   $(this).find("#bottomImgTools").animate({"height":30},100);
+                   $(this).find(".postUsername").animate({"bottom":"3px"},100);
+               }, function() {
+                    $(this).find("#bottomImgTools").animate({"height":0},100);
+                    $(this).find(".postUsername").animate({"bottom":"-20px"},100);
+                });
             });
 
             function showBottom(){
