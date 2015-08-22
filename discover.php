@@ -128,6 +128,9 @@
                         echo '<div class="postUsername">';
 				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
 					    echo '</div>';
+                        echo '<div class="postLikeToast">';
+				            echo 'Toast | Burn';
+					    echo '</div>';
                     echo '</div>';
 
 					echo '</li>'; 
