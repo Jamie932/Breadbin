@@ -31,4 +31,15 @@ $(document).ready(function() {
       boxes[i].style.verticalAlign = 'middle';
       boxes[i].style.position = 'relative';
     }
+    
+    $("li").hover(function() {
+        $(this).stop();
+        $(this).find("#bottomImgTools").animate({"height":30},100);
+        $(this).find(".postUsername").animate({"bottom":"3px"},100);
+    }, function() {
+        $(this).stop();
+        $(this).find("#bottomImgTools").animate({"height":0},100);
+        $(this).find(".postUsername").animate({"bottom":"-20px"},100);
+    });
+    
 });
