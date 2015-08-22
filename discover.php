@@ -129,7 +129,7 @@
 				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
 					    echo '</div>';
                         echo '<div class="postLikeToast">';
-				            echo 'Toast | Burn';
+				            echo '<i class="fa fa-arrow-circle-up"></i>';
 					    echo '</div>';
                     echo '</div>';
 
