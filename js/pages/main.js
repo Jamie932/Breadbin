@@ -278,10 +278,10 @@ $(document).ready(function(){
 });
 
 function makeTall(){
-    $(".hoverSpan").animate({"height":75},200);
+    $(this).find(".hoverSpan").animate({"height":75},200);
 }
 function makeShort(){
-    $(".hoverSpan").animate({"height":0},200);
+    $(this).find(".hoverSpan").animate({"height":0},200);
 } 
 
 $("#videoLink").keydown(function (e) {
