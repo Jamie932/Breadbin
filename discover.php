@@ -141,8 +141,8 @@
 					    echo '</div>';
                         echo '<div class="postLikeToast">';
 				            echo '<div class="toastDisc"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;<div class="burnDisc"><i class="fa fa-arrow-circle-down"></i></div>';
-                            echo $ifToasted ? '<div class="toastDisc"><i class="fa fa-arrow-circle-up" style="color: orange;"></i></div>&nbsp;' : '<div class="toastDisc"><i class="fa fa-arrow-circle-up" style="color: white;"></i></div>&nbsp;';
-				            echo $ifBurnt ? '<div class="toastDisc"><i class="fa fa-arrow-circle-down" style="color: orange;"></i></div>' : '<div class="toastDisc"><i class="fa fa-arrow-circle-down" style="color: white;"></i></div>';
+                            echo $ifToasted ? '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up" style="color: orange;"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up" style="color: white;"></i></div>&nbsp;';
+				            echo $ifBurnt ? '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-down" style="color: orange;"></i></div>' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-down" style="color: white;"></i></div>';
 					    echo '</div>';
                     echo '</div>';
                     
