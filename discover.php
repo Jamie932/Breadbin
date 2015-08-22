@@ -118,7 +118,7 @@
                     echo '<div id="bottomImgTools">';
                         echo '<div class="postUsername">';
                             echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
-                                echo '<a href="profile.php?id=' . $row['userid'] . '">'
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">';
                                 echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">'; 
                             echo '</div>';
                             echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
@@ -137,7 +137,7 @@
 						echo '<div id="bottomImgTools">';
                         echo '<div class="postUsername">';
                             echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
-                                echo '<a href="profile.php?id=' . $row['userid'] . '">'
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">';
                                 echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">'; 
                             echo '</div>';
                             echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
@@ -161,7 +161,7 @@
 					   echo '<div id="bottomImgTools">';
                         echo '<div class="postUsername">';
                             echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
-                                echo '<a href="profile.php?id=' . $row['userid'] . '">'
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">';
                                 echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">'; 
                             echo '</div>';
                             echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
