@@ -65,6 +65,68 @@ $(document).ready(function(){
 			}
         })
     })
+    
+    $(document).on('click','.toastDisc', function() {
+        var toastButton = $(this).closest('.postLikeToast').children('.toastDisc');
+        var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
+
+        var formData = {
+            'post' : postid
+        };
+ 
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/toast.php',
+            data        : formData,
+            dataType    : 'json',
+            encode      : true,
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
+				if (!data.success) {
+					createError("This post has already been toasted by you."); 
+				} else {
+					if (data.removedBurn && data.addedToast) { // Previously toasted
+						burnButton.css('color', 'white'); 
+					} else {
+						createError("Incorrect toast data returned. Please inform an adminstrator."); 
+					}
+
+					toastButton.css('color', 'rgba(54, 54, 54, 0.25)');
+				};
+			}
+        })
+    })
+    
+    $(document).on('click','.burnDisc', function() {
+        var toastButton = $(this).closest('.postLikeToast').children('.toastDisc');
+        var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
+
+        var formData = {
+            'post' : postid
+        };
+
+        $.ajax({
+            type        : 'POST',
+            url         : 'php/burn.php',
+            data        : formData,
+            dataType    : 'json',
+            encode      : true,
+			error		: function(request, status, error) { console.log(request.responseText); },
+			success		: function(data) {
+				if (!data.success) {
+                 	createError("This post has already been burnt by you."); 
+				} else {
+					if (data.removedToast && data.addedBurn) { // Previously toasted
+						toastButton.css('color', 'white'); 
+					} else {
+						createError("Incorrect burn data returned. Please inform an adminstrator."); 
+					}
+
+					burnButton.css('color', 'rgba(54, 54, 54, 0.25)');
+				};
+			}
+        })
+    })
 
     $(document).on('click','.burn', function() {
         var postid = $(this).parent().attr('class').split('-')[1];

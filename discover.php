@@ -19,6 +19,7 @@
     <script src="js/vendor/jquery.unveil.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/vendor/jquery.hoverIntent.js"></script>
+    <script src="js/postFunctions.js"></script>
     <script src="js/tileFunctions.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
@@ -126,7 +127,7 @@
 					        echo '</div>';
 					    echo '</div>';
                         echo '<div class="postLikeToast">';
-				            echo '<i class="fa fa-arrow-circle-up"></i>&nbsp;<i class="fa fa-arrow-circle-down"></i>';
+				            echo '<div class="toastDisc"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;<div class="burnDisc"><i class="fa fa-arrow-circle-down"></i></div>';
 					    echo '</div>';
                     echo '</div>';
 
