@@ -37,6 +37,7 @@
         
         $(window).load(function() { 
             $('#mainLoader').hide();
+            $("#content").css("opacity", "1");  
             $('#content').css("pointer-events", "auto");
         });
     </script>
