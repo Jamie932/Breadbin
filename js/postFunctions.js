@@ -67,6 +67,7 @@ $(document).ready(function(){
     })
     
     $(document).on('click','.toastDisc', function() {
+        var postid = $(this).parent().attr('class').split('-')[1]; 
         var toastButton = $(this).closest('.postLikeToast').children('.toastDisc');
         var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
 
@@ -98,6 +99,7 @@ $(document).ready(function(){
     })
     
     $(document).on('click','.burnDisc', function() {
+        var postid = $(this).parent().attr('class').split('-')[1]; 
         var toastButton = $(this).closest('.postLikeToast').children('.toastDisc');
         var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
 
