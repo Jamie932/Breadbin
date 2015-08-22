@@ -140,6 +140,14 @@ a{
     text-align: center;
 }
 
+.unToastDisc, .unBurnDisc {
+    color: orange;   
+}
+
+.toastDisc, .burnDisc {
+    color: white;   
+}
+
 .postText {
     visibility: visible;
     position: absolute;

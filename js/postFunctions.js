@@ -69,7 +69,7 @@ $(document).ready(function(){
     $(document).on('click','.toastDisc', function() {
         var postid = $(this).parent().attr('id').split('-')[1]; 
         var toastButton = $(this).closest('.postLikeToast').children('.toastDisc');
-        var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
+        var burnButton = $(this).closest('.postLikeToast').children('.unBurnDisc');
 
         var formData = {
             'post' : postid
@@ -88,11 +88,13 @@ $(document).ready(function(){
 				} else {
 					if (data.removedBurn && data.addedToast) { // Previously toasted
 						burnButton.css('color', 'white'); 
+                        burnButton.toggleClass('unBurnDisc burnDisc');
 					} else {
 						createError("Incorrect toast data returned. Please inform an adminstrator."); 
 					}
-
-					toastButton.css('color', 'rgba(54, 54, 54, 0.25)');
+                    
+                    toastButton.css('color', 'orange');  
+                    toastButton.toggleClass('toastDisc unToastDisc');
 				};
 			}
         })
@@ -100,7 +102,7 @@ $(document).ready(function(){
     
     $(document).on('click','.burnDisc', function() {
         var postid = $(this).parent().attr('id').split('-')[1]; 
-        var toastButton = $(this).closest('.postLikeToast').children('.toastDisc');
+        var toastButton = $(this).closest('.postLikeToast').children('.unToastDisc');
         var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
 
         var formData = {
@@ -120,11 +122,13 @@ $(document).ready(function(){
 				} else {
 					if (data.removedToast && data.addedBurn) { // Previously toasted
 						toastButton.css('color', 'white'); 
+                        toastButton.toggleClass('toastDisc unToastDisc');
 					} else {
 						createError("Incorrect burn data returned. Please inform an adminstrator."); 
 					}
 
-					burnButton.css('color', 'rgba(54, 54, 54, 0.25)');
+					burnButton.css('color', 'orange');
+                    burnButton.toggleClass('unBurnDisc burnDisc');
 				};
 			}
         })
