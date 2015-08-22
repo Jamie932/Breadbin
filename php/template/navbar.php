@@ -15,7 +15,7 @@
 
         if($row){ 
             if ($row['colour'] == 2) {
-                $colour = '#6699FF';
+                $colour = '#6699FF'; 
                 $activecolour = '#4979D8';
             } else if ($row['colour'] == 3) {
                 $colour = '#50B350';
