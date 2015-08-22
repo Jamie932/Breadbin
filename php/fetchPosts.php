@@ -33,26 +33,27 @@
 
     $currentID = $_SESSION['user']['id'];
 
-    if ($following == 0) {
-		echo '<div id="post">';
-			echo '<div id="contentAvatar">';
-				echo '<a href="profile.php?id=' . $currentID . '">';
-				echo file_exists($isRoot . 'img/avatars/' . $currentID . '/avatar.jpg') ? '<img src="/img/avatars/' . $currentID . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
-				echo '</a>';
-			echo '</div>';
-			echo '<div id="contentPost">';
-			   echo '<div class="contentPostText">';
-					echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</center></p>';
-				echo '</div>';
-			echo '</div>';
-		echo '</div>'; 
-		
-    } else if (!$posts) {
+    if (!$posts) {
         echo '<div id="contentPost">';
             echo '<div class="contentPostText" style="padding-top: 65px;"><center>Your boring toasters haven\'t posted anything.</center></div>';
         echo '</div>';
 		
     } else {
+		if ($following == 0) {
+			echo '<div id="post">';
+				echo '<div id="contentAvatar">';
+					echo '<a href="profile.php?id=' . $currentID . '">';
+					echo file_exists($isRoot . 'img/avatars/' . $currentID . '/avatar.jpg') ? '<img src="/img/avatars/' . $currentID . '/avatar.jpg" class="avatarImg">' : '<img src="/img/defaultAvatar.png" class="avatarImg">';
+					echo '</a>';
+				echo '</div>';
+				echo '<div id="contentPost">';
+				   echo '<div class="contentPostText">';
+						echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</center></p>';
+					echo '</div>';
+				echo '</div>';
+			echo '</div>'; 
+		}		
+		
         foreach ($posts as $row) {
             $query = "SELECT * FROM users WHERE id = :id"; 
             $query_params = array(':id' => $row['userid']); 
