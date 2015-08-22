@@ -144,7 +144,7 @@ a{
     visibility: visible;
     position: absolute;
     bottom: -20px;
-    left: 5px;
+    right: 5px;
     padding: 3px;
     color: white;
     width: auto;
