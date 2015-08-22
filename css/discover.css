@@ -172,9 +172,9 @@ p.textPost {
 	font-size: 1em;
     width: 300px !important;
 	max-width: 280px !important;
-    height: 180px !important;
-    max-height: 180px !important;
-    min-height: 180px !important;
+    height: 160px !important;
+    max-height: 160px !important;
+    min-height: 160px !important;
 }
 
 .box {
