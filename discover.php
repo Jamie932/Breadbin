@@ -119,9 +119,11 @@
             <script>
             $(document).ready(function() {
                 $("li").hover(function() {
-                   $(this).find("#bottomImgTools").animate({"height":30},100);
-                   $(this).find(".postUsername").animate({"bottom":"3px"},100);
+                    $(this).stop();
+                    $(this).find("#bottomImgTools").animate({"height":30},100);
+                    $(this).find(".postUsername").animate({"bottom":"3px"},100);
                }, function() {
+                    $(this).stop();
                     $(this).find("#bottomImgTools").animate({"height":0},100);
                     $(this).find(".postUsername").animate({"bottom":"-20px"},100);
                 });
