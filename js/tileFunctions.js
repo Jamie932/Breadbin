@@ -33,8 +33,8 @@ $(document).ready(function() {
     }, function() {
         $(this).stop();
         $(this).find("#bottomImgTools").animate({"height":0},100);
-        $(this).find(".postUsername").animate({"bottom":"-20px"},100);
-        $(this).find(".postLikeToast").animate({"bottom":"-20px"},100);
+        $(this).find(".postUsername").animate({"bottom":"-25px"},100);
+        $(this).find(".postLikeToast").animate({"bottom":"-25px"},100);
     });
     
 });

@@ -120,7 +120,7 @@
                             echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
                                 echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px">'; 
                             echo '</div>';
-                            echo '<div class="profileName" style="display: inline;">';
+                            echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
 				                echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>'; 
 					        echo '</div>';
 					    echo '</div>';
