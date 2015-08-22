@@ -35,25 +35,6 @@
 		$( document ).ready(function() {
 			$('.js-lazyYT').lazyYT(); 
 		});
-		
-		var loading = false;
-		var groupNumber = 1;
-
-		$(window).scroll(function() {
-			if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-
-				if (loading == false && groupNumber <= <?php echo $numPages ?>) {
-					loading = true;
-
-					$.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
-						$("#images").append(data);
-						loading = false;
-						groupNumber++;
-						$('.js-lazyYT').lazyYT(); 
-					});
-				}
-			}
-		});
 	</script>
 </head> 
 <body>
@@ -141,5 +122,26 @@
             
         </div>        
     </div>
+		
+	<script>
+		var loading = false;
+		var groupNumber = 1;
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+				if (loading == false && groupNumber <= <?php echo $numPages ?>) {
+					loading = true;
+
+					$.post('php/fetchPosts.php', {'groupNumber' : groupNumber}, function(data) {
+						$("#images").append(data);
+						loading = false;
+						groupNumber++;
+						$('.js-lazyYT').lazyYT(); 
+					});
+				}
+			}
+		});
+	</script>  
 </body>
 </html>
