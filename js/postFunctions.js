@@ -71,7 +71,7 @@ $(document).ready(function(){
         var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
 
         var formData = {
-            'banner' : postid
+            'post' : postid
         };
  
         $.ajax({
@@ -102,7 +102,7 @@ $(document).ready(function(){
         var burnButton = $(this).closest('.postLikeToast').children('.burnDisc');
 
         var formData = {
-            'banner' : postid
+            'post' : postid
         };
 
         $.ajax({
