@@ -142,7 +142,7 @@
                         echo '<div class="postLikeToast">';
                             echo '<div class="toastDisc" style="display: inline;">';
                             echo $ifToasted ? '<i class="fa fa-arrow-circle-up" style="color: orange;"></i></div>&nbsp;' : '<i class="fa fa-arrow-circle-up" style="color: white;"></i></div>&nbsp;';
-                            echo '<div class="toastDisc" style="display: inline;">';
+                            echo '<div class="burnDisc" style="display: inline;">';
 				            echo $ifBurnt ? '<i class="fa fa-arrow-circle-down" style="color: orange;"></i></div>' : '<i class="fa fa-arrow-circle-down" style="color: white;"></i></div>';
 					    echo '</div>';
                     echo '</div>';
