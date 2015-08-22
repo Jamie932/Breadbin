@@ -22,18 +22,9 @@
     <script src="js/tileFunctions.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
-        $(document).ready(function(){
-            /* to fade out before redirect
-            $('a.catLink').click(function(e){
-                redirect = $(this).attr('href');
-                e.preventDefault(); 
-                $('#content').fadeOut(400, function(){
-                    document.location.href = redirect
-                });
-            });*/
-            
-             $('.js-lazyYT').lazyYT(); 
-        });
+        $( document ).ready(function() {
+			$('.js-lazyYT').lazyYT(); 
+		});
         
         $(window).load(function() { 
             $('#mainLoader').hide();
@@ -129,7 +120,7 @@
 				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
 					    echo '</div>';
                         echo '<div class="postLikeToast">';
-				            echo '<i class="fa fa-arrow-circle-up"></i>';
+				            echo '<i class="fa fa-arrow-circle-up"></i><i class="fa fa-arrow-circle-down"></i>';
 					    echo '</div>';
                     echo '</div>';
 
@@ -137,10 +128,15 @@
 
 				} else if ($row['type'] == "text") {
 					echo '<li class="'.$postNumber.'"><div class="box"><p class="textPost">' . $row['text'] . '</p>';
-						echo '<div class="postUsername">';
-							echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-						echo '</div>';
-					echo '</div></li>';
+						echo '<div id="bottomImgTools">';
+                            echo '<div class="postUsername">';
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
+                            echo '</div>';
+                            echo '<div class="postLikeToast">';
+                                echo '<i class="fa fa-arrow-circle-up"></i><i class="fa fa-arrow-circle-down"></i>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</li>';
 				} else if ($row['type'] == 'imagetext') {
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
 					$imageLocation = $withoutExt . '-profile.jpg';
@@ -150,9 +146,14 @@
 					echo '<a href="showPost.php?p=' . $row['id'] . '"><img class="blurImage" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
 
-					echo '<div class="postUsername">';
-						echo '<a href="profile.php?p=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-					echo '</div>';
+					   echo '<div id="bottomImgTools">';
+                            echo '<div class="postUsername">';
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
+                            echo '</div>';
+                            echo '<div class="postLikeToast">';
+                                echo '<i class="fa fa-arrow-circle-up"></i><i class="fa fa-arrow-circle-down"></i>';
+                            echo '</div>';
+                        echo '</div>';
 
 					echo '</li>';
 				} else if ($row['type'] == "video") {
