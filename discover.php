@@ -140,10 +140,8 @@
 					        echo '</div>';
 					    echo '</div>';
                         echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
-                            echo '<div class="toastDisc" style="display: inline;">';
-                            echo $ifToasted ? '<i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
-                            echo '<div class="burnDisc" style="display: inline;">';
-				            echo $ifBurnt ? '<i class="fa fa-arrow-circle-down"></i></div>' : '<i class="fa fa-arrow-circle-down"></i></div>';
+                            echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
+				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
 					    echo '</div>';
                     echo '</div>';
                     
