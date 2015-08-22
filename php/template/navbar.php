@@ -17,24 +17,31 @@
             if ($row['colour'] == 2) {
                 $colour = '#6699FF'; 
                 $activecolour = '#4979D8';
+                $lighterColour = '#69F';
             } else if ($row['colour'] == 3) {
                 $colour = '#50B350';
                 $activecolour = '#219921';
+                $lighterColour = '#8AE68A';
             } else if ($row['colour'] == 4) {
                 $colour = '#EC5858';
                 $activecolour = '#DD2B2B';
+                $lighterColour = '#F08181';
             } else if ($row['colour'] == 5) {
                 $colour = '#8C68D8';
                 $activecolour = '#7153B0';
+                $lighterColour = '#AF98E0';
             } else if ($row['colour'] == 6) {
                 $colour = '#CC7AB0';
                 $activecolour = '#C2569E';
+                $lighterColour = '#F6C';
 			} else if ($row['colour'] == 7) { 
                 $colour = '#363636';
                 $activecolour = '#1A1A1A';
+                $lighterColour = '#7B7B7B';
 			} else {
                 $colour = '#F6A628';
-                $activecolour = '#D7870F';   
+                $activecolour = '#D7870F'; 
+                $lighterColour = '#FFB540';
             }
         }
 

@@ -127,7 +127,7 @@
 					echo '</li>'; 
 
 				} else if ($row['type'] == "text") {
-					echo '<li class="'.$postNumber.'"><div class="box" style="background:'.$colour.'"><p class="textPost">' . $row['text'] . '</p>';
+					echo '<li class="'.$postNumber.'"><div class="box" style="background:'.$lighterColour.'"><p class="textPost">' . $row['text'] . '</p>';
 						echo '<div id="bottomImgTools">';
                             echo '<div class="postUsername">';
                                 echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
