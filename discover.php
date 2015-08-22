@@ -120,7 +120,7 @@
 				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
 					    echo '</div>';
                         echo '<div class="postLikeToast">';
-				            echo '<i class="fa fa-arrow-circle-up"></i><i class="fa fa-arrow-circle-down"></i>';
+				            echo '<i class="fa fa-arrow-circle-up"></i>&nbsp;<i class="fa fa-arrow-circle-down"></i>';
 					    echo '</div>';
                     echo '</div>';
 
@@ -133,7 +133,7 @@
                                 echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
                             echo '</div>';
                             echo '<div class="postLikeToast">';
-                                echo '<i class="fa fa-arrow-circle-up"></i><i class="fa fa-arrow-circle-down"></i>';
+                                echo '<i class="fa fa-arrow-circle-up"></i>&nbsp;<i class="fa fa-arrow-circle-down"></i>';
                             echo '</div>';
                         echo '</div>';
                     echo '</li>';
@@ -151,7 +151,7 @@
                                 echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
                             echo '</div>';
                             echo '<div class="postLikeToast">';
-                                echo '<i class="fa fa-arrow-circle-up"></i><i class="fa fa-arrow-circle-down"></i>';
+                                echo '<i class="fa fa-arrow-circle-up"></i>&nbsp;<i class="fa fa-arrow-circle-down"></i>';
                             echo '</div>';
                         echo '</div>';
 
