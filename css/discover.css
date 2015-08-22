@@ -126,34 +126,6 @@ a{
 	height: 250px;
 }
 
-.postUsername {
-    visibility: visible;
-    position: absolute;
-    bottom: -20px;
-    left: 5px;
-    padding: 3px;
-    color: white;
-    width: auto;
-    height: 20px;
-    z-index:1;
-    display: inline;
-    float: left;
-}
-
-.postLikeToast {
-    visibility: visible;
-    position: absolute;
-    bottom: -20px;
-    right: 5px;
-    padding: 3px;
-    color: white;
-    width: auto;
-    height: 20px;
-    z-index:1;
-    float:right;
-    display: inline;
-}
-
 .postTitle {
     position: absolute;
     top: 45%;
