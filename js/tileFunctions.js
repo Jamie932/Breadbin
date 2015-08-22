@@ -27,7 +27,7 @@ $(document).ready(function() {
     
     $("li").hover(function() {
         $(this).stop();
-        $(this).find("#bottomImgTools").animate({"height":30},100);
+        $(this).find("#bottomImgTools").animate({"height":33},100);
         $(this).find(".postUsername").animate({"bottom":"3px"},100);
         $(this).find(".postLikeToast").animate({"bottom":"3px"},100);
     }, function() {
