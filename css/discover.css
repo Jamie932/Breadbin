@@ -126,34 +126,6 @@ a{
 	height: 250px;
 }
 
-.postUsername {
-    visibility: visible;
-    position: absolute;
-    bottom: -20px;
-    left: 5px;
-    padding: 3px;
-    color: white;
-    width: auto;
-    height: 20px;
-    z-index:1;
-    display: inline;
-    float: left;
-}
-
-.postLikeToast {
-    visibility: visible;
-    position: absolute;
-    bottom: -20px;
-    right: 5px;
-    padding: 3px;
-    color: white;
-    width: auto;
-    height: 20px;
-    z-index:1;
-    float:right;
-    display: inline;
-}
-
 .postTitle {
     position: absolute;
     top: 45%;
@@ -166,6 +138,14 @@ a{
     font-size: 25px;
     padding-top: 10px;
     text-align: center;
+}
+
+.unToastDisc, .unBurnDisc {
+    color: orange;   
+}
+
+.toastDisc, .burnDisc {
+    color: white;   
 }
 
 .postText {
@@ -200,9 +180,9 @@ p.textPost {
 	font-size: 1em;
     width: 300px !important;
 	max-width: 280px !important;
-    height: 230px !important;
-    max-height: 230px !important;
-    min-height: 230px !i	mportant;
+    height: 160px !important;
+    max-height: 160px !important;
+    min-height: 160px !important;
 }
 
 .box {

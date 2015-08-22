@@ -12,17 +12,10 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {    
-    var colors = [
-        "rgb(138, 230, 138)",
-        "rgb(102, 153, 255)",
-        "rgb(255, 181, 64)",
-        "rgb(255, 102, 204)"
-    ];
 
     var boxes = document.querySelectorAll(".box");
 
     for (i = 0; i < boxes.length; i++) {
-      boxes[i].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
       boxes[i].style.width = '300';
       boxes[i].style.height = '230';
       boxes[i].style.display = 'inline-table';
@@ -34,14 +27,14 @@ $(document).ready(function() {
     
     $("li").hover(function() {
         $(this).stop();
-        $(this).find("#bottomImgTools").animate({"height":30},100);
+        $(this).find("#bottomImgTools").animate({"height":33},100);
         $(this).find(".postUsername").animate({"bottom":"3px"},100);
         $(this).find(".postLikeToast").animate({"bottom":"3px"},100);
     }, function() {
         $(this).stop();
         $(this).find("#bottomImgTools").animate({"height":0},100);
-        $(this).find(".postUsername").animate({"bottom":"-20px"},100);
-        $(this).find(".postLikeToast").animate({"bottom":"-20px"},100);
+        $(this).find(".postUsername").animate({"bottom":"-30px"},100);
+        $(this).find(".postLikeToast").animate({"bottom":"-30px"},100);
     });
     
 });

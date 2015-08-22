@@ -19,21 +19,13 @@
     <script src="js/vendor/jquery.unveil.js"></script>
     <script src="js/vendor/jquery.wookmark.js"></script>
     <script src="js/vendor/jquery.hoverIntent.js"></script>
+    <script src="js/postFunctions.js"></script>
     <script src="js/tileFunctions.js"></script>
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
-        $(document).ready(function(){
-            /* to fade out before redirect
-            $('a.catLink').click(function(e){
-                redirect = $(this).attr('href');
-                e.preventDefault(); 
-                $('#content').fadeOut(400, function(){
-                    document.location.href = redirect
-                });
-            });*/
-            
-             $('.js-lazyYT').lazyYT(); 
-        });
+        $( document ).ready(function() {
+			$('.js-lazyYT').lazyYT(); 
+		});
         
         $(window).load(function() { 
             $('#mainLoader').hide();
@@ -98,6 +90,7 @@
             $stmt         = $db->prepare($query);
             $result       = $stmt->execute($query_params);
             $posts        = $stmt->fetchAll();
+            
 
         if (!$posts) {
             echo '<center>Nothing to discover.</center>';
@@ -114,6 +107,18 @@
 				$stmt         = $db->prepare($query);
 				$result       = $stmt->execute($query_params);
 				$test         = $stmt->fetch();
+                
+                $query = "SELECT * FROM post_burns WHERE postid = :postId AND userid= :userId"; 
+                $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
+                $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params); 
+                $ifBurnt = $stmt->rowCount();
+
+                $query = "SELECT * FROM post_toasts WHERE postid = :postId AND userid = :userId"; 
+                $query_params = array(':postId' => $row['id'], ':userId' => $_SESSION['user']['id']);
+                $stmt = $db->prepare($query);
+                $result = $stmt->execute($query_params); 
+                $ifToasted = $stmt->rowCount();
 
 				if ($row['type'] == "image") {                    
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
@@ -123,24 +128,43 @@
 					echo '<div class="banner">';                
 					echo '<a href="showPost.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
-
+                    
                     echo '<div id="bottomImgTools">';
                         echo '<div class="postUsername">';
-				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
+                            echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">';
+                                echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">'; 
+                            echo '</div>';
+                            echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
+				                echo '' . $test['username'] .'</a>'; 
+					        echo '</div>';
 					    echo '</div>';
-                        echo '<div class="postLikeToast">';
-				            echo '<i class="fa fa-arrow-circle-up"></i>';
+                        echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
+                            echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
+				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
 					    echo '</div>';
                     echo '</div>';
-
+                    
 					echo '</li>'; 
 
 				} else if ($row['type'] == "text") {
-					echo '<li class="'.$postNumber.'"><div class="box"><p class="textPost">' . $row['text'] . '</p>';
-						echo '<div class="postUsername">';
-							echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-						echo '</div>';
-					echo '</div></li>';
+					echo '<li class="'.$postNumber.'"><div class="box" style="background:'.$lighterColour.'"><p class="textPost">' . $row['text'] . '</p>';
+                    echo '<div id="bottomImgTools">';
+                        echo '<div class="postUsername">';
+                            echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">';
+                                echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">'; 
+                            echo '</div>';
+                            echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
+				                echo '' . $test['username'] .'</a>'; 
+					        echo '</div>';
+					    echo '</div>';
+                        echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
+                            echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
+				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
+					    echo '</div>';
+                    echo '</div>';
+                    echo '</li>';
 				} else if ($row['type'] == 'imagetext') {
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
 					$imageLocation = $withoutExt . '-profile.jpg';
@@ -149,11 +173,23 @@
 					echo '<div class="banner">';                
 					echo '<a href="showPost.php?p=' . $row['id'] . '"><img class="blurImage" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
-
-					echo '<div class="postUsername">';
-						echo '<a href="profile.php?p=' . $row['userid'] . '">@' . $test['username'] .'</a>';
-					echo '</div>';
-
+                        
+                    echo '<div id="bottomImgTools">';
+                        echo '<div class="postUsername">';
+                            echo '<div class="imageAvatar" style="display: inline; margin-right: 5px;">';
+                                echo '<a href="profile.php?id=' . $row['userid'] . '">';
+                                echo file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? '<img src="/img/avatars/' . $row['userid'] . '/avatar.jpg" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">' : '<img src="/img/defaultAvatar.png" height="25px" width="25px" style="border-radius: 5%; border: 1px solid rgba(54, 54, 54, 0.25);">'; 
+                            echo '</div>';
+                            echo '<div class="profileName" style="display: inline; position: absolute; top: 6px;">';
+				                echo '' . $test['username'] .'</a>'; 
+					        echo '</div>';
+					    echo '</div>';
+                        echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
+                            echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
+				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
+					    echo '</div>';
+                    echo '</div>'; 
+                    
 					echo '</li>';
 				} else if ($row['type'] == "video") {
                     echo '<li class="'.$postNumber.'">';
