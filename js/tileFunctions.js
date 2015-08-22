@@ -32,14 +32,16 @@ $(document).ready(function() {
       boxes[i].style.position = 'relative';
     }
     
-    $("#main li").hoverIntent( showBottom, hideBottom ); 
+    $("li").hover(function() {
+        $(this).stop();
+        $(this).find("#bottomImgTools").animate({"height":30},100);
+        $(this).find(".postUsername").animate({"bottom":"3px"},100);
+        $(this).find(".postLikeToast").animate({"bottom":"3px"},100);
+    }, function() {
+        $(this).stop();
+        $(this).find("#bottomImgTools").animate({"height":0},100);
+        $(this).find(".postUsername").animate({"bottom":"-20px"},100);
+        $(this).find(".postLikeToast").animate({"bottom":"-20px"},100);
+    });
+    
 });
-
-function showBottom(){
-    $("#bottomImgTools").animate({"height":30},100);
-    $(".postUsername").animate({"bottom":"3px"},100);
-}
-function hideBottom(){
-    $("#bottomImgTools").animate({"height":0},100);
-    $(".postUsername").animate({"bottom":"-20px"},100);
-} 

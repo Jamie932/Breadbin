@@ -23,21 +23,21 @@
     <script type="text/javascript" src="js/vendor/lazyYT.js"></script>
     <script>
         $(document).ready(function(){
-            // to fade out before redirect
+            /* to fade out before redirect
             $('a.catLink').click(function(e){
                 redirect = $(this).attr('href');
                 e.preventDefault(); 
                 $('#content').fadeOut(400, function(){
                     document.location.href = redirect
                 });
-            });
+            });*/
             
              $('.js-lazyYT').lazyYT(); 
         });
         
         $(window).load(function() { 
             $('#mainLoader').hide();
-            $("#content").animate({ opacity: 1}, 1000); 
+            $("#content").css("opacity", "1");  
             $('#content').css("pointer-events", "auto");
         });
     </script>
@@ -104,7 +104,11 @@
         } else {
 			echo '<ul id="tiles">';
 
+                $postNumber=0;    
+            
         	foreach ($posts as $row) {
+                $postNumber++;
+                
 				$query        = "SELECT username FROM users WHERE id = :id"; 
 				$query_params = array(':id' => $row['userid']);
 				$stmt         = $db->prepare($query);
@@ -115,7 +119,7 @@
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
 					$imageLocation = $withoutExt . '-profile.jpg';
 
-					echo '<li>';
+					echo '<li class="'.$postNumber.'">';
 					echo '<div class="banner">';                
 					echo '<a href="showPost.php?id=' . $row['id'] . '"><img class="tiles" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
@@ -124,12 +128,15 @@
                         echo '<div class="postUsername">';
 				            echo '<a href="profile.php?id=' . $row['userid'] . '">' . $test['username'] .'</a>';
 					    echo '</div>';
+                        echo '<div class="postLikeToast">';
+				            echo '<i class="fa fa-arrow-circle-up"></i>';
+					    echo '</div>';
                     echo '</div>';
 
 					echo '</li>'; 
 
 				} else if ($row['type'] == "text") {
-					echo '<li><div class="box"><p class="textPost">' . $row['text'] . '</p>';
+					echo '<li class="'.$postNumber.'"><div class="box"><p class="textPost">' . $row['text'] . '</p>';
 						echo '<div class="postUsername">';
 							echo '<a href="profile.php?id=' . $row['userid'] . '">@' . $test['username'] .'</a>';
 						echo '</div>';
@@ -138,7 +145,7 @@
 					$withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $row['image']);
 					$imageLocation = $withoutExt . '-profile.jpg';
 
-					echo '<li>';
+					echo '<li class="'.$postNumber.'">';
 					echo '<div class="banner">';                
 					echo '<a href="showPost.php?p=' . $row['id'] . '"><img class="blurImage" src="/' . $imageLocation . '"></a>';
 					echo '</div>';
@@ -149,7 +156,7 @@
 
 					echo '</li>';
 				} else if ($row['type'] == "video") {
-                    echo '<li>';
+                    echo '<li class="'.$postNumber.'">';
                         echo '<div class="banner">';                
                             echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
                         echo '</div>';
