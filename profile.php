@@ -208,11 +208,11 @@ if (empty($_GET)) {
                             }
                         }
                     }
+                }
 
                 echo '<ul id="tiles">';
 
                 foreach ($posts as $row) {
-                $postNumber++;
                 
 				$query        = "SELECT username FROM users WHERE id = :id"; 
 				$query_params = array(':id' => $row['userid']);
