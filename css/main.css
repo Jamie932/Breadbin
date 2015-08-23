@@ -721,12 +721,11 @@ hr.test {
     color: #292929;
     height: auto;
     position: absolute;
-    top: 60px;
+    top: 65px;
     left:-51px;
     display:none;
     width:165px;
     z-index:1;
-	margin-top: 5px !important;
 }
 
 .hoverSpan:after{
