@@ -128,3 +128,11 @@ body {
     float:right;
     display: inline;
 }
+
+.unToastDisc, .unBurnDisc {
+    color: orange;   
+}
+
+.toastDisc, .burnDisc {
+    color: white;   
+}
