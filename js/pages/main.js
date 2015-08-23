@@ -274,7 +274,8 @@ $(document).ready(function(){
     });
     
     $(".recomAvatarImg").hoverIntent( function() { $(this).closest('a').find(".hoverSpan").slideDown(); } , function() { $(this).closest('a').find(".hoverSpan").slideUp(); }); 
-    
+    $(".hoverspan").hoverIntent( function() { $(this).slideUp(); }, function() { $(this).slideDown(); });
+	
 });
 
 $("#videoLink").keydown(function (e) {
