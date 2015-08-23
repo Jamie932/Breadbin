@@ -147,9 +147,9 @@
             echo '<div id="post">';
 				echo '<div id="contentAvatar">';
 					echo '<a class="recomImg" href="profile.php?id=' . $row['userid'] . '">
-				<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg avHover">
+				<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg">
 
-				<span class="hoverSpan avHover">
+				<span class="hoverSpan">
 					<div id="imageHoverLarge">
 						<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
 					</div>
