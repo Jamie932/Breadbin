@@ -165,7 +165,7 @@ a{
 }
 
 p.textPost {
-	word-wrap: break-word;
+	word-wrap: break-all;
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;

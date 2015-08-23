@@ -252,9 +252,11 @@ if (empty($_GET)) {
 					        echo '</div>';
 					    echo '</div>';
                         echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
+                    if ($_SESSION['user']['id'] != $row['userid']) {
                             echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
 				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
 					    echo '</div>';
+                    }
                     echo '</div>';
                     
 					echo '</li>'; 
@@ -272,8 +274,11 @@ if (empty($_GET)) {
 					        echo '</div>';
 					    echo '</div>';
                         echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
+                            if ($_SESSION['user']['id'] != $row['userid']) {
                             echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
 				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
+					    echo '</div>';
+                    }
 					    echo '</div>';
                     echo '</div>';
                     echo '</li>';
@@ -297,8 +302,11 @@ if (empty($_GET)) {
 					        echo '</div>';
 					    echo '</div>';
                         echo '<div class="postLikeToast" id="post-' . $row['id'] . '">';
+                            if ($_SESSION['user']['id'] != $row['userid']) {
                             echo $ifToasted ? '<div class="unToastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;' : '<div class="toastDisc" style="display: inline;"><i class="fa fa-arrow-circle-up"></i></div>&nbsp;';
 				            echo $ifBurnt ? '<div class="unBurnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>' : '<div class="burnDisc" style="display: inline;"><i class="fa fa-arrow-circle-down"></i></div>';
+					    echo '</div>';
+                    }
 					    echo '</div>';
                     echo '</div>'; 
                     
