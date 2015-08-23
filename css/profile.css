@@ -244,19 +244,6 @@ p.textPost {
 	height: 250px;
 }
 
-.postUsername {
-    visibility: visible;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    padding: 3px;
-    color: white;
-    background: rgb(56, 26, 26);
-    background: rgba(56, 26, 26, .5);
-    width: auto;
-    height: 20px;
-}
-
 .postTitle {
     position: absolute;
     top: 45%;
