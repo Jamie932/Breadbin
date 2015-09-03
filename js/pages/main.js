@@ -257,7 +257,7 @@ $(document).ready(function(){
     $(".vidBack").click(function(){
         $("#gridBox").removeClass('tall');
         $(".innerVideo").fadeOut('normal', function(){
-            $('.innerGrid').fadeIn('normal');
+            $('.innerGrid').fadeIn('normal'); 
         })
     });
     
