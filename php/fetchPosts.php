@@ -176,6 +176,10 @@
             } else if ($row['type'] == "image") {
 				echo '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="/' . $img . '"></div>';
+                
+                echo '<div class="commentUnderPost">';
+                    TestTest
+                echo '</div>';
 				
             } else if ($row['type'] == "text") {
                 echo '<div class="contentPostText">';		

@@ -783,6 +783,13 @@ h7 {
 	right: 0;
 }
 
+/* Comment section for main.php */
+.commentUnderPost {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+}
+
 /*
 @media screen and (max-width: 1125px) {
     #center {
