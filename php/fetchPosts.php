@@ -155,7 +155,7 @@
 					   </div>
                     
                         <div id="hoverSettings">
-                                <i class="fa fa-user-plus" style="font-size: 2em;></i>
+                                <i class="fa fa-user-plus" style="font-size: 2em;"></i>
                         </div>
 
 						<div id="hoverUsername">
