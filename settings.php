@@ -170,22 +170,22 @@
 
                                 <form action="php/updateSettings.php" method="post" id="detailsForm" >
                                     <div class="rowContainer">
-                                        <label>FIRST NAME </label><br>
+                                        <label>First Name </label><br>
                                         <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
                                     </div>
 
                                       <div class="rowContainer" style="margin-left: 12px;">
-                                        <label>LAST NAME </label><br>
+                                        <label>Last Name </label><br>
                                         <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
                                     </div>                              
 
                                     <div class="rowContainer">
-                                        <label>EMAIL </label><br>
+                                        <label>Email </label><br>
                                         <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
                                     </div>
 
                                     <div class="rowContainer">
-                                       <label>COLOUR</label>
+                                       <label>Colour</label>
                                         <div id="colourContainer">
                                             <div class="colourBox orange"></div>
                                             <div class="colourBox blue"></div>
