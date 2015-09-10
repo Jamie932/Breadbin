@@ -174,7 +174,7 @@ $(document).ready(function(){
         })
     })
 	
-    $(document).on('click','#heartMiniRed', function() {
+    $(document).on('click','fa-heart', function() {
 		var postid = $(this).parent().attr('class').split('-')[1];
 		var formData = {
 			'post' : postid
@@ -197,7 +197,7 @@ $(document).ready(function(){
         $(this).removeClass('fa-heart-o').addClass('fa-heart');
     });
 
-    $(document).on('click','#heartMiniNot', function() {
+    $(document).on('click','fa-heart-o', function() {
 		var postid = $(this).parent().attr('class').split('-')[1];
 		var formData = {
 			'post' : postid
