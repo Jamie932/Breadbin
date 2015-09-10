@@ -150,24 +150,22 @@
 				<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg">
 
 				<span class="hoverSpan">
-					<div id="imageHoverLarge">
-						<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
-					</div>
-
-					<div id="hoverUsername">
-						<h7>'.$username.'</h7>
-					</div>
-
-					<div id="hoverBio">
-						'.$bio.'
-					</div>
-                    
-                    <div id="hoverSettings">
-                            <i class="fa fa-user-plus" style="font-size: 2em; margin-right: 18px;"></i>
-                            <i class="fa fa-envelope" style="font-size: 2em;"></i>
+						<div id="imageHoverLarge">
+							<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
+						</div>
+                        
+                        <div id="hoverSettings">
+                                <i class="fa fa-user-plus" style="font-size: 2em;></i>
                         </div>
-                    
-				</span>
+
+						<div id="hoverUsername">
+							<h7>'.$usersname.'</h7>
+						</div>
+
+						<div id="hoverBio">
+							'.$bio.
+						'</div>
+					</span>
 				</a>';
 					 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
 				echo '</div>';
