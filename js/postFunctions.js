@@ -195,7 +195,7 @@ $(document).ready(function(){
         });
 			  
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
-        $(this).find("#heart").append('<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>').show('slow');
+        $("#heart").append('<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>').show('slow');
     });
 
     $(document).on('click','.fa-heart', function() {
@@ -219,7 +219,7 @@ $(document).ready(function(){
         })
 			  
         $(this).addClass('fa-heart-o').removeClass('fa-heart');
-        $(this).find("#heart").append('<div id="heart"><i class="fa fa-heart" style="cursor: default; opacity: 0;"></i></div>').show('slow');
+        $("#heart").append('<div id="heart"><i class="fa fa-heart" style="cursor: default; opacity: 0;"></i></div>').show('slow');
     });
 	
     $(document).on('click','.fa-trash-o', function() {
