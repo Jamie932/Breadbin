@@ -294,7 +294,7 @@
 				if (($_SESSION['user']['rank'] == "owner" || $_SESSION['user']['rank'] == "admin") && ($row['userid'] != $_SESSION['user']['id'])) {
 					echo '<div class="timeago" style="padding-right: 17px;"><a href="showPost.php?p=' . $row['id'] . '" target="_blank">' . timeAgoInWords($row['date']) . '</a></div>';
 					echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i>';
-					echo ($row['favourite'] ? '<i class="fa fa-heart" style="padding-left: 5px;" id="heartRed"></i>' : '<i class="fa fa-heart-o" style="padding-left: 5px;" heartNot></i>');
+					echo ($row['favourite'] ? '<i class="fa fa-heart" style="padding-left: 5px;" id="heartMiniRed"></i>' : '<i class="fa fa-heart-o" style="padding-left: 5px;" id="heartMiniNot"></i>');
 					echo '</div>';
 				} else {
 					echo '<div class="timeago"><a href="showPost.php?p=' . $row['id'] . '" target="_blank">' . timeAgoInWords($row['date']) . '</a></div>';
