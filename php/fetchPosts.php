@@ -119,6 +119,8 @@
 
                 if ($width > 600) {
                     $class = 'imgNoPadding';
+                } else if ($width > 500 && 700) {
+                    $class = 'imgNoPadding';
                 } else {
                     $class = 'imgPadding';
                 }
