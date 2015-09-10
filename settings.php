@@ -196,11 +196,11 @@
 
                                     <div class="rowContainer">
                                         <label>Email </label><br>
-                                        <input type="text" name="email" class="settings" id="setEmail" value="<?php echo $email; ?>">
+                                        <input type="text" name="email" class="settings email" id="setEmail" value="<?php echo $email; ?>">
                                     </div>
 
-                                    <div class="rowContainer">
-                                       <label>Colour</label>
+                                    <div class="rowContainer" style="margin-left: 12px;">
+                                       <label>Colour</label><br>
                                         <div id="colourContainer">
                                             <div class="colourBox orange"></div>
                                             <div class="colourBox blue"></div>
