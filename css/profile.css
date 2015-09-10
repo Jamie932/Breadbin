@@ -129,6 +129,10 @@ p {
     margin-right: auto;
     width: 100%;
     height: 50px;
+    border-top:1px solid #DDD;
+    border-bottom:1px solid #DDD;
+    padding-top:10px;
+    width: 96%;
 }
 
 .followerLeft {
@@ -153,15 +157,16 @@ p {
 #profileContainer { padding-left: 280px }
 
 p.textPost {
-    word-break: keep-all;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 1em;
-    padding-left: 10px;
-    padding-right: 10px;
-	height: 230px;
-    width: 300px;
+    word-wrap: break-all;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 1em;
+    width: 300px !important;
+	max-width: 280px !important;
+    height: 160px !important;
+    max-height: 160px !important;
+    min-height: 160px !important;
 }
 
 .textPost a {

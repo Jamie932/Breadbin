@@ -159,8 +159,12 @@
 					</div>
 
 					<div id="hoverBio">
-						'.$bio.
-					'</div>
+						'.$bio.'
+					</div>
+                    <div id="hoverSettings">
+                        <i class="fa fa-user-plus"></i>
+                        <i class="fa fa-envelope"></i>
+                    </div>
 				</span>
 				</a>';
 					 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';

@@ -722,9 +722,9 @@ hr.test {
     height: auto;
     position: absolute;
     top: 65px;
-    left:-51px;
+    left:-63px;
     display:none;
-    width:165px;
+    width:190px;
     z-index:1;
 }
 
@@ -761,6 +761,12 @@ hr.test {
     padding: 5px;
     height: auto;
     word-wrap: break-word;
+}
+
+#hoverSettings {
+    width: 90%;   
+    height: 30px;
+    text-align:center;
 }
 
 h7 {
