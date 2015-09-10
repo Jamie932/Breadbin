@@ -275,6 +275,11 @@ $(document).ready(function(){
     
     $(".recomImg").hoverIntent( function() { $(this).find(".hoverSpan").stop().slideToggle(200); } , function() { $(this).find(".hoverSpan").stop().fadeOut(200); }); 
 	
+    
+    $('#heartRed').onclick(function () {
+        $(this).addClass('magictime puffIn');
+    });
+    
 });
 
 $("#videoLink").keydown(function (e) {

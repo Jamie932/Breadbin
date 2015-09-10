@@ -151,9 +151,9 @@
 
 				<span class="hoverSpan">
 						<div id="imageHoverLarge">
-							<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
-						</div>
-                        
+						<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
+					   </div>
+                    
                         <div id="hoverSettings">
                                 <i class="fa fa-user-plus" style="font-size: 2em;></i>
                         </div>
@@ -294,7 +294,7 @@
 				if (($_SESSION['user']['rank'] == "owner" || $_SESSION['user']['rank'] == "admin") && ($row['userid'] != $_SESSION['user']['id'])) {
 					echo '<div class="timeago" style="padding-right: 17px;"><a href="showPost.php?p=' . $row['id'] . '" target="_blank">' . timeAgoInWords($row['date']) . '</a></div>';
 					echo '<div class="admin post-' . $row['id'] . '"><i class="fa fa-trash-o"></i>';
-					echo ($row['favourite'] ? '<i class="fa fa-heart" style="padding-left: 5px;"></i>' : '<i class="fa fa-heart-o" style="padding-left: 5px;"></i>');
+					echo ($row['favourite'] ? '<i class="fa fa-heart" style="padding-left: 5px;" id="heartRed"></i>' : '<i class="fa fa-heart-o" style="padding-left: 5px;" heartNot></i>');
 					echo '</div>';
 				} else {
 					echo '<div class="timeago"><a href="showPost.php?p=' . $row['id'] . '" target="_blank">' . timeAgoInWords($row['date']) . '</a></div>';
