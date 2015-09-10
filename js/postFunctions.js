@@ -194,7 +194,7 @@ $(document).ready(function(){
 			}
         });
 			  
-        $(this).addClass('fa-heart').removeClass('fa-heart-o');
+        $(this).removeClass('fa-heart-o').addClass('fa-heart');
     });
 
     $(document).on('click','#heartMiniNot', function() {
