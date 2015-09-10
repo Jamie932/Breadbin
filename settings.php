@@ -180,6 +180,11 @@
                                     </div>
                                     
                                     <div class="rowContainer">
+                                        <label>Country</label><br>
+                                        <input type="text" name="country" class="settings country" id="setCountry" value="<?php echo $country;?>">
+                                    </div>
+                                    
+                                    <div class="rowContainer">
                                         <label>First Name </label><br>
                                         <input type="text" name="firstname" class="settings names" id="setFirstname" value="<?php echo $firstname;?>">
                                     </div>

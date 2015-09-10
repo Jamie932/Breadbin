@@ -109,14 +109,15 @@ input.settings, select.settings {
     border: 1px solid rgba(100, 100, 100, 0.5);
     height: 30px;
     
-    padding-left:5px;
+    padding-left:7px;
 	font-size: 0.9em;
     border-radius: 2px;
 }
 
-.names {width: 313px;}
-.username {width: 157px;}
-.moNum {width: 157px;}
+.names {width: 311px;}
+.username {width: 200px;}
+.moNum {width: 153px;}
+.country { width: 200px }
 
 label {
     display: inline-block;
