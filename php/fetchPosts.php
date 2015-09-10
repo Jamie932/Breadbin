@@ -168,7 +168,7 @@
 					</span>
 				</a>';
 					 echo '<div id="heart">';
-                        echo '$row['favourite'] ?<i class="fa fa-heart" style="cursor: default;"></i>' : '<i class="fa fa-heart" style="cursor: default; opacity: 0;"></i>';
+                        echo $row['favourite'] ? '<i class="fa fa-heart" style="cursor: default;"></i>' : '<i class="fa fa-heart" style="cursor: default; opacity: 0;"></i>';
 				    echo '</div>';
 				echo '</div>';
                     
