@@ -174,7 +174,7 @@ $(document).ready(function(){
         })
     })
 	
-    $(document).on('click','fa-heart', function() {
+    $(document).on('click','.fa-heart-o', function() {
 		var postid = $(this).parent().attr('class').split('-')[1];
 		var formData = {
 			'post' : postid
@@ -194,10 +194,10 @@ $(document).ready(function(){
 			}
         });
 			  
-        $(this).removeClass('fa-heart-o').addClass('fa-heart');
+        $(this).addClass('fa-heart').removeClass('fa-heart-o');
     });
 
-    $(document).on('click','fa-heart-o', function() {
+    $(document).on('click','.fa-heart', function() {
 		var postid = $(this).parent().attr('class').split('-')[1];
 		var formData = {
 			'post' : postid
