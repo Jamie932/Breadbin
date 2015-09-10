@@ -176,10 +176,6 @@
             } else if ($row['type'] == "image") {
 				echo '<div class="contentPostImage ' . $class . '">';
                 echo '<img src="/' . $img . '"></div>';
-                
-                echo '<div class="commentUnderPost">';
-                    TestTest
-                echo '</div>';
 				
             } else if ($row['type'] == "text") {
                 echo '<div class="contentPostText">';		
@@ -280,6 +276,12 @@
                 echo $row['favourite'] ? '<div class="contentPostImage  imgNoPadding favouriteImg">' : '<div class="contentPostVideo imgNoPadding">';
                 echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="640px" data-height="361px"></div></div>'; 
             }
+            
+            /*echo '<div class="commentUnderPost">';
+                    echo '<div class="upperComment">';
+                    echo '<input class="commentBox" placeholder="Write your comment here..." maxlength="100"></input>';
+                    echo '</div>';
+                echo '</div>';*/
 			
 			echo '<div id="contentInfoText">';
 				echo '<div class="left"><a href="profile.php?id=' . $row['userid'] . '">' . $username . '</a></div>';
