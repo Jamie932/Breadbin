@@ -276,8 +276,8 @@ $(document).ready(function(){
     $(".recomImg").hoverIntent( function() { $(this).find(".hoverSpan").stop().slideToggle(200); } , function() { $(this).find(".hoverSpan").stop().fadeOut(200); }); 
 	
     
-    $('#heartMiniNot').click(function () {
-        $('#heart').addClass('magictime puffIn');
+    $('.fa-heart-o').click(function () {
+        $('#heart').addClass('magictime swashin');
     });
     
 });
