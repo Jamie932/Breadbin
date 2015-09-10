@@ -170,13 +170,23 @@
 
                                 <form action="php/updateSettings.php" method="post" id="detailsForm" >
                                     <div class="rowContainer">
+                                        <label>Username</label><br>
+                                        <input type="text" name="username" class="settings username" id="setUsername" value="<?php echo $usersname;?>">
+                                    </div>
+                                    
+                                    <div class="rowContainer">
+                                        <label>Mobile No.</label><br>
+                                        <input type="text" name="moNum" class="settings moNum" id="setMobile" value="123456789">
+                                    </div>
+                                    
+                                    <div class="rowContainer">
                                         <label>First Name </label><br>
-                                        <input type="text" name="firstname" class="settings" id="setFirstname" value="<?php echo $firstname;?>">
+                                        <input type="text" name="firstname" class="settings names" id="setFirstname" value="<?php echo $firstname;?>">
                                     </div>
 
                                       <div class="rowContainer" style="margin-left: 12px;">
                                         <label>Last Name </label><br>
-                                        <input type="text" name="lastname" class="settings" id="setLastname" value="<?php echo $lastname;?>">
+                                        <input type="text" name="lastname" class="settings names" id="setLastname" value="<?php echo $lastname;?>">
                                     </div>                              
 
                                     <div class="rowContainer">

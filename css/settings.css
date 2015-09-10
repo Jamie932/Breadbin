@@ -108,10 +108,15 @@ h3.settings {
 input.settings, select.settings {
     border: 1px solid rgba(100, 100, 100, 0.5);
     height: 30px;
-    width: 313px;
+    
     padding-left:5px;
 	font-size: 0.9em;
+    border-radius: 2px;
 }
+
+.names {width: 313px;}
+.username {width: 157px;}
+.moNum {width: 157px;}
 
 label {
     display: inline-block;
