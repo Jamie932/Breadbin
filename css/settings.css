@@ -4,6 +4,7 @@
     width: 100%;
     margin-bottom: 20px;
     float: right;
+    height: 469px;
 }
 
 p.settingsDetail {
@@ -202,7 +203,7 @@ p.settingsDetail {
 /* ===[ Box Styles & Label Sizes ]=== */
 
 #accountdetailsBox {
-    height: 469px;
+    height: auto;
 }
 
 #privacyBox {
