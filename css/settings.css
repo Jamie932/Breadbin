@@ -23,7 +23,7 @@ p.settingsDetail {
 
 .settingsBox {
     background-color: #F3F3F3;
-    width: 560px;
+    width: 694px;
     border: 1px solid rgba(100, 100, 100, 0.5);
     overflow: hidden;
     margin-left: 178px;
@@ -80,7 +80,7 @@ li.settingsList:hover {
 
 .rightSettings {
     background-color: #fff;
-    width: 559px;
+    width: 100%;
     height: 100%;
 }
 
@@ -106,7 +106,7 @@ h3.settings {
 input.settings, select.settings {
     border: 1px solid rgba(100, 100, 100, 0.5);
     height: 30px;
-    width: 200px;
+    width: 303px;
     padding-left:5px;
 	font-size: 0.9em;
 }
@@ -147,6 +147,9 @@ p.settingsDetail {
 
 .rowContainer {
     margin-bottom: 20px;   
+    float: left;
+    display: inline;
+    margin-left: 0;
 }
 
 .active {
@@ -206,7 +209,7 @@ p.settingsDetail {
     font-size: 0.9em;   
 }
 
-#accountdetailsBox label { width: 75px; }
+#accountdetailsBox label { width: 75px; margin: 0; }
 #privacyBox label { width: 75px; }
 #passwordresetBox label { width: 120px; }
 #deleteaccountBox label { width: 75px; }
