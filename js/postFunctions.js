@@ -195,7 +195,7 @@ $(document).ready(function(){
         });
 			  
         $(this).addClass('fa-heart').removeClass('fa-heart-o');
-        $('#heart').addClass('magictime swashin');
+        $(this).find("#heart").addClass('magictime swashin');
     });
 
     $(document).on('click','.fa-heart', function() {
