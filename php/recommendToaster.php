@@ -28,12 +28,12 @@
 					<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '" class="recomAvatarImg">
 
 					<span class="hoverSpan">
-						<div id="imageHoverLarge">
-							<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
                             <div id="hoverSettings">
                                 <i class="fa fa-user-plus" style="font-size: 2em; margin-right: 18px;"></i>
                                 <i class="fa fa-envelope" style="font-size: 2em;"></i>
                             </div>
+						<div id="imageHoverLarge">
+							<img src="' . (file_exists('img/avatars/' . $row['id'] . '/avatar.jpg') ? "/img/avatars/" . $row['id'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
 						</div>
 
 						<div id="hoverUsername">
