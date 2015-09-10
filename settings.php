@@ -174,12 +174,12 @@
                                         <input type="text" name="username" class="settings username" id="setUsername" value="<?php echo $usersname;?>">
                                     </div>
                                     
-                                    <div class="rowContainer">
+                                    <div class="rowContainer" style="margin-left: 12px;">
                                         <label>Mobile No.</label><br>
                                         <input type="text" name="moNum" class="settings moNum" id="setMobile" value="123456789">
                                     </div>
                                     
-                                    <div class="rowContainer">
+                                    <div class="rowContainer" style="margin-left: 12px;">
                                         <label>Country</label><br>
                                         <input type="text" name="country" class="settings country" id="setCountry" value="<?php echo $country;?>">
                                     </div>
