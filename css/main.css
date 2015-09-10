@@ -725,7 +725,7 @@ hr.test {
     left:-63px;
     display:none;
     width:190px;
-    z-index:1;
+    z-index:2;
 }
 
 /*
@@ -748,7 +748,7 @@ hr.test {
 
 #imageHoverLarge {
     width: 100%;
-    height: 88px;
+    height: 102x;
     overflow: hidden;
 }
 
@@ -770,8 +770,8 @@ hr.test {
     width: 90%;   
     height: 30px;
     text-align:center;
-    margin-left: 9px;
-    margin-bottom: 7px;
+    top: 0;
+    display: inline;
 }
 
 h7 {
