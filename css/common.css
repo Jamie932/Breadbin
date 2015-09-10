@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background-color: #F2F2F2; /* #F6F6F6 */
+    background-color: rgba(203, 203, 210, 0.15); /* #F2F2F2 */
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
