@@ -721,13 +721,14 @@ hr.test {
     color: #292929;
     height: auto;
     position: absolute;
-    top: 65px;
+    top: 61px;
     left:-63px;
     display:none;
     width:190px;
     z-index:1;
 }
 
+/*
 .hoverSpan:after{
     content:'';
     position:absolute;
@@ -743,6 +744,7 @@ hr.test {
     -webkit-transform:rotate(45deg); 
     transform:rotate(45deg);
 }
+*/
 
 #imageHoverLarge {
     width: 100%;
