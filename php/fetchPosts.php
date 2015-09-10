@@ -151,7 +151,7 @@
 
 				<span class="hoverSpan">
 					<div id="imageHoverLarge">
-						<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="165px" style="margin-top: -14px;">
+						<img src="' . (file_exists($isRoot . 'img/avatars/' . $row['userid'] . '/avatar.jpg') ? "/img/avatars/" . $row['userid'] . "/avatar.jpg" : "/img/defaultAvatar.png") . '"  width="191px" style="margin-top: -14px;">
 					</div>
 
 					<div id="hoverUsername">
@@ -161,10 +161,12 @@
 					<div id="hoverBio">
 						'.$bio.'
 					</div>
+                    
                     <div id="hoverSettings">
-                        <i class="fa fa-user-plus"></i>
-                        <i class="fa fa-envelope"></i>
-                    </div>
+                            <i class="fa fa-user-plus" style="font-size: 2em; margin-right: 18px;"></i>
+                            <i class="fa fa-envelope" style="font-size: 2em;"></i>
+                        </div>
+                    
 				</span>
 				</a>';
 					 echo $row['favourite'] ? '<div id="heart"><i class="fa fa-heart" style="cursor: default;"></i></div>' : '';
