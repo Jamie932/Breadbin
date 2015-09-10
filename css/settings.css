@@ -119,7 +119,7 @@ input.settings, select.settings, textarea.settings {
 .moNum {width: 160px;}
 .country { width: 240px }
 .email {width: 311px;}
-.bio {width: 622px; height: auto; }
+.bio {width: 622px; height: auto !important;  }
 
 
 label {
