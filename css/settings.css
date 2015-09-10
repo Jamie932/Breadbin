@@ -105,10 +105,10 @@ h3.settings {
     font-size: 1.3em;
 }
 
-input.settings, select.settings {
+input.settings, select.settings, textarea.settings {
     border: 1px solid rgba(100, 100, 100, 0.5);
     height: 30px;
-    
+    resize: none;
     padding-left:7px;
 	font-size: 0.9em;
     border-radius: 2px;
@@ -116,9 +116,10 @@ input.settings, select.settings {
 
 .names {width: 311px;}
 .username {width: 200px;}
-.moNum {width: 153px;}
-.country { width: 200px }
+.moNum {width: 160px;}
+.country { width: 240px }
 .email {width: 311px;}
+.bio {width: 622px; height: auto; }
 
 
 label {
@@ -178,8 +179,8 @@ p.settingsDetail {
 }
 
 .colourBox {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     margin-right: 7px;
     float: left;
     cursor: pointer;

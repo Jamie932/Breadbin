@@ -211,6 +211,11 @@
                                             <div class="colourBox black"></div>
                                         </div>
                                     </div>
+                                    
+                                     <div class="rowContainer">
+                                        <label>About Me</label><br>
+                                        <textarea type="text" name="bio" class="settings bio" id="setBio" value="<?php echo $bio; ?>">
+                                    </div>
 
                                     <input type="submit" value="Update Profile" class="saveSettings">
                                 </form>
