@@ -155,7 +155,7 @@
 					   </div>
                     
                         <div id="hoverSettings">
-                                <i class="fa fa-user-plus" style="font-size: 2em;"></i>
+                                <a href="discover.php"><i class="fa fa-user-plus" style="font-size: 2em;"></i></a>
                         </div>
 
 						<div id="hoverUsername">
