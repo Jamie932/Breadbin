@@ -43,8 +43,10 @@
     
     <div id="break"></div>
     
+    <div id="center"> 
     <div id="content">
             <?php require('php/fetchToasted.php'); ?>
+    </div> 
     </div> 
 </body>
 </html>
