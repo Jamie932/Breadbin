@@ -314,7 +314,7 @@ if (empty($_GET)) {
 				} else if ($row['type'] == "video") {
                     echo '<li class="'.$postNumber.'">';
                         echo '<div class="banner">';                
-                            echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="300px" data-height="194px"></div>';
+                            echo '<div class="js-lazyYT" data-youtube-id="'.$row['text'].'" data-width="640px" data-height="378px"></div>';
                         echo '</div>';
                     echo '</li>'; 
                 } 
