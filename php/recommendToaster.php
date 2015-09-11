@@ -33,7 +33,7 @@
 						</div>
                         
                         <div id="hoverSettings">
-                                <a href="discover.php"><i class="fa fa-user-plus" style="font-size: 2em;"></i></a>
+                                <i class="fa fa-user-plus" style="font-size: 2em;"></i>
                         </div>
 
 						<div id="hoverUsername">
