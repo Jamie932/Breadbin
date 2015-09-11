@@ -163,10 +163,10 @@ p.textPost {
 	text-align: center;
 	font-size: 1em;
     width: 300px !important;
-	max-width: 280px !important;
-    height: 160px !important;
-    max-height: 160px !important;
-    min-height: 160px !important;
+	max-width: 300px !important;
+    height: 168.75px !important;
+    max-height: 168.75px !important;
+    min-height: 168.75px !important;
 }
 
 .textPost a {
