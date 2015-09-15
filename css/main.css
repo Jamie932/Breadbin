@@ -738,11 +738,12 @@ hr.test {
     color: #292929;
     height: auto;
     position: absolute;
-    top: 61px;
+    top: 56px;
     left:-63px;
     display:none;
     width:190px;
     z-index:2;
+    margin-top: 5px;
 }
 
 /*
