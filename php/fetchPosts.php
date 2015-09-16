@@ -49,6 +49,9 @@
 				echo '<div id="contentPost">';
 				   echo '<div class="contentPostText">';
 						echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</center></p>';
+                        echo '<div class="meter orange nostripes">
+                                <span style="width: 33.3%"></span>
+                            </div>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>'; 

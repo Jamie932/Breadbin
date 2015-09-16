@@ -273,9 +273,11 @@ $(document).ready(function(){
         $('.bodyHalfServe').on('keydown', '#recipeServe', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
     });
     
-    $(".recomImg").hoverIntent( function() { $(this).find(".hoverSpan").stop().slideToggle(200); } , function() { $(this).find(".hoverSpan").stop().fadeOut(200); });
-    
-});
+    $(".recomImg").hoverIntent( function() { 
+        $(this).find(".hoverSpan").stop().slideToggle(200); } , function() {              
+            $(this).find(".hoverSpan").stop().fadeOut(200); 
+        });
+    });
 
 $("#videoLink").keydown(function (e) {
      if (e.keyCode == 32) { 
@@ -289,4 +291,15 @@ function getFile(){
 
 $(window).scroll(function() {
     $('#sidebar').css('margin-left', 75 - $(window).scrollLeft()); 
+});
+
+$(document).ready(function(){
+    $(".meter > span").each(function() {
+      $(this)
+        .data("origWidth", $(this).width())
+        .width(0)
+        .animate({
+          width: $(this).data("origWidth") // or + "%" if fluid
+        }, 1200);
+    });
 });
