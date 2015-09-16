@@ -7,7 +7,7 @@
     <title>Bread Bin</title>
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/about.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
 </head>
