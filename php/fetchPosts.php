@@ -33,7 +33,7 @@
 
     $currentID = $_SESSION['user']['id'];
 
-    if (!$posts && $following == 0) {
+    if (!$posts == 0 && $following == 0) {
         echo '<div id="post">';
 				echo '<div id="contentAvatar">';
 					echo '<a href="profile.php?id=' . $currentID . '">';
@@ -51,7 +51,8 @@
 				echo '</div>';
 			echo '</div>'; 
         
-    } else if (!$posts) {
+    } else if (!$posts == 0) {
+        
         echo '<div id="post">';
 				echo '<div id="contentAvatar">';
 					echo '<a href="profile.php?id=' . $currentID . '">';
