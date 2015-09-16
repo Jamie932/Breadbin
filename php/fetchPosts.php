@@ -60,7 +60,7 @@
 				echo '</div>';
 				echo '<div id="contentPost">';
 				   echo '<div class="contentPostText">';
-						echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</center></p>';
+						echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</p>'; 
                         echo '<div class="meter orange nostripes">
                                 <span style="width: 66%"></span>
                             </div>
