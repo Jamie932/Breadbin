@@ -866,6 +866,7 @@ input.commentBox {
   );
   position: relative;
   overflow: hidden;
+    float: left; 
 }
 
 .orange > span {
