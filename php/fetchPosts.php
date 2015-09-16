@@ -41,10 +41,11 @@
 					echo '</a>';
 				echo '</div>';
                 echo '<div class="contentPostText">';
-						echo '<p style="margin: 0;"><center>Your boring toasters haven\'t posted anything.</center></p>';
+						echo '<p style="margin: 0;"><center>Your boring toasters haven\'t posted anything.</p>';
                         echo '<div class="meter orange nostripes">
-                                <span style="width: 33.3%"></span>
-                            </div>';
+                                <span style="width: 33%"></span>
+                            </div>
+                        </center>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>'; 
@@ -61,8 +62,9 @@
 				   echo '<div class="contentPostText">';
 						echo '<p style="margin: 0;"><center>You don\'t follow any toasters!</center></p>';
                         echo '<div class="meter orange nostripes">
-                                <span style="width: 33.3%"></span>
-                            </div>';
+                                <span style="width: 66%"></span>
+                            </div>
+                            </center>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>'; 
